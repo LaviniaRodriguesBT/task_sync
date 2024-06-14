@@ -43,7 +43,7 @@
       </counter>
       <counter>
         <item-type type-id="universal-connector" type="Universal Connector" />
-        <value>22</value>
+        <value>20</value>
       </counter>
       <counter>
         <item-type type-id="relationship" type="Association" />
@@ -603,7 +603,7 @@
       </use-case>
     </item>
     <item id="0bcee69d5c0b4a30aca7ea73ded5fe49" cid="GNR002" type="generalization" creation-date="05/16/2024 21:38:18" from="d4dce4d0334346cc8facd0ab2bcf4345" to="96bf2b399a644b3ab0b9a96c74f726f0" visibility="package" />
-    <item id="0e5728d0a8694aff87d3723a0b7bd323" cid="UC011" type="use-case" name="Atualizar andamento" owner="ac446918d1d44ca2b59c2a77303070cf" creator="" creation-date="05/16/2024 22:32:17" visibility="undefined">
+    <item id="0e5728d0a8694aff87d3723a0b7bd323" cid="UC011" type="use-case" name="Acompanhar progresso" owner="ac446918d1d44ca2b59c2a77303070cf" creator="" creation-date="05/16/2024 22:32:17" visibility="undefined">
       <use-case>
         <stakeholders />
         <special-requirements />
@@ -1433,7 +1433,7 @@
           </item>
         </layer>
       </diagram>
-      <diagram type="uml-usecase" id="p4ada722111c44404ae9a0d3473600ed7_779497913" name="DCU_Task_Sync_ModuloColaborador" order-index="2" overview-order-index="0" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="-9,80">
+      <diagram type="uml-usecase" id="p4ada722111c44404ae9a0d3473600ed7_779497913" name="DCU_Task_Sync_ModuloColaborador" order-index="2" overview-order-index="0" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="-9,31">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -1445,18 +1445,14 @@
           </authors>
           <description />
           <creation-date>05/16/2024 21:46:32</creation-date>
-          <change-date>06/13/2024 22:12:51</change-date>
+          <change-date>05/16/2024 22:32:17</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
-        <abstract-items>
-          <item id="f16c6cafc3da4083a0062c7101a000d8" cid="ELEM021" type="universal-connector" creator="" creation-date="06/13/2024 22:12:51" from="ac446918d1d44ca2b59c2a77303070cf">
-            <connector />
-          </item>
-        </abstract-items>
+        <abstract-items />
         <layer id="f7ede90c29a74a1ab49d10e5ab4e61d3" name="Default" visible="true" enabled="true" locked="false">
           <item id="ac446918d1d44ca2b59c2a77303070cf" iid="192db9171dc2431e928a54ab874511c1" creation-date="05/16/2024 21:30:35" order-index="0" type="entity">
-            <layout ax="269" ay="36" awidth="488" aheight="578" x="269" y="36" width="488" height="578" expanded="269,36,488,578" collapsed="0,0,0,0" />
+            <layout ax="269" ay="36" awidth="488" aheight="400" x="269" y="36" width="488" height="400" expanded="269,36,488,400" collapsed="0,0,0,0" />
           </item>
           <item id="96bf2b399a644b3ab0b9a96c74f726f0" iid="61cb0eba02ac445d8a823448eaa1b329" creation-date="05/16/2024 21:30:53" order-index="1" type="entity">
             <layout name-position="0,10" name-anchor="bottom" auto-anchor="true" label-attached="false" ax="109" ay="36" awidth="50" aheight="100" x="109" y="36" width="50" height="120" />
@@ -1540,18 +1536,9 @@
             </layout>
             <relation from="d4dce4d0334346cc8facd0ab2bcf4345" from-iid="84ff379c1840437e814b600290a859c3" to="96bf2b399a644b3ab0b9a96c74f726f0" to-iid="61cb0eba02ac445d8a823448eaa1b329" />
           </item>
-          <item id="f16c6cafc3da4083a0062c7101a000d8" iid="d728befdbc194cf28b08c7ca1ba918fb" creation-date="06/13/2024 22:12:51" order-index="17" type="relation">
-            <layout line-style="oblique" lock-start-point="true" lock-to-fields="false" auto-path="" x1="757" y1="614" x2="783" y2="488" start-border-pos="0.5" end-border-pos="-1" name-position="0,20">
-              <points>
-                <point x="757" y="614" />
-                <point x="783" y="488" />
-              </points>
-            </layout>
-            <relation from="ac446918d1d44ca2b59c2a77303070cf" from-iid="192db9171dc2431e928a54ab874511c1" />
-          </item>
         </layer>
       </diagram>
-      <diagram type="uml-usecase" id="p681ded07663b44a5ae373fe007c96fb2_137449772" name="DCU_Task_Sync_ModuloGestaoSistema" order-index="3" overview-order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="68,462" zoom="0.6">
+      <diagram type="uml-usecase" id="p681ded07663b44a5ae373fe007c96fb2_137449772" name="DCU_Task_Sync_ModuloGestaoSistema" order-index="3" overview-order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="68,372" zoom="0.6">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
