@@ -1,0 +1,78 @@
+{
+  "user": [
+    {
+      "id": "1",
+      "fullName": "tiburssinho tiburssius",
+      "email": "tiburssinho@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "2",
+      "fullName": "aroldo aroldus",
+      "email": "aroldo@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "3",
+      "fullName": "cabral cabralzius",
+      "email": "cabral@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "4",
+      "fullName": "toninho toninhus",
+      "email": "toninho@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": "5",
+      "fullName": "pei pouuu",
+      "email": "a@a",
+      "password": "aa"
+    },
+    {
+      "id": "9093",
+      "fullName": "qw",
+      "email": "sd@fds",
+      "password": "qw"
+    },
+    {
+      "id": "0b51",
+      "fullName": "lavinia",
+      "email": "lala@brandani",
+      "password": "123456"
+    }
+  ],
+  "event": [
+    {
+      "id": "1",
+      "name": "prod 1",
+      "price": 123.22
+    },
+    {
+      "id": "2",
+      "name": "prod 2",
+      "price": 2
+    },
+    {
+      "id": "3",
+      "name": "prod 3",
+      "price": 9.12
+    },
+    {
+      "id": "e13f",
+      "name": "sgsdfwe",
+      "price": "333"
+    },
+    {
+      "id": "32b8",
+      "name": "bbbq",
+      "price": 442
+    },
+    {
+      "id": "2ca0",
+      "name": "wef",
+      "price": "33"
+    }
+  ]
+}
