@@ -1,1 +1,52 @@
-<p>event-list works!</p>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/event/list">Produto</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Lista</li>
+    </ol>
+</nav>
+<h1>Lista de produtos</h1>
+<hr>
+
+<div class="mat-elevation-z8">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Preço</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+        @for(event of events; track $index){
+            <tr>
+                <th scope="row">{{event.id}}</th>
+                <td>{{event.name}}</td>
+                <td>{{event.price}}</td>
+                <td>
+                    <div class="row">
+                        <div class="col-4">
+                            <a class="btn btn-primary" routerLink="/event/detail/{{event.id}}">
+                                <fa-icon [icon]="fa.faAddressCard"></fa-icon>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a class="btn btn-warning" routerLink="/event/edit/{{event.id}}">
+                                <fa-icon [icon]="fa.faEdit"></fa-icon>
+                            </a>
+                        </div>
+                    
+                        <div class="col-4">
+                            <!-- <a class="btn btn-danger" (click)="deleteevent(event.id)">
+                                <fa-icon [icon]="fa.faRemove"></fa-icon>
+                            </a> -->
+                        </div>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
