@@ -21,7 +21,7 @@ import { Route, Router } from '@angular/router';
 })
 export class SignUpComponent implements OnInit{
 
-  form?: FormGroup;
+  form!: FormGroup;
 
   fullNameMinLength: number = 2;
   fullNameMaxLength: number = 10;

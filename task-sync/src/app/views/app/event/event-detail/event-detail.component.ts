@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { EventReadService } from '../../../../services/event/event-read.service';
+import { Events } from '../event-list/event-list.component';
+import { EventsReadService } from '../../../../services/event/event-read.service';
 
 @Component({
   selector: 'task-sync-event-detail',
@@ -11,12 +12,12 @@ import { EventReadService } from '../../../../services/event/event-read.service'
 })
 export class EventDetailComponent implements OnInit{
 
-  eventInformation?: Event;
+  eventInformation?: Events;
 
   // o ? na frente da variavel significa pode ser nula ou ter valor
 
   constructor(private route: ActivatedRoute,
-              private eventReadSevice: EventReadService) {}
+              private eventReadSevice: EventsReadService) {}
 
   ngOnInit(): void {
     let eventId = this.route.snapshot.paramMap.get('id'); 

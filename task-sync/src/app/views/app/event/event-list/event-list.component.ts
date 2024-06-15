@@ -17,7 +17,7 @@ import { EventDeleteService } from "../../../../services/event/event-delete.serv
   templateUrl: './event-list.component.html',
   styleUrl: './event-list.component.css'
 })
-export class eventListComponent implements OnInit {
+export class EventListComponent implements OnInit {
   fa = fontawesome;
 
   events: Events[] = [];

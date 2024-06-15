@@ -1,13 +1,13 @@
 import { TestBed } from '@angular/core/testing';
 
-import { EventReadService } from './event-read.service';
+import { EventsReadService } from './event-read.service';
 
 describe('EventReadService', () => {
-  let service: EventReadService;
+  let service: EventsReadService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({});
-    service = TestBed.inject(EventReadService);
+    service = TestBed.inject(EventsReadService);
   });
 
   it('should be created', () => {
