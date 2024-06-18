@@ -41,6 +41,12 @@
       "fullName": "lavinia",
       "email": "lala@brandani",
       "password": "123456"
+    },
+    {
+      "id": "6185",
+      "fullName": "admin",
+      "email": "admin@admin",
+      "password": "123456"
     }
   ],
   "event": [
@@ -49,102 +55,102 @@
       "name": "Feira de Sistemas",
       "description": "Feira escolar da faculdade Estude Bem",
       "date": "10/02/2024"
-    },{
+    },
+    {
       "id": "2",
       "name": "Congresso de Tecnologia",
       "description": "Congresso internacional sobre inovações tecnológicas",
       "date": "15/03/2024"
-  },
-  {
+    },
+    {
       "id": "3",
       "name": "Workshop de Programação",
       "description": "Oficina prática de programação para iniciantes",
       "date": "20/04/2024"
-  },
-  {
+    },
+    {
       "id": "4",
       "name": "Simpósio de Inteligência Artificial",
       "description": "Discussão sobre as últimas tendências em IA",
       "date": "25/05/2024"
-  },
-  {
+    },
+    {
       "id": "5",
       "name": "Encontro de Desenvolvedores",
       "description": "Reunião anual de desenvolvedores de software",
       "date": "30/06/2024"
-  },
-  {
+    },
+    {
       "id": "6",
       "name": "Seminário de Segurança da Informação",
       "description": "Palestras sobre cibersegurança e proteção de dados",
       "date": "05/07/2024"
-  },
-  {
+    },
+    {
       "id": "7",
       "name": "Hackathon de Inovação",
       "description": "Competição de programação para soluções inovadoras",
       "date": "10/08/2024"
-  },
-  {
+    },
+    {
       "id": "8",
       "name": "Conferência de Redes de Computadores",
       "description": "Discussão sobre avanços em redes de computadores",
       "date": "15/09/2024"
-  },
-  {
+    },
+    {
       "id": "9",
       "name": "Palestra de Ciência de Dados",
       "description": "Exploração de técnicas e ferramentas de ciência de dados",
       "date": "20/10/2024"
-  },
-  {
+    },
+    {
       "id": "10",
       "name": "Fórum de Tecnologias Educacionais",
       "description": "Debate sobre o uso da tecnologia na educação",
       "date": "25/11/2024"
-  },
-  {
+    },
+    {
       "id": "11",
       "name": "Exposição de Robótica",
       "description": "Mostra de projetos e inovações em robótica",
       "date": "30/12/2024"
-  },
-  {
+    },
+    {
       "id": "12",
       "name": "Curso de Desenvolvimento Web",
       "description": "Curso intensivo sobre desenvolvimento de websites",
       "date": "05/01/2025"
-  },
-  {
+    },
+    {
       "id": "13",
       "name": "Treinamento em Machine Learning",
       "description": "Curso prático sobre aprendizado de máquina",
       "date": "10/02/2025"
-  },
-  {
+    },
+    {
       "id": "14",
       "name": "Seminário de Blockchain",
       "description": "Discussão sobre aplicações e futuro do blockchain",
       "date": "15/03/2025"
-  },
-  {
+    },
+    {
       "id": "15",
       "name": "Conferência de Big Data",
       "description": "Exploração de técnicas e ferramentas para análise de grandes volumes de dados",
       "date": "20/04/2025"
-  },
-  {
+    },
+    {
       "id": "16",
       "name": "Encontro de Engenharia de Software",
       "description": "Reunião sobre metodologias e práticas em engenharia de software",
       "date": "25/05/2025"
-  },
-  {
+    },
+    {
       "id": "17",
       "name": "Feira de Jogos Digitais",
       "description": "Exposição de novos jogos e tecnologias de game design",
       "date": "30/06/2025"
-  }
-  
+    }
   ]
 }

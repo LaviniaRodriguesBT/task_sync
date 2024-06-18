@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
-import { MatInputModule} from '@angular/material/input';
-import { MatButtonModule} from '@angular/material/button';
-import { FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import { Router } from '@angular/router';
-import { UserCredential } from '../../../domain/dto/user-credential';
-import { AuthenticationService } from '../../../services/authentication.service';
-
+import {Component, OnInit} from '@angular/core';
+import {MatInputModule} from '@angular/material/input';
+import {MatButtonModule} from '@angular/material/button';
+import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
+import {Router} from '@angular/router';
+import {UserCredential} from '../../../domain/dto/user-credential';
+import {AuthenticationService} from '../../../services/authentication.service';
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: 'task-sync-sign-in',
@@ -19,60 +19,85 @@ import { AuthenticationService } from '../../../services/authentication.service'
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css'
 })
-export class SignInComponent implements OnInit{
+export class SignInComponent implements OnInit {
+
+  // email = new FormControl(null, Validators.email);
   email = new FormControl(null);
-  password = new FormControl(null, [Validators.minLength(1), Validators.maxLength(10)]);
+  password = new FormControl(null, [
+    Validators.minLength(1), Validators.maxLength(10)
+  ]);
 
   isLoginIncorrect = false;
 
-  constructor(private router : Router, private authenticationServices: AuthenticationService) {}
-  
+  constructor(private router: Router,
+              private authenticationService: AuthenticationService,
+              private toastrService: ToastrService,) {
+  }
+
   ngOnInit(): void {
     this.loginIfCredentialsIsValid();
   }
 
-  loginIfCredentialsIsValid(){
-    if(this.authenticationServices.isAuthenticated()){
+  loginIfCredentialsIsValid() {
+    if (this.authenticationService.isAuthenticated()) {
       this.router.navigate(['/']);
-      return;
     }
   }
 
-  login() {
-    let credencial: UserCredential = {
+  async login() {
+    // let emailField = this.email.value;
+    // let passwordField = this.password.value;
+    let credential: UserCredential = {
       email: this.email.value!,
       password: this.password.value!
     };
 
-    console.log(credencial);
+    // console.log(`email: ${credential.email}`);
+    // console.log(`senha: ${credential.password}`);
+    // console.log(credential);
 
-    this.authenticationServices
-    .authenticate(credencial) //autentifica no sistema
-    .subscribe(
-      {
-        // a partir deste ponto já está verificado no sistema
-        next: (value) => {
-          console.log(value);
+    // this.authenticationService
+    // .authenticate(credential)
+    // .subscribe(
+    //   {
+    //     next: (value) => {
+    //       console.log(value);
+    //
+    //       if(!value) {
+    //         return;
+    //       }
+    //
+    //       this.authenticationService
+    //       .addCredentialsToLocalStorage(credential.email);
+    //
+    //       this.router.navigate(['/']);
+    //     },
+    //     error: (err) => {
+    //       console.error(err);
+    //     }
+    //   }
+    // );
+    try {
+      await this.authenticationService.authenticate(credential);
+      this.authenticationService
+        .addCredentialsToLocalStorage(credential.email);
 
-          if(!value){
-            return;
-          } //se passar deste item as informações estão corretas
-
-          this.authenticationServices
-          .addCredentialsToLocalStorage(credencial.email); //adiciona o email no cache
-          
-          this.router.navigate(['/']); //antes de realizar a navegação vai disparar que tem alguém tentando acessar no app.routes.ts no no authentication
-        },
-        error: (err) => {
-          console.error(err);
-        }
-
-      }
-    );
+      await this.router.navigate(['/']);
+    } catch (e: any) {
+      console.error(`erro: ${e}`);
+      this.toastrService.error(e.message);
+      this.password.setValue(null);
+    }
   }
 
-  isFormInvalid(){
+  isFormInvalid() {
+
     let isValid = this.email.valid && this.password.valid;
+
+    // if(isValid) return false;
+    // if(!isValid) return true;
+
     return isValid ? false : true;
   }
+
 }
