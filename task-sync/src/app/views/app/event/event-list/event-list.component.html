@@ -6,17 +6,17 @@
         <li class="breadcrumb-item active" aria-current="page">Lista</li>
     </ol>
 </nav>
-<h1>Lista de produtos</h1>
+<h1>Lista de eventos</h1>
 <hr>
 
 <div class="mat-elevation-z8">
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">#</th>
+                <th scope="col">Codigo</th>
                 <th scope="col">Nome</th>
-                <th scope="col">Preço</th>
-                <th scope="col"></th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Data</th>
             </tr>
         </thead>
         <tbody>
@@ -24,7 +24,8 @@
             <tr>
                 <th scope="row">{{event.id}}</th>
                 <td>{{event.name}}</td>
-                <td>{{event.price}}</td>
+                <td>{{event.description}}</td>
+                <td>{{event.date}}</td>
                 <td>
                     <div class="row">
                         <div class="col-4">
@@ -39,10 +40,11 @@
                         </div>
                     
                         <div class="col-4">
-                            <!-- <a class="btn btn-danger" (click)="deleteevent(event.id)">
-                                <fa-icon [icon]="fa.faRemove"></fa-icon>
-                            </a> -->
-                        </div>
+                            <!-- <a class="btn btn-danger" (click)="deleteEvent(event.id!)"> -->
+                            <a class="btn btn-danger">
+                              <fa-icon [icon]="fa.faRemove"></fa-icon>
+                            </a>
+                          </div>
                     </div>
                 </td>
             </tr>

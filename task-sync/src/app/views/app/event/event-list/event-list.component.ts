@@ -38,7 +38,7 @@ export class EventListComponent implements OnInit {
 
 
 
-  async deleteevent(eventId: string){
+  async deleteEvent(eventId: string){
     console.log('iniciando a remocao do produto' + eventId);
     await this.eventDeleteService.delete(eventId);
 
@@ -98,5 +98,6 @@ export class EventListComponent implements OnInit {
 export interface Events {
   id: number;
   name: String;
-  price: number;
+  description: String;
+  date: String;
 }
