@@ -2,8 +2,11 @@ import { Component, OnInit } from "@angular/core";
 import { RouterModule } from "@angular/router";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
-import { EventsReadService } from "../../../../services/event/event-read.service";
+
 import { EventDeleteService } from "../../../../services/event/event-delete.service";
+import { ToastrService } from "ngx-toastr";
+import { EventReadService } from "../../../../services/event/event-read.service";
+import {Event} from "../../../../domain/model/event.model";
 
 
 
@@ -20,9 +23,10 @@ import { EventDeleteService } from "../../../../services/event/event-delete.serv
 export class EventListComponent implements OnInit {
   fa = fontawesome;
 
-  events: Events[] = [];
+  events: Event[] = [];
 
-  constructor(private eventReadService: EventsReadService, private eventDeleteService: EventDeleteService){
+  constructor(private eventReadService: EventReadService, private eventDeleteService: EventDeleteService, private toastrService: ToastrService
+  ){
 
   }
 
@@ -39,12 +43,22 @@ export class EventListComponent implements OnInit {
 
 
   async deleteEvent(eventId: string){
-    console.log('iniciando a remocao do produto' + eventId);
-    await this.eventDeleteService.delete(eventId);
+    try {
+      console.log('iniciando a remocao do evento' + eventId);
+      await this.eventDeleteService.delete(eventId);
+      this.toastrService.success('Evento excluido com sucesso');
 
+      await this.loadEvents();
+    } catch (error) {
+      this.toastrService.error('Não foi possível remover o evento');
+      
+    }
+    
   }
 
 
+
+}
 
 
   // events: events[] = [
@@ -91,13 +105,3 @@ export class EventListComponent implements OnInit {
 
   // ];
 
-  
-
-}
-
-export interface Events {
-  id: number;
-  name: String;
-  description: String;
-  date: String;
-}
