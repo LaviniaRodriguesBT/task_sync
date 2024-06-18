@@ -146,5 +146,68 @@
       "date": "30/06/2025"
   }
   
+  ],
+  "task":[
+    {
+      "id": "1",
+      "name": "Realizar cadastro"
+    },
+    {
+      "id": "2",
+      "name": "Conferir cadastro"
+    },
+    {
+      "id": "3",
+      "name": "Atualizar cadastro"
+    },
+    {
+      "id": "4",
+      "name": "Excluir cadastro"
+    },
+    {
+      "id": "5",
+      "name": "Consultar dados"
+    },
+    {
+      "id": "6",
+      "name": "Emitir relatório"
+    },
+    {
+      "id": "7",
+      "name": "Gerar gráficos"
+    },
+    {
+      "id": "8",
+      "name": "Configurar sistema"
+    },
+    {
+      "id": "9",
+      "name": "Enviar notificações"
+    },
+    {
+      "id": "10",
+      "name": "Exportar dados"
+    },
+    {
+      "id": "11",
+      "name": "Importar dados"
+    },
+    {
+      "id": "12",
+      "name": "Fazer backup"
+    },
+    {
+      "id": "13",
+      "name": "Restaurar backup"
+    },
+    {
+      "id": "14",
+      "name": "Gerenciar usuários"
+    },
+    {
+      "id": "15",
+      "name": "Definir permissões"
+    }
+
   ]
 }
