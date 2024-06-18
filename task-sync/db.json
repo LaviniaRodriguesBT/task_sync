@@ -151,7 +151,7 @@
       "name": "Feira de Jogos Digitais",
       "description": "Exposição de novos jogos e tecnologias de game design",
       "date": "30/06/2025"
-<<<<<<< HEAD
+
   }
   
   ],
@@ -216,9 +216,5 @@
       "id": "15",
       "name": "Definir permissões"
     }
-
-=======
-    }
->>>>>>> 3f539a52e531dfdbe665473cd8537fdd3660285d
   ]
 }
