@@ -1,1 +1,49 @@
-<p>task-list works!</p>
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/task/list">Produto</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Lista</li>
+    </ol>
+</nav>
+<h1>Lista de Atividades</h1>
+<hr>
+
+<div class="mat-elevation-z8">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">Nome</th>
+            </tr>
+        </thead>
+        <tbody>
+        @for(task of tasks; track $index){
+            <tr>
+                <th scope="row">{{task.id}}</th>
+                <td>{{task.name}}</td>
+                <td>
+                    <div class="row">
+                        <div class="col-4">
+                            <a class="btn btn-primary" routerLink="/task/detail/{{task.id}}">
+                                <fa-icon [icon]="fa.faAddressCard"></fa-icon>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a class="btn btn-warning" routerLink="/task/edit/{{task.id}}">
+                                <fa-icon [icon]="fa.faEdit"></fa-icon>
+                            </a>
+                        </div>
+                    
+                        <div class="col-4">
+                            <!-- <a class="btn btn-danger" (click)="deleteTask(task.id!)"> -->
+                            <a class="btn btn-danger">
+                              <fa-icon [icon]="fa.faRemove"></fa-icon>
+                            </a>
+                          </div>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
