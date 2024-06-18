@@ -11,6 +11,10 @@ import { EventListComponent } from './views/app/event/event-list/event-list.comp
 import { EventEditComponent } from './views/app/event/event-edit/event-edit.component';
 import { EventDetailComponent } from './views/app/event/event-detail/event-detail.component';
 import { NotFoundComponent } from './views/not-found/not-found.component';
+import { TaskCreateComponent } from './views/app/task/task-create/task-create.component';
+import { TaskListComponent } from './views/app/task/task-list/task-list.component';
+import { TaskDetailComponent } from './views/app/task/task-detail/task-detail.component';
+import { TaskEditComponent } from './views/app/task/task-edit/task-edit.component';
 
 
 export const routes: Routes = [
@@ -68,6 +72,31 @@ export const routes: Routes = [
                     {
                         path: 'detail/:id',
                         component: EventDetailComponent,
+
+                    },
+                ]
+            },
+            {
+                path: 'task',
+                children: [
+                    {
+                        path: 'create',
+                        component: TaskCreateComponent,
+
+                    },
+                    {
+                        path: 'list',
+                        component: TaskListComponent,
+
+                    },
+                    {
+                        path: 'edit/:id',
+                        component: TaskEditComponent,
+
+                    },
+                    {
+                        path: 'detail/:id',
+                        component: TaskDetailComponent,
 
                     },
                 ]
