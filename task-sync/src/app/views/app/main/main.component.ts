@@ -12,6 +12,7 @@ import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
+import { AuthenticationService } from '../../../services/authentication.service';
 
 
 @Component({
@@ -30,17 +31,20 @@ import * as fontawesome from '@fortawesome/free-solid-svg-icons';
     MatExpansionModule, 
     MatTooltipModule,
     FontAwesomeModule
-
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
 })
+
 export class MainComponent {
   faCoffee = fontawesome.faHeartBroken;
 
-  constructor(private router : Router){}
+  constructor(private router: Router,
+              private authenticationService: AuthenticationService,) {
+  }
 
-  logOut(){
+  logout() {
+    this.authenticationService.logout();
     this.router.navigate(['account/sign-in']);
   }
 
