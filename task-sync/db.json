@@ -2,51 +2,155 @@
   "user": [
     {
       "id": "1",
-      "fullName": "tiburssinho tiburssius",
-      "email": "tiburssinho@gmail.com",
-      "password": "123456"
+      "email": "pedrocarlos@gmail.com",
+      "password": "pc",
+      "cpf": "123456",
+      "name": "Pedro Carlos",
+      "address": "Rua 4, Santa Rita do Sapucai"
     },
     {
       "id": "2",
-      "fullName": "aroldo aroldus",
-      "email": "aroldo@gmail.com",
-      "password": "123456"
+      "email": "mariajose@gmail.com",
+      "password": "mj",
+      "cpf": "654321",
+      "name": "Maria Jose",
+      "address": "Rua 7, Belo Horizonte"
     },
     {
       "id": "3",
-      "fullName": "cabral cabralzius",
-      "email": "cabral@gmail.com",
-      "password": "123456"
+      "email": "joaosilva@gmail.com",
+      "password": "js",
+      "cpf": "789456",
+      "name": "Joao Silva",
+      "address": "Avenida 10, Sao Paulo"
     },
     {
       "id": "4",
-      "fullName": "toninho toninhus",
-      "email": "toninho@gmail.com",
-      "password": "123456"
+      "email": "anapaula@gmail.com",
+      "password": "ap",
+      "cpf": "456123",
+      "name": "Ana Paula",
+      "address": "Rua 12, Rio de Janeiro"
     },
     {
       "id": "5",
-      "fullName": "pei pouuu",
-      "email": "a@a",
-      "password": "aa"
+      "email": "carlosaugusto@gmail.com",
+      "password": "ca",
+      "cpf": "123789",
+      "name": "Carlos Augusto",
+      "address": "Rua 15, Curitiba"
     },
     {
-      "id": "9093",
-      "fullName": "qw",
-      "email": "sd@fds",
-      "password": "qw"
+      "id": "6",
+      "email": "marinaluiza@gmail.com",
+      "password": "ml",
+      "cpf": "321654",
+      "name": "Marina Luiza",
+      "address": "Avenida 3, Salvador"
     },
     {
-      "id": "0b51",
-      "fullName": "lavinia",
-      "email": "lala@brandani",
-      "password": "123456"
+      "id": "7",
+      "email": "pedrohenrique@gmail.com",
+      "password": "ph",
+      "cpf": "654789",
+      "name": "Pedro Henrique",
+      "address": "Rua 1, Florianopolis"
     },
     {
-      "id": "6185",
-      "fullName": "admin",
-      "email": "admin@admin",
-      "password": "123456"
+      "id": "8",
+      "email": "julianasilva@gmail.com",
+      "password": "js",
+      "cpf": "789123",
+      "name": "Juliana Silva",
+      "address": "Rua 20, Porto Alegre"
+    },
+    {
+      "id": "9",
+      "email": "rodrigobastos@gmail.com",
+      "password": "rb",
+      "cpf": "456789",
+      "name": "Rodrigo Bastos",
+      "address": "Rua 11, Recife"
+    },
+    {
+      "id": "10",
+      "email": "fernandosoares@gmail.com",
+      "password": "fs",
+      "cpf": "321789",
+      "name": "Fernando Soares",
+      "address": "Avenida 6, Manaus"
+    },
+    {
+      "id": "11",
+      "email": "beatrizoliveira@gmail.com",
+      "password": "bo",
+      "cpf": "987456",
+      "name": "Beatriz Oliveira",
+      "address": "Rua 8, Fortaleza"
+    },
+    {
+      "id": "12",
+      "email": "andreluiz@gmail.com",
+      "password": "al",
+      "cpf": "654123",
+      "name": "Andre Luiz",
+      "address": "Avenida 9, Natal"
+    },
+    {
+      "id": "13",
+      "email": "renatacosta@gmail.com",
+      "password": "rc",
+      "cpf": "123654",
+      "name": "Renata Costa",
+      "address": "Rua 18, Goiania"
+    },
+    {
+      "id": "14",
+      "email": "leonardosantos@gmail.com",
+      "password": "ls",
+      "cpf": "789654",
+      "name": "Leonardo Santos",
+      "address": "Rua 13, Vitoria"
+    },
+    {
+      "id": "15",
+      "email": "marcelopereira@gmail.com",
+      "password": "mp",
+      "cpf": "456321",
+      "name": "Marcelo Pereira",
+      "address": "Rua 2, Campinas"
+    },
+    {
+      "id": "5310",
+      "email": "",
+      "password": "",
+      "cpf": "",
+      "name": "",
+      "address": ""
+    },
+    {
+      "id": "7911",
+      "email": "",
+      "password": "",
+      "cpf": "",
+      "name": "",
+      "address": ""
+    },
+    {
+      "id": "7037",
+      "email": "",
+      "password": "",
+      "cpf": "",
+      "name": "",
+      "address": ""
+    },
+    {
+      "id": "cdc4",
+      "email": "",
+      "password": "",
+      "cpf": "",
+      "name": "111",
+      "address": ""
     }
   ],
   "event": [
@@ -151,14 +255,12 @@
       "name": "Feira de Jogos Digitais",
       "description": "Exposição de novos jogos e tecnologias de game design",
       "date": "30/06/2025"
-
-  }
-  
+    }
   ],
-  "task":[
+  "task": [
     {
       "id": "1",
-      "name": "Realizar cadastro"
+      "name": "Realizar cadastro021212"
     },
     {
       "id": "2",
