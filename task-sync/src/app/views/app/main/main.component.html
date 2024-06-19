@@ -1,5 +1,5 @@
 <div class="main-root">
-    <mat-toolbar color="primary">
+    <mat-toolbar class="color-head">
         <button mat-icon-button (click)="sidenav.toggle()" matTooltip="Menu">
             <mat-icon>menu</mat-icon>
         </button>
@@ -68,8 +68,7 @@
             </main>
         </div>
     </mat-sidenav-container>
-    <footer>
-        Todos os direitos reservados.
-        Feito com <fa-icon [icon]="faCoffee"></fa-icon> pela FAI ;D
-    </footer>
+    <footer style="text-align: right">
+        Todos os direitos reservados<fa-icon [icon]="faCopyright" style="font-size: 10px"></fa-icon>.
+        2024 - 2026</footer>
 </div>

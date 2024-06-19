@@ -16,6 +16,7 @@ import {Event} from "../../../../domain/model/event.model";
   imports: [
     FontAwesomeModule,
     RouterModule,
+
   ],
   templateUrl: './event-list.component.html',
   styleUrl: './event-list.component.css'

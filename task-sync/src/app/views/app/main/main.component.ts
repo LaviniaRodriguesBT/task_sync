@@ -13,6 +13,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { AuthenticationService } from '../../../services/authentication.service';
+import { faCopyright } from '@fortawesome/free-solid-svg-icons';
 
 
 @Component({
@@ -38,6 +39,7 @@ import { AuthenticationService } from '../../../services/authentication.service'
 
 export class MainComponent {
   faCoffee = fontawesome.faHeartBroken;
+  faCopyright = faCopyright;
 
   constructor(private router: Router,
               private authenticationService: AuthenticationService,) {

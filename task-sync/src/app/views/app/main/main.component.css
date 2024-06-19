@@ -24,6 +24,11 @@ body {
 
 footer {
     margin-top: auto;
-    background-color: #3f51b5;
+    background-color: rgb(10, 59, 59);
+    color: white;
+}
+
+.color-head{
+    background-color: rgb(10, 59, 59);
     color: white;
 }

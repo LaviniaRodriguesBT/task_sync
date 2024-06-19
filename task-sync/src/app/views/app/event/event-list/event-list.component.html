@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="/event/list">Produto</a>
+            <a href="/event/list">Eventos</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Lista</li>
     </ol>
@@ -10,32 +10,32 @@
 <hr>
 
 <div class="mat-elevation-z8">
-    <table class="table table-striped">
+    <table class="table table ">
         <thead>
             <tr>
-                <th scope="col">Codigo</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Descrição</th>
-                <th scope="col">Data</th>
+                <th scope="col" class="text-center">Codigo</th>
+                <th scope="col" class="text-center">Nome</th>
+                <th scope="col" class="text-center description-col">Descrição</th>
+                <th scope="col" class="text-center">Data Inicio</th>
             </tr>
         </thead>
         <tbody>
         @for(event of events; track $index){
             <tr>
-                <th scope="row">{{event.id}}</th>
-                <td>{{event.name}}</td>
-                <td>{{event.description}}</td>
-                <td>{{event.date}}</td>
+                <th scope="row" class="text-center">{{event.id}}</th>
+                <td class="text-center">{{event.name}}</td>
+                <td class="text-center description-col">{{event.description}}</td>
+                <td class="text-center">{{event.date}}</td>
                 <td>
                     <div class="row">
                         <div class="col-4">
                             <a class="btn btn-primary" routerLink="/event/detail/{{event.id}}">
-                                <fa-icon [icon]="fa.faAddressCard"></fa-icon>
+                                <fa-icon [icon]="fa.faAddressCard" title="Ver detalhes"></fa-icon>
                             </a>
                         </div>
                         <div class="col-4">
                             <a class="btn btn-warning" routerLink="/event/edit/{{event.id}}">
-                                <fa-icon [icon]="fa.faEdit"></fa-icon>
+                                <fa-icon [icon]="fa.faEdit" title="Editar evento"></fa-icon>
                             </a>
                         </div>
                     
