@@ -1,0 +1,25 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/event/list">Produto</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Editar Atividade</li>
+    </ol>
+</nav>
+<h1>Editar atividade</h1>
+<hr>
+
+<form class="form" method="post" (ngSubmit)="update()" [formGroup]="form">
+    <div class="form-row">
+        <div class="form-group col-12 mt-2">
+            <label for="name">Nome</label>
+            <input type="text" class="form-control" id="name" placeholder="Nome" formControlName="name">
+        </div>
+        <div class="col-12 text-end mt-2">
+            <div class="col-12 text-end mt-2">
+                <a class="btn btn-secondary col-2 me-4" href="/event/list">Voltar</a>
+                <button class="btn btn-primary col-2">Atualizar</button>
+            </div>
+        </div>
+    </div>
+</form>
