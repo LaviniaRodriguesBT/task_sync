@@ -40,16 +40,26 @@ export class SignUpComponent implements OnInit{
 
   initializeForm(){
     this.form =  this.formBuilder.group({
-      fullName: ['', [
-        Validators.required, //obrigatório
-        Validators.minLength(this.fullNameMinLength),
-        Validators.maxLength(this.fullNameMaxLength),
-      ]],
       email: ['', [
         Validators.required, //obrigatório
         Validators.email,
       ]],
+      name: ['', [
+        Validators.required, //obrigatório
+        Validators.minLength(this.fullNameMinLength),
+        Validators.maxLength(this.fullNameMaxLength),
+      ]],
       password: ['', [
+        Validators.required, //obrigatório
+        Validators.minLength(this.passwordMinLength),
+        Validators.maxLength(this.passwordMaxLength),
+      ]],
+      cpf: ['', [
+        Validators.required, //obrigatório
+        Validators.minLength(this.fullNameMinLength),
+        Validators.maxLength(this.fullNameMaxLength),
+      ]],
+      address: ['', [
         Validators.required, //obrigatório
         Validators.minLength(this.passwordMinLength),
         Validators.maxLength(this.passwordMaxLength),
@@ -106,9 +116,11 @@ export class SignUpComponent implements OnInit{
     console.log("Criando conta...")
 
     let user: User = {
-      fullName: this.form.controls['fullName'].value,
       email: this.form.controls['email'].value,
-      password: this.form.controls['password'].value
+      password: this.form.controls['password'].value,
+      cpf: this.form.controls['cpf'].value,
+      name: this.form.controls['name'].value,
+      address: this.form.controls['address'].value,
     };
 
     this.createUserService.create(user)

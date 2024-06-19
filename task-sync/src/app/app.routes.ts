@@ -15,6 +15,10 @@ import { TaskCreateComponent } from './views/app/task/task-create/task-create.co
 import { TaskListComponent } from './views/app/task/task-list/task-list.component';
 import { TaskDetailComponent } from './views/app/task/task-detail/task-detail.component';
 import { TaskEditComponent } from './views/app/task/task-edit/task-edit.component';
+import { UserCreateComponent } from './views/app/user/user-create/user-create.component';
+import { UserDetailComponent } from './views/app/user/user-detail/user-detail.component';
+import { UserEditComponent } from './views/app/user/user-edit/user-edit.component';
+import { UserListComponent } from './views/app/user/user-list/user-list.component';
 
 
 export const routes: Routes = [
@@ -97,6 +101,31 @@ export const routes: Routes = [
                     {
                         path: 'detail/:id',
                         component: TaskDetailComponent,
+
+                    },
+                ]
+            },
+            {
+                path: 'user',
+                children: [
+                    {
+                        path: 'create',
+                        component: UserCreateComponent,
+
+                    },
+                    {
+                        path: 'list',
+                        component: UserListComponent,
+
+                    },
+                    {
+                        path: 'edit/:id',
+                        component: UserEditComponent,
+
+                    },
+                    {
+                        path: 'detail/:id',
+                        component: UserDetailComponent,
 
                     },
                 ]

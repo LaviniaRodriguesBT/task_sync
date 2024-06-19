@@ -1,0 +1,55 @@
+<nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/user/list">Produto</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Lista</li>
+    </ol>
+</nav>
+<h1>Lista de Atividades</h1>
+<hr>
+
+<div class="mat-elevation-z8">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th scope="col">email</th>
+                <th scope="col">password</th>
+                <th scope="col">cpf</th>
+
+                <th scope="col">nome</th>
+                <th scope="col">endereço</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+        @for(user of users; track $index){
+            <tr>
+                <th scope="row">{{user.id}}</th>
+                <td>{{user.name}}</td>
+                <td>
+                    <div class="row">
+                        <div class="col-4">
+                            <a class="btn btn-primary" routerLink="/user/detail/{{user.id}}">
+                                <fa-icon [icon]="fa.faAddressCard"></fa-icon>
+                            </a>
+                        </div>
+                        <div class="col-4">
+                            <a class="btn btn-warning" routerLink="/user/edit/{{user.id}}">
+                                <fa-icon [icon]="fa.faEdit"></fa-icon>
+                            </a>
+                        </div>
+                    
+                        <div class="col-4">
+                            <!-- <a class="btn btn-danger" (click)="deleteTask(user.id!)"> -->
+                            <a class="btn btn-danger">
+                              <fa-icon [icon]="fa.faRemove"></fa-icon>
+                            </a>
+                          </div>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

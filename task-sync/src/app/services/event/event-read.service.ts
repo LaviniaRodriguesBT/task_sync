@@ -23,4 +23,4 @@ export class EventReadService {
   findAll(): Promise<Event[]>{
     return firstValueFrom(this.http.get<Event[]>('http://localhost:3000/event'));
   }
-};
+}
