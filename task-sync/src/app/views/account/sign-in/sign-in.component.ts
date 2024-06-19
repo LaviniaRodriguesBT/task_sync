@@ -45,38 +45,11 @@ export class SignInComponent implements OnInit {
   }
 
   async login() {
-    // let emailField = this.email.value;
-    // let passwordField = this.password.value;
     let credential: UserCredential = {
       email: this.email.value!,
       password: this.password.value!
     };
 
-    // console.log(`email: ${credential.email}`);
-    // console.log(`senha: ${credential.password}`);
-    // console.log(credential);
-
-    // this.authenticationService
-    // .authenticate(credential)
-    // .subscribe(
-    //   {
-    //     next: (value) => {
-    //       console.log(value);
-    //
-    //       if(!value) {
-    //         return;
-    //       }
-    //
-    //       this.authenticationService
-    //       .addCredentialsToLocalStorage(credential.email);
-    //
-    //       this.router.navigate(['/']);
-    //     },
-    //     error: (err) => {
-    //       console.error(err);
-    //     }
-    //   }
-    // );
     try {
       await this.authenticationService.authenticate(credential);
       this.authenticationService
@@ -93,10 +66,6 @@ export class SignInComponent implements OnInit {
   isFormInvalid() {
 
     let isValid = this.email.valid && this.password.valid;
-
-    // if(isValid) return false;
-    // if(!isValid) return true;
-
     return isValid ? false : true;
   }
 

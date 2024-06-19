@@ -24,7 +24,7 @@ export class EventDetailComponent implements OnInit{
   ngOnInit(): void {
     let eventId = this.route.snapshot.paramMap.get('id'); 
     // olha na rota/URL e retorna o valor que está solicitando
-    console.log(`ID do produto: ${eventId}`);
+    console.log(`ID do evento: ${eventId}`);
     this.loadEventById(eventId!);
     // o ! na frente da variavel significa que assegura ter o valor
 
