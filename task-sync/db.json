@@ -6,6 +6,7 @@
       "password": "pc",
       "cpf": "123456",
       "name": "Pedro Carlos",
+      "phone": "9871222",
       "address": "Rua 4, Santa Rita do Sapucai"
     },
     {
@@ -156,8 +157,10 @@
   "event": [
     {
       "id": "1",
+      "code":"001",
       "name": "Feira de Sistemas",
       "description": "Feira escolar da faculdade Estude Bem",
+      "business": "System",
       "date": "10/02/2024"
     },
     {
@@ -325,6 +328,7 @@
       "event_id": "Feira de Sistemas",
       "user_id": "Pedro Carlos",
       "task_id": "Realizar cadastro",
+      "value": "120",
       "start_time": "08:00",
       "end_time": "10:00",
       "date": "2024-06-21",

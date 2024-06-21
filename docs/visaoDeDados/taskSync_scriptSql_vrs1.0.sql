@@ -9,45 +9,59 @@ create table person (
     address character varying(400) not null
 );
 
-create table user_system (
+create table person_phone (
+    id serial primary key,
+    phone character varying(18) not null,
+    person_id integer not null references person(id) on update cascade,
+    unique(person_id, phone)
+);
+
+
+create table user (
     id serial primary key,
     login character varying(200) not null unique,
     password character varying(500) not null,
-    user_system_fk1 integer not null,
-    foreign key (user_system_fk1) references person(id) on delete no action
+    person_id integer not null references person(id) on update cascade
 );
 
 create table event (
     id serial primary key,
-    sigla character varying(20) not null unique,
+    code character varying(20) not null unique,
     name character varying(200) not null,
     description character varying(200) not null,
-    business character varying(200) not null
+    business character varying(200) not null,
+    date character varying(200) not null
 );
 
 create table administrator (
     id serial primary key,
-    user_system_fk1 integer not null,
-    event_fk2 integer not null,
-    foreign key (user_system_fk1) references user_system(id) on delete no action,
-    foreign key (event_fk2) references event(id) on delete no action,
-    unique (user_system_fk1, event_fk2)
+    user_id integer not null references user(id) on update cascade,
+    event_id integer not null references event(id) on update cascade,
+    unique (user_id, event_id)
 );
 
 create table task (
     id serial primary key,
-    name character varying(14) not null unique
+    name character varying(200) not null unique
 );
 
 create table activity (
     id serial primary key,
     value numeric(1000, 2) not null,
-    task_fk1 integer not null,
-    event_fk2 integer not null,
-    foreign key (task_fk1) references task(id) on delete no action,
-    foreign key (event_fk2) references event(id) on delete no action,
-    unique (value, task_fk1, event_fk2)
+    event_id integer not null references event(id) on update cascade,
+    task_id integer not null references task(id) on update cascade,
+    unique (event_id, task_id)
 );
+
+create table contract (
+    id serial primary key,
+    number integer not null, 
+    signature_date timestamp without time zone not null,
+    user_id integer not null references user(id) on update cascade,
+    event_id integer not null references event(id) on update cascade,
+    unique (number, signature_date)
+);
+
 
 create table scheduling (
     id serial primary key,
@@ -55,42 +69,32 @@ create table scheduling (
     end_time timestamp without time zone not null,
     date timestamp without time zone not null,
     status character varying(50) not null check (status in ('Em aberto', 'Em andamento', 'Finalizada')) default 'Em aberto',
-    task_fk1 integer not null,
-    foreign key (task_fk1) references task(id) on delete no action,
-    unique (date, task_fk1)
-);
-
-create table contract (
-    id serial primary key,
-    number integer not null, 
-    signature_date timestamp without time zone not null,
-    user_system_fk1 integer not null,
-    event_fk2 integer not null,
-    scheduling_fk3 integer not null,
-    foreign key (user_system_fk1) references user_system(id) on delete no action,
-    foreign key (event_fk2) references event(id) on delete no action,
-    foreign key (scheduling_fk3) references scheduling(id) on delete no action,
-    unique (number, signature_date)
+    task_id integer not null references task(id) on update cascade,
+    contract_id integer not null references contract(id) on update cascade,
+    unique (date, contract_id, task_id )
 );
 
 create table chat (
     id serial primary key,
     type character varying(14) not null,
     date_time timestamp without time zone not null,
-    user_system_fk1 integer not null,
-    event_fk2 integer not null,
-    foreign key (user_system_fk1) references user_system(id) on delete no action,
-    foreign key (event_fk2) references event(id) on delete no action,
-    unique (date_time, type, user_system_fk1, event_fk2)
+    user_id integer not null references user(id) on update cascade,
+    event_id integer not null references event(id) on update cascade,
+    unique (date_time, type, user_id, event_id)
+);
+
+create table chat_user (
+    id serial primary key,
+    user_id integer not null references user(id) on update cascade,
+    chat_id integer not null references chat(id) on update cascade,
+    unique (user_id, chat_id)
 );
 
 create table message (
     id serial primary key,
     date_time timestamp without time zone not null,
     text character varying(800) not null,
-    user_system_fk1 integer not null,
-    chat_fk2 integer not null,
-    foreign key (user_system_fk1) references user_system(id) on delete no action,
-    foreign key (chat_fk2) references chat(id) on delete no action,
-    unique (date_time, text, chat_fk2)
+    user_id integer not null references user(id) on update cascade,
+    chat_id integer not null references chat(id) on update cascade,
+    unique (date_time, text, user_id, chat_id)
 );
