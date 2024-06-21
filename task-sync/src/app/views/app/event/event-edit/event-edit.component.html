@@ -6,7 +6,7 @@
         <li class="breadcrumb-item active" aria-current="page">Editar</li>
     </ol>
 </nav>
-<h1>Editar produto</h1>
+<h1>Editar Informações do Evento</h1>
 <hr>
 
 <form class="form" method="post" (ngSubmit)="update()" [formGroup]="form">
@@ -18,6 +18,10 @@
         <div class="form-group col-12 mt-2">
             <label for="description">Descrição</label>
             <input type="text" class="form-control" id="description" placeholder="Descrição" formControlName="description">
+        </div>
+        <div class="form-group col-12 mt-2">
+            <label for="date">Descrição</label>
+            <input type="text" class="form-control" id="date" placeholder="Data" formControlName="date">
         </div>
         <div class="col-12 text-end mt-2">
             <div class="col-12 text-end mt-2">

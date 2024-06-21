@@ -26,21 +26,20 @@
                     <div class="row">
                         <div class="col-4">
                             <a class="btn btn-primary" routerLink="/task/detail/{{task.id}}">
-                                <fa-icon [icon]="fa.faAddressCard"></fa-icon>
+                                <fa-icon [icon]="fa.faAddressCard" title="Ver detalhes"></fa-icon>
                             </a>
                         </div>
                         <div class="col-4">
                             <a class="btn btn-warning" routerLink="/task/edit/{{task.id}}">
-                                <fa-icon [icon]="fa.faEdit"></fa-icon>
+                                <fa-icon [icon]="fa.faEdit" title="Editar atividade"></fa-icon>
                             </a>
                         </div>
                     
                         <div class="col-4">
-                            <!-- <a class="btn btn-danger" (click)="deleteTask(task.id!)"> -->
-                            <a class="btn btn-danger">
-                              <fa-icon [icon]="fa.faRemove"></fa-icon>
+                            <a class="btn btn-danger" (click)="deleteTask(task.id!)">
+                              <fa-icon [icon]="fa.faRemove" title="Excluir atividade"></fa-icon>
                             </a>
-                          </div>
+                        </div>
                     </div>
                 </td>
             </tr>

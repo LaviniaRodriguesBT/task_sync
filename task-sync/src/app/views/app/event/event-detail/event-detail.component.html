@@ -24,8 +24,8 @@
             <input type="text" class="form-control" id="date" placeholder="Descrição" readonly value="{{eventInformation?.date}}">
         </div>
         <div class="col-12 text-end mt-2">
-            <button class="btn btn-secondary col-2 me-4" href="/event/list">Voltar</button>
-            <button class="btn btn-primary col-2" href="/event/edit/100">Editar</button>
+            <button class="btn btn-secondary col-2 me-4" routerLink="/event/list">Voltar</button>
+            <button class="btn btn-primary col-2" routerLink="/event/edit/{{eventInformation?.id}}">Editar</button>
         </div>
     </div>
 </form>

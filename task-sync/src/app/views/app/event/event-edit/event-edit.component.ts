@@ -53,7 +53,6 @@ export class EventEditComponent implements OnInit {
   async loadEventById(eventId: string) {
     let event = await this.eventReadService.findById(eventId);
     console.log(event);
-    // this.eventInformation = event;
     this.form.controls['name'].setValue(event.name);
     this.form.controls['description'].setValue(event.description);
     this.form.controls['date'].setValue(event.date);
@@ -61,11 +60,6 @@ export class EventEditComponent implements OnInit {
 
   async update() {
     try {
-      // let event: Events = {
-      //   id: this.eventInformation?.id!,
-      //   name: this.eventInformation?.name!,
-      //   price: this.eventInformation?.price!
-      // }
       const event: Event = {
         id: this.eventId!,
         name: this.form.controls['name'].value,

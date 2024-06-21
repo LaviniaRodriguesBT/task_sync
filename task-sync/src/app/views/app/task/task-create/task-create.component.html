@@ -9,7 +9,7 @@
 <h1>Cadastrar nova atividade</h1>
 <hr>
 
-<form class="form">
+<form class="form" [formGroup]="form" (ngSubmit)="create()">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
             <label for="name">Nome</label>
