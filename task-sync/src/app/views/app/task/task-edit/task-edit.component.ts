@@ -18,8 +18,6 @@ import { TaskUpdateService } from '../../../../services/task/task-update.service
   styleUrl: './task-edit.component.css'
 })
 export class TaskEditComponent {
-
-  // taskInformation?: Tasks;
   taskId?: string;
   form!: FormGroup;
 
@@ -29,18 +27,18 @@ export class TaskEditComponent {
   priceMaxValue: number = 500;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private taskReadService: TaskReadService,
-              private taskUpdateService: TaskUpdateService,
-              private toastrService: ToastrService,
-              private router: Router,
-              private formBuilder: FormBuilder) {
+    private taskReadService: TaskReadService,
+    private taskUpdateService: TaskUpdateService,
+    private toastrService: ToastrService,
+    private router: Router,
+    private formBuilder: FormBuilder) {
     this.initializeForm();
   }
 
   initializeForm() {
     this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      
+
     });
   }
 
@@ -53,21 +51,15 @@ export class TaskEditComponent {
   async loadTaskById(taskId: string) {
     let task = await this.taskReadService.findById(taskId);
     console.log(task);
-    // this.taskInformation = task;
     this.form.controls['name'].setValue(task.name);
   }
 
   async update() {
     try {
-      // let task: Tasks = {
-      //   id: this.taskInformation?.id!,
-      //   name: this.taskInformation?.name!,
-      //   price: this.taskInformation?.price!
-      // }
       const task: Task = {
         id: this.taskId!,
         name: this.form.controls['name'].value,
-    
+
       }
 
       console.log(task);
@@ -84,5 +76,3 @@ export class TaskEditComponent {
   }
 
 }
-
-

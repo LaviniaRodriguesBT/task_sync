@@ -11,7 +11,7 @@ import { faAddressCard, faPlus } from '@fortawesome/free-solid-svg-icons';
 @Component({
   selector: 'task-sync-user-list',
   standalone: true,
-  imports: [    
+  imports: [
     FontAwesomeModule,
     RouterModule,
   ],
@@ -27,23 +27,20 @@ export class UserListComponent {
   users: User[] = [];
 
   constructor(private userReadService: UserReadService, private userDeleteService: UserDeleteService, private toastrService: ToastrService
-  ){
+  ) {
 
   }
 
   ngOnInit(): void {
     this.loadUsers();
-    
+
   }
 
-  async loadUsers(){
+  async loadUsers() {
     this.users = await this.userReadService.findAll();
   }
 
-
-
-
-  async deleteUser(userId: string){
+  async deleteUser(userId: string) {
     try {
       console.log('iniciando a remocao do usero' + userId);
       await this.userDeleteService.delete(userId);
@@ -52,9 +49,9 @@ export class UserListComponent {
       await this.loadUsers();
     } catch (error) {
       this.toastrService.error('Não foi possível remover o usero');
-      
+
     }
-    
+
   }
 
 }

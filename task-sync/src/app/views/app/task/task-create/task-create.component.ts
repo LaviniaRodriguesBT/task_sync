@@ -3,7 +3,7 @@ import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } 
 import { RouterModule, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { TaskCreateService } from '../../../../services/task/task-create.service';
-import {Task} from "../../../../domain/model/task.model";
+import { Task } from "../../../../domain/model/task.model";
 
 @Component({
   selector: 'task-sync-task-create',
@@ -16,8 +16,8 @@ import {Task} from "../../../../domain/model/task.model";
   templateUrl: './task-create.component.html',
   styleUrl: './task-create.component.css'
 })
-export class TaskCreateComponent implements OnInit{
-  
+export class TaskCreateComponent implements OnInit {
+
   form!: FormGroup;
 
   nameMinLength: number = 3;
@@ -39,7 +39,7 @@ export class TaskCreateComponent implements OnInit{
   initializeForm() {
     this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-  
+
     });
   }
 
@@ -65,5 +65,3 @@ export class TaskCreateComponent implements OnInit{
   }
 
 }
-
-

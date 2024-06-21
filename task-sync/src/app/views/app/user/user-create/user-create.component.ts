@@ -17,7 +17,7 @@ import { UserCreateService } from '../../../../services/user/user-create.service
   styleUrl: './user-create.component.css'
 })
 
-export class UserCreateComponent implements OnInit{
+export class UserCreateComponent implements OnInit {
 
   form!: FormGroup;
 
@@ -40,7 +40,7 @@ export class UserCreateComponent implements OnInit{
   initializeForm() {
     this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-  
+
     });
   }
 
@@ -52,7 +52,7 @@ export class UserCreateComponent implements OnInit{
       name: this.form.controls['name'].value,
       address: this.form.controls['address'].value,
       phone: this.form.controls['phone'].value,
-    
+
     }
 
     console.log('preparando para criar o usuario...');
@@ -73,5 +73,4 @@ export class UserCreateComponent implements OnInit{
 
 }
 
-  
-  
+

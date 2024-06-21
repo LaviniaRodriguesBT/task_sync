@@ -19,7 +19,6 @@ import { UserUpdateService } from '../../../../services/user/user-update.service
 })
 export class UserEditComponent {
 
-  // userInformation?: Users;
   userId?: string;
   form!: FormGroup;
 
@@ -30,11 +29,11 @@ export class UserEditComponent {
   priceMaxValue: number = 500;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private userReadService: UserReadService,
-              private userUpdateService: UserUpdateService,
-              private toastrService: ToastrService,
-              private router: Router,
-              private formBuilder: FormBuilder) {
+    private userReadService: UserReadService,
+    private userUpdateService: UserUpdateService,
+    private toastrService: ToastrService,
+    private router: Router,
+    private formBuilder: FormBuilder) {
     this.initializeForm();
   }
 
@@ -46,7 +45,7 @@ export class UserEditComponent {
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
       phone: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
       address: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      
+
     });
   }
 
@@ -59,7 +58,6 @@ export class UserEditComponent {
   async loadUserById(userId: string) {
     let user = await this.userReadService.findById(userId);
     console.log(user);
-    // this.userInformation = user;
     this.form.controls['name'].setValue(user.name);
   }
 

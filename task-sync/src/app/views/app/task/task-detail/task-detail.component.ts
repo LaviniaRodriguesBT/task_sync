@@ -13,29 +13,21 @@ import { Task } from '../../../../domain/model/task.model';
   styleUrl: './task-detail.component.css'
 })
 export class TaskDetailComponent implements OnInit {
-  
+
   taskInformation?: Task;
 
-  // o ? na frente da variavel significa pode ser nula ou ter valor
-
   constructor(private route: ActivatedRoute,
-              private taskReadSevice: TaskReadService) {}
+    private taskReadSevice: TaskReadService) { }
 
   ngOnInit(): void {
-    let taskId = this.route.snapshot.paramMap.get('id'); 
-    // olha na rota/URL e retorna o valor que está solicitando
+    let taskId = this.route.snapshot.paramMap.get('id');
     console.log(`ID do produto: ${taskId}`);
     this.loadTaskById(taskId!);
-    // o ! na frente da variavel significa que assegura ter o valor
-
   }
 
-  async loadTaskById(taskId: string){
+  async loadTaskById(taskId: string) {
     let task = await this.taskReadSevice.findById(taskId);
     console.log(task);
     this.taskInformation = task;
   }
 }
-
-
-

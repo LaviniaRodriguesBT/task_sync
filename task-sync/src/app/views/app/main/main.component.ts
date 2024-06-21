@@ -28,8 +28,8 @@ import { faCopyright } from '@fortawesome/free-solid-svg-icons';
     MatToolbarModule,
     MatIconModule,
     MatListModule,
-    RouterModule, 
-    MatExpansionModule, 
+    RouterModule,
+    MatExpansionModule,
     MatTooltipModule,
     FontAwesomeModule
   ],
@@ -42,7 +42,7 @@ export class MainComponent {
   faCopyright = faCopyright;
 
   constructor(private router: Router,
-              private authenticationService: AuthenticationService,) {
+    private authenticationService: AuthenticationService,) {
   }
 
   logout() {

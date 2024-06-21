@@ -9,10 +9,10 @@
 <h1>Lista de Atividades</h1>
 <div class="col-4">
     <a class="btn btn-create btn-primary text-white" routerLink="/event/create">
-      <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
-      Criar novo atividade
+        <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
+        Criar novo atividade
     </a>
-  </div>
+</div>
 <hr>
 
 <hr>
@@ -26,7 +26,7 @@
             </tr>
         </thead>
         <tbody>
-        @for(task of tasks; track $index){
+            @for(task of tasks; track $index){
             <tr>
                 <th scope="row" class="text-center">{{task.id}}</th>
                 <td class="text-center">{{task.name}}</td>
@@ -42,16 +42,16 @@
                                 <fa-icon [icon]="fa.faEdit" title="Editar atividade"></fa-icon>
                             </a>
                         </div>
-                    
+
                         <div class="col-4">
                             <a class="btn btn-danger" (click)="deleteTask(task.id!)">
-                              <fa-icon [icon]="fa.faRemove" title="Excluir atividade"></fa-icon>
+                                <fa-icon [icon]="fa.faRemove" title="Excluir atividade"></fa-icon>
                             </a>
                         </div>
                     </div>
                 </td>
             </tr>
-        }
+            }
         </tbody>
     </table>
 </div>
