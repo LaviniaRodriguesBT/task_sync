@@ -19,125 +19,125 @@ import { UserCreateComponent } from './views/app/user/user-create/user-create.co
 import { UserDetailComponent } from './views/app/user/user-detail/user-detail.component';
 import { UserEditComponent } from './views/app/user/user-edit/user-edit.component';
 import { UserListComponent } from './views/app/user/user-list/user-list.component';
-
+import { SchedulingCreateComponent } from './views/app/event/scheduling/scheduling-create/scheduling-create.component';
+import { SchedulingDetailComponent } from './views/app/event/scheduling/scheduling-detail/scheduling-detail.component';
+import { SchedulingEditComponent } from './views/app/event/scheduling/scheduling-edit/scheduling-edit.component';
+import { SchedulingListComponent } from './views/app/event/scheduling/scheduling-list/scheduling-list.component';
 
 export const routes: Routes = [
-    {
-        path: 'account/sign-in',
-        component: SignInComponent,
-
-    },
-
-    {
-        path: 'account/sign-up',
-        component: SignUpComponent,
-
-    },
-
-    {
+  {
+    path: 'account/sign-in',
+    component: SignInComponent,
+  },
+  {
+    path: 'account/sign-up',
+    component: SignUpComponent,
+  },
+  {
+    path: '',
+    component: MainComponent,
+    canActivate: [authenticationGuard],
+    children: [
+      {
         path: '',
-        component: MainComponent,
-        canActivate: [authenticationGuard],
+        component: HomeComponent,
+      },
+      {
+        path: 'help',
+        component: HelpComponent,
+      },
+      {
+        path: 'account/my-profile',
+        component: MyProfileComponent,
+      },
+      {
+        path: 'event',
         children: [
-
-            {
-                path: '',
-                component: HomeComponent,
-
-            },
-            {
-                path: 'help',
-                component: HelpComponent,
-
-            },
-            {
-                path: 'account/my-profile',
-                component: MyProfileComponent,
-
-            },
-            {
-                path: 'event',
-                children: [
-                    {
-                        path: 'create',
-                        component: EventCreateComponent,
-
-                    },
-                    {
-                        path: 'list',
-                        component: EventListComponent,
-
-                    },
-                    {
-                        path: 'edit/:id',
-                        component: EventEditComponent,
-
-                    },
-                    {
-                        path: 'detail/:id',
-                        component: EventDetailComponent,
-
-                    },
-                ]
-            },
-            {
-                path: 'task',
-                children: [
-                    {
-                        path: 'create',
-                        component: TaskCreateComponent,
-
-                    },
-                    {
-                        path: 'list',
-                        component: TaskListComponent,
-
-                    },
-                    {
-                        path: 'edit/:id',
-                        component: TaskEditComponent,
-
-                    },
-                    {
-                        path: 'detail/:id',
-                        component: TaskDetailComponent,
-
-                    },
-                ]
-            },
-            {
-                path: 'user',
-                children: [
-                    {
-                        path: 'create',
-                        component: UserCreateComponent,
-
-                    },
-                    {
-                        path: 'list',
-                        component: UserListComponent,
-
-                    },
-                    {
-                        path: 'edit/:id',
-                        component: UserEditComponent,
-
-                    },
-                    {
-                        path: 'detail/:id',
-                        component: UserDetailComponent,
-
-                    },
-                ]
-            },
-            {
-                path: '**',
-                component: NotFoundComponent,
-
-            }
-
-
-        ]
-    }
-
+          {
+            path: 'create',
+            component: EventCreateComponent,
+          },
+          {
+            path: 'list',
+            component: EventListComponent,
+          },
+          {
+            path: 'edit/:id',
+            component: EventEditComponent,
+          },
+          {
+            path: 'detail/:id',
+            component: EventDetailComponent,
+          },
+          {
+            path: 'scheduling',
+            children: [
+              {
+                path: 'create',
+                component: SchedulingCreateComponent,
+              },
+              {
+                path: 'list',
+                component: SchedulingListComponent,
+              },
+              {
+                path: 'edit/:id',
+                component: SchedulingEditComponent,
+              },
+              {
+                path: 'detail/:id',
+                component: SchedulingDetailComponent,
+              },
+            ],
+          },
+        ],
+      },
+      {
+        path: 'task',
+        children: [
+          {
+            path: 'create',
+            component: TaskCreateComponent,
+          },
+          {
+            path: 'list',
+            component: TaskListComponent,
+          },
+          {
+            path: 'edit/:id',
+            component: TaskEditComponent,
+          },
+          {
+            path: 'detail/:id',
+            component: TaskDetailComponent,
+          },
+        ],
+      },
+      {
+        path: 'user',
+        children: [
+          {
+            path: 'create',
+            component: UserCreateComponent,
+          },
+          {
+            path: 'list',
+            component: UserListComponent,
+          },
+          {
+            path: 'edit/:id',
+            component: UserEditComponent,
+          },
+          {
+            path: 'detail/:id',
+            component: UserDetailComponent,
+          },
+        ],
+      },
+      {
+        path: '**',
+        component: NotFoundComponent,
+      },
+    ],
+  },
 ];
