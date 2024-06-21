@@ -39,8 +39,14 @@ export class SchedulingEditComponent implements OnInit {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      price: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      event_id: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
+      user_id: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      task_id: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      value: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      start_time: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      end_time: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      date: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      status: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
     });
   }
 
@@ -69,6 +75,7 @@ export class SchedulingEditComponent implements OnInit {
         event_id: this.form.controls['event_id'].value,
         user_id: this.form.controls['user_id'].value,
         task_id: this.form.controls['task_id'].value,
+        value: this.form.controls['value'].value,
         start_time: this.form.controls['start_time'].value,
         end_time: this.form.controls['end_time'].value,
         date: this.form.controls['date'].value,
@@ -89,6 +96,7 @@ export class SchedulingEditComponent implements OnInit {
     return this.form.controls['event_id'].valid
       && this.form.controls['user_id'].valid 
       && this.form.controls['task_id'].valid
+      && this.form.controls['value'].valid
       && this.form.controls['start_time'].valid
       && this.form.controls['end_time'].valid
       && this.form.controls['date'].valid

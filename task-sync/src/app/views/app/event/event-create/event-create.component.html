@@ -12,12 +12,20 @@
 <form class="form" [formGroup]="form" (ngSubmit)="create()">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
+            <label for="code">Código</label>
+            <input type="text" class="form-control" id="code" placeholder="Codigo" formControlName="code">
+        </div>
+        <div class="form-group col-12 mt-2">
             <label for="name">Nome</label>
             <input type="text" class="form-control" id="name" placeholder="Nome" formControlName="name">
         </div>
         <div class="form-group col-12 mt-2">
             <label for="description">Descrição</label>
             <input type="text" class="form-control" id="description" placeholder="Descrição" formControlName="description">
+        </div>
+        <div class="form-group col-12 mt-2">
+            <label for="business">Descrição</label>
+            <input type="text" class="form-control" id="business" placeholder="Area de negócio" formControlName="business">
         </div>
         <div class="form-group col-12 mt-2">
             <label for="date">Data</label>

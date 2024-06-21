@@ -1,325 +1,348 @@
 {
   "user": [
     {
-      "id": "1",
-      "email": "pedrocarlos@gmail.com",
-      "password": "pc",
-      "cpf": "123456",
-      "name": "Pedro Carlos",
-      "phone": "9871222",
-      "address": "Rua 4, Santa Rita do Sapucai"
-    },
-    {
       "id": "2",
-      "email": "mariajose@gmail.com",
-      "password": "mj",
+      "email": "mariasilva@gmail.com",
+      "password": "ms",
       "cpf": "654321",
-      "name": "Maria Jose",
-      "address": "Rua 7, Belo Horizonte"
+      "name": "Maria Silva",
+      "phone": "9821333",
+      "address": "Avenida Central, 100, Belo Horizonte"
     },
     {
       "id": "3",
-      "email": "joaosilva@gmail.com",
+      "email": "joaosouza@gmail.com",
       "password": "js",
-      "cpf": "789456",
-      "name": "Joao Silva",
-      "address": "Avenida 10, Sao Paulo"
+      "cpf": "111222",
+      "name": "João Souza",
+      "phone": "9831444",
+      "address": "Rua das Flores, 250, São Paulo"
     },
     {
       "id": "4",
       "email": "anapaula@gmail.com",
       "password": "ap",
-      "cpf": "456123",
+      "cpf": "333444",
       "name": "Ana Paula",
-      "address": "Rua 12, Rio de Janeiro"
+      "phone": "9841555",
+      "address": "Rua Nova, 500, Rio de Janeiro"
     },
     {
       "id": "5",
-      "email": "carlosaugusto@gmail.com",
-      "password": "ca",
-      "cpf": "123789",
-      "name": "Carlos Augusto",
-      "address": "Rua 15, Curitiba"
+      "email": "luizfelipe@gmail.com",
+      "password": "lf",
+      "cpf": "555666",
+      "name": "Luiz Felipe",
+      "phone": "9851666",
+      "address": "Avenida Paulista, 900, São Paulo"
     },
     {
       "id": "6",
-      "email": "marinaluiza@gmail.com",
-      "password": "ml",
-      "cpf": "321654",
-      "name": "Marina Luiza",
-      "address": "Avenida 3, Salvador"
+      "email": "claudiadias@gmail.com",
+      "password": "cd",
+      "cpf": "777888",
+      "name": "Claudia Dias",
+      "phone": "9861777",
+      "address": "Rua da Paz, 300, Salvador"
     },
     {
       "id": "7",
-      "email": "pedrohenrique@gmail.com",
-      "password": "ph",
-      "cpf": "654789",
-      "name": "Pedro Henrique",
-      "address": "Rua 1, Florianopolis"
+      "email": "fernandoalves@gmail.com",
+      "password": "fa",
+      "cpf": "999000",
+      "name": "Fernando Alves",
+      "phone": "9871888",
+      "address": "Avenida Boa Viagem, 1500, Recife"
     },
     {
       "id": "8",
-      "email": "julianasilva@gmail.com",
-      "password": "js",
-      "cpf": "789123",
-      "name": "Juliana Silva",
-      "address": "Rua 20, Porto Alegre"
+      "email": "carolinacosta@gmail.com",
+      "password": "cc",
+      "cpf": "112233",
+      "name": "Carolina Costa",
+      "phone": "9881999",
+      "address": "Rua das Palmeiras, 800, Curitiba"
     },
     {
       "id": "9",
-      "email": "rodrigobastos@gmail.com",
-      "password": "rb",
-      "cpf": "456789",
-      "name": "Rodrigo Bastos",
-      "address": "Rua 11, Recife"
+      "email": "ricardosantos@gmail.com",
+      "password": "rs",
+      "cpf": "445566",
+      "name": "Ricardo Santos",
+      "phone": "9892000",
+      "address": "Avenida Brasil, 1200, Brasília"
     },
     {
       "id": "10",
-      "email": "fernandosoares@gmail.com",
-      "password": "fs",
-      "cpf": "321789",
-      "name": "Fernando Soares",
-      "address": "Avenida 6, Manaus"
+      "email": "sandraoliveira@gmail.com",
+      "password": "so",
+      "cpf": "667788",
+      "name": "Sandra Oliveira",
+      "phone": "9902111",
+      "address": "Rua da Independência, 600, Porto Alegre"
     },
     {
       "id": "11",
-      "email": "beatrizoliveira@gmail.com",
-      "password": "bo",
-      "cpf": "987456",
-      "name": "Beatriz Oliveira",
-      "address": "Rua 8, Fortaleza"
+      "email": "gustavopereira@gmail.com",
+      "password": "gp",
+      "cpf": "889900",
+      "name": "Gustavo Pereira",
+      "phone": "9912222",
+      "address": "Avenida dos Andradas, 400, Belo Horizonte"
     },
     {
       "id": "12",
-      "email": "andreluiz@gmail.com",
-      "password": "al",
-      "cpf": "654123",
-      "name": "Andre Luiz",
-      "address": "Avenida 9, Natal"
+      "email": "marciaramos@gmail.com",
+      "password": "mr",
+      "cpf": "001122",
+      "name": "Márcia Ramos",
+      "phone": "9922333",
+      "address": "Rua XV de Novembro, 700, Curitiba"
     },
     {
       "id": "13",
-      "email": "renatacosta@gmail.com",
-      "password": "rc",
-      "cpf": "123654",
-      "name": "Renata Costa",
-      "address": "Rua 18, Goiania"
+      "email": "paulomartins@gmail.com",
+      "password": "pm",
+      "cpf": "223344",
+      "name": "Paulo Martins",
+      "phone": "9932444",
+      "address": "Avenida Getúlio Vargas, 1100, Fortaleza"
     },
     {
       "id": "14",
-      "email": "leonardosantos@gmail.com",
-      "password": "ls",
-      "cpf": "789654",
-      "name": "Leonardo Santos",
-      "address": "Rua 13, Vitoria"
+      "email": "alinebarbosa@gmail.com",
+      "password": "ab",
+      "cpf": "445566",
+      "name": "Aline Barbosa",
+      "phone": "9942555",
+      "address": "Rua Marechal Deodoro, 200, Recife"
     },
     {
       "id": "15",
-      "email": "marcelopereira@gmail.com",
-      "password": "mp",
-      "cpf": "456321",
-      "name": "Marcelo Pereira",
-      "address": "Rua 2, Campinas"
+      "email": "carlosmendes@gmail.com",
+      "password": "cm",
+      "cpf": "667788",
+      "name": "Carlos Mendes",
+      "phone": "9952666",
+      "address": "Avenida das Américas, 1300, Rio de Janeiro"
     },
     {
-      "id": "5310",
-      "email": "",
-      "password": "",
-      "cpf": "",
-      "name": "",
-      "address": ""
+      "id": "16",
+      "email": "lucianarodrigues@gmail.com",
+      "password": "lr",
+      "cpf": "889900",
+      "name": "Luciana Rodrigues",
+      "phone": "9962777",
+      "address": "Rua dos Pinheiros, 900, São Paulo"
     },
     {
-      "id": "7911",
-      "email": "",
-      "password": "",
-      "cpf": "",
-      "name": "",
-      "address": ""
-    },
-    {
-      "id": "7037",
-      "email": "",
-      "password": "",
-      "cpf": "",
-      "name": "",
-      "address": ""
-    },
-    {
-      "id": "cdc4",
-      "email": "",
-      "password": "",
-      "cpf": "",
-      "name": "111",
-      "address": ""
+      "id": "17",
+      "email": "robertovieira@gmail.com",
+      "password": "rv",
+      "cpf": "112233",
+      "name": "Roberto Vieira",
+      "phone": "9972888",
+      "address": "Avenida Atlântica, 1400, Rio de Janeiro"
     }
   ],
   "event": [
     {
-      "id": "1",
-      "code":"001",
-      "name": "Feira de Sistemas",
-      "description": "Feira escolar da faculdade Estude Bem",
-      "business": "System",
-      "date": "10/02/2024"
-    },
-    {
       "id": "2",
-      "name": "Congresso de Tecnologia",
-      "description": "Congresso internacional sobre inovações tecnológicas",
+      "code": "002",
+      "name": "Workshop de Inteligência ArtificialDDDDDDDD",
+      "description": "Evento para discutir as últimas tendências em IA",
+      "business": "Technology",
       "date": "15/03/2024"
     },
     {
       "id": "3",
-      "name": "Workshop de Programação",
-      "description": "Oficina prática de programação para iniciantes",
+      "code": "003",
+      "name": "Congresso de Engenharia",
+      "description": "Congresso anual de engenharia com palestras e workshops",
+      "business": "Engineering",
       "date": "20/04/2024"
     },
     {
       "id": "4",
-      "name": "Simpósio de Inteligência Artificial",
-      "description": "Discussão sobre as últimas tendências em IA",
-      "date": "25/05/2024"
+      "code": "004",
+      "name": "Feira de Ciências",
+      "description": "Feira escolar com projetos de ciências",
+      "business": "Education",
+      "date": "05/05/2024"
     },
     {
       "id": "5",
-      "name": "Encontro de Desenvolvedores",
-      "description": "Reunião anual de desenvolvedores de software",
-      "date": "30/06/2024"
+      "code": "005",
+      "name": "Seminário de Sustentabilidade",
+      "description": "Discussões sobre práticas sustentáveis no ambiente corporativo",
+      "business": "Environment",
+      "date": "12/06/2024"
     },
     {
       "id": "6",
-      "name": "Seminário de Segurança da Informação",
-      "description": "Palestras sobre cibersegurança e proteção de dados",
-      "date": "05/07/2024"
+      "code": "006",
+      "name": "Hackathon Universitário",
+      "description": "Competição de programação para universitários",
+      "business": "Technology",
+      "date": "18/07/2024"
     },
     {
       "id": "7",
-      "name": "Hackathon de Inovação",
-      "description": "Competição de programação para soluções inovadoras",
-      "date": "10/08/2024"
+      "code": "007",
+      "name": "Simpósio de Saúde",
+      "description": "Simpósio sobre inovações na área da saúde",
+      "business": "Health",
+      "date": "22/08/2024"
     },
     {
       "id": "8",
-      "name": "Conferência de Redes de Computadores",
-      "description": "Discussão sobre avanços em redes de computadores",
-      "date": "15/09/2024"
+      "code": "008",
+      "name": "Encontro de Empreendedores",
+      "description": "Encontro para troca de experiências entre empreendedores",
+      "business": "Business",
+      "date": "10/09/2024"
     },
     {
       "id": "9",
-      "name": "Palestra de Ciência de Dados",
-      "description": "Exploração de técnicas e ferramentas de ciência de dados",
-      "date": "20/10/2024"
+      "code": "009",
+      "name": "Festival de Inovação",
+      "description": "Festival com exposições de startups inovadoras",
+      "business": "Technology",
+      "date": "25/10/2024"
     },
     {
       "id": "10",
-      "name": "Fórum de Tecnologias Educacionais",
-      "description": "Debate sobre o uso da tecnologia na educação",
-      "date": "25/11/2024"
+      "code": "010",
+      "name": "Feira do Livro",
+      "description": "Feira anual com lançamentos de livros e palestras",
+      "business": "Literature",
+      "date": "05/11/2024"
     },
     {
       "id": "11",
-      "name": "Exposição de Robótica",
-      "description": "Mostra de projetos e inovações em robótica",
-      "date": "30/12/2024"
+      "code": "011",
+      "name": "Conferência de Marketing Digital",
+      "description": "Discussões sobre as tendências do marketing digital",
+      "business": "Marketing",
+      "date": "15/11/2024"
     },
     {
       "id": "12",
-      "name": "Curso de Desenvolvimento Web",
-      "description": "Curso intensivo sobre desenvolvimento de websites",
-      "date": "05/01/2025"
+      "code": "012",
+      "name": "Seminário de Direitos Humanos",
+      "description": "Debates sobre questões de direitos humanos no mundo atual",
+      "business": "Law",
+      "date": "20/12/2024"
     },
     {
       "id": "13",
-      "name": "Treinamento em Machine Learning",
-      "description": "Curso prático sobre aprendizado de máquina",
-      "date": "10/02/2025"
+      "code": "013",
+      "name": "Workshop de Desenvolvimento Pessoal",
+      "description": "Técnicas e práticas para o desenvolvimento pessoal e profissional",
+      "business": "Self-Help",
+      "date": "10/01/2025"
     },
     {
       "id": "14",
-      "name": "Seminário de Blockchain",
-      "description": "Discussão sobre aplicações e futuro do blockchain",
-      "date": "15/03/2025"
+      "code": "014",
+      "name": "Encontro de Programadores",
+      "description": "Encontro para troca de conhecimentos entre programadores",
+      "business": "Technology",
+      "date": "25/01/2025"
     },
     {
       "id": "15",
-      "name": "Conferência de Big Data",
-      "description": "Exploração de técnicas e ferramentas para análise de grandes volumes de dados",
-      "date": "20/04/2025"
+      "code": "015",
+      "name": "Congresso de Psicologia",
+      "description": "Congresso sobre as últimas pesquisas em psicologia",
+      "business": "Health",
+      "date": "05/02/2025"
     },
     {
       "id": "16",
-      "name": "Encontro de Engenharia de Software",
-      "description": "Reunião sobre metodologias e práticas em engenharia de software",
-      "date": "25/05/2025"
+      "code": "016",
+      "name": "Feira de Robótica",
+      "description": "Feira com exposição de projetos de robótica",
+      "business": "Technology",
+      "date": "15/03/2025"
     },
     {
       "id": "17",
-      "name": "Feira de Jogos Digitais",
-      "description": "Exposição de novos jogos e tecnologias de game design",
-      "date": "30/06/2025"
+      "code": "017",
+      "name": "Simulado de Gestão Empresarial",
+      "description": "Simulado para estudantes de administração e gestão empresarial",
+      "business": "Business",
+      "date": "30/03/2025"
+    },
+    {
+      "id": "17d1",
+      "code": "rtret",
+      "name": "rtret",
+      "description": "erter",
+      "business": "tertert",
+      "date": "erg"
     }
   ],
   "task": [
     {
-      "id": "1",
-      "name": "Realizar cadastro021212"
-    },
-    {
       "id": "2",
-      "name": "Conferir cadastro"
+      "name": "Atualizar perfil"
     },
     {
       "id": "3",
-      "name": "Atualizar cadastro"
+      "name": "Enviar mensagem de boas-vindas"
     },
     {
       "id": "4",
-      "name": "Excluir cadastro"
+      "name": "Configurar notificações"
     },
     {
       "id": "5",
-      "name": "Consultar dados"
+      "name": "Realizar pagamento"
     },
     {
       "id": "6",
-      "name": "Emitir relatório"
+      "name": "Visualizar histórico de compras"
     },
     {
       "id": "7",
-      "name": "Gerar gráficos"
+      "name": "Adicionar item ao carrinho"
     },
     {
       "id": "8",
-      "name": "Configurar sistema"
+      "name": "Remover item do carrinho"
     },
     {
       "id": "9",
-      "name": "Enviar notificações"
+      "name": "Editar informações pessoais"
     },
     {
       "id": "10",
-      "name": "Exportar dados"
+      "name": "Visualizar detalhes do produto"
     },
     {
       "id": "11",
-      "name": "Importar dados"
+      "name": "Criar lista de desejos"
     },
     {
       "id": "12",
-      "name": "Fazer backup"
+      "name": "Gerenciar assinatura"
     },
     {
       "id": "13",
-      "name": "Restaurar backup"
+      "name": "Avaliar produto"
     },
     {
       "id": "14",
-      "name": "Gerenciar usuários"
+      "name": "Solicitar suporte"
     },
     {
       "id": "15",
-      "name": "Definir permissões"
+      "name": "Visualizar promoções"
+    },
+    {
+      "id": "16",
+      "name": "Compartilhar conteúdo"
     }
   ],
   "scheduling": [
@@ -336,9 +359,10 @@
     },
     {
       "id": "2",
-      "event_id": "Congresso de Tecnologia",
-      "user_id": "Maria Jose",
-      "task_id": "Conferir cadastro",
+      "event_id": "Workshop de Inteligência Artificial",
+      "user_id": "Maria Silva",
+      "task_id": "Atualizar perfil",
+      "value": "150",
       "start_time": "09:00",
       "end_time": "11:00",
       "date": "2024-06-22",
@@ -346,19 +370,21 @@
     },
     {
       "id": "3",
-      "event_id": "Workshop de Programação",
-      "user_id": "Joao Silva",
-      "task_id": "Atualizar cadastro",
+      "event_id": "Congresso de Engenharia",
+      "user_id": "João Souza",
+      "task_id": "Enviar mensagem de boas-vindas",
+      "value": "100",
       "start_time": "10:00",
       "end_time": "12:00",
       "date": "2024-06-23",
-      "status": "Finalizado"
+      "status": "Concluído"
     },
     {
       "id": "4",
-      "event_id": "Simpósio de Inteligência Artificial",
+      "event_id": "Feira de Ciências",
       "user_id": "Ana Paula",
-      "task_id": "Excluir cadastro",
+      "task_id": "Configurar notificações",
+      "value": "80",
       "start_time": "11:00",
       "end_time": "13:00",
       "date": "2024-06-24",
@@ -366,9 +392,10 @@
     },
     {
       "id": "5",
-      "event_id": "Encontro de Desenvolvedores",
-      "user_id": "Carlos Augusto",
-      "task_id": "Consultar dados",
+      "event_id": "Seminário de Sustentabilidade",
+      "user_id": "Luiz Felipe",
+      "task_id": "Realizar pagamento",
+      "value": "200",
       "start_time": "12:00",
       "end_time": "14:00",
       "date": "2024-06-25",
@@ -376,29 +403,32 @@
     },
     {
       "id": "6",
-      "event_id": "Seminário de Segurança da Informação",
-      "user_id": "Marina Luiza",
-      "task_id": "Emitir relatório",
+      "event_id": "Hackathon Universitário",
+      "user_id": "Claudia Dias",
+      "task_id": "Visualizar histórico de compras",
+      "value": "90",
       "start_time": "13:00",
       "end_time": "15:00",
       "date": "2024-06-26",
-      "status": "Em aberto"
+      "status": "Concluído"
     },
     {
       "id": "7",
-      "event_id": "Hackathon de Inovação",
-      "user_id": "Pedro Henrique",
-      "task_id": "Gerar gráficos",
+      "event_id": "Simpósio de Saúde",
+      "user_id": "Fernando Alves",
+      "task_id": "Adicionar item ao carrinho",
+      "value": "110",
       "start_time": "14:00",
       "end_time": "16:00",
       "date": "2024-06-27",
-      "status": "Finalizado"
+      "status": "Em aberto"
     },
     {
       "id": "8",
-      "event_id": "Conferência de Redes de Computadores",
-      "user_id": "Juliana Silva",
-      "task_id": "Configurar sistema",
+      "event_id": "Encontro de Empreendedores",
+      "user_id": "Carolina Costa",
+      "task_id": "Remover item do carrinho",
+      "value": "70",
       "start_time": "15:00",
       "end_time": "17:00",
       "date": "2024-06-28",
@@ -406,74 +436,80 @@
     },
     {
       "id": "9",
-      "event_id": "Palestra de Ciência de Dados",
-      "user_id": "Rodrigo Bastos",
-      "task_id": "Enviar notificações",
+      "event_id": "Festival de Inovação",
+      "user_id": "Ricardo Santos",
+      "task_id": "Editar informações pessoais",
+      "value": "180",
       "start_time": "16:00",
       "end_time": "18:00",
       "date": "2024-06-29",
-      "status": "Em aberto"
+      "status": "Concluído"
     },
     {
       "id": "10",
-      "event_id": "Fórum de Tecnologias Educacionais",
-      "user_id": "Fernando Soares",
-      "task_id": "Exportar dados",
+      "event_id": "Feira do Livro",
+      "user_id": "Sandra Oliveira",
+      "task_id": "Visualizar detalhes do produto",
+      "value": "95",
       "start_time": "17:00",
       "end_time": "19:00",
       "date": "2024-06-30",
-      "status": "Em andamento"
+      "status": "Em aberto"
     },
     {
       "id": "11",
-      "event_id": "Exposição de Robótica",
-      "user_id": "Beatriz Oliveira",
-      "task_id": "Importar dados",
-      "start_time": "18:00",
-      "end_time": "20:00",
+      "event_id": "Conferência de Marketing Digital",
+      "user_id": "Gustavo Pereira",
+      "task_id": "Criar lista de desejos",
+      "value": "130",
+      "start_time": "08:00",
+      "end_time": "10:00",
       "date": "2024-07-01",
-      "status": "Finalizado"
+      "status": "Em andamento"
     },
     {
       "id": "12",
-      "event_id": "Curso de Desenvolvimento Web",
-      "user_id": "Andre Luiz",
-      "task_id": "Fazer backup",
-      "start_time": "19:00",
-      "end_time": "21:00",
+      "event_id": "Seminário de Direitos Humanos",
+      "user_id": "Márcia Ramos",
+      "task_id": "Gerenciar assinatura",
+      "value": "75",
+      "start_time": "09:00",
+      "end_time": "11:00",
       "date": "2024-07-02",
-      "status": "Em aberto"
+      "status": "Concluído"
     },
     {
       "id": "13",
-      "event_id": "Treinamento em Machine Learning",
-      "user_id": "Renata Costa",
-      "task_id": "Restaurar backup",
-      "start_time": "20:00",
-      "end_time": "22:00",
+      "event_id": "Workshop de Desenvolvimento Pessoal",
+      "user_id": "Paulo Martins",
+      "task_id": "Avaliar produto",
+      "value": "160",
+      "start_time": "10:00",
+      "end_time": "12:00",
       "date": "2024-07-03",
-      "status": "Em andamento"
-    },
-    {
-      "id": "14",
-      "event_id": "Seminário de Blockchain",
-      "user_id": "Leonardo Santos",
-      "task_id": "Gerenciar usuários",
-      "start_time": "21:00",
-      "end_time": "23:00",
-      "date": "2024-07-04",
       "status": "Em aberto"
     },
     {
-      "id": "15",
-      "event_id": "Conferência de Big Data",
-      "user_id": "Marcelo Pereira",
-      "task_id": "Definir permissões",
-      "start_time": "22:00",
-      "end_time": "00:00",
-      "date": "2024-07-05",
+      "id": "14",
+      "event_id": "Encontro de Programadores",
+      "user_id": "Aline Barbosa",
+      "task_id": "Solicitar suporte",
+      "value": "85",
+      "start_time": "11:00",
+      "end_time": "13:00",
+      "date": "2024-07-04",
       "status": "Em andamento"
+    },
+    {
+      "id": "15",
+      "event_id": "Congresso de Psicologia",
+      "user_id": "Carlos Mendes",
+      "task_id": "Visualizar promoções",
+      "value": "105",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "date": "2024-07-05",
+      "status": "Concluído"
     }
   ]
-  
 }

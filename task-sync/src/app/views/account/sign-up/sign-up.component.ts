@@ -72,32 +72,9 @@ export class SignUpComponent implements OnInit{
     });
   }
 
-  // fullName = new FormControl(null, [
-  //   Validators.minLength(3),
-  //   Validators.maxLength(10),
-  // ]);
-
-  // email = new FormControl(null, Validators.email);
-
-  // password = new FormControl(null, [
-  //   Validators.minLength(3),
-  //   Validators.maxLength(10),
-  // ]);
-
-  // repeatPassword = new FormControl(null, [
-  //   Validators.minLength(3),
-  //   Validators.maxLength(10),
-  // ]);
 
   isFormInvalid(){
-    // let isValid = this.fullName.valid 
-    // && this.email.valid
-    // && this.password.valid
-    // && this.repeatPassword.valid;
 
-    // if(this.password.value !== this.repeatPassword.value) {
-    //   return true;
-    // }
 
     let isValid = this.form.controls['fullName'].valid
     && this.form.controls['email'].valid
@@ -119,6 +96,7 @@ export class SignUpComponent implements OnInit{
       email: this.form.controls['email'].value,
       password: this.form.controls['password'].value,
       cpf: this.form.controls['cpf'].value,
+      phone: this.form.controls['phone'].value,
       name: this.form.controls['name'].value,
       address: this.form.controls['address'].value,
     };

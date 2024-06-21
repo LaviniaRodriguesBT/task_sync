@@ -3,6 +3,7 @@ export interface Scheduling{
     event_id: string,
     user_id: string,
     task_id: string,
+    value: string,
     start_time: string,
     end_time: string,
     date: string,

@@ -23,6 +23,7 @@ export class EventEditComponent implements OnInit {
   eventId?: string;
   form!: FormGroup;
 
+
   nameMinLength: number = 3;
   nameMaxLength: number = 10;
   priceMinValue: number = 1;
@@ -39,8 +40,12 @@ export class EventEditComponent implements OnInit {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      price: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      code: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
+      name: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      description: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      business: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      date: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+  
     });
   }
 
@@ -53,8 +58,10 @@ export class EventEditComponent implements OnInit {
   async loadEventById(eventId: string) {
     let event = await this.eventReadService.findById(eventId);
     console.log(event);
+    this.form.controls['code'].setValue(event.code);
     this.form.controls['name'].setValue(event.name);
     this.form.controls['description'].setValue(event.description);
+    this.form.controls['business'].setValue(event.business);
     this.form.controls['date'].setValue(event.date);
   }
 
@@ -62,8 +69,10 @@ export class EventEditComponent implements OnInit {
     try {
       const event: Event = {
         id: this.eventId!,
+        code: this.form.controls['code'].value,
         name: this.form.controls['name'].value,
         description: this.form.controls['description'].value,
+        business: this.form.controls['business'].value,
         date: this.form.controls['date'].value,
       }
 

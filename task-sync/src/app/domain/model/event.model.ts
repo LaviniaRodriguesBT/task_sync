@@ -1,6 +1,8 @@
 export interface Event {
-    id?: string;
-    name: string;
-    description: string;
-    date: string;
+    id?: string,
+    code: string,
+    name: string,
+    description: string,
+    business: string,
+    date: string,
 }

@@ -39,16 +39,20 @@ export class EventCreateComponent implements OnInit{
 
   initializeForm() {
     this.form = this.formBuilder.group({
+      code: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
       description: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
+      business: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
       date: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
     });
   }
 
   async create() {
     const event: Event = {
+      code: this.form.controls['code'].value,
       name: this.form.controls['name'].value,
       description: this.form.controls['description'].value,
+      business: this.form.controls['business'].value,
       date: this.form.controls['date'].value,
     }
 

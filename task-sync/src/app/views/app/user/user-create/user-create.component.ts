@@ -51,6 +51,7 @@ export class UserCreateComponent implements OnInit{
       cpf: this.form.controls['cpf'].value,
       name: this.form.controls['name'].value,
       address: this.form.controls['address'].value,
+      phone: this.form.controls['phone'].value,
     
     }
 
@@ -67,7 +68,7 @@ export class UserCreateComponent implements OnInit{
   }
 
   validateFields() {
-    return this.form.controls['email'].valid && this.form.controls['password'].valid && this.form.controls['cpf'].valid && this.form.controls['name'].valid && this.form.controls['address'].valid;
+    return this.form.controls['email'].valid && this.form.controls['password'].valid && this.form.controls['cpf'].valid && this.form.controls['name'].valid && this.form.controls['address'].valid && this.form.controls['phone'].valid;
   }
 
 }

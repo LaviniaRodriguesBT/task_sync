@@ -6,6 +6,7 @@ import { Task } from '../../../../domain/model/task.model';
 import { TaskDeleteService } from '../../../../services/task/task-delete.service';
 import { TaskReadService } from '../../../../services/task/task-read.service';
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'task-sync-task-list',
@@ -21,6 +22,7 @@ export class TaskListComponent implements OnInit {
 
   fa = fontawesome;
 
+  faAdd = faPlus;
   tasks: Task[] = [];
 
   constructor(private taskReadService: TaskReadService, private taskDeleteService: TaskDeleteService, private toastrService: ToastrService
