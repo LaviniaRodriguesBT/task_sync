@@ -1,0 +1,9 @@
+.imagem-container {
+    width: 100%; /* ajuste conforme necessário */
+    height: auto; /* ajuste conforme necessário */
+    text-align: center; /* centraliza a imagem horizontalmente */
+}
+.imagem-container img {
+    max-width: 100%; /* garante que a imagem não ultrapasse a largura da div */
+    height: auto; /* ajuste conforme necessário */
+}
