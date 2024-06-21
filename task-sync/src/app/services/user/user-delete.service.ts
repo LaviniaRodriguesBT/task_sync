@@ -7,7 +7,6 @@ import { firstValueFrom } from 'rxjs';
 })
 export class UserDeleteService {
 
-
   constructor(private http: HttpClient) { }
 
   delete(id: string){

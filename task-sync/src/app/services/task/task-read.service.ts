@@ -10,8 +10,6 @@ export class TaskReadService {
 
   constructor(private http: HttpClient) { }
 
-  // CRUD - creat delete update
-
   findById(id: string): Promise<Task>{
     return firstValueFrom(this.http.get<Task>(`http://localhost:3000/task/${id}`));
   }

@@ -12,25 +12,21 @@ import { SchedulingReadService } from '../../../../../services/scheduling/schedu
   templateUrl: './scheduling-detail.component.html',
   styleUrl: './scheduling-detail.component.css'
 })
-export class SchedulingDetailComponent implements OnInit{
+export class SchedulingDetailComponent implements OnInit {
 
   schedulingInformation?: Scheduling;
 
-  // o ? na frente da variavel significa pode ser nula ou ter valor
-
   constructor(private route: ActivatedRoute,
-              private schedulingReadSevice: SchedulingReadService) {}
+    private schedulingReadSevice: SchedulingReadService) { }
 
   ngOnInit(): void {
-    let schedulingId = this.route.snapshot.paramMap.get('id'); 
-    // olha na rota/URL e retorna o valor que está solicitando
+    let schedulingId = this.route.snapshot.paramMap.get('id');
     console.log(`ID do schedulingo: ${schedulingId}`);
     this.loadSchedulingById(schedulingId!);
-    // o ! na frente da variavel significa que assegura ter o valor
 
   }
 
-  async loadSchedulingById(schedulingId: string){
+  async loadSchedulingById(schedulingId: string) {
     let scheduling = await this.schedulingReadSevice.findById(schedulingId);
     console.log(scheduling);
     this.schedulingInformation = scheduling;

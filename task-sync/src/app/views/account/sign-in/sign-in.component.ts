@@ -1,11 +1,11 @@
-import {Component, OnInit} from '@angular/core';
-import {MatInputModule} from '@angular/material/input';
-import {MatButtonModule} from '@angular/material/button';
-import {FormControl, FormsModule, ReactiveFormsModule, Validators} from '@angular/forms';
-import {Router} from '@angular/router';
-import {UserCredential} from '../../../domain/dto/user-credential';
-import {AuthenticationService} from '../../../services/authentication.service';
-import {ToastrService} from "ngx-toastr";
+import { Component, OnInit } from '@angular/core';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { FormControl, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { UserCredential } from '../../../domain/dto/user-credential';
+import { AuthenticationService } from '../../../services/authentication.service';
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: 'task-sync-sign-in',
@@ -21,7 +21,6 @@ import {ToastrService} from "ngx-toastr";
 })
 export class SignInComponent implements OnInit {
 
-  // email = new FormControl(null, Validators.email);
   email = new FormControl(null);
   password = new FormControl(null, [
     Validators.minLength(1), Validators.maxLength(10)
@@ -30,8 +29,8 @@ export class SignInComponent implements OnInit {
   isLoginIncorrect = false;
 
   constructor(private router: Router,
-              private authenticationService: AuthenticationService,
-              private toastrService: ToastrService,) {
+    private authenticationService: AuthenticationService,
+    private toastrService: ToastrService,) {
   }
 
   ngOnInit(): void {

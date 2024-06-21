@@ -8,7 +8,6 @@ import { Task } from '../../domain/model/task.model';
 })
 export class TaskUpdateService {
 
-
   constructor(private http: HttpClient) { }
 
   async update(task: Task) {

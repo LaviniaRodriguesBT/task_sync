@@ -3,7 +3,7 @@ import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } 
 import { RouterModule, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { EventCreateService } from '../../../../services/event/event-create.service';
-import {Event} from "../../../../domain/model/event.model";
+import { Event } from "../../../../domain/model/event.model";
 
 @Component({
   selector: 'task-sync-event-create',
@@ -16,8 +16,8 @@ import {Event} from "../../../../domain/model/event.model";
   templateUrl: './event-create.component.html',
   styleUrl: './event-create.component.css'
 })
-export class EventCreateComponent implements OnInit{
-  
+export class EventCreateComponent implements OnInit {
+
   form!: FormGroup;
 
   nameMinLength: number = 3;

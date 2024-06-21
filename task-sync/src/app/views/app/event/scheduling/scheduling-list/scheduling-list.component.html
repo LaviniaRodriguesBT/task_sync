@@ -9,18 +9,18 @@
 <h1>Lista de Cronogranas</h1>
 <div class="col-4">
     <a class="btn btn-create btn-primary text-white" routerLink="/event/scheduling/create">
-      <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
-      Criar novo cronograma
+        <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
+        Criar novo cronograma
     </a>
-  </div>
-  
+</div>
+
 <hr>
 
 <div class="mat-elevation-z8">
     <table class="table table ">
         <thead>
             <tr>
-                
+
                 <th scope="col" class="text-center">Codigo</th>
                 <th scope="col" class="text-center">Evento</th>
                 <th scope="col" class="text-center description-col">Responsavel</th>
@@ -30,12 +30,12 @@
                 <th scope="col" class="text-center">Horario Fim</th>
                 <th scope="col" class="text-center">Data</th>
                 <th scope="col" class="text-center">Status</th>
-                
-                    
+
+
             </tr>
         </thead>
         <tbody>
-        @for(scheduling of schedulings; track $index){
+            @for(scheduling of schedulings; track $index){
             <tr>
                 <th scope="row" class="text-center">{{scheduling.id}}</th>
                 <td class="text-center">{{scheduling.event_id}}</td>
@@ -44,7 +44,7 @@
                 <td class="text-center">{{scheduling.value}}</td>
                 <td class="text-center">{{scheduling.start_time}}</td>
                 <td class="text-center">{{scheduling.end_time}}</td>
-                <td class="text-center">{{scheduling.date}}</td>               
+                <td class="text-center">{{scheduling.date}}</td>
                 <td class="text-center">{{scheduling.status}}</td>
                 <td>
                     <div class="row">
@@ -58,16 +58,16 @@
                                 <fa-icon [icon]="fa.faEdit" title="Editar schedulingo"></fa-icon>
                             </a>
                         </div>
-                    
+
                         <div class="col-4">
                             <a class="btn btn-danger" (click)="deleteScheduling(scheduling.id!)">
-                              <fa-icon [icon]="fa.faRemove" title="Excluir schedulingo"></fa-icon>
+                                <fa-icon [icon]="fa.faRemove" title="Excluir schedulingo"></fa-icon>
                             </a>
                         </div>
                     </div>
                 </td>
             </tr>
-        }
+            }
         </tbody>
     </table>
 </div>

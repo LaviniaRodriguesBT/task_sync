@@ -18,7 +18,7 @@ import { SchedulingCreateService } from '../../../../../services/scheduling/sche
 })
 export class SchedulingCreateComponent implements OnInit {
 
-  
+
   form!: FormGroup;
 
   nameMinLength: number = 3;
@@ -48,7 +48,7 @@ export class SchedulingCreateComponent implements OnInit {
       end_time: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
       date: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
       status: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
- 
+
     });
   }
 
@@ -78,7 +78,7 @@ export class SchedulingCreateComponent implements OnInit {
 
   validateFields() {
     return this.form.controls['event_id'].valid
-      && this.form.controls['user_id'].valid 
+      && this.form.controls['user_id'].valid
       && this.form.controls['task_id'].valid
       && this.form.controls['start_time'].valid
       && this.form.controls['end_time'].valid

@@ -19,7 +19,6 @@ import { SchedulingUpdateService } from '../../../../../services/scheduling/sche
 })
 export class SchedulingEditComponent implements OnInit {
 
-  // schedulingInformation?: Schedulings;
   schedulingId?: string;
   form!: FormGroup;
 
@@ -29,11 +28,11 @@ export class SchedulingEditComponent implements OnInit {
   priceMaxValue: number = 500;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private schedulingReadService: SchedulingReadService,
-              private schedulingUpdateService: SchedulingUpdateService,
-              private toastrService: ToastrService,
-              private router: Router,
-              private formBuilder: FormBuilder) {
+    private schedulingReadService: SchedulingReadService,
+    private schedulingUpdateService: SchedulingUpdateService,
+    private toastrService: ToastrService,
+    private router: Router,
+    private formBuilder: FormBuilder) {
     this.initializeForm();
   }
 
@@ -80,7 +79,7 @@ export class SchedulingEditComponent implements OnInit {
         end_time: this.form.controls['end_time'].value,
         date: this.form.controls['date'].value,
         status: this.form.controls['status'].value,
-    
+
       }
 
       console.log(scheduling);
@@ -94,7 +93,7 @@ export class SchedulingEditComponent implements OnInit {
 
   validateFields() {
     return this.form.controls['event_id'].valid
-      && this.form.controls['user_id'].valid 
+      && this.form.controls['user_id'].valid
       && this.form.controls['task_id'].valid
       && this.form.controls['value'].valid
       && this.form.controls['start_time'].valid

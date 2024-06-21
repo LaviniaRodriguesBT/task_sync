@@ -9,10 +9,10 @@
 <h1>Lista de eventos</h1>
 <div class="col-4">
     <a class="btn btn-create btn-primary text-white" routerLink="/event/create">
-      <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
-      Criar novo evento
+        <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
+        Criar novo evento
     </a>
-  </div>
+</div>
 <hr>
 
 <div class="mat-elevation-z8">
@@ -28,7 +28,7 @@
             </tr>
         </thead>
         <tbody>
-        @for(event of events; track $index){
+            @for(event of events; track $index){
             <tr>
                 <th scope="row" class="text-center">{{event.id}}</th>
                 <td class="text-center">{{event.code}}</td>
@@ -48,16 +48,16 @@
                                 <fa-icon [icon]="fa.faEdit" title="Editar evento"></fa-icon>
                             </a>
                         </div>
-                    
+
                         <div class="col-4">
                             <a class="btn btn-danger" (click)="deleteEvent(event.id!)">
-                              <fa-icon [icon]="fa.faRemove" title="Excluir evento"></fa-icon>
+                                <fa-icon [icon]="fa.faRemove" title="Excluir evento"></fa-icon>
                             </a>
                         </div>
                     </div>
                 </td>
             </tr>
-        }
+            }
         </tbody>
     </table>
 </div>

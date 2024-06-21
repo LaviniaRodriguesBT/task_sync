@@ -19,7 +19,7 @@ import { Route, Router } from '@angular/router';
   templateUrl: './sign-up.component.html',
   styleUrl: './sign-up.component.css'
 })
-export class SignUpComponent implements OnInit{
+export class SignUpComponent implements OnInit {
 
   form!: FormGroup;
 
@@ -28,44 +28,44 @@ export class SignUpComponent implements OnInit{
   passwordMinLength: number = 2;
   passwordMaxLength: number = 10;
 
-  constructor(private formBuilder: FormBuilder, 
-              private createUserService: UserCreateService, 
-              private router: Router){
+  constructor(private formBuilder: FormBuilder,
+    private createUserService: UserCreateService,
+    private router: Router) {
     this.initializeForm();
   }
-  
+
   ngOnInit(): void {
-    
+
   }
 
-  initializeForm(){
-    this.form =  this.formBuilder.group({
+  initializeForm() {
+    this.form = this.formBuilder.group({
       email: ['', [
-        Validators.required, //obrigatório
+        Validators.required,
         Validators.email,
       ]],
       name: ['', [
-        Validators.required, //obrigatório
+        Validators.required,
         Validators.minLength(this.fullNameMinLength),
         Validators.maxLength(this.fullNameMaxLength),
       ]],
       password: ['', [
-        Validators.required, //obrigatório
+        Validators.required,
         Validators.minLength(this.passwordMinLength),
         Validators.maxLength(this.passwordMaxLength),
       ]],
       cpf: ['', [
-        Validators.required, //obrigatório
+        Validators.required,
         Validators.minLength(this.fullNameMinLength),
         Validators.maxLength(this.fullNameMaxLength),
       ]],
       address: ['', [
-        Validators.required, //obrigatório
+        Validators.required,
         Validators.minLength(this.passwordMinLength),
         Validators.maxLength(this.passwordMaxLength),
       ]],
       repeatPassword: ['', [
-        Validators.required, //obrigatório
+        Validators.required,
         Validators.minLength(this.passwordMinLength),
         Validators.maxLength(this.passwordMaxLength),
       ]],
@@ -73,23 +73,23 @@ export class SignUpComponent implements OnInit{
   }
 
 
-  isFormInvalid(){
+  isFormInvalid() {
 
 
     let isValid = this.form.controls['fullName'].valid
-    && this.form.controls['email'].valid
-    && this.form.controls['password'].valid
-    && this.form.controls['repeatPassword'].valid;
+      && this.form.controls['email'].valid
+      && this.form.controls['password'].valid
+      && this.form.controls['repeatPassword'].valid;
 
-    if(this.form.controls['password'] != null &&
-       this.form.controls['repeatPassword'] != null &&
-       this.form.controls['password'].value !== this.form.controls ['repeatPassword'].value) {
+    if (this.form.controls['password'] != null &&
+      this.form.controls['repeatPassword'] != null &&
+      this.form.controls['password'].value !== this.form.controls['repeatPassword'].value) {
       return true;
     }
     return isValid ? false : true;
   }
 
-  createAccount(){
+  createAccount() {
     console.log("Criando conta...")
 
     let user: User = {
@@ -113,7 +113,7 @@ export class SignUpComponent implements OnInit{
       });
   }
 
-  arePasswordsValid(){
+  arePasswordsValid() {
     return this.form.controls['password'].value === this.form.controls['repeatPassword'].value;
   }
 }

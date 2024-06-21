@@ -10,8 +10,6 @@ export class UserReadService {
 
   constructor(private http: HttpClient) { }
 
-  // CRUD - creat delete update
-
   findById(id: string): Promise<User>{
     return firstValueFrom(this.http.get<User>(`http://localhost:3000/user/${id}`));
   }

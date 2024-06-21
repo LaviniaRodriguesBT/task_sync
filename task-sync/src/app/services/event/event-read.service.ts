@@ -10,8 +10,6 @@ export class EventReadService {
 
   constructor(private http: HttpClient) { }
 
-  // CRUD - creat delete update
-
   findById(id: string): Promise<Event>{
     return firstValueFrom(this.http.get<Event>(`http://localhost:3000/event/${id}`));
   }

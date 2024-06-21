@@ -6,7 +6,7 @@ import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { EventDeleteService } from "../../../../services/event/event-delete.service";
 import { ToastrService } from "ngx-toastr";
 import { EventReadService } from "../../../../services/event/event-read.service";
-import {Event} from "../../../../domain/model/event.model";
+import { Event } from "../../../../domain/model/event.model";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 
@@ -29,23 +29,18 @@ export class EventListComponent implements OnInit {
   events: Event[] = [];
 
   constructor(private eventReadService: EventReadService, private eventDeleteService: EventDeleteService, private toastrService: ToastrService
-  ){
-
+  ) {
   }
 
   ngOnInit(): void {
     this.loadEvents();
-    
   }
 
-  async loadEvents(){
+  async loadEvents() {
     this.events = await this.eventReadService.findAll();
   }
 
-
-
-
-  async deleteEvent(eventId: string){
+  async deleteEvent(eventId: string) {
     try {
       console.log('iniciando a remocao do evento' + eventId);
       await this.eventDeleteService.delete(eventId);
@@ -54,11 +49,8 @@ export class EventListComponent implements OnInit {
       await this.loadEvents();
     } catch (error) {
       this.toastrService.error('Não foi possível remover o evento');
-      
     }
-    
   }
-
 }
 
 

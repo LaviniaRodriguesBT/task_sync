@@ -4,7 +4,7 @@ import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { EventUpdateService } from '../../../../services/event/event-update.service';
 import { EventReadService } from '../../../../services/event/event-read.service';
-import {Event} from "../../../../domain/model/event.model";
+import { Event } from "../../../../domain/model/event.model";
 
 @Component({
   selector: 'task-sync-event-edit',
@@ -30,11 +30,11 @@ export class EventEditComponent implements OnInit {
   priceMaxValue: number = 500;
 
   constructor(private activatedRoute: ActivatedRoute,
-              private eventReadService: EventReadService,
-              private eventUpdateService: EventUpdateService,
-              private toastrService: ToastrService,
-              private router: Router,
-              private formBuilder: FormBuilder) {
+    private eventReadService: EventReadService,
+    private eventUpdateService: EventUpdateService,
+    private toastrService: ToastrService,
+    private router: Router,
+    private formBuilder: FormBuilder) {
     this.initializeForm();
   }
 
@@ -45,7 +45,7 @@ export class EventEditComponent implements OnInit {
       description: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
       business: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
       date: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-  
+
     });
   }
 

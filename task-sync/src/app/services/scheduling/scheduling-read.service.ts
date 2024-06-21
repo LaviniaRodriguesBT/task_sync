@@ -10,8 +10,6 @@ export class SchedulingReadService {
 
   constructor(private http: HttpClient) { }
 
-  // CRUD - creat delete update
-
   findById(id: string): Promise<Scheduling>{
     return firstValueFrom(this.http.get<Scheduling>(`http://localhost:3000/scheduling/${id}`));
   }

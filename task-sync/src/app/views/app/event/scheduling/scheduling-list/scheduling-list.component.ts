@@ -21,27 +21,20 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 export class SchedulingListComponent implements OnInit {
   fa = fontawesome;
   faAdd = faPlus;
-
   schedulings: Scheduling[] = [];
-
   constructor(private schedulingReadService: SchedulingReadService, private schedulingDeleteService: SchedulingDeleteService, private toastrService: ToastrService
-  ){
+  ) {
 
   }
-
   ngOnInit(): void {
     this.loadSchedulings();
-    
-  }
 
-  async loadSchedulings(){
+  }
+  async loadSchedulings() {
     this.schedulings = await this.schedulingReadService.findAll();
   }
 
-
-
-
-  async deleteScheduling(schedulingId: string){
+  async deleteScheduling(schedulingId: string) {
     try {
       console.log('iniciando a remocao do schedulingo' + schedulingId);
       await this.schedulingDeleteService.delete(schedulingId);
@@ -50,9 +43,6 @@ export class SchedulingListComponent implements OnInit {
       await this.loadSchedulings();
     } catch (error) {
       this.toastrService.error('Não foi possível remover o schedulingo');
-      
     }
-    
   }
-
 }

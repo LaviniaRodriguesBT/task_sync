@@ -7,10 +7,10 @@
         </mat-form-field>
 
         @if(form.controls['fullName'].hasError('minlength')){
-            <p class="text-danger">Nome deve ter no minimo {{fullNameMinLength}} caracteres</p>
-        } 
+        <p class="text-danger">Nome deve ter no minimo {{fullNameMinLength}} caracteres</p>
+        }
         @else if (form.controls['fullName'].hasError('maxlength')) {
-            <p class="text-danger">Nome deve ter no maximo {{fullNameMaxLength}} caracteres</p> 
+        <p class="text-danger">Nome deve ter no maximo {{fullNameMaxLength}} caracteres</p>
         }
 
         <mat-form-field>
@@ -19,7 +19,7 @@
         </mat-form-field>
 
         @if(form.controls['email'].hasError('email')){
-            <p class="text-danger">Email inválido</p>
+        <p class="text-danger">Email inválido</p>
         }
 
         <mat-form-field>
@@ -28,10 +28,10 @@
         </mat-form-field>
 
         @if(form.controls['password'].hasError('minlength')){
-            <p class="text-danger">Senha deve ter no minimo {{passwordMinLength}} caracteres</p>
-        } 
+        <p class="text-danger">Senha deve ter no minimo {{passwordMinLength}} caracteres</p>
+        }
         @else if (form.controls['password'].hasError('maxlength')) {
-            <p class="text-danger">Senha deve ter no maximo {{passwordMaxLength}} caracteres</p> 
+        <p class="text-danger">Senha deve ter no maximo {{passwordMaxLength}} caracteres</p>
         }
 
         <mat-form-field>
@@ -40,17 +40,18 @@
         </mat-form-field>
 
         @if(form.controls['repeatPassword'].hasError('minlength')){
-            <p class="text-danger">Nome deve ter no minimo {{passwordMinLength}} caracteres</p>
-        } 
+        <p class="text-danger">Nome deve ter no minimo {{passwordMinLength}} caracteres</p>
+        }
         @else if (form.controls['repeatPassword'].hasError('maxlength')) {
-            <p class="text-danger">Nome deve ter no maximo {{passwordMaxLength}} caracteres</p> 
-        } 
+        <p class="text-danger">Nome deve ter no maximo {{passwordMaxLength}} caracteres</p>
+        }
         @else if (arePasswordsValid() == false) { <!--ou usar (!arePasswordsValid()-->
-            <p class="text-danger">As senhas não são iguais</p>
+        <p class="text-danger">As senhas não são iguais</p>
         }
 
         <div class="text-center">
-            <button mat-raised-button color="primary" [disabled]="isFormInvalid()" (click) = "createAccount()">Criar</button>
+            <button mat-raised-button color="primary" [disabled]="isFormInvalid()"
+                (click)="createAccount()">Criar</button>
         </div>
 
         <hr>
