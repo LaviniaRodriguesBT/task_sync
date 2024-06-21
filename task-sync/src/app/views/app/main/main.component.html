@@ -3,7 +3,9 @@
         <button mat-icon-button (click)="sidenav.toggle()" matTooltip="Menu">
             <mat-icon>menu</mat-icon>
         </button>
-        <span>TASK SYNC</span>
+        <a class="navbar-item">
+            <img src="assets/img/logo_task.png" width="220" height="220">
+        </a>
         <span class="toolbar-item-spacer"></span>
         <button mat-icon-button matTooltip="Meu perfil" [matMenuTriggerFor]="myProfile">
             <mat-icon>account_circle</mat-icon>
@@ -27,9 +29,6 @@
     <mat-sidenav-container class="app-container">
         <mat-sidenav #sidenav mode="side" opened [class.mat-elevation-z4]="true" class="app-sidenav">
             <mat-nav-list>
-                <!-- <mat-list-item href="/">
-                    <mat-icon>dashboard</mat-icon><span>Home</span>
-                </mat-list-item> -->
                 <mat-expansion-panel [class.mat-elevation-z0]="true">
                     <mat-expansion-panel-header>
                         Eventos
@@ -69,7 +68,7 @@
             </main>
         </div>
     </mat-sidenav-container>
-    <footer style="text-align: right">
+    <footer style="text-align: left">
         Todos os direitos reservados<fa-icon [icon]="faCopyright" style="font-size: 10px"></fa-icon>.
         2024 - 2026</footer>
 </div>

@@ -1,6 +1,6 @@
 .base-form {
     height: 100%;
-    background: #ffffff;
+    background-image: url('/assets/img/fundo_telaLogin.png');
     display: flex;
     align-items: center;
     justify-content: center;
