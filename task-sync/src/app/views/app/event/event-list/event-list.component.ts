@@ -7,6 +7,7 @@ import { EventDeleteService } from "../../../../services/event/event-delete.serv
 import { ToastrService } from "ngx-toastr";
 import { EventReadService } from "../../../../services/event/event-read.service";
 import {Event} from "../../../../domain/model/event.model";
+import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 
 
@@ -24,6 +25,7 @@ import {Event} from "../../../../domain/model/event.model";
 export class EventListComponent implements OnInit {
   fa = fontawesome;
 
+  faAdd = faPlus;
   events: Event[] = [];
 
   constructor(private eventReadService: EventReadService, private eventDeleteService: EventDeleteService, private toastrService: ToastrService

@@ -3,14 +3,23 @@ table {
 }
 
 .description-col {
-    max-width: 200px; /* Defina a largura máxima desejada para a coluna */
+    max-width: 200px; 
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
 .icon-with-border {
-    border: 1px solid #ccc; /* Exemplo de estilo de borda */
-    border-radius: 4px; /* Exemplo de arredondamento da borda */
-    padding: 5px; /* Exemplo de preenchimento */
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    padding: 5px; 
 }
+
+
+
+.btn-create {
+    background-color: rgb(10, 71, 48);
+    border: none;
+    color: white;
+  }
+  

@@ -7,52 +7,58 @@
     </ol>
 </nav>
 <h1>Lista de Usuários</h1>
+<div class="col-4">
+    <a class="btn btn-create btn-primary text-white" routerLink="/user/create">
+        <fa-icon [icon]="faAdd" title="Adicionar novo usuario"></fa-icon>
+        Criar novo usuario
+    </a>
+</div>
 <hr>
 
 <div class="mat-elevation-z8">
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">Codigo</th>
-                <th scope="col">Nome</th>
-                <th scope="col">Email</th>
-                <th scope="col">Telefone</th>
-                <th scope="col">Endereço</th>
-                
+                <th scope="col" class="text-center">Codigo</th>
+                <th scope="col" class="text-center">Nome</th>
+                <th scope="col" class="text-center">Email</th>
+                <th scope="col" class="text-center">Telefone</th>
+                <th scope="col" class="text-center">Endereço</th>
+
             </tr>
         </thead>
         <tbody>
-        @for(user of users; track $index){
+            @for(user of users; track $index){
             <tr>
-                <th scope="row">{{user.id}}</th>
-                <td>{{user.name}}</td>
-                <td>{{user.email}}</td>
-       
-                <td>{{user.cpf}}</td>
-                <td>{{user.address}}</td>
-                <td>
+                <th scope="row" class="text-center">{{user.id}}</th>
+                <td class="text-center">{{user.name}}</td>
+                <td class="text-center">{{user.email}}</td>
+
+                <td class="text-center">{{user.cpf}}</td>
+                <td class="text-center">{{user.address}}</td>
+                <td class="text-center">
                     <div class="row">
                         <div class="col-4">
                             <a class="btn btn-primary" routerLink="/user/detail/{{user.id}}">
                                 <fa-icon [icon]="fa.faAddressCard"></fa-icon>
                             </a>
+
                         </div>
                         <div class="col-4">
                             <a class="btn btn-warning" routerLink="/user/edit/{{user.id}}">
                                 <fa-icon [icon]="fa.faEdit"></fa-icon>
                             </a>
                         </div>
-                    
+
                         <div class="col-4">
-                            <!-- <a class="btn btn-danger" (click)="deleteTask(user.id!)"> -->
-                            <a class="btn btn-danger">
-                              <fa-icon [icon]="fa.faRemove"></fa-icon>
+                            <a class="btn btn-danger" (click)="deleteUser(user.id!)">
+                                <fa-icon [icon]="fa.faRemove"></fa-icon>
                             </a>
-                          </div>
+                        </div>
                     </div>
                 </td>
             </tr>
-        }
+            }
         </tbody>
     </table>
 </div>

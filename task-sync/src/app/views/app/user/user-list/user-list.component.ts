@@ -6,6 +6,7 @@ import { User } from '../../../../domain/model/user.model';
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { UserDeleteService } from '../../../../services/user/user-delete.service';
 import { UserReadService } from '../../../../services/user/user-read.service';
+import { faAddressCard, faPlus } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'task-sync-user-list',
@@ -20,6 +21,8 @@ import { UserReadService } from '../../../../services/user/user-read.service';
 export class UserListComponent {
 
   fa = fontawesome;
+  faAdd = faPlus;
+  faAddressCard = faAddressCard;
 
   users: User[] = [];
 
