@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="/task/list">Produto</a>
+            <a href="/task/list">Atividades</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Lista</li>
     </ol>
@@ -13,14 +13,15 @@
     <table class="table table-striped">
         <thead>
             <tr>
-                <th scope="col">Nome</th>
+                <th scope="col" class="text-center">Código</th>
+                <th scope="col" class="text-center">Nome</th>
             </tr>
         </thead>
         <tbody>
         @for(task of tasks; track $index){
             <tr>
-                <th scope="row">{{task.id}}</th>
-                <td>{{task.name}}</td>
+                <th scope="row" class="text-center">{{task.id}}</th>
+                <td class="text-center">{{task.name}}</td>
                 <td>
                     <div class="row">
                         <div class="col-4">
