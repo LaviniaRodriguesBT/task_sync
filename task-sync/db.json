@@ -318,5 +318,158 @@
       "id": "15",
       "name": "Definir permissões"
     }
+  ],
+  "scheduling": [
+    {
+      "id": "1",
+      "event_id": "Feira de Sistemas",
+      "user_id": "Pedro Carlos",
+      "task_id": "Realizar cadastro",
+      "start_time": "08:00",
+      "end_time": "10:00",
+      "date": "2024-06-21",
+      "status": "Em aberto"
+    },
+    {
+      "id": "2",
+      "event_id": "Congresso de Tecnologia",
+      "user_id": "Maria Jose",
+      "task_id": "Conferir cadastro",
+      "start_time": "09:00",
+      "end_time": "11:00",
+      "date": "2024-06-22",
+      "status": "Em andamento"
+    },
+    {
+      "id": "3",
+      "event_id": "Workshop de Programação",
+      "user_id": "Joao Silva",
+      "task_id": "Atualizar cadastro",
+      "start_time": "10:00",
+      "end_time": "12:00",
+      "date": "2024-06-23",
+      "status": "Finalizado"
+    },
+    {
+      "id": "4",
+      "event_id": "Simpósio de Inteligência Artificial",
+      "user_id": "Ana Paula",
+      "task_id": "Excluir cadastro",
+      "start_time": "11:00",
+      "end_time": "13:00",
+      "date": "2024-06-24",
+      "status": "Em aberto"
+    },
+    {
+      "id": "5",
+      "event_id": "Encontro de Desenvolvedores",
+      "user_id": "Carlos Augusto",
+      "task_id": "Consultar dados",
+      "start_time": "12:00",
+      "end_time": "14:00",
+      "date": "2024-06-25",
+      "status": "Em andamento"
+    },
+    {
+      "id": "6",
+      "event_id": "Seminário de Segurança da Informação",
+      "user_id": "Marina Luiza",
+      "task_id": "Emitir relatório",
+      "start_time": "13:00",
+      "end_time": "15:00",
+      "date": "2024-06-26",
+      "status": "Em aberto"
+    },
+    {
+      "id": "7",
+      "event_id": "Hackathon de Inovação",
+      "user_id": "Pedro Henrique",
+      "task_id": "Gerar gráficos",
+      "start_time": "14:00",
+      "end_time": "16:00",
+      "date": "2024-06-27",
+      "status": "Finalizado"
+    },
+    {
+      "id": "8",
+      "event_id": "Conferência de Redes de Computadores",
+      "user_id": "Juliana Silva",
+      "task_id": "Configurar sistema",
+      "start_time": "15:00",
+      "end_time": "17:00",
+      "date": "2024-06-28",
+      "status": "Em andamento"
+    },
+    {
+      "id": "9",
+      "event_id": "Palestra de Ciência de Dados",
+      "user_id": "Rodrigo Bastos",
+      "task_id": "Enviar notificações",
+      "start_time": "16:00",
+      "end_time": "18:00",
+      "date": "2024-06-29",
+      "status": "Em aberto"
+    },
+    {
+      "id": "10",
+      "event_id": "Fórum de Tecnologias Educacionais",
+      "user_id": "Fernando Soares",
+      "task_id": "Exportar dados",
+      "start_time": "17:00",
+      "end_time": "19:00",
+      "date": "2024-06-30",
+      "status": "Em andamento"
+    },
+    {
+      "id": "11",
+      "event_id": "Exposição de Robótica",
+      "user_id": "Beatriz Oliveira",
+      "task_id": "Importar dados",
+      "start_time": "18:00",
+      "end_time": "20:00",
+      "date": "2024-07-01",
+      "status": "Finalizado"
+    },
+    {
+      "id": "12",
+      "event_id": "Curso de Desenvolvimento Web",
+      "user_id": "Andre Luiz",
+      "task_id": "Fazer backup",
+      "start_time": "19:00",
+      "end_time": "21:00",
+      "date": "2024-07-02",
+      "status": "Em aberto"
+    },
+    {
+      "id": "13",
+      "event_id": "Treinamento em Machine Learning",
+      "user_id": "Renata Costa",
+      "task_id": "Restaurar backup",
+      "start_time": "20:00",
+      "end_time": "22:00",
+      "date": "2024-07-03",
+      "status": "Em andamento"
+    },
+    {
+      "id": "14",
+      "event_id": "Seminário de Blockchain",
+      "user_id": "Leonardo Santos",
+      "task_id": "Gerenciar usuários",
+      "start_time": "21:00",
+      "end_time": "23:00",
+      "date": "2024-07-04",
+      "status": "Em aberto"
+    },
+    {
+      "id": "15",
+      "event_id": "Conferência de Big Data",
+      "user_id": "Marcelo Pereira",
+      "task_id": "Definir permissões",
+      "start_time": "22:00",
+      "end_time": "00:00",
+      "date": "2024-07-05",
+      "status": "Em andamento"
+    }
   ]
+  
 }
