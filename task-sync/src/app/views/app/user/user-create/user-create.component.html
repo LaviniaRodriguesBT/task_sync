@@ -9,7 +9,7 @@
 <h1>Cadastrar novo usuário</h1>
 <hr>
 
-<form class="form">
+<form class="form" [formGroup]="form" (ngSubmit)="create()">
     <div class="form-row">
 
         <div class="form-group col-12 mt-2">
@@ -34,7 +34,7 @@
             <input type="text" class="form-control" id="endereco" placeholder="Endereco" formControlName="endereco">
         </div>
         <div class="col-12 text-end mt-2">
-            <button class="btn btn-primary">Criar</button>
+            <button class="btn btn-primary" >Criar</button>
         </div>
     </div>
 </form>

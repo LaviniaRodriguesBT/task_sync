@@ -6,10 +6,10 @@
         <li class="breadcrumb-item active" aria-current="page">Criar</li>
     </ol>
 </nav>
-<h1>Criar produto</h1>
+<h1>Criar novo evento</h1>
 <hr>
 
-<form class="form">
+<form class="form" [formGroup]="form" (ngSubmit)="create()">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
             <label for="name">Nome</label>
@@ -20,7 +20,7 @@
             <input type="text" class="form-control" id="description" placeholder="Descrição" formControlName="description">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="date">Descrição</label>
+            <label for="date">Data</label>
             <input type="text" class="form-control" id="date" placeholder="Data" formControlName="date">
         </div>
         <div class="col-12 text-end mt-2">
