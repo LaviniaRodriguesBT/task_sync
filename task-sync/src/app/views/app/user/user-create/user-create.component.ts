@@ -55,7 +55,7 @@ export class UserCreateComponent implements OnInit {
 
     }
 
-    console.log('preparando para criar o usuario...');
+    console.log('preparando para criar a pessoa...');
     console.log(user);
 
     try {

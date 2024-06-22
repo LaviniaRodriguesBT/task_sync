@@ -1,12 +1,12 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="/scheduling/list">Cronogramas</a>
+            <a href="/scheduling/list">Cronograma</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Lista</li>
     </ol>
 </nav>
-<h1>Lista de Cronogranas</h1>
+<h1>Lista de Cronogramas</h1>
 <div class="col-4">
     <a class="btn btn-create btn-primary text-white" routerLink="/event/scheduling/create">
         <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
@@ -23,7 +23,7 @@
 
                 <th scope="col" class="text-center">Codigo</th>
                 <th scope="col" class="text-center">Evento</th>
-                <th scope="col" class="text-center description-col">Responsavel</th>
+                <th scope="col" class="text-center description-col">Colaborador</th>
                 <th scope="col" class="text-center description-col">Atividade</th>
                 <th scope="col" class="text-center">Valor R$</th>
                 <th scope="col" class="text-center">Horario Inicio</th>
@@ -55,13 +55,13 @@
                         </div>
                         <div class="col-4">
                             <a class="btn btn-warning" routerLink="/scheduling/edit/{{scheduling.id}}">
-                                <fa-icon [icon]="fa.faEdit" title="Editar schedulingo"></fa-icon>
+                                <fa-icon [icon]="fa.faEdit" title="Editar cronograma"></fa-icon>
                             </a>
                         </div>
 
                         <div class="col-4">
                             <a class="btn btn-danger" (click)="deleteScheduling(scheduling.id!)">
-                                <fa-icon [icon]="fa.faRemove" title="Excluir schedulingo"></fa-icon>
+                                <fa-icon [icon]="fa.faRemove" title="Excluir cronograma"></fa-icon>
                             </a>
                         </div>
                     </div>

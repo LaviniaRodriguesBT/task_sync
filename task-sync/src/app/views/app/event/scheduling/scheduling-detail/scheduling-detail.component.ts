@@ -21,7 +21,7 @@ export class SchedulingDetailComponent implements OnInit {
 
   ngOnInit(): void {
     let schedulingId = this.route.snapshot.paramMap.get('id');
-    console.log(`ID do schedulingo: ${schedulingId}`);
+    console.log(`ID do cronograma: ${schedulingId}`);
     this.loadSchedulingById(schedulingId!);
 
   }

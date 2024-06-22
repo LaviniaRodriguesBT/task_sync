@@ -42,13 +42,13 @@ export class UserListComponent {
 
   async deleteUser(userId: string) {
     try {
-      console.log('iniciando a remocao do usero' + userId);
+      console.log('Iniciando a remocao da pessoa' + userId);
       await this.userDeleteService.delete(userId);
-      this.toastrService.success('Usero excluido com sucesso');
+      this.toastrService.success('Pessoa excluida com sucesso');
 
       await this.loadUsers();
     } catch (error) {
-      this.toastrService.error('Não foi possível remover o usero');
+      this.toastrService.error('Não foi possível remover a pessoa');
 
     }
 

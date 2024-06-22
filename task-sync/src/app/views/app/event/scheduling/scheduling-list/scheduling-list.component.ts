@@ -36,13 +36,13 @@ export class SchedulingListComponent implements OnInit {
 
   async deleteScheduling(schedulingId: string) {
     try {
-      console.log('iniciando a remocao do schedulingo' + schedulingId);
+      console.log('Iniciando a remoção do cronograma' + schedulingId);
       await this.schedulingDeleteService.delete(schedulingId);
-      this.toastrService.success('Schedulingo excluido com sucesso');
+      this.toastrService.success('Cronograma excluído com sucesso');
 
       await this.loadSchedulings();
     } catch (error) {
-      this.toastrService.error('Não foi possível remover o schedulingo');
+      this.toastrService.error('Não foi possível remover o cronograma');
     }
   }
 }

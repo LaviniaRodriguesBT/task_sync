@@ -11,7 +11,7 @@ export class SchedulingUpdateService {
   constructor(private http: HttpClient) { }
 
   async update(scheduling: Scheduling) {
-    console.log(`atualizando o schedulingo...`);
+    console.log(`atualizando o cronograma...`);
     console.log(scheduling);
     return await firstValueFrom(this.http.put(`http://localhost:3000/scheduling/${scheduling.id}`, scheduling));
   }
