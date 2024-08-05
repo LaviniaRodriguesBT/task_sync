@@ -36,10 +36,12 @@ export const routes: Routes = [
       {
         path: '',
         component: HomeComponent,
+        title: 'Task Sync - Página Inicial',
       },
       {
         path: 'help',
         component: HelpComponent,
+        title: 'Task Sync - Ajuda',
       },
       {
         path: 'account/my-profile',
