@@ -21,7 +21,7 @@ create table user (
     id serial primary key,
     login character varying(200) not null unique,
     password character varying(500) not null,
-    person_id integer not null references person(id) on update cascade
+    person_id integer not null unique references person(id) on update cascade
 );
 
 create table event (
@@ -59,7 +59,7 @@ create table contract (
     signature_date timestamp without time zone not null,
     user_id integer not null references user(id) on update cascade,
     event_id integer not null references event(id) on update cascade,
-    unique (number, signature_date)
+    unique (number, signature_date, user_id, event_id)
 );
 
 
@@ -69,9 +69,9 @@ create table scheduling (
     end_time timestamp without time zone not null,
     date timestamp without time zone not null,
     status character varying(50) not null check (status in ('Em aberto', 'Em andamento', 'Finalizada')) default 'Em aberto',
-    task_id integer not null references task(id) on update cascade,
+    activity_id integer not null references activity(id) on update cascade,
     contract_id integer not null references contract(id) on update cascade,
-    unique (date, contract_id, task_id )
+    unique (date, contract_id, activity_id)
 );
 
 create table chat (
