@@ -25,6 +25,7 @@ body {
 .color-head {
     background-color: #1D1D1B;
     color: white;
+    padding: 0 64px;
 }
 
 footer {
