@@ -27,6 +27,7 @@ export const routes: Routes = [
   {
     path: 'account/sign-in',
     component: SignInComponent,
+    title: 'Task Sync - Login',
   },
   {
     path: '',
@@ -46,6 +47,7 @@ export const routes: Routes = [
       {
         path: 'account/my-profile',
         component: MyProfileComponent,
+        title: 'Task Sync - Meu perfil',
       },
       {
         path: 'event',
@@ -53,37 +55,46 @@ export const routes: Routes = [
           {
             path: 'create',
             component: EventCreateComponent,
+            title: 'Task Sync - Criar evento',
           },
           {
             path: 'list',
             component: EventListComponent,
+            title: 'Task Sync - Listar eventos',
           },
           {
             path: 'edit/:id',
             component: EventEditComponent,
+            title: 'Task Sync - Edita evento',
           },
           {
             path: 'detail/:id',
             component: EventDetailComponent,
+            title: 'Task Sync - Detalhes do evento',
           },
           {
             path: 'scheduling',
+            title: 'Task Sync - Cronograma',
             children: [
               {
                 path: 'create',
                 component: SchedulingCreateComponent,
+                title: 'Task Sync - Criar cronograma',
               },
               {
                 path: 'list',
                 component: SchedulingListComponent,
+                title: 'Task Sync - Listar cronograma',
               },
               {
                 path: 'edit/:id',
                 component: SchedulingEditComponent,
+                title: 'Task Sync - Editar cronograma',
               },
               {
                 path: 'detail/:id',
                 component: SchedulingDetailComponent,
+                title: 'Task Sync - Detalhes do cronograma',
               },
             ],
           },
@@ -91,49 +102,61 @@ export const routes: Routes = [
       },
       {
         path: 'task',
+        title: 'Task Sync - Atividades',
         children: [
           {
             path: 'create',
             component: TaskCreateComponent,
+            title: 'Task Sync - Criar atividade',
+
           },
           {
             path: 'list',
             component: TaskListComponent,
+            title: 'Task Sync - Lista de atividades',
           },
           {
             path: 'edit/:id',
             component: TaskEditComponent,
+            title: 'Task Sync - Editar atividades',
           },
           {
             path: 'detail/:id',
             component: TaskDetailComponent,
+            title: 'Task Sync - Destalhes da atividade',
           },
         ],
       },
       {
         path: 'user',
+        title: 'Task Sync - Usuarios',
         children: [
           {
             path: 'create',
             component: UserCreateComponent,
+            title: 'Task Sync - Criar novo usuario',
           },
           {
             path: 'list',
             component: UserListComponent,
+            title: 'Task Sync - Listar usuarios',
           },
           {
             path: 'edit/:id',
             component: UserEditComponent,
+            title: 'Task Sync - Editar usuario',
           },
           {
             path: 'detail/:id',
             component: UserDetailComponent,
+            title: 'Task Sync - Detalhes do usuario',
           },
         ],
       },
       {
         path: '**',
         component: NotFoundComponent,
+        title: 'Task Sync - Pagina nao encontrada',
       },
     ],
   },
