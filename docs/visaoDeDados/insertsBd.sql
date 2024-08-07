@@ -1,0 +1,10 @@
+insert into person values (123, "Michele", "rua: 1");
+insert into person values (321, "Lavinia", "rua: 2");
+insert into person values (456, "Lucas", "rua: 3");
+insert into person values (654, "Michel", "rua: 4");
+insert into person values (789, "Vania", "rua: 5");
+insert into person values (987, "Luiz Barbosa", "rua: 6");
+insert into person values (147, "Pedro", "rua: 7");
+insert into person values (741, "Claudio", "rua: 8");
+insert into person values (258, "Marcos", "rua: 9");
+insert into person values (852, "Ricardo", "rua: 10");
