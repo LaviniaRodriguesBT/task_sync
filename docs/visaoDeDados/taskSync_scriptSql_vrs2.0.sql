@@ -55,11 +55,11 @@ create table activity (
 
 create table contract (
     id serial primary key,
-    number integer not null, 
+    number integer unique not null,
     signature_date timestamp without time zone not null,
     user_id integer not null references user(id) on update cascade,
     event_id integer not null references event(id) on update cascade,
-    unique (number, signature_date, user_id, event_id)
+    unique (user_id, event_id)
 );
 
 
@@ -76,11 +76,11 @@ create table scheduling (
 
 create table chat (
     id serial primary key,
-    type character varying(14) not null,
+    type character varying(14) not null check(type in ('Grupo', 'Privado')),
     date_time timestamp without time zone not null,
     user_id integer not null references user(id) on update cascade,
     event_id integer not null references event(id) on update cascade,
-    unique (date_time, type, user_id, event_id)
+    unique (type, user_id, event_id)
 );
 
 create table chat_user (
@@ -96,5 +96,5 @@ create table message (
     text character varying(800) not null,
     user_id integer not null references user(id) on update cascade,
     chat_id integer not null references chat(id) on update cascade,
-    unique (date_time, text, user_id, chat_id)
+    unique (date_time, user_id, chat_id)
 );
