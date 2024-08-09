@@ -7,12 +7,14 @@
     </ol>
 </nav>
 <h1>Lista de Cronogramas</h1>
-<div class="col-4">
+<div class="d-flex justify-content-between">
     <a class="btn btn-create btn-primary text-white" routerLink="/event/scheduling/create">
         <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
         Criar novo cronograma
     </a>
+    <a class="btn btn-secondary" href="/">Voltar</a>
 </div>
+
 
 <hr>
 
@@ -49,10 +51,12 @@
                 <td>
                     <div class="row">
                         <div class="col-4">
+                            
                             <a class="btn btn-primary" routerLink="/scheduling/detail/{{scheduling.id}}">
                                 <fa-icon [icon]="fa.faAddressCard" title="Ver detalhes"></fa-icon>
                             </a>
                         </div>
+                        
                         <div class="col-4">
                             <a class="btn btn-warning" routerLink="/scheduling/edit/{{scheduling.id}}">
                                 <fa-icon [icon]="fa.faEdit" title="Editar cronograma"></fa-icon>
@@ -70,4 +74,6 @@
             }
         </tbody>
     </table>
+
+
 </div>
