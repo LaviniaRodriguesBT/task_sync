@@ -23,16 +23,16 @@ insert into person_phone (id, phone, person_id) values (default, '35369', 9);
 insert into person_phone (id, phone, person_id) values (default, '35741', 10);
 
 --Inserts tabela User
-insert into user (id, login, password, person_id) values (default, 'michelef', '123', 1);
-insert into user (id, login, password, person_id) values (default, 'laviniab', '321', 2);
-insert into user (id, login, password, person_id) values (default, 'lucass', '456', 3);
-insert into user (id, login, password, person_id) values (default, 'alans', '654', 4);
-insert into user (id, login, password, person_id) values (default, 'leandrol', '789', 5);
-insert into user (id, login, password, person_id) values (default, 'brunog', '987', 6);
-insert into user (id, login, password, person_id) values (default, 'brunav', '147', 7);
-insert into user (id, login, password, person_id) values (default, 'danieleb', '258', 8);
-insert into user (id, login, password, person_id) values (default, 'josues', '369', 9);
-insert into user (id, login, password, person_id) values (default, 'patriciar', '741', 10);
+insert into "user" (id, login, password, person_id) values (default, 'michelef', '123', 1);
+insert into "user" (id, login, password, person_id) values (default, 'laviniab', '321', 2);
+insert into "user" (id, login, password, person_id) values (default, 'lucass', '456', 3);
+insert into "user" (id, login, password, person_id) values (default, 'alans', '654', 4);
+insert into "user" (id, login, password, person_id) values (default, 'leandrol', '789', 5);
+insert into "user" (id, login, password, person_id) values (default, 'brunog', '987', 6);
+insert into "user" (id, login, password, person_id) values (default, 'brunav', '147', 7);
+insert into "user" (id, login, password, person_id) values (default, 'danieleb', '258', 8);
+insert into "user" (id, login, password, person_id) values (default, 'josues', '369', 9);
+insert into "user" (id, login, password, person_id) values (default, 'patriciar', '741', 10);
 
 --Inserts tabela Event
 insert into event (id, code, name, description, business, date) values (default, '001', 'loucuras loucuras loucuras', 'evento de loucuras', 'onlybusiness','2024-11-11');
@@ -94,15 +94,50 @@ insert into contract (id, number, signature_date, user_id, event_id) values (def
 insert into contract (id, number, signature_date, user_id, event_id) values (default, 900, now(), 10, 2);
 insert into contract (id, number, signature_date, user_id, event_id) values (default, 1000, now(), 9, 10);
 
-
 --Inserts tabela Scheduling
-insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id) values ();
+insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id) values (default,'2024-09-07', '2024-09-07', '2024-08-20', 'Em aberto', 2, 1);
+insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id) values (default,'2024-04-07', '2024-04-09', '2024-01-20', 'Finalizada', 1, 2);
+insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id) values (default,'2024-09-07', '2024-09-11', '2024-09-01', 'Em aberto', 3, 4);
+insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id) values (default,'2024-10-08', '2024-09-09', '2024-07-29', 'Em andamento', 4, 3);
+insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id) values (default,'2024-09-22', '2024-09-07', '2024-08-20', 'Em andamento', 5, 6);
+insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id) values (default,'2023-09-07', '2023-10-07', '2023-09-20', 'Finalizada', 6, 5);
+insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id) values (default,'2022-01-07', '2022-01-07', '2022-01-01', 'Finalizada', 7, 8);
+insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id) values (default,'2024-12-25', '2024-09-07', '2024-08-20', 'Em aberto', 8, 7);
+insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id) values (default,'2024-12-31', '2024-09-07', '2024-08-20', 'Em aberto', 9, 10);
+insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id) values (default,'2024-11-15', '2024-11-15', '2024-08-20', 'Em aberto', 10, 9);
 
 --Inserts tabela Chat
-insert into chat (id, type, date_time, user_id, event_id) values ();
+insert into chat (id, type, date_time, user_id, event_id) values (default, 'Grupo', '2024-10-20', 1, 2);
+insert into chat (id, type, date_time, user_id, event_id) values (default, 'Privado', '2024-10-20', 2, 1);
+insert into chat (id, type, date_time, user_id, event_id) values (default, 'Grupo', '2024-10-20', 3, 4);
+insert into chat (id, type, date_time, user_id, event_id) values (default, 'Privado', '2024-10-20', 4, 3);
+insert into chat (id, type, date_time, user_id, event_id) values (default, 'Grupo', '2024-10-20', 5, 6);
+insert into chat (id, type, date_time, user_id, event_id) values (default, 'Grupo', '2024-10-20', 6, 5);
+insert into chat (id, type, date_time, user_id, event_id) values (default, 'Privado', '2024-10-20', 7, 8);
+insert into chat (id, type, date_time, user_id, event_id) values (default, 'Grupo', '2024-10-20', 8, 7);
+insert into chat (id, type, date_time, user_id, event_id) values (default, 'Grupo', '2024-10-20', 9, 10);
+insert into chat (id, type, date_time, user_id, event_id) values (default, 'Privado', '2024-10-20', 10, 9);
 
 --Inserts tabela Chat_user
-insert into chat_user (id, user_id, chat_id) values ();
+insert into chat_user (id, user_id, chat_id) values (default, 1, 2);
+insert into chat_user (id, user_id, chat_id) values (default, 2, 1);
+insert into chat_user (id, user_id, chat_id) values (default, 3, 4);
+insert into chat_user (id, user_id, chat_id) values (default, 4, 3);
+insert into chat_user (id, user_id, chat_id) values (default, 5, 6);
+insert into chat_user (id, user_id, chat_id) values (default, 6, 5);
+insert into chat_user (id, user_id, chat_id) values (default, 7, 8);
+insert into chat_user (id, user_id, chat_id) values (default, 8, 7);
+insert into chat_user (id, user_id, chat_id) values (default, 9, 10);
+insert into chat_user (id, user_id, chat_id) values (default, 10, 9);
 
 --Inserts tabela Message
-insert into message (id, date_time, textm user_id, chat_id) values ();
+insert into message (id, date_time, text, user_id, chat_id) values (default, now(), 'texto', 1, 2);
+insert into message (id, date_time, text, user_id, chat_id) values (default, now(), 'texto', 2, 1);
+insert into message (id, date_time, text, user_id, chat_id) values (default, now(), 'texto', 3, 4);
+insert into message (id, date_time, text, user_id, chat_id) values (default, now(), 'texto', 4, 3);
+insert into message (id, date_time, text, user_id, chat_id) values (default, now(), 'texto', 5, 6);
+insert into message (id, date_time, text, user_id, chat_id) values (default, now(), 'texto', 6, 5);
+insert into message (id, date_time, text, user_id, chat_id) values (default, now(), 'texto', 7, 8);
+insert into message (id, date_time, text, user_id, chat_id) values (default, now(), 'texto', 8, 7);
+insert into message (id, date_time, text, user_id, chat_id) values (default, now(), 'texto', 9, 10);
+insert into message (id, date_time, text, user_id, chat_id) values (default, now(), 'texto', 10, 9);

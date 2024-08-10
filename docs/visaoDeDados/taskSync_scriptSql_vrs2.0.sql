@@ -65,7 +65,6 @@ create table contract (
     unique (user_id, event_id)
 );
 
-
 create table scheduling (
     id serial primary key,
     start_time timestamp without time zone not null,
