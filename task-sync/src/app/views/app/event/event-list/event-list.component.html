@@ -7,12 +7,16 @@
     </ol>
 </nav>
 <h1>Lista de eventos</h1>
-<div class="col-4">
+<div class="col-12">
     <a class="btn btn-create btn-primary text-white" routerLink="/event/create">
         <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
         Criar novo evento
     </a>
-</div>
+    <button class=" btn btn-pdf" (click)="gerarPdf()">
+        Gerar PDF
+        
+    </button>
+      </div>
 <hr>
 
 <div class="mat-elevation-z8">

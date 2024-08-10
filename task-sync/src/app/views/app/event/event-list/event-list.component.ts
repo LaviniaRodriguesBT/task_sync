@@ -11,6 +11,9 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 
 
+import { jsPDF } from 'jspdf';
+
+
 @Component({
   selector: 'task-sync-event-list',
   standalone: true,
@@ -50,6 +53,24 @@ export class EventListComponent implements OnInit {
     } catch (error) {
       this.toastrService.error('Não foi possível remover o evento');
     }
+  }
+
+  gerarPdf() {
+    let pdfEventList = new jsPDF();
+    pdfEventList.text("Lista de eventos", 10, 10);
+    pdfEventList.line(30,30,30,30);
+
+    pdfEventList.setFontSize(12);
+
+    // Adicionar as colunas como texto
+    pdfEventList.text('ID', 20, 20);
+    pdfEventList.text('Código', 40, 20);
+    pdfEventList.text('Nome', 60, 20);
+    pdfEventList.text('Descrição', 80, 20);
+    pdfEventList.text('Negócio', 120, 20);
+    pdfEventList.text('Data Início', 140, 20);
+    pdfEventList.output("dataurlnewwindow");
+
   }
 }
 
