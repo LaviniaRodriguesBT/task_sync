@@ -347,17 +347,6 @@
   ],
   "scheduling": [
     {
-      "id": "1",
-      "event_id": "Feira de Sistemas",
-      "user_id": "Pedro Carlos",
-      "task_id": "Realizar cadastro",
-      "value": "120",
-      "start_time": "08:00",
-      "end_time": "10:00",
-      "date": "2024-06-21",
-      "status": "Em aberto"
-    },
-    {
       "id": "2",
       "event_id": "Workshop de Inteligência Artificial",
       "user_id": "Maria Silva",
@@ -510,6 +499,17 @@
       "end_time": "14:00",
       "date": "2024-07-05",
       "status": "Concluído"
+    },
+    {
+      "id": "6387",
+      "event_id": "",
+      "user_id": "",
+      "task_id": "",
+      "value": "",
+      "start_time": "",
+      "end_time": "",
+      "date": "",
+      "status": ""
     }
   ]
 }
