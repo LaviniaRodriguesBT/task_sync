@@ -85,7 +85,7 @@ export class SchedulingEditComponent implements OnInit {
       console.log(scheduling);
       await this.schedulingUpdateService.update(scheduling);
       this.toastrService.success('Cronograma atualizado com sucesso!');
-      this.router.navigate(['scheduling/list']);
+      this.router.navigate(['/event/scheduling/list']);
     } catch (error) {
       this.toastrService.error('Erro. Cronograma não foi atualizado.');
     }

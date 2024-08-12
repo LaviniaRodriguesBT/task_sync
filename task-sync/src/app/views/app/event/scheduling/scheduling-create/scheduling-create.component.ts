@@ -70,7 +70,7 @@ export class SchedulingCreateComponent implements OnInit {
     try {
       await this.schedulingCreateService.create(scheduling);
       this.toastr.success('Dados salvos com sucesso!');
-      this.router.navigate(['scheduling/list']);
+      this.router.navigate(['/event/scheduling/list']);
     } catch (error: any) {
       this.toastr.error(error.message);
     }
