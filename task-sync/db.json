@@ -1,6 +1,15 @@
 {
   "user": [
     {
+      "id": "1",
+      "email": "admin@gmail.com",
+      "password": "admin",
+      "cpf": "159753",
+      "name": "Administrator",
+      "phone": "9821333",
+      "address": "Avenida Central, 100, Administrator"
+    },
+    {
       "id": "2",
       "email": "mariasilva@gmail.com",
       "password": "ms",
