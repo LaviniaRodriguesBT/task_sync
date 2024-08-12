@@ -51,14 +51,12 @@
                 <td>
                     <div class="row">
                         <div class="col-4">
-                            
-                            <a class="btn btn-primary" routerLink="/scheduling/detail/{{scheduling.id}}">
+                            <a class="btn btn-primary" routerLink="/event/scheduling/detail/{{scheduling.id}}">
                                 <fa-icon [icon]="fa.faAddressCard" title="Ver detalhes"></fa-icon>
                             </a>
                         </div>
-                        
                         <div class="col-4">
-                            <a class="btn btn-warning" routerLink="/scheduling/edit/{{scheduling.id}}">
+                            <a class="btn btn-warning" routerLink="/event/scheduling/edit/{{scheduling.id}}">
                                 <fa-icon [icon]="fa.faEdit" title="Editar cronograma"></fa-icon>
                             </a>
                         </div>
@@ -74,6 +72,4 @@
             }
         </tbody>
     </table>
-
-
 </div>

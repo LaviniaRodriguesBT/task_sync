@@ -148,7 +148,7 @@
   "event": [
     {
       "id": "2",
-      "code": "002",
+      "code": "00777",
       "name": "Workshop de Inteligência ArtificialDDDDDDDD",
       "description": "Evento para discutir as últimas tendências em IA",
       "business": "Technology",
@@ -351,7 +351,7 @@
       "event_id": "Workshop de Inteligência Artificial",
       "user_id": "Maria Silva",
       "task_id": "Atualizar perfil",
-      "value": "150",
+      "value": "80,00",
       "start_time": "09:00",
       "end_time": "11:00",
       "date": "2024-06-22",
