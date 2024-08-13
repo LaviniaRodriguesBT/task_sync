@@ -61,6 +61,7 @@ export class SchedulingEditComponent implements OnInit {
     this.form.controls['event_id'].setValue(scheduling.event_id);
     this.form.controls['user_id'].setValue(scheduling.user_id);
     this.form.controls['task_id'].setValue(scheduling.task_id);
+    this.form.controls['value'].setValue(scheduling.value);
     this.form.controls['start_time'].setValue(scheduling.start_time);
     this.form.controls['end_time'].setValue(scheduling.end_time);
     this.form.controls['date'].setValue(scheduling.date);

@@ -80,6 +80,7 @@ export class SchedulingCreateComponent implements OnInit {
     return this.form.controls['event_id'].valid
       && this.form.controls['user_id'].valid
       && this.form.controls['task_id'].valid
+      && this.form.controls['value'].valid
       && this.form.controls['start_time'].valid
       && this.form.controls['end_time'].valid
       && this.form.controls['date'].valid
