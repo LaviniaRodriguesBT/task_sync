@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } 
 import { RouterModule, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserCreateService } from '../../../../services/user/user-create.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'task-sync-user-create',
@@ -12,6 +13,7 @@ import { UserCreateService } from '../../../../services/user/user-create.service
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    CommonModule,
   ],
   templateUrl: './user-create.component.html',
   styleUrl: './user-create.component.css'
@@ -41,6 +43,18 @@ export class UserCreateComponent implements OnInit {
     this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
     });
+  }
+
+  showPassword: boolean = false;
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+    const passwordField = document.getElementById('password') as HTMLInputElement;
+    if (this.showPassword) {
+      passwordField.type = 'text';
+    } else {
+      passwordField.type = 'password';
+    }
   }
 
   async create() {

@@ -23,6 +23,7 @@
     "@angular/router": "^18.0.0",
     "@devexpress/analytics-core": "^24.1.4",
     "@fortawesome/angular-fontawesome": "^0.15.0",
+    "@fortawesome/fontawesome-free": "^6.6.0",
     "@fortawesome/fontawesome-svg-core": "^6.5.2",
     "@fortawesome/free-brands-svg-icons": "^6.5.2",
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
