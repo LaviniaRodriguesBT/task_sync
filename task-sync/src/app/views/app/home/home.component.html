@@ -15,6 +15,28 @@
         </ol>
     </nav>
 
+    <div class="dashboard">
+        <h2>Dashboard</h2>
+        <div class="status-cards">
+          <div class="card" #statusCard>
+            <h3>Total de Pessoas</h3>
+            <p>{{ totalPessoas }}</p>
+          </div>
+          <div class="card" #statusCard>
+            <h3>Em Andamento</h3>
+            <p>{{ emAndamento }}</p>
+          </div>
+          <div class="card" #statusCard>
+            <h3>Concluído</h3>
+            <p>{{ concluido }}</p>
+          </div>
+          <div class="card" #statusCard>
+            <h3>Em Aberto</h3>
+            <p>{{ emAberto }}</p>
+          </div>
+        </div>
+      </div>
+      
 </body>
 
 </html>
