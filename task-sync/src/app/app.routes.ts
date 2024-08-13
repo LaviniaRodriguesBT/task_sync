@@ -116,6 +116,11 @@ export const routes: Routes = [
             title: 'Task Sync - Lista de atividades',
           },
           {
+            path: 'mylist/:id',
+            component: TaskListComponent,
+            title: 'Task Sync - Minhas atividades',
+          },
+          {
             path: 'edit/:id',
             component: TaskEditComponent,
             title: 'Task Sync - Editar atividades',

@@ -152,6 +152,15 @@
       "name": "Roberto Vieira",
       "phone": "9972888",
       "address": "Avenida Atlântica, 1400, Rio de Janeiro"
+    },
+    {
+      "id": "18",
+      "email": "lucao@gmail.com",
+      "password": "1221",
+      "cpf": "12211221",
+      "name": "lucao severini",
+      "phone": "35999999999",
+      "address": "casa do lucao, 1400, senta rita"
     }
   ],
   "event": [
@@ -335,6 +344,8 @@
     },
     {
       "id": "12",
+      "userId": "18",
+      "eventId": "272",
       "name": "Gerenciar assinatura"
     },
     {
@@ -351,6 +362,7 @@
     },
     {
       "id": "16",
+      "userId": "18",
       "name": "Compartilhar conteúdo"
     }
   ],

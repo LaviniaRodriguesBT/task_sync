@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrService } from 'ngx-toastr';
 import { Task } from '../../../../domain/model/task.model';
@@ -20,33 +20,45 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 })
 export class TaskListComponent implements OnInit {
 
+  userId?: string;
+
   fa = fontawesome;
 
   faAdd = faPlus;
   tasks: Task[] = [];
 
-  constructor(private taskReadService: TaskReadService, private taskDeleteService: TaskDeleteService, private toastrService: ToastrService
+  constructor(
+    private activatedRoute: ActivatedRoute,
+    private taskReadService: TaskReadService,
+    private taskDeleteService: TaskDeleteService,
+    private toastrService: ToastrService
   ) {
 
   }
 
   ngOnInit(): void {
+    let userId = this.activatedRoute.snapshot.paramMap.get('id');
+    this.userId = userId!;
     this.loadTasks();
   }
 
   async loadTasks() {
     this.tasks = await this.taskReadService.findAll();
+
+    if (this.userId! != null){      
+      this.tasks = this.tasks.filter(e => e.userId == this.userId);
+    }
   }
 
   async deleteTask(taskId: string) {
     try {
       console.log('iniciando a remocao do tasko' + taskId);
       await this.taskDeleteService.delete(taskId);
-      this.toastrService.success('Tasko excluido com sucesso');
+      this.toastrService.success('Task excluida com sucesso');
 
       await this.loadTasks();
     } catch (error) {
-      this.toastrService.error('Não foi possível remover o tasko');
+      this.toastrService.error('Não foi possível remover a task');
 
     }
 
