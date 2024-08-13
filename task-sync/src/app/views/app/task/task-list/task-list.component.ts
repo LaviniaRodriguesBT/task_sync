@@ -26,9 +26,7 @@ export class TaskListComponent implements OnInit {
   tasks: Task[] = [];
 
   constructor(private taskReadService: TaskReadService, private taskDeleteService: TaskDeleteService, private toastrService: ToastrService
-  ) {
-
-  }
+  ) {}
 
   ngOnInit(): void {
     this.loadTasks();
@@ -40,13 +38,13 @@ export class TaskListComponent implements OnInit {
 
   async deleteTask(taskId: string) {
     try {
-      console.log('iniciando a remocao do tasko' + taskId);
+      console.log('iniciando a remocao da atividade' + taskId);
       await this.taskDeleteService.delete(taskId);
-      this.toastrService.success('Tasko excluido com sucesso');
+      this.toastrService.success('Atividade excluido com sucesso');
 
       await this.loadTasks();
     } catch (error) {
-      this.toastrService.error('Não foi possível remover o tasko');
+      this.toastrService.error('Não foi possível remover a atividade');
 
     }
 

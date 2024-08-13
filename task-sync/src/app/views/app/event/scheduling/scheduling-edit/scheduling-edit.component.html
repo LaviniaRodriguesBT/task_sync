@@ -27,25 +27,21 @@
                 formControlName="task_id">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="business">Área de negocio</label>
-            <input type="text" class="form-control" id="business" placeholder="Negocio" formControlName="business">
-        </div>
-        <div class="form-group col-12 mt-2">
             <label for="value">Valor R$</label>
             <input type="text" class="form-control" id="value" placeholder="Valor R$" formControlName="value">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="start_time">Hora Inicio</label>
-            <input type="text" class="form-control" id="start_time" placeholder="Hora Inicio"
+            <label for="start_time">Horario de Inicio</label>
+            <input type="time" class="form-control" id="start_time" placeholder="Horario de Inicio"
                 formControlName="start_time">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="end_time">Hora Final</label>
-            <input type="text" class="form-control" id="end_time" placeholder="Hora Final" formControlName="end_time">
+            <label for="end_time">Horario de Termino</label>
+            <input type="time" class="form-control" id="end_time" placeholder="Horario de Termino" formControlName="end_time">
         </div>
         <div class="form-group col-12 mt-2">
             <label for="date">Data</label>
-            <input type="text" class="form-control" id="date" placeholder="Data" formControlName="date">
+            <input type="date" class="form-control" id="date" placeholder="Data" formControlName="date">
         </div>
         <div class="form-group col-12 mt-2">
             <label for="status">Status</label>
@@ -53,7 +49,7 @@
         </div>
         <div class="col-12 text-end mt-2">
             <div class="col-12 text-end mt-2">
-                <a class="btn btn-secondary col-2 me-4" href="/scheduling/list">Voltar</a>
+                <a class="btn btn-secondary col-2 me-4" href="/event/scheduling/list">Voltar</a>
                 <button class="btn btn-success col-2">Salvar</button>
             </div>
         </div>

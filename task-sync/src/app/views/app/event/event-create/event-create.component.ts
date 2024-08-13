@@ -56,7 +56,7 @@ export class EventCreateComponent implements OnInit {
       date: this.form.controls['date'].value,
     }
 
-    console.log('preparando para criar o produto...');
+    console.log('preparando para criar o evento...');
     console.log(event);
 
     try {

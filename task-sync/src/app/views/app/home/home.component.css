@@ -1,31 +1,27 @@
-.imagem-container {
-    width: 100%;
-    height: auto;
+.dashboard {
+    padding: 20px;
+}
+  
+.status-cards {
+    display: flex;
+    gap: 20px;
+}
+  
+.card {
+    border: 1px solid #dee2e6;
+    border-radius: 5px;
+    padding: 20px;
     text-align: center;
+    flex: 1;
+    color: white; /* Para garantir que o texto seja visível nas cores */
 }
-
-
-.imagem-container img {
-    max-width: 100%;
-    height: auto;
+  
+.card h3 {
+    margin-bottom: 10px;
 }
-
-.example-card {
-    max-width: 300px;
-    margin-left:20px;
-	margin-top: 20px;
-    
+  
+.card p {
+    font-size: 24px;
+    font-weight: bold;
 }
-
-.sub-text-card {
-    text-align: center;
-    margin-left:20px;
-	margin-top: 10px;
-    
-}
-
-.body-text-card {
-    margin-top: 10px;
-    flex: 1 1 auto;
-    
-}
+  

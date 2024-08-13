@@ -78,10 +78,10 @@ export class EventEditComponent implements OnInit {
 
       console.log(event);
       await this.eventUpdateService.update(event);
-      this.toastrService.success('Produto atualizado com sucesso!');
+      this.toastrService.success('Evento atualizado com sucesso!');
       this.router.navigate(['event/list']);
     } catch (error) {
-      this.toastrService.error('Erro. Produto não foi atualizado.');
+      this.toastrService.error('Erro. Evento não foi atualizado.');
     }
   }
 
