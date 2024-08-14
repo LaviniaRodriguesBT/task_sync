@@ -8,6 +8,9 @@
 </nav>
 <h1>Criar novo cronograma</h1>
 <hr>
+<a class="btn btn-create btn-primary text-white" (click)="gerarPdf()">
+    Gerar pdf
+</a>
 
 <form class="form" [formGroup]="form" (ngSubmit)="create()">
     <div class="form-row">
