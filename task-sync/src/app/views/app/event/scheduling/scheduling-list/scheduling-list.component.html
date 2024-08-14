@@ -1,18 +1,20 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="/scheduling/list">Cronograma</a>
+            <a href="/event/scheduling/card">Cronograma</a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">Lista</li>
+        <li class="breadcrumb-item active" aria-current="page">Evento</li>
     </ol>
 </nav>
 <h1>Lista de Cronogramas</h1>
-<div class="col-4">
+<div class="d-flex justify-content-between">
     <a class="btn btn-create btn-primary text-white" routerLink="/event/scheduling/create">
         <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
-        Criar novo cronograma
+        Cadastrar cronograma
     </a>
+    <a class="btn btn-secondary" href="/event/scheduling/card">Voltar</a>
 </div>
+
 
 <hr>
 
@@ -25,7 +27,7 @@
                 <th scope="col" class="text-center">Evento</th>
                 <th scope="col" class="text-center description-col">Colaborador</th>
                 <th scope="col" class="text-center description-col">Atividade</th>
-                <th scope="col" class="text-center">Valor R$</th>
+                <th scope="col" class="text-center">Valor</th>
                 <th scope="col" class="text-center">Horario Inicio</th>
                 <th scope="col" class="text-center">Horario Fim</th>
                 <th scope="col" class="text-center">Data</th>
@@ -49,12 +51,12 @@
                 <td>
                     <div class="row">
                         <div class="col-4">
-                            <a class="btn btn-primary" routerLink="/scheduling/detail/{{scheduling.id}}">
+                            <a class="btn btn-primary" routerLink="/event/scheduling/detail/{{scheduling.id}}">
                                 <fa-icon [icon]="fa.faAddressCard" title="Ver detalhes"></fa-icon>
                             </a>
                         </div>
                         <div class="col-4">
-                            <a class="btn btn-warning" routerLink="/scheduling/edit/{{scheduling.id}}">
+                            <a class="btn btn-warning" routerLink="/event/scheduling/edit/{{scheduling.id}}">
                                 <fa-icon [icon]="fa.faEdit" title="Editar cronograma"></fa-icon>
                             </a>
                         </div>
