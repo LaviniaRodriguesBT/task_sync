@@ -87,5 +87,8 @@ export class SchedulingCreateComponent implements OnInit {
       && this.form.controls['status'].valid;
 
   }
+  gerarPdf() {
+    window.print()
+  }
 
 }
