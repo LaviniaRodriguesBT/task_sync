@@ -339,12 +339,16 @@
     {
       "id": "210d",
       "name": "Abastecer"
+    },
+    {
+      "id": "ebc4",
+      "name": "lalala"
     }
   ],
   "scheduling": [
     {
       "id": "2",
-      "event_id": "Workshop de Inteligência Artificial",
+      "event_id": "Workshop de Inteligência ",
       "user_id": "Maria Silva",
       "task_id": "Atual",
       "value": "500,00",
@@ -495,6 +499,17 @@
       "end_time": "14:00",
       "date": "2024-07-05",
       "status": "Concluído"
+    },
+    {
+      "id": "d471",
+      "event_id": "lala",
+      "user_id": "lalala",
+      "task_id": "lalaal",
+      "value": "6552",
+      "start_time": "01:11",
+      "end_time": "03:11",
+      "date": "2024-08-15",
+      "status": "jajaj"
     }
   ]
 }
