@@ -11,6 +11,9 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 
 
 
+import { jsPDF } from 'jspdf';
+
+
 @Component({
   selector: 'task-sync-event-list',
   standalone: true,
@@ -50,6 +53,10 @@ export class EventListComponent implements OnInit {
     } catch (error) {
       this.toastrService.error('Não foi possível remover o evento');
     }
+  }
+
+  gerarPdf() {
+    window.print()
   }
 }
 
