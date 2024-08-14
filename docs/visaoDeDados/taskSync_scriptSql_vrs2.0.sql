@@ -2,6 +2,10 @@ drop database if exists task_sync;
 
 create database task_sync;
 
+\c task_sync;
+
+begin;
+
 create table person (
     id serial primary key,
     cpf character varying(14) not null unique,
@@ -16,8 +20,7 @@ create table person_phone (
     unique(person_id, phone)
 );
 
-
-create table user (
+create table "user" (
     id serial primary key,
     login character varying(200) not null unique,
     password character varying(500) not null,
@@ -35,7 +38,7 @@ create table event (
 
 create table administrator (
     id serial primary key,
-    user_id integer not null references user(id) on update cascade,
+    user_id integer not null references "user"(id) on update cascade,
     event_id integer not null references event(id) on update cascade,
     unique (user_id, event_id)
 );
@@ -57,11 +60,10 @@ create table contract (
     id serial primary key,
     number integer unique not null,
     signature_date timestamp without time zone not null,
-    user_id integer not null references user(id) on update cascade,
+    user_id integer not null references "user"(id) on update cascade,
     event_id integer not null references event(id) on update cascade,
     unique (user_id, event_id)
 );
-
 
 create table scheduling (
     id serial primary key,
@@ -78,14 +80,14 @@ create table chat (
     id serial primary key,
     type character varying(14) not null check(type in ('Grupo', 'Privado')),
     date_time timestamp without time zone not null,
-    user_id integer not null references user(id) on update cascade,
+    user_id integer not null references "user"(id) on update cascade,
     event_id integer not null references event(id) on update cascade,
     unique (type, user_id, event_id)
 );
 
 create table chat_user (
     id serial primary key,
-    user_id integer not null references user(id) on update cascade,
+    user_id integer not null references "user"(id) on update cascade,
     chat_id integer not null references chat(id) on update cascade,
     unique (user_id, chat_id)
 );
@@ -94,7 +96,9 @@ create table message (
     id serial primary key,
     date_time timestamp without time zone not null,
     text character varying(800) not null,
-    user_id integer not null references user(id) on update cascade,
+    user_id integer not null references "user"(id) on update cascade,
     chat_id integer not null references chat(id) on update cascade,
     unique (date_time, user_id, chat_id)
 );
+
+commit;
