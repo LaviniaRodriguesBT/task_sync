@@ -70,7 +70,7 @@ export class SchedulingCreateComponent implements OnInit {
     try {
       await this.schedulingCreateService.create(scheduling);
       this.toastr.success('Dados salvos com sucesso!');
-      this.router.navigate(['scheduling/list']);
+      this.router.navigate(['/event/scheduling/list']);
     } catch (error: any) {
       this.toastr.error(error.message);
     }
@@ -80,11 +80,15 @@ export class SchedulingCreateComponent implements OnInit {
     return this.form.controls['event_id'].valid
       && this.form.controls['user_id'].valid
       && this.form.controls['task_id'].valid
+      && this.form.controls['value'].valid
       && this.form.controls['start_time'].valid
       && this.form.controls['end_time'].valid
       && this.form.controls['date'].valid
       && this.form.controls['status'].valid;
 
+  }
+  gerarPdf() {
+    window.print()
   }
 
 }

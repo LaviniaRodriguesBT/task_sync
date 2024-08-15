@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } 
 import { RouterModule, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserCreateService } from '../../../../services/user/user-create.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'task-sync-user-create',
@@ -12,6 +13,7 @@ import { UserCreateService } from '../../../../services/user/user-create.service
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    CommonModule,
   ],
   templateUrl: './user-create.component.html',
   styleUrl: './user-create.component.css'
@@ -39,8 +41,26 @@ export class UserCreateComponent implements OnInit {
 
   initializeForm() {
     this.form = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
+      password: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
+      cpf: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
+      address: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
+      phone: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
+
     });
+  }
+
+  showPassword: boolean = false;
+
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+    const passwordField = document.getElementById('password') as HTMLInputElement;
+    if (this.showPassword) {
+      passwordField.type = 'text';
+    } else {
+      passwordField.type = 'password';
+    }
   }
 
   async create() {
@@ -58,13 +78,42 @@ export class UserCreateComponent implements OnInit {
     console.log(user);
 
     try {
-      await this.userCreateService.create(user);
+      await this.userCreateService.createUser(user);
       this.toastr.success('Dados salvos com sucesso!');
       this.router.navigate(['user/list']);
     } catch (error: any) {
       this.toastr.error(error.message);
     }
   }
+
+  async createUser() {
+    const user: User = {
+      email: this.form.controls['email'].value,
+      name: this.form.controls['name'].value,
+      password: this.form.controls['password'].value,
+      cpf: this.form.controls['cpf'].value,
+      phone: this.form.controls['phone'].value,
+      address: this.form.controls['endereco'].value,
+    
+    }
+
+    console.log('preparando para criar o produto...');
+    console.log(user);
+
+    try {
+      await this.userCreateService.createUser(user);
+      this.toastr.success('Dados salvos com sucesso!');
+      this.router.navigate(['scheduling/list']);
+    } catch (error: any) {
+      this.toastr.error(error.message);
+    }
+  }
+
+
+
+
+
+
 
   validateFields() {
     return this.form.controls['email'].valid && this.form.controls['password'].valid && this.form.controls['cpf'].valid && this.form.controls['name'].valid && this.form.controls['address'].valid && this.form.controls['phone'].valid;

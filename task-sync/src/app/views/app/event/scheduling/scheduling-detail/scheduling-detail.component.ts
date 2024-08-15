@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Scheduling } from '../../../../../domain/model/scheduling.model';
 import { SchedulingReadService } from '../../../../../services/scheduling/scheduling-read.service';
@@ -12,7 +12,7 @@ import { SchedulingReadService } from '../../../../../services/scheduling/schedu
   templateUrl: './scheduling-detail.component.html',
   styleUrl: './scheduling-detail.component.css'
 })
-export class SchedulingDetailComponent {
+export class SchedulingDetailComponent implements OnInit {
 
   schedulingInformation?: Scheduling;
 

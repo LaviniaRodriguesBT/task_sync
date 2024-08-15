@@ -45,20 +45,20 @@ export class TaskListComponent implements OnInit {
   async loadTasks() {
     this.tasks = await this.taskReadService.findAll();
 
-    if (this.userId! != null){      
+    if (this.userId! != null){
       this.tasks = this.tasks.filter(e => e.userId == this.userId);
     }
   }
 
   async deleteTask(taskId: string) {
     try {
-      console.log('iniciando a remocao do tasko' + taskId);
+      console.log('iniciando a remocao da atividade' + taskId);
       await this.taskDeleteService.delete(taskId);
-      this.toastrService.success('Task excluida com sucesso');
+      this.toastrService.success('Atividade excluido com sucesso');
 
       await this.loadTasks();
     } catch (error) {
-      this.toastrService.error('Não foi possível remover a task');
+      this.toastrService.error('Não foi possível remover a atividade');
 
     }
 

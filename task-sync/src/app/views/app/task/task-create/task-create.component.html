@@ -3,10 +3,10 @@
         <li class="breadcrumb-item">
             <a href="/task/list">Atividades</a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">Cadastrar nova atividade</li>
+        <li class="breadcrumb-item active" aria-current="page">Cadastrar atividade</li>
     </ol>
 </nav>
-<h1>Cadastrar nova atividade</h1>
+<h1>Cadastrar atividade</h1>
 <hr>
 
 <form class="form" [formGroup]="form" (ngSubmit)="create()">
@@ -16,7 +16,8 @@
             <input type="text" class="form-control" id="name" placeholder="Nome" formControlName="name">
         </div>
         <div class="col-12 text-end mt-2">
-            <button class="btn btn-success">Salvar</button>
+            <a class="btn btn-secondary col-2 me-4" href="/task/list">Voltar</a>
+            <button class="btn btn-success col-2 me-4">Salvar</button>
         </div>
     </div>
 </form>

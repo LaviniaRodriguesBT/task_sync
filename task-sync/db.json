@@ -166,7 +166,7 @@
   "event": [
     {
       "id": "2",
-      "code": "002",
+      "code": "00777",
       "name": "Workshop de Inteligência ArtificialDDDDDDDD",
       "description": "Evento para discutir as últimas tendências em IA",
       "business": "Technology",
@@ -290,15 +290,7 @@
       "name": "Simulado de Gestão Empresarial",
       "description": "Simulado para estudantes de administração e gestão empresarial",
       "business": "Business",
-      "date": "30/03/2025"
-    },
-    {
-      "id": "17d1",
-      "code": "rtret",
-      "name": "rtret",
-      "description": "erter",
-      "business": "tertert",
-      "date": "erg"
+      "date": "30/03/2024"
     }
   ],
   "task": [
@@ -364,15 +356,23 @@
       "id": "16",
       "userId": "18",
       "name": "Compartilhar conteúdo"
+    },
+    {
+      "id": "210d",
+      "name": "Abastecer"
+    },
+    {
+      "id": "ebc4",
+      "name": "lalala"
     }
   ],
   "scheduling": [
     {
       "id": "2",
-      "event_id": "Workshop de Inteligência Artificial",
+      "event_id": "Workshop de Inteligência ",
       "user_id": "Maria Silva",
-      "task_id": "Atualizar perfil",
-      "value": "150",
+      "task_id": "Atual",
+      "value": "500,00",
       "start_time": "09:00",
       "end_time": "11:00",
       "date": "2024-06-22",
@@ -394,11 +394,11 @@
       "event_id": "Feira de Ciências",
       "user_id": "Ana Paula",
       "task_id": "Configurar notificações",
-      "value": "80",
+      "value": "",
       "start_time": "11:00",
       "end_time": "13:00",
-      "date": "2024-06-24",
-      "status": "Em aberto"
+      "date": "2024-06-285",
+      "status": "Em abertonni"
     },
     {
       "id": "5",
@@ -522,15 +522,15 @@
       "status": "Concluído"
     },
     {
-      "id": "6387",
-      "event_id": "",
-      "user_id": "",
-      "task_id": "",
-      "value": "",
-      "start_time": "",
-      "end_time": "",
-      "date": "",
-      "status": ""
+      "id": "d471",
+      "event_id": "lala",
+      "user_id": "lalala",
+      "task_id": "lalaal",
+      "value": "6552",
+      "start_time": "01:11",
+      "end_time": "03:11",
+      "date": "2024-08-15",
+      "status": "jajaj"
     }
   ]
 }
