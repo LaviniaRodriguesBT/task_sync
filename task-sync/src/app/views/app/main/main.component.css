@@ -9,11 +9,11 @@ body {
 }
 
 .app-container {
-    min-height: 80vh;
+    min-height: 80vh;    
 }
 
 .app-sidenav {
-    width: 230px;
+    width: 15%;
 }
 
 .main-root {

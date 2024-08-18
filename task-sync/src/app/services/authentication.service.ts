@@ -11,7 +11,7 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {
   }
 
-  async authenticate(credential: UserCredential) {
+  async authenticate(credential: UserCredential) : Promise<string>{
     console.log('trying to authenticate...');
     console.log(credential);
     let apiResponse = await firstValueFrom(this.http.get<UserCredential[]>(`http://localhost:3000/user?email=${credential.email}&password=${credential.password}`));
@@ -19,7 +19,7 @@ export class AuthenticationService {
     if (apiResponse == null || apiResponse.length != 1) {
       throw new Error('dados invalidos');
     }
-    return true;
+    return apiResponse[0].id;
   }
 
   logout() {
@@ -35,8 +35,9 @@ export class AuthenticationService {
     return false;
   }
 
-  addCredentialsToLocalStorage(email: string) {
-    localStorage.setItem('email', email);
+  addCredentialsToLocalStorage(credential: UserCredential) {
+    localStorage.setItem('email', credential.email);
+    localStorage.setItem('id', credential.id);
     localStorage.setItem('token', new Date().toLocaleTimeString());
   }
 

@@ -23,6 +23,7 @@ import { SchedulingDetailComponent } from './views/app/event/scheduling/scheduli
 import { SchedulingEditComponent } from './views/app/event/scheduling/scheduling-edit/scheduling-edit.component';
 import { SchedulingListComponent } from './views/app/event/scheduling/scheduling-list/scheduling-list.component';
 import { SchedulingCardComponent } from './views/app/event/scheduling/scheduling-card/scheduling-card.component';
+import { MyTaskListComponent } from './views/app/task/my-task-list/my-task-list.component';
 
 export const routes: Routes = [
   {
@@ -122,8 +123,8 @@ export const routes: Routes = [
             title: 'Task Sync - Lista de atividades',
           },
           {
-            path: 'mylist/:id',
-            component: TaskListComponent,
+            path: 'my-task-list/:id',
+            component: MyTaskListComponent,
             title: 'Task Sync - Minhas atividades',
           },
           {
