@@ -45,7 +45,7 @@
                     <div class="row column">
                         <div class="col-4">
                             <a routerLink="/event/detail/{{event.id}}">
-                                <span class="material-icons color-detail">info</span>
+                                <span class="material-icons color-detail" title="Informacoes">info</span>
                             </a>
                         </div>
                     </div>
@@ -54,7 +54,7 @@
                     <div class="row column">
                         <div class="col-4">
                             <a routerLink="/event/edit/{{event.id}}">
-                                <span class="material-icons color-edit">edit</span>
+                                <span class="material-icons color-edit" title="Editar evento">edit</span>
                             </a>
                         </div>
                     </div>
@@ -63,7 +63,7 @@
                     <div class="row column">
                         <div class="col-4">
                             <a (click)="deleteEvent(event.id!)">
-                                <span class="material-icons color-delete">delete_forever</span>
+                                <span class="material-icons color-delete" title="Deletar evento">delete_forever</span>
                             </a>
                         </div>
                     </div>

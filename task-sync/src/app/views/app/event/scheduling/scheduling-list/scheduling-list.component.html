@@ -13,6 +13,10 @@
         Cadastrar cronograma
     </a>
     <a class="btn btn-secondary" href="/event/scheduling/card">Voltar</a>
+    <a class="btn btn-pdf" (click)="gerarPdf()">
+        <span class="material-icons color-print">print</span>
+        Imprimir
+    </a>
 </div>
 
 
@@ -20,18 +24,21 @@
 
 <div class="mat-elevation-z8">
     <table class="table table ">
-        <thead>
+        <thead class="thead-style">
             <tr>
 
-                <th scope="col" class="text-center">Codigo</th>
-                <th scope="col" class="text-center">Evento</th>
-                <th scope="col" class="text-center description-col">Colaborador</th>
-                <th scope="col" class="text-center description-col">Atividade</th>
-                <th scope="col" class="text-center">Valor</th>
-                <th scope="col" class="text-center">Horario Inicio</th>
-                <th scope="col" class="text-center">Horario Fim</th>
-                <th scope="col" class="text-center">Data</th>
-                <th scope="col" class="text-center">Status</th>
+                <th scope="col" class="thead-style">Codigo</th>
+                <th scope="col" class="thead-style">Evento</th>
+                <th scope="col" class="thead-style description-col">Colaborador</th>
+                <th scope="col" class="thead-style description-col">Atividade</th>
+                <th scope="col" class="thead-style">Valor</th>
+                <th scope="col" class="thead-style">Horario Inicio</th>
+                <th scope="col" class="thead-style">Horario Fim</th>
+                <th scope="col" class="thead-style">Data</th>
+                <th scope="col" class="thead-style">Status</th>
+                <th scope="col" class="thead-style">Detalhes</th>
+                <th scope="col" class="thead-style">Editar</th>
+                <th scope="col" class="thead-style">Excluir</th>
 
 
             </tr>
@@ -49,21 +56,30 @@
                 <td class="text-center">{{scheduling.date}}</td>
                 <td class="text-center">{{scheduling.status}}</td>
                 <td>
-                    <div class="row">
+                    <div class="row column">
                         <div class="col-4">
-                            <a class="btn btn-primary" routerLink="/event/scheduling/detail/{{scheduling.id}}">
-                                <fa-icon [icon]="fa.faAddressCard" title="Ver detalhes"></fa-icon>
+                            <a routerLink="/event/scheduling/detail/{{scheduling.id}}">
+                                <span class="material-icons color-detail" title="Informacoes">info</span>
                             </a>
                         </div>
+                    </div>
+                    </td>
+                        <td>
+                            <div class="row column">
                         <div class="col-4">
-                            <a class="btn btn-warning" routerLink="/event/scheduling/edit/{{scheduling.id}}">
-                                <fa-icon [icon]="fa.faEdit" title="Editar cronograma"></fa-icon>
+                            <a routerLink="/event/scheduling/edit/{{scheduling.id}}">
+                                <span class="material-icons color-edit" title="Editar cronograma">edit</span>
                             </a>
                         </div>
+                    </div>
+                    </td>
+
+                        <td>
+                            <div class="row column">
 
                         <div class="col-4">
-                            <a class="btn btn-danger" (click)="deleteScheduling(scheduling.id!)">
-                                <fa-icon [icon]="fa.faRemove" title="Excluir cronograma"></fa-icon>
+                            <a (click)="deleteScheduling(scheduling.id!)">
+                                <span class="material-icons color-delete" title="Deletar cronograma">delete_forever</span>
                             </a>
                         </div>
                     </div>
@@ -72,4 +88,15 @@
             }
         </tbody>
     </table>
+</div>
+
+<div class="pagination">
+    <select>
+        <option value="5">5 por página</option>
+        <option value="10">10 por página</option>
+        <option value="15">15 por página</option>
+        <option value="50">50 por página</option>
+    </select>
+    <button onclick="previousPage()">Anterior</button>
+    <button onclick="nextPage()">Próximo</button>
 </div>
