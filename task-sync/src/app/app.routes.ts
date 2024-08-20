@@ -24,6 +24,7 @@ import { SchedulingEditComponent } from './views/app/event/scheduling/scheduling
 import { SchedulingListComponent } from './views/app/event/scheduling/scheduling-list/scheduling-list.component';
 import { SchedulingCardComponent } from './views/app/event/scheduling/scheduling-card/scheduling-card.component';
 import { MyTaskListComponent } from './views/app/task/my-task-list/my-task-list.component';
+import { AboutUsComponent } from './views/app/about-us/about-us.component';
 
 export const routes: Routes = [
   {
@@ -45,6 +46,11 @@ export const routes: Routes = [
         path: 'help',
         component: HelpComponent,
         title: 'Task Sync - Ajuda',
+      },
+      {
+        path: 'aboutUs',
+        component: AboutUsComponent,
+        title: 'Task Sync - Sobre nós',
       },
       {
         path: 'account/my-profile',
