@@ -1,21 +1,35 @@
 <div class="base-form">
-    <form class="form mat-elevation-z4">
-        <img mat-card-image src="\assets\img\logo_task_inicio.png">
-        <hr>
-        <mat-form-field>
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="Email" required="" [formControl]="email">
-        </mat-form-field>
-        <mat-form-field>
-            <mat-label>Senha</mat-label>
-            <input matInput type="password" placeholder="Senha" maxlength="10" required [formControl]="password">
-        </mat-form-field>
-        <button mat-raised-button color="primary" (click)="login()" [disabled]="isFormInvalid()">Login</button>
+    
+    <div class="container-div">
+        <div class="form-container">
+            <div class="image-container">
+                <img src="\assets\img\icone_login.png" alt="slogan task sync" class="slogan">
+                <form class="form">
+                    <div>
+                        <img src="\assets\img\contact_icon.png" alt="Ícone de contato" class="contact-icon">
+                        <input matInput type="email" placeholder="Digite seu email" required="" [formControl]="email"
+                            class="fa fa-envelope enter-field">
+                    </div>
+                    <div>
+                        <input matInput type="password" placeholder="Digite sua senha" maxlength="10" required
+                            [formControl]="password" class="fa fa-lock iPassword enter-field">
+                    </div>
+                    <button class="btn-sign-in" (click)="login()" [disabled]="isFormInvalid()">Login</button>
 
-        @if(isLoginIncorrect) {
-        <p class="text-danger mt-2">Email e/ou senha incorretos.</p>
-        }
+                    @if(isLoginIncorrect) {
+                    <p class="text-danger mt-2">Email e/ou senha incorretos.</p>
+                    }
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Todos os direitos reservados aos criadores Lavínia Brandani, Lucas Severini e Michele Fernandes.
+            <span class="links-footer">
+                <a href="termos-de-uso.html">Termos de Uso</a> |
+                <a href="politica-de-privacidade.html">Política de Privacidade</a>
+            </span>
+        </p>
+    </footer>
 
-        <hr>
-    </form>
 </div>

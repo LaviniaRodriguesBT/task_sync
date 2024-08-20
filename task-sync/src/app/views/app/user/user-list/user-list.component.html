@@ -14,18 +14,26 @@
         Cadastrar pessoa
     </a>
     <a class="btn btn-secondary" href="/">Voltar</a>
+    <a class="btn btn-pdf" (click)="gerarPdf()">
+        <span class="material-icons color-print">print</span>
+        Imprimir
+    </a>
 </div>
 <hr>
 
 <div class="mat-elevation-z8">
     <table class="table table-striped">
-        <thead>
+        <thead class="thead-style">
             <tr>
-                <th scope="col" class="text-center">Codigo</th>
-                <th scope="col" class="text-center">Nome</th>
-                <th scope="col" class="text-center">Email</th>
-                <th scope="col" class="text-center">Telefone</th>
-                <th scope="col" class="text-center">Endereço</th>
+                <th scope="col" class="thead-style">Codigo</th>
+                <th scope="col" class="thead-style">Nome</th>
+                <th scope="col" class="thead-style">Email</th>
+                <th scope="col" class="thead-style">CPF</th>
+                <th scope="col" class="thead-style">Telefone</th>
+                <th scope="col" class="thead-style">Endereço</th>
+                <th scope="col" class="thead-style">Detalhes</th>
+                <th scope="col" class="thead-style">Editar</th>
+                <th scope="col" class="thead-style">Excluir</th>
 
             </tr>
         </thead>
@@ -38,23 +46,32 @@
                 <td class="text-center">{{user.cpf}}</td>
                 <td class="text-center">{{user.phone}}</td>
                 <td class="text-center">{{user.address}}</td>
-                <td class="text-center">
-                    <div class="row">
+                <td>
+                    <div class="row column">
+
                         <div class="col-4">
-                            <a class="btn btn-primary" routerLink="/user/detail/{{user.id}}">
-                                <fa-icon [icon]="fa.faAddressCard"></fa-icon>
+                            <a routerLink="/user/detail/{{user.id}}">
+                                <span class="material-icons color-detail" title="Informacoes">info</span>
                             </a>
 
                         </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="row column">
                         <div class="col-4">
-                            <a class="btn btn-warning" routerLink="/user/edit/{{user.id}}">
-                                <fa-icon [icon]="fa.faEdit"></fa-icon>
+                            <a routerLink="/user/edit/{{user.id}}">
+                                <span class="material-icons color-edit" title="Editar usuario">edit</span>
                             </a>
                         </div>
+                    </div>
+                </td>
+                <td>
+                    <div class="row column">
 
                         <div class="col-4">
-                            <a class="btn btn-danger" (click)="deleteUser(user.id!)">
-                                <fa-icon [icon]="fa.faRemove"></fa-icon>
+                            <a (click)="deleteUser(user.id!)">
+                                <span class="material-icons color-delete" title="Apagar usuario">delete_forever</span>
                             </a>
                         </div>
                     </div>
@@ -63,4 +80,15 @@
             }
         </tbody>
     </table>
+</div>
+
+<div class="pagination">
+    <select>
+        <option value="5">5 por página</option>
+        <option value="10">10 por página</option>
+        <option value="15">15 por página</option>
+        <option value="50">50 por página</option>
+    </select>
+    <button onclick="previousPage()">Anterior</button>
+    <button onclick="nextPage()">Próximo</button>
 </div>

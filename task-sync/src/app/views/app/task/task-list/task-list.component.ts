@@ -63,5 +63,12 @@ export class TaskListComponent implements OnInit {
     }
 
   }
+  gerarPdf() {
+    window.print()
+  }
+  previousPage() {
+  }
+  nextPage() {
+  }
 
 }

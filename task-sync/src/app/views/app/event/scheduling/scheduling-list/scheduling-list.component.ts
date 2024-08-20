@@ -45,4 +45,12 @@ export class SchedulingListComponent implements OnInit {
       this.toastrService.error('Não foi possível remover o cronograma');
     }
   }
+
+  gerarPdf() {
+    window.print()
+  }
+  previousPage() {
+  }
+  nextPage() {
+  }
 }

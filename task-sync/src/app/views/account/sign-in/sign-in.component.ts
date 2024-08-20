@@ -6,6 +6,8 @@ import { Router } from '@angular/router';
 import { UserCredential } from '../../../domain/dto/user-credential';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { ToastrService } from "ngx-toastr";
+import { MatIconModule } from '@angular/material/icon';
+
 
 @Component({
   selector: 'task-sync-sign-in',
@@ -15,6 +17,8 @@ import { ToastrService } from "ngx-toastr";
     MatButtonModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule,
+    
   ],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css'

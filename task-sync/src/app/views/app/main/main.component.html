@@ -1,9 +1,10 @@
 <div class="main-root">
     <mat-toolbar class="color-head">
 
-        <button mat-icon-button (click)="sidenav.toggle()" matTooltip="Menu">
+
+        <!-- <button mat-icon-button (click)="sidenav.toggle()" matTooltip="Menu">
             <mat-icon>menu</mat-icon>
-        </button>
+        </button> -->
         <a class="navbar-item">
             <img src="assets/img/logo_task.png" width="220" height="220">
         </a>
@@ -32,51 +33,55 @@
             </button>
         </mat-menu>
     </mat-toolbar>
+    <mat-toolbar class="toolbar">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li>
+                        <button mat-button [matMenuTriggerFor]="menuEventos" class="btn-list">Eventos</button>
+                        <mat-menu #menuEventos="matMenu">
+                            <a mat-list-item routerLink="/event/list">Lista de eventos </a>
+                            <a mat-list-item routerLink="/event/create">Cadastrar evento </a>
+                            <a mat-list-item routerLink="/event/scheduling/card">Cronogramas </a>
+                        </mat-menu>
+                    </li>
+                    <li>
+                        <button mat-button [matMenuTriggerFor]="menuPessoas" class="btn-list">Pessoas</button>
+                        <mat-menu #menuPessoas="matMenu">
+                            <a mat-list-item routerLink="/user/list">Lista de pessoas </a>
+                            <a mat-list-item routerLink="/user/create">Cadastrar pessoa</a>
+                        </mat-menu>
+                    </li>
+                    <li>
+                        <button mat-button [matMenuTriggerFor]="menuAtividades" class="btn-list">Atividades</button>
+                        <mat-menu #menuAtividades="matMenu">
+                            <a mat-list-item routerLink="/task/list">Lista de atividades</a>
+                            <a mat-list-item routerLink="/task/create">Cadastrar atividade</a>
+                            <a mat-list-item routerLink="/task/my-task-list/{{userId}}">Listar minhas atividades</a>
+                        </mat-menu>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </mat-toolbar>
 
-    <mat-sidenav-container class="app-container">
-        <mat-sidenav #sidenav mode="side" opened [class.mat-elevation-z4]="true" class="app-sidenav">
-            <mat-nav-list>
-                <mat-expansion-panel [class.mat-elevation-z0]="true">
-                    <mat-expansion-panel-header>
-                        Eventos
-                    </mat-expansion-panel-header>
-                    <mat-nav-list>
-                        <a mat-list-item routerLink="/event/list">Lista de eventos </a>
-                        <a mat-list-item routerLink="/event/create">Cadastrar evento </a>
-                        <a mat-list-item routerLink="/event/scheduling/card">Cronogramas </a>
-                    </mat-nav-list>
-                </mat-expansion-panel>
-                <mat-expansion-panel [class.mat-elevation-z0]="true">
-                    <mat-expansion-panel-header>
-                        Pessoas
-                    </mat-expansion-panel-header>
-                    <mat-nav-list>
-                        <a mat-list-item routerLink="/user/list">Lista de pessoas </a>
-                        <a mat-list-item routerLink="/user/create">Cadastrar pessoa</a>
-                    </mat-nav-list>
-                </mat-expansion-panel>
-                <mat-expansion-panel [class.mat-elevation-z0]="true">
-                    <mat-expansion-panel-header>
-                        Atividade
-                    </mat-expansion-panel-header>
-                    <mat-nav-list>
-                        <a mat-list-item routerLink="/task/list">Lista de atividades</a>
-                        <a mat-list-item routerLink="/task/create">Cadastrar atividade</a>
-                        <a mat-list-item routerLink="/task/my-task-list/{{userId}}">Listar minhas atividades</a>
-                    </mat-nav-list>
-                </mat-expansion-panel>
-            </mat-nav-list>
-        </mat-sidenav>
-        <div class="page-wrap">
-            <main class="container mt-1">
+    <div class="content-container">
+        <mat-nav-list>
+            <mat-expansion-panel [class.mat-elevation-z0]="true">
+            </mat-expansion-panel>
+        </mat-nav-list>
+    </div>
 
-                <router-outlet></router-outlet>
+    <div class="page-wrap">
+        <main class="container mt-1">
 
-                <div class="mb-4"></div>
-            </main>
-        </div>
-    </mat-sidenav-container>
+            <router-outlet></router-outlet>
+
+            <div class="mb-4"></div>
+        </main>
+    </div>
     <footer>
-        Todos os direitos reservados <fa-icon [icon]="faCopyright" style="font-size: 10px"></fa-icon>. 2024 - 2026
+        <p>&copy; 2024 Todos os direitos reservados aos criadores Lavínia Brandani, Lucas Severini e Michele Fernandes.
+        </p>
     </footer>
 </div>
