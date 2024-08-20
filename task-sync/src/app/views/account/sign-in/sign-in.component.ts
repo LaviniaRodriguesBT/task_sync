@@ -45,14 +45,18 @@ export class SignInComponent implements OnInit {
 
   async login() {
     let credential: UserCredential = {
+      id: "",
       email: this.email.value!,
       password: this.password.value!
     };
 
     try {
-      await this.authenticationService.authenticate(credential);
+      let id = await this.authenticationService.authenticate(credential);
+
+      credential.id = id;
+
       this.authenticationService
-        .addCredentialsToLocalStorage(credential.email);
+        .addCredentialsToLocalStorage(credential);
 
       await this.router.navigate(['/']);
     } catch (e: any) {

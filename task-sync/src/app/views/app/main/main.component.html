@@ -62,13 +62,13 @@
                     <mat-nav-list>
                         <a mat-list-item routerLink="/task/list">Lista de atividades</a>
                         <a mat-list-item routerLink="/task/create">Cadastrar atividade</a>
-                        <a mat-list-item routerLink="/task/mylist">Listar minhas atividades</a>
+                        <a mat-list-item routerLink="/task/my-task-list/{{userId}}">Listar minhas atividades</a>
                     </mat-nav-list>
                 </mat-expansion-panel>
             </mat-nav-list>
         </mat-sidenav>
         <div class="page-wrap">
-            <main class="container mt-2">
+            <main class="container mt-1">
 
                 <router-outlet></router-outlet>
 

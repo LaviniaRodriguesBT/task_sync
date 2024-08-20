@@ -41,8 +41,12 @@ export class MainComponent {
   faCoffee = fontawesome.faHeartBroken;
   faCopyright = faCopyright;
 
+  userId: string | null;
+
   constructor(private router: Router,
     private authenticationService: AuthenticationService,) {
+
+      this.userId = localStorage.getItem('id');
   }
 
   logout() {

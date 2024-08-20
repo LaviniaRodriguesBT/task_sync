@@ -35,6 +35,10 @@ export class EventCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let dateInput = document.getElementById("date") as HTMLInputElement;
+
+    dateInput.min = new Date().toLocaleDateString('pt-BR');
+
   }
 
   initializeForm() {
