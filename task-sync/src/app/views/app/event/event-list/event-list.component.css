@@ -1,21 +1,17 @@
 table {
     width: 100%;
-
 }
 
 .column {
-
     align-items: center;
     justify-content: center;
 }
-
 
 .thead-style {
     background-color: #165a5a;
     color: white;
     text-align: center;
     font-size: 15px;
-
 }
 
 .description-col {
@@ -24,7 +20,6 @@ table {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-
 
 .btn-create {
     background-color: #6200ff;
@@ -49,7 +44,6 @@ table {
     gap: 10px
 }
 
-
 .color-detail {
     color: green;
 }
@@ -60,4 +54,26 @@ table {
 
 .color-delete {
     color: red;
+}
+
+.pagination {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.pagination select {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #94a7ff;
+}
+
+.pagination button {
+    background-color: #420a63;
+    color: white;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    cursor: pointer;
 }
