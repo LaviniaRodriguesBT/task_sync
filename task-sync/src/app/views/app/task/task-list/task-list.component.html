@@ -14,15 +14,22 @@
         Cadastrar atividade
     </a>
     <a class="btn btn-secondary" href="/">Voltar</a>
+    <a class="btn btn-pdf" (click)="gerarPdf()">
+        <span class="material-icons color-print">print</span>
+        Imprimir
+    </a>
 </div>
 <hr>
 
 <div class="mat-elevation-z8">
-    <table class="table table-striped">
-        <thead>
+    <table class="table table">
+        <thead class="thead-style">
             <tr>
-                <th scope="col" class="text-center">Código</th>
-                <th scope="col" class="text-center">Nome</th>
+                <th scope="col" class="thead-style">Código</th>
+                <th scope="col" class="thead-style">Nome</th>
+                <th scope="col" class="thead-style">Detalhes</th>
+                <th scope="col" class="thead-style">Editar</th>
+                <th scope="col" class="thead-style">Excluir</th>
             </tr>
         </thead>
         <tbody>
@@ -31,21 +38,29 @@
                 <th scope="row" class="text-center">{{task.id}}</th>
                 <td class="text-center">{{task.name}}</td>
                 <td>
-                    <div class="row">
+                    <div class="row column">
                         <div class="col-4">
-                            <a class="btn btn-primary" routerLink="/task/detail/{{task.id}}">
-                                <fa-icon [icon]="fa.faAddressCard" title="Ver detalhes"></fa-icon>
+                            <a routerLink="/task/detail/{{task.id}}">
+                                <span class="material-icons color-detail" title="Informacoes">info</span>
                             </a>
                         </div>
-                        <div class="col-4">
-                            <a class="btn btn-warning" routerLink="/task/edit/{{task.id}}">
-                                <fa-icon [icon]="fa.faEdit" title="Editar atividade"></fa-icon>
+                    </div>
+                </td>
+                        <td>
+                            <div class="row column">
+                                <div class="col-4">
+                            <a routerLink="/task/edit/{{task.id}}">
+                                <span class="material-icons color-edit" title="Editar atividade">edit</span>
                             </a>
                         </div>
+                    </div>
+                </td>
 
-                        <div class="col-4">
-                            <a class="btn btn-danger" (click)="deleteTask(task.id!)">
-                                <fa-icon [icon]="fa.faRemove" title="Excluir atividade"></fa-icon>
+                        <td>
+                            <div class="row column">
+                                <div class="col-4">
+                            <a (click)="deleteTask(task.id!)">
+                                <span class="material-icons color-delete" title="Apagar atividade">delete_forever</span>
                             </a>
                         </div>
                     </div>
@@ -54,4 +69,14 @@
             }
         </tbody>
     </table>
+</div>
+<div class="pagination">
+    <select>
+        <option value="5">5 por página</option>
+        <option value="10">10 por página</option>
+        <option value="15">15 por página</option>
+        <option value="50">50 por página</option>
+    </select>
+    <button onclick="previousPage()">Anterior</button>
+    <button onclick="nextPage()">Próximo</button>
 </div>
