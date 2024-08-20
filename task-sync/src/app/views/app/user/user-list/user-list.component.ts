@@ -52,6 +52,15 @@ export class UserListComponent {
 
     }
 
+
+    
+  }
+  gerarPdf() {
+    window.print()
+  }
+  previousPage() {
+  }
+  nextPage() {
   }
 
 }
