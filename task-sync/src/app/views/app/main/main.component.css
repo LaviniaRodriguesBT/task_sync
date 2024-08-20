@@ -30,11 +30,6 @@ body {
     padding: 0 10px;
 }
 
-footer {
-    margin-top: auto;
-    background-color: #1D1D1B;
-    color: white;
-}
 
 .toolbar {
     width: 100%;
@@ -60,6 +55,13 @@ footer {
     align-items: center;
     margin: 10px 10px;
 
+}
+
+footer {
+    margin-top: auto;
+    background-color: #1D1D1B;
+    color: white;
+    text-align: center;
 }
 
 footer a {
