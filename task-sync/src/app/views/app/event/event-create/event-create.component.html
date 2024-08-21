@@ -11,6 +11,13 @@
 
 <form class="form" [formGroup]="form" (ngSubmit)="create()">
     <div class="form-row">
+        <div class="form-group col- mt-2">
+            <label for="img-event">
+              <span class="material-icons btn-add-image" title="Informacoes">image</span>
+              <input type="file" id="img-event" class="sr-only" accept="image/*" (change)="onImageSelected($event)">
+              <img id="image-preview" src="" alt="Pré-visualização da imagem" class="lenght-image">
+            </label>
+          </div>
         <div class="form-group col-12 mt-2">
             <label for="code">Código</label>
             <input type="text" class="form-control" id="code" placeholder="Codigo" formControlName="code">
