@@ -38,16 +38,16 @@ export class HomeComponent implements OnInit {
     this.statusCards.forEach((card: ElementRef, index: number) => {
       switch (index) {
         case 0:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#007bff'); // Azul para Total de Pessoas
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#007bff'); 
           break;
         case 1:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#ffc107'); // Amarelo para Em Andamento
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#ffc107'); 
           break;
         case 2:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#28a745'); // Verde para Concluído
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#28a745'); 
           break;
         case 3:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#dc3545'); // Vermelho para Em Aberto
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#dc3545');
           break;
         default:
           break;

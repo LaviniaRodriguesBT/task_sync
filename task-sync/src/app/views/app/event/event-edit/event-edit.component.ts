@@ -19,7 +19,6 @@ import { Event } from "../../../../domain/model/event.model";
 })
 export class EventEditComponent implements OnInit {
 
-  // eventInformation?: Events;
   eventId?: string;
   form!: FormGroup;
 

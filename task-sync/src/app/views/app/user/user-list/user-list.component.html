@@ -25,7 +25,7 @@
     <table class="table table-striped">
         <thead class="thead-style">
             <tr>
-                <!-- <th scope="col" class="thead-style">Codigo</th> -->
+          
                 <th scope="col" class="thead-style">Nome</th>
                 <th scope="col" class="thead-style">Email</th>
                 <th scope="col" class="thead-style">CPF</th>
@@ -40,7 +40,6 @@
         <tbody>
             @for(user of users; track $index){
             <tr>
-                <!-- <th scope="row" class="text-center">{{user.id}}</th> -->
                 <td class="text-center">{{user.name}}</td>
                 <td class="text-center">{{user.email}}</td>
                 <td class="text-center">{{user.cpf}}</td>
