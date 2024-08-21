@@ -20,10 +20,13 @@
         </button>
         <mat-menu #myProfile [overlapTrigger]="false" yPosition="below">
             <button mat-menu-item routerLink="/account/my-profile">
-                <mat-icon>person</mat-icon><span>Minha conta</span>
+                <mat-icon>settings</mat-icon><span>Minha conta</span>
             </button>
             <button mat-menu-item routerLink="/help">
-                <mat-icon>settings</mat-icon><span>Ajuda</span>
+                <mat-icon>help</mat-icon><span>Ajuda</span>
+            </button>
+            <button mat-menu-item routerLink="/aboutUs">
+                <mat-icon>groups 2</mat-icon><span>Sobre nós</span>
             </button>
 
             <mat-divider></mat-divider>
