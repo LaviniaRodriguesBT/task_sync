@@ -8,7 +8,7 @@ table {
 }
 
 .thead-style {
-  background-color: #165a5a;
+  background-color: #002fa3;
   color: white;
   text-align: center;
   font-size: 15px;
@@ -22,13 +22,13 @@ table {
 }
 
 .btn-create {
-  background-color: #6200ff;
+  background-color: #002fa3;
   border: none;
   color: white;
 }
 
 .btn-pdf {
-  background-color: #420a63;
+  background-color: #002fa3;
   color: white;
   padding: 0px 32px;
   text-align: center;
@@ -66,11 +66,11 @@ table {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #94a7ff;
+  background-color: #002fa3;
 }
 
 .pagination button {
-  background-color: #420a63;
+  background-color: #002fa3;
   color: white;
   padding: 5px 10px;
   border: 1px solid #ccc;

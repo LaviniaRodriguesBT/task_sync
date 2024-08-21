@@ -12,74 +12,40 @@
         <fa-icon [icon]="faAdd" title="Adicionar novo evento"></fa-icon>
         Cadastrar evento
     </a>
-    <a class="btn btn-secondary" href="/">Voltar</a>
+
+    <a class="btn btn-secondary material-icons arrow-back" href="/">
+        <span class="material-icons">arrow_back</span> Voltar
+    </a>
+
     <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
         Imprimir
     </a>
 </div>
-<hr>
-<div class="mat-elevation-z8">
-    <table class="table table ">
-        <thead class="thead-style">
-            <tr>
-                <th scope="col" class="thead-style">Código</th>
-                <th scope="col" class="thead-style">Nome</th>
-                <th scope="col" class="thead-style description-col">Descrição</th>
-                <th scope="col" class="thead-style description-col">Negócio</th>
-                <th scope="col" class="thead-style">Data Inicio</th>
-                <th scope="col" class="thead-style">Detalhes</th>
-                <th scope="col" class="thead-style">Editar</th>
-                <th scope="col" class="thead-style">Excluir</th>
-            </tr>
-        </thead>
-        <tbody>
-            @for(event of events; track $index){
-            <tr>
-                <td class="text-center">{{event.code}}</td>
-                <td class="text-center">{{event.name}}</td>
-                <td class="text-center description-col">{{event.description}}</td>
-                <td class="text-center">{{event.business}}</td>
-                <td class="text-center">{{event.date}}</td>
-                <td>
-                    <div class="row column">
-                        <div class="col-4">
-                            <a routerLink="/event/detail/{{event.id}}">
-                                <span class="material-icons color-detail" title="Informacoes">info</span>
-                            </a>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="row column">
-                        <div class="col-4">
-                            <a routerLink="/event/edit/{{event.id}}">
-                                <span class="material-icons color-edit" title="Editar evento">edit</span>
-                            </a>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="row column">
-                        <div class="col-4">
-                            <a (click)="deleteEvent(event.id!)">
-                                <span class="material-icons color-delete" title="Deletar evento">delete_forever</span>
-                            </a>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            }
-        </tbody>
-    </table>
-</div>
-<div class="pagination">
-    <select>
-        <option value="5">5 por página</option>
-        <option value="10">10 por página</option>
-        <option value="15">15 por página</option>
-        <option value="50">50 por página</option>
-    </select>
-    <button onclick="previousPage()">Anterior</button>
-    <button onclick="nextPage()">Próximo</button>
+
+<div class="row">
+    @for(event of events; track $index){
+    <mat-card class="example-card shadow-lg col-4" appearance="outlined">
+        <mat-card-header>
+            <div mat-card-avatar class="example-header-imag" alt="Imagem do Evento"></div>
+            <mat-card-title class="sub-text-card">{{event.name}}</mat-card-title>
+        </mat-card-header>
+        <img mat-card-image src="\assets\img\img_faitec.png">
+        <mat-card-content class="body-text-card">
+            <p>
+                {{event.description}}
+            </p>
+        </mat-card-content>
+        <mat-card-actions>
+            <a [routerLink]="['/event/scheduling/list/', event.id]" mat-button
+                class="btn btn-primary col-lg-6 text-center mt-2">Acessar
+            </a>
+
+            <a (click)="deleteEvent(event.id!)">
+                <span class="material-icons color-delete" title="Deletar cronograma">delete_forever</span>
+            </a>
+        </mat-card-actions>
+    </mat-card>
+    }
+
 </div>

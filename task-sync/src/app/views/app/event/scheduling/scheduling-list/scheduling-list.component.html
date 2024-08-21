@@ -1,7 +1,7 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="/event/scheduling/card">Cronograma</a>
+            <a href="/event/list">Cronograma</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Evento</li>
     </ol>
@@ -12,7 +12,11 @@
         <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
         Cadastrar cronograma
     </a>
-    <a class="btn btn-secondary" href="/event/scheduling/card">Voltar</a>
+
+    <a class="btn btn-secondary material-icons arrow-back" href="/event/list">
+        <span class="material-icons">arrow_back</span> Voltar
+    </a>
+
     <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
         Imprimir

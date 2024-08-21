@@ -165,28 +165,12 @@
   ],
   "event": [
     {
-      "id": "2",
-      "code": "00777",
-      "name": "Workshop de Inteligência ArtificialDDDDDDDD",
-      "description": "Evento para discutir as últimas tendências em IA",
-      "business": "Technology",
-      "date": "15/03/2024"
-    },
-    {
       "id": "3",
       "code": "003",
       "name": "Congresso de Engenharia",
       "description": "Congresso anual de engenharia com palestras e workshops",
       "business": "Engineering",
       "date": "20/04/2024"
-    },
-    {
-      "id": "4",
-      "code": "004",
-      "name": "Feira de Ciências",
-      "description": "Feira escolar com projetos de ciências",
-      "business": "Education",
-      "date": "05/05/2024"
     },
     {
       "id": "5",
@@ -291,6 +275,14 @@
       "description": "Simulado para estudantes de administração e gestão empresarial",
       "business": "Business",
       "date": "30/03/2024"
+    },
+    {
+      "id": "a495",
+      "code": "52",
+      "name": "nynty",
+      "description": "ymnytj",
+      "business": "ytmjtyfjm",
+      "date": "2024-08-23"
     }
   ],
   "task": [

@@ -1,0 +1,9 @@
+.btn-success .material-icons {
+    vertical-align: middle; /* Alinha o ícone verticalmente */
+    margin-right: 4px; /* Espaço entre o ícone e o texto */
+}
+
+.arrow-back .material-icons {
+    vertical-align: middle;
+    margin-right: 4px;
+}
