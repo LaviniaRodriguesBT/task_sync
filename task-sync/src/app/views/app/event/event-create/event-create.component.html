@@ -1,4 +1,4 @@
-₢<nav aria-label="breadcrumb">
+<nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="/event/list">Evento</a>
@@ -10,7 +10,7 @@
 <hr>
 
 <form class="form-div" [formGroup]="form" (ngSubmit)="create()">
-    <div class="form-row">₢
+    <div class="form-div">
         <div class="form-group mt-2 ml-2">
             <label for="name" class="text-name">Nome</label>
             <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name">
@@ -32,28 +32,39 @@
         </div>
         <div class="form-group col-12 mt-2">
             <label for="description" class="text-form">Descrição</label>
-            <input type="text" class="form-description" id="description" placeholder="Descrição"
-                formControlName="description">
+            <textarea type="text" class="text-area" id="description"
+                formControlName="description" placeholder="Descreva sobre seu evento"></textarea>
         </div>
         <div class="form-group col-12 mt-2">
             <label for="business" class="text-form">Área de negócio</label>
             <input type="text" class="field-name" id="business" placeholder="Area de negócio"
                 formControlName="business">
         </div>
-        <div>
-            <div class="form-group col-6 mt-2">
+        <div class="row">
+            <div class="form-group col-3 mt-2">
+                <label for="time" class="text-date">Horario de Inicio</label>
+                <input type="time" class="field-time" id="date" placeholder="Data" formControlName="date">
+            </div>
+            <div class="form-group col-3 mt-2">
+                <label for="time" class="text-date">Horario Final</label>
+                <input type="time" class="field-time" id="date" placeholder="Data" formControlName="date">
+            </div>
+        </div>
+        <div class="row">
+            <div class="form-group col-3 mt-2">
                 <label for="date" class="text-date">Data Inicio</label>
-                <input type="date" class="field-data" id="date" placeholder="Data" formControlName="date">
+                <input type="date" class="field-data" id="date-start" placeholder="Data" formControlName="date">
             </div>
-            <div class="form-group col-6">
+            <div class="form-group col-3 mt-2">
                 <label for="date" class="text-date">Data Fim</label>
-                <input type="date" class="field-data" id="date" placeholder="Data" formControlName="date">
+                <input type="date" class="field-data" id="date-end" placeholder="Data" formControlName="date">
             </div>
         </div>
-        <div class="form-group col-12 mt-2">
-            <a class="btn btn-secondary col-2 me-4" href="/event/list">Voltar</a>
-            
-            <button class="btn btn-success col-2">Criar</button>
-        </div>
+        <div class="form-group d-flex mt-2">
+            <a class="btn btn-back col-2 me-2" href="/event/list">Voltar</a>
+            <button class="btn btn-create col-2 me-2">Criar</button>
+            <input class="clean-form col-6" type="reset" value="Limpar">
+          </div>
     </div>
+    
 </form>
