@@ -21,11 +21,11 @@
 </div>
 <hr>
 
-<div class="mat-elevation-z8">
+<!-- <div class="mat-elevation-z8">
     <table class="table table-striped">
         <thead class="thead-style">
             <tr>
-                <!-- <th scope="col" class="thead-style">Codigo</th> -->
+          
                 <th scope="col" class="thead-style">Nome</th>
                 <th scope="col" class="thead-style">Email</th>
                 <th scope="col" class="thead-style">CPF</th>
@@ -40,7 +40,6 @@
         <tbody>
             @for(user of users; track $index){
             <tr>
-                <!-- <th scope="row" class="text-center">{{user.id}}</th> -->
                 <td class="text-center">{{user.name}}</td>
                 <td class="text-center">{{user.email}}</td>
                 <td class="text-center">{{user.cpf}}</td>
@@ -80,8 +79,37 @@
             }
         </tbody>
     </table>
-</div>
+</div> -->
 
+<div class="mat-elevation-z8 user-list">
+    @for (user of users; track $index) {
+      <div class="user-card">
+        <div class="user-image">
+            <img src="\assets\img\face.png">
+          </div>
+        <div class="user-details">
+          <div class="user-name">{{ user.name }}</div>
+          <div class="user-info">
+            <span>Email: {{ user.email }}</span>
+            <span>CPF: {{ user.cpf }}</span>
+            <span>Telefone: {{ user.phone }}</span>
+            <span>Endereço: {{ user.address }}</span>
+          </div>
+        </div>
+        <div class="user-actions">
+          <a routerLink="/user/detail/{{ user.id }}" class="action-button">
+            <span class="material-icons color-detail" title="Informacoes">info</span>
+          </a>
+          <a routerLink="/user/edit/{{ user.id }}" class="action-button">
+            <span class="material-icons color-edit" title="Editar usuario">edit</span>
+          </a>
+          <button (click)="deleteUser(user.id!)" class="action-button">
+            <span class="material-icons color-delete" title="Apagar usuario">delete_forever</span>
+          </button>
+        </div>
+      </div>
+    }
+  </div>
 <div class="pagination">
     <select>
         <option value="5">5 por página</option>

@@ -4,6 +4,7 @@ import { RouterModule, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { EventCreateService } from '../../../../services/event/event-create.service';
 import { Event } from "../../../../domain/model/event.model";
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'task-sync-event-create',
@@ -12,6 +13,7 @@ import { Event } from "../../../../domain/model/event.model";
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    HttpClientModule,
   ],
   templateUrl: './event-create.component.html',
   styleUrl: './event-create.component.css'
@@ -24,6 +26,10 @@ export class EventCreateComponent implements OnInit {
   nameMaxLength: number = 10;
   descriptionMinValue: number = 1;
   descriptionMaxValue: number = 500;
+  selectedImage: File | null = null;
+  fileName: string = 'Nenhum arquivo escolhido';
+  showImagePreview: boolean = false;
+  
 
   constructor(
     private formBuilder: FormBuilder,
@@ -40,6 +46,38 @@ export class EventCreateComponent implements OnInit {
     dateInput.min = new Date().toLocaleDateString('pt-BR');
 
   }
+
+  onSubmit() {
+    if (this.form.invalid) {
+      this.toastr.error('Please fix form errors before submitting.');
+      this.showImagePreview = false;
+      return;
+    }
+  }
+
+onImageSelected(event: any) {
+  const file = event.target.files[0];
+  this.selectedImage = file;
+  this.fileName = file.name;
+
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    const img = document.getElementById('image-preview') as HTMLImageElement;
+    img.src = e.target?.result as string;
+    img.style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+}
+
+  openImagePicker() {
+    const imageInput = document.getElementById('img-event');
+    if (imageInput) {
+        imageInput.click();
+    } else {
+        console.error('Elemento com ID "img-event" não encontrado.');
+      
+    }
+}
 
   initializeForm() {
     this.form = this.formBuilder.group({
@@ -78,5 +116,3 @@ export class EventCreateComponent implements OnInit {
   }
 
 }
-
-
