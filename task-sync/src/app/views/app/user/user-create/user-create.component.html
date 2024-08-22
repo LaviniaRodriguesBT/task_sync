@@ -8,47 +8,50 @@
 </nav>
 <h1>Cadastrar pessoa</h1>
 <hr>
-
-<form class="form" [formGroup]="form" (ngSubmit)="create()">
+<form class="form-div" [formGroup]="form" (ngSubmit)="create()">
     <div class="form-row">
-
         <div class="form-group col-12 mt-2">
-            <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name" placeholder="Nome" formControlName="name">
+            <label for="name" class="text-name">Nome</label>
+            <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+            <label for="email" class="text-name">Email</label>
+            <input type="email" class="field-name" id="email" placeholder="Email" formControlName="email">
         </div>
-
         <div class="form-group col-12 mt-2">
-        <label for="password">Password</label>
-        <div class="input-group">
-            <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
-            <div class="input-group-append">
-            <span class="input-group-text" id="togglePassword" (click)="togglePasswordVisibility()">
-                <i class="fas fa-eye" [ngClass]="{'fa-eye': showPassword, 'fa-eye-slash': !showPassword}"></i>
-            </span>
+            <label for="password" class="text-name">Password</label>
+            <div class="input-group">
+                <input type="password" class="field-name" id="password" placeholder="Password" formControlName="password">
+                <div class="input-group-append">
+                    <span id="togglePassword" (click)="togglePasswordVisibility()">
+                        <i class="fas input-group-text" [ngClass]="{'fa-eye': showPassword, 'fa-eye-slash': !showPassword}"></i>
+                    </span>
+                </div>
             </div>
         </div>
-        </div>
-
-          
         <div class="form-group col-12 mt-2">
-            <label for="cpf">CPF</label>
-            <input type="text" class="form-control" id="cpf" placeholder="CPF" formControlName="cpf">
+            <label for="cpf" class="text-name">CPF</label>
+            <input type="text" class="field-name" id="cpf" placeholder="CPF" formControlName="cpf">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="phone">Telefone</label>
-            <input type="text" class="form-control" id="phone" placeholder="Telefone" formControlName="phone">
+            <label for="phone" class="text-name">Telefone</label>
+            <input type="text" class="field-name" id="phone" placeholder="Telefone" formControlName="phone">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="endereco">Endereco</label>
-            <input type="text" class="form-control" id="endereco" placeholder="Endereco" formControlName="endereco">
+            <label for="endereco" class="text-name">Endereco</label>
+            <input type="text" class="field-name" id="endereco" placeholder="Endereco" formControlName="endereco">
         </div>
-        <div class="col-12 text-end mt-2">
-            <a class="btn btn-secondary col-2 me-4" href="/user/list">Voltar</a>
-            <button class="btn btn-success col-2">Criar</button>
+        <div class="form-group col-12 mt-2">
+            <label for="cpf" class="text-name">Tipo de acesso</label>
+            <input id="ant" type="radio" name="base" class="type-user">
+            <label for="type-admin" class="type-user">Administrador</label>
+            <input id="new" type="radio" name="base" class="type-user">
+            <label for="type-admin" class="type-user">Colaborador</label>
+        </div>
+        <div class="form-group d-flex mt-2">
+            <a class="btn btn-back col-2 me-2" href="/user/list">Voltar</a>
+            <button class="btn btn-create col-2 me-2">Criar</button>
+            <input class="clean-form col-6" type="reset" value="Limpar">
         </div>
     </div>
 </form>

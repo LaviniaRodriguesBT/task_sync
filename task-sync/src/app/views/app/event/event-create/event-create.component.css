@@ -1,77 +1,69 @@
-.form-div{
- 
+.form-div {
   justify-content: center;
   align-items: center;
   padding-left: 180px;
 }
 
-
 #image-preview {
-    max-width: 300px;
-    max-height: 150px;
-    margin-top: 15px;
-    margin-left: 5px;
-    margin-bottom: 15px;
+  max-width: 300px;
+  max-height: 150px;
+  margin-top: 15px;
+  margin-left: 5px;
+  margin-bottom: 15px;
 }
+
 .text-name {
-    font-size: 20px;
-    padding: 10px; 
-    width: 100%; 
-    
+  font-size: 20px;
+  padding: 10px;
+  width: 100%;
 }
 
 .text-form {
-    font-size: 20px;
-    padding: 10px; 
-    width: 100%; 
-    
+  font-size: 20px;
+  padding: 10px;
+  width: 100%;
 }
-
 
 .field-name {
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    padding: 10px; 
-    width: 600px;    
-}
-.text-date {
-    font-size: 20px;
-    padding: 10px; 
-    width: 100%; 
-    padding-bottom: 10px; 
-    
-}
-
-.field-data {
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    padding: 10px; 
-    width: 150px;
-    padding-bottom: 10px;    
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  padding: 10px;
+  width: 600px;
 }
 
 .text-date {
   font-size: 20px;
-  padding: 10px; 
+  padding: 10px;
   width: 100%;
-  padding-top: 30px; 
-  
-  
+  padding-bottom: 10px;
+}
+
+.field-data {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  padding: 10px;
+  width: 150px;
+  padding-bottom: 10px;
+}
+
+.text-date {
+  font-size: 20px;
+  padding: 10px;
+  width: 100%;
+  padding-top: 30px;
 }
 
 .field-time {
   border-left: none;
   border-right: none;
   border-top: none;
-  padding: 10px; 
+  padding: 10px;
   width: 90px;
-  padding-bottom: 10px;  
-  margin-left: 10px;  
+  padding-bottom: 10px;
+  margin-left: 10px;
 }
-
-
 
 .text-area {
   width: 600px;
@@ -83,26 +75,24 @@
   font-size: 14px;
 }
 
-
-
 .container {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
-.text-recomend-img{
-    margin-left: 30px;
-    font-style: italic;
+.text-recomend-img {
+  margin-left: 30px;
+  font-style: italic;
 }
 
-.btn-back{
+.btn-back {
   background-color: rgb(252, 177, 64);
   color: white;
   width: 102px;
   margin-top: 60px;
 }
 
-.btn-create{
+.btn-create {
   background-color: rgb(10, 112, 36);
   color: white;
   width: 102px;
@@ -110,7 +100,7 @@
   margin-top: 60px;
 }
 
-.clean-form{
+.clean-form {
   background-color: rgb(112, 10, 90);
   color: white;
   width: 102px;
@@ -118,5 +108,11 @@
   margin-top: 60px;
   border-radius: 5px;
   border: none;
+}
 
+.input-group-text {
+  font-size: 18px;
+  border: none;
+  background-color: transparent;
+  outline: none;
 }

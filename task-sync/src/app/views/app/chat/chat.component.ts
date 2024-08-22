@@ -23,7 +23,6 @@ export class ChatComponent implements OnInit{ 
     const userToken = 'dkjfksdsbksbfdkbz';
     this.chatService.init(apiKey, userId, userToken);
     this.streamI18nService.setTranslation();
-
     
   }
   async ngOnInit() {
@@ -39,7 +38,5 @@ export class ChatComponent implements OnInit{ 
     });
 
   }
-
-  
 
 }

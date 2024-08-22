@@ -54,6 +54,7 @@ table {
 
 .color-delete {
     color: red;
+    cursor: pointer;
 }
 
 .pagination {

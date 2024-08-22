@@ -47,7 +47,6 @@ export class EventCreateComponent implements OnInit {
 
   }
 
-
   onSubmit() {
     if (this.form.invalid) {
       this.toastr.error('Please fix form errors before submitting.');
@@ -117,5 +116,3 @@ onImageSelected(event: any) {
   }
 
 }
-
-

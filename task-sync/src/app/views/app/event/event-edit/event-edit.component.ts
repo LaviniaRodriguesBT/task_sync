@@ -22,7 +22,6 @@ export class EventEditComponent implements OnInit {
   eventId?: string;
   form!: FormGroup;
 
-
   nameMinLength: number = 3;
   nameMaxLength: number = 10;
   priceMinValue: number = 1;

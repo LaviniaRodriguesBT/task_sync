@@ -1,4 +1,71 @@
+.form-div {
+    justify-content: center;
+    align-items: center;
+    padding-left: 300px;
+}
+
 .input-group-text {
     cursor: pointer;
 }
-  
+
+.text-name {
+    font-size: 20px;
+    padding: 10px;
+    width: 100%;
+}
+
+.field-name {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    padding: 10px;
+    width: 600px;
+}
+
+.btn-back {
+    background-color: rgb(252, 177, 64);
+    color: white;
+    width: 102px;
+    margin-top: 60px;
+}
+
+.btn-create {
+    background-color: rgb(10, 112, 36);
+    color: white;
+    width: 102px;
+    margin-left: 140px;
+    margin-top: 60px;
+}
+
+.clean-form {
+    background-color: rgb(112, 10, 90);
+    color: white;
+    width: 102px;
+    margin-left: 140px;
+    margin-top: 60px;
+    border-radius: 5px;
+    border: none;
+}
+
+.type-user {
+    margin-top: 5px;
+    margin-left: 10px;
+    align-items: center;
+    font-size: 18px;
+}
+
+.input-group-append {
+    position: relative;
+}
+
+.input-group-text {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+}
