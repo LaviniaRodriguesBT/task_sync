@@ -1,12 +1,68 @@
-.btn-add-image{
-    font-size: 150px;
-    color: rgb(100, 10, 136);
+.form-div{
  
-
+  justify-content: center;
+  align-items: center;
 }
 
 
-.lenght-image{
-    font-size: 150px;
+#image-preview {
+    max-width: 300px;
+    max-height: 150px;
+    margin-top: 15px;
+    margin-left: 5px;
+    margin-bottom: 15px;
+}
+.text-name {
+    font-size: 20px;
+    padding: 10px; 
+    width: 100%; 
+    
+}
 
+.text-form {
+    font-size: 20px;
+    padding: 10px; 
+    width: 100%; 
+    
+}
+
+
+.field-name {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    padding: 10px; 
+    width: 600px;    
+}
+.text-date {
+    font-size: 20px;
+    padding: 10px; 
+    width: 500%; 
+    
+}
+
+.field-data {
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    padding: 10px; 
+    width: 150px;    
+}
+
+.form-description{
+    
+    padding: 10px; 
+    height: 200px;
+    width: 600px;   
+
+}
+
+.container {
+    display: flex;
+    align-items: center;
+}
+
+.text-recomend-img{
+    margin-left: 30px;
+    font-style: italic;
 }
