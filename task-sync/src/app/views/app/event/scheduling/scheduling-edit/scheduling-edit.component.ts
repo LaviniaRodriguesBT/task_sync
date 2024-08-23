@@ -39,6 +39,7 @@ export class SchedulingEditComponent implements OnInit {
   initializeForm() {
     this.form = this.formBuilder.group({
       event_id: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
+      event: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
       user_id: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
       task_id: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
       value: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
@@ -59,6 +60,7 @@ export class SchedulingEditComponent implements OnInit {
     let scheduling = await this.schedulingReadService.findById(schedulingId);
     console.log(scheduling);
     this.form.controls['event_id'].setValue(scheduling.event_id);
+    this.form.controls['event'].setValue(scheduling.event_id);
     this.form.controls['user_id'].setValue(scheduling.user_id);
     this.form.controls['task_id'].setValue(scheduling.task_id);
     this.form.controls['value'].setValue(scheduling.value);
@@ -73,6 +75,7 @@ export class SchedulingEditComponent implements OnInit {
       const scheduling: Scheduling = {
         id: this.schedulingId!,
         event_id: this.form.controls['event_id'].value,
+        event: this.form.controls['event'].value,
         user_id: this.form.controls['user_id'].value,
         task_id: this.form.controls['task_id'].value,
         value: this.form.controls['value'].value,

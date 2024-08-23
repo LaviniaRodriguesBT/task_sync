@@ -14,6 +14,10 @@ export class SchedulingReadService {
     return firstValueFrom(this.http.get<Scheduling>(`http://localhost:3000/scheduling/${id}`));
   }
 
+  findByEventId(id: string): Promise<Scheduling[]>{
+    return firstValueFrom(this.http.get<Scheduling[]>(`http://localhost:3000/scheduling?event_id=${id}`));
+  }
+
   findByName(name: string): Promise<Scheduling[]> {
     return firstValueFrom(this.http.get<Scheduling[]>(`http://localhost:3000/scheduling?name=${name}`));
   }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrService } from 'ngx-toastr';
 import { Scheduling } from '../../../../../domain/model/scheduling.model';
@@ -22,7 +22,10 @@ export class SchedulingListComponent implements OnInit {
   fa = fontawesome;
   faAdd = faPlus;
   schedulings: Scheduling[] = [];
-  constructor(private schedulingReadService: SchedulingReadService, private schedulingDeleteService: SchedulingDeleteService, private toastrService: ToastrService
+  constructor(private schedulingReadService: SchedulingReadService, 
+    private schedulingDeleteService: SchedulingDeleteService, 
+    private toastrService: ToastrService,
+    private activatedRoute: ActivatedRoute
   ) {
 
   }
@@ -31,7 +34,8 @@ export class SchedulingListComponent implements OnInit {
 
   }
   async loadSchedulings() {
-    this.schedulings = await this.schedulingReadService.findAll();
+    const event_id = this.activatedRoute.snapshot.paramMap.get('id');
+    this.schedulings = await this.schedulingReadService.findByEventId(event_id!);
   }
 
   async deleteScheduling(schedulingId: string) {

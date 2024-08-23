@@ -1,6 +1,7 @@
 export interface Scheduling{
     id?: string,
     event_id: string,
+    event: string,
     user_id: string,
     task_id: string,
     value: string,
