@@ -81,6 +81,8 @@
     </table>
 </div> -->
 
+<input type="text" id="search" placeholder="Tarefa" (keyup)="search()">
+
 <div class="mat-elevation-z8 user-list">
     @for (user of users; track $index) {
       <div class="user-card">

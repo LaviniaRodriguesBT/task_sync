@@ -23,8 +23,9 @@ export class UserListComponent {
   fa = fontawesome;
   faAdd = faPlus;
   faAddressCard = faAddressCard;
-
   users: User[] = [];
+  usersCopy: User[] = [];
+
 
   constructor(private userReadService: UserReadService, private userDeleteService: UserDeleteService, private toastrService: ToastrService
   ) {
@@ -38,6 +39,7 @@ export class UserListComponent {
 
   async loadUsers() {
     this.users = await this.userReadService.findAll();
+    this.usersCopy = this.users;
   }
 
   async deleteUser(userId: string) {
@@ -61,6 +63,32 @@ export class UserListComponent {
   previousPage() {
   }
   nextPage() {
+  }
+
+  searchText: string = "";
+
+  search(): void {
+    let input = document.getElementById('search') as HTMLInputElement;
+
+    let name = input.value;
+
+    if (this.usersCopy.length <= 0 || this.usersCopy == null)
+      return;
+
+    if (name == null || name == undefined || name.length <= 0) {
+      this.users = this.usersCopy;
+      this.searchText = "";
+      return;
+    }
+
+    this.searchText = name;
+    let users = this.usersCopy.filter((predicate) => predicate.name?.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
+
+    if (users == undefined) {
+      this.users = [];
+      return;
+    }
+    this.users = users;
   }
 
 }
