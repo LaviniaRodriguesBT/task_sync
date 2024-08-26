@@ -2,6 +2,17 @@ table {
   width: 100%;
 }
 
+.search-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+
+.search-box #search{
+  width: 100%;
+}
+
 .column {
   align-items: center;
   justify-content: center;
