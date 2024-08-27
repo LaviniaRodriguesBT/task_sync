@@ -4,10 +4,10 @@
             <img src="assets/img/logo_task.png" width="220" height="220">
         </a>
         <span class="toolbar-item-spacer"></span>
-        <button mat-icon-button matTooltip="Chat" routerLink="/">
+        <button mat-icon-button matTooltip="Chat" routerLink="/chat">
             <mat-icon>chat</mat-icon>
         </button>
-        
+
         <button mat-icon-button matTooltip="Home" routerLink="/">
             <mat-icon>home</mat-icon>
         </button>
@@ -31,6 +31,8 @@
                 <mat-icon>exit_to_app</mat-icon>Sair
             </button>
         </mat-menu>
+
+
     </mat-toolbar>
     <mat-toolbar class="toolbar">
         <nav class="navbar navbar-expand-lg navbar-dark">
@@ -51,7 +53,8 @@
                         </mat-menu>
                     </li>
                     <li>
-                        <button mat-button [matMenuTriggerFor]="menuAtividades" class="btn-list">Atividades</button>
+                        <button mat-button [matMenuTriggerFor]="menuAtividades"
+                            class="dropdown-content btn-list">Atividades</button>
                         <mat-menu #menuAtividades="matMenu">
                             <a mat-list-item routerLink="/task/list">Lista de atividades</a>
                             <a mat-list-item routerLink="/task/create">Cadastrar atividade</a>
@@ -77,6 +80,19 @@
 
             <div class="mb-4"></div>
         </main>
+    </div>
+    <div>
+        <button class="open-button" (click)="toggleForm()"><i class="fa fa-comment"></i></button>
+              <div class="chat-popup" id="myForm" #myForm [style.display]="showForm ? 'block' : 'none'">
+            <form action="/action_page.php" class="form-container">
+                <h1>Chat</h1>
+                <label for="msg"><b>Destinatário</b></label>
+                <input type="text">
+                <textarea placeholder="Digite sua mensagem ..." name="msg" required=""></textarea>
+                <button type="submit" class="btn btn-send">Enviar</button>
+                <button type="button" class="btn btn-cancel" (click)="closeForm()">Fechar</button>
+            </form>
+        </div>
     </div>
     <footer>
         <p>&copy; 2024 Todos os direitos reservados aos criadores Lavínia Brandani, Lucas Severini e Michele Fernandes.

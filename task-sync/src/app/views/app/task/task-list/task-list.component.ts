@@ -26,6 +26,7 @@ export class TaskListComponent implements OnInit {
 
   faAdd = faPlus;
   tasks: Task[] = [];
+  tasksCopy: Task[] = [];
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -44,8 +45,9 @@ export class TaskListComponent implements OnInit {
 
   async loadTasks() {
     this.tasks = await this.taskReadService.findAll();
+    this.tasksCopy = this.tasks;
 
-    if (this.userId! != null){
+    if (this.userId! != null) {
       this.tasks = this.tasks.filter(e => e.userId == this.userId);
     }
   }
@@ -69,6 +71,32 @@ export class TaskListComponent implements OnInit {
   previousPage() {
   }
   nextPage() {
+  }
+
+  searchText: string = "";
+
+  search(): void {
+    let input = document.getElementById('search') as HTMLInputElement;
+
+    let name = input.value;
+
+    if (this.tasksCopy.length <= 0 || this.tasksCopy == null)
+      return;
+
+    if (name == null || name == undefined || name.length <= 0) {
+      this.tasks = this.tasksCopy;
+      this.searchText = "";
+      return;
+    }
+
+    this.searchText = name;
+    let tasks = this.tasksCopy.filter((predicate) => predicate.name?.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
+
+    if (tasks == undefined) {
+      this.tasks = [];
+      return;
+    }
+    this.tasks = tasks;
   }
 
 }
