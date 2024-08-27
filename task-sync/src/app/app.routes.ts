@@ -22,7 +22,6 @@ import { SchedulingCreateComponent } from './views/app/event/scheduling/scheduli
 import { SchedulingDetailComponent } from './views/app/event/scheduling/scheduling-detail/scheduling-detail.component';
 import { SchedulingEditComponent } from './views/app/event/scheduling/scheduling-edit/scheduling-edit.component';
 import { SchedulingListComponent } from './views/app/event/scheduling/scheduling-list/scheduling-list.component';
-import { SchedulingCardComponent } from './views/app/event/scheduling/scheduling-card/scheduling-card.component';
 import { MyTaskListComponent } from './views/app/task/my-task-list/my-task-list.component';
 import { AboutUsComponent } from './views/app/about-us/about-us.component';
 
@@ -103,11 +102,6 @@ export const routes: Routes = [
                 path: 'detail/:id',
                 component: SchedulingDetailComponent,
                 title: 'Task Sync - Detalhes do cronograma',
-              },
-              {
-                path: 'card',
-                component: SchedulingCardComponent,
-                title: 'Task Sync - Conjunto de eventos',
               }
             ],
           },

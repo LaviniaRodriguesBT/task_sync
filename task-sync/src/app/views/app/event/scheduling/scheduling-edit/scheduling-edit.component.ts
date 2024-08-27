@@ -21,6 +21,7 @@ export class SchedulingEditComponent implements OnInit {
 
   schedulingId?: string;
   form!: FormGroup;
+  eventId?: string | undefined;
 
   nameMinLength: number = 3;
   nameMaxLength: number = 10;
@@ -33,7 +34,10 @@ export class SchedulingEditComponent implements OnInit {
     private toastrService: ToastrService,
     private router: Router,
     private formBuilder: FormBuilder) {
+    const lalala = this.activatedRoute.snapshot.paramMap.get('id');
+    console.log('valor lalla' + lalala);
     this.initializeForm();
+    // this.eventId = this.form.controls['event_id'].value;
   }
 
   initializeForm() {
@@ -97,6 +101,7 @@ export class SchedulingEditComponent implements OnInit {
 
   validateFields() {
     return this.form.controls['event_id'].valid
+      && this.form.controls['event'].valid
       && this.form.controls['user_id'].valid
       && this.form.controls['task_id'].valid
       && this.form.controls['value'].valid
@@ -104,7 +109,6 @@ export class SchedulingEditComponent implements OnInit {
       && this.form.controls['end_time'].valid
       && this.form.controls['date'].valid
       && this.form.controls['status'].valid;
-
   }
 
 }
