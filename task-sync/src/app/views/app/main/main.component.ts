@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
@@ -42,6 +42,8 @@ export class MainComponent {
   faCopyright = faCopyright;
 
   userId: string | null;
+  myForm: any;
+  showForm = false;
 
   constructor(private router: Router,
     private authenticationService: AuthenticationService,) {
@@ -53,6 +55,13 @@ export class MainComponent {
     this.authenticationService.logout();
     this.router.navigate(['account/sign-in']);
   }
+ 
 
+  toggleForm() {
+    this.showForm = !this.showForm; 
+  }
 
+  closeForm() {
+    this.showForm = false;
+  }
 }
