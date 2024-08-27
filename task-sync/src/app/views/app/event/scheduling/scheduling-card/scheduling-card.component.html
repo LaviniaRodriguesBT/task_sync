@@ -1,82 +1,69 @@
-<!DOCTYPE html>
-<html lang="en">
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/event/scheduling/card">Eventos</a></li>
+  </ol>
+</nav>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventos</title>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-</head>
-
-<body>
-
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/event/scheduling/card">Eventos</a></li>
-    </ol>
-  </nav>
-
-  <div class="d-flex justify-content-between">
-    <a class="btn btn-create btn-primary text-white" routerLink="/event/scheduling/create">
-        <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
-        Cadastrar cronograma
-    </a>
-    <a class="btn btn-secondary" href="/">Voltar</a>
+<div class="d-flex justify-content-between">
+  <a class="btn btn-create btn-primary text-white" routerLink="/event/scheduling/create">
+    <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
+    Cadastrar cronograma
+  </a>
+  <a class="btn btn-secondary" href="/">Voltar</a>
 </div>
 
-    <div class="row">
+<div class="row">
 
-        <mat-card class="example-card shadow-lg col-4" appearance="outlined">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-imag" alt="Imagem do Evento"></div>
-              <mat-card-title class="sub-text-card">Faitec</mat-card-title>
-            </mat-card-header>
-            <img mat-card-image src="\assets\img\img_faitec.png">
-            <mat-card-content class="body-text-card">
-              <p>
-                Feira de Tecnologia e Empreendorismo da FAI (FAITEC), evento que tem como objetivo mostrar a criatividade e a inovação de seus alunos por meio de projetos.
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <a href="event/scheduling/list" mat-button class="btn btn-primary col-lg-6 text-center mt-2">Acessar</a>
-            </mat-card-actions>
-          </mat-card>
+  <mat-card class="example-card shadow-lg col-4" appearance="outlined">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-imag" alt="Imagem do Evento"></div>
+      <mat-card-title class="sub-text-card">Faitec</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="\assets\img\img_faitec.png">
+    <mat-card-content class="body-text-card">
+      <p>
+        Feira de Tecnologia e Empreendorismo da FAI (FAITEC), evento que tem como objetivo mostrar a criatividade e a
+        inovação de seus alunos por meio de projetos.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a href="event/scheduling/list" mat-button class="btn btn-primary col-lg-6 text-center mt-2">Acessar</a>
+    </mat-card-actions>
+  </mat-card>
 
-        <mat-card class="example-card shadow-lg col-4" appearance="outlined">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-imag" alt="Imagem do Evento"></div>
-              <mat-card-title>Vestibular</mat-card-title>
-            </mat-card-header>
-            <img mat-card-image src="\assets\img\img_si.png">
-            <mat-card-content>
-              <p>
-                Área de computação e informática sistemas de informação - Bacharelado - 4 anos
-              </p>
-            </mat-card-content>
+  <mat-card class="example-card shadow-lg col-4" appearance="outlined">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-imag" alt="Imagem do Evento"></div>
+      <mat-card-title>Vestibular</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="\assets\img\img_si.png">
+    <mat-card-content>
+      <p>
+        Área de computação e informática sistemas de informação - Bacharelado - 4 anos
+      </p>
+    </mat-card-content>
 
-            <mat-card-actions>
-              <a href="event/scheduling/list" mat-button class="btn btn-primary col-lg-6 text-center mt-5">Acessar</a>
-            </mat-card-actions>
-          </mat-card>
+    <mat-card-actions>
+      <a href="event/scheduling/list" mat-button class="btn btn-primary col-lg-6 text-center mt-5">Acessar</a>
+    </mat-card-actions>
+  </mat-card>
 
-        <mat-card class="example-card shadow-lg col-4" appearance="outlined">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-imag" alt="Imagem do Evento"></div>
-              <mat-card-title>Maratona de programação</mat-card-title>
-            </mat-card-header>
-            <img mat-card-image src="\assets\img\img_maratona_prog.png">
-            <mat-card-content>
-              <p>
-                Feira de Tecnologia e Empreendorismo da FAI (FAITEC), evento que tem como objetivo mostrar a criatividade e a inovação de seus alunos por meio de projetos.
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <a href="event/scheduling/list" mat-button class="btn btn-primary col-lg-6 text-center mt-2">Acessar</a>
-            </mat-card-actions>
-          </mat-card>
 
-    </div>
+  <mat-card class="example-card shadow-lg col-4" appearance="outlined">
+    <mat-card-header>
+      <div mat-card-avatar class="example-header-imag" alt="Imagem do Evento"></div>
+      <mat-card-title>Maratona de programação</mat-card-title>
+    </mat-card-header>
+    <img mat-card-image src="\assets\img\img_maratona_prog.png">
+    <mat-card-content>
+      <p>
+        Feira de Tecnologia e Empreendorismo da FAI (FAITEC), evento que tem como objetivo mostrar a criatividade e a
+        inovação de seus alunos por meio de projetos.
+      </p>
+    </mat-card-content>
+    <mat-card-actions>
+      <a href="event/scheduling/list" mat-button class="btn btn-primary col-lg-6 text-center mt-2">Acessar</a>
+    </mat-card-actions>
+  </mat-card>
 
-</body>
-
-</html>
+</div>

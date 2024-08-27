@@ -4,6 +4,9 @@ import { Router, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Scheduling } from '../../../../../domain/model/scheduling.model';
 import { SchedulingCreateService } from '../../../../../services/scheduling/scheduling-create.service';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import {MatSelectModule} from '@angular/material/select';
 
 @Component({
   selector: 'task-sync-scheduling-create',
@@ -12,6 +15,9 @@ import { SchedulingCreateService } from '../../../../../services/scheduling/sche
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatSelectModule
   ],
   templateUrl: './scheduling-create.component.html',
   styleUrl: './scheduling-create.component.css'
@@ -41,6 +47,7 @@ export class SchedulingCreateComponent implements OnInit {
   initializeForm() {
     this.form = this.formBuilder.group({
       event_id: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
+      event: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
       user_id: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
       task_id: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
       value: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
@@ -55,6 +62,7 @@ export class SchedulingCreateComponent implements OnInit {
   async create() {
     const scheduling: Scheduling = {
       event_id: this.form.controls['event_id'].value,
+      event: this.form.controls['event'].value,
       user_id: this.form.controls['user_id'].value,
       task_id: this.form.controls['task_id'].value,
       value: this.form.controls['value'].value,
@@ -78,6 +86,7 @@ export class SchedulingCreateComponent implements OnInit {
 
   validateFields() {
     return this.form.controls['event_id'].valid
+      && this.form.controls['event'].valid
       && this.form.controls['user_id'].valid
       && this.form.controls['task_id'].valid
       && this.form.controls['value'].valid

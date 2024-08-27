@@ -1,13 +1,30 @@
 {
+  "person":[
+    {
+      "id":1,
+      "cpf": "111.111.111-78",
+      "name": "pessoa",
+      "address": "Avenida Atlântica, 1400, Rio de Janeiro"
+    }
+  ],
+  "person_phone":[
+    {
+      "id": 1,
+      "phone":"35999999999",
+      "person_id": 1
+    }
+  ],
   "user": [
     {
       "id": "1",
+      "login": "login",
       "email": "admin@gmail.com",
       "password": "admin",
       "cpf": "159753",
       "name": "Administrator",
       "phone": "9821333",
-      "address": "Avenida Central, 100, Administrator"
+      "address": "Avenida Central, 100, Administrator",
+      "person_id": 1
     },
     {
       "id": "2",
@@ -160,18 +177,10 @@
       "cpf": "12211221",
       "name": "lucao severini",
       "phone": "35999999999",
-      "address": "casa do lucao, 1400, senta rita"
+      "address": "casa do lucao, 1400,Santa rita"
     }
   ],
   "event": [
-    {
-      "id": "2",
-      "code": "00777",
-      "name": "Workshop de Inteligência ArtificialDDDDDDDD",
-      "description": "Evento para discutir as últimas tendências em IA",
-      "business": "Technology",
-      "date": "15/03/2024"
-    },
     {
       "id": "3",
       "code": "003",
@@ -179,14 +188,6 @@
       "description": "Congresso anual de engenharia com palestras e workshops",
       "business": "Engineering",
       "date": "20/04/2024"
-    },
-    {
-      "id": "4",
-      "code": "004",
-      "name": "Feira de Ciências",
-      "description": "Feira escolar com projetos de ciências",
-      "business": "Education",
-      "date": "05/05/2024"
     },
     {
       "id": "5",
@@ -291,6 +292,21 @@
       "description": "Simulado para estudantes de administração e gestão empresarial",
       "business": "Business",
       "date": "30/03/2024"
+    },
+    {
+      "id": "a495",
+      "code": "52",
+      "name": "nynty",
+      "description": "ymnytj",
+      "business": "ytmjtyfjm",
+      "date": "2024-08-23"
+    }
+  ],
+  "administrator":[
+    {
+      "id": 1,
+      "user_id": 1,
+      "event_id": 1
     }
   ],
   "task": [
@@ -366,171 +382,85 @@
       "name": "lalala"
     }
   ],
+  "activity":[
+    {
+      "id": 1,
+      "value":"500,00",
+      "event_id": 1,
+      "task_id": 1
+    }
+  ],
+  "contract":[
+    {
+      "id": 1,
+      "number": "123",
+      "signature_date": "2018-08-25",
+      "user_id": 1,
+      "event_id": 1
+    }
+  ],
   "scheduling": [
     {
-      "id": "2",
-      "event_id": "Workshop de Inteligência ",
+      "id": "1",
+      "event_id": "3",
+      "event": "Workshop de Inteligência",
       "user_id": "Maria Silva",
       "task_id": "Atual",
       "value": "500,00",
       "start_time": "09:00",
       "end_time": "11:00",
       "date": "2024-06-22",
-      "status": "Em andamento"
+      "status": "Em andamento",
+      "activity_id": 1,
+      "contract_id": 1
     },
     {
-      "id": "3",
-      "event_id": "Congresso de Engenharia",
-      "user_id": "João Souza",
-      "task_id": "Enviar mensagem de boas-vindas",
-      "value": "100",
-      "start_time": "10:00",
-      "end_time": "12:00",
-      "date": "2024-06-23",
-      "status": "Concluído"
-    },
-    {
-      "id": "4",
-      "event_id": "Feira de Ciências",
-      "user_id": "Ana Paula",
-      "task_id": "Configurar notificações",
-      "value": "",
-      "start_time": "11:00",
-      "end_time": "13:00",
-      "date": "2024-06-285",
-      "status": "Em abertonni"
-    },
-    {
-      "id": "5",
-      "event_id": "Seminário de Sustentabilidade",
-      "user_id": "Luiz Felipe",
-      "task_id": "Realizar pagamento",
-      "value": "200",
-      "start_time": "12:00",
-      "end_time": "14:00",
-      "date": "2024-06-25",
-      "status": "Em andamento"
-    },
-    {
-      "id": "6",
-      "event_id": "Hackathon Universitário",
-      "user_id": "Claudia Dias",
-      "task_id": "Visualizar histórico de compras",
-      "value": "90",
-      "start_time": "13:00",
-      "end_time": "15:00",
-      "date": "2024-06-26",
-      "status": "Concluído"
-    },
-    {
-      "id": "7",
-      "event_id": "Simpósio de Saúde",
-      "user_id": "Fernando Alves",
-      "task_id": "Adicionar item ao carrinho",
-      "value": "110",
-      "start_time": "14:00",
-      "end_time": "16:00",
-      "date": "2024-06-27",
-      "status": "Em aberto"
-    },
-    {
-      "id": "8",
-      "event_id": "Encontro de Empreendedores",
-      "user_id": "Carolina Costa",
-      "task_id": "Remover item do carrinho",
-      "value": "70",
-      "start_time": "15:00",
-      "end_time": "17:00",
-      "date": "2024-06-28",
-      "status": "Em andamento"
-    },
-    {
-      "id": "9",
-      "event_id": "Festival de Inovação",
-      "user_id": "Ricardo Santos",
-      "task_id": "Editar informações pessoais",
-      "value": "180",
-      "start_time": "16:00",
-      "end_time": "18:00",
-      "date": "2024-06-29",
-      "status": "Concluído"
-    },
-    {
-      "id": "10",
-      "event_id": "Feira do Livro",
-      "user_id": "Sandra Oliveira",
-      "task_id": "Visualizar detalhes do produto",
-      "value": "95",
-      "start_time": "17:00",
-      "end_time": "19:00",
-      "date": "2024-06-30",
-      "status": "Em aberto"
-    },
-    {
-      "id": "11",
-      "event_id": "Conferência de Marketing Digital",
-      "user_id": "Gustavo Pereira",
-      "task_id": "Criar lista de desejos",
-      "value": "130",
-      "start_time": "08:00",
-      "end_time": "10:00",
-      "date": "2024-07-01",
-      "status": "Em andamento"
-    },
-    {
-      "id": "12",
-      "event_id": "Seminário de Direitos Humanos",
-      "user_id": "Márcia Ramos",
-      "task_id": "Gerenciar assinatura",
-      "value": "75",
+      "id": "2",
+      "event_id": "5",
+      "event": "FAITEC",
+      "user_id": "Lavinia",
+      "task_id": "Abastecer",
+      "value": "50,00",
       "start_time": "09:00",
       "end_time": "11:00",
-      "date": "2024-07-02",
-      "status": "Concluído"
-    },
-    {
-      "id": "13",
-      "event_id": "Workshop de Desenvolvimento Pessoal",
-      "user_id": "Paulo Martins",
-      "task_id": "Avaliar produto",
-      "value": "160",
-      "start_time": "10:00",
-      "end_time": "12:00",
-      "date": "2024-07-03",
-      "status": "Em aberto"
-    },
-    {
-      "id": "14",
-      "event_id": "Encontro de Programadores",
-      "user_id": "Aline Barbosa",
-      "task_id": "Solicitar suporte",
-      "value": "85",
-      "start_time": "11:00",
-      "end_time": "13:00",
-      "date": "2024-07-04",
+      "date": "2024-06-22",
       "status": "Em andamento"
-    },
+    },{
+      "id": "3",
+      "event_id": "6",
+      "event": "HACKTOWN",
+      "user_id": "Michele Silva",
+      "task_id": "Recarga",
+      "value": "80,00",
+      "start_time": "09:00",
+      "end_time": "11:00",
+      "date": "2024-06-22",
+      "status": "Em andamento"
+    }
+  ],
+  "chat":[
     {
-      "id": "15",
-      "event_id": "Congresso de Psicologia",
-      "user_id": "Carlos Mendes",
-      "task_id": "Visualizar promoções",
-      "value": "105",
-      "start_time": "12:00",
-      "end_time": "14:00",
-      "date": "2024-07-05",
-      "status": "Concluído"
-    },
+      "id": 1,
+      "type": "Grupo",
+      "date_time": "2024-09-01",
+      "user_id": 1,
+      "event_id": 1
+    }
+  ],
+  "chat_user":[
     {
-      "id": "d471",
-      "event_id": "lala",
-      "user_id": "lalala",
-      "task_id": "lalaal",
-      "value": "6552",
-      "start_time": "01:11",
-      "end_time": "03:11",
-      "date": "2024-08-15",
-      "status": "jajaj"
+      "id": 1,
+      "user_id": 1,
+      "chat_id": 1
+    }
+  ],
+  "message":[
+    {
+      "id": 1,
+      "date_time": "2024-09-01",
+      "text":"alou alou alou",
+      "user_id": 1,
+      "chat_id": 1
     }
   ]
 }

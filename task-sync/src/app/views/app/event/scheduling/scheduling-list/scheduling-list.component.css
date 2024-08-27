@@ -1,17 +1,16 @@
 .btn-create {
-    background-color: #007bff;
+    background-color: #002fa3;
     border: none;
     color: white;
-  } 
+}
 
-
-  .column {
+.column {
     align-items: center;
     justify-content: center;
 }
 
 .thead-style {
-    background-color: #165a5a;
+    background-color: #002fa3;
     color: white;
     font-size: 15px;
     text-align: center;
@@ -27,7 +26,7 @@
 
 
 .btn-pdf {
-    background-color: #420a63;
+    background-color: #002fa3;
     color: white;
     padding: 0px 32px;
     text-align: center;
@@ -43,6 +42,11 @@
     gap: 10px
 }
 
+.arrow-back .material-icons {
+    vertical-align: middle;
+    margin-right: 4px;
+}
+
 .color-detail {
     color: green;
 }
@@ -53,6 +57,7 @@
 
 .color-delete {
     color: red;
+    cursor: pointer;
 }
 
 .pagination {
@@ -69,11 +74,10 @@
 }
 
 .pagination button {
-    background-color: #420a63;
+    background-color: #002fa3;
     color: white;
     padding: 5px 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
 }
-  

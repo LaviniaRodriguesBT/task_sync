@@ -21,6 +21,17 @@
   white-space: nowrap;
 } */
 
+.search-box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1%;
+}
+
+.search-box #search{
+  width: 100%;
+}
+
 .btn-create {
   background-color: #6200ff;
   border: none;

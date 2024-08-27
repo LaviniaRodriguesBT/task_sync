@@ -1,6 +1,6 @@
 .base-form {
     height: 100%;
-    background: linear-gradient(90deg, rgba(2, 0, 36, 0.952) 19%, rgb(137,6,230) 67%, rgb(28, 10, 34) 95%);
+    background: linear-gradient(90deg, rgba(53,51,205, 0.9), rgb(0, 0, 0) 50%, rgba(53,51,205, 0.9));
     display: flex;
     align-items: center;
     justify-content: center;
@@ -19,7 +19,6 @@
     padding: 150px;
     border-radius: 35px;
     box-shadow: 0 0 30px 0 rgb(190, 176, 190);
-
 }
 
 .form-container {
@@ -40,7 +39,7 @@
     width: 130px;
     height: 50px;
     margin-left: 130px;
-    background-color: rgb(13, 89, 92);
+    background-color: rgb(0,18,84);
     color: rgb(255, 255, 255);
     font-size: large;
     opacity: 0.5;
@@ -63,6 +62,12 @@
     height: 200px;
 }
 
+.h1{
+    margin-top: 30px;
+    text-align: center;
+    margin-left: 120px;
+}
+
 .image-container img:not(.contact-icon) {
     transition: transform 6s ease-in-out, opacity 0.5s ease-in-out;
     width: 250px;
@@ -74,7 +79,7 @@
 }
 
 .enter-field {
-    background-color: rgb(71, 35, 80);
+    background-color: rgb(0,18,84);
     width: 350px;
     padding: 20px;
     margin-top: 30px;
@@ -85,7 +90,7 @@
 }
 
 .enter-field:hover {
-    background-color: rgb(43, 5, 51);
+    background-color: rgb(0,18,84);
     box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
 }
 
@@ -111,7 +116,7 @@ footer {
 }
 
 footer a {
-    color: #333;
+    color: #f0f0f0;
     text-decoration: none;
 }
 

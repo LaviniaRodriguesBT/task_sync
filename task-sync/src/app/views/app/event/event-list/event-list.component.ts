@@ -8,10 +8,11 @@ import { EventReadService } from "../../../../services/event/event-read.service"
 import { Event } from "../../../../domain/model/event.model";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { jsPDF } from 'jspdf';
+import { MatCardModule } from "@angular/material/card";
 @Component({
   selector: 'task-sync-event-list',
   standalone: true,
-  imports: [
+  imports: [MatCardModule,
     FontAwesomeModule,
     RouterModule,
   ],
