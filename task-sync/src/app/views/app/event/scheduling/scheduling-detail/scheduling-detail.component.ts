@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Scheduling } from '../../../../../domain/model/scheduling.model';
 import { SchedulingReadService } from '../../../../../services/scheduling/scheduling-read.service';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'task-sync-scheduling-detail',
   standalone: true,
   imports: [
-    RouterModule
+    RouterModule,
+    MatSelectModule
   ],
   templateUrl: './scheduling-detail.component.html',
   styleUrl: './scheduling-detail.component.css'

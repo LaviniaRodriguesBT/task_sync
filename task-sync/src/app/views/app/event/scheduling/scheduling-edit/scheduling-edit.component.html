@@ -42,6 +42,15 @@
             <label for="status">Status</label>
             <input type="text" class="form-control" id="status" placeholder="Status" formControlName="status">
         </div>
+
+        <mat-form-field>
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status">
+                <mat-option value="Em andamento">Em andamento</mat-option>
+                <mat-option value="Concluído">Concluído</mat-option>
+            </mat-select>
+        </mat-form-field>
+
         <div class="col-12 text-end mt-2">
             <div class="col-12 text-end mt-2">
                 <a class="btn btn-secondary col-2 me-4" routerLink="/event/{{eventId}}/scheduling/list">Voltar</a>

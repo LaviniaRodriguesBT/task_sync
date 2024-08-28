@@ -7,6 +7,8 @@ import { TaskDeleteService } from '../../../../services/task/task-delete.service
 import { TaskReadService } from '../../../../services/task/task-read.service';
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'task-sync-task-list',
@@ -14,6 +16,8 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
   imports: [
     FontAwesomeModule,
     RouterModule,
+    CommonModule,
+    MatIconModule
   ],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css'

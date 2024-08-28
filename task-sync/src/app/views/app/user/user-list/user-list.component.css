@@ -1,7 +1,30 @@
-.btn {
-  background: linear-gradient(90deg, rgb(64, 15, 83) 67%, rgb(28, 10, 34) 95%);
-  color: white;
+.search-box {
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  padding: 0 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  max-width: 300px;
+  flex: 1;
+  margin: 0 16px;
 }
+
+.search-box input {
+  border: none;
+  outline: none;
+  background: transparent;
+  padding: 8px;
+  font-size: 16px;
+  width: 100%;
+}
+
+.search-box .search-icon {
+  color: #333;
+  font-size: 24px;
+  margin-right: 8px;
+}
+
 
 .card-container {
   display: flex;
@@ -94,19 +117,31 @@
   border: none;
   cursor: pointer;
   width: 140px;
-  height: 30px;
+  height: 40px;
   gap: 10px;
 }
 
+.btn-create {
+  background: #28a745;
+  display: inline-flex; 
+  align-items: center; 
+  gap: 6px;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+}
+
 .btn-secondary {
-  background: linear-gradient(90deg, rgb(64, 15, 83) 67%, rgb(28, 10, 34) 95%);
+  background: gray;
   display: inline-flex;
   align-items: center;
   gap: 6px;
   justify-content: center;
   color: white;
   cursor: pointer;
+  margin: 0 0 20px;
 }
+
 
 .pagination {
   display: flex;

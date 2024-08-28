@@ -8,24 +8,27 @@
 </nav>
 <h1>Lista de Pessoas</h1>
 
+<a class="btn btn-secondary material-icons arrow-back" href="/">
+    <span class="material-icons arrow-back">arrow_back</span> Voltar
+</a>
+
 <div class="d-flex justify-content-between">
-    <a class="btn btn-create btn-primary text-white" routerLink="/user/create">
+    <a class="btn btn-create" routerLink="/user/create">
         <fa-icon [icon]="faAdd" title="Adicionar nova pessoa"></fa-icon>
         Cadastrar pessoa
     </a>
-    <a class="btn btn-secondary" href="/">
-        <span class="material-icons arrow-back">arrow_back</span> Voltar
-    </a>
+
+    <div class="search-box">
+        <mat-icon class="search-icon">search</mat-icon>
+        <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
+    </div>
+
     <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
         Imprimir
-    </a>
+    </a> 
 </div>
 <hr>
-
-<div class="search-box">
-    <input type="text" id="search" placeholder="Pessoa" (keyup)="search()">
-</div>
 
 <div class="card-container">
     <ng-container *ngFor="let user of users; let i = index">

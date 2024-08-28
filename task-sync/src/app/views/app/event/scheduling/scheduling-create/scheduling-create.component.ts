@@ -7,6 +7,8 @@ import { SchedulingCreateService } from '../../../../../services/scheduling/sche
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import {MatSelectModule} from '@angular/material/select';
+import { EventReadService } from '../../../../../services/event/event-read.service';
+import { Event } from '../../../../../domain/model/event.model';
 
 @Component({
   selector: 'task-sync-scheduling-create',
@@ -25,6 +27,7 @@ import {MatSelectModule} from '@angular/material/select';
 export class SchedulingCreateComponent implements OnInit {
 
   eventId: string = '';
+  event!: Event;
   form!: FormGroup;
 
   nameMinLength: number = 3;
@@ -37,13 +40,18 @@ export class SchedulingCreateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
     private router: Router,
-    private schedulingCreateService: SchedulingCreateService) {
+    private schedulingCreateService: SchedulingCreateService,
+    private eventReadService: EventReadService
+  
+  ) {
 
     this.initializeForm();
   }
 
-  ngOnInit(): void {
+  
+  async ngOnInit() {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
+    this.event = await this.eventReadService.findById(this.eventId);
   }
 
   initializeForm() {
@@ -57,7 +65,6 @@ export class SchedulingCreateComponent implements OnInit {
       end_time: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
       date: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
       status: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
-
     });
   }
 
@@ -74,6 +81,7 @@ export class SchedulingCreateComponent implements OnInit {
       status: this.form.controls['status'].value,
     }
     scheduling.event_id = this.eventId;
+    scheduling.event = this.event.name;
     console.log('preparando para criar o produto...');
     console.log(scheduling);
 

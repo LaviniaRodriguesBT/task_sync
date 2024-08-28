@@ -1,71 +1,134 @@
 .form-div {
-    justify-content: center;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    padding-left: 300px;
+    padding: 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.input-group-text {
-    cursor: pointer;
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+hr {
+    width: 100%;
+    border-top: 1px solid #e0e0e0;
+    margin-bottom: 20px;
 }
 
 .text-name {
-    font-size: 20px;
-    padding: 10px;
-    width: 100%;
+    font-size: 16px;
+    color: #555;
 }
 
 .field-name {
-    border-left: none;
-    border-right: none;
-    border-top: none;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
     padding: 10px;
-    width: 600px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.btn-back {
-    background-color: rgb(252, 177, 64);
-    color: white;
-    width: 102px;
-    margin-top: 60px;
-}
-
-.btn-create {
-    background-color: rgb(10, 112, 36);
-    color: white;
-    width: 102px;
-    margin-left: 140px;
-    margin-top: 60px;
-}
-
-.clean-form {
-    background-color: rgb(112, 10, 90);
-    color: white;
-    width: 102px;
-    margin-left: 140px;
-    margin-top: 60px;
-    border-radius: 5px;
-    border: none;
-}
-
-.type-user {
-    margin-top: 5px;
-    margin-left: 10px;
+.input-group {
+    position: relative;
+    display: flex;
     align-items: center;
-    font-size: 18px;
 }
 
 .input-group-append {
-    position: relative;
-}
-
-.input-group-text {
     position: absolute;
     top: 0;
     right: 0;
     height: 100%;
-    width: 40px;
     display: flex;
     align-items: center;
+    background-color: #e9ecef;
+    border: 1px solid #ced4da;
+    border-left: none;
+    border-radius: 0 4px 4px 0;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.input-group-text {
+    font-size: 18px;
+    color: #495057;
+}
+
+.btn-back,
+.btn-create,
+.clean-form {
+    border-radius: 4px;
+    color: white;
+    padding: 10px 30px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    width: 150px;
+    text-align: center;
+    margin: 0 10px 2px 70px;
+}
+
+.form-group.buttons {
+    display: flex;
     justify-content: center;
-    background-color: transparent;
+    margin-top: 20px;
+    width: 100%;
+    gap: 10px;
+}
+
+.btn-back {
+    background-color: #6c757d;
+}
+
+.btn-create {
+    background-color: #28a745;
+}
+
+.clean-form {
+    background-color: #dc3545;
+}
+
+.form-group.radio-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 20px;
+}
+
+.form-group.radio-group label {
+    font-size: 16px;
+    color: #555;
+    display: flex;
+    align-items: center;
+}
+
+.text-name {
+    margin-right: 70px;
+}
+
+.type-user {
+    margin-right: 70px;
+}
+
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.form-group.col-12 {
+    flex: 0 0 100%;
 }

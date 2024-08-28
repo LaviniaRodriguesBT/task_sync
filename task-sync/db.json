@@ -292,7 +292,7 @@
     },
     {
       "id": "3",
-      "name": "Enviar mensagem de boas-vindas"
+      "name": "Enviar mensagem de boas-vinda"
     },
     {
       "id": "4",
@@ -348,14 +348,6 @@
       "id": "16",
       "userId": "18",
       "name": "Compartilhar conteúdo"
-    },
-    {
-      "id": "210d",
-      "name": "Abastecer"
-    },
-    {
-      "id": "ebc4",
-      "name": "lalala"
     }
   ],
   "activity": [
@@ -376,18 +368,6 @@
     }
   ],
   "scheduling": [
-    {
-      "id": "1",
-      "event_id": "3",
-      "event": "3",
-      "user_id": "Maria Silva",
-      "task_id": "Atual",
-      "value": "500,00",
-      "start_time": "09:00",
-      "end_time": "11:00",
-      "date": "2024-06-22",
-      "status": "Em andamento"
-    },
     {
       "id": "2",
       "event_id": "5",
@@ -437,18 +417,6 @@
       "status": "Em andamento"
     },
     {
-      "id": "178e",
-      "event_id": "3",
-      "event": "3",
-      "user_id": "Lala",
-      "task_id": "nrynrt",
-      "value": "8927",
-      "start_time": "22:09",
-      "end_time": "23:10",
-      "date": "2024-08-13",
-      "status": "Em andamento"
-    },
-    {
       "id": "0668",
       "event_id": "5",
       "event": "",
@@ -458,6 +426,30 @@
       "start_time": "22:36",
       "end_time": "22:36",
       "date": "275760-07-10",
+      "status": "Concluído"
+    },
+    {
+      "id": "5926",
+      "event_id": "3",
+      "event": "Congresso de Engenharia",
+      "user_id": "Lavinia",
+      "task_id": "Atualizar perfil",
+      "value": "45",
+      "start_time": "21:26",
+      "end_time": "22:27",
+      "date": "2024-08-29",
+      "status": "Em andamento"
+    },
+    {
+      "id": "fcab",
+      "event_id": "3",
+      "event": "Congresso de Engenharia",
+      "user_id": "Michele",
+      "task_id": "Enviar mensagem de boas-vinda",
+      "value": "47",
+      "start_time": "22:29",
+      "end_time": "23:29",
+      "date": "2024-08-29",
       "status": "Concluído"
     }
   ],

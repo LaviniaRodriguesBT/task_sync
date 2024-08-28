@@ -20,6 +20,7 @@
     max-width: 300px;
     flex: 1;
     margin: 0 16px;
+    margin-bottom: 10px;
 }
 
 .search-box input {
@@ -39,15 +40,12 @@
 
 
 .btn-create {
-    background-color: #002fa3;
-    border: none;
-    color: white;
-    padding: 8px 16px;
-    border-radius: 4px;
-    font-size: 16px;
+    background: #28a745;
     display: inline-flex;
     align-items: center;
+    gap: 6px;
     justify-content: center;
+    color: white;
     cursor: pointer;
 }
 
@@ -89,21 +87,28 @@
     border: none;
     cursor: pointer;
     width: 140px;
-    height: 30px;
+    height: 40px;
     gap: 10px;
-    border-radius: 4px;
 }
 
-.btn-secondary{
-    margin-right: 70%;
+.btn-secondary {
+    background: gray;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    color: white;
+    cursor: pointer;
+    margin: 0 0 20px;
 }
+
 
 
 .arrow-back .material-icons {
     vertical-align: middle;
     margin-right: 4px;
+    
 }
-
 
 .color-detail {
     color: green;

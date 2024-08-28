@@ -5,6 +5,7 @@ import { RouterModule, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserCreateService } from '../../../../services/user/user-create.service';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'task-sync-user-create',
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     RouterModule,
     CommonModule,
+    MatIconModule
   ],
   templateUrl: './user-create.component.html',
   styleUrl: './user-create.component.css'

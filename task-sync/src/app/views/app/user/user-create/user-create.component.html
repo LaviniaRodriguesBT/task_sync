@@ -19,9 +19,9 @@
             <input type="email" class="field-name" id="email" placeholder="Email" formControlName="email">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="password" class="text-name">Password</label>
+            <label for="password" class="text-name">Senha</label>
             <div class="input-group">
-                <input type="password" class="field-name" id="password" placeholder="Password" formControlName="password">
+                <input type="password" class="field-name" id="password" placeholder="Senha" formControlName="password">
                 <div class="input-group-append">
                     <span id="togglePassword" (click)="togglePasswordVisibility()">
                         <i class="fas input-group-text" [ngClass]="{'fa-eye': showPassword, 'fa-eye-slash': !showPassword}"></i>
@@ -49,9 +49,9 @@
             <label for="type-admin" class="type-user">Colaborador</label>
         </div>
         <div class="form-group d-flex mt-2">
-            <a class="btn btn-back col-2 me-2" href="/user/list">Voltar</a>
-            <button class="btn btn-create col-2 me-2">Criar</button>
-            <input class="clean-form col-6" type="reset" value="Limpar">
+            <a class="btn btn-back" href="/user/list">Voltar</a>
+            <button class="btn btn-create">Criar</button>
+            <input class="clean-form" type="reset" value="Limpar">
         </div>
     </div>
 </form>

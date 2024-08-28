@@ -1,13 +1,13 @@
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; 
+    justify-content: space-between;
     padding: 10px;
 }
 
 .card {
-    margin-bottom: 20px; 
-    width: calc(33% - 20px); 
+    margin-bottom: 20px;
+    width: calc(33% - 20px);
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -25,8 +25,22 @@
     width: 100%;
 }
 
-.card-footer{
-    padding-left: 160px;
+.card-footer {
+    color: white;
+    background-color: #002fa3;
+    text-align: center;
+    width: 100%;
+    padding: 10px 0;
+}
+
+.card-footer a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.card-footer a:hover {
+    color: #b5bbb6;
 }
 
 .user-image {
@@ -80,8 +94,8 @@
 
 .btn-create {
     background: #28a745;
-    display: inline-flex; 
-    align-items: center; 
+    display: inline-flex;
+    align-items: center;
     gap: 6px;
     justify-content: center;
     color: white;
@@ -101,20 +115,19 @@
     border: none;
     cursor: pointer;
     width: 140px;
-    height: 30px;
+    height: 40px;
     gap: 10px;
 }
 
 .btn-secondary {
-    background: #6f42c1;
-    display: inline-flex; 
-    align-items: center; 
+    background: gray;
+    display: inline-flex;
+    align-items: center;
     gap: 6px;
     justify-content: center;
     color: white;
     cursor: pointer;
 }
-
 
 .pagination {
     display: flex;

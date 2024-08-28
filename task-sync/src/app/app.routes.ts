@@ -62,7 +62,7 @@ export const routes: Routes = [
           {
             path: 'create',
             component: EventCreateComponent,
-            title: 'Task Sync - Criar evento',
+            title: 'Task Sync - Cadastrar evento',
           },
           {
             path: 'list',
@@ -72,12 +72,12 @@ export const routes: Routes = [
           {
             path: 'edit/:id',
             component: EventEditComponent,
-            title: 'Task Sync - Edita evento',
+            title: 'Task Sync - Editar evento',
           },
           {
             path: 'detail/:id',
             component: EventDetailComponent,
-            title: 'Task Sync - Detalhes do evento',
+            title: 'Task Sync - Detalhes evento',
           },
           {
             path: ':eventId/scheduling',
@@ -86,7 +86,7 @@ export const routes: Routes = [
               {
                 path: 'create',
                 component: SchedulingCreateComponent,
-                title: 'Task Sync - Criar cronograma',
+                title: 'Task Sync - Cadastrar cronograma',
               },
               {
                 path: 'list',
@@ -101,7 +101,7 @@ export const routes: Routes = [
               {
                 path: 'detail/:id',
                 component: SchedulingDetailComponent,
-                title: 'Task Sync - Detalhes do cronograma',
+                title: 'Task Sync - Detalhes cronograma',
               }
             ],
           },
@@ -114,13 +114,13 @@ export const routes: Routes = [
           {
             path: 'create',
             component: TaskCreateComponent,
-            title: 'Task Sync - Criar atividade',
+            title: 'Task Sync - Cadastrar atividade',
 
           },
           {
             path: 'list',
             component: TaskListComponent,
-            title: 'Task Sync - Lista de atividades',
+            title: 'Task Sync - Listar atividades',
           },
           {
             path: 'my-task-list/:id',
@@ -130,45 +130,45 @@ export const routes: Routes = [
           {
             path: 'edit/:id',
             component: TaskEditComponent,
-            title: 'Task Sync - Editar atividades',
+            title: 'Task Sync - Editar atividade',
           },
           {
             path: 'detail/:id',
             component: TaskDetailComponent,
-            title: 'Task Sync - Destalhes da atividade',
+            title: 'Task Sync - Destalhes atividade',
           },
         ],
       },
       {
         path: 'user',
-        title: 'Task Sync - Usuarios',
+        title: 'Task Sync - Pessoas',
         children: [
           {
             path: 'create',
             component: UserCreateComponent,
-            title: 'Task Sync - Criar novo usuario',
+            title: 'Task Sync - Cadastrar pessoa',
           },
           {
             path: 'list',
             component: UserListComponent,
-            title: 'Task Sync - Listar usuarios',
+            title: 'Task Sync - Listar pessoas',
           },
           {
             path: 'edit/:id',
             component: UserEditComponent,
-            title: 'Task Sync - Editar usuario',
+            title: 'Task Sync - Editar pessoa',
           },
           {
             path: 'detail/:id',
             component: UserDetailComponent,
-            title: 'Task Sync - Detalhes do usuario',
+            title: 'Task Sync - Detalhes pessoa',
           },
         ],
       },
       {
         path: '**',
         component: NotFoundComponent,
-        title: 'Task Sync - Pagina nao encontrada',
+        title: 'Task Sync - Pagina não encontrada',
       },
     ],
   },

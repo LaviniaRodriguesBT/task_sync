@@ -1,13 +1,5 @@
-html,
-body {
-    height: 100%;
-    margin: 0;
-    background: linear-gradient(90deg, rgba(2, 0, 36, 0.952) 19%, rgb(64, 15, 83) 67%, rgb(28, 10, 34) 95%);
-
-}
-
 .toolbar-item-spacer {
-    flex: 1 1 auto;
+    flex:auto;
 }
 
 .app-container {
@@ -24,23 +16,34 @@ body {
     flex-direction: column;
 }
 
-.color-head {
-    background: linear-gradient(90deg, rgba(2, 0, 36, 0.952) 19%, rgb(64, 15, 83) 67%, rgb(28, 10, 34) 95%);
+.tooblar {
+    background: url('/assets/img/fundo-menu3.png');
     color: white;
-    padding: 0 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
+.navbar {
+    margin: 350px; 
+    display: flex;
+    justify-content: center; 
+}
 
-.toolbar {
-    width: 100%;
-    background: linear-gradient(90deg, rgba(2, 0, 36, 0.952) 19%, rgb(64, 15, 83) 67%, rgb(28, 10, 34) 95%);
+.navbar-collapse {
+    display: flex;
     justify-content: center;
-    align-items: center;
 }
 
 .navbar-nav {
     display: flex;
     gap: 20px;
+    margin: 0; 
+    padding: 0; 
+}
+
+.nav-item {
+    list-style: none; 
 }
 
 .mat-toolbar .btn-list {
@@ -71,9 +74,8 @@ footer a:hover {
     text-decoration: underline;
 }
 
-
 .open-button {
-    background-color: #009b79;
+    background-color: #2b69f5;
     color: white;
     padding: 16px 20px;
     border: none;
@@ -85,7 +87,6 @@ footer a:hover {
     width: 80px;
 }
 
-
 .chat-popup {
     display: none;
     position: fixed;
@@ -94,7 +95,6 @@ footer a:hover {
     border: 3px solid #f1f1f1;
     z-index: 9;
 }
-
 
 .form-container {
     max-width: 300px;
@@ -138,7 +138,6 @@ footer a:hover {
     margin-bottom: 10px;
     opacity: 0.8;
 }
-
 
 .form-container .btn:hover,
 .open-button:hover {
