@@ -84,7 +84,8 @@ export class SchedulingListComponent implements OnInit {
     }
 
     this.searchText = event;
-    let schedulings = this.schedulingCopy.filter((predicate) => predicate.event?.toLocaleLowerCase().includes(event.toLocaleLowerCase()));
+    let schedulings = this.schedulingCopy.filter((predicate) => predicate.event?.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
+    predicate.user_id.toLocaleUpperCase().includes(event.toLocaleUpperCase()));
 
     if (schedulings == undefined) {
       this.schedulings = [];
