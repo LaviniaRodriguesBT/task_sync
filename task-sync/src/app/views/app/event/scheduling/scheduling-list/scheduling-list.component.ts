@@ -8,8 +8,6 @@ import { SchedulingReadService } from '../../../../../services/scheduling/schedu
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { MatIconModule } from '@angular/material/icon';
-import { User } from '../../../../../domain/model/user.model';
-import { UserReadService } from '../../../../../services/user/user-read.service';
 
 @Component({
   selector: 'task-sync-scheduling-list',
