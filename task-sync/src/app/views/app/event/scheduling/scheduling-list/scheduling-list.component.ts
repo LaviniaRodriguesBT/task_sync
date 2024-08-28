@@ -7,6 +7,10 @@ import { SchedulingDeleteService } from '../../../../../services/scheduling/sche
 import { SchedulingReadService } from '../../../../../services/scheduling/scheduling-read.service';
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { MatIconModule } from '@angular/material/icon';
+import { User } from '../../../../../domain/model/user.model';
+import { UserReadService } from '../../../../../services/user/user-read.service';
+import { SchedulingUser } from '../../../../../domain/model/scheduling_user.model';
 
 @Component({
   selector: 'task-sync-scheduling-list',
@@ -21,7 +25,11 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 export class SchedulingListComponent implements OnInit {
   fa = fontawesome;
   faAdd = faPlus;
-  schedulings: Scheduling[] = [];
+  eventId: string = '';
+  
+  schedulings: SchedulingUser[] = [];
+  schedulingCopy: SchedulingUser[] = [];
+
   constructor(private schedulingReadService: SchedulingReadService, 
     private schedulingDeleteService: SchedulingDeleteService, 
     private toastrService: ToastrService,
@@ -56,5 +64,32 @@ export class SchedulingListComponent implements OnInit {
   previousPage() {
   }
   nextPage() {
+  }
+
+  searchText: string = "";
+
+  search(): void {
+    let input = document.getElementById('search') as HTMLInputElement;
+
+    let event = input.value;
+
+    if (this.schedulingCopy.length <= 0 || this.schedulingCopy == null)
+      return;
+
+    if (event == null || event == undefined || event.length <= 0) {
+      this.schedulings = this.schedulingCopy;
+      this.searchText = "";
+      return;
+    }
+
+    this.searchText = event;
+    let schedulings = this.schedulingCopy.filter((predicate) => predicate.event?.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
+    predicate.user_id.toLocaleLowerCase().includes(event.toLocaleLowerCase()));
+
+    if (schedulings == undefined) {
+      this.schedulings = [];
+      return;
+    }
+    this.schedulings = schedulings;
   }
 }

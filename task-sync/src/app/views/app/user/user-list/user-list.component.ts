@@ -82,7 +82,8 @@ export class UserListComponent {
     }
 
     this.searchText = name;
-    let users = this.usersCopy.filter((predicate) => predicate.name?.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
+    let users = this.usersCopy.filter((predicate) => predicate.name?.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
+    predicate.id?.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
 
     if (users == undefined) {
       this.users = [];
