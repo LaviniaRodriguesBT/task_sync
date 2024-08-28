@@ -369,30 +369,6 @@
   ],
   "scheduling": [
     {
-      "id": "2",
-      "event_id": "5",
-      "event": "5",
-      "user_id": "Lavinia Brandani",
-      "task_id": "Abastecer",
-      "value": "50,00",
-      "start_time": "09:00",
-      "end_time": "11:00",
-      "date": "2024-06-22",
-      "status": "Em andamento"
-    },
-    {
-      "id": "3",
-      "event_id": "6",
-      "event": "6",
-      "user_id": "Michele Silva",
-      "task_id": "Recarga",
-      "value": "80,00",
-      "start_time": "09:00",
-      "end_time": "11:00",
-      "date": "2024-06-22",
-      "status": "Em andamento"
-    },
-    {
       "id": "3ca5",
       "event_id": "",
       "event": "",
@@ -417,18 +393,6 @@
       "status": "Em andamento"
     },
     {
-      "id": "0668",
-      "event_id": "5",
-      "event": "",
-      "user_id": "Lucas",
-      "task_id": "lalal",
-      "value": "7217",
-      "start_time": "22:36",
-      "end_time": "22:36",
-      "date": "275760-07-10",
-      "status": "Concluído"
-    },
-    {
       "id": "5926",
       "event_id": "3",
       "event": "Congresso de Engenharia",
@@ -451,6 +415,42 @@
       "end_time": "23:29",
       "date": "2024-08-29",
       "status": "Concluído"
+    },
+    {
+      "id": "aac6",
+      "event_id": "3",
+      "event": "Congresso de Engenharia",
+      "user_id": "Lucas",
+      "task_id": "Adicionar item ao carrinho",
+      "value": "50",
+      "start_time": "10:50",
+      "end_time": "18:50",
+      "date": "2024-08-29",
+      "status": "Concluído"
+    },
+    {
+      "id": "fa30",
+      "event_id": "6",
+      "event": "Hackathon Universitário",
+      "user_id": "Lucas",
+      "task_id": "Lavinia",
+      "value": "55",
+      "start_time": "21:45",
+      "end_time": "23:46",
+      "date": "2024-08-29",
+      "status": "Em andamento"
+    },
+    {
+      "id": "1b38",
+      "event_id": "5",
+      "event": "Seminário de Sustentabilidade",
+      "user_id": "Lavinia",
+      "task_id": "Abastecer",
+      "value": "50",
+      "start_time": "22:47",
+      "end_time": "21:46",
+      "date": "2024-08-29",
+      "status": "Em andamento"
     }
   ],
   "chat": [

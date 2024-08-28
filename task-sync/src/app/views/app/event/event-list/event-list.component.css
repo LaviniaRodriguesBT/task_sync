@@ -26,21 +26,38 @@
 }
 
 .card-footer {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    padding: 10px; 
+}
+
+.btn-access {
+    display: block; 
+    padding: 10px;
+    border-radius: 4px;
     color: white;
-    background-color: #002fa3;
+    background-color: #002fa3; 
     text-align: center;
-    width: 100%;
-    padding: 10px 0;
+    text-decoration: none; 
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease; 
+    width: 100%; 
+    box-sizing: border-box; 
 }
 
-.card-footer a {
-    color: white;
-    text-decoration: none;
-    transition: color 0.3s ease;
+.btn-access:hover {
+    background-color: #0056b3; 
 }
 
-.card-footer a:hover {
-    color: #b5bbb6;
+.btn-access:active {
+    background-color: #004080; 
+}
+
+.btn-access:focus {
+    outline: none; 
 }
 
 .user-image {

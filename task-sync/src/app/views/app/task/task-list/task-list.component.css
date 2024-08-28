@@ -102,13 +102,14 @@ table {
   display: flex;
   justify-content: flex-end;
   gap: 10px;
+  padding: 10px;
 }
 
 .pagination select {
   padding: 5px;
   border: 1px solid #ccc;
   border-radius: 4px;
-  background-color: #002fa3;
+  background-color: #94a7ff;
 }
 
 .pagination button {
@@ -128,6 +129,7 @@ table {
 }
 
 .card {
+  font-size: medium;
   margin-bottom: 20px;
   width: calc(33% - 20px);
   background-color: #ffffff;
@@ -165,7 +167,7 @@ table {
 .action-buttons {
   display: flex;
   justify-content: space-around;
-  padding: 10px 0;
+  padding: 0;
 }
 
 .action-buttons a {

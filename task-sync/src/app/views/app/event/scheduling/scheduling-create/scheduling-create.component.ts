@@ -104,7 +104,5 @@ export class SchedulingCreateComponent implements OnInit {
       && this.form.controls['end_time'].valid
       && this.form.controls['date'].valid
       && this.form.controls['status'].valid;
-
   }
-
 }
