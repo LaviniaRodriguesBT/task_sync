@@ -15,12 +15,14 @@ import { SchedulingReadService } from '../../../../../services/scheduling/schedu
 export class SchedulingDetailComponent implements OnInit {
 
   schedulingInformation?: Scheduling;
+  eventId: string = '';
 
-  constructor(private route: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,
     private schedulingReadSevice: SchedulingReadService) { }
 
   ngOnInit(): void {
-    let schedulingId = this.route.snapshot.paramMap.get('id');
+    this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
+    let schedulingId = this.activatedRoute.snapshot.paramMap.get('id');
     console.log(`ID do cronograma: ${schedulingId}`);
     this.loadSchedulingById(schedulingId!);
 

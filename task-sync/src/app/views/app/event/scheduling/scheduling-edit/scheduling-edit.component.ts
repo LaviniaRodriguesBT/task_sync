@@ -21,7 +21,7 @@ export class SchedulingEditComponent implements OnInit {
 
   schedulingId?: string;
   form!: FormGroup;
-  eventId?: string | undefined;
+  eventId: string = '';
 
   nameMinLength: number = 3;
   nameMaxLength: number = 10;
@@ -34,10 +34,8 @@ export class SchedulingEditComponent implements OnInit {
     private toastrService: ToastrService,
     private router: Router,
     private formBuilder: FormBuilder) {
-    const lalala = this.activatedRoute.snapshot.paramMap.get('id');
-    console.log('valor lalla' + lalala);
     this.initializeForm();
-    // this.eventId = this.form.controls['event_id'].value;
+    this.eventId = this.form.controls['event_id'].value;
   }
 
   initializeForm() {
@@ -55,6 +53,7 @@ export class SchedulingEditComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     let schedulingId = this.activatedRoute.snapshot.paramMap.get('id');
     this.schedulingId = schedulingId!;
     this.loadSchedulingById(schedulingId!);
@@ -87,13 +86,12 @@ export class SchedulingEditComponent implements OnInit {
         end_time: this.form.controls['end_time'].value,
         date: this.form.controls['date'].value,
         status: this.form.controls['status'].value,
-
       }
 
       console.log(scheduling);
       await this.schedulingUpdateService.update(scheduling);
       this.toastrService.success('Cronograma atualizado com sucesso!');
-      this.router.navigate(['/event/scheduling/list']);
+      this.router.navigate([`/event/${this.eventId}/scheduling/list`]);
     } catch (error) {
       this.toastrService.error('Erro. Cronograma não foi atualizado.');
     }

@@ -80,7 +80,7 @@ export const routes: Routes = [
             title: 'Task Sync - Detalhes do evento',
           },
           {
-            path: 'scheduling',
+            path: ':eventId/scheduling',
             title: 'Task Sync - Cronograma',
             children: [
               {
@@ -89,7 +89,7 @@ export const routes: Routes = [
                 title: 'Task Sync - Criar cronograma',
               },
               {
-                path: 'list/:id',
+                path: 'list',
                 component: SchedulingListComponent,
                 title: 'Task Sync - Listar cronograma',
               },

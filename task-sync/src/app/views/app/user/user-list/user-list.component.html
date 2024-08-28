@@ -10,10 +10,12 @@
 
 <div class="d-flex justify-content-between">
     <a class="btn btn-create btn-primary text-white" routerLink="/user/create">
-        <fa-icon [icon]="faAdd" title="Adicionar novo evento"></fa-icon>
+        <fa-icon [icon]="faAdd" title="Adicionar nova pessoa"></fa-icon>
         Cadastrar pessoa
     </a>
-    <a class="btn btn-secondary" href="/">Voltar</a>
+    <a class="btn btn-secondary" href="/">
+        <span class="material-icons arrow-back">arrow_back</span> Voltar
+    </a>
     <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
         Imprimir
@@ -21,99 +23,56 @@
 </div>
 <hr>
 
-<!-- <div class="mat-elevation-z8">
-    <table class="table table-striped">
-        <thead class="thead-style">
-            <tr>
-          
-                <th scope="col" class="thead-style">Nome</th>
-                <th scope="col" class="thead-style">Email</th>
-                <th scope="col" class="thead-style">CPF</th>
-                <th scope="col" class="thead-style">Telefone</th>
-                <th scope="col" class="thead-style">Endereço</th>
-                <th scope="col" class="thead-style">Detalhes</th>
-                <th scope="col" class="thead-style">Editar</th>
-                <th scope="col" class="thead-style">Excluir</th>
-
-            </tr>
-        </thead>
-        <tbody>
-            @for(user of users; track $index){
-            <tr>
-                <td class="text-center">{{user.name}}</td>
-                <td class="text-center">{{user.email}}</td>
-                <td class="text-center">{{user.cpf}}</td>
-                <td class="text-center">{{user.phone}}</td>
-                <td class="text-center">{{user.address}}</td>
-                <td>
-                    <div class="row column">
-
-                        <div class="col-4">
-                            <a routerLink="/user/detail/{{user.id}}">
-                                <span class="material-icons color-detail" title="Informacoes">info</span>
-                            </a>
-
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="row column">
-                        <div class="col-4">
-                            <a routerLink="/user/edit/{{user.id}}">
-                                <span class="material-icons color-edit" title="Editar usuario">edit</span>
-                            </a>
-                        </div>
-                    </div>
-                </td>
-                <td>
-                    <div class="row column">
-
-                        <div class="col-4">
-                            <a (click)="deleteUser(user.id!)">
-                                <span class="material-icons color-delete" title="Apagar usuario">delete_forever</span>
-                            </a>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            }
-        </tbody>
-    </table>
-</div> -->
-
 <div class="search-box">
     <input type="text" id="search" placeholder="Pessoa" (keyup)="search()">
 </div>
 
-<div class="mat-elevation-z8 user-list">
-    @for (user of users; track $index) {
-      <div class="user-card">
-        <div class="user-image">
-            <img src="\assets\img\face.png">
-          </div>
-        <div class="user-details">
-          <div class="user-name">{{ user.name }}</div>
-          <div class="user-info">
-            <span>Email: {{ user.email }}</span>
-            <span>CPF: {{ user.cpf }}</span>
-            <span>Telefone: {{ user.phone }}</span>
-            <span>Endereço: {{ user.address }}</span>
-          </div>
+<div class="card-container">
+    <ng-container *ngFor="let user of users; let i = index">
+        <div class="card">
+            <div class="card-header">
+                <h3>{{ user.name }}</h3>
+            </div>
+            <div class="user-image">
+                <img src="/assets/img/face.png" alt="User Image">
+            </div>
+            <div class="card-body">
+                <table class="table body-text-card">
+                    <tbody>
+                        <tr>
+                            <th scope="row">Email</th>
+                            <td>{{ user.email }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">CPF</th>
+                            <td>{{ user.cpf }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Telefone</th>
+                            <td>{{ user.phone }}</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">Endereço</th>
+                            <td>{{ user.address }}</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="action-buttons">
+                    <a routerLink="/user/detail/{{ user.id }}">
+                        <span class="material-icons color-detail" title="Informações">info</span>
+                    </a>
+                    <a routerLink="/user/edit/{{ user.id }}">
+                        <span class="material-icons color-edit" title="Editar usuário">edit</span>
+                    </a>
+                    <a (click)="deleteUser(user.id!)">
+                        <span class="material-icons color-delete" title="Deletar usuário">delete_forever</span>
+                    </a>
+                </div>
+            </div>
         </div>
-        <div class="user-actions">
-          <a routerLink="/user/detail/{{ user.id }}" class="action-button">
-            <span class="material-icons color-detail" title="Informacoes">info</span>
-          </a>
-          <a routerLink="/user/edit/{{ user.id }}" class="action-button">
-            <span class="material-icons color-edit" title="Editar usuario">edit</span>
-          </a>
-          <button (click)="deleteUser(user.id!)" class="action-button">
-            <span class="material-icons color-delete" title="Apagar usuario">delete_forever</span>
-          </button>
-        </div>
-      </div>
-    }
-  </div>
+    </ng-container>
+</div>
+
 <div class="pagination">
     <select>
         <option value="5">5 por página</option>
@@ -121,6 +80,6 @@
         <option value="15">15 por página</option>
         <option value="50">50 por página</option>
     </select>
-    <button onclick="previousPage()">Anterior</button>
-    <button onclick="nextPage()">Próximo</button>
+    <button (click)="previousPage()">Anterior</button>
+    <button (click)="nextPage()">Próximo</button>
 </div>

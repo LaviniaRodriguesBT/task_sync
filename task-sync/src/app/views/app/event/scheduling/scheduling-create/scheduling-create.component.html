@@ -8,16 +8,12 @@
 </nav>
 <h1>Criar novo cronograma</h1>
 <hr>
-<a class="btn btn-create btn-primary text-white" (click)="gerarPdf()">
-    Gerar pdf
-</a>
 
 <form class="form" [formGroup]="form" (ngSubmit)="create()">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
             <label for="name">Nome da pessoa</label>
-            <input type="text" class="form-control" id="user_id" placeholder="Nome da pessoa"
-                formControlName="user_id">
+            <input type="text" class="form-control" id="user_id" placeholder="Nome da pessoa" formControlName="user_id">
         </div>
         <div class="form-group col-12 mt-2">
             <label for="name">Nome da atividade</label>
@@ -50,13 +46,13 @@
         <mat-form-field>
             <mat-label>Status</mat-label>
             <mat-select formControlName="status">
-              <mat-option value="Em andamento" >Em andamento</mat-option>
-              <mat-option value="Concluído">Concluído</mat-option>
+                <mat-option value="Em andamento">Em andamento</mat-option>
+                <mat-option value="Concluído">Concluído</mat-option>
             </mat-select>
-          </mat-form-field>
+        </mat-form-field>
 
         <div class="col-12 text-end mt-2">
-            <a class="btn btn-secondary col-2 me-4" href="/event/scheduling/list">Voltar</a>
+            <a class="btn btn-secondary col-2 me-4" routerLink="/event/{{eventId}}/scheduling/list">Voltar</a>
             <button class="btn btn-success col-2">Criar</button>
         </div>
 

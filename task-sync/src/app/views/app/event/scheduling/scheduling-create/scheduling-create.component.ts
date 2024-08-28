@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Scheduling } from '../../../../../domain/model/scheduling.model';
 import { SchedulingCreateService } from '../../../../../services/scheduling/scheduling-create.service';
@@ -24,7 +24,7 @@ import {MatSelectModule} from '@angular/material/select';
 })
 export class SchedulingCreateComponent implements OnInit {
 
-
+  eventId: string = '';
   form!: FormGroup;
 
   nameMinLength: number = 3;
@@ -33,6 +33,7 @@ export class SchedulingCreateComponent implements OnInit {
   descriptionMaxValue: number = 500;
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
     private router: Router,
@@ -42,6 +43,7 @@ export class SchedulingCreateComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
   }
 
   initializeForm() {
@@ -71,14 +73,14 @@ export class SchedulingCreateComponent implements OnInit {
       date: this.form.controls['date'].value,
       status: this.form.controls['status'].value,
     }
-
+    scheduling.event_id = this.eventId;
     console.log('preparando para criar o produto...');
     console.log(scheduling);
 
     try {
       await this.schedulingCreateService.create(scheduling);
       this.toastr.success('Dados salvos com sucesso!');
-      this.router.navigate(['/event/scheduling/list']);
+      this.router.navigate([`/event/${this.eventId}/scheduling/list`]);
     } catch (error: any) {
       this.toastr.error(error.message);
     }
@@ -95,9 +97,6 @@ export class SchedulingCreateComponent implements OnInit {
       && this.form.controls['date'].valid
       && this.form.controls['status'].valid;
 
-  }
-  gerarPdf() {
-    window.print()
   }
 
 }

@@ -9,12 +9,14 @@ import { Event } from "../../../../domain/model/event.model";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { jsPDF } from 'jspdf';
 import { MatCardModule } from "@angular/material/card";
+import { CommonModule } from "@angular/common";
 @Component({
   selector: 'task-sync-event-list',
   standalone: true,
   imports: [MatCardModule,
     FontAwesomeModule,
     RouterModule,
+    CommonModule
   ],
   templateUrl: './event-list.component.html',
   styleUrl: './event-list.component.css'
