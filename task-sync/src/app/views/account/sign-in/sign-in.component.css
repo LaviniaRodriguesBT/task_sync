@@ -3,7 +3,7 @@
     align-items: center;
     height: 100%;
     justify-content: center;
-    background: url('/assets/img/fundo_tela.png');
+    background: url('/assets/img/fundo.png');
     background-size: cover;
     background-position: center;
 }
@@ -16,10 +16,10 @@
 }
 
 .container-div {
-    background-color: rgb(254, 248, 255);
+    background-color: rgb(255, 255, 255);
     padding: 150px;
     border-radius: 35px;
-    box-shadow: 0 0 30px 0 rgb(190, 176, 190);
+    box-shadow: 0 0 30px 0 rgb(76, 104, 204);
 }
 
 .form-container {
@@ -51,14 +51,14 @@
 }
 
 .enter-field {
-    background-color: rgb(0,18,84);
+    background-color: white;
     width: 350px;
     padding: 20px;
     margin-top: 30px;
     margin-left: 120px;
     border-radius: 20px;
     transition: all 0.3s ease-in-out;
-    color: white;
+    color: rgb(0, 0, 0);
 }
 
 .contact-icon {
@@ -81,11 +81,11 @@
     width: 130px;
     height: 50px;
     margin-left: 50%;
-    background-color: rgb(0,18,84);
+    background-color: #2b69f5;
     color: rgb(255, 255, 255);
     font-size: large;
-    opacity: 0.5;
     pointer-events: none;
+    cursor: pointer;
 }
 
 .btn-sign-in:enabled {
