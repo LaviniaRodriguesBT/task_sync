@@ -22,7 +22,8 @@
                         </mat-menu>
                     </li>
                     <li class="nav-item">
-                        <button mat-button [matMenuTriggerFor]="menuAtividades" class="dropdown-content btn-list">Atividades</button>
+                        <button mat-button [matMenuTriggerFor]="menuAtividades"
+                            class="dropdown-content btn-list">Atividades</button>
                         <mat-menu #menuAtividades="matMenu">
                             <a mat-list-item routerLink="/task/list">Lista de atividades</a>
                             <a mat-list-item routerLink="/task/create">Cadastrar atividade</a>
@@ -78,19 +79,32 @@
             <div class="mb-4"></div>
         </main>
     </div>
+
     <div>
-        <button class="open-button" (click)="toggleForm()"><i class="fa fa-comment"></i></button>
+        <!-- Botão para abrir o chat -->
+        <button class="open-button" (click)="toggleForm()">
+            <i class="fa fa-comment"></i>
+        </button>
+
+        <!-- Formulário do chat -->
         <div class="chat-popup" id="myForm" #myForm [style.display]="showForm ? 'block' : 'none'">
+            <!-- Ícone de fechar -->
+            <span class="close-btn" (click)="closeForm()">&times;</span>
             <form action="/action_page.php" class="form-container">
                 <h1>Chat</h1>
                 <label for="msg"><b>Destinatário</b></label>
-                <input type="text">
-                <textarea placeholder="Digite sua mensagem ..." name="msg" required=""></textarea>
-                <button type="submit" class="btn btn-send">Enviar</button>
-                <button type="button" class="btn btn-cancel" (click)="closeForm()">Fechar</button>
+                <input type="text" id="recipient" placeholder="Nome do destinatário" required>
+
+                <textarea placeholder="Digite sua mensagem ..." name="msg" required></textarea>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-send">Enviar</button>
+                </div>
             </form>
         </div>
     </div>
+
+
 
     <footer>
         <p>&copy; 2024 Todos os direitos reservados aos criadores Lavínia Brandani, Lucas Severini e Michele Fernandes.

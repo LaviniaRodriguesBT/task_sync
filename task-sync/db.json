@@ -402,7 +402,7 @@
       "start_time": "21:26",
       "end_time": "22:27",
       "date": "2024-08-29",
-      "status": "Em andamento"
+      "status": "Em aberto"
     },
     {
       "id": "fcab",
@@ -414,7 +414,7 @@
       "start_time": "22:29",
       "end_time": "23:29",
       "date": "2024-08-29",
-      "status": "Concluído"
+      "status": "Em andamento"
     },
     {
       "id": "aac6",
@@ -450,7 +450,7 @@
       "start_time": "22:47",
       "end_time": "21:46",
       "date": "2024-08-29",
-      "status": "Em andamento"
+      "status": "Em aberto"
     }
   ],
   "chat": [

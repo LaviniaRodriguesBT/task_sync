@@ -38,14 +38,15 @@
             <label for="date">Data</label>
             <input type="date" class="form-control" id="date" placeholder="Data" formControlName="date">
         </div>
-        <mat-form-field>
+        <mat-form-field class="form-group col-12 mt-2">
             <mat-label>Status</mat-label>
             <mat-select formControlName="status">
-                <mat-option value="Em andamento">Em aberto</mat-option>
+                <mat-option value="Em aberto">Em aberto</mat-option>
                 <mat-option value="Em andamento">Em andamento</mat-option>
                 <mat-option value="Concluído">Concluído</mat-option>
             </mat-select>
         </mat-form-field>
+        
         <div class="col-12 text-end mt-2">
             <div class="col-12 text-end mt-2">
                 <a class="btn btn-secondary col-2 me-4" routerLink="/event/{{eventId}}/scheduling/list">Voltar</a>

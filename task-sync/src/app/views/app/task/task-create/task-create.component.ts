@@ -39,11 +39,16 @@ export class TaskCreateComponent implements OnInit {
   initializeForm() {
     this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-
     });
   }
 
   async create() {
+    let formValid = this.validateFields()
+    if(!formValid){
+      this.toastr.error("Preencha todos os campos obrigatórios antes de cadastrar o atividade.");
+      return 
+    }
+
     const task: Task = {
       name: this.form.controls['name'].value,
     }

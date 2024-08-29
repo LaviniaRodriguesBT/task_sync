@@ -12,11 +12,6 @@
 <form class="form">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
-            <label for="event_id">Nome do evento</label>
-            <input type="text" class="form-control" id="event_id" placeholder="Nome do evento" readonly
-                value="{{schedulingInformation?.event_id}}">
-        </div>
-        <div class="form-group col-12 mt-2">
             <label for="name">Nome da pessoa</label>
             <input type="text" class="form-control" id="user_id" placeholder="Nome da pessoa" readonly
                 value="{{schedulingInformation?.user_id}}">
@@ -47,7 +42,7 @@
                 value="{{schedulingInformation?.date}}">
         </div>
 
-        <mat-form-field>
+        <mat-form-field div class="col-12 text-end mt-2">
             <mat-label>Status</mat-label>
             <mat-select formControlName="status" [disabled]="true" value="{{schedulingInformation?.status}}">
                 <mat-option value="Em andamento">Em andamento</mat-option>

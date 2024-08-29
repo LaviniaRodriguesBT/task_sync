@@ -55,18 +55,9 @@ export class EventCreateComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    if (this.form.invalid) {
-      this.toastr.error('Por favor, preencha todos os campos obrigatórios antes de enviar.');
-      this.showImagePreview = false;
-      return;
-    }
-    this.create();
-  }
-
   async create() {
     if (this.form.invalid) {
-      this.toastr.error('Por favor, preencha todos os campos obrigatórios antes de enviar.');
+      this.toastr.error('Preencha todos os campos obrigatórios antes de cadastrar o evento.');
       return;
     }
 

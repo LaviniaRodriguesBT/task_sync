@@ -108,14 +108,13 @@ export class UserCreateComponent implements OnInit {
     }
   }
 
-
-
-
-
-
-
   validateFields() {
-    return this.form.controls['email'].valid && this.form.controls['password'].valid && this.form.controls['cpf'].valid && this.form.controls['name'].valid && this.form.controls['address'].valid && this.form.controls['phone'].valid;
+    return this.form.controls['email'].valid && 
+    this.form.controls['password'].valid && 
+    this.form.controls['cpf'].valid && 
+    this.form.controls['name'].valid && 
+    this.form.controls['address'].valid && 
+    this.form.controls['phone'].valid;
   }
 
 }

@@ -6,7 +6,7 @@ import { Scheduling } from '../../../../../domain/model/scheduling.model';
 import { SchedulingCreateService } from '../../../../../services/scheduling/scheduling-create.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
 import { EventReadService } from '../../../../../services/event/event-read.service';
 import { Event } from '../../../../../domain/model/event.model';
 
@@ -17,8 +17,8 @@ import { Event } from '../../../../../domain/model/event.model';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    MatFormFieldModule, 
-    MatInputModule, 
+    MatFormFieldModule,
+    MatInputModule,
     MatSelectModule
   ],
   templateUrl: './scheduling-create.component.html',
@@ -42,13 +42,10 @@ export class SchedulingCreateComponent implements OnInit {
     private router: Router,
     private schedulingCreateService: SchedulingCreateService,
     private eventReadService: EventReadService
-  
   ) {
-
     this.initializeForm();
   }
 
-  
   async ngOnInit() {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.event = await this.eventReadService.findById(this.eventId);
