@@ -1,10 +1,12 @@
 .dashboard {
     padding: 20px;
+    
 }
 
 .status-cards {
     display: flex;
     gap: 20px;
+    margin-bottom: 5%;
 }
 
 .card {
@@ -32,4 +34,19 @@
 
 .card-doughnut{
     width: 45%;
+}
+
+.imagem-container {
+    width: 100%;
+    height: auto;
+    text-align: center;
+}
+
+.imagem-container img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card-body{
+    color: black;
 }

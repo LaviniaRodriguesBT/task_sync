@@ -15,34 +15,88 @@
     </ol>
   </nav>
 
-  <div class="dashboard">
-    <h2>Dashboard</h2>
-    <div class="status-cards">
-      <!-- <div class="card" #statusCard>
-        <h3>Total de Pessoas</h3>
-        <p>{{ totalPessoas }}</p>
-      </div> -->
-      <!-- <div class="card" #statusCard>
-        <h3>Em Andamento</h3>
-        <p>{{ emAndamento }}</p>
+  <h2>Próximos eventos</h2>
+
+  <div class="row">
+    <div class="col-4">
+      <div class="card shadow-lg">
+        <img src="/assets/img/bloco_urso.png" class="card-img-top" alt="Imagem do Evento">
+
+        <div class="card-body">
+          <h2 class="card-title">Bloco do Urso</h2>
+          <ul class="list-unstyled">
+            <li>Descrição do evento</li>
+            <li>Data:</li>
+            <li>Horário:</li>
+          </ul>
+          <div class="col-12 text-end mt-2">
+            <button class="btn btn-primary">Acessar</button>
+          </div>
+        </div>
       </div>
-      <div class="card" #statusCard>
-        <h3>Concluído</h3>
-        <p>{{ concluido }}</p>
-      </div>
-      <div class="card" #statusCard>
-        <h3>Em Aberto</h3>
-        <p>{{ emAberto }}</p>
-      </div> -->
-      <div class="card-doughnut">
-        <p-chart type="doughnut" [data]="data" [options]="options" />
-      </div>
-    
     </div>
+
+    <div class="col-4">
+      <div class="card shadow-lg">
+        <img src="/assets/img/hacktown.jpg" class="card-img-top" alt="Imagem do Evento">
+
+        <div class="card-body">
+          <h2 class="card-title">HACKWOTN</h2>
+          <ul class="list-unstyled">
+            <li>Descrição do evento</li>
+            <li>Data:</li>
+            <li>Horário:</li>
+          </ul>
+          <div class="col-12 text-end mt-2">
+            <button class="btn btn-primary">Acessar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col-4">
+      <div class="card shadow-lg">
+        <img src="/assets/img/img_maratona_prog.png" class="card-img-top" alt="Imagem do Evento">
+
+        <div class="card-body">
+          <h2 class="card-title">Maratona de programação</h2>
+          <ul class="list-unstyled">
+            <li>Descrição do evento</li>
+            <li>Data:</li>
+            <li>Horário:</li>
+          </ul>
+          <div class="col-12 text-end mt-2">
+            <button class="btn btn-primary">Acessar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
   </div>
-
-
-
+    <div class="dashboard">
+      <h2>Dashboard</h2>
+      <div class="status-cards">
+        <div class="card" #statusCard>
+          <h3>Total de Pessoas</h3>
+          <p>{{ totalPessoas }}</p>
+        </div>
+        <div class="card" #statusCard>
+          <h3>Em Andamento</h3>
+          <p>{{ emAndamento }}</p>
+        </div>
+        <div class="card" #statusCard>
+          <h3>Concluído</h3>
+          <p>{{ concluido }}</p>
+        </div>
+        <div class="card" #statusCard>
+          <h3>Em Aberto</h3>
+          <p>{{ emAberto }}</p>
+        </div>
+      </div>
+      <!-- <div class="card-doughnut">
+        <p-chart type="doughnut" [data]="data" [options]="options" />
+      </div> -->
+    </div>
 </body>
 
 </html>

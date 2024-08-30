@@ -3,12 +3,18 @@ import { MatCardModule } from '@angular/material/card';
 import { SchedulingReadService } from '../../../services/scheduling/scheduling-read.service';
 import { Scheduling } from '../../../domain/model/scheduling.model';
 import { ChartModule } from 'primeng/chart';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { RouterModule } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'task-sync-home',
   standalone: true,
   imports: [MatCardModule,
-    ChartModule
+    ChartModule,
+    FontAwesomeModule,
+    RouterModule,
+    CommonModule
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
@@ -20,6 +26,7 @@ export class HomeComponent implements OnInit {
   emAberto: number = 0;
   data: any;
   options: any;
+  events: Event[] = [];
 
   @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
 
