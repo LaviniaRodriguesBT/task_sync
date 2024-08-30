@@ -1,13 +1,13 @@
 .card-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 35px;
+    gap: 10px;
     padding: 10px;
 }
 
 .card {
     margin-bottom: 20px;
-    width: calc(33% - 20px);
+    width: calc(25% - 10px);
     background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 8px;
@@ -144,6 +144,7 @@
     justify-content: center;
     color: white;
     cursor: pointer;
+    margin-right: 69%;
 }
 
 .pagination {
@@ -168,3 +169,4 @@
     border-radius: 4px;
     cursor: pointer;
 }
+
