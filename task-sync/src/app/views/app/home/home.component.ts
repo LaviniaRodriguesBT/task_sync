@@ -2,11 +2,14 @@ import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } fro
 import { MatCardModule } from '@angular/material/card';
 import { SchedulingReadService } from '../../../services/scheduling/scheduling-read.service';
 import { Scheduling } from '../../../domain/model/scheduling.model';
+import { ChartModule } from 'primeng/chart';
 
 @Component({
   selector: 'task-sync-home',
   standalone: true,
-  imports: [MatCardModule],
+  imports: [MatCardModule,
+    ChartModule
+  ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
@@ -15,6 +18,8 @@ export class HomeComponent implements OnInit {
   emAndamento: number = 0;
   concluido: number = 0;
   emAberto: number = 0;
+  data: any;
+  options: any;
 
   @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
 
@@ -53,5 +58,34 @@ export class HomeComponent implements OnInit {
           break;
       }
     });
+
+    this.data = {
+      labels: ['Em aberto', 'Em andamento', 'Concluído'],
+      datasets: [
+          {
+              data: [this.emAberto,
+                this.emAndamento,
+                this.concluido
+              ],
+              backgroundColor: [
+                '#dc3545',
+                '#ffc107',
+                '#28a745'
+              ],
+              hoverBackgroundColor: [
+                '#dc3545',
+                '#ffc107',
+                '#28a745'
+              ]
+          }
+      ]
+  };
+  
+  
+  this.options = {
+      cutout: '60%',
+  };
   }
+
+
 }

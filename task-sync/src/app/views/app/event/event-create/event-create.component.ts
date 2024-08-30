@@ -16,12 +16,11 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
   ],
   templateUrl: './event-create.component.html',
-  styleUrl: './event-create.component.css'
+  styleUrls: ['./event-create.component.css']
 })
 export class EventCreateComponent implements OnInit {
 
   form!: FormGroup;
-
   nameMinLength: number = 3;
   nameMaxLength: number = 10;
   descriptionMinValue: number = 1;
@@ -29,55 +28,22 @@ export class EventCreateComponent implements OnInit {
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
   showImagePreview: boolean = false;
-  
 
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
     private router: Router,
-    private eventCreateService: EventCreateService) {
-
+    private eventCreateService: EventCreateService
+  ) {
     this.initializeForm();
   }
 
   ngOnInit(): void {
     let dateInput = document.getElementById("date") as HTMLInputElement;
-
-    dateInput.min = new Date().toLocaleDateString('pt-BR');
-
-  }
-
-  onSubmit() {
-    if (this.form.invalid) {
-      this.toastr.error('Please fix form errors before submitting.');
-      this.showImagePreview = false;
-      return;
+    if (dateInput) {
+      dateInput.min = new Date().toISOString().split('T')[0];
     }
   }
-
-onImageSelected(event: any) {
-  const file = event.target.files[0];
-  this.selectedImage = file;
-  this.fileName = file.name;
-
-  const reader = new FileReader();
-  reader.onload = (e) => {
-    const img = document.getElementById('image-preview') as HTMLImageElement;
-    img.src = e.target?.result as string;
-    img.style.display = 'block';
-  };
-  reader.readAsDataURL(file);
-}
-
-  openImagePicker() {
-    const imageInput = document.getElementById('img-event');
-    if (imageInput) {
-        imageInput.click();
-    } else {
-        console.error('Elemento com ID "img-event" não encontrado.');
-      
-    }
-}
 
   initializeForm() {
     this.form = this.formBuilder.group({
@@ -85,20 +51,25 @@ onImageSelected(event: any) {
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
       description: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
       business: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
-      date: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
+      date: ['', [Validators.required]]
     });
   }
 
   async create() {
-    const event: Event = {
-      code: this.form.controls['code'].value,
-      name: this.form.controls['name'].value,
-      description: this.form.controls['description'].value,
-      business: this.form.controls['business'].value,
-      date: this.form.controls['date'].value,
+    if (this.form.invalid) {
+      this.toastr.error('Preencha todos os campos obrigatórios antes de cadastrar o evento.');
+      return;
     }
 
-    console.log('preparando para criar o evento...');
+    const event: Event = {
+      code: this.form.get('code')?.value,
+      name: this.form.get('name')?.value,
+      description: this.form.get('description')?.value,
+      business: this.form.get('business')?.value,
+      date: this.form.get('date')?.value,
+    };
+
+    console.log('Preparando para criar o evento...');
     console.log(event);
 
     try {
@@ -110,9 +81,38 @@ onImageSelected(event: any) {
     }
   }
 
-  validateFields() {
-    return this.form.controls['name'].valid
-      && this.form.controls['description'].valid && this.form.controls['date'].valid;
+  onImageSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedImage = file;
+      this.fileName = file.name;
+      this.showImagePreview = true;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const img = document.getElementById('image-preview') as HTMLImageElement;
+        if (img) {
+          img.src = e.target?.result as string;
+          img.style.display = 'block';
+        }
+      };
+      reader.readAsDataURL(file);
+    } else {
+      this.fileName = 'Nenhum arquivo escolhido';
+      this.showImagePreview = false;
+    }
   }
 
+  openImagePicker() {
+    const imageInput = document.getElementById('img-event') as HTMLInputElement;
+    if (imageInput) {
+      imageInput.click();
+    } else {
+      console.error('Elemento com ID "img-event" não encontrado.');
+    }
+  }
+
+  validateFields() {
+    return this.form.valid;
+  }
 }

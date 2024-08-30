@@ -12,14 +12,8 @@
 <form class="form" method="post" (ngSubmit)="update()" [formGroup]="form">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
-            <label for="event_id">Nome do evento</label>
-            <input type="text" class="form-control" id="event_id" placeholder="Nome do evento"
-                formControlName="event_id">
-        </div>
-        <div class="form-group col-12 mt-2">
             <label for="user_id">Nome da pessoa</label>
-            <input type="text" class="form-control" id="user_id" placeholder="Nome da pessoa"
-                formControlName="user_id">
+            <input type="text" class="form-control" id="user_id" placeholder="Nome da pessoa" formControlName="user_id">
         </div>
         <div class="form-group col-12 mt-2">
             <label for="task_id">Nome da atividade</label>
@@ -37,19 +31,25 @@
         </div>
         <div class="form-group col-12 mt-2">
             <label for="end_time">Horario de Termino</label>
-            <input type="time" class="form-control" id="end_time" placeholder="Horario de Termino" formControlName="end_time">
+            <input type="time" class="form-control" id="end_time" placeholder="Horario de Termino"
+                formControlName="end_time">
         </div>
         <div class="form-group col-12 mt-2">
             <label for="date">Data</label>
             <input type="date" class="form-control" id="date" placeholder="Data" formControlName="date">
         </div>
-        <div class="form-group col-12 mt-2">
-            <label for="status">Status</label>
-            <input type="text" class="form-control" id="status" placeholder="Status" formControlName="status">
-        </div>
+        <mat-form-field class="form-group col-12 mt-2">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status">
+                <mat-option value="Em aberto">Em aberto</mat-option>
+                <mat-option value="Em andamento">Em andamento</mat-option>
+                <mat-option value="Concluído">Concluído</mat-option>
+            </mat-select>
+        </mat-form-field>
+        
         <div class="col-12 text-end mt-2">
             <div class="col-12 text-end mt-2">
-                <a class="btn btn-secondary col-2 me-4" href="/event/list/">Voltar</a>
+                <a class="btn btn-secondary col-2 me-4" routerLink="/event/{{eventId}}/scheduling/list">Voltar</a>
                 <button class="btn btn-success col-2">Salvar</button>
             </div>
         </div>

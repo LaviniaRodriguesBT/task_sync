@@ -7,6 +7,8 @@ import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { UserDeleteService } from '../../../../services/user/user-delete.service';
 import { UserReadService } from '../../../../services/user/user-read.service';
 import { faAddressCard, faPlus } from '@fortawesome/free-solid-svg-icons';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'task-sync-user-list',
@@ -14,6 +16,8 @@ import { faAddressCard, faPlus } from '@fortawesome/free-solid-svg-icons';
   imports: [
     FontAwesomeModule,
     RouterModule,
+    CommonModule,
+    MatIconModule
   ],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
@@ -26,8 +30,9 @@ export class UserListComponent {
   users: User[] = [];
   usersCopy: User[] = [];
 
-
-  constructor(private userReadService: UserReadService, private userDeleteService: UserDeleteService, private toastrService: ToastrService
+  constructor(private userReadService: UserReadService, 
+    private userDeleteService: UserDeleteService, 
+    private toastrService: ToastrService
   ) {
 
   }
@@ -53,8 +58,6 @@ export class UserListComponent {
       this.toastrService.error('Não foi possível remover a pessoa');
 
     }
-
-
     
   }
   gerarPdf() {

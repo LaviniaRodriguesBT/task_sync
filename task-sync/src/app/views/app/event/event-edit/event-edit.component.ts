@@ -43,7 +43,6 @@ export class EventEditComponent implements OnInit {
       description: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
       business: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
       date: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-
     });
   }
 
@@ -85,7 +84,8 @@ export class EventEditComponent implements OnInit {
 
   validateFields() {
     return this.form.controls['name'].valid
-      && this.form.controls['description'].valid && this.form.controls['date'].valid;
+      && this.form.controls['description']
+      .valid && this.form.controls['date'].valid;
   }
 
 }

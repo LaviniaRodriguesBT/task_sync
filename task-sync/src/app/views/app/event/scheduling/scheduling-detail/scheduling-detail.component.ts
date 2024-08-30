@@ -2,12 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Scheduling } from '../../../../../domain/model/scheduling.model';
 import { SchedulingReadService } from '../../../../../services/scheduling/scheduling-read.service';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'task-sync-scheduling-detail',
   standalone: true,
   imports: [
-    RouterModule
+    RouterModule,
+    MatSelectModule
   ],
   templateUrl: './scheduling-detail.component.html',
   styleUrl: './scheduling-detail.component.css'
@@ -15,12 +17,14 @@ import { SchedulingReadService } from '../../../../../services/scheduling/schedu
 export class SchedulingDetailComponent implements OnInit {
 
   schedulingInformation?: Scheduling;
+  eventId: string = '';
 
-  constructor(private route: ActivatedRoute,
+  constructor(private activatedRoute: ActivatedRoute,
     private schedulingReadSevice: SchedulingReadService) { }
 
   ngOnInit(): void {
-    let schedulingId = this.route.snapshot.paramMap.get('id');
+    this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
+    let schedulingId = this.activatedRoute.snapshot.paramMap.get('id');
     console.log(`ID do cronograma: ${schedulingId}`);
     this.loadSchedulingById(schedulingId!);
 

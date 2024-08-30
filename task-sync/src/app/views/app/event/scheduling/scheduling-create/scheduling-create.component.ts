@@ -1,12 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Router, RouterModule } from '@angular/router';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Scheduling } from '../../../../../domain/model/scheduling.model';
 import { SchedulingCreateService } from '../../../../../services/scheduling/scheduling-create.service';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import {MatSelectModule} from '@angular/material/select';
+import { MatSelectModule } from '@angular/material/select';
+import { EventReadService } from '../../../../../services/event/event-read.service';
+import { Event } from '../../../../../domain/model/event.model';
 
 @Component({
   selector: 'task-sync-scheduling-create',
@@ -15,8 +17,8 @@ import {MatSelectModule} from '@angular/material/select';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    MatFormFieldModule, 
-    MatInputModule, 
+    MatFormFieldModule,
+    MatInputModule,
     MatSelectModule
   ],
   templateUrl: './scheduling-create.component.html',
@@ -24,7 +26,8 @@ import {MatSelectModule} from '@angular/material/select';
 })
 export class SchedulingCreateComponent implements OnInit {
 
-
+  eventId: string = '';
+  event!: Event;
   form!: FormGroup;
 
   nameMinLength: number = 3;
@@ -33,15 +36,19 @@ export class SchedulingCreateComponent implements OnInit {
   descriptionMaxValue: number = 500;
 
   constructor(
+    private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
     private router: Router,
-    private schedulingCreateService: SchedulingCreateService) {
-
+    private schedulingCreateService: SchedulingCreateService,
+    private eventReadService: EventReadService
+  ) {
     this.initializeForm();
   }
 
-  ngOnInit(): void {
+  async ngOnInit() {
+    this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
+    this.event = await this.eventReadService.findById(this.eventId);
   }
 
   initializeForm() {
@@ -55,7 +62,6 @@ export class SchedulingCreateComponent implements OnInit {
       end_time: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
       date: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
       status: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
-
     });
   }
 
@@ -71,14 +77,15 @@ export class SchedulingCreateComponent implements OnInit {
       date: this.form.controls['date'].value,
       status: this.form.controls['status'].value,
     }
-
+    scheduling.event_id = this.eventId;
+    scheduling.event = this.event.name;
     console.log('preparando para criar o produto...');
     console.log(scheduling);
 
     try {
       await this.schedulingCreateService.create(scheduling);
       this.toastr.success('Dados salvos com sucesso!');
-      this.router.navigate(['/event/scheduling/list']);
+      this.router.navigate([`/event/${this.eventId}/scheduling/list`]);
     } catch (error: any) {
       this.toastr.error(error.message);
     }
@@ -94,10 +101,5 @@ export class SchedulingCreateComponent implements OnInit {
       && this.form.controls['end_time'].valid
       && this.form.controls['date'].valid
       && this.form.controls['status'].valid;
-
   }
-  gerarPdf() {
-    window.print()
-  }
-
 }

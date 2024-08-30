@@ -1,10 +1,11 @@
 .base-form {
-    height: 100%;
-    background: linear-gradient(90deg, rgba(53,51,205, 0.9), rgb(0, 0, 0) 50%, rgba(53,51,205, 0.9));
     display: flex;
     align-items: center;
+    height: 100%;
     justify-content: center;
-    text-align: center;
+    background: url('/assets/img/fundo.png');
+    background-size: cover;
+    background-position: center;
 }
 
 * {
@@ -15,15 +16,15 @@
 }
 
 .container-div {
-    background-color: rgb(254, 248, 255);
+    background-color: rgb(255, 255, 255);
     padding: 150px;
     border-radius: 35px;
-    box-shadow: 0 0 30px 0 rgb(190, 176, 190);
+    box-shadow: 0 0 30px 0 rgb(76, 104, 204);
 }
 
 .form-container {
+    margin-bottom: 10px;
     position: relative;
-    margin-top: 40px;
     transition: .25s;
     width: 600px;
     height: 200px;
@@ -32,40 +33,11 @@
     padding: 8px 0 8px 35px;
 }
 
-.btn-sign-in {
-    margin-top: 40px;
-    position: relative;
-    border-radius: 10px;
-    width: 130px;
-    height: 50px;
-    margin-left: 130px;
-    background-color: rgb(0,18,84);
-    color: rgb(255, 255, 255);
-    font-size: large;
-    opacity: 0.5;
-    pointer-events: none;
-}
-
-.btn-sign-in:enabled {
-    opacity: 1;
-    pointer-events: auto;
-}
-
-.btn-sign-in:enabled:hover {
-    transform: scale(1.05);
-}
-
 .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 200px;
-}
-
-.h1{
-    margin-top: 30px;
-    text-align: center;
-    margin-left: 120px;
 }
 
 .image-container img:not(.contact-icon) {
@@ -79,25 +51,50 @@
 }
 
 .enter-field {
-    background-color: rgb(0,18,84);
+    background-color: white;
     width: 350px;
     padding: 20px;
     margin-top: 30px;
     margin-left: 120px;
     border-radius: 20px;
     transition: all 0.3s ease-in-out;
-    color: white;
-}
-
-.enter-field:hover {
-    background-color: rgb(0,18,84);
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    color: rgb(0, 0, 0);
 }
 
 .contact-icon {
     width: 80px;
     height: 80px;
-    margin-left: 120px;
+    margin-bottom: 20px;
+    margin-left: 55%;
+}
+
+.image-logo{
+    width: 100px;
+    height: auto;
+    margin-left: 37%;
+}
+
+.btn-sign-in {
+    margin-top: 40px;
+    position: relative;
+    border-radius: 10px;
+    width: 130px;
+    height: 50px;
+    margin-left: 50%;
+    background-color: #2b69f5;
+    color: rgb(255, 255, 255);
+    font-size: large;
+    pointer-events: none;
+    cursor: pointer;
+}
+
+.btn-sign-in:enabled {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.btn-sign-in:enabled:hover {
+    transform: scale(1.05);
 }
 
 footer {

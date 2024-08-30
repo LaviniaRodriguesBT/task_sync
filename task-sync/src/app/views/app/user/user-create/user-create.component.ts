@@ -5,6 +5,7 @@ import { RouterModule, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserCreateService } from '../../../../services/user/user-create.service';
 import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'task-sync-user-create',
@@ -14,6 +15,7 @@ import { CommonModule } from '@angular/common';
     ReactiveFormsModule,
     RouterModule,
     CommonModule,
+    MatIconModule
   ],
   templateUrl: './user-create.component.html',
   styleUrl: './user-create.component.css'
@@ -47,7 +49,6 @@ export class UserCreateComponent implements OnInit {
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
       address: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
       phone: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-
     });
   }
 
@@ -71,7 +72,6 @@ export class UserCreateComponent implements OnInit {
       name: this.form.controls['name'].value,
       address: this.form.controls['address'].value,
       phone: this.form.controls['phone'].value,
-
     }
 
     console.log('preparando para criar a pessoa...');
@@ -93,8 +93,7 @@ export class UserCreateComponent implements OnInit {
       password: this.form.controls['password'].value,
       cpf: this.form.controls['cpf'].value,
       phone: this.form.controls['phone'].value,
-      address: this.form.controls['endereco'].value,
-    
+      address: this.form.controls['address'].value,
     }
 
     console.log('preparando para criar o produto...');
@@ -109,14 +108,13 @@ export class UserCreateComponent implements OnInit {
     }
   }
 
-
-
-
-
-
-
   validateFields() {
-    return this.form.controls['email'].valid && this.form.controls['password'].valid && this.form.controls['cpf'].valid && this.form.controls['name'].valid && this.form.controls['address'].valid && this.form.controls['phone'].valid;
+    return this.form.controls['email'].valid && 
+    this.form.controls['password'].valid && 
+    this.form.controls['cpf'].valid && 
+    this.form.controls['name'].valid && 
+    this.form.controls['address'].valid && 
+    this.form.controls['phone'].valid;
   }
 
 }

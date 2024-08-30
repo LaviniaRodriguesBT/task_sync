@@ -1,16 +1,16 @@
 {
-  "person":[
+  "person": [
     {
-      "id":1,
+      "id": "1",
       "cpf": "111.111.111-78",
       "name": "pessoa",
       "address": "Avenida Atlântica, 1400, Rio de Janeiro"
     }
   ],
-  "person_phone":[
+  "person_phone": [
     {
-      "id": 1,
-      "phone":"35999999999",
+      "id": "1",
+      "phone": "35999999999",
       "person_id": 1
     }
   ],
@@ -276,35 +276,11 @@
       "description": "Congresso sobre as últimas pesquisas em psicologia",
       "business": "Health",
       "date": "05/02/2025"
-    },
-    {
-      "id": "16",
-      "code": "016",
-      "name": "Feira de Robótica",
-      "description": "Feira com exposição de projetos de robótica",
-      "business": "Technology",
-      "date": "15/03/2025"
-    },
-    {
-      "id": "17",
-      "code": "017",
-      "name": "Simulado de Gestão Empresarial",
-      "description": "Simulado para estudantes de administração e gestão empresarial",
-      "business": "Business",
-      "date": "30/03/2024"
-    },
-    {
-      "id": "a495",
-      "code": "52",
-      "name": "nynty",
-      "description": "ymnytj",
-      "business": "ytmjtyfjm",
-      "date": "2024-08-23"
     }
   ],
-  "administrator":[
+  "administrator": [
     {
-      "id": 1,
+      "id": "1",
       "user_id": 1,
       "event_id": 1
     }
@@ -316,7 +292,7 @@
     },
     {
       "id": "3",
-      "name": "Enviar mensagem de boas-vindas"
+      "name": "Enviar mensagem de boas-vinda"
     },
     {
       "id": "4",
@@ -372,137 +348,132 @@
       "id": "16",
       "userId": "18",
       "name": "Compartilhar conteúdo"
-    },
-    {
-      "id": "210d",
-      "name": "Abastecer"
-    },
-    {
-      "id": "ebc4",
-      "name": "lalala"
     }
   ],
-  "activity":[
+  "activity": [
     {
-      "id": 1,
-      "value":"500,00",
+      "id": "1",
+      "value": "500,00",
       "event_id": 1,
       "task_id": 1
     }
   ],
-  "contract":[
-    {
-      "id": 1,
-      "number": "123",
-      "signature_date": "2018-08-25",
-      "user_id": 1,
-      "event_id": 1,
-      "schedulingid": "1",
-      "event": "3",
-      "task_id": "Atual",
-      "value": "500,00",
-      "start_time": "09:00",
-      "end_time": "11:00",
-      "date": "2024-06-22",
-      "status": "Em andamento",
-      "login": "login",
-      "email": "admin@gmail.com",
-      "password": "admin",
-      "cpf": "159753",
-      "username": "Maria Silva",
-      "phone": "9821333",
-      "address": "Avenida Central, 100, Administrator",
-      "person_id": 18
-    },
+  "contract": [
     {
       "id": "1",
       "number": "123",
       "signature_date": "2018-08-25",
       "user_id": 1,
-      "event_id": 1,
-      "schedulingid": "1",
-      "event": "3",
-      "task_id": "Atual",
-      "value": "500,00",
-      "start_time": "09:00",
-      "end_time": "11:00",
-      "date": "2024-06-22",
-      "status": "Em andamento",
-      "login": "login",
-      "email": "admin@gmail.com",
-      "password": "admin",
-      "cpf": "159753",
-      "username": "Lucao Severini",
-      "phone": "9821333",
-      "address": "Avenida Central, 100, Administrator",
-      "person_id": 18
+      "event_id": 1
     }
   ],
   "scheduling": [
     {
-      "id": "1",
-      "event_id": "3",
-      "event": "Workshop de Inteligência",
-      "user_id": "Maria Silva",
-      "task_id": "Atual",
-      "value": "500,00",
-      "start_time": "09:00",
-      "end_time": "11:00",
-      "date": "2024-06-22",
-      "status": "Em andamento",
-      "login": "login",
-      "email": "admin@gmail.com",
-      "password": "admin",
-      "cpf": "159753",
-      "username": "Maria Silva",
-      "phone": "9821333",
-      "address": "Avenida Central, 100, Administrator",
-      "person_id": 18
+      "id": "3ca5",
+      "event_id": "",
+      "event": "",
+      "user_id": "lavinia",
+      "task_id": "sncoasco",
+      "value": "2828",
+      "start_time": "22:02",
+      "end_time": "00:02",
+      "date": "2024-08-29",
+      "status": "Em andamento"
     },
-    
+    {
+      "id": "6587",
+      "event_id": "",
+      "event": "",
+      "user_id": "Lavinia",
+      "task_id": "ncci",
+      "value": "416468",
+      "start_time": "22:08",
+      "end_time": "23:09",
+      "date": "2024-08-29",
+      "status": "Em andamento"
+    },
+    {
+      "id": "5926",
+      "event_id": "3",
+      "event": "Congresso de Engenharia",
+      "user_id": "Lavinia",
+      "task_id": "Atualizar perfil",
+      "value": "45",
+      "start_time": "21:26",
+      "end_time": "22:27",
+      "date": "2024-08-29",
+      "status": "Em aberto"
+    },
+    {
+      "id": "fcab",
+      "event_id": "3",
+      "event": "Congresso de Engenharia",
+      "user_id": "Michele",
+      "task_id": "Enviar mensagem de boas-vinda",
+      "value": "47",
+      "start_time": "22:29",
+      "end_time": "23:29",
+      "date": "2024-08-29",
+      "status": "Em andamento"
+    },
+    {
+      "id": "aac6",
+      "event_id": "3",
+      "event": "Congresso de Engenharia",
+      "user_id": "Lucas",
+      "task_id": "Adicionar item ao carrinho",
+      "value": "50",
+      "start_time": "10:50",
+      "end_time": "18:50",
+      "date": "2024-08-29",
+      "status": "Concluído"
+    },
+    {
+      "id": "fa30",
+      "event_id": "6",
+      "event": "Hackathon Universitário",
+      "user_id": "Lucas",
+      "task_id": "Lavinia",
+      "value": "55",
+      "start_time": "21:45",
+      "end_time": "23:46",
+      "date": "2024-08-29",
+      "status": "Em andamento"
+    },
+    {
+      "id": "1b38",
+      "event_id": "5",
+      "event": "Seminário de Sustentabilidade",
+      "user_id": "Lavinia",
+      "task_id": "Abastecer",
+      "value": "50",
+      "start_time": "22:47",
+      "end_time": "21:46",
+      "date": "2024-08-29",
+      "status": "Em aberto"
+    }
+  ],
+  "chat": [
     {
       "id": "1",
-      "event_id": "3",
-      "event": "3",
-      "user_id": "Samantha Silva",
-      "task_id": "Atual",
-      "value": "500,00",
-      "start_time": "09:00",
-      "end_time": "11:00",
-      "date": "2024-06-22",
-      "status": "Em andamento",
-      "login": "login",
-      "email": "admin@gmail.com",
-      "password": "admin",
-      "cpf": "159753",
-      "username": "Samantha Silva",
-      "phone": "9821333",
-      "address": "Avenida Central, 100, Administrator",
-      "person_id": 1
-    }
-
-  ],
-  "chat":[
-    {
-      "id": 1,
       "type": "Grupo",
       "date_time": "2024-09-01",
       "user_id": 1,
       "event_id": 1
     }
   ],
-  "chat_user":[
+  "chat_user": [
     {
-      "id": 1,
+      "id": "1",
       "user_id": 1,
       "chat_id": 1
     }
   ],
-  "message":[
+  "message": [
     {
-      "id": 1,
+      "id": "1",
       "date_time": "2024-09-01",
-      "text":"alou alou alou",
+      "text": "alou alou alou",
       "user_id": 1,
       "chat_id": 1
     }

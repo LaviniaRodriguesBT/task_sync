@@ -9,15 +9,17 @@
 <h1>Cadastrar atividade</h1>
 <hr>
 
-<form class="form" [formGroup]="form" (ngSubmit)="create()">
+<form class="form-div" [formGroup]="form" (ngSubmit)="create()">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
-            <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name" placeholder="Nome" formControlName="name">
+            <label for="name" class="text-name">Nome</label>
+            <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name">
         </div>
-        <div class="col-12 text-end mt-2">
-            <a class="btn btn-secondary col-2 me-4" href="/task/list">Voltar</a>
-            <button class="btn btn-success col-2 me-4">Salvar</button>
+
+        <div class="form-group d-flex mt-2">
+            <a class="btn btn-back" href="/task/list">Voltar</a>
+            <button class="btn btn-create">Salvar</button>
+            <input class="clean-form" type="reset" value="Limpar">
         </div>
     </div>
 </form>

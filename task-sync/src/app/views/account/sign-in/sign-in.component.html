@@ -1,22 +1,26 @@
 <div class="base-form">
-    
     <div class="container-div">
         <div class="form-container">
             <div class="image-container">
-                <img src="\assets\img\icone_login.png" alt="slogan task sync" class="slogan">
+                <img src="/assets/img/tela_login.png" alt="slogan task sync" class="slogan">
                 <form class="form">
                     <div>
-                        <img src="\assets\img\contact_icon.png" alt="Ícone de contato" class="contact-icon">
-                        <h1 class="h1">Task Sync</h1>
-                        <input matInput type="email" placeholder="Digite seu email" required="" [formControl]="email"
+                        <img src="/assets/img/contact_icon.png" alt="Ícone de contato" class="contact-icon">
+
+                        <div class="image-logo">
+                            <img src="/assets/img/logo-inicio.png">
+                        </div>
+
+                        <input matInput type="email" placeholder="Digite seu email" required [formControl]="email"
                             class="fa fa-envelope enter-field">
                     </div>
                     <div>
                         <input matInput type="password" placeholder="Digite sua senha" maxlength="10" required
-                            [formControl]="password" class="fa fa-lock iPassword enter-field">
+                            [formControl]="password" class="fa fa-lock Password enter-field">
+                        
+                        <button class="btn-sign-in" (click)="login()" [disabled]="isFormInvalid()">Login</button>
                     </div>
-                    <button class="btn-sign-in" (click)="login()" [disabled]="isFormInvalid()">Login</button>
-
+                
                     @if(isLoginIncorrect) {
                     <p class="text-danger mt-2">Email e/ou senha incorretos.</p>
                     }
@@ -32,5 +36,5 @@
             </span>
         </p>
     </footer>
-
 </div>
+

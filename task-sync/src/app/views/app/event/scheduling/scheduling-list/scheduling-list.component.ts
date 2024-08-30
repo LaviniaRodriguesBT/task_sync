@@ -8,9 +8,6 @@ import { SchedulingReadService } from '../../../../../services/scheduling/schedu
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { MatIconModule } from '@angular/material/icon';
-import { User } from '../../../../../domain/model/user.model';
-import { UserReadService } from '../../../../../services/user/user-read.service';
-import { SchedulingUser } from '../../../../../domain/model/scheduling_user.model';
 
 @Component({
   selector: 'task-sync-scheduling-list',
@@ -18,6 +15,7 @@ import { SchedulingUser } from '../../../../../domain/model/scheduling_user.mode
   imports: [
     FontAwesomeModule,
     RouterModule,
+    MatIconModule  
   ],
   templateUrl: './scheduling-list.component.html',
   styleUrl: './scheduling-list.component.css'
@@ -27,8 +25,8 @@ export class SchedulingListComponent implements OnInit {
   faAdd = faPlus;
   eventId: string = '';
   
-  schedulings: SchedulingUser[] = [];
-  schedulingCopy: SchedulingUser[] = [];
+  schedulings: Scheduling[] = [];
+  schedulingCopy: Scheduling[] = [];
 
   constructor(private schedulingReadService: SchedulingReadService, 
     private schedulingDeleteService: SchedulingDeleteService, 
@@ -38,12 +36,13 @@ export class SchedulingListComponent implements OnInit {
 
   }
   ngOnInit(): void {
+    this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.loadSchedulings();
-
   }
+
   async loadSchedulings() {
-    const event_id = this.activatedRoute.snapshot.paramMap.get('id');
-    this.schedulings = await this.schedulingReadService.findByEventId(event_id!);
+    this.schedulings = await this.schedulingReadService.findByEventId(this.eventId);
+    this.schedulingCopy = this.schedulings;
   }
 
   async deleteScheduling(schedulingId: string) {
@@ -84,7 +83,7 @@ export class SchedulingListComponent implements OnInit {
 
     this.searchText = event;
     let schedulings = this.schedulingCopy.filter((predicate) => predicate.event?.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
-    predicate.user_id.toLocaleLowerCase().includes(event.toLocaleLowerCase()));
+    predicate.user_id.toLocaleUpperCase().includes(event.toLocaleUpperCase()));
 
     if (schedulings == undefined) {
       this.schedulings = [];

@@ -12,11 +12,6 @@
 <form class="form">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
-            <label for="event_id">Nome do evento</label>
-            <input type="text" class="form-control" id="event_id" placeholder="Nome do evento" readonly
-                value="{{schedulingInformation?.event_id}}">
-        </div>
-        <div class="form-group col-12 mt-2">
             <label for="name">Nome da pessoa</label>
             <input type="text" class="form-control" id="user_id" placeholder="Nome da pessoa" readonly
                 value="{{schedulingInformation?.user_id}}">
@@ -46,15 +41,19 @@
             <input type="date" class="form-control" id="date" placeholder="Data" readonly
                 value="{{schedulingInformation?.date}}">
         </div>
-        <div class="form-group col-12 mt-2">
-            <label for="status">Status</label>
-            <input type="text" class="form-control" id="status" placeholder="Status" readonly
-                value="{{schedulingInformation?.status}}">
-        </div>
+
+        <mat-form-field div class="col-12 text-end mt-2">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="status" [disabled]="true" value="{{schedulingInformation?.status}}">
+                <mat-option value="Em andamento">Em andamento</mat-option>
+                <mat-option value="Concluído">Concluído</mat-option>
+            </mat-select>
+        </mat-form-field>        
+
         <div class="col-12 text-end mt-2">
-            <button class="btn btn-secondary col-2 me-4" routerLink="/event/scheduling/list">Voltar</button>
+            <button class="btn btn-secondary col-2 me-4" routerLink="/event/{{eventId}}/scheduling/list">Voltar</button>
             <button class="btn btn-primary col-2"
-                routerLink="/event/scheduling/edit/{{schedulingInformation?.id}}">Editar</button>
+                routerLink="/event/{{eventId}}/scheduling/edit/{{schedulingInformation?.id}}">Editar</button>
         </div>
     </div>
 </form>
