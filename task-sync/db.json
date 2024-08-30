@@ -178,6 +178,15 @@
       "name": "lucao severini",
       "phone": "35999999999",
       "address": "casa do lucao, 1400,Santa rita"
+    },
+    {
+      "id": "0862",
+      "email": "manoelbrupen@gmail.com",
+      "password": "444444",
+      "cpf": "123465",
+      "name": "Manoel Garcia",
+      "address": "",
+      "phone": "22222"
     }
   ],
   "event": [
