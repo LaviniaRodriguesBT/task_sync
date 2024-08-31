@@ -10,13 +10,15 @@ import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { jsPDF } from 'jspdf';
 import { MatCardModule } from "@angular/material/card";
 import { CommonModule } from "@angular/common";
+import { MatIconModule } from "@angular/material/icon";
 @Component({
   selector: 'task-sync-event-list',
   standalone: true,
   imports: [MatCardModule,
     FontAwesomeModule,
     RouterModule,
-    CommonModule
+    CommonModule,
+    MatIconModule
   ],
   templateUrl: './event-list.component.html',
   styleUrl: './event-list.component.css'
@@ -25,7 +27,11 @@ export class EventListComponent implements OnInit {
   fa = fontawesome;
   faAdd = faPlus;
   events: Event[] = [];
-  constructor(private eventReadService: EventReadService, private eventDeleteService: EventDeleteService, private toastrService: ToastrService
+  eventsCopy: Event[] =[];
+
+  constructor(private eventReadService: EventReadService, 
+    private eventDeleteService: EventDeleteService, 
+    private toastrService: ToastrService
   ) {
   }
   ngOnInit(): void {
@@ -33,6 +39,7 @@ export class EventListComponent implements OnInit {
   }
   async loadEvents() {
     this.events = await this.eventReadService.findAll();
+    this.eventsCopy = this.events;
   }
   async deleteEvent(eventId: string) {
     try {
@@ -51,4 +58,34 @@ export class EventListComponent implements OnInit {
   }
   nextPage() {
   }
+
+  searchText: string = "";
+  search(): void {
+    let input = document.getElementById('search') as HTMLInputElement;
+
+    let name = input.value;
+
+    if (this.eventsCopy.length <= 0 || this.eventsCopy == null)
+      return;
+
+    if (name == null || name == undefined || name.length <= 0) {
+      this.events = this.eventsCopy;
+      this.searchText = "";
+      return;
+    }
+
+    this.searchText = name;
+    let events = this.eventsCopy.filter(
+      (predicate) => predicate.name?.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
+    predicate.description?.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
+    predicate.business?.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
+
+    if (events == undefined) {
+      this.events = [];
+      return;
+    }
+    this.events = events;
+  }
+
+
 }
