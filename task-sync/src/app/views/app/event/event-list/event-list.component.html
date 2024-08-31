@@ -46,7 +46,7 @@
                         </tr>
                         <tr>
                             <th scope="row">Descrição</th>
-                            <td>{{ event.description }}</td>
+                            <td>{{ event.description | slice:0:15}}...</td>
                         </tr>
                         <tr>
                             <th scope="row">Negócio</th>
