@@ -95,21 +95,10 @@
   gap: 70px;
 }
 
-.btn-back,
-.btn-create,
-.clean-form {
-  border-radius: 4px;
-  color: white;
-  padding: 10px 30px;
+.btn-back{
   border: none;
   cursor: pointer;
-  font-size: 16px;
   width: 150px;
-  text-align: center;
-}
-
-
-.btn-back{
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
@@ -155,6 +144,9 @@
 }
 
 .btn-create {
+  border: none;
+  cursor: pointer;
+  width: 150px;
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
@@ -200,6 +192,9 @@
 }
 
 .clean-form {
+  border: none;
+  cursor: pointer;
+  width: 150px;
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
@@ -243,19 +238,6 @@
   }
   margin: 1%;
 }
-
-/* .btn-back {
-  margin-left: 0px;
-  background-color: gray;
-}
-
-.btn-create {
-  background-color: #28a745;
-}
-
-.clean-form {
-  background-color: #dc3545;
-} */
 
 .input-group-text {
   font-size: 18px;

@@ -39,7 +39,7 @@ hr {
     display: inline-block;
     padding: .75rem 1.25rem;
     border-radius: 10rem;
-    color: rgb(0, 0, 0); /*cor do excrito*/
+    color: rgb(0, 0, 0); 
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: .15rem;
@@ -54,7 +54,7 @@ hr {
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: gray;/*cor da caixa*/
+      background-color: gray;
       border-radius: 10rem;
       z-index: -2;
     }
@@ -65,13 +65,13 @@ hr {
       left: 0;
       width: 0%;
       height: 100%;
-      background-color: rgb(110, 110, 110);/*cor da transicao*/
+      background-color: rgb(110, 110, 110);
       transition: all .3s;
       border-radius: 10rem;
       z-index: -1;
     }
     &:hover {
-      color: #ffffff; /*cor letra transicao*/
+      color: #ffffff; 
       &:before {
         width: 100%;
       }
@@ -83,7 +83,7 @@ hr {
     display: inline-block;
     padding: .75rem 1.25rem;
     border-radius: 10rem;
-    color: rgb(0, 0, 0); /*cor do excrito*/
+    color: rgb(0, 0, 0); 
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: .15rem;
@@ -98,7 +98,7 @@ hr {
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: green;/*cor da caixa*/
+      background-color: green;
       border-radius: 10rem;
       z-index: -2;
     }
@@ -109,13 +109,13 @@ hr {
       left: 0;
       width: 0%;
       height: 100%;
-      background-color: rgb(7, 159, 7);/*cor da transicao*/
+      background-color: rgb(7, 159, 7);
       transition: all .3s;
       border-radius: 10rem;
       z-index: -1;
     }
     &:hover {
-      color: #ffffff; /*cor letra transicao*/
+      color: #ffffff; 
       &:before {
         width: 100%;
       }
@@ -127,7 +127,7 @@ hr {
     display: inline-block;
     padding: .75rem 1.25rem;
     border-radius: 10rem;
-    color: rgb(0, 0, 0); /*cor do excrito*/
+    color: rgb(0, 0, 0); 
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: .15rem;
@@ -142,7 +142,7 @@ hr {
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgb(233, 55, 55);/*cor da caixa*/
+      background-color: rgb(233, 55, 55);
       border-radius: 10rem;
       z-index: -2;
     }
@@ -153,13 +153,13 @@ hr {
       left: 0;
       width: 0%;
       height: 100%;
-      background-color: rgb(167, 9, 9);/*cor da transicao*/
+      background-color: rgb(167, 9, 9);
       transition: all .3s;
       border-radius: 10rem;
       z-index: -1;
     }
     &:hover {
-      color: #ffffff; /*cor letra transicao*/
+      color: #ffffff;
       &:before {
         width: 100%;
       }
@@ -187,19 +187,6 @@ hr {
     width: 100%;
     gap: 10px;
 }
-
-
-/* .btn-back {
-    background-color: #6c757d;
-}
-
-.btn-create {
-    background-color: #28a745;
-}
-
-.clean-form {
-    background-color: #dc3545;
-} */
 
 .form-row {
     display: flex;

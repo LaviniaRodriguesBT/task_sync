@@ -4,9 +4,7 @@
     align-items: center;
     padding: 3%;
     max-width: 90%;
-    /*background-color: #f8f9fa;*/
     border-radius: 2%;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
 }
 
 h1 {
@@ -109,24 +107,14 @@ hr {
   width: 100%;
 }
 
-.btn-back,
-.btn-create,
-.clean-form {
-  border-radius: 4px;
-  color: white;
-  padding: 10px 30px;
+.btn-back{
   border: none;
   cursor: pointer;
-  font-size: 16px;
   width: 150px;
-  text-align: center;
-}
-
-.btn-back{
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
-  color: rgb(0, 0, 0); /*cor do excrito*/
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: .15rem;
@@ -141,7 +129,7 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: gray;/*cor da caixa*/
+    background-color: gray;
     border-radius: 10rem;
     z-index: -2;
   }
@@ -152,13 +140,13 @@ hr {
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: rgb(110, 110, 110);/*cor da transicao*/
+    background-color: rgb(110, 110, 110);
     transition: all .3s;
     border-radius: 10rem;
     z-index: -1;
   }
   &:hover {
-    color: #ffffff; /*cor letra transicao*/
+    color: #ffffff; 
     &:before {
       width: 100%;
     }
@@ -167,10 +155,13 @@ hr {
 }
 
 .btn-create {
+  border: none;
+  cursor: pointer;
+  width: 150px;
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
-  color: rgb(0, 0, 0); /*cor do excrito*/
+  color: rgb(0, 0, 0); 
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: .15rem;
@@ -185,7 +176,7 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: green;/*cor da caixa*/
+    background-color: green;
     border-radius: 10rem;
     z-index: -2;
   }
@@ -196,57 +187,13 @@ hr {
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: rgb(7, 159, 7);/*cor da transicao*/
+    background-color: rgb(7, 159, 7);
     transition: all .3s;
     border-radius: 10rem;
     z-index: -1;
   }
   &:hover {
-    color: #ffffff; /*cor letra transicao*/
-    &:before {
-      width: 100%;
-    }
-  }
-  margin: 1%;
-}
-
-.clean-form {
-  display: inline-block;
-  padding: .75rem 1.25rem;
-  border-radius: 10rem;
-  color: rgb(0, 0, 0); /*cor do excrito*/
-  text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: .15rem;
-  transition: all .3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgb(233, 55, 55);/*cor da caixa*/
-    border-radius: 10rem;
-    z-index: -2;
-  }
-  &:before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: rgb(167, 9, 9);/*cor da transicao*/
-    transition: all .3s;
-    border-radius: 10rem;
-    z-index: -1;
-  }
-  &:hover {
-    color: #ffffff; /*cor letra transicao*/
+    color: #ffffff;
     &:before {
       width: 100%;
     }
