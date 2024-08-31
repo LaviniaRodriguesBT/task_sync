@@ -9,36 +9,36 @@
 <h1>Editar Informações da Pessoa</h1>
 <hr>
 
-<form class="form" method="post" (ngSubmit)="update()" [formGroup]="form">
+<form class="form-div" method="post" (ngSubmit)="update()" [formGroup]="form">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
-            <label for="email">Email</label>
-            <input type="text" class="form-control" id="email" placeholder="Email" formControlName="email">
+            <label for="email" class="text-name">Email</label>
+            <input type="text" class="field-name" id="email" placeholder="Email" formControlName="email">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="password">Senha</label>
-            <input type="text" class="form-control" id="password" placeholder="Senha" formControlName="password">
+            <label for="password" class="text-name">Senha</label>
+            <input type="text" class="field-name" id="password" placeholder="Senha" formControlName="password">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="cpf">CPF</label>
-            <input type="text" class="form-control" id="cpf" placeholder="CPF" formControlName="cpf">
+            <label for="cpf" class="text-name">CPF</label>
+            <input type="text" class="field-name" id="cpf" placeholder="CPF" formControlName="cpf">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name" placeholder="Nome" formControlName="name">
+            <label for="name" class="text-name">Nome</label>
+            <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="phone">Telefone</label>
-            <input type="text" class="form-control" id="phone" placeholder="Telefone" formControlName="phone">
+            <label for="phone" class="text-name">Telefone</label>
+            <input type="text" class="field-name" id="phone" placeholder="Telefone" formControlName="phone">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="address">Endereço</label>
-            <input type="text" class="form-control" id="address" placeholder="Endereço" formControlName="address">
+            <label for="address" class="text-name">Endereço</label>
+            <input type="text" class="field-name" id="address" placeholder="Endereço" formControlName="address">
         </div>
         <div class="col-12 text-end mt-2">
             <div class="col-12 text-end mt-2">
-                <a class="btn btn-secondary col-2 me-4" href="/user/list">Voltar</a>
-                <button class="btn btn-success col-2">Salvar</button>
+                <a class="btn btn-secondary col-2 me-4 btn-back" href="/user/list">Voltar</a>
+                <button class="btn btn-success col-2 btn-create">Salvar</button>
             </div>
         </div>
     </div>

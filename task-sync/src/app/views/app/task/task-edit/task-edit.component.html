@@ -10,18 +10,18 @@
 <h1>Editar atividade</h1>
 <hr>
 
-<form class="form" method="post" (ngSubmit)="update()" [formGroup]="form">
+<form class="form-div" method="post" (ngSubmit)="update()" [formGroup]="form">
     <div class="form-row">
 
         <div class="form-group col-12 mt-2">
-            <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name" placeholder="Nome" formControlName="name">
+            <label for="name" class="text-name">Nome</label>
+            <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name">
         </div>
 
         <div class="col-12 text-end mt-2">
             <div class="col-12 text-end mt-2">
-                <a class="btn btn-secondary col-2 me-4" href="/task/list">Voltar</a>
-                <button class="btn btn-success col-2">Salvar</button>
+                <a class="btn btn-secondary col-2 me-4 btn-back" href="/task/list">Voltar</a>
+                <button class="btn btn-success col-2 btn-create">Salvar</button>
             </div>
         </div>
 

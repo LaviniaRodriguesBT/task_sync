@@ -174,7 +174,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(58, 220, 40);/*cor da caixa*/
+    background-color: green;/*cor da caixa*/
     border-radius: 10rem;
     z-index: -2;
   }
