@@ -98,18 +98,14 @@
 }
 
 footer {
-    background-color: #f0f0f0;
-    text-align: center;
-    padding: 1px;
-    position: fixed;
+    position: absolute;
     bottom: 0;
+    background: linear-gradient(90deg, rgb(64, 15, 83) 67%, rgb(28, 10, 34) 95%);
+    color: white;
     width: 100%;
-    align-items: center;
-    height: 20px;
-}
-
-.links-ffoter {
-    margin-left: 20px;
+    height: 5%;    
+    text-align: center;
+    line-height: 50px;
 }
 
 footer a {
