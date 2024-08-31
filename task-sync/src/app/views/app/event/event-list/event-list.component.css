@@ -105,18 +105,6 @@
     }
 }
 
-/* .btn-access:hover {
-    background-color: #0056b3; 
-}
-
-.btn-access:active {
-    background-color: #004080; 
-} */
-
-/* .btn-access:focus {
-    outline: none; 
-} */
-
 .user-image {
     display: flex;
     justify-content: center;
@@ -214,23 +202,6 @@
     }
 }
 
-/* .btn-pdf {
-    background-color: #002fa3;
-    color: white;
-    padding: 0 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 16px;
-    border: none;
-    cursor: pointer;
-    width: 140px;
-    height: 40px;
-    gap: 10px;
-} */
-
 .btn-pdf {
     border: none;
     cursor: pointer;
@@ -285,7 +256,6 @@
 .btn-back{
     border: none;
     cursor: pointer;
-    width: 150px;
     display: inline-block;
     padding: .75rem 1.25rem;
     border-radius: 10rem;
@@ -333,25 +303,21 @@
 }
 
 .pagination {
-    display: flex;
-    justify-content: flex-end;
-    gap: 10px;
-    padding: 10px;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 10px;
 }
 
 .pagination select {
-    padding: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    background-color: #94a7ff;
+  border: 1px solid #ccc;
+  border-radius: 150px;
+  background-color: #94a7ff;
 }
 
 .pagination button {
-    background-color: #002fa3;
-    color: white;
-    padding: 5px 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    cursor: pointer;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  padding: 1%;
 }
-
