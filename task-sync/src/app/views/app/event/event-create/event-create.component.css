@@ -1,15 +1,118 @@
-.form-div {
-  justify-content: center;
-  align-items: center;
-  padding-left: 180px;
+.image-container {
+  position: relative;
+  display: inline-block;
+  max-width: 100%;
 }
 
 #image-preview {
   max-width: 300px;
   max-height: 150px;
+  display: block;
   margin-top: 15px;
   margin-left: 5px;
   margin-bottom: 15px;
+}
+
+.text-recomend-img {
+  position: absolute;
+  text-align: left;
+  bottom: 10px;
+  left: 200px;
+  color: black;
+  font-size: 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
+  max-width: 90%;
+  border-radius: 2%;
+  justify-content: center;
+}
+
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+hr {
+  width: 100%;
+  border-top: 1px solid #e0e0e0;
+  margin-bottom: 20px;
+}
+
+.text-name {
+  font-size: 16px;
+  color: #555;
+}
+
+.field-name {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-group-append {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  padding: 0 10px;
+  cursor: pointer;
+}
+
+.input-group-text {
+  font-size: 18px;
+  color: #495057;
+}
+
+.text-name {
+  margin-right: 1%;
+}
+
+.type-user {
+  margin-right: 3%;
+  margin-top: 3%;
+}
+
+.form-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-group {
+  margin-bottom: 1%;
+  width: 100%;
+}
+
+.form-group.col-12 {
+  flex: 0 0 100%;
+}
+
+.form-div {
+  justify-content: center;
+  align-items: center;
+  padding-left: 180px
 }
 
 .text-name {
@@ -28,81 +131,34 @@
   border-left: none;
   border-right: none;
   border-top: none;
-  padding: 10px;
-  width: 600px;
-}
-
-.text-date {
-  font-size: 20px;
-  padding: 10px;
+  padding: 2%;
   width: 100%;
-  padding-bottom: 10px;
 }
 
-.field-data {
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  padding: 10px;
-  width: 150px;
-  padding-bottom: 10px;
+.form-group.d-flex.btns {
+  justify-content: center;
+  gap: 40px;
 }
 
-.text-date {
-  font-size: 20px;
-  padding: 10px;
-  width: 100%;
-  padding-top: 30px;
-}
-
-.field-time {
-  border-left: none;
-  border-right: none;
-  border-top: none;
-  padding: 10px;
-  width: 90px;
-  padding-bottom: 10px;
-  margin-left: 10px;
-}
-
-.text-area {
-  width: 600px;
-  height: 200px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 10px;
-  font-family: Arial, sans-serif;
-  font-size: 14px;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-}
-
-.text-recomend-img {
-  margin-left: 30px;
-  font-style: italic;
-}
-
-.hrF{
-  text-align: right;
-  margin-left: 150px;
-}
-
-.btns{
-  padding-top: 20px;
-  gap: 70px;
-}
-
-.btn-back{
+.btn-back,
+.btn-create,
+.clean-form {
+  border-radius: 4px;
+  color: white;
+  padding: 10px 30px;
   border: none;
   cursor: pointer;
+  font-size: 16px;
   width: 150px;
+  text-align: center;
+  margin: 0;
+}
+
+.btn-back {
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
-  color: rgb(0, 0, 0); /*cor do excrito*/
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: .15rem;
@@ -110,7 +166,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  border-color: black; /*cor da borda*/
+
   &:after {
     content: '';
     position: absolute;
@@ -118,10 +174,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: gray;/*cor da caixa*/
+    background-color: gray;
     border-radius: 10rem;
     z-index: -2;
   }
+
   &:before {
     content: '';
     position: absolute;
@@ -129,28 +186,28 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: rgb(110, 110, 110);/*cor da transicao*/
+    background-color: rgb(110, 110, 110);
     transition: all .3s;
     border-radius: 10rem;
     z-index: -1;
   }
+
   &:hover {
-    color: #ffffff; /*cor letra transicao*/
+    color: #ffffff;
+
     &:before {
       width: 100%;
     }
   }
+
   margin: 1%;
 }
 
 .btn-create {
-  border: none;
-  cursor: pointer;
-  width: 150px;
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
-  color: rgb(0, 0, 0); /*cor do excrito*/
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: .15rem;
@@ -158,7 +215,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  border-color: black; /*cor da borda*/
+
   &:after {
     content: '';
     position: absolute;
@@ -166,10 +223,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: green;/*cor da caixa*/
+    background-color: green;
     border-radius: 10rem;
     z-index: -2;
   }
+
   &:before {
     content: '';
     position: absolute;
@@ -177,28 +235,28 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: rgb(7, 159, 7);/*cor da transicao*/
+    background-color: rgb(7, 159, 7);
     transition: all .3s;
     border-radius: 10rem;
     z-index: -1;
   }
+
   &:hover {
-    color: #ffffff; /*cor letra transicao*/
+    color: #ffffff;
+
     &:before {
       width: 100%;
     }
   }
+
   margin: 1%;
 }
 
 .clean-form {
-  border: none;
-  cursor: pointer;
-  width: 150px;
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
-  color: rgb(0, 0, 0); /*cor do excrito*/
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: .15rem;
@@ -206,7 +264,7 @@
   position: relative;
   overflow: hidden;
   z-index: 1;
-  border-color: black; /*cor da borda*/
+
   &:after {
     content: '';
     position: absolute;
@@ -214,10 +272,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(233, 55, 55);/*cor da caixa*/
+    background-color: rgb(233, 55, 55);
     border-radius: 10rem;
     z-index: -2;
   }
+
   &:before {
     content: '';
     position: absolute;
@@ -225,17 +284,20 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: rgb(167, 9, 9);/*cor da transicao*/
+    background-color: rgb(167, 9, 9);
     transition: all .3s;
     border-radius: 10rem;
     z-index: -1;
   }
+
   &:hover {
-    color: #ffffff; /*cor letra transicao*/
+    color: #ffffff;
+
     &:before {
       width: 100%;
     }
   }
+
   margin: 1%;
 }
 

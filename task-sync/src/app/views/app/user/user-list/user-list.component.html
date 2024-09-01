@@ -23,7 +23,7 @@
         <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
     </div>
 
-    <a class="btn btn-pdf" (click)="gerarPdf()">
+    <a class="btn btn-primary  btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
         Imprimir
     </a> 
@@ -56,7 +56,7 @@
                         </tr>
                         <tr>
                             <th scope="row">Endereço</th>
-                            <td>{{ user.address }}</td>
+                            <td>{{ user.address | slice:0:19}}...</td>
                         </tr>
                     </tbody>
                 </table>

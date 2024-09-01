@@ -8,6 +8,7 @@ import { SchedulingReadService } from '../../../../../services/scheduling/schedu
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'task-sync-scheduling-list',
@@ -15,7 +16,8 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     FontAwesomeModule,
     RouterModule,
-    MatIconModule  
+    MatIconModule, 
+    CommonModule
   ],
   templateUrl: './scheduling-list.component.html',
   styleUrl: './scheduling-list.component.css'

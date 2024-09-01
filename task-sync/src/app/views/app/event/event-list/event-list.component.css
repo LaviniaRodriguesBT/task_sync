@@ -64,9 +64,8 @@
     cursor: pointer;
     width: 150px;
     display: inline-block;
-    padding: .75rem 1.25rem;
     border-radius: 10rem;
-    color: white; 
+    color: black; 
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: .15rem;
@@ -81,7 +80,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: blue;
       border-radius: 10rem;
       z-index: -2;
     }
@@ -161,7 +159,6 @@
     border: none;
     cursor: pointer;
     display: inline-block;
-    padding: .75rem 1.25rem;
     border-radius: 10rem;
     color: rgb(0, 0, 0); 
     text-transform: uppercase;
@@ -206,9 +203,8 @@
     border: none;
     cursor: pointer;
     display: inline-block;
-    padding: .75rem 1.25rem;
     border-radius: 10rem;
-    color: white; 
+    color: black; 
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: .15rem;
@@ -223,7 +219,6 @@
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: blue;
       border-radius: 10rem;
       z-index: -2;
     }
@@ -257,7 +252,6 @@
     border: none;
     cursor: pointer;
     display: inline-block;
-    padding: .75rem 1.25rem;
     border-radius: 10rem;
     color: rgb(0, 0, 0);
     text-transform: uppercase;
@@ -305,7 +299,7 @@
 .pagination {
   display: flex;
   justify-content: flex-end;
-  gap: 10px;
+  gap: 15px;
   padding: 10px;
 }
 
@@ -319,5 +313,4 @@
   cursor: pointer;
   font-size: 14px;
   text-align: center;
-  padding: 1%;
 }

@@ -1,63 +1,62 @@
 .form-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3%;
-    max-width: 90%;
-    /*background-color: #f8f9fa;*/
-    border-radius: 2%;
-    /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
+  max-width: 90%;
+  border-radius: 2%;
 }
 
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 hr {
-    width: 100%;
-    border-top: 1px solid #e0e0e0;
-    margin-bottom: 20px;
+  width: 100%;
+  border-top: 1px solid #e0e0e0;
+  margin-bottom: 20px;
 }
 
 .text-name {
-    font-size: 16px;
-    color: #555;
+  font-size: 16px;
+  color: #555;
 }
 
 .field-name {
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
+  border: 1px solid #ced4da;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .input-group {
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .input-group-append {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    background-color: #e9ecef;
-    border: 1px solid #ced4da;
-    border-left: none;
-    border-radius: 0 4px 4px 0;
-    padding: 0 10px;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  padding: 0 10px;
+  cursor: pointer;
 }
 
 .input-group-text {
-    font-size: 18px;
-    color: #495057;
+  font-size: 18px;
+  color: #495057;
 }
 
 .text-name {
@@ -90,15 +89,15 @@ hr {
 }
 
 .text-name {
-    font-size: 20px;
-    padding: 10px;
-    width: 100%;
- }
+  font-size: 20px;
+  padding: 10px;
+  width: 100%;
+}
 
 .text-form {
-    font-size: 20px;
-    padding: 10px;
-    width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  width: 100%;
 }
 
 .field-name {
@@ -122,11 +121,11 @@ hr {
   text-align: center;
 }
 
-.btn-back{
+.btn-back {
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
-  color: rgb(0, 0, 0); /*cor do excrito*/
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: .15rem;
@@ -134,6 +133,7 @@ hr {
   position: relative;
   overflow: hidden;
   z-index: 1;
+
   &:after {
     content: '';
     position: absolute;
@@ -141,10 +141,11 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: gray;/*cor da caixa*/
+    background-color: gray;
     border-radius: 10rem;
     z-index: -2;
   }
+
   &:before {
     content: '';
     position: absolute;
@@ -152,17 +153,19 @@ hr {
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: rgb(110, 110, 110);/*cor da transicao*/
+    background-color: rgb(110, 110, 110);
     transition: all .3s;
     border-radius: 10rem;
     z-index: -1;
   }
+
   &:hover {
-    color: #ffffff; /*cor letra transicao*/
+    color: #ffffff;
     &:before {
       width: 100%;
     }
   }
+
   margin: 1%;
 }
 
@@ -170,7 +173,7 @@ hr {
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
-  color: rgb(0, 0, 0); /*cor do excrito*/
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: .15rem;
@@ -178,6 +181,7 @@ hr {
   position: relative;
   overflow: hidden;
   z-index: 1;
+
   &:after {
     content: '';
     position: absolute;
@@ -185,10 +189,11 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: green;/*cor da caixa*/
+    background-color: green;
     border-radius: 10rem;
     z-index: -2;
   }
+
   &:before {
     content: '';
     position: absolute;
@@ -196,17 +201,19 @@ hr {
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: rgb(7, 159, 7);/*cor da transicao*/
+    background-color: rgb(7, 159, 7);
     transition: all .3s;
     border-radius: 10rem;
     z-index: -1;
   }
+
   &:hover {
-    color: #ffffff; /*cor letra transicao*/
+    color: #ffffff;
     &:before {
       width: 100%;
     }
   }
+
   margin: 1%;
 }
 
@@ -214,7 +221,7 @@ hr {
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
-  color: rgb(0, 0, 0); /*cor do excrito*/
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: .15rem;
@@ -222,6 +229,7 @@ hr {
   position: relative;
   overflow: hidden;
   z-index: 1;
+
   &:after {
     content: '';
     position: absolute;
@@ -229,10 +237,11 @@ hr {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(233, 55, 55);/*cor da caixa*/
+    background-color: rgb(233, 55, 55);
     border-radius: 10rem;
     z-index: -2;
   }
+
   &:before {
     content: '';
     position: absolute;
@@ -240,23 +249,25 @@ hr {
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: rgb(167, 9, 9);/*cor da transicao*/
+    background-color: rgb(167, 9, 9);
     transition: all .3s;
     border-radius: 10rem;
     z-index: -1;
   }
+
   &:hover {
-    color: #ffffff; /*cor letra transicao*/
+    color: #ffffff;
     &:before {
       width: 100%;
     }
   }
+
   margin: 1%;
 }
 
 .input-group-text {
-    font-size: 18px;
-    border: none;
-    background-color: transparent;
-    outline: none;
+  font-size: 18px;
+  border: none;
+  background-color: transparent;
+  outline: none;
 }

@@ -17,14 +17,12 @@
   "user": [
     {
       "id": "1",
-      "login": "login",
-      "email": "admin@gmail.com",
-      "password": "admin",
-      "cpf": "159753",
-      "name": "Administrator",
-      "phone": "9821333",
-      "address": "Avenida Central, 100, Administrator",
-      "person_id": 1
+      "email": "lavinia@brandani.net.br",
+      "password": "lalala",
+      "cpf": "17854236",
+      "name": "Lavinia",
+      "phone": "35998993566",
+      "address": "Rua Manoel Patta,216"
     },
     {
       "id": "2",
@@ -407,7 +405,7 @@
       "event": "Congresso de Engenharia",
       "user_id": "Lavinia",
       "task_id": "Atualizar perfil",
-      "value": "45",
+      "value": "45.66",
       "start_time": "21:26",
       "end_time": "22:27",
       "date": "2024-08-29",
@@ -459,6 +457,18 @@
       "start_time": "22:47",
       "end_time": "21:46",
       "date": "2024-08-29",
+      "status": "Em aberto"
+    },
+    {
+      "id": "6ff2",
+      "event_id": "8",
+      "event": "Encontro de Empreendedores",
+      "user_id": "Luis",
+      "task_id": "Reposição",
+      "value": "45.65",
+      "start_time": "17:25",
+      "end_time": "18:26",
+      "date": "2024-09-17",
       "status": "Em aberto"
     }
   ],

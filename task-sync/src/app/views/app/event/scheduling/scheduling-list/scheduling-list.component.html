@@ -54,10 +54,10 @@
                 <td class="text-center">{{scheduling.event}}</td>
                 <td class="text-center">{{scheduling.user_id}}</td>
                 <td class="text-center">{{scheduling.task_id}}</td>
-                <td class="text-center">{{scheduling.value}}</td>
+                <td class="text-center">{{ scheduling.value | currency:'BRL':'symbol':'1.2-2' }}</td>
                 <td class="text-center">{{scheduling.start_time}}</td>
                 <td class="text-center">{{scheduling.end_time}}</td>
-                <td class="text-center">{{scheduling.date}}</td>
+                <td class="text-center">{{ scheduling.date | date: 'dd/MM/yyyy' }}</td>
                 <td class="text-center">{{scheduling.status}}</td>
                 <td>
                     <div class="row column">

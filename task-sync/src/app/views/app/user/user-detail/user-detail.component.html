@@ -9,41 +9,41 @@
 <h1>Detalhes das pesssoas</h1>
 <hr>
 
-<form class="form">
+<form class="form-div">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
-            <label for="email">Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Email" readonly
+            <label for="email" class="text-name">Email</label>
+            <input type="email" class="field-name" id="email" placeholder="Email" readonly
                 value="{{userInformation?.email}}">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="password">Password</label>
-            <input type="text" class="form-control" id="password" placeholder="Password" readonly
+            <label for="password" class="text-name">Senha</label>
+            <input type="text" class="field-name" id="password" placeholder="Password" readonly
                 value="{{userInformation?.password}}">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="cpf">CPF</label>
-            <input type="text" class="form-control" id="cpf" placeholder="Cpf" readonly
+            <label for="cpf" class="text-name">CPF</label>
+            <input type="text" class="field-name" id="cpf" placeholder="Cpf" readonly
                 value="{{userInformation?.cpf}}">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="name">Nome</label>
-            <input type="text" class="form-control" id="name" placeholder="Nome" readonly
+            <label for="name" class="text-name">Nome</label>
+            <input type="text" class="field-name" id="name" placeholder="Nome" readonly
                 value="{{userInformation?.name}}">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="address">Endereço</label>
-            <input type="text" class="form-control" id="address" placeholder="Address" readonly
+            <label for="address" class="text-name">Endereço</label>
+            <input type="text" class="field-name" id="address" placeholder="Address" readonly
                 value="{{userInformation?.address}}">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="phone">Telefone</label>
-            <input type="text" class="form-control" id="phone" placeholder="Telefone" readonly
+            <label for="phone" class="text-name">Telefone</label>
+            <input type="text" class="field-name" id="phone" placeholder="Telefone" readonly
                 value="{{userInformation?.phone}}">
         </div>
         <div class="col-12 text-end mt-2">
-            <button class="btn btn-secondary col-2 me-4" routerLink="/user/list">Voltar</button>
-            <button class="btn btn-primary col-2" routerLink="/user/edit/100">Editar</button>
+            <button class="btn btn-secondary col-2 me-4 btn-back" routerLink="/user/list">Voltar</button>
+            <button class="btn btn-primary col-2 btn-edit" routerLink="/user/edit/100">Editar</button>
         </div>
     </div>
 </form>

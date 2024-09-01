@@ -9,47 +9,48 @@
 <h1>Criar novo cronograma</h1>
 <hr>
 
-<form class="form" [formGroup]="form" (ngSubmit)="create()">
+<form class="form-div" [formGroup]="form" (ngSubmit)="create()">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
-            <label for="name">Nome da pessoa</label>
-            <input type="text" class="form-control" id="user_id" placeholder="Nome da pessoa" formControlName="user_id">
+            <label for="name" class="text-name">Nome da pessoa</label>
+            <input type="text" class="field-name" id="user_id" placeholder="Nome da pessoa" formControlName="user_id">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="name">Nome da atividade</label>
-            <input type="text" class="form-control" id="task_id" placeholder="Nome da atividade"
+            <label for="name" class="text-name">Nome da atividade</label>
+            <input type="text" class="field-name" id="task_id" placeholder="Nome da atividade"
                 formControlName="task_id">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="value">Valor R$</label>
-            <input type="text" class="form-control" id="value" placeholder="Valor R$" formControlName="value">
+            <label for="value" class="text-name">Valor R$</label>
+            <input type="text" class="field-name" id="value" placeholder="Valor R$" formControlName="value">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="start_time">Horario de Inicio</label>
-            <input type="time" class="form-control" id="start_time" placeholder="Horario de Inicio"
+            <label for="start_time" class="text-name">Horario de Inicio</label>
+            <input type="time" class="field-name" id="start_time" placeholder="Horario de Inicio"
                 formControlName="start_time">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="end_time">Horario de Termino</label>
-            <input type="time" class="form-control" id="end_time" placeholder="Horario de Termino"
+            <label for="end_time" class="text-name">Horario de Termino</label>
+            <input type="time" class="field-name" id="end_time" placeholder="Horario de Termino"
                 formControlName="end_time">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="date">Data</label>
-            <input type="date" class="form-control" id="date" placeholder="Data" formControlName="date">
+            <label for="date" class="text-name">Data</label>
+            <input type="date" class="field-name" id="date" placeholder="Data" formControlName="date">
         </div>
-        <mat-form-field class="form-group col-12 mt-2">
+        <mat-form-field class="text-name">
             <mat-label>Status</mat-label>
-            <mat-select formControlName="status">
+            <mat-select formControlName="status" class="field-name" >
                 <mat-option value="Em aberto">Em aberto</mat-option>
                 <mat-option value="Em andamento">Em andamento</mat-option>
                 <mat-option value="Concluído">Concluído</mat-option>
             </mat-select>
         </mat-form-field>
         
-        <div class="col-12 text-end mt-2">
-            <a class="btn btn-secondary col-2 me-4" routerLink="/event/{{eventId}}/scheduling/list">Voltar</a>
-            <button class="btn btn-success col-2">Criar</button>
+        <div class="col-12 text-end mt-2 btns">
+            <a class="btn btn-back col-2 me-2" routerLink="/event/{{eventId}}/scheduling/list">Voltar</a>
+            <button class="btn btn-create col-2 me-2">Criar</button>
+            <button class="clean-form col-6" type="reset" value="Limpar">Limpar</button>
         </div>
 
     </div>

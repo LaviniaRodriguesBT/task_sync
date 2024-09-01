@@ -17,41 +17,42 @@
             <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name">
         </div>
         <div class="form-group mt-2 container">
-            <label for="img-event">
+            <label for="img-event" class="image-label">
                 <input type="file" id="img-event" class="sr-only lenght-image" accept="image/*"
                     (change)="onImageSelected($event)">
-                <img id="image-preview" src="\assets\img\upload-photo.png" alt="Pré-visualização da imagem"
-                    class="lenght-image" title="Faça o upload da sua imagem">
+                <div class="image-container">
+                    <img id="image-preview" src="\assets\img\upload-photo.png" alt="Pré-visualização da imagem"
+                        class="lenght-image" title="Faça o upload da sua imagem">
+                    <h5 class="text-recomend-img">A dimensão recomendada é de <strong> 1600 x 838</strong>.
+                        Formato <strong>JPEG ou PNG de no máximo 2MB</strong>.
+                        Imagens com dimensões diferentes serão redimensionadas.
+                    </h5>
+                </div>
             </label>
-
-            <h5 class="col-3 text-recomend-img">A dimensão recomendada é de <strong> 1600 x 838</strong>.
-                Formato <strong>JPEG ou PNG de no máximo 2MB</strong>.
-                Imagens com dimensões diferentes serão redimensionadas.
-            </h5>
         </div>
         <div class="form-group mt-2 ml-2">
-            <label for="code" class="text-form">Código</label>
+            <label for="code" class="text-name">Código</label>
             <input type="text" class="field-name" id="code" placeholder="Codigo" formControlName="code">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="description" class="text-form">Descrição</label>
-            <textarea type="text" class="text-area" id="description" formControlName="description"
+            <label for="description" class="text-name">Descrição</label>
+            <textarea type="text" class="field-name" id="description" formControlName="description"
                 placeholder="Descreva sobre seu evento"></textarea>
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="business" class="text-form">Área de negócio</label>
+            <label for="business" class="text-name">Área de negócio</label>
             <input type="text" class="field-name" id="business" placeholder="Area de negócio"
                 formControlName="business">
         </div>
-        <div class="row">
-            <div class="form-group col-3 mt-2">
-                <label for="time" class="text-date">Horario de Inicio</label>
-                <input type="time" class="field-time" id="date" placeholder="Data" formControlName="date">
-            </div>
-            <div class="form-group col-3 mt-2 hrF">
-                <label for="time" class="text-date">Horario Final</label>
-                <input type="time" class="field-time" id="date" placeholder="Data" formControlName="date">
-            </div>
+        <div class="form-group col-12 mt-2">
+            <label for="start_time" class="text-name">Horario de Inicio</label>
+            <input type="time" class="field-name" id="start_time" placeholder="Horario de Inicio"
+                formControlName="start_time">
+        </div>
+        <div class="form-group col-12 mt-2">
+            <label for="end_time" class="text-name">Horario de Termino</label>
+            <input type="time" class="field-name" id="end_time" placeholder="Horario de Termino"
+                formControlName="end_time">
         </div>
         <div class="form-group d-flex mt-2 btns">
             <a class="btn btn-back col-2 me-2" href="/event/list">Voltar</a>
