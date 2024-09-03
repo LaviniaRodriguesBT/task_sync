@@ -3,9 +3,11 @@ package br.com.tasksync.backend.main.service.scheduling;
 import br.com.tasksync.backend.main.domain.SchedulingModel;
 import br.com.tasksync.backend.main.port.dao.scheduling.SchedulingDao;
 import br.com.tasksync.backend.main.port.service.scheduling.SchedulingService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SchedulingServiceImplem implements SchedulingService {
 
 
@@ -37,21 +39,41 @@ public class SchedulingServiceImplem implements SchedulingService {
 
     @Override
     public void delete(int id) {
+        if(id < 0){
+            return;
+        }
+        System.out.println("Chamou o remover o cronograma id");
+        schedulingDao.remove(id);
 
     }
 
     @Override
     public SchedulingModel findById(int id) {
-        return null;
+        if(id < 0){
+            return null;
+        }
+        SchedulingModel scheduling = schedulingDao.readyById(id);
+        System.out.println("Chamando o cronograma por id");
+        return scheduling;
     }
 
     @Override
     public List<SchedulingModel> findAll() {
-        return null;
+        List<SchedulingModel> scheduling = schedulingDao.readAll();
+        System.out.println("Chamando todos os cronogramas na tela");
+        return scheduling;
     }
 
     @Override
     public void update(int id, SchedulingModel entity) {
 
+        SchedulingModel schedulingModel = findById(id);
+        if(schedulingModel == null){
+            return;
+        }
+        schedulingDao.updateInformation(id, entity);
+
     }
+
+
 }
