@@ -18,7 +18,18 @@
   </counters>
   <alias-groups />
   <management uid="md-8bf412a570d244d8993cfd733c69f8eb" name="" task-id-sequence="0">
+    <working-schedule uid="ws-d706871abc0f45e7a7672661a598033e" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
     <persons>
+      <person id="">
+        <first-name>Michele</first-name>
+        <last-name>Cristina</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-dc9fd86e25a84758a8c2bf80a52a1370" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
       <person id="">
         <first-name>Michele</first-name>
         <last-name>Cristina</last-name>
@@ -59,13 +70,13 @@
       <owned-items />
       <lifeline classifier-name="" selector="" is-multi-object="false" />
     </item>
+    <item id="52d72598faef4fac8dab63c9e8c6bdcb" cid="ES010" type="activation-bar" name="ExecutionSpecification10" owner="5b0b54c525664231929d30e9f63b7159" creation-date="09/02/2024 11:11:39" visibility="undefined">
+      <activation-bar lifeline-ref="5b0b54c525664231929d30e9f63b7159" />
+    </item>
     <item id="b472e24392974dbbaf326b0128ee8345" cid="SM042" type="sequence-action" name="Message39" creation-date="09/02/2024 12:04:12" to="fa0a9b55f82d4ebc860dd1482152ba08" visibility="package">
       <sequence-action type="reply" message="Erro ao salvar devido a ausencia de preenchimento de campos" is-asynchronous="false" return-value="" assign-to-variable="">
         <parameters />
       </sequence-action>
-    </item>
-    <item id="52d72598faef4fac8dab63c9e8c6bdcb" cid="ES010" type="activation-bar" name="ExecutionSpecification10" owner="5b0b54c525664231929d30e9f63b7159" creation-date="09/02/2024 11:11:39" visibility="undefined">
-      <activation-bar lifeline-ref="5b0b54c525664231929d30e9f63b7159" />
     </item>
     <item id="682e98e326c2453b8847be6543d49a13" cid="SM028" type="sequence-action" name="Message27" creation-date="09/02/2024 11:58:35" from="4bdbe3d488a9422fa58d358731a49c5a" to="89ed7768b3f940f89d44749159631e12" visibility="package">
       <sequence-action type="call" message="Seleciona a opçao de listar eventos" is-asynchronous="false" return-value="" assign-to-variable="">
@@ -75,16 +86,11 @@
     <item id="48dcbec48fc54787a847f75829421a59" cid="ES029" type="activation-bar" name="ExecutionSpecification29" creation-date="09/02/2024 11:59:13" visibility="undefined">
       <activation-bar lifeline-ref="2ec22137306245dab41de62b9823f9f8" />
     </item>
-    <item id="6bef297768dd4851af04459c7d2805b2" cid="SM007" type="sequence-action" name="Message6" creation-date="09/02/2024 11:11:39" from="14900730801e45d59023acabf5beef41" to="52d72598faef4fac8dab63c9e8c6bdcb" visibility="package">
-      <sequence-action type="call" message="Valida a autenticacao" is-asynchronous="false" return-value="" assign-to-variable="">
-        <parameters />
-      </sequence-action>
-    </item>
     <item id="23592f8c7d76465a8fe5eec9750e222b" cid="ES006" type="activation-bar" name="ExecutionSpecification6" owner="78fb90afa95f458b8a3a90dbbcf95060" creation-date="09/02/2024 11:10:25" visibility="undefined">
       <activation-bar lifeline-ref="78fb90afa95f458b8a3a90dbbcf95060" />
     </item>
-    <item id="d096900836c645e2bb4a0fba52304963" cid="SM046" type="sequence-action" name="Message43" creation-date="09/02/2024 12:09:15" to="4bdbe3d488a9422fa58d358731a49c5a" visibility="package">
-      <sequence-action type="reply" message="Todos os eventos cadastrados sao mostrados na tela" is-asynchronous="false" return-value="" assign-to-variable="">
+    <item id="6bef297768dd4851af04459c7d2805b2" cid="SM007" type="sequence-action" name="Message6" creation-date="09/02/2024 11:11:39" from="14900730801e45d59023acabf5beef41" to="52d72598faef4fac8dab63c9e8c6bdcb" visibility="package">
+      <sequence-action type="call" message="Valida a autenticacao" is-asynchronous="false" return-value="" assign-to-variable="">
         <parameters />
       </sequence-action>
     </item>
@@ -93,13 +99,18 @@
         <parameters />
       </sequence-action>
     </item>
+    <item id="d19892c5537349838a408c2680dbcdb3" cid="ES036" type="activation-bar" name="ExecutionSpecification36" owner="2ec22137306245dab41de62b9823f9f8" creation-date="09/02/2024 12:02:40" visibility="undefined">
+      <activation-bar lifeline-ref="2ec22137306245dab41de62b9823f9f8" />
+    </item>
+    <item id="d096900836c645e2bb4a0fba52304963" cid="SM046" type="sequence-action" name="Message43" creation-date="09/02/2024 12:09:15" to="4bdbe3d488a9422fa58d358731a49c5a" visibility="package">
+      <sequence-action type="reply" message="Todos os eventos cadastrados sao mostrados na tela" is-asynchronous="false" return-value="" assign-to-variable="">
+        <parameters />
+      </sequence-action>
+    </item>
     <item id="7e9b94ad169445c29dc75a5dd1fdee6e" cid="SM012" type="sequence-action" name="Message11" creation-date="09/02/2024 11:16:29" to="2a1de92bb2d24d7b9cf74b6ded457d56" visibility="package">
       <sequence-action type="reply" message="Usuario logado" is-asynchronous="false" return-value="" assign-to-variable="">
         <parameters />
       </sequence-action>
-    </item>
-    <item id="d19892c5537349838a408c2680dbcdb3" cid="ES036" type="activation-bar" name="ExecutionSpecification36" owner="2ec22137306245dab41de62b9823f9f8" creation-date="09/02/2024 12:02:40" visibility="undefined">
-      <activation-bar lifeline-ref="2ec22137306245dab41de62b9823f9f8" />
     </item>
     <item id="daa1464465834884ae0c9c72806d16e9" cid="SM006" type="sequence-action" name="Message5" creation-date="09/02/2024 11:11:02" from="23592f8c7d76465a8fe5eec9750e222b" to="14900730801e45d59023acabf5beef41" visibility="package">
       <sequence-action type="call" message="Informa login e senha" is-asynchronous="false" return-value="" assign-to-variable="">
@@ -164,13 +175,13 @@
         <parameters />
       </sequence-action>
     </item>
-    <item id="d8228dfc734740e0890ddccd445835d0" cid="SM008" type="sequence-action" name="Message7" creation-date="09/02/2024 11:12:08" from="52d72598faef4fac8dab63c9e8c6bdcb" to="2de5fff662534d6080d885febc0548b7" visibility="package">
-      <sequence-action type="call" message="Verifica se o usuario admin existe no sistema" is-asynchronous="false" return-value="" assign-to-variable="">
+    <item id="86115e84abca46ba87f1bb75b2cb43a5" cid="SM004" type="sequence-action" name="Message4" creation-date="09/02/2024 11:10:25" from="2a1de92bb2d24d7b9cf74b6ded457d56" to="23592f8c7d76465a8fe5eec9750e222b" visibility="package">
+      <sequence-action type="call" message="Acessa o sistema" is-asynchronous="false" return-value="" assign-to-variable="">
         <parameters />
       </sequence-action>
     </item>
-    <item id="86115e84abca46ba87f1bb75b2cb43a5" cid="SM004" type="sequence-action" name="Message4" creation-date="09/02/2024 11:10:25" from="2a1de92bb2d24d7b9cf74b6ded457d56" to="23592f8c7d76465a8fe5eec9750e222b" visibility="package">
-      <sequence-action type="call" message="Acessa o sistema" is-asynchronous="false" return-value="" assign-to-variable="">
+    <item id="d8228dfc734740e0890ddccd445835d0" cid="SM008" type="sequence-action" name="Message7" creation-date="09/02/2024 11:12:08" from="52d72598faef4fac8dab63c9e8c6bdcb" to="2de5fff662534d6080d885febc0548b7" visibility="package">
+      <sequence-action type="call" message="Verifica se o usuario admin existe no sistema" is-asynchronous="false" return-value="" assign-to-variable="">
         <parameters />
       </sequence-action>
     </item>
@@ -199,25 +210,25 @@
     <item id="c407c4ecc2d842af845cefa633c1d508" cid="ES022" type="activation-bar" name="ExecutionSpecification22" creation-date="09/02/2024 11:18:35" visibility="undefined">
       <activation-bar lifeline-ref="0103e29238274a5fabb5c6b5e8fe39b1" />
     </item>
-    <item id="d08bc771f9cf48559c9261cf8aa859b7" cid="ES013" type="activation-bar" name="ExecutionSpecification13" owner="5b0b54c525664231929d30e9f63b7159" creation-date="09/02/2024 11:14:41" visibility="undefined">
-      <activation-bar lifeline-ref="5b0b54c525664231929d30e9f63b7159" />
-    </item>
     <item id="f9f156a1b0e44338a7794209fbe824c0" cid="LL001" type="lifeline" name="Homepage" owner="9b9baafd8b59443185dd47b8374628a4" creation-date="09/02/2024 10:56:39" visibility="undefined">
       <lifeline classifier-name="" selector="" is-multi-object="false" />
+    </item>
+    <item id="d08bc771f9cf48559c9261cf8aa859b7" cid="ES013" type="activation-bar" name="ExecutionSpecification13" owner="5b0b54c525664231929d30e9f63b7159" creation-date="09/02/2024 11:14:41" visibility="undefined">
+      <activation-bar lifeline-ref="5b0b54c525664231929d30e9f63b7159" />
     </item>
     <item id="5310767fc68045b0a5a1b88807dfe484" cid="SM040" type="sequence-action" name="Message37" creation-date="09/02/2024 12:01:37" from="89ed7768b3f940f89d44749159631e12" to="fa0a9b55f82d4ebc860dd1482152ba08" visibility="package">
       <sequence-action type="call" message="seleciona cadastrar evento" is-asynchronous="false" return-value="" assign-to-variable="">
         <parameters />
       </sequence-action>
     </item>
+    <item id="2ec22137306245dab41de62b9823f9f8" cid="LL001" type="lifeline" name="Banco de Dados" owner="5b0b54c525664231929d30e9f63b7159" creation-date="09/02/2024 10:56:39" visibility="undefined">
+      <owned-items />
+      <lifeline classifier-name="" selector="" is-multi-object="false" />
+    </item>
     <item id="da811c6f86364f7ab55c6b718547a08d" cid="SM020" type="sequence-action" name="Message19" creation-date="09/02/2024 11:18:35" from="4bdbe3d488a9422fa58d358731a49c5a" to="c407c4ecc2d842af845cefa633c1d508" visibility="package">
       <sequence-action type="call" message="Aguarda os proximos eventos e monitoramento por grafico" is-asynchronous="false" return-value="" assign-to-variable="">
         <parameters />
       </sequence-action>
-    </item>
-    <item id="2ec22137306245dab41de62b9823f9f8" cid="LL001" type="lifeline" name="Banco de Dados" owner="5b0b54c525664231929d30e9f63b7159" creation-date="09/02/2024 10:56:39" visibility="undefined">
-      <owned-items />
-      <lifeline classifier-name="" selector="" is-multi-object="false" />
     </item>
     <item id="90cff28a8a9846448495b5686c2ffcb6" cid="SM029" type="sequence-action" name="Message28" creation-date="09/02/2024 11:59:13" from="89ed7768b3f940f89d44749159631e12" to="48dcbec48fc54787a847f75829421a59" visibility="package">
       <sequence-action type="call" message="busca no banco de dados os eventos cadastrados" is-asynchronous="false" return-value="" assign-to-variable="">
@@ -239,7 +250,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-sequence" id="p123bf2276b7f4ee3aad3011917ed7f0a_682346050" name="taskSync_diagramaDeSequenciaAlternativo_erroAoCriarEvento" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="31,669" zoom="0.7">
+      <diagram type="uml-sequence" id="p123bf2276b7f4ee3aad3011917ed7f0a_682346050" name="taskSync_diagramaDeSequenciaAlternativo_erroAoCriarEvento" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="371,288" zoom="0.7">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -323,7 +334,7 @@
             </layout>
           </item>
           <item id="682e98e326c2453b8847be6543d49a13" iid="feb6450381f04fc0b39a87fbb3749e54" creation-date="09/02/2024 11:58:35" order-index="12" type="relation">
-            <layout message-x="809" message-y="833" line-style="oblique" lock-start-point="true" lock-end-point="true" start-absolute-lock="true" end-absolute-lock="true" lock-to-fields="false" auto-path="" x1="303" y1="813" x2="1315" y2="813" start-border-pos="0.3549382716049383" end-border-pos="0.999" start-local-pos="374" end-local-pos="0" name-position="0,20">
+            <layout message-x="809" message-y="833" line-style="oblique" lock-start-point="true" lock-end-point="true" start-absolute-lock="true" end-absolute-lock="true" lock-to-fields="false" auto-path="" x1="303" y1="813" x2="1315" y2="813" start-border-pos="0.3521857923497268" end-border-pos="0.999" start-local-pos="374" end-local-pos="0" name-position="0,20">
               <points>
                 <point x="303" y="813" />
                 <point x="1315" y="813" />
@@ -408,7 +419,7 @@
             <sequence-action show-sequence-number="false" />
           </item>
           <item id="da811c6f86364f7ab55c6b718547a08d" iid="9bfbdd8d5ff441f799f37c56ad6c11c6" creation-date="09/02/2024 11:18:35" order-index="24" type="relation">
-            <layout message-x="676" message-y="498" line-style="oblique" start-auto-side="false" lock-start-point="true" lock-end-point="true" start-absolute-lock="true" end-absolute-lock="true" lock-to-fields="false" auto-path="" x1="303" y1="478" x2="1050" y2="478" start-border-pos="0.2609427609427609" end-border-pos="0.999" start-local-pos="39" end-local-pos="0" name-position="0,20">
+            <layout message-x="676" message-y="498" line-style="oblique" start-auto-side="false" lock-start-point="true" lock-end-point="true" start-absolute-lock="true" end-absolute-lock="true" lock-to-fields="false" auto-path="" x1="303" y1="478" x2="1050" y2="478" start-border-pos="0.260655737704918" end-border-pos="0.999" start-local-pos="39" end-local-pos="0" name-position="0,20">
               <points>
                 <point x="303" y="478" />
                 <point x="1050" y="478" />
@@ -468,7 +479,7 @@
             <sequence-action show-sequence-number="false" />
           </item>
           <item id="7e9b94ad169445c29dc75a5dd1fdee6e" iid="cef36a57fbda4ac9b94f531481759d64" creation-date="09/02/2024 11:16:29" order-index="31" type="relation">
-            <layout message-x="106" message-y="316" line-style="oblique" lock-start-point="true" lock-end-point="true" start-absolute-lock="true" end-absolute-lock="true" lock-to-fields="false" auto-path="" x1="283" y1="296" x2="-70" y2="296" start-border-pos="-1" end-border-pos="0.30045696877380046" start-local-pos="265" end-local-pos="265" name-position="0,20">
+            <layout message-x="106" message-y="316" line-style="oblique" lock-start-point="true" lock-end-point="true" start-absolute-lock="true" end-absolute-lock="true" lock-to-fields="false" auto-path="" x1="283" y1="296" x2="-70" y2="296" start-border-pos="-1" end-border-pos="0.3000755857898715" start-local-pos="265" end-local-pos="265" name-position="0,20">
               <points>
                 <point x="283" y="296" />
                 <point x="-70" y="296" />
@@ -478,7 +489,7 @@
             <sequence-action show-sequence-number="false" />
           </item>
           <item id="7e389dfeb1dd4da497e8390db6d00759" iid="510cec25734f4651a27452281c97faa1" creation-date="09/02/2024 11:17:30" order-index="32" type="relation">
-            <layout message-x="106" message-y="459" line-style="oblique" lock-start-point="true" lock-end-point="true" start-absolute-lock="true" end-absolute-lock="true" lock-to-fields="false" auto-path="" x1="-70" y1="439" x2="283" y2="439" start-border-pos="0.3276846915460777" end-border-pos="0.999" start-local-pos="408" end-local-pos="0" name-position="0,20">
+            <layout message-x="106" message-y="459" line-style="oblique" lock-start-point="true" lock-end-point="true" start-absolute-lock="true" end-absolute-lock="true" lock-to-fields="false" auto-path="" x1="-70" y1="439" x2="283" y2="439" start-border-pos="0.32709750566893425" end-border-pos="0.999" start-local-pos="408" end-local-pos="0" name-position="0,20">
               <points>
                 <point x="-70" y="439" />
                 <point x="283" y="439" />
@@ -503,7 +514,7 @@
             <sequence-action show-sequence-number="false" />
           </item>
           <item id="fcafd17c57d347bd81dbb88052e09b99" iid="67f0dac9686048d4a40339f5377a09fb" creation-date="09/02/2024 11:55:22" order-index="35" type="relation">
-            <layout message-x="676" message-y="726" line-style="oblique" start-auto-side="false" lock-start-point="true" lock-end-point="true" start-absolute-lock="true" end-absolute-lock="true" lock-to-fields="false" auto-path="" x1="1050" y1="706" x2="303" y2="706" start-border-pos="0.751" end-border-pos="0.32491582491582494" start-local-pos="228" end-local-pos="267" name-position="0,20">
+            <layout message-x="676" message-y="726" line-style="oblique" start-auto-side="false" lock-start-point="true" lock-end-point="true" start-absolute-lock="true" end-absolute-lock="true" lock-to-fields="false" auto-path="" x1="1050" y1="706" x2="303" y2="706" start-border-pos="0.751" end-border-pos="0.32295081967213113" start-local-pos="228" end-local-pos="267" name-position="0,20">
               <points>
                 <point x="1050" y="706" />
                 <point x="303" y="706" />

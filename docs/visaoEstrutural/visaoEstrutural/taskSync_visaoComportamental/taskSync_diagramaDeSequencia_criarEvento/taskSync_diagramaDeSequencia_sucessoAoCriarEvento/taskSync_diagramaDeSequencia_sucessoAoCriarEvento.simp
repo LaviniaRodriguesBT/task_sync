@@ -84,6 +84,16 @@
         <phone-number />
         <description />
         <color>#00000000</color>
+        <working-schedule uid="ws-f19a18e92dec45e6a1faa73c2d560cde" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
+      <person id="">
+        <first-name>Michele</first-name>
+        <last-name>Cristina</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
       </person>
     </persons>
     <teams />
@@ -130,11 +140,11 @@
       <owned-items />
       <lifeline classifier-name="" selector="" is-multi-object="false" />
     </item>
-    <item id="3f287208fe8d491ba7e900927ba07584" cid="LL001" type="lifeline" name="Login" owner="3fa4f62ca6624c1695c841d197d04b91" creation-date="09/02/2024 10:56:39" visibility="undefined">
+    <item id="a862672000ce463592fc2c79d3d1bf0f" cid="LL001" type="lifeline" name="Homepage" owner="4dc6edded5d445b7a0730b682261f438" creation-date="09/02/2024 10:56:39" visibility="undefined">
       <owned-items />
       <lifeline classifier-name="" selector="" is-multi-object="false" />
     </item>
-    <item id="a862672000ce463592fc2c79d3d1bf0f" cid="LL001" type="lifeline" name="Homepage" owner="4dc6edded5d445b7a0730b682261f438" creation-date="09/02/2024 10:56:39" visibility="undefined">
+    <item id="3f287208fe8d491ba7e900927ba07584" cid="LL001" type="lifeline" name="Login" owner="3fa4f62ca6624c1695c841d197d04b91" creation-date="09/02/2024 10:56:39" visibility="undefined">
       <owned-items />
       <lifeline classifier-name="" selector="" is-multi-object="false" />
     </item>
@@ -153,7 +163,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-sequence" id="p09c6593942fe4a96a03052405254d2d1_418495980" name="taskSync_diagramaDeSequencia_sucessoAoCriarEvento_" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="-369,557" zoom="0.6">
+      <diagram type="uml-sequence" id="p09c6593942fe4a96a03052405254d2d1_418495980" name="taskSync_diagramaDeSequencia_sucessoAoCriarEvento_" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="-151,416" zoom="0.6">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -281,13 +291,13 @@
               <parameters />
             </sequence-action>
           </item>
+          <item id="fc71b0aa1f344606b87ce8c6fc325eb4" cid="ES029" type="activation-bar" name="ExecutionSpecification29" creator="" creation-date="09/02/2024 11:59:13" visibility="undefined">
+            <activation-bar lifeline-ref="6b82a153ae6a4a7eb1810c3e6f2717d2" />
+          </item>
           <item id="5eb388dabfb342c6a3140118b0474555" cid="SM009" type="sequence-action" name="Message8" creator="" creation-date="09/02/2024 11:13:18" from="ebc73e234842401a9cdcd5c9cec54bf3" to="148942e392bb4bb0befed29ad4b80298" visibility="package">
             <sequence-action type="reply" message="Usuario admin encontrado" is-asynchronous="false" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
-          </item>
-          <item id="fc71b0aa1f344606b87ce8c6fc325eb4" cid="ES029" type="activation-bar" name="ExecutionSpecification29" creator="" creation-date="09/02/2024 11:59:13" visibility="undefined">
-            <activation-bar lifeline-ref="6b82a153ae6a4a7eb1810c3e6f2717d2" />
           </item>
           <item id="1195a29699ca45fab25556465c544ca4" cid="ES028" type="activation-bar" name="ExecutionSpecification28" owner="4dc6edded5d445b7a0730b682261f438" creator="" creation-date="09/02/2024 11:58:35" visibility="undefined">
             <activation-bar lifeline-ref="4dc6edded5d445b7a0730b682261f438" />
@@ -303,33 +313,33 @@
           <item id="ecce069112984d4fb5fda31e6c7ddd70" cid="ES006" type="activation-bar" name="ExecutionSpecification6" owner="3fa4f62ca6624c1695c841d197d04b91" creator="" creation-date="09/02/2024 11:10:25" visibility="undefined">
             <activation-bar lifeline-ref="3fa4f62ca6624c1695c841d197d04b91" />
           </item>
+          <item id="8146d9d3905a4b4e901f7e9e3583cda5" cid="ES014" type="activation-bar" name="ExecutionSpecification14" owner="3fa4f62ca6624c1695c841d197d04b91" creator="" creation-date="09/02/2024 11:16:29" visibility="undefined">
+            <activation-bar lifeline-ref="3fa4f62ca6624c1695c841d197d04b91" />
+          </item>
           <item id="ab13615e2b014f7fa2eab5794e76e65a" cid="SM008" type="sequence-action" name="Message7" creator="" creation-date="09/02/2024 11:12:08" from="148942e392bb4bb0befed29ad4b80298" to="ebc73e234842401a9cdcd5c9cec54bf3" visibility="package">
             <sequence-action type="call" message="Verifica se o usuario admin existe no sistema" is-asynchronous="false" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
-          <item id="8146d9d3905a4b4e901f7e9e3583cda5" cid="ES014" type="activation-bar" name="ExecutionSpecification14" owner="3fa4f62ca6624c1695c841d197d04b91" creator="" creation-date="09/02/2024 11:16:29" visibility="undefined">
-            <activation-bar lifeline-ref="3fa4f62ca6624c1695c841d197d04b91" />
-          </item>
           <item id="ff2ed85cdc3643b4b6fb7577b738ba77" cid="ES039" type="activation-bar" name="ExecutionSpecification39" owner="4dc6edded5d445b7a0730b682261f438" creator="" creation-date="09/02/2024 12:09:15" visibility="undefined">
             <activation-bar lifeline-ref="4dc6edded5d445b7a0730b682261f438" />
-          </item>
-          <item id="18bfe448194c4271827f15d191f28d22" cid="ES024" type="activation-bar" name="ExecutionSpecification24" owner="f1b157a61109408b9107d86270d31a95" creator="" creation-date="09/02/2024 11:52:06" visibility="undefined">
-            <activation-bar lifeline-ref="f1b157a61109408b9107d86270d31a95" />
-          </item>
-          <item id="44002eac6a0d49e79dec434ba1ea3159" cid="ES002" type="activation-bar" name="ExecutionSpecification2" owner="3fa4f62ca6624c1695c841d197d04b91" creator="" creation-date="09/02/2024 11:09:52" visibility="undefined">
-            <activation-bar lifeline-ref="3fa4f62ca6624c1695c841d197d04b91" />
           </item>
           <item id="339f2f112dc24053aaeb467b948b853c" cid="ES017" type="activation-bar" name="ExecutionSpecification17" owner="a862672000ce463592fc2c79d3d1bf0f" creator="" creation-date="09/02/2024 11:18:01" visibility="undefined">
             <activation-bar lifeline-ref="a862672000ce463592fc2c79d3d1bf0f" />
           </item>
-          <item id="d22762d095f44bd2b3255a71318aeb6f" cid="SM027" type="sequence-action" name="Message26" creator="" creation-date="09/02/2024 11:55:22" from="3e1c78906fc543b097a7a5ede84f1b66" to="37d66b6692aa468bab918bc8dc68e896" visibility="package">
-            <sequence-action type="reply" message="Mostra na tela os proximos eventos e o status atual do monitoramento" is-asynchronous="false" return-value="" assign-to-variable="">
-              <parameters />
-            </sequence-action>
+          <item id="44002eac6a0d49e79dec434ba1ea3159" cid="ES002" type="activation-bar" name="ExecutionSpecification2" owner="3fa4f62ca6624c1695c841d197d04b91" creator="" creation-date="09/02/2024 11:09:52" visibility="undefined">
+            <activation-bar lifeline-ref="3fa4f62ca6624c1695c841d197d04b91" />
+          </item>
+          <item id="18bfe448194c4271827f15d191f28d22" cid="ES024" type="activation-bar" name="ExecutionSpecification24" owner="f1b157a61109408b9107d86270d31a95" creator="" creation-date="09/02/2024 11:52:06" visibility="undefined">
+            <activation-bar lifeline-ref="f1b157a61109408b9107d86270d31a95" />
           </item>
           <item id="3babd2e9f2a445e3b8935e85d0072d4e" cid="SM046" type="sequence-action" name="Message43" creator="" creation-date="09/02/2024 12:09:15" to="37d66b6692aa468bab918bc8dc68e896" visibility="package">
             <sequence-action type="reply" message="Todos os eventos cadastrados sao mostrados" is-asynchronous="false" return-value="" assign-to-variable="">
+              <parameters />
+            </sequence-action>
+          </item>
+          <item id="d22762d095f44bd2b3255a71318aeb6f" cid="SM027" type="sequence-action" name="Message26" creator="" creation-date="09/02/2024 11:55:22" from="3e1c78906fc543b097a7a5ede84f1b66" to="37d66b6692aa468bab918bc8dc68e896" visibility="package">
+            <sequence-action type="reply" message="Mostra na tela os proximos eventos e o status atual do monitoramento" is-asynchronous="false" return-value="" assign-to-variable="">
               <parameters />
             </sequence-action>
           </item>
@@ -375,27 +385,27 @@
             </layout>
           </item>
           <item id="3fa4f62ca6624c1695c841d197d04b91" iid="63d1e0786af846e1bf649ce789e98cf1" creation-date="09/02/2024 10:56:39" order-index="1" type="lifeline">
-            <layout ax="223" ay="-99" awidth="140" aheight="1435" x="223" y="-99" width="140" height="1453" expanded="223,-99,140,1615" collapsed="0,0,0,0" container-layout="simple">
+            <layout ax="223" ay="-99" awidth="140" aheight="1435" x="223" y="-99" width="140" height="1453" expanded="223,-99,140,1435" collapsed="0,0,0,0" container-layout="simple">
               <container-layout padding="10,10,10,10" />
             </layout>
           </item>
           <item id="3f287208fe8d491ba7e900927ba07584" iid="8bad1951b0a842be9488b0a91e2fcaa7" creation-date="09/02/2024 10:56:39" order-index="0" type="lifeline">
-            <layout ax="464" ay="-99" awidth="140" aheight="1435" x="464" y="-99" width="140" height="500" expanded="464,-99,140,1615" collapsed="0,0,0,0" container-layout="simple">
+            <layout ax="464" ay="-99" awidth="140" aheight="1435" x="464" y="-99" width="140" height="500" expanded="464,-99,140,1435" collapsed="0,0,0,0" container-layout="simple">
               <container-layout padding="10,10,10,10" />
             </layout>
           </item>
           <item id="23d7f8a7ce2547fba54d7c9c571e3cd6" iid="4ab06f05d667423a961b6e25afaf89ce" creation-date="09/02/2024 10:56:39" order-index="0" type="lifeline">
-            <layout ax="687" ay="-99" awidth="140" aheight="1435" x="687" y="-99" width="140" height="500" expanded="687,-99,140,1615" collapsed="0,0,0,0" container-layout="simple">
+            <layout ax="687" ay="-99" awidth="140" aheight="1435" x="687" y="-99" width="140" height="500" expanded="687,-99,140,1435" collapsed="0,0,0,0" container-layout="simple">
               <container-layout padding="10,10,10,10" />
             </layout>
           </item>
           <item id="6b82a153ae6a4a7eb1810c3e6f2717d2" iid="5ae0fe9bdc9d410484964a64cf52a235" creation-date="09/02/2024 10:56:39" order-index="0" type="lifeline">
-            <layout ax="1749" ay="-99" awidth="140" aheight="1435" x="1749" y="-99" width="140" height="1443" expanded="1749,-99,140,1615" collapsed="0,0,0,0" container-layout="simple">
+            <layout ax="1749" ay="-99" awidth="140" aheight="1435" x="1749" y="-99" width="140" height="1443" expanded="1749,-99,140,1435" collapsed="0,0,0,0" container-layout="simple">
               <container-layout padding="10,10,10,10" />
             </layout>
           </item>
           <item id="4dc6edded5d445b7a0730b682261f438" iid="2517ea1e84f345e8a21ef869a954d052" creation-date="09/02/2024 10:56:39" order-index="0" type="lifeline">
-            <layout ax="1255" ay="-99" awidth="140" aheight="1435" x="1255" y="-99" width="140" height="1457" expanded="1255,-99,140,1615" collapsed="0,0,0,0" container-layout="simple">
+            <layout ax="1255" ay="-99" awidth="140" aheight="1435" x="1255" y="-99" width="140" height="1457" expanded="1255,-99,140,1435" collapsed="0,0,0,0" container-layout="simple">
               <container-layout padding="10,10,10,10" />
             </layout>
           </item>
@@ -410,7 +420,7 @@
             </layout>
           </item>
           <item id="f1b157a61109408b9107d86270d31a95" iid="cc8c7e7037134080bd918209cfff2491" creation-date="09/02/2024 10:56:39" order-index="0" type="lifeline">
-            <layout ax="1502" ay="-99" awidth="140" aheight="1435" x="1502" y="-99" width="140" height="1382" expanded="1502,-99,140,1615" collapsed="0,0,0,0" container-layout="simple">
+            <layout ax="1502" ay="-99" awidth="140" aheight="1435" x="1502" y="-99" width="140" height="1382" expanded="1502,-99,140,1435" collapsed="0,0,0,0" container-layout="simple">
               <container-layout padding="10,10,10,10" />
             </layout>
           </item>
@@ -540,7 +550,7 @@
             <sequence-action show-sequence-number="false" />
           </item>
           <item id="ebc73e234842401a9cdcd5c9cec54bf3" iid="f9c694c84c794149999867f457231192" creation-date="09/02/2024 11:12:08" order-index="10" type="entity">
-            <layout ax="1809" ay="100" awidth="20" aheight="64" x="1809" y="100" width="20" height="51" expanded="1809,100,20,51" collapsed="0,0,0,0" container-layout="simple">
+            <layout ax="1809" ay="100" awidth="20" aheight="64" x="1809" y="100" width="20" height="51" expanded="1809,100,20,64" collapsed="0,0,0,0" container-layout="simple">
               <container-layout padding="10,10,10,10" />
             </layout>
           </item>
