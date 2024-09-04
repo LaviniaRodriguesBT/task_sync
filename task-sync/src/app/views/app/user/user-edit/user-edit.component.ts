@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import { User } from '../../../../domain/model/user.model';
 import { UserReadService } from '../../../../services/user/user-read.service';
 import { UserUpdateService } from '../../../../services/user/user-update.service';
+import { CommonModule } from '@angular/common';
+import { MatIconModule } from '@angular/material/icon';
 
 @Component({
   selector: 'user-sync-user-edit',
@@ -13,6 +15,8 @@ import { UserUpdateService } from '../../../../services/user/user-update.service
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    CommonModule,
+    MatIconModule
   ],
   templateUrl: './user-edit.component.html',
   styleUrl: './user-edit.component.css'
@@ -27,6 +31,7 @@ export class UserEditComponent {
   nameMaxLength: number = 10;
   priceMinValue: number = 1;
   priceMaxValue: number = 500;
+  showPassword: boolean = false
 
   constructor(private activatedRoute: ActivatedRoute,
     private userReadService: UserReadService,
@@ -59,6 +64,11 @@ export class UserEditComponent {
     let user = await this.userReadService.findById(userId);
     console.log(user);
     this.form.controls['name'].setValue(user.name);
+    this.form.controls['email'].setValue(user.email);
+    this.form.controls['password'].setValue(user.password);
+    this.form.controls['cpf'].setValue(user.cpf);
+    this.form.controls['phone'].setValue(user.phone);
+    this.form.controls['address'].setValue(user.address);
   }
 
   async update() {
@@ -84,6 +94,17 @@ export class UserEditComponent {
 
   validateFields() {
     return this.form.controls['name'].valid;
+  }
+
+  
+  togglePasswordVisibility(): void {
+    this.showPassword = !this.showPassword;
+    const passwordField = document.getElementById('password') as HTMLInputElement;
+    if (this.showPassword) {
+      passwordField.type = 'text';
+    } else {
+      passwordField.type = 'password';
+    }
   }
 
 }
