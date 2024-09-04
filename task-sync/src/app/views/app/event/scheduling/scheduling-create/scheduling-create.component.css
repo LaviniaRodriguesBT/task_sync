@@ -278,4 +278,8 @@ hr {
     border: none;
     background-color: transparent;
     outline: none;
+}   
+
+.gap-scheduling{
+    margin-right: 20%;
 }
