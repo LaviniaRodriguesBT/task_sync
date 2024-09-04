@@ -43,6 +43,8 @@ export class EventEditComponent implements OnInit {
       description: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
       business: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
       date: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      start_time: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      end_time: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
     });
   }
 
@@ -60,6 +62,8 @@ export class EventEditComponent implements OnInit {
     this.form.controls['description'].setValue(event.description);
     this.form.controls['business'].setValue(event.business);
     this.form.controls['date'].setValue(event.date);
+    this.form.controls['start_time'].setValue(event.start_time);
+    this.form.controls['end_time'].setValue(event.end_time);
   }
 
   async update() {
@@ -71,6 +75,8 @@ export class EventEditComponent implements OnInit {
         description: this.form.controls['description'].value,
         business: this.form.controls['business'].value,
         date: this.form.controls['date'].value,
+        start_time: this.form.controls['start_time'].value,
+        end_time: this.form.controls['end_time'].value,
       }
 
       console.log(event);

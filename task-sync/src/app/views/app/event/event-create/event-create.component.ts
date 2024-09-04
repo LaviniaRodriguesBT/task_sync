@@ -51,7 +51,9 @@ export class EventCreateComponent implements OnInit {
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
       description: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
       business: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
-      date: ['', [Validators.required]]
+      date: ['', [Validators.required]],
+      start_time: ['', [Validators.required]],
+      end_time: ['', [Validators.required]]
     });
   }
 
@@ -67,6 +69,8 @@ export class EventCreateComponent implements OnInit {
       description: this.form.get('description')?.value,
       business: this.form.get('business')?.value,
       date: this.form.get('date')?.value,
+      start_time: this.form.get('start_time')?.value,
+      end_time: this.form.get('end_time')?.value,
     };
 
     console.log('Preparando para criar o evento...');
