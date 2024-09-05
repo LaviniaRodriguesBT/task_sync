@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { EventUpdateService } from '../../../../services/event/event-update.service';
 import { EventReadService } from '../../../../services/event/event-read.service';
 import { Event } from "../../../../domain/model/event.model";
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'task-sync-event-edit',
@@ -13,6 +14,7 @@ import { Event } from "../../../../domain/model/event.model";
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    MatSelectModule
   ],
   templateUrl: './event-edit.component.html',
   styleUrl: './event-edit.component.css'
@@ -42,9 +44,9 @@ export class EventEditComponent implements OnInit {
       name: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
       description: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
       business: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-      date: ['', [Validators.required]],
-      start_time: ['', [Validators.required]],
-      end_time: ['', [Validators.required]]
+      start_time: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      end_time: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      date: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
     });
   }
 
@@ -61,9 +63,9 @@ export class EventEditComponent implements OnInit {
     this.form.controls['name'].setValue(event.name);
     this.form.controls['description'].setValue(event.description);
     this.form.controls['business'].setValue(event.business);
-    this.form.controls['date'].setValue(event.date);
     this.form.controls['start_time'].setValue(event.start_time);
     this.form.controls['end_time'].setValue(event.end_time);
+    this.form.controls['date'].setValue(event.date);
   }
 
   async update() {
