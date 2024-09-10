@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<sim-project version="14.30" multi-file="no" uid="simp41c706e9de144bb1b25aed409c0c8716" creation-date="09/10/2024 18:15:36">
+  <meta>
+    <name>taskSync_diagClasse_criarEvento</name>
+    <authors>Michele Cristina</authors>
+    <description />
+  </meta>
+  <counters models="1">
+    <entity-names>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>1</value>
+      </counter>
+    </entity-names>
+    <entity-ids>
+      <counter>
+        <item-type type-id="class" type="Class" />
+        <value>2</value>
+      </counter>
+      <counter>
+        <item-type type-id="property" type="Property" />
+        <value>7</value>
+      </counter>
+    </entity-ids>
+    <diagrams>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlSequenceDiagram</type>
+        <value>1</value>
+      </counter>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.Diagrams.UmlDiagrams.UmlClassDiagram</type>
+        <value>1</value>
+      </counter>
+    </diagrams>
+    <fields />
+  </counters>
+  <alias-groups />
+  <management uid="md-31f385a4276742b2b8099e758d496169" name="" task-id-sequence="0">
+    <persons>
+      <person id="">
+        <first-name>Michele</first-name>
+        <last-name>Cristina</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+      </person>
+    </persons>
+    <teams />
+    <sprints />
+    <projects />
+    <modules />
+    <tasks />
+    <to-dos />
+  </management>
+  <glossary id="glsr-187f3edc044e4f6484adc8248169d7da" name="" order-index="-1" />
+  <types default="UML">
+    <type-sets>
+      <type-set file="UmlTypes.xml" />
+    </type-sets>
+    <custom-types>
+      <parameters />
+      <types />
+    </custom-types>
+  </types>
+  <items>
+    <item id="bcf7a185e35e44ba975818e3ea910a07" cid="C001" type="class" name="Evento" creation-date="09/10/2024 18:20:40" visibility="undefined" />
+    <item id="0232e796a7f24ec08c2fffc4b58c3a17" cid="C001" type="class" name="Evento" creation-date="09/10/2024 18:20:40" visibility="undefined" />
+    <item id="90037208dd034a8d81dcdaaa95f1a0bf" cid="C001" type="class" name="Evento" creation-date="09/10/2024 18:20:40" visibility="undefined" />
+    <item id="8603d32befda4f57aa0e2d29e9e085ca" cid="C001" type="class" name="Evento" creation-date="09/10/2024 18:20:40" visibility="undefined" />
+  </items>
+  <models>
+    <model id="pea8767c6b9ee49ba987b48099c95710d_121237864" name="Model1" namespace="" order-index="1">
+      <meta>
+        <authors>
+          <author> </author>
+        </authors>
+        <description />
+        <creation-date>09/10/2024 18:18:43</creation-date>
+        <change-date>01/01/0001 00:00:00</change-date>
+        <revision-count>0</revision-count>
+        <version />
+      </meta>
+      <abstract-items />
+      <sub-models />
+      <diagram type="uml-sequence" id="p62e91d809a3341d58a38ffe10b84c682_708740276" name="SequenceDiagram1" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>09/10/2024 18:18:43</creation-date>
+          <change-date>09/10/2024 18:18:43</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items />
+        <layer id="a16f502423e64261a04214708e770690" name="Default" visible="true" enabled="true" locked="false" />
+      </diagram>
+      <diagram type="uml-class" id="pe3622af8d9a04800877b75b9d26dcf23_899724290" name="ClassDiagram1" order-index="2" overview-order-index="0" uid="" name-style="" auto-routed-paths="false" default-line-style="default">
+        <style>
+          <background-color index="1" color="#FFFFFFFF" />
+          <background-color index="2" color="#FFFFFFFF" />
+          <background-type type="solid" />
+        </style>
+        <meta>
+          <authors>
+            <author> </author>
+          </authors>
+          <description />
+          <creation-date>09/10/2024 18:18:51</creation-date>
+          <change-date>09/10/2024 18:22:15</change-date>
+          <revision-count>0</revision-count>
+          <version />
+        </meta>
+        <abstract-items>
+          <item id="12fdc2251ce2480d918851ac8b201054" cid="C001" type="class" name="Evento" creator="" creation-date="09/10/2024 18:20:40">
+            <owned-items />
+          </item>
+        </abstract-items>
+        <layer id="77040d5a9b504975b65a5987dd22b4a0" name="Default" visible="true" enabled="true" locked="false">
+          <item id="12fdc2251ce2480d918851ac8b201054" iid="e520a636836f49478a806effe03b4db3" show-fields="true" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
+            <layout ax="81" ay="56" awidth="200" aheight="240" x="81" y="56" width="200" height="240" />
+            <classifier />
+            <class />
+          </item>
+          <item id="8603d32befda4f57aa0e2d29e9e085ca" iid="6f99b5b72a5e433099478cdd99ca034e" show-fields="true" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
+            <layout ax="508" ay="56" awidth="140" aheight="160" x="508" y="56" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="0232e796a7f24ec08c2fffc4b58c3a17" iid="2fb218cb6e944465bbaf400a40eb0a88" show-fields="true" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
+            <layout ax="219" ay="476" awidth="140" aheight="160" x="219" y="476" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="90037208dd034a8d81dcdaaa95f1a0bf" iid="5dd691df47cb44ac98de8405941558c2" show-fields="true" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
+            <layout ax="508" ay="316" awidth="140" aheight="160" x="508" y="316" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+          <item id="bcf7a185e35e44ba975818e3ea910a07" iid="2b7f82d17c8447e0adb0527c71b5bbef" show-fields="true" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
+            <layout ax="835" ay="216" awidth="140" aheight="160" x="835" y="216" width="140" height="160" />
+            <classifier />
+            <class />
+          </item>
+        </layer>
+      </diagram>
+    </model>
+  </models>
+</sim-project>
