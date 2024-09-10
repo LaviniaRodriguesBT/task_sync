@@ -19,7 +19,11 @@
       </counter>
       <counter>
         <item-type type-id="property" type="Property" />
-        <value>15</value>
+        <value>36</value>
+      </counter>
+      <counter>
+        <item-type type-id="universal-connector" type="Universal Connector" />
+        <value>2</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -32,7 +36,12 @@
         <value>1</value>
       </counter>
     </diagrams>
-    <fields />
+    <fields>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
+        <value>75</value>
+      </counter>
+    </fields>
   </counters>
   <alias-groups />
   <management uid="md-31f385a4276742b2b8099e758d496169" name="" task-id-sequence="0">
@@ -76,17 +85,1019 @@
     </custom-types>
   </types>
   <items>
+    <item id="d30fcbf154304d698f9c2acc2fbdea5c" cid="PROP025" type="property" name="user_id" owner="bcf7a185e35e44ba975818e3ea910a07" creator="" creation-date="09/10/2024 20:31:36" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="Integer" type-id="Uml.Integer" />
+    </item>
+    <item id="dff4357598f94bcfb804a1157cf4a26e" cid="PROP029" type="property" name="user_id" owner="90037208dd034a8d81dcdaaa95f1a0bf" creator="" creation-date="09/10/2024 20:38:30" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="Integer" type-id="Uml.Integer" />
+    </item>
+    <item id="110f18c907c542e080202d34f479d921" cid="PROP033" type="property" name="end_time" owner="90037208dd034a8d81dcdaaa95f1a0bf" creator="" creation-date="09/10/2024 20:39:19" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="DateTime" type-id="Uml.DateTime" />
+    </item>
+    <item id="b7b35c398acd44b6b3cb4dd56f396164" cid="PROP027" type="property" name="id" owner="90037208dd034a8d81dcdaaa95f1a0bf" creator="" creation-date="09/10/2024 20:35:42" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="Integer" type-id="Uml.Integer" />
+      <property is-id="true" />
+    </item>
+    <item id="a7074d3e337f44889fcfaa18e0ef29a9" cid="PROP014" type="property" name="end_time" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:22:19" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="DateTime" type-id="Uml.DateTime" />
+    </item>
+    <item id="d43203c8703e438dbf04a721ba77f3a3" cid="PROP008" type="property" name="code" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:20:45" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="3344a184590540b39fa018123fbf2ff7" cid="PROP010" type="property" name="description" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:21:41" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="bcf7a185e35e44ba975818e3ea910a07" cid="C001" type="class" name="Task" creation-date="09/10/2024 18:20:40" visibility="undefined">
+      <owned-items />
+      <attributes>
+        <attribute id="a4238d4ac7e56432fb7b58380b8f4aeb349" cid="PROP024" name="id" creation-date="09/10/2024 20:31:27" property-ref="e495e06332c04e4286f6da3026d42ff0" />
+        <attribute id="a7b196995f8c944beba2657f8e62b8ba8497" cid="PROP025" name="user_id" creation-date="09/10/2024 20:31:36" property-ref="d30fcbf154304d698f9c2acc2fbdea5c" />
+        <attribute id="a112424bbbf094504a6a741b7b6f4792b153" cid="PROP026" name="name" creation-date="09/10/2024 20:32:23" property-ref="feb3a2ef396b42ee8396951e56e09c62" />
+      </attributes>
+      <operations>
+        <operation id="ob99d14c757324ce9b6b1a9fc6bfa5f1d715" cid="OP043" name="GetId" creation-date="09/10/2024 20:32:51" type="Integer" type-id="Uml.Integer" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o5ca18b21175146c19d7276180019b909716" cid="OP044" name="SetId" creation-date="09/10/2024 20:32:51" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p9e38b62ac7e0471d9e08cc1c495a53f3" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:32:51" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="occb122fbbfeb43f69fb89fb9292203a1716" cid="OP045" name="GetName" creation-date="09/10/2024 20:32:51" type="String" type-id="Uml.String" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="od836551534f141c2af3a34d6a0b9f1af716" cid="OP046" name="SetName" creation-date="09/10/2024 20:32:51" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p3430f9faf4a243628f974b5ac03a0864" name="name" type="String" type-id="Uml.String" creation-date="09/10/2024 20:32:51" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="ofee6d65addd04b9cacb81ab48fd5b802716" cid="OP047" name="GetUser_id" creation-date="09/10/2024 20:32:51" type="Integer" type-id="Uml.Integer" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o7ab2627b056140e39d4ceca30b8f5396716" cid="OP048" name="SetUser_id" creation-date="09/10/2024 20:32:51" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p7653b449620f4c82a6556f21bcc6cfaf" name="user_id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:32:51" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="ob24add5afd5b42ffafb90b7bcd460898808" cid="OP049" name="taskCreate" creation-date="09/10/2024 20:33:42" type="" type-id="" visibility="undefined">
+          <source-codes>
+            <source-code language="ActionScript" />
+          </source-codes>
+        </operation>
+        <operation id="oa9b248707e2c49cab9a9a2295bcbffb5609" cid="OP050" name="taskEdit" creation-date="09/10/2024 20:33:57" type="" type-id="" visibility="undefined">
+          <parameters>
+            <parameter id="pe230f2b5b9064901bcd8086b6bf9ed03" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:34:03" />
+          </parameters>
+          <source-codes>
+            <source-code language="ActionScript" />
+          </source-codes>
+        </operation>
+        <operation id="o43c2f1a442844114b326197c8f79c686145" cid="OP051" name="taskDelete" creation-date="09/10/2024 20:34:16" type="" type-id="" visibility="undefined">
+          <parameters>
+            <parameter id="p118c0d4a8bb8484a9c5b89903377007e" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:34:39" />
+          </parameters>
+          <source-codes>
+            <source-code language="ActionScript" />
+          </source-codes>
+        </operation>
+        <operation id="o7797419912764a04aeaaa4c4796145e2537" cid="OP052" name="taskDetail" creation-date="09/10/2024 20:34:49" type="" type-id="" visibility="undefined">
+          <parameters>
+            <parameter id="p64408c18dd8345deb47e38692784b96b" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:35:00" />
+          </parameters>
+          <source-codes>
+            <source-code language="ActionScript" />
+          </source-codes>
+        </operation>
+      </operations>
+      <source-codes>
+        <source-code language="ActionScript" />
+      </source-codes>
+    </item>
     <item id="0232e796a7f24ec08c2fffc4b58c3a17" cid="C001" type="class" name="Task" creation-date="09/10/2024 18:20:40" visibility="undefined">
       <source-codes>
         <source-code language="ActionScript" />
       </source-codes>
     </item>
-    <item id="bcf7a185e35e44ba975818e3ea910a07" cid="C001" type="class" name="Evento" creation-date="09/10/2024 18:20:40" visibility="undefined" />
-    <item id="90037208dd034a8d81dcdaaa95f1a0bf" cid="C001" type="class" name="Scheduling" creation-date="09/10/2024 18:20:40" visibility="undefined" />
+    <item id="6c60c6082d604af6b70d0975deef34c0" cid="PROP018" type="property" name="email" owner="8603d32befda4f57aa0e2d29e9e085ca" creator="" creation-date="09/10/2024 20:25:07" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="fc649813efae4130bf7d3e6eecacb875" cid="PROP011" type="property" name="business" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:21:53" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
     <item id="8603d32befda4f57aa0e2d29e9e085ca" cid="C001" type="class" name="User" creation-date="09/10/2024 18:20:40" visibility="undefined">
+      <owned-items />
+      <attributes>
+        <attribute id="a589a788f44e249c2a9e754500f89dad2377" cid="PROP016" name="id" creation-date="09/10/2024 20:24:28" property-ref="a94639f90d7648478d3ca437739f09aa" />
+        <attribute id="afa533aeb8b574fec9019c7aebb4d4cea666" cid="PROP017" name="nome" creation-date="09/10/2024 20:24:51" property-ref="8581ee73e314478c957210ea69165a4a" />
+        <attribute id="a0ee8dbf40f9f44dabbe5a6ce67ca0cbb810" cid="PROP018" name="email" creation-date="09/10/2024 20:25:07" property-ref="6c60c6082d604af6b70d0975deef34c0" />
+        <attribute id="a98b45911d44c4cd79c2601f78c9860cb177" cid="cpf_fk" name="cpf" creation-date="09/10/2024 20:25:23" property-ref="deabccc7cb4f4bffb4a5fcc61f3d69d1" />
+        <attribute id="a6f978479969c48ebba49796638ca0eb0504" cid="PROP020" name="phone" creation-date="09/10/2024 20:25:42" property-ref="69ea51381d91437ebdd7a4cabdda44c3" />
+        <attribute id="a39fae1dedc82487db4a4745fc99a9ab8253" cid="PROP021" name="address" creation-date="09/10/2024 20:26:00" property-ref="38a083a994c3496faf81b07bbf650afa" />
+      </attributes>
+      <operations>
+        <operation id="o284e163ec51047559717c88ee67ad5f4227" cid="OP027" name="GetId" creation-date="09/10/2024 20:26:44" type="Integer" type-id="Uml.Integer" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="ob8a7d22be02a4f1b95add276df44e648228" cid="OP029" name="GetNome" creation-date="09/10/2024 20:26:44" type="String" type-id="Uml.String" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="oab67c53c1da24f94b89b52936be779de228" cid="OP030" name="SetNome" creation-date="09/10/2024 20:26:44" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p371e1dbdb63a41a198d623757618ae13" name="nome" type="String" type-id="Uml.String" creation-date="09/10/2024 20:26:44" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o169cd60d474743198884eed143c5067a228" cid="OP031" name="GetEmail" creation-date="09/10/2024 20:26:44" type="String" type-id="Uml.String" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="of1ab5ef08d964daa9f13a01968c22a38228" cid="OP032" name="SetEmail" creation-date="09/10/2024 20:26:44" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p29b83bd36c1042e2b4d555140e5f36f9" name="email" type="String" type-id="Uml.String" creation-date="09/10/2024 20:26:44" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o587cb62d8b3045b6834302a7dc4789ea228" cid="OP033" name="GetCpf" creation-date="09/10/2024 20:26:44" type="String" type-id="Uml.String" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="odaad6e5b284840af99ef6b3b5dff41e4228" cid="OP034" name="SetCpf" creation-date="09/10/2024 20:26:44" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p4a90f87db1e343bbb8f9f20e537645fb" name="cpf" type="String" type-id="Uml.String" creation-date="09/10/2024 20:26:44" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o4a52a2c2176f48bb8b926667603f44a7229" cid="OP035" name="GetPhone" creation-date="09/10/2024 20:26:44" type="Integer" type-id="Uml.Integer" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o5ff290e62a1240a6aa2bbafc216bf573229" cid="OP036" name="SetPhone" creation-date="09/10/2024 20:26:44" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p589e99336a6340f9833f533e5e0787bc" name="phone" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:26:44" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o992db6c753f840a2af57492a826973af229" cid="OP037" name="GetAddress" creation-date="09/10/2024 20:26:44" type="String" type-id="Uml.String" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o42740006c90a4067960f304dc3f9561f229" cid="OP038" name="SetAddress" creation-date="09/10/2024 20:26:44" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="pfde0f61719b6419dbb49d6d419708e9e" name="address" type="String" type-id="Uml.String" creation-date="09/10/2024 20:26:44" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o13f7d1e83fa5441f846b9065ea7131e5626" cid="OP039" name="userCreate" creation-date="09/10/2024 20:27:15" type="" type-id="" visibility="undefined">
+          <source-codes>
+            <source-code language="ActionScript" />
+          </source-codes>
+        </operation>
+        <operation id="oa54676298dd44a65905a60fad9e849fc593" cid="OP040" name="userEdit" creation-date="09/10/2024 20:27:38" type="" type-id="" visibility="undefined">
+          <parameters>
+            <parameter id="p4422224307e24510b240f552a3dca6a2" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:27:49" />
+          </parameters>
+          <source-codes>
+            <source-code language="ActionScript" />
+          </source-codes>
+        </operation>
+        <operation id="o4a600c1a53d14a21a30531047ba9a851369" cid="OP041" name="userDelete" creation-date="09/10/2024 20:27:59" type="" type-id="" visibility="undefined">
+          <parameters>
+            <parameter id="p85de908a6f124d8898919d41e97fa60f" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:28:12" />
+          </parameters>
+          <source-codes>
+            <source-code language="ActionScript" />
+          </source-codes>
+        </operation>
+        <operation id="o00ad691f13ea4d399b4a98ef01fac86d769" cid="OP042" name="userDetail" creation-date="09/10/2024 20:28:21" type="" type-id="" visibility="undefined">
+          <parameters>
+            <parameter id="p5880534ad1584afab131167ca051ff9f" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:28:42" />
+          </parameters>
+          <source-codes>
+            <source-code language="ActionScript" />
+          </source-codes>
+        </operation>
+      </operations>
       <source-codes>
         <source-code language="ActionScript" />
       </source-codes>
+    </item>
+    <item id="d5b8654cd7ee43dd93465468f673d7e4" cid="PROP012" type="property" name="date" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:22:03" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="DateTime" type-id="Uml.DateTime" />
+    </item>
+    <item id="2eec27d95fc04c5e827c3aecc47212d6" cid="PROP031" type="property" name="value" owner="90037208dd034a8d81dcdaaa95f1a0bf" creator="" creation-date="09/10/2024 20:39:01" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="Boolean" type-id="Uml.Boolean" />
+    </item>
+    <item id="ef96bdc3e470411fac29acc4d08d32af" cid="PROP009" type="property" name="name" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:21:35" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="e1de928425fa4881b356f50d87f7284c" cid="PROP032" type="property" name="start_time" owner="90037208dd034a8d81dcdaaa95f1a0bf" creator="" creation-date="09/10/2024 20:39:10" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="DateTime" type-id="Uml.DateTime" />
+    </item>
+    <item id="e5c899d9a1604298ac42d4d70d5c5423" cid="PROP035" type="property" name="status" owner="90037208dd034a8d81dcdaaa95f1a0bf" creator="" creation-date="09/10/2024 20:39:36" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="90037208dd034a8d81dcdaaa95f1a0bf" cid="C001" type="class" name="Scheduling" creation-date="09/10/2024 18:20:40" visibility="undefined">
+      <owned-items />
+      <attributes>
+        <attribute id="a2605d64170ae487b8db0dd289eb545f316" cid="PROP027" name="id" creation-date="09/10/2024 20:35:42" property-ref="b7b35c398acd44b6b3cb4dd56f396164" />
+        <attribute id="aea54ae4381194c5c878602dce23c8bdc392" cid="PROP028" name="event_id" creation-date="09/10/2024 20:35:52" property-ref="f07590c2318e4e3ebf929735a8afecb1" />
+        <attribute id="af6f6d364f5e545b9a00da7d7cd4a3afe441" cid="PROP029" name="user_id" creation-date="09/10/2024 20:38:30" property-ref="dff4357598f94bcfb804a1157cf4a26e" />
+        <attribute id="a4222a1d91d024984b0bdf9e2c178ec19617" cid="PROP030" name="task_id" creation-date="09/10/2024 20:38:45" property-ref="60febe8263a34784bf1f4f4418c343fa" />
+        <attribute id="a19ba70a325274f34a812d483118588fe960" cid="PROP031" name="value" creation-date="09/10/2024 20:39:01" property-ref="2eec27d95fc04c5e827c3aecc47212d6" />
+        <attribute id="a204a7060780242a9a4ff8763e00f3881920" cid="PROP032" name="start_time" creation-date="09/10/2024 20:39:10" property-ref="e1de928425fa4881b356f50d87f7284c" />
+        <attribute id="af5482412454149489c99f8ed15da0c5a960" cid="PROP033" name="end_time" creation-date="09/10/2024 20:39:19" property-ref="110f18c907c542e080202d34f479d921" />
+        <attribute id="a77a87aa05add452fa73518022254f293585" cid="PROP034" name="date" creation-date="09/10/2024 20:39:30" property-ref="02b7826de5a140008fef3a249f1ea809" />
+        <attribute id="a5c858a85d9a44c759cc54bdf64ad7691528" cid="PROP035" name="status" creation-date="09/10/2024 20:39:36" property-ref="e5c899d9a1604298ac42d4d70d5c5423" />
+      </attributes>
+      <operations>
+        <operation id="of94ed65da2544783bc512fa477ec160c9" cid="OP053" name="GetId" creation-date="09/10/2024 20:40:08" type="Integer" type-id="Uml.Integer" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o2a1f0ab995b146aaa9703af040bbc68e9" cid="OP055" name="GetEvent_id" creation-date="09/10/2024 20:40:08" type="Integer" type-id="Uml.Integer" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o5f57ad9371c2498493174c49d8177b039" cid="OP056" name="SetEvent_id" creation-date="09/10/2024 20:40:08" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p3a9fc54f8acb40189f491174892ce4ff" name="event_id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:40:08" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="od0160f2cbd52458c8c1f71f7d0118a839" cid="OP057" name="GetUser_id" creation-date="09/10/2024 20:40:08" type="Integer" type-id="Uml.Integer" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="odb1ef80e1fe74edeab9f055cbf3aca149" cid="OP058" name="SetUser_id" creation-date="09/10/2024 20:40:08" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p5cdbd03b3067461793602307c298856e" name="user_id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:40:08" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="ob1a1654e13814676bd9c236a5f6887919" cid="OP059" name="GetTask_id" creation-date="09/10/2024 20:40:08" type="Integer" type-id="Uml.Integer" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o8e3d120c150f4abbb6e642e04c35faf39" cid="OP060" name="SetTask_id" creation-date="09/10/2024 20:40:08" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p75f84192b7ef4917b729d2d7293c127f" name="task_id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:40:08" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o52e4c5bdef9f4b72b15ed5e8db06478c9" cid="OP061" name="GetEnd_time" creation-date="09/10/2024 20:40:08" type="DateTime" type-id="Uml.DateTime" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="of9e29bc4816d44459f6f3f562f9b97c29" cid="OP062" name="SetEnd_time" creation-date="09/10/2024 20:40:08" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p4b05c140862d4324b21945ede7abdc00" name="end_time" type="DateTime" type-id="Uml.DateTime" creation-date="09/10/2024 20:40:08" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="of082fe6f7a74451dbd04cfdad5847aca9" cid="OP063" name="GetValue" creation-date="09/10/2024 20:40:08" type="Boolean" type-id="Uml.Boolean" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="oe6f1c5795dc748179e8354451ac8b66210" cid="OP064" name="SetValue" creation-date="09/10/2024 20:40:08" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="pda03cd3d2c60401c8bd8ea662cfa6004" name="value" type="Boolean" type-id="Uml.Boolean" creation-date="09/10/2024 20:40:08" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="ob2958a7d2d5d45688a832bd5c5122f7210" cid="OP065" name="GetStart_time" creation-date="09/10/2024 20:40:08" type="DateTime" type-id="Uml.DateTime" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o54fbc946385b4ac79be72cb95b6fc18010" cid="OP066" name="SetStart_time" creation-date="09/10/2024 20:40:08" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p7eef4d50b02f4141940a2f126eb3e358" name="start_time" type="DateTime" type-id="Uml.DateTime" creation-date="09/10/2024 20:40:08" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o9d065cfa73bf4cafa4a8f7251a1a584010" cid="OP067" name="GetDate" creation-date="09/10/2024 20:40:08" type="DateTime" type-id="Uml.DateTime" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o4551d00cf7784cc689f6a4a580aa557510" cid="OP068" name="SetDate" creation-date="09/10/2024 20:40:08" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p6744da5220dd483294d9c61770db30d6" name="date" type="DateTime" type-id="Uml.DateTime" creation-date="09/10/2024 20:40:08" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o7615441c498d4dd68c0c38a4f8c5e52c10" cid="OP069" name="GetStatus" creation-date="09/10/2024 20:40:08" type="String" type-id="Uml.String" visibility="public">
+          <stereotypes>
+            <stereotype>getter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o5f9e5af1e76f4d3b863dd159209b497e10" cid="OP070" name="SetStatus" creation-date="09/10/2024 20:40:08" type="" type-id="" visibility="public">
+          <parameters>
+            <parameter id="p095ed7d4e63a4f0cb1c9fe65a7f08eba" name="status" type="String" type-id="Uml.String" creation-date="09/10/2024 20:40:08" />
+          </parameters>
+          <stereotypes>
+            <stereotype>setter</stereotype>
+          </stereotypes>
+        </operation>
+        <operation id="o232dfeed0d9a42e99eab98b1b127c637536" cid="OP071" name="schedulingCreate" creation-date="09/10/2024 20:41:00" type="" type-id="" visibility="undefined">
+          <source-codes>
+            <source-code language="ActionScript" />
+          </source-codes>
+        </operation>
+        <operation id="o2af10497b7ab4268af03e376476c48a90" cid="OP072" name="schedulingEdit" creation-date="09/10/2024 20:41:19" type="" type-id="" visibility="undefined">
+          <parameters>
+            <parameter id="pce5eb7e1bf4c446cb0c2346809bea658" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:41:27" />
+          </parameters>
+          <source-codes>
+            <source-code language="ActionScript" />
+          </source-codes>
+        </operation>
+        <operation id="o24ad0cab09f746d484690a45175d357a200" cid="OP073" name="schedulingDelete" creation-date="09/10/2024 20:41:36" type="" type-id="" visibility="undefined">
+          <parameters>
+            <parameter id="p119f0f5fb0394b51b22142e7bd999044" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:41:57" />
+          </parameters>
+          <source-codes>
+            <source-code language="ActionScript" />
+          </source-codes>
+        </operation>
+        <operation id="o5814aa68e11944548bb2c8bdb5dd75fa752" cid="OP074" name="schedulingDetail" creation-date="09/10/2024 20:42:07" type="" type-id="" visibility="undefined">
+          <parameters>
+            <parameter id="p5ef86a7983ef40fe91aa1c8a6e34a7b6" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:42:15" />
+          </parameters>
+          <source-codes>
+            <source-code language="ActionScript" />
+          </source-codes>
+        </operation>
+      </operations>
+      <source-codes>
+        <source-code language="ActionScript" />
+      </source-codes>
+    </item>
+    <item id="02b7826de5a140008fef3a249f1ea809" cid="PROP034" type="property" name="date" owner="90037208dd034a8d81dcdaaa95f1a0bf" creator="" creation-date="09/10/2024 20:39:30" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="DateTime" type-id="Uml.DateTime" />
+    </item>
+    <item id="432f611f4c7a4a5c84a68c0eaec93d55" cid="PROP015" type="property" name="NewAttribute9" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 20:03:27" visibility="private" />
+    <item id="f7572da51a73464c8669c69e68b9c584" cid="PROP013" type="property" name="start_time" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:22:09" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="DateTime" type-id="Uml.DateTime" />
+    </item>
+    <item id="60febe8263a34784bf1f4f4418c343fa" cid="PROP030" type="property" name="task_id" owner="90037208dd034a8d81dcdaaa95f1a0bf" creator="" creation-date="09/10/2024 20:38:45" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="Integer" type-id="Uml.Integer" />
+    </item>
+    <item id="a94639f90d7648478d3ca437739f09aa" cid="PROP016" type="property" name="id" owner="8603d32befda4f57aa0e2d29e9e085ca" creator="" creation-date="09/10/2024 20:24:28" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="Integer" type-id="Uml.Integer" />
+      <property is-id="true" />
+    </item>
+    <item id="38a083a994c3496faf81b07bbf650afa" cid="PROP021" type="property" name="address" owner="8603d32befda4f57aa0e2d29e9e085ca" creator="" creation-date="09/10/2024 20:26:00" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="69ea51381d91437ebdd7a4cabdda44c3" cid="PROP020" type="property" name="phone" owner="8603d32befda4f57aa0e2d29e9e085ca" creator="" creation-date="09/10/2024 20:25:42" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="Integer" type-id="Uml.Integer" />
+    </item>
+    <item id="f07590c2318e4e3ebf929735a8afecb1" cid="PROP028" type="property" name="event_id" owner="90037208dd034a8d81dcdaaa95f1a0bf" creator="" creation-date="09/10/2024 20:35:52" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="Integer" type-id="Uml.Integer" />
+    </item>
+    <item id="8581ee73e314478c957210ea69165a4a" cid="PROP017" type="property" name="nome" owner="8603d32befda4f57aa0e2d29e9e085ca" creator="" creation-date="09/10/2024 20:24:51" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="1b71ae9bf630473db16973127d7f5cb8" cid="PROP007" type="property" name="id" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:20:37" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="Integer" type-id="Uml.Integer" />
+      <property is-id="true" />
+    </item>
+    <item id="feb3a2ef396b42ee8396951e56e09c62" cid="PROP026" type="property" name="name" owner="bcf7a185e35e44ba975818e3ea910a07" creator="" creation-date="09/10/2024 20:32:23" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="String" type-id="Uml.String" />
+    </item>
+    <item id="deabccc7cb4f4bffb4a5fcc61f3d69d1" cid="cpf_fk" type="property" name="cpf" owner="8603d32befda4f57aa0e2d29e9e085ca" creator="" creation-date="09/10/2024 20:25:23" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="String" type-id="Uml.String" />
+      <property />
+    </item>
+    <item id="e495e06332c04e4286f6da3026d42ff0" cid="PROP024" type="property" name="id" owner="bcf7a185e35e44ba975818e3ea910a07" creator="" creation-date="09/10/2024 20:31:27" visibility="private">
+      <style style-name="Default" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#3A555555" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+        <text-style type="name" color="#555555" font="Segoe UI;11.25;B" />
+        <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+        <text-style type="text" color="#555555" font="Segoe UI;9.75;" horizontal-alignment="left" />
+        <text-style type="tagged-value" color="#555555" font="Segoe UI;9.75;" />
+        <text-style type="stereotype" color="#555555" font="Segoe UI;9;I" />
+        <background type="solid" colors="#F2F2F2,#F2F2F2" />
+        <border color="#555555" width="2" />
+        <label-connector color="#80000000" dash-style="Dash" />
+        <alternate-styles>
+          <alternate-style style-name="Alternate" shadow-type="smooth" shadow-offset="2,2" shadow-visible="true" shadow-color="#322A2A2A" shadow-radius="8" wrap-name-text="true" wrap-other-text="true" padding="2" margin="1" glow-color="#FFFFFF" accuracy="0.9">
+            <text-style type="name" color="#E9E9E9" font="Segoe UI;11.25;B" />
+            <text-style type="part-header" color="#1E1E1E" font="Verdana;9;I" />
+            <text-style type="text" color="#E9E9E9" font="Segoe UI;9.75;" horizontal-alignment="left" />
+            <text-style type="tagged-value" color="#E9E9E9" font="Segoe UI;9.75;" />
+            <text-style type="stereotype" color="#E9E9E9" font="Segoe UI;9;I" />
+            <background type="solid" colors="#203D85,#203D85" />
+            <border color="#203D85" width="2" />
+            <label-connector color="#80000000" dash-style="Dash" />
+          </alternate-style>
+        </alternate-styles>
+      </style>
+      <structural-feature type="Integer" type-id="Uml.Integer" />
+      <property is-id="true" />
     </item>
   </items>
   <models>
@@ -134,35 +1145,11 @@
           </authors>
           <description />
           <creation-date>09/10/2024 18:18:51</creation-date>
-          <change-date>09/10/2024 18:22:15</change-date>
+          <change-date>09/10/2024 20:35:34</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
         <abstract-items>
-          <item id="ef96bdc3e470411fac29acc4d08d32af" cid="PROP009" type="property" name="name" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:21:35" visibility="private">
-            <structural-feature type="String" type-id="Uml.String" />
-            <property />
-          </item>
-          <item id="fc649813efae4130bf7d3e6eecacb875" cid="PROP011" type="property" name="business" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:21:53" visibility="private">
-            <structural-feature type="String" type-id="Uml.String" />
-            <property />
-          </item>
-          <item id="d5b8654cd7ee43dd93465468f673d7e4" cid="PROP012" type="property" name="date" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:22:03" visibility="private">
-            <structural-feature type="DateTime" type-id="Uml.DateTime" />
-            <property />
-          </item>
-          <item id="f7572da51a73464c8669c69e68b9c584" cid="PROP013" type="property" name="start_time" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:22:09" visibility="private">
-            <structural-feature type="DateTime" type-id="Uml.DateTime" />
-            <property />
-          </item>
-          <item id="1b71ae9bf630473db16973127d7f5cb8" cid="PROP007" type="property" name="id" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:20:37" visibility="private">
-            <structural-feature type="Integer" type-id="Uml.Integer" />
-            <property is-id="true" />
-          </item>
-          <item id="a7074d3e337f44889fcfaa18e0ef29a9" cid="PROP014" type="property" name="end_time" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:22:19" visibility="private">
-            <structural-feature type="DateTime" type-id="Uml.DateTime" />
-            <property />
-          </item>
           <item id="12fdc2251ce2480d918851ac8b201054" cid="C001" type="class" name="Event" creator="" creation-date="09/10/2024 18:20:40" visibility="undefined">
             <owned-items />
             <attributes>
@@ -175,42 +1162,156 @@
               <attribute id="a44b9dc92fa4142908bffbbe058fb786c342" cid="PROP013" name="start_time" creation-date="09/10/2024 19:22:09" property-ref="f7572da51a73464c8669c69e68b9c584" />
               <attribute id="ad3f382ad6bc0422e8c8e77b9e1756f64608" cid="PROP014" name="end_time" creation-date="09/10/2024 19:22:19" property-ref="a7074d3e337f44889fcfaa18e0ef29a9" />
             </attributes>
+            <operations>
+              <operation id="o27bec58e4d83475992cf4a89d0b74330478" cid="OP007" name="GetCode" creation-date="09/10/2024 20:10:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o68b9e3c140b24fe89c7d0ea600282aaf478" cid="OP008" name="SetCode" creation-date="09/10/2024 20:10:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pb65e39a8989f4c36ae50b3a3529a5192" name="code" type="String" type-id="Uml.String" creation-date="09/10/2024 20:10:00" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="obb949505956e4d8ebaa6165dcb30a1df478" cid="OP009" name="GetId" creation-date="09/10/2024 20:10:00" type="Integer" type-id="Uml.Integer" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="of2292ca1cb894e5baa049ebe53b95054479" cid="OP011" name="GetName" creation-date="09/10/2024 20:10:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o26afacaf6b5a4ca092b117635ceb2f5d479" cid="OP012" name="SetName" creation-date="09/10/2024 20:10:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pd5c55aa14a28422f91b5c7350c3b34be" name="name" type="String" type-id="Uml.String" creation-date="09/10/2024 20:10:00" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oefbbe854ddb74024b69b49709374380c480" cid="OP013" name="GetDescription" creation-date="09/10/2024 20:10:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="oad8465729cd74fc99074fbae3d1a34d0480" cid="OP014" name="SetDescription" creation-date="09/10/2024 20:10:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pcbd61f695e604f6582c13f8945e6b959" name="description" type="String" type-id="Uml.String" creation-date="09/10/2024 20:10:00" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o0744889291064b9c94cea96b9b5e2645480" cid="OP015" name="GetBusiness" creation-date="09/10/2024 20:10:00" type="String" type-id="Uml.String" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o62c940d1f331476695dd54f38db24d76480" cid="OP016" name="SetBusiness" creation-date="09/10/2024 20:10:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="pf9751487481c4b139a61f9e00f76fe0b" name="business" type="String" type-id="Uml.String" creation-date="09/10/2024 20:10:00" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o8da9b407eb2e4fdca745969f232f4706480" cid="OP017" name="GetDate" creation-date="09/10/2024 20:10:00" type="DateTime" type-id="Uml.DateTime" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o66337a4422c64928806a251b4d81f7cd480" cid="OP018" name="SetDate" creation-date="09/10/2024 20:10:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p1e40e59d27f54ad0929299cb36f06fca" name="date" type="DateTime" type-id="Uml.DateTime" creation-date="09/10/2024 20:10:00" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o04f62dc0227048e49e5a38c45826d562480" cid="OP019" name="GetStart_time" creation-date="09/10/2024 20:10:00" type="DateTime" type-id="Uml.DateTime" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="ob76e50cd093a4860928ddc2cbec94e57480" cid="OP020" name="SetStart_time" creation-date="09/10/2024 20:10:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p155960bfd5b9422085acc124df5e0fad" name="start_time" type="DateTime" type-id="Uml.DateTime" creation-date="09/10/2024 20:10:00" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o0c32bd93e8a84c6b885b9cbed618de40480" cid="OP021" name="GetEnd_time" creation-date="09/10/2024 20:10:00" type="DateTime" type-id="Uml.DateTime" visibility="public">
+                <stereotypes>
+                  <stereotype>getter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o237f2313e506479d92df1681bd5fd78f480" cid="OP022" name="SetEnd_time" creation-date="09/10/2024 20:10:00" type="" type-id="" visibility="public">
+                <parameters>
+                  <parameter id="p45c5844bc7e44a018e6e5f5f6bcf6abd" name="end_time" type="DateTime" type-id="Uml.DateTime" creation-date="09/10/2024 20:10:00" />
+                </parameters>
+                <stereotypes>
+                  <stereotype>setter</stereotype>
+                </stereotypes>
+              </operation>
+              <operation id="o95393425ec794383829c0a0d087e7992258" cid="OP023" name="eventCreate" creation-date="09/10/2024 20:11:21" type="" type-id="" visibility="undefined">
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="o3ed648c1dbdc448095e569c25f4c328e35" cid="OP024" name="eventEdit" creation-date="09/10/2024 20:14:00" type="" type-id="" visibility="undefined">
+                <parameters>
+                  <parameter id="p134e4ece32004535a67207f132b13ec8" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:14:21" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="o252b9084ffcc4b2b9cd9ce0404760762459" cid="OP025" name="eventDelete" creation-date="09/10/2024 20:14:38" type="" type-id="" visibility="undefined">
+                <parameters>
+                  <parameter id="p40bacbbe10b74ef6b4c15858a7de4861" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:14:50" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+              <operation id="od25f584142624eecbf105dcf8380a15e618" cid="OP026" name="eventDetail" creation-date="09/10/2024 20:16:50" type="" type-id="" visibility="undefined">
+                <parameters>
+                  <parameter id="pba0376b7bc3342608a417ac2ae48a75e" name="id" type="Integer" type-id="Uml.Integer" creation-date="09/10/2024 20:17:02" />
+                </parameters>
+                <source-codes>
+                  <source-code language="ActionScript" />
+                </source-codes>
+              </operation>
+            </operations>
             <source-codes>
               <source-code language="ActionScript" />
             </source-codes>
           </item>
-          <item id="3344a184590540b39fa018123fbf2ff7" cid="PROP010" type="property" name="description" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:21:41" visibility="private">
-            <structural-feature type="String" type-id="Uml.String" />
-            <property />
-          </item>
-          <item id="d43203c8703e438dbf04a721ba77f3a3" cid="PROP008" type="property" name="code" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:20:45" visibility="private">
-            <structural-feature type="AnyInteger" type-id="Uml.AnyInteger" />
-            <property />
-          </item>
         </abstract-items>
         <layer id="77040d5a9b504975b65a5987dd22b4a0" name="Default" visible="true" enabled="true" locked="false">
-          <item id="12fdc2251ce2480d918851ac8b201054" iid="e520a636836f49478a806effe03b4db3" show-fields="true" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
-            <layout ax="81" ay="56" awidth="200" aheight="240" x="81" y="56" width="200" height="240" />
+          <item id="8603d32befda4f57aa0e2d29e9e085ca" iid="6f99b5b72a5e433099478cdd99ca034e" show-fields="false" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
+            <layout ax="529.764" ay="273.0149" awidth="293" aheight="83" x="529.764" y="273.0149" width="293" height="83" />
             <classifier />
             <class />
           </item>
-          <item id="8603d32befda4f57aa0e2d29e9e085ca" iid="6f99b5b72a5e433099478cdd99ca034e" show-fields="true" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
-            <layout ax="508" ay="56" awidth="140" aheight="160" x="508" y="56" width="140" height="160" />
+          <item id="90037208dd034a8d81dcdaaa95f1a0bf" iid="5dd691df47cb44ac98de8405941558c2" show-fields="false" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
+            <layout ax="-36.236023" ay="444.28748" awidth="343" aheight="95" x="-36.236023" y="444.28748" width="343" height="95" />
             <classifier />
             <class />
           </item>
-          <item id="0232e796a7f24ec08c2fffc4b58c3a17" iid="2fb218cb6e944465bbaf400a40eb0a88" show-fields="true" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
-            <layout ax="219" ay="476" awidth="140" aheight="160" x="219" y="476" width="140" height="160" />
+          <item id="bcf7a185e35e44ba975818e3ea910a07" iid="2b7f82d17c8447e0adb0527c71b5bbef" show-fields="false" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
+            <layout ax="529.764" ay="195.28748" awidth="343" aheight="55" x="529.764" y="195.28748" width="343" height="55" />
             <classifier />
             <class />
           </item>
-          <item id="90037208dd034a8d81dcdaaa95f1a0bf" iid="5dd691df47cb44ac98de8405941558c2" show-fields="true" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
-            <layout ax="508" ay="316" awidth="140" aheight="160" x="508" y="316" width="140" height="160" />
-            <classifier />
-            <class />
-          </item>
-          <item id="bcf7a185e35e44ba975818e3ea910a07" iid="2b7f82d17c8447e0adb0527c71b5bbef" show-fields="true" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
-            <layout ax="835" ay="216" awidth="140" aheight="160" x="835" y="216" width="140" height="160" />
+          <item id="12fdc2251ce2480d918851ac8b201054" iid="e520a636836f49478a806effe03b4db3" show-fields="false" creation-date="09/10/2024 18:20:40" order-index="0" type="entity">
+            <layout ax="529.764" ay="455.28748" awidth="293" aheight="73" x="529.764" y="455.28748" width="293" height="73" />
             <classifier />
             <class />
           </item>
