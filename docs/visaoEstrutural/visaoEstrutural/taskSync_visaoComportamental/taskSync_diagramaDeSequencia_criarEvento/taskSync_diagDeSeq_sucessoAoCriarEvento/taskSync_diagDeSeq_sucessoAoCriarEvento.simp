@@ -187,7 +187,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-sequence" id="p09c6593942fe4a96a03052405254d2d1_418495980" name="taskSync_diagramaDeSequencia_sucessoAoCriarEvento_" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="122,560" zoom="0.7">
+      <diagram type="uml-sequence" id="p09c6593942fe4a96a03052405254d2d1_418495980" name="taskSync_diagramaDeSequencia_sucessoAoCriarEvento_" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="122,290" zoom="0.7">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />

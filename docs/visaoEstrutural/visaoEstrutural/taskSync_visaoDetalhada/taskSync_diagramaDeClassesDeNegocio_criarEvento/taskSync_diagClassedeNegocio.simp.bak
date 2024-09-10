@@ -19,7 +19,7 @@
       </counter>
       <counter>
         <item-type type-id="property" type="Property" />
-        <value>7</value>
+        <value>15</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -36,7 +36,18 @@
   </counters>
   <alias-groups />
   <management uid="md-31f385a4276742b2b8099e758d496169" name="" task-id-sequence="0">
+    <working-schedule uid="ws-efadedfd3e254eb6bc95eb4ac6528fe5" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
     <persons>
+      <person id="">
+        <first-name>Michele</first-name>
+        <last-name>Cristina</last-name>
+        <role />
+        <e-mail />
+        <phone-number />
+        <description />
+        <color>#00000000</color>
+        <working-schedule uid="ws-78241d82eec5445fac9b9e93fa80cffd" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
+      </person>
       <person id="">
         <first-name>Michele</first-name>
         <last-name>Cristina</last-name>
@@ -65,10 +76,18 @@
     </custom-types>
   </types>
   <items>
+    <item id="0232e796a7f24ec08c2fffc4b58c3a17" cid="C001" type="class" name="Task" creation-date="09/10/2024 18:20:40" visibility="undefined">
+      <source-codes>
+        <source-code language="ActionScript" />
+      </source-codes>
+    </item>
     <item id="bcf7a185e35e44ba975818e3ea910a07" cid="C001" type="class" name="Evento" creation-date="09/10/2024 18:20:40" visibility="undefined" />
-    <item id="0232e796a7f24ec08c2fffc4b58c3a17" cid="C001" type="class" name="Evento" creation-date="09/10/2024 18:20:40" visibility="undefined" />
-    <item id="90037208dd034a8d81dcdaaa95f1a0bf" cid="C001" type="class" name="Evento" creation-date="09/10/2024 18:20:40" visibility="undefined" />
-    <item id="8603d32befda4f57aa0e2d29e9e085ca" cid="C001" type="class" name="Evento" creation-date="09/10/2024 18:20:40" visibility="undefined" />
+    <item id="90037208dd034a8d81dcdaaa95f1a0bf" cid="C001" type="class" name="Scheduling" creation-date="09/10/2024 18:20:40" visibility="undefined" />
+    <item id="8603d32befda4f57aa0e2d29e9e085ca" cid="C001" type="class" name="User" creation-date="09/10/2024 18:20:40" visibility="undefined">
+      <source-codes>
+        <source-code language="ActionScript" />
+      </source-codes>
+    </item>
   </items>
   <models>
     <model id="pea8767c6b9ee49ba987b48099c95710d_121237864" name="Model1" namespace="" order-index="1">
@@ -120,8 +139,53 @@
           <version />
         </meta>
         <abstract-items>
-          <item id="12fdc2251ce2480d918851ac8b201054" cid="C001" type="class" name="Evento" creator="" creation-date="09/10/2024 18:20:40">
+          <item id="ef96bdc3e470411fac29acc4d08d32af" cid="PROP009" type="property" name="name" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:21:35" visibility="private">
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="fc649813efae4130bf7d3e6eecacb875" cid="PROP011" type="property" name="business" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:21:53" visibility="private">
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="d5b8654cd7ee43dd93465468f673d7e4" cid="PROP012" type="property" name="date" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:22:03" visibility="private">
+            <structural-feature type="DateTime" type-id="Uml.DateTime" />
+            <property />
+          </item>
+          <item id="f7572da51a73464c8669c69e68b9c584" cid="PROP013" type="property" name="start_time" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:22:09" visibility="private">
+            <structural-feature type="DateTime" type-id="Uml.DateTime" />
+            <property />
+          </item>
+          <item id="1b71ae9bf630473db16973127d7f5cb8" cid="PROP007" type="property" name="id" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:20:37" visibility="private">
+            <structural-feature type="Integer" type-id="Uml.Integer" />
+            <property is-id="true" />
+          </item>
+          <item id="a7074d3e337f44889fcfaa18e0ef29a9" cid="PROP014" type="property" name="end_time" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:22:19" visibility="private">
+            <structural-feature type="DateTime" type-id="Uml.DateTime" />
+            <property />
+          </item>
+          <item id="12fdc2251ce2480d918851ac8b201054" cid="C001" type="class" name="Event" creator="" creation-date="09/10/2024 18:20:40" visibility="undefined">
             <owned-items />
+            <attributes>
+              <attribute id="a3a557cd7c67b4abba996445c4eae1f56674" cid="PROP007" name="id" creation-date="09/10/2024 19:20:37" property-ref="1b71ae9bf630473db16973127d7f5cb8" />
+              <attribute id="aeb6a90ed3d5b4c8e8ef7189d9c167f98439" cid="PROP008" name="code" creation-date="09/10/2024 19:20:45" property-ref="d43203c8703e438dbf04a721ba77f3a3" />
+              <attribute id="a2e72cd419901463a85ac24643ca9503748" cid="PROP009" name="name" creation-date="09/10/2024 19:21:35" property-ref="ef96bdc3e470411fac29acc4d08d32af" />
+              <attribute id="a29789bbd59fb40d8bb27e078c170cb49119" cid="PROP010" name="description" creation-date="09/10/2024 19:21:41" property-ref="3344a184590540b39fa018123fbf2ff7" />
+              <attribute id="ade510b0e0d794e3cb2bf2f9428e46520843" cid="PROP011" name="business" creation-date="09/10/2024 19:21:53" property-ref="fc649813efae4130bf7d3e6eecacb875" />
+              <attribute id="af5cf05eb07284d4c98b0e227b84012b8225" cid="PROP012" name="date" creation-date="09/10/2024 19:22:03" property-ref="d5b8654cd7ee43dd93465468f673d7e4" />
+              <attribute id="a44b9dc92fa4142908bffbbe058fb786c342" cid="PROP013" name="start_time" creation-date="09/10/2024 19:22:09" property-ref="f7572da51a73464c8669c69e68b9c584" />
+              <attribute id="ad3f382ad6bc0422e8c8e77b9e1756f64608" cid="PROP014" name="end_time" creation-date="09/10/2024 19:22:19" property-ref="a7074d3e337f44889fcfaa18e0ef29a9" />
+            </attributes>
+            <source-codes>
+              <source-code language="ActionScript" />
+            </source-codes>
+          </item>
+          <item id="3344a184590540b39fa018123fbf2ff7" cid="PROP010" type="property" name="description" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:21:41" visibility="private">
+            <structural-feature type="String" type-id="Uml.String" />
+            <property />
+          </item>
+          <item id="d43203c8703e438dbf04a721ba77f3a3" cid="PROP008" type="property" name="code" owner="12fdc2251ce2480d918851ac8b201054" creator="" creation-date="09/10/2024 19:20:45" visibility="private">
+            <structural-feature type="AnyInteger" type-id="Uml.AnyInteger" />
+            <property />
           </item>
         </abstract-items>
         <layer id="77040d5a9b504975b65a5987dd22b4a0" name="Default" visible="true" enabled="true" locked="false">
