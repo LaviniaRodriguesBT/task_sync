@@ -1,6 +1,8 @@
 package br.com.tasksync.backend.main.controller;
 
 
+import br.com.tasksync.backend.main.port.service.event.EventService;
+
 @RestController
 @RequestMapping("/api/event")
 public class EventRestController {
