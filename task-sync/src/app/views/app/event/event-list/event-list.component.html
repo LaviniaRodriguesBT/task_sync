@@ -79,6 +79,21 @@
     </ng-container>
 </div>
 
+<mat-paginator #paginator
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="length"
+               [pageSize]="pageSize"
+               [disabled]="disabled"
+               [showFirstLastButtons]="showFirstLastButtons"
+               [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+               [hidePageSize]="hidePageSize"
+               [pageIndex]="pageIndex"
+               aria-label="Select page">
+</mat-paginator>
+
+
+
 <div class="pagination">
     <a class="btn btn-secondary btn-back arrow-back" href="/">
         <span class="material-icons">arrow_back</span> Voltar
