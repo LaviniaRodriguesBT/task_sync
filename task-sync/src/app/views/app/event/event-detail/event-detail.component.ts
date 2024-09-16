@@ -15,9 +15,12 @@ import { Event } from "../../../../domain/model/event.model";
 export class EventDetailComponent implements OnInit {
 
   eventInformation?: Event;
+  accessType?: string | null;
 
   constructor(private route: ActivatedRoute,
-    private eventReadSevice: EventReadService) { }
+  private eventReadSevice: EventReadService) { 
+    this.accessType = localStorage.getItem('accessType')
+  }
 
   ngOnInit(): void {
     let eventId = this.route.snapshot.paramMap.get('id');

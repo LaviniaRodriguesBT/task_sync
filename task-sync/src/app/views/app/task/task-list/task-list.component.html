@@ -10,7 +10,7 @@
 <h1>Lista de Atividades</h1>
 
 <div class="d-flex justify-content-between">
-    <a class="btn btn-create" routerLink="/task/create">
+    <a class="btn btn-create" routerLink="/task/create" *ngIf= "accessType == 'adm'">
         <fa-icon [icon]="faAdd" title="Adicionar nova atividade"></fa-icon>
         Cadastrar atividade
     </a>
@@ -44,12 +44,12 @@
                 </table>
                 <div class="action-buttons">
                     <a routerLink="/task/detail/{{ task.id }}">
-                        <span class="material-icons color-detail" title="Informações">info</span>
+                        <span class="material-icons color-detail" title="Informações" *ngIf= "accessType == 'adm'">info</span>
                     </a>
-                    <a routerLink="/task/edit/{{ task.id }}">
+                    <a routerLink="/task/edit/{{ task.id }}" *ngIf= "accessType == 'adm'">
                         <span class="material-icons color-edit" title="Editar atividade">edit</span>
                     </a>
-                    <a (click)="deleteTask(task.id!)">
+                    <a (click)="deleteTask(task.id!)" *ngIf= "accessType == 'adm'">
                         <span class="material-icons color-delete" title="Apagar atividade">delete_forever</span>
                     </a>
                 </div>

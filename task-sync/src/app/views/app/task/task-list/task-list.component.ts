@@ -25,6 +25,7 @@ import { CommonModule } from '@angular/common';
 export class TaskListComponent implements OnInit {
 
   userId?: string;
+  accessType?: string | null;
 
   fa = fontawesome;
 
@@ -38,7 +39,7 @@ export class TaskListComponent implements OnInit {
     private taskDeleteService: TaskDeleteService,
     private toastrService: ToastrService
   ) {
-
+    this.accessType = localStorage.getItem('accessType')
   }
 
   ngOnInit(): void {
