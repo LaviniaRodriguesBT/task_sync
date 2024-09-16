@@ -26,6 +26,7 @@ export class SchedulingListComponent implements OnInit {
   fa = fontawesome;
   faAdd = faPlus;
   eventId: string = '';
+  accessType?: string | null;
   
   schedulings: Scheduling[] = [];
   schedulingCopy: Scheduling[] = [];
@@ -35,7 +36,7 @@ export class SchedulingListComponent implements OnInit {
     private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute
   ) {
-
+    this.accessType = localStorage.getItem('accessType')
   }
   ngOnInit(): void {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;

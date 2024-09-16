@@ -53,7 +53,7 @@
         <div class="col-12 text-end mt-2">
             <button class="btn btn-secondary col-2 me-4 btn-back" routerLink="/event/{{eventId}}/scheduling/list">Voltar</button>
             <button class="btn btn-primary col-2 btn-edit"
-                routerLink="/event/{{eventId}}/scheduling/edit/{{schedulingInformation?.id}}">Editar</button>
+                routerLink="/event/{{eventId}}/scheduling/edit/{{schedulingInformation?.id}}" *ngIf="accessType == 'adm'">Editar</button>
         </div>
     </div>
 </form>
