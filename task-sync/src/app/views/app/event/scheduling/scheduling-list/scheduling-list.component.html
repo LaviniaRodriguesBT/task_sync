@@ -9,7 +9,7 @@
 <h1 class="lista">Lista de Cronogramas</h1>
 
 <div class="d-flex justify-content-between align-items-center">
-    <a class="btn btn-create" routerLink="/event/{{eventId}}/scheduling/create">
+    <a class="btn btn-create" routerLink="/event/{{eventId}}/scheduling/create" *ngIf="accessType == 'adm'">
         <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
         Cadastrar cronograma
     </a>
@@ -18,6 +18,8 @@
         <mat-icon class="search-icon">search</mat-icon>
         <input type="text" id="search" placeholder="Pesquisar" (keyup)="search()">
     </div>
+
+    <a class="btn btn-pdf" (click)="gerarPdf()">
     
     <a class="btn btn-primary btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
@@ -40,8 +42,8 @@
                 <th scope="col" class="thead-style">Data</th>
                 <th scope="col" class="thead-style">Status</th>
                 <th scope="col" class="thead-style">Detalhes</th>
-                <th scope="col" class="thead-style">Editar</th>
-                <th scope="col" class="thead-style">Excluir</th>
+                <th scope="col" class="thead-style" *ngIf="accessType == 'adm'">Editar</th>
+                <th scope="col" class="thead-style" *ngIf="accessType == 'adm'">Excluir</th>
             </tr>
         </thead>
         <tbody>
@@ -63,22 +65,23 @@
                             </a>
                         </div>
                     </div>
-                    </td>
-                        <td>
-                            <div class="row column">
+                </td>
+                <td *ngIf="accessType == 'adm'">
+                    <div class="row column">
                         <div class="col-4">
                             <a routerLink="/event/{{eventId}}/scheduling/edit/{{scheduling.id}}">
                                 <span class="material-icons color-edit" title="Editar cronograma">edit</span>
                             </a>
                         </div>
                     </div>
-                    </td>
-                        <td>
-                            <div class="row column">
+                </td>
+                <td *ngIf="accessType == 'adm'">
+                    <div class="row column">
 
                         <div class="col-4">
                             <a (click)="deleteScheduling(scheduling.id!)">
-                                <span class="material-icons color-delete" title="Deletar cronograma">delete_forever</span>
+                                <span class="material-icons color-delete"
+                                    title="Deletar cronograma">delete_forever</span>
                             </a>
                         </div>
                     </div>
@@ -90,10 +93,10 @@
 </div>
 
 <div class="pagination">
-    
-<a class="btn btn-back material-icons arrow-back" href="/event/list">
-    <span class="material-icons">arrow_back</span> Voltar
-</a>
+
+    <a class="btn btn-back material-icons arrow-back" href="/event/list">
+        <span class="material-icons">arrow_back</span> Voltar
+    </a>
 
     <select class="btn-back">
         <option value="5">5 por página</option>
@@ -104,4 +107,3 @@
     <button class="btn-back" onclick="previousPage()">Anterior</button>
     <button class="btn-back" onclick="nextPage()">Próximo</button>
 </div>
-

@@ -51,10 +51,4 @@ public class UserRestController {
         return ResponseEntity.noContent().build();
     }
 
-//    @PutMapping("/update-password")
-//    public ResponseEntity<Void> updatePassword(@RequestBody final UpdatePasswordDto data){
-//        final boolean response = userService.updatePassaword(data.getId);
-//        return ResponseEntity.ok().build();
-//    }
-
 }

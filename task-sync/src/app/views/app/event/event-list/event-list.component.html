@@ -11,13 +11,13 @@
 
 
 
-<div class="d-flex justify-content-between">
-    <a class="btn btn-create" routerLink="/event/create">
+<div class="d-flex justify-content-between" >
+    <a class="btn btn-create" routerLink="/event/create" *ngIf= "accessType == 'adm'">
         <fa-icon [icon]="faAdd" title="Adicionar novo evento"></fa-icon>
         Cadastrar evento
     </a>
 
-    <div class="search-box">
+    <div class="search-box" >
         <mat-icon class="search-icon">search</mat-icon>
         <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
     </div>
@@ -64,10 +64,10 @@
                     <a routerLink="/event/detail/{{event.id}}">
                         <span class="material-icons color-detail" title="Informações">info</span>
                     </a>
-                    <a routerLink="/event/edit/{{event.id}}">
-                        <span class="material-icons color-edit" title="Editar evento">edit</span>
+                    <a routerLink="/event/edit/{{event.id}}" *ngIf= "accessType == 'adm'">
+                        <span class="material-icons color-edit" title="Editar evento" >edit</span>
                     </a>
-                    <a (click)="deleteEvent(event.id!)">
+                    <a (click)= "deleteEvent(event.id!)" *ngIf= "accessType == 'adm'">
                         <span class="material-icons color-delete" title="Deletar evento">delete_forever</span>
                     </a>
                 </div>
@@ -78,6 +78,21 @@
         </div>
     </ng-container>
 </div>
+
+<!-- <mat-paginator #paginator
+               class="demo-paginator"
+               (page)="handlePageEvent($event)"
+               [length]="length"
+               [pageSize]="pageSize"
+               [disabled]="disabled"
+               [showFirstLastButtons]="showFirstLastButtons"
+               [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
+               [hidePageSize]="hidePageSize"
+               [pageIndex]="pageIndex"
+               aria-label="Select page">
+</mat-paginator> -->
+
+
 
 <div class="pagination">
     <a class="btn btn-secondary btn-back arrow-back" href="/">
