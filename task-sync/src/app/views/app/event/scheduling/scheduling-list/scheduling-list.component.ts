@@ -26,6 +26,7 @@ export class SchedulingListComponent implements OnInit {
   fa = fontawesome;
   faAdd = faPlus;
   eventId: string = '';
+  userId?: string | null;
   accessType?: string | null;
   
   schedulings: Scheduling[] = [];
@@ -36,6 +37,7 @@ export class SchedulingListComponent implements OnInit {
     private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute
   ) {
+    this.userId = localStorage.getItem('id');
     this.accessType = localStorage.getItem('accessType')
   }
   ngOnInit(): void {
@@ -46,6 +48,7 @@ export class SchedulingListComponent implements OnInit {
   async loadSchedulings() {
     this.schedulings = await this.schedulingReadService.findByEventId(this.eventId);
     this.schedulingCopy = this.schedulings;
+    this.schedulings = this.schedulingCopy.filter(predicate => predicate.userId == this.userId);
   }
 
   async deleteScheduling(schedulingId: string) {
