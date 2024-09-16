@@ -31,20 +31,25 @@ export class EventListComponent implements OnInit {
   faAdd = faPlus;
   events: Event[] = [];
   eventsCopy: Event[] =[];
+  accessType?: string | null;
 
   constructor(private eventReadService: EventReadService, 
     private eventDeleteService: EventDeleteService, 
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
   ) {
+    this.accessType = localStorage.getItem('accessType')
   }
+
+  
+
   ngOnInit(): void {
     this.loadEvents();
   }
   async loadEvents() {
     this.events = await this.eventReadService.findAll();
     this.eventsCopy = this.events;
-    this.length = this.eventsCopy.length;
-    this.events = this.eventsCopy.slice(this.pageIndex, this.pageSize);
+    // this.length = this.eventsCopy.length;
+    // this.events = this.eventsCopy.slice(this.pageIndex, this.pageSize);
   }
   async deleteEvent(eventId: string) {
     try {
@@ -93,32 +98,32 @@ export class EventListComponent implements OnInit {
   }
 
 
-  length = 50;
-  pageSize = 10;
-  pageIndex = 0;
-  pageSizeOptions = [5, 10, 25];
+  // length = 50;
+  // pageSize = 10;
+  // pageIndex = 0;
+  // pageSizeOptions = [5, 10, 25];
 
-  hidePageSize = false;
-  showPageSizeOptions = true;
-  showFirstLastButtons = true;
-  disabled = false;
+  // hidePageSize = false;
+  // showPageSizeOptions = true;
+  // showFirstLastButtons = true;
+  // disabled = false;
 
-  pageEvent?: PageEvent;
+  // pageEvent?: PageEvent;
 
-  handlePageEvent(e: PageEvent) {
-    this.pageEvent = e;
-    this.length = e.length;
-    this.pageSize = e.pageSize;
-    this.pageIndex = e.pageIndex;
+  // handlePageEvent(e: PageEvent) {
+  //   this.pageEvent = e;
+  //   this.length = e.length;
+  //   this.pageSize = e.pageSize;
+  //   this.pageIndex = e.pageIndex;
 
-    this.events = this.eventsCopy.slice(this.pageIndex, this.pageSize);
-  }
+  //   this.events = this.eventsCopy.slice(this.pageIndex, this.pageSize);
+  // }
 
-  setPageSizeOptions(setPageSizeOptionsInput: string) {
-    if (setPageSizeOptionsInput) {
-      this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
-    }
-  }
+  // setPageSizeOptions(setPageSizeOptionsInput: string) {
+  //   if (setPageSizeOptionsInput) {
+  //     this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+  //   }
+  // }
 
 
 }
