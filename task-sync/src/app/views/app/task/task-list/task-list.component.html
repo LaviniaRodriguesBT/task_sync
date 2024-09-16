@@ -44,7 +44,7 @@
                 </table>
                 <div class="action-buttons">
                     <a routerLink="/task/detail/{{ task.id }}">
-                        <span class="material-icons color-detail" title="Informações">info</span>
+                        <span class="material-icons color-detail" title="Informações" *ngIf= "accessType == 'adm'">info</span>
                     </a>
                     <a routerLink="/task/edit/{{ task.id }}" *ngIf= "accessType == 'adm'">
                         <span class="material-icons color-edit" title="Editar atividade">edit</span>
