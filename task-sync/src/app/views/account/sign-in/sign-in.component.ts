@@ -30,6 +30,8 @@ export class SignInComponent implements OnInit {
     Validators.minLength(1), Validators.maxLength(10)
   ]);
 
+  accessType = new FormControl();
+
   isLoginIncorrect = false;
 
   constructor(private router: Router,
@@ -51,7 +53,8 @@ export class SignInComponent implements OnInit {
     let credential: UserCredential = {
       id: "",
       email: this.email.value!,
-      password: this.password.value!
+      password: this.password.value!,
+      accessType: this.accessType.value
     };
 
     try {

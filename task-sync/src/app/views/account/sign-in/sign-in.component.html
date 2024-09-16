@@ -17,6 +17,14 @@
                     <div>
                         <input matInput type="password" placeholder="Digite sua senha" maxlength="10" required
                             [formControl]="password" class="fa fa-lock Password enter-field">
+
+                            <div class="form-group col-12 mt-2 radio" >
+                                <label for="type-access" class="text-name">Tipo de acesso</label>
+                                <input id="adm" type="radio" name="user-type" [formControl]= "accessType" value="adm" class="type-user">
+                                <label for="adm" class="type-user">Administrador</label>
+                                <input id="colab" type="radio" name="user-type" [formControl]= "accessType" value= "colab" class="type-user">
+                                <label for="colab" class="type-user">Colaborador</label>
+                            </div>
                         
                         <button class="btn-sign-in" (click)="login()" [disabled]="isFormInvalid()">Login</button>
                     </div>

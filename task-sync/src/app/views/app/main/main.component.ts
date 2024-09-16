@@ -14,6 +14,7 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { faCopyright } from '@fortawesome/free-solid-svg-icons';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -32,6 +33,7 @@ import { faCopyright } from '@fortawesome/free-solid-svg-icons';
     MatExpansionModule,
     MatTooltipModule,
     FontAwesomeModule,
+    CommonModule
   ],
   templateUrl: './main.component.html',
   styleUrl: './main.component.css'
@@ -42,6 +44,7 @@ export class MainComponent {
   faCopyright = faCopyright;
 
   userId: string | null;
+  accessType: string | null;
   myForm: any;
   showForm = false;
 
@@ -49,6 +52,7 @@ export class MainComponent {
     private authenticationService: AuthenticationService,) {
 
       this.userId = localStorage.getItem('id');
+      this.accessType = localStorage.getItem('accessType');
   }
 
   logout() {

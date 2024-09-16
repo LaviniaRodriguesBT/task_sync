@@ -39,6 +39,8 @@ export class AuthenticationService {
     localStorage.setItem('email', credential.email);
     localStorage.setItem('id', credential.id);
     localStorage.setItem('token', new Date().toLocaleTimeString());
+    localStorage.setItem('accessType', credential.accessType);
+    
   }
 
 }
