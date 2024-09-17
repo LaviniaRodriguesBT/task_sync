@@ -62,13 +62,13 @@
                     </tbody>
                 </table>
                 <div class="action-buttons">
-                    <a routerLink="/event/detail/{{event.id}}">
+                    <a routerLink="/event/detail/{{event.id}}" *ngIf= "accessType == 'adm'">
                         <span class="material-icons color-detail" title="Informações">info</span>
                     </a>
                     <a routerLink="/event/edit/{{event.id}}" *ngIf= "accessType == 'adm'">
                         <span class="material-icons color-edit" title="Editar evento" >edit</span>
                     </a>
-                    <a (click)= "deleteEvent(event.id!)" *ngIf= "accessType == 'adm'">
+                        <a (click)= "deleteEvent(event.id!)" *ngIf= "accessType == 'adm'">
                         <span class="material-icons color-delete" title="Deletar evento">delete_forever</span>
                     </a>
                 </div>
