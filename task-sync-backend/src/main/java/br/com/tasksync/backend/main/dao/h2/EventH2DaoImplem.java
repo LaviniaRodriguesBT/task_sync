@@ -1,13 +1,17 @@
-package br.com.tasksync.backend.main.dao;
+package br.com.tasksync.backend.main.dao.h2;
 
 import br.com.tasksync.backend.main.domain.EventModel;
+import br.com.tasksync.backend.main.port.dao.event.EventDao;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 // Classe responsavel por realizar a conexao entre o banco de dados
 // Responsavel por salvar, editar, excluir, ler informações que estão salvas no banco
-public class EventH2DaoImplem {
+public class EventH2DaoImplem implements EventDao {
 
     private final JdbcTemplate jdbcTemplate;
 
@@ -46,7 +50,10 @@ public class EventH2DaoImplem {
                         rs.getString("code"),
                         rs.getString("name"),
                         rs.getString("description"),
-                        rs.getString("business")
+                        rs.getString("business"),
+                        rs.getDate("date").toLocalDate(),
+                        rs.getDate("start_time").toLocalDate(),
+                        rs.getDate("end_time").toLocalDate()
 
                 ));
         return entity;
@@ -60,11 +67,18 @@ public class EventH2DaoImplem {
                         rs.getString("code"),
                         rs.getString("name"),
                         rs.getString("description"),
-                        rs.getString("business")
+                        rs.getString("business"),
+                        rs.getDate("date").toLocalDate(),
+                        rs.getDate("start_time").toLocalDate(),
+                        rs.getDate("end_time").toLocalDate()
 
                 ));
 
         return entities;
     }
 
+    @Override
+    public void updateInformation(int id, EventModel entity) {
+
+    }
 }
