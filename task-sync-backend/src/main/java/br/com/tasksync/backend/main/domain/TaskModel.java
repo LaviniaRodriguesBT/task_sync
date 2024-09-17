@@ -9,6 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class TaskModel {
     private int id;
-    private String userId;
     private String name;
 }
