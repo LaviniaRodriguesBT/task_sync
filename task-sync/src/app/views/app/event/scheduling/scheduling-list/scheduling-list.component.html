@@ -41,9 +41,9 @@
                 <th scope="col" class="thead-style">Horario Fim</th>
                 <th scope="col" class="thead-style">Data</th>
                 <th scope="col" class="thead-style">Status</th>
-                <th scope="col" class="thead-style">Detalhes</th>
-                <th scope="col" class="thead-style" *ngIf="accessType == 'adm'">Editar</th>
-                <th scope="col" class="thead-style" *ngIf="accessType == 'adm'">Excluir</th>
+                <th scope="col" class="thead-style" *ngIf= "accessType == 'adm'">Detalhes</th>
+                <th scope="col" class="thead-style" *ngIf= "accessType == 'adm'">Editar</th>
+                <th scope="col" class="thead-style" *ngIf= "accessType == 'adm'">Excluir</th>
             </tr>
         </thead>
         <tbody>
@@ -57,7 +57,7 @@
                 <td class="text-center">{{scheduling.end_time}}</td>
                 <td class="text-center">{{ scheduling.date | date: 'dd/MM/yyyy' }}</td>
                 <td class="text-center">{{scheduling.status}}</td>
-                <td>
+                <td *ngIf= "accessType == 'adm'">
                     <div class="row column">
                         <div class="col-4">
                             <a routerLink="/event/{{eventId}}/scheduling/detail/{{scheduling.id}}">

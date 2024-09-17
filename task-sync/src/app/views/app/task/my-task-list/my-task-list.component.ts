@@ -46,7 +46,7 @@ export class MyTaskListComponent implements OnInit{
     this.tasks = await this.taskReadService.findAll();
 
     if (this.userId! != null){
-      this.tasks = this.tasks.filter(e => e.userId == this.userId);
+      this.tasks = this.tasks.filter(e => e.id == this.userId);
     }
   }
 

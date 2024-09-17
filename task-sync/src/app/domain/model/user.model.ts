@@ -1,4 +1,4 @@
-export interface User{
+export interface User {
     id?: string,
     email: string,
     password: string,
@@ -6,5 +6,5 @@ export interface User{
     name: string,
     phone: string,
     address: string,
-    access_type: string
+    access_type?: string
 }
