@@ -1,13 +1,16 @@
-package br.com.tasksync.backend.main.dao;
+package br.com.tasksync.backend.main.dao.h2;
 
-import br.com.tasksync.backend.main.domain.EventModel;
 import br.com.tasksync.backend.main.domain.TaskModel;
+import br.com.tasksync.backend.main.port.dao.task.TaskDao;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 // Classe responsavel por realizar a conexao entre o banco de dados
 // Responsavel por salvar, editar, excluir, ler informações que estão salvas no banco
-public class TaskH2DaoImplem {
+public class TaskH2DaoImplem implements TaskDao {
 
     private final JdbcTemplate jdbcTemplate;
 
@@ -21,7 +24,6 @@ public class TaskH2DaoImplem {
     public int add(TaskModel entity) {
         final SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate).withTableName("task_model").usingGeneratedKeyColumns("id");
         final Map<String, Object> parameters = new HashMap<>();
-        parameters.put("userId: ", entity.getUserId());
         parameters.put("name: ", entity.getName());
 
 
@@ -41,7 +43,6 @@ public class TaskH2DaoImplem {
         final TaskModel entity = jdbcTemplate.queryForObject("SELECT * FROM task_model WHERE id = ", new Object[]{id},(rs,rowNum) ->
                 new TaskModel(
                         rs.getInt("id"),
-                        rs.getString("userId"),
                         rs.getString("name")
 
                 ));
@@ -53,7 +54,6 @@ public class TaskH2DaoImplem {
         final List<TaskModel> entities = jdbcTemplate.query("SELECT * FROM task_model", new Object[]{},(rs,rowNum) ->
                 new TaskModel(
                         rs.getInt("id"),
-                        rs.getString("userId"),
                         rs.getString("name")
 
                 ));
@@ -61,4 +61,8 @@ public class TaskH2DaoImplem {
         return entities;
     }
 
+    @Override
+    public void updateInformation(int id, TaskModel entity) {
+
+    }
 }
