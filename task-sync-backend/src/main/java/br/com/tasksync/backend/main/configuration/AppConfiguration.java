@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+@Configuration
 // Usar os perfis (dev/prod/fake) de acordo com a omplementacao correta
 @Configuration
 public class AppConfiguration {
