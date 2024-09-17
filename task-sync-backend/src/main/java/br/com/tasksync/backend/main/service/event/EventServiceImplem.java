@@ -1,7 +1,9 @@
 package br.com.tasksync.backend.main.service.event;
 
 import br.com.tasksync.backend.main.domain.EventModel;
+import br.com.tasksync.backend.main.port.dao.event.EventDao;
 import br.com.tasksync.backend.main.port.service.event.EventService;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
@@ -26,8 +28,8 @@ public class EventServiceImplem implements EventService {
                 entity.getName().isEmpty() ||
                 entity.getCode().isEmpty() ||
                 entity.getDescription().isEmpty() ||
-                entity.getBusiness().isEmpty() ||
-                entity.getData().isEmpty()
+                entity.getBusiness().isEmpty()
+//                entity.getDate().isEmpty()
         ){
             return 0;
         }

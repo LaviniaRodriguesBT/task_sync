@@ -14,4 +14,6 @@ public class EventModel {
     private String description;
     private String business;
     private java.time.LocalDate date;
+    private java.time.LocalDate start_time;
+    private java.time.LocalDate end_time;
 }

@@ -1,14 +1,17 @@
-package br.com.tasksync.backend.main.dao;
+package br.com.tasksync.backend.main.dao.h2;
 
 
-import br.com.tasksync.backend.main.domain.TaskModel;
 import br.com.tasksync.backend.main.domain.UserModel;
+import br.com.tasksync.backend.main.port.dao.user.UserDao;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 // Classe responsavel por realizar a conexao entre o banco de dados
 // Responsavel por salvar, editar, excluir, ler informações que estão salvas no banco
-public class UserH2DaoImplem {
+public class UserH2DaoImplem implements UserDao {
 
     private final JdbcTemplate jdbcTemplate;
 
@@ -29,6 +32,7 @@ public class UserH2DaoImplem {
         parameters.put("cpf: ", entity.getCpf());
         parameters.put("phone: ", entity.getPhone());
         parameters.put("address: ", entity.getAddress());
+        parameters.put("access_type: ", entity.getAccess_type());
 
 
 
@@ -54,7 +58,8 @@ public class UserH2DaoImplem {
                         rs.getString("password"),
                         rs.getString("cpf"),
                         rs.getString("phone"),
-                        rs.getString("address")
+                        rs.getString("address"),
+                        rs.getString("access_type")
 
                 ));
         return entity;
@@ -70,11 +75,17 @@ public class UserH2DaoImplem {
                         rs.getString("password"),
                         rs.getString("cpf"),
                         rs.getString("phone"),
-                        rs.getString("address")
+                        rs.getString("address"),
+                        rs.getString("access_type")
 
 
                 ));
 
         return entities;
+    }
+
+    @Override
+    public void updateInformation(int id, UserModel entity) {
+
     }
 }

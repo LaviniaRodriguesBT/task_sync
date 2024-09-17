@@ -1,9 +1,11 @@
 export interface User{
-    id?: string,
+    id?: number,
     email: string,
     password: string,
     cpf: string,
     name: string,
     phone: string,
-    address: string
+    address: string,
+    access_type: string
+
 }

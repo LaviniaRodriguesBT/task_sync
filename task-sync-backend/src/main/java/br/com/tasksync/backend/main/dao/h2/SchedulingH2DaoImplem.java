@@ -1,14 +1,17 @@
-package br.com.tasksync.backend.main.dao;
+package br.com.tasksync.backend.main.dao.h2;
 
 import br.com.tasksync.backend.main.domain.SchedulingModel;
-import br.com.tasksync.backend.main.domain.TaskModel;
+import br.com.tasksync.backend.main.port.dao.scheduling.SchedulingDao;
+import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 // Classe responsavel por realizar a conexao entre o banco de dados
 // Responsavel por salvar, editar, excluir, ler informações que estão salvas no banco
-public class SchedulingH2DaoImplem {
+public class SchedulingH2DaoImplem implements SchedulingDao {
 
     private final JdbcTemplate jdbcTemplate;
 
@@ -72,7 +75,7 @@ public class SchedulingH2DaoImplem {
                         rs.getInt("user_id"),
                         rs.getInt("task_id"),
                         rs.getDouble("value"),
-                        rs.getLocalTime("start_time"),
+                        rs.getLocalTime("start_time").,
                         rs.getLocalTime("end_time"),
                         rs.getLocalDate("date"),
                         rs.getString("status")
@@ -80,5 +83,10 @@ public class SchedulingH2DaoImplem {
                 ));
 
         return entities;
+    }
+
+    @Override
+    public void updateInformation(int id, SchedulingModel entity) {
+
     }
 }
