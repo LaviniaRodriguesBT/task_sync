@@ -5,6 +5,8 @@ import br.com.tasksync.backend.main.domain.EventModel;
 import java.util.HashMap;
 import java.util.Map;
 
+// Classe responsavel por realizar a conexao entre o banco de dados
+// Responsavel por salvar, editar, excluir, ler informações que estão salvas no banco
 public class EventH2DaoImplem {
 
     private final JdbcTemplate jdbcTemplate;

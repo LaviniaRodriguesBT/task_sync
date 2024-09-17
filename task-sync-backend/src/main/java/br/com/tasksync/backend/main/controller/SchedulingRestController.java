@@ -1,7 +1,21 @@
 package br.com.schedulingsync.backend.main.controller;
 
+//@RestController indica que os metodos irao responder a requisições HTTPs
+//@RequestMapping define o caminho para qual todas as requições para o o endereço "api/event" deveão executar alguns dos metodos da classe
+
+import br.com.tasksync.backend.main.domain.SchedulingModel;
+import br.com.tasksync.backend.main.port.service.scheduling.SchedulingService;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
+
+import java.net.URI;
+import java.util.List;
+
 @RestController
 @RequestMapping("/api/event/scheduling")
+//Classe responsavel por traduz as requições HTTP de seus metodos (GET,POST,PUT,DELETE)
+// E atraves dessa traducao, retornar as respostas adequadas
 public class SchedulingRestController {
     private final SchedulingService schedulingService;
 

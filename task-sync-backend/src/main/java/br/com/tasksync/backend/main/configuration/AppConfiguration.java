@@ -2,8 +2,11 @@ package br.com.tasksync.backend.main.configuration;
 
 import br.com.tasksync.backend.main.port.dao.user.UserDao;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 
+@Configuration
+// Usar os perfis (dev/prod/fake) de acordo com a omplementacao correta
 public class AppConfiguration {
     @Bean
     @Profile("fake")
