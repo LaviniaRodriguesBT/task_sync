@@ -51,6 +51,7 @@ export class TaskCreateComponent implements OnInit {
 
     const task: Task = {
       name: this.form.controls['name'].value,
+      userId: this.form.controls['userId'].value,
     }
 
     console.log('preparando para criar o produto...');

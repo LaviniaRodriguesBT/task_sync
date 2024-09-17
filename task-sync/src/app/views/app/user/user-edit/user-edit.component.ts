@@ -81,6 +81,7 @@ export class UserEditComponent {
         name: this.form.controls['name'].value,
         phone: this.form.controls['phone'].value,
         address: this.form.controls['address'].value,
+        access_type: this.form.controls['access_type'].value,
       }
 
       console.log(user);

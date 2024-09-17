@@ -59,7 +59,7 @@ export class TaskEditComponent {
       const task: Task = {
         id: this.taskId!,
         name: this.form.controls['name'].value,
-
+        userId: this.form.controls['userId'].value,
       }
 
       console.log(task);

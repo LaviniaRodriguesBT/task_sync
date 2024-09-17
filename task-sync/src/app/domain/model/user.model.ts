@@ -1,5 +1,5 @@
 export interface User{
-    id?: number,
+    id?: string,
     email: string,
     password: string,
     cpf: string,
@@ -7,5 +7,4 @@ export interface User{
     phone: string,
     address: string,
     access_type: string
-
 }
