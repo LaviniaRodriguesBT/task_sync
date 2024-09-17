@@ -18,7 +18,7 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    
+
   ],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css'
@@ -65,7 +65,13 @@ export class SignInComponent implements OnInit {
       this.authenticationService
         .addCredentialsToLocalStorage(credential);
 
+      if (this.accessType.value != "adm") {
+        await this.router.navigate(['/event/list']);
+        return;
+      }
+
       await this.router.navigate(['/']);
+
     } catch (e: any) {
       console.error(`erro: ${e}`);
       this.toastrService.error(e.message);
