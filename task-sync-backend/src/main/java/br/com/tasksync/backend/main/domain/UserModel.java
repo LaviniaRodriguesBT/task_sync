@@ -15,5 +15,6 @@ public class UserModel {
     private String cpf;
     private String phone;
     private String address;
+    private String access_type;
 
 }
