@@ -1,13 +1,13 @@
 export interface Scheduling{
-    id?: string,
-    event_id: string,
+    id?: number,
+    event_id: number,
+    user_id: number,
+    userId?: number,
+    task_id: number,
     event: string,
-    user_id: string,
-    userId?: string,
-    task_id: string,
     value: string,
-    start_time: string,
-    end_time: string,
-    date: string,
+    start_time: Date,
+    end_time: Date,
+    date: Date,
     status: string
 }
