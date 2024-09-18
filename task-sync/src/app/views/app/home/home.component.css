@@ -1,7 +1,7 @@
 .card-container {
   max-width: 1200px;
   margin: auto;
-  position: relative; 
+  position: relative;
 }
 
 .p-carousel {
@@ -10,16 +10,16 @@
 }
 
 .card {
-  border-radius: 10px; 
+  border-radius: 10px;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s, box-shadow 0.2s;
   overflow: hidden;
-  margin: 10px; 
+  margin: 10px;
 }
 
 .card:hover {
-  transform: translateY(-5px); /* Efeito de elevação ao passar o mouse */
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Sombra mais profunda ao passar o mouse */
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 .card-header {
@@ -40,15 +40,16 @@
 .card-footer {
   background-color: white;
   display: flex;
-  justify-content: center; 
-  align-items: center;  
-  padding: 10px 1px 1px; /* Espaçamento interno do rodapé */
+  justify-content: center;
+  align-items: center;
+  padding: 10px 1px 1px;
 }
 
 .user-image img {
   width: 30%;
   border-radius: 8px;
 }
+
 
 .btn-access {
   border: none;
