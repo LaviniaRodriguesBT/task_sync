@@ -47,8 +47,9 @@ export class SchedulingListComponent implements OnInit {
 
   async loadSchedulings() {
     this.schedulings = await this.schedulingReadService.findByEventId(this.eventId);
+    console.log(this.schedulings);
     this.schedulingCopy = this.schedulings;
-    this.schedulings = this.schedulingCopy.filter(predicate => predicate.userId == this.userId);
+    // this.schedulings = this.schedulingCopy.filter(predicate => predicate.userId == this.userId); 
   }
 
   async deleteScheduling(schedulingId: string) {
