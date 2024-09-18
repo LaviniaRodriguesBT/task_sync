@@ -9,7 +9,7 @@ create table person (
 );
 
 
-create table "user" (
+create table user (
     id serial primary key,
     login character varying(200) not null unique,
     password character varying(500) not null,

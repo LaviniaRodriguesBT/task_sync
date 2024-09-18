@@ -19,16 +19,15 @@ public class SchedulingServiceImplem implements SchedulingService {
 
     @Override
     public int create(SchedulingModel entity) {
-        if(entity == null){
+        if (entity == null) {
             return 0;
         }
-        if(entity.getEvent_id() <= 0 ||
+        if (entity.getEvent_id() <= 0 ||
                 entity.getUser_id() <= 0 ||
                 entity.getTask_id() <= 0 ||
                 entity.getEvent().isEmpty() ||
                 entity.getValue() <= 0 ||
-                entity.getEnd_time().isBefore(entity.getStart_time()) ||
-                entity.getStatus().isEmpty()){
+                entity.getStatus().isEmpty()) {
             return 0;
         }
 
@@ -39,7 +38,7 @@ public class SchedulingServiceImplem implements SchedulingService {
 
     @Override
     public void delete(int id) {
-        if(id < 0){
+        if (id < 0) {
             return;
         }
         System.out.println("Chamou o remover o cronograma id");
@@ -49,7 +48,7 @@ public class SchedulingServiceImplem implements SchedulingService {
 
     @Override
     public SchedulingModel findById(int id) {
-        if(id < 0){
+        if (id < 0) {
             return null;
         }
         SchedulingModel scheduling = schedulingDao.readyById(id);
@@ -68,7 +67,7 @@ public class SchedulingServiceImplem implements SchedulingService {
     public void update(int id, SchedulingModel entity) {
 
         SchedulingModel schedulingModel = findById(id);
-        if(schedulingModel == null){
+        if (schedulingModel == null) {
             return;
         }
         schedulingDao.updateInformation(id, entity);

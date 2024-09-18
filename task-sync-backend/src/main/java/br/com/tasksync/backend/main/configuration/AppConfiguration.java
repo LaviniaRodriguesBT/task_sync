@@ -1,16 +1,20 @@
 package br.com.tasksync.backend.main.configuration;
 
 import br.com.tasksync.backend.main.dao.h2.UserH2DaoImplem;
+import br.com.tasksync.backend.main.dao.postgres.UserPostgresDaoImplem;
 import br.com.tasksync.backend.main.port.dao.user.UserDao;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-@Configuration
+import java.sql.Connection;
+
+
 // Usar os perfis (dev/prod/fake) de acordo com a omplementacao correta
 @Configuration
 public class AppConfiguration {
+
 
     @Bean
     @Profile("dev")

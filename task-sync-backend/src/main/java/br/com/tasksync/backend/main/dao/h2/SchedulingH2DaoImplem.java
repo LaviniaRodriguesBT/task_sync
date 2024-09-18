@@ -42,42 +42,45 @@ public class SchedulingH2DaoImplem implements SchedulingDao {
 
     @Override
     public void remove(int id) {
-        final String sql = "DELETE FROM scheduling_model WHERE id = "+ id;
+        final String sql = "DELETE FROM scheduling_model WHERE id = " + id;
         jdbcTemplate.execute(sql);
 
     }
 
     @Override
     public SchedulingModel readyById(int id) {
-        final SchedulingModel entity = jdbcTemplate.queryForObject("SELECT * FROM scheduling_model WHERE id = ", new Object[]{id},(rs,rowNum) ->
+        final SchedulingModel entity = jdbcTemplate.queryForObject("SELECT * FROM scheduling_model WHERE id = ", new Object[]{id}, (rs, rowNum) ->
                 new SchedulingModel(
                         rs.getInt("id"),
                         rs.getInt("event_id"),
                         rs.getInt("user_id"),
                         rs.getInt("task_id"),
+                        rs.getString("event"),
                         rs.getDouble("value"),
-                        rs.getLocalTime("start_time"),
-                        rs.getLocalTime("end_time"),
-                        rs.getLocalDate("date"),
+                        rs.getDate("start_time").toLocalDate(),
+                        rs.getDate("end_time").toLocalDate(),
+                        rs.getDate("date").toLocalDate(),
                         rs.getString("status")
 
 
                 ));
         return entity;
+        //return new SchedulingModel(1, 2, 3, 1, "casa", 10.10, new Date(), new Date(), new Date(), "em aberto");
     }
 
     @Override
     public List<SchedulingModel> readAll() {
-        final List<SchedulingModel> entities = jdbcTemplate.query("SELECT * FROM scheduling_model", new Object[]{},(rs,rowNum) ->
+        final List<SchedulingModel> entities = jdbcTemplate.query("SELECT * FROM scheduling_model", new Object[]{}, (rs, rowNum) ->
                 new SchedulingModel(
                         rs.getInt("id"),
                         rs.getInt("event_id"),
                         rs.getInt("user_id"),
                         rs.getInt("task_id"),
+                        rs.getString("event"),
                         rs.getDouble("value"),
-                        rs.getLocalTime("start_time").,
-                        rs.getLocalTime("end_time"),
-                        rs.getLocalDate("date"),
+                        rs.getDate("start_time").toLocalDate(),
+                        rs.getDate("end_time").toLocalDate(),
+                        rs.getDate("date").toLocalDate(),
                         rs.getString("status")
 
                 ));
