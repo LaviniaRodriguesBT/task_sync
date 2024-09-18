@@ -13,7 +13,8 @@ create table person (
     id serial primary key,
     cpf character varying(14) not null unique,
     name character varying(200) not null,
-    address character varying(400) not null
+    address character varying(400) not null,
+    phone character varying(14) not null
 );
 
 

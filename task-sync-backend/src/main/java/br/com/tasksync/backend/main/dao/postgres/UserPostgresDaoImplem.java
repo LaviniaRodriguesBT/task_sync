@@ -27,8 +27,8 @@ public class UserPostgresDaoImplem implements UserDao {
     @Override
     public int add(UserModel entity) {
 
-        String sql = "INSERT INTO person(cpf, name, address) ";
-        sql += " VALUES(?, ?, ?);";
+        String sql = "INSERT INTO person(cpf, name, address, phone) ";
+        sql += " VALUES(?, ?, ?, ?);";
 
         PreparedStatement preparedStatement;
         ResultSet resultSet;
@@ -147,19 +147,18 @@ public class UserPostgresDaoImplem implements UserDao {
             if (resultSet.next()) {
                 final UserModel user = new UserModel();
                 user.setId(resultSet.getInt("id"));
-                //user.setName(resultSet.getString("name"));
-                //user.setEmail(resultSet.getString("email"));
+                user.setName(resultSet.getString("name"));
+                user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("password"));
-               // user.setCpf(resultSet.getString("cpf"));
-               // user.setPhone(resultSet.getString("phone"));
-               // user.setAddress(resultSet.getString("address"));
+                user.setCpf(resultSet.getString("cpf"));
+                user.setPhone(resultSet.getString("phone"));
+                user.setAddress(resultSet.getString("address"));
                 user.setAccess_type(resultSet.getString("access_type"));
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
 
                 return user;
 
             }
-
 
             return null;
         } catch (Exception e) {
@@ -179,7 +178,7 @@ public class UserPostgresDaoImplem implements UserDao {
     public List<UserModel> readAll() {
 
         final List<UserModel> users = new ArrayList<>();
-        final String sql = "SELECT * FROM \"user\";";
+        final String sql = "SELECT * FROM \"user\" u INNER JOIN person p ON p.id = u.person_id ;";
 
 
         try {
@@ -189,8 +188,13 @@ public class UserPostgresDaoImplem implements UserDao {
                 final UserModel user = new UserModel();
 
                 user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("name"));
+                user.setEmail(resultSet.getString("login"));
                 user.setPassword(resultSet.getString("password"));
+                user.setPhone(resultSet.getString("phone"));
+                user.setAddress(resultSet.getString("address"));
                 user.setAccess_type(resultSet.getString("access_type"));
+
                 users.add(user);
 
             }
