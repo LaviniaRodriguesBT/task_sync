@@ -1,10 +1,10 @@
 export interface Event {
-    id?: number,
+    id?: string,
     code: string,
     name: string,
     description: string,
     business: string,
-    date: Date,
-    start_time: Date,
-    end_time: Date,
+    date: string,
+    start_time: string,
+    end_time: string,
 }

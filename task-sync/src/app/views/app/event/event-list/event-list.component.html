@@ -9,9 +9,11 @@
 
 <h1>Lista de eventos</h1>
 
-
-
 <div class="d-flex justify-content-between" >
+    <a class="btn btn-back arrow-back" href="/" *ngIf= "accessType == 'adm'">
+        <span class="material-icons" >arrow_back</span>
+    </a> 
+
     <a class="btn btn-create" routerLink="/event/create" *ngIf= "accessType == 'adm'">
         <fa-icon [icon]="faAdd" title="Adicionar novo evento"></fa-icon>
         Cadastrar evento
@@ -22,10 +24,8 @@
         <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
     </div>
 
-
-    <a class="btn btn-primary btn-pdf" (click)="gerarPdf()">
+    <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
-        Imprimir
     </a>
 </div>
 <hr>
@@ -37,7 +37,7 @@
                 <h3>{{ event.name | slice:0:15}}...</h3>
             </div>
             <div class="user-image">
-                <img src="/assets/img/face.png" alt="User Image">
+                <img src="/assets/img/event.png" alt="User Image">
             </div>
             <div class="card-body">
                 <table class="table body-text-card">
@@ -61,43 +61,26 @@
                     </tbody>
                 </table>
                 <div class="action-buttons">
-                    <a routerLink="/event/detail/{{event.id}}">
+                    <a routerLink="/event/detail/{{event.id}}" *ngIf= "accessType == 'adm'">
                         <span class="material-icons color-detail" title="Informações">info</span>
                     </a>
                     <a routerLink="/event/edit/{{event.id}}" *ngIf= "accessType == 'adm'">
                         <span class="material-icons color-edit" title="Editar evento" >edit</span>
                     </a>
-                    <a (click)= "deleteEvent(event.id!)" *ngIf= "accessType == 'adm'">
+                        <a (click)= "deleteEvent(event.id!)" *ngIf= "accessType == 'adm'">
                         <span class="material-icons color-delete" title="Deletar evento">delete_forever</span>
                     </a>
                 </div>
             </div>
             <div class="card-footer">
-                <a class="btn btn-primary btn-access" routerLink="/event/{{event.id}}/scheduling/list">Acessar</a>
+                <a class="btn btn-access" routerLink="/event/{{event.id}}/scheduling/list">Acessar</a>
             </div>
         </div>
     </ng-container>
 </div>
 
-<!-- <mat-paginator #paginator
-               class="demo-paginator"
-               (page)="handlePageEvent($event)"
-               [length]="length"
-               [pageSize]="pageSize"
-               [disabled]="disabled"
-               [showFirstLastButtons]="showFirstLastButtons"
-               [pageSizeOptions]="showPageSizeOptions ? pageSizeOptions : []"
-               [hidePageSize]="hidePageSize"
-               [pageIndex]="pageIndex"
-               aria-label="Select page">
-</mat-paginator> -->
-
-
-
 <div class="pagination">
-    <a class="btn btn-secondary btn-back arrow-back" href="/">
-        <span class="material-icons">arrow_back</span> Voltar
-    </a> 
+
     <select class="btn-back">
         <option value="5">5 por página</option>
         <option value="10">10 por página</option>

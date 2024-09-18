@@ -2,32 +2,32 @@
 <sim-project version="14.30" multi-file="no" uid="simp262e8ec4686f40b089c96100cdde145f" creation-date="09/03/2024 20:49:12">
   <meta>
     <name>taskSync_diagramaDeComponentes_criarEvento</name>
-    <authors> Michele Lavinia e Lucas</authors>
+    <authors> </authors>
     <description />
   </meta>
   <counters models="1">
     <entity-names>
       <counter>
         <item-type stereotype="component" type-id="component" type="Component" />
-        <value>34</value>
+        <value>56</value>
       </counter>
       <counter>
         <item-type type-id="element-detail" type="Element Detail" />
-        <value>1</value>
+        <value>2</value>
       </counter>
     </entity-names>
     <entity-ids>
       <counter>
         <item-type type-id="component" type="Component" />
-        <value>35</value>
+        <value>57</value>
       </counter>
       <counter>
         <item-type type-id="element-detail" type="Element Detail" />
-        <value>2</value>
+        <value>3</value>
       </counter>
       <counter>
         <item-type type-id="comment-connector" type="Comment Connector" />
-        <value>2</value>
+        <value>3</value>
       </counter>
     </entity-ids>
     <diagrams>
@@ -36,10 +36,16 @@
         <value>1</value>
       </counter>
     </diagrams>
-    <fields />
+    <fields>
+      <counter>
+        <type>SoftwareIdeasModeler.Core.DiagramItems.Fields.OperationField</type>
+        <value>2</value>
+      </counter>
+    </fields>
   </counters>
   <alias-groups />
   <management uid="md-3f6d0f6c912d40f39ac23e5d8a667236" name="" task-id-sequence="0">
+    <working-schedule uid="ws-a2defc59e60045a0ab550d6325cb5878" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
     <persons>
       <person id="">
         <first-name />
@@ -49,6 +55,7 @@
         <phone-number />
         <description />
         <color>#00000000</color>
+        <working-schedule uid="ws-fb755d4152404ade9f4be8237d18269d" hours="8" monday="8" tuesday="8" wednesday="8" thursday="8" friday="8" saturday="0" sunday="0" />
       </person>
     </persons>
     <teams />
@@ -69,25 +76,6 @@
     </custom-types>
   </types>
   <items>
-    <item id="2257adbc0421413abdbf0c189a9da6cf" cid="CPT004" type="component" name="event-create" owner="675bc67ae5f142898b43f781e4e9da34" creation-date="09/03/2024 20:52:27" visibility="undefined">
-      <stereotypes>
-        <stereotype name="component" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="c9562a95227a4a30b73948a96d7f3c5c_component_c" type="component" creation-date="09/03/2024 20:52:27" ref="" />
-      </stereotype-instances>
-      <owned-items />
-      <component />
-    </item>
-    <item id="ad132645f05c4f268a884abf0fab66a1" cid="CPT034" type="component" name="help.component.ts" owner="cb87558f58564a83b9407080be6cdef8" creation-date="09/03/2024 22:36:51" visibility="undefined">
-      <stereotypes>
-        <stereotype name="component" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="11c77df06836426ab646cbec4e1dfeee_component_c" type="component" creation-date="09/03/2024 22:36:51" ref="" />
-      </stereotype-instances>
-      <component />
-    </item>
     <item id="d37ea09f0921492a9a24a88f03a1e04e" cid="CPT005" type="component" name="event-create.component.ts" owner="2257adbc0421413abdbf0c189a9da6cf" creation-date="09/03/2024 20:52:50" visibility="undefined">
       <stereotypes>
         <stereotype name="file" />
@@ -95,101 +83,6 @@
       <stereotype-instances>
         <stereotype id="f91196ce3883468d9ac6776f8a561668" type="file" creation-date="09/03/2024 20:54:12" ref="" />
       </stereotype-instances>
-      <component />
-    </item>
-    <item id="c30e625d20f24fdb93a4a8e2070a9d6c" cid="CPT034" type="component" name="main.component.ts" owner="cb87558f58564a83b9407080be6cdef8" creation-date="09/03/2024 22:36:51" visibility="undefined">
-      <stereotypes>
-        <stereotype name="component" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="11c77df06836426ab646cbec4e1dfeee_component_c" type="component" creation-date="09/03/2024 22:36:51" ref="" />
-      </stereotype-instances>
-      <component />
-    </item>
-    <item id="05c58d321acc4fc8b00df51f628734a0" cid="CPT029" type="component" name="user-detail" owner="52a741ec5f5f42ebb1300601d5029ff9" creation-date="09/03/2024 21:40:31" visibility="undefined">
-      <stereotypes>
-        <stereotype name="component" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="950ac5b575bd49d5969de512ea980341_component_c" type="component" creation-date="09/03/2024 21:40:31" ref="" />
-      </stereotype-instances>
-      <owned-items />
-      <component />
-    </item>
-    <item id="6c9b36783b624514931dc36ce6ba0357" cid="CPT015" type="component" name="scheduling-create" creation-date="09/03/2024 21:24:50" visibility="undefined">
-      <stereotypes>
-        <stereotype name="component" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="9def175a0a7f4e94880616c7711a96d9_component_c" type="component" creation-date="09/03/2024 21:24:50" ref="" />
-      </stereotype-instances>
-      <owned-items />
-      <component />
-    </item>
-    <item id="c7ed919ca02246dd9472cb71db0c5235" cid="CPT029" type="component" name="user-list" owner="52a741ec5f5f42ebb1300601d5029ff9" creation-date="09/03/2024 21:40:31" visibility="undefined">
-      <stereotypes>
-        <stereotype name="component" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="950ac5b575bd49d5969de512ea980341_component_c" type="component" creation-date="09/03/2024 21:40:31" ref="" />
-      </stereotype-instances>
-      <owned-items />
-      <component />
-    </item>
-    <item id="80308dc9b59244b999e3835ab76509fa" cid="CPT034" type="component" name="chat.component.ts" creation-date="09/03/2024 22:36:51" visibility="undefined">
-      <stereotypes>
-        <stereotype name="component" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="11c77df06836426ab646cbec4e1dfeee_component_c" type="component" creation-date="09/03/2024 22:36:51" ref="" />
-      </stereotype-instances>
-      <component />
-    </item>
-    <item id="a4f6d114dec04e5ba786de0464dd07df" cid="CPT015" type="component" name="scheduling-edit" owner="9def175a0a7f4e94880616c7711a96d9" creation-date="09/03/2024 21:24:50" visibility="undefined">
-      <stereotypes>
-        <stereotype name="component" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="9def175a0a7f4e94880616c7711a96d9_component_c" type="component" creation-date="09/03/2024 21:24:50" ref="" />
-      </stereotype-instances>
-      <owned-items />
-      <component />
-    </item>
-    <item id="09bbe900660d47cba975bccfafc954c7" cid="CPT034" type="component" name="about-us.component.ts" creation-date="09/03/2024 22:36:51" visibility="undefined">
-      <stereotypes>
-        <stereotype name="component" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="11c77df06836426ab646cbec4e1dfeee_component_c" type="component" creation-date="09/03/2024 22:36:51" ref="" />
-      </stereotype-instances>
-      <component />
-    </item>
-    <item id="a1bbfb6b5e384a408c567194a3298617" cid="CPT005" type="component" name="event-edit.component.ts" owner="c9562a95227a4a30b73948a96d7f3c5c" creation-date="09/03/2024 20:52:50" visibility="undefined">
-      <stereotypes>
-        <stereotype name="file" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="f91196ce3883468d9ac6776f8a561668" type="file" creation-date="09/03/2024 20:54:12" ref="" />
-      </stereotype-instances>
-      <component />
-    </item>
-    <item id="3cdcb9bfd29240a0afdf3118d6f24486" cid="CPT011" type="component" name="scheduling-edit.component.ts" owner="a4f6d114dec04e5ba786de0464dd07df" creation-date="09/03/2024 21:23:19" visibility="undefined">
-      <stereotypes>
-        <stereotype name="file" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="a56c44b95d6f4cd580f2c9ba5c4c0211" type="file" creation-date="09/03/2024 21:29:28" ref="" />
-      </stereotype-instances>
-      <component />
-    </item>
-    <item id="6f52cf5cf313415dacfe2bc616d149c1" cid="CPT029" type="component" name="user-edit" owner="52a741ec5f5f42ebb1300601d5029ff9" creation-date="09/03/2024 21:40:31" visibility="undefined">
-      <stereotypes>
-        <stereotype name="component" />
-      </stereotypes>
-      <stereotype-instances>
-        <stereotype id="950ac5b575bd49d5969de512ea980341_component_c" type="component" creation-date="09/03/2024 21:40:31" ref="" />
-      </stereotype-instances>
-      <owned-items />
       <component />
     </item>
     <item id="31548a3c3a954396a2b474db60de96c0" cid="CPT011" type="component" name="scheduling-create.component.ts" owner="6c9b36783b624514931dc36ce6ba0357" creation-date="09/03/2024 21:23:19" visibility="undefined">
@@ -210,6 +103,43 @@
       </stereotype-instances>
       <component />
     </item>
+    <item id="ad132645f05c4f268a884abf0fab66a1" cid="CPT034" type="component" name="help.component.ts" owner="b26aeed7d47a4419b59f9367a086e14f" creation-date="09/03/2024 22:36:51" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="e918f9f4edd84d1985ee74840e89e30c" type="file" creation-date="09/17/2024 20:15:05" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="f689e85762ee40328258d3c91cbf3559" cid="CPT054" type="component" name="user-delete.service.ts" owner="31058dc9272642d685c9264796a872ba" creation-date="09/17/2024 20:21:52" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="d0678ba1a7344d35959bf4a0a3e266c2" type="file" creation-date="09/17/2024 20:22:00" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="eb6b1cea09904da1855ae6be0b6839b0" cid="CPT055" type="component" name="task-read.service.ts" owner="89fa9119b63b4cbbb964eb6ae7b04258" creation-date="09/17/2024 20:22:16" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="fcf7b07d6dce458a8331e0e81c8d6c3b" type="file" creation-date="09/17/2024 20:22:28" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="6c9b36783b624514931dc36ce6ba0357" cid="CPT015" type="component" name="scheduling-create" creation-date="09/03/2024 21:24:50" visibility="undefined">
+      <stereotypes>
+        <stereotype name="component" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="9def175a0a7f4e94880616c7711a96d9_component_c" type="component" creation-date="09/03/2024 21:24:50" ref="" />
+      </stereotype-instances>
+      <owned-items />
+      <component />
+    </item>
     <item id="fdeb7e7fc37c430c8f34c0ad56284a96" cid="CPT015" type="component" name="scheduling-detail" owner="146a3c4ccd3a469485e8ff8f0ff5e10c" creation-date="09/03/2024 21:24:50" visibility="undefined">
       <stereotypes>
         <stereotype name="component" />
@@ -218,6 +148,191 @@
         <stereotype id="9def175a0a7f4e94880616c7711a96d9_component_c" type="component" creation-date="09/03/2024 21:24:50" ref="" />
       </stereotype-instances>
       <owned-items />
+      <component />
+    </item>
+    <item id="6f52cf5cf313415dacfe2bc616d149c1" cid="CPT029" type="component" name="user-edit" owner="52a741ec5f5f42ebb1300601d5029ff9" creation-date="09/03/2024 21:40:31" visibility="undefined">
+      <stereotypes>
+        <stereotype name="component" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="950ac5b575bd49d5969de512ea980341_component_c" type="component" creation-date="09/03/2024 21:40:31" ref="" />
+      </stereotype-instances>
+      <owned-items />
+      <component />
+    </item>
+    <item id="c7ed919ca02246dd9472cb71db0c5235" cid="CPT029" type="component" name="user-list" owner="52a741ec5f5f42ebb1300601d5029ff9" creation-date="09/03/2024 21:40:31" visibility="undefined">
+      <stereotypes>
+        <stereotype name="component" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="950ac5b575bd49d5969de512ea980341_component_c" type="component" creation-date="09/03/2024 21:40:31" ref="" />
+      </stereotype-instances>
+      <owned-items />
+      <component />
+    </item>
+    <item id="09bbe900660d47cba975bccfafc954c7" cid="CPT034" type="component" name="about-us.component.ts" owner="eb698499ef07427e87f9a4fab3e7c10f" creation-date="09/03/2024 22:36:51" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="2524fb6459ac4e58a4f1700611f5621e" type="file" creation-date="09/17/2024 20:14:27" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="3cdcb9bfd29240a0afdf3118d6f24486" cid="CPT011" type="component" name="scheduling-edit.component.ts" owner="a4f6d114dec04e5ba786de0464dd07df" creation-date="09/03/2024 21:23:19" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="a56c44b95d6f4cd580f2c9ba5c4c0211" type="file" creation-date="09/03/2024 21:29:28" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="fa2d80b6519d4ab6b0f08b5dbeecd03d" cid="CPT056" type="component" name="task-update.service.ts" owner="89fa9119b63b4cbbb964eb6ae7b04258" creation-date="09/17/2024 20:22:36" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="fc1ce02cd7a04390a01cb60bde0da7bb" type="file" creation-date="09/17/2024 20:22:51" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="ada9af9a7a43456c9705d44d2d99b1bf" cid="CPT052" type="component" name="authentication.guard.ts" owner="4d51b86160d04eb0b5a619554d71b90c" creation-date="09/17/2024 20:21:02" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="9653386bf3ab46588d15b2827e4a2678" type="file" creation-date="09/17/2024 20:21:09" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="c30e625d20f24fdb93a4a8e2070a9d6c" cid="CPT034" type="component" name="main.component.ts" owner="c12c1adb99bf409d930bffdd84e75f39" creation-date="09/03/2024 22:36:51" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="130bb5e01c444c32a620398a971fa3d9" type="file" creation-date="09/17/2024 20:16:07" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="728ec1c0573a49cfb42a39523a0400ff" cid="CPT055" type="component" name="scheduling-read.service.ts" owner="a96a177ae297436494a2eb886002d3dc" creation-date="09/17/2024 20:22:16" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="fcf7b07d6dce458a8331e0e81c8d6c3b" type="file" creation-date="09/17/2024 20:22:28" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="a4f6d114dec04e5ba786de0464dd07df" cid="CPT015" type="component" name="scheduling-edit" owner="9def175a0a7f4e94880616c7711a96d9" creation-date="09/03/2024 21:24:50" visibility="undefined">
+      <stereotypes>
+        <stereotype name="component" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="9def175a0a7f4e94880616c7711a96d9_component_c" type="component" creation-date="09/03/2024 21:24:50" ref="" />
+      </stereotype-instances>
+      <owned-items />
+      <component />
+    </item>
+    <item id="24cecd7c079c4cae8bb2faa2ab2e6b1a" cid="CPT053" type="component" name="user-create.service.ts" owner="31058dc9272642d685c9264796a872ba" creation-date="09/17/2024 20:21:34" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="029503ceb99b45478f6037a531bc0bc4" type="file" creation-date="09/17/2024 20:21:48" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="05c58d321acc4fc8b00df51f628734a0" cid="CPT029" type="component" name="user-detail" owner="52a741ec5f5f42ebb1300601d5029ff9" creation-date="09/03/2024 21:40:31" visibility="undefined">
+      <stereotypes>
+        <stereotype name="component" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="950ac5b575bd49d5969de512ea980341_component_c" type="component" creation-date="09/03/2024 21:40:31" ref="" />
+      </stereotype-instances>
+      <owned-items />
+      <component />
+    </item>
+    <item id="1ca1304b61bd45dbb9bfb9992a7a7121" cid="CPT056" type="component" name="user-update.service.ts" owner="31058dc9272642d685c9264796a872ba" creation-date="09/17/2024 20:22:36" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="fc1ce02cd7a04390a01cb60bde0da7bb" type="file" creation-date="09/17/2024 20:22:51" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="2257adbc0421413abdbf0c189a9da6cf" cid="CPT004" type="component" name="event-create" owner="675bc67ae5f142898b43f781e4e9da34" creation-date="09/03/2024 20:52:27" visibility="undefined">
+      <stereotypes>
+        <stereotype name="component" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="c9562a95227a4a30b73948a96d7f3c5c_component_c" type="component" creation-date="09/03/2024 20:52:27" ref="" />
+      </stereotype-instances>
+      <owned-items />
+      <component />
+    </item>
+    <item id="ac6ea005a34c4721bde59fc6c56d252e" cid="CPT054" type="component" name="scheduling-delete.service.ts" owner="a96a177ae297436494a2eb886002d3dc" creation-date="09/17/2024 20:21:52" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="d0678ba1a7344d35959bf4a0a3e266c2" type="file" creation-date="09/17/2024 20:22:00" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="f22387c78f564ba997c484b87e23a871" cid="CPT054" type="component" name="task-delete.service.ts" owner="89fa9119b63b4cbbb964eb6ae7b04258" creation-date="09/17/2024 20:21:52" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="d0678ba1a7344d35959bf4a0a3e266c2" type="file" creation-date="09/17/2024 20:22:00" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="ffbb0ee9769b42ca8245cf45d458b61c" cid="CPT053" type="component" name="scheduling-create.service.ts" owner="a96a177ae297436494a2eb886002d3dc" creation-date="09/17/2024 20:21:34" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="029503ceb99b45478f6037a531bc0bc4" type="file" creation-date="09/17/2024 20:21:48" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="830cc3ed233b408bbcc11f1ffd4ed50e" cid="CPT055" type="component" name="user-read.service.ts" owner="31058dc9272642d685c9264796a872ba" creation-date="09/17/2024 20:22:16" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="fcf7b07d6dce458a8331e0e81c8d6c3b" type="file" creation-date="09/17/2024 20:22:28" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="87a7e2cb0e44461bb643b38f294a7b6b" cid="CPT056" type="component" name="scheduling-update.service.ts" owner="a96a177ae297436494a2eb886002d3dc" creation-date="09/17/2024 20:22:36" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="fc1ce02cd7a04390a01cb60bde0da7bb" type="file" creation-date="09/17/2024 20:22:51" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="961d6a8577644e4aa70d6df15a765d8b" cid="CPT053" type="component" name="task-create.service.ts" owner="89fa9119b63b4cbbb964eb6ae7b04258" creation-date="09/17/2024 20:21:34" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="029503ceb99b45478f6037a531bc0bc4" type="file" creation-date="09/17/2024 20:21:48" ref="" />
+      </stereotype-instances>
+      <component />
+    </item>
+    <item id="a1bbfb6b5e384a408c567194a3298617" cid="CPT005" type="component" name="event-edit.component.ts" owner="c9562a95227a4a30b73948a96d7f3c5c" creation-date="09/03/2024 20:52:50" visibility="undefined">
+      <stereotypes>
+        <stereotype name="file" />
+      </stereotypes>
+      <stereotype-instances>
+        <stereotype id="f91196ce3883468d9ac6776f8a561668" type="file" creation-date="09/03/2024 20:54:12" ref="" />
+      </stereotype-instances>
       <component />
     </item>
   </items>
@@ -235,7 +350,7 @@
       </meta>
       <abstract-items />
       <sub-models />
-      <diagram type="uml-component" id="p0997513824384874a8407679b3170d8b_563298832" name="ComponentDiagram1" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="616,1022" zoom="1.6">
+      <diagram type="uml-component" id="p0997513824384874a8407679b3170d8b_563298832" name="ComponentDiagram1" order-index="1" uid="" name-style="" auto-routed-paths="false" default-line-style="default" view-location="1662,-261" zoom="0.9">
         <style>
           <background-color index="1" color="#FFFFFFFF" />
           <background-color index="2" color="#FFFFFFFF" />
@@ -247,40 +362,12 @@
           </authors>
           <description />
           <creation-date>09/03/2024 20:49:43</creation-date>
-          <change-date>09/03/2024 22:38:56</change-date>
+          <change-date>09/17/2024 20:27:15</change-date>
           <revision-count>0</revision-count>
           <version />
         </meta>
         <abstract-items>
-          <item id="0e61f2311bb1448dbaef46eca6ba7d06" cid="CPT024" type="component" name="task-detail.component.ts" owner="af28fa198804493bb3d50d691fc243fb" creator="" creation-date="09/03/2024 21:38:09">
-            <stereotypes>
-              <stereotype name="file" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="ca8b4aea4b4b446293202a3d52c3b268" type="file" creation-date="09/03/2024 21:39:37" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="ee86bc59d74b4f41a55ddaf8f143bee9" cid="CPT031" type="component" name="user-create.component.ts" owner="950ac5b575bd49d5969de512ea980341" creator="" creation-date="09/03/2024 22:32:37">
-            <stereotypes>
-              <stereotype name="file" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="2f460e70f2684114a5cf6f30bc770a25" type="file" creation-date="09/03/2024 22:33:53" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="cf294d9b5c0545358bea2ff44d66fc60" cid="CPT020" type="component" name="task-edit" owner="f2043c8aa6bb49dfa954936b58c056e1" creator="" creation-date="09/03/2024 21:35:06">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="cf294d9b5c0545358bea2ff44d66fc60_component_c" type="component" creation-date="09/03/2024 21:35:06" ref="" />
-            </stereotype-instances>
-            <owned-items />
-            <component />
-          </item>
-          <item id="1d84393c398d48fe8987a244a53b9afc" cid="CPT009" type="component" name="event-list.component.ts" owner="7bcf88ae3a974ae28727db99c8e1ee42" creator="" creation-date="09/03/2024 21:21:33">
+          <item id="1d84393c398d48fe8987a244a53b9afc" cid="CPT009" type="component" name="event-list.component.ts" owner="7bcf88ae3a974ae28727db99c8e1ee42" creator="" creation-date="09/03/2024 21:21:33" visibility="undefined">
             <stereotypes>
               <stereotype name="file" />
             </stereotypes>
@@ -289,95 +376,7 @@
             </stereotype-instances>
             <component />
           </item>
-          <item id="675bc67ae5f142898b43f781e4e9da34" cid="CPT003" type="component" name="event" owner="cb87558f58564a83b9407080be6cdef8" creator="" creation-date="09/03/2024 20:51:53">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="675bc67ae5f142898b43f781e4e9da34_component_c" type="component" creation-date="09/03/2024 20:51:53" ref="" />
-            </stereotype-instances>
-            <owned-items />
-            <component />
-          </item>
-          <item id="644b5dc4e4d44355b4d31858a8a0d0df" cid="CPT027" type="component" name="task-edit.component.ts" owner="cf294d9b5c0545358bea2ff44d66fc60" creator="" creation-date="09/03/2024 21:38:56">
-            <stereotypes>
-              <stereotype name="file" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="d20ae4ffdef349788cadfd8de4a1d607" type="file" creation-date="09/03/2024 21:39:33" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="7bcf88ae3a974ae28727db99c8e1ee42" cid="CPT008" type="component" name="event-list" owner="675bc67ae5f142898b43f781e4e9da34" creator="" creation-date="09/03/2024 21:20:00">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="7bcf88ae3a974ae28727db99c8e1ee42_component_c" type="component" creation-date="09/03/2024 21:20:00" ref="" />
-            </stereotype-instances>
-            <owned-items />
-            <component />
-          </item>
-          <item id="4ed6f67cbfed41a1937b2a70d40bd7c2" cid="CPT001" type="component" name="view" creator="" creation-date="09/03/2024 20:50:02">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="4ed6f67cbfed41a1937b2a70d40bd7c2_component_c" type="component" creation-date="09/03/2024 20:50:02" ref="" />
-            </stereotype-instances>
-            <owned-items />
-            <component />
-          </item>
-          <item id="71f62ed44bac4b6a8957f6a0a8478e4e" cid="CPT033" type="component" name="user-edit.component.ts" owner="6f52cf5cf313415dacfe2bc616d149c1" creator="" creation-date="09/03/2024 22:33:57">
-            <stereotypes>
-              <stereotype name="file" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="2a5e559d121d4b6e9acb2d017a19d81a" type="file" creation-date="09/03/2024 22:34:49" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="950ac5b575bd49d5969de512ea980341" cid="CPT029" type="component" name="user-create" owner="52a741ec5f5f42ebb1300601d5029ff9" creator="" creation-date="09/03/2024 21:40:31">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="950ac5b575bd49d5969de512ea980341_component_c" type="component" creation-date="09/03/2024 21:40:31" ref="" />
-            </stereotype-instances>
-            <owned-items />
-            <component />
-          </item>
-          <item id="af28fa198804493bb3d50d691fc243fb" cid="CPT019" type="component" name="task-detail" owner="f2043c8aa6bb49dfa954936b58c056e1" creator="" creation-date="09/03/2024 21:34:42">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="af28fa198804493bb3d50d691fc243fb_component_c" type="component" creation-date="09/03/2024 21:34:42" ref="" />
-            </stereotype-instances>
-            <owned-items />
-            <component />
-          </item>
-          <item id="318875a5722848ab969bee4e6117baaa" cid="CPT006" type="component" name="event-detail" owner="675bc67ae5f142898b43f781e4e9da34" creator="" creation-date="09/03/2024 20:56:38">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="318875a5722848ab969bee4e6117baaa_component_c" type="component" creation-date="09/03/2024 20:56:38" ref="" />
-            </stereotype-instances>
-            <owned-items />
-            <component />
-          </item>
-          <item id="c9562a95227a4a30b73948a96d7f3c5c" cid="CPT004" type="component" name="event-edit" owner="675bc67ae5f142898b43f781e4e9da34" creator="" creation-date="09/03/2024 20:52:27">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="c9562a95227a4a30b73948a96d7f3c5c_component_c" type="component" creation-date="09/03/2024 20:52:27" ref="" />
-            </stereotype-instances>
-            <owned-items />
-            <component />
-          </item>
-          <item id="f2043c8aa6bb49dfa954936b58c056e1" cid="CPT016" type="component" name="task" owner="cb87558f58564a83b9407080be6cdef8" creator="" creation-date="09/03/2024 21:33:53">
+          <item id="f2043c8aa6bb49dfa954936b58c056e1" cid="CPT016" type="component" name="task" owner="cb87558f58564a83b9407080be6cdef8" creator="" creation-date="09/03/2024 21:33:53" visibility="undefined">
             <stereotypes>
               <stereotype name="component" />
             </stereotypes>
@@ -387,156 +386,26 @@
             <owned-items />
             <component />
           </item>
-          <item id="395590eec8e6404eb066df211ab97035" cid="CPT017" type="component" name="task-create" owner="f2043c8aa6bb49dfa954936b58c056e1" creator="" creation-date="09/03/2024 21:34:24">
+          <item id="f9ed05d510014141b1d79c920f30d335" cid="CPT043" type="component" name="sign-in.component.ts" owner="99daae037554405dae115fab52e97363" creation-date="09/17/2024 20:18:20">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="adfe9b1b14674dccab73504649b116dc" type="file" creation-date="09/17/2024 20:18:40" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="b26aeed7d47a4419b59f9367a086e14f" cid="CPT036" type="component" name="help" owner="cb87558f58564a83b9407080be6cdef8" creation-date="09/17/2024 20:14:51">
             <stereotypes>
               <stereotype name="component" />
             </stereotypes>
             <stereotype-instances>
-              <stereotype id="395590eec8e6404eb066df211ab97035_component_c" type="component" creation-date="09/03/2024 21:34:24" ref="" />
+              <stereotype id="b26aeed7d47a4419b59f9367a086e14f_component_c" type="component" creation-date="09/17/2024 20:14:51" ref="" />
             </stereotype-instances>
             <owned-items />
             <component />
           </item>
-          <item id="52a741ec5f5f42ebb1300601d5029ff9" cid="CPT028" type="component" name="user" owner="cb87558f58564a83b9407080be6cdef8" creator="" creation-date="09/03/2024 21:40:14">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="52a741ec5f5f42ebb1300601d5029ff9_component_c" type="component" creation-date="09/03/2024 21:40:14" ref="" />
-            </stereotype-instances>
-            <owned-items />
-            <component />
-          </item>
-          <item id="e4c63f10b98241aea50714a9ced0b57d" cid="CPT018" type="component" name="task-list" owner="f2043c8aa6bb49dfa954936b58c056e1" creator="" creation-date="09/03/2024 21:34:33">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="e4c63f10b98241aea50714a9ced0b57d_component_c" type="component" creation-date="09/03/2024 21:34:33" ref="" />
-            </stereotype-instances>
-            <owned-items />
-            <component />
-          </item>
-          <item id="11c77df06836426ab646cbec4e1dfeee" cid="CPT034" type="component" name="main.component.ts" owner="cb87558f58564a83b9407080be6cdef8" creator="" creation-date="09/03/2024 22:36:51">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="11c77df06836426ab646cbec4e1dfeee_component_c" type="component" creation-date="09/03/2024 22:36:51" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="3e3b158b6546447683ea13d1d724df88" cid="CPT014" type="component" name="scheduling-detail.component.ts" owner="146a3c4ccd3a469485e8ff8f0ff5e10c" creator="" creation-date="09/03/2024 21:24:20">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="3e3b158b6546447683ea13d1d724df88_component_c" type="component" creation-date="09/03/2024 21:24:20" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="c6c5b9e3a23b43a08d7c316440292ddb" cid="CPT021" type="component" name="task-list.component.ts" owner="f2043c8aa6bb49dfa954936b58c056e1" creator="" creation-date="09/03/2024 21:35:21">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="c6c5b9e3a23b43a08d7c316440292ddb_component_c" type="component" creation-date="09/03/2024 21:35:21" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="cb87558f58564a83b9407080be6cdef8" cid="CPT002" type="component" name="app" owner="4ed6f67cbfed41a1937b2a70d40bd7c2" creator="" creation-date="09/03/2024 20:50:38">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="cb87558f58564a83b9407080be6cdef8_component_c" type="component" creation-date="09/03/2024 20:50:38" ref="" />
-            </stereotype-instances>
-            <owned-items />
-            <component />
-          </item>
-          <item id="4a7866f537ea41efb37054e871807c58" cid="CPT012" type="component" name="scheduling-list.component.ts" owner="146a3c4ccd3a469485e8ff8f0ff5e10c" creator="" creation-date="09/03/2024 21:23:37">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="4a7866f537ea41efb37054e871807c58_component_c" type="component" creation-date="09/03/2024 21:23:37" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="7ae948e4fd57411d84599287c1e43449" cid="CPT023" type="component" name="task-list.component.ts" owner="e4c63f10b98241aea50714a9ced0b57d" creator="" creation-date="09/03/2024 21:37:19">
-            <stereotypes>
-              <stereotype name="file" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="4e0700d1de22415bbb71fe0fe852fa39" type="file" creation-date="09/03/2024 21:37:45" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="20c066f7d12643a39e92ecad67ada506" cid="CPT030" type="component" name="user-list.component.ts" owner="c7ed919ca02246dd9472cb71db0c5235" creator="" creation-date="09/03/2024 22:31:59">
-            <stereotypes>
-              <stereotype name="file" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="a1297270755d4874a8148e2a65fcc724" type="file" creation-date="09/03/2024 22:32:33" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="573424d385374413a1a9191fafa700d4" cid="CPT005" type="component" name="event-create.component.ts" owner="c9562a95227a4a30b73948a96d7f3c5c" creator="" creation-date="09/03/2024 20:52:50">
-            <stereotypes>
-              <stereotype name="file" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="f91196ce3883468d9ac6776f8a561668" type="file" creation-date="09/03/2024 20:54:12" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="bda100a593c94c478e0cb9d3e464e2df" cid="CPT011" type="component" name="scheduling-list.component.ts" owner="9def175a0a7f4e94880616c7711a96d9" creator="" creation-date="09/03/2024 21:23:19">
-            <stereotypes>
-              <stereotype name="file" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="66a095e57abb4791a04b11241197ea94" type="file" creation-date="09/03/2024 21:29:20" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="c3a43ce0b8564ab98b738b0bb9fa524f" cid="CPT013" type="component" name="event-list.component.ts" owner="146a3c4ccd3a469485e8ff8f0ff5e10c" creator="" creation-date="09/03/2024 21:23:55">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="c3a43ce0b8564ab98b738b0bb9fa524f_component_c" type="component" creation-date="09/03/2024 21:23:55" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="f4b218a01fb74642b33a0d28a6278f3d" cid="CPT032" type="component" name="user-detail.component.ts" owner="05c58d321acc4fc8b00df51f628734a0" creator="" creation-date="09/03/2024 22:33:20">
-            <stereotypes>
-              <stereotype name="file" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="e426c9d226cf48599ceaf7b7a3273f43" type="file" creation-date="09/03/2024 22:33:49" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="2ce594d97c41474c9565643e02827a02" cid="CPT007" type="component" name="event-detail.component.ts" owner="318875a5722848ab969bee4e6117baaa" creator="" creation-date="09/03/2024 20:57:38">
-            <stereotypes>
-              <stereotype name="file" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="afbc7d8f95014a309b39de620bb3069b" type="file" creation-date="09/03/2024 20:58:14" ref="" />
-            </stereotype-instances>
-            <component />
-          </item>
-          <item id="9def175a0a7f4e94880616c7711a96d9" cid="CPT015" type="component" name="scheduling-list" owner="146a3c4ccd3a469485e8ff8f0ff5e10c" creator="" creation-date="09/03/2024 21:24:50">
-            <stereotypes>
-              <stereotype name="component" />
-            </stereotypes>
-            <stereotype-instances>
-              <stereotype id="9def175a0a7f4e94880616c7711a96d9_component_c" type="component" creation-date="09/03/2024 21:24:50" ref="" />
-            </stereotype-instances>
-            <owned-items />
-            <component />
-          </item>
-          <item id="146a3c4ccd3a469485e8ff8f0ff5e10c" cid="CPT010" type="component" name="sheduling" owner="675bc67ae5f142898b43f781e4e9da34" creator="" creation-date="09/03/2024 21:22:59">
+          <item id="146a3c4ccd3a469485e8ff8f0ff5e10c" cid="CPT010" type="component" name="sheduling" owner="675bc67ae5f142898b43f781e4e9da34" creator="" creation-date="09/03/2024 21:22:59" visibility="undefined">
             <stereotypes>
               <stereotype name="component" />
             </stereotypes>
@@ -546,7 +415,393 @@
             <owned-items />
             <component />
           </item>
-          <item id="c41dc3bcb882413882daced09eb0f346" cid="CPT022" type="component" name="task-create.component.ts" owner="395590eec8e6404eb066df211ab97035" creator="" creation-date="09/03/2024 21:36:28">
+          <item id="89fa9119b63b4cbbb964eb6ae7b04258" cid="CPT050" type="component" name="task" owner="f67a821988b14c3c9e37437052fb0f5f" creation-date="09/17/2024 20:20:45">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="89fa9119b63b4cbbb964eb6ae7b04258_component_c" type="component" creation-date="09/17/2024 20:20:45" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="675bc67ae5f142898b43f781e4e9da34" cid="CPT003" type="component" name="event" owner="cb87558f58564a83b9407080be6cdef8" creator="" creation-date="09/03/2024 20:51:53" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="675bc67ae5f142898b43f781e4e9da34_component_c" type="component" creation-date="09/03/2024 20:51:53" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="eb698499ef07427e87f9a4fab3e7c10f" cid="CPT035" type="component" name="about-us" owner="cb87558f58564a83b9407080be6cdef8" creation-date="09/17/2024 20:13:24">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="eb698499ef07427e87f9a4fab3e7c10f_component_c" type="component" creation-date="09/17/2024 20:13:24" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="e47eaf737f9f497b9f877284e0032494" cid="CPT047" type="component" name="event" owner="f67a821988b14c3c9e37437052fb0f5f" creation-date="09/17/2024 20:20:22">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="e47eaf737f9f497b9f877284e0032494_component_c" type="component" creation-date="09/17/2024 20:20:22" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="4ed6f67cbfed41a1937b2a70d40bd7c2" cid="CPT001" type="component" name="view" creator="" creation-date="09/03/2024 20:50:02" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="4ed6f67cbfed41a1937b2a70d40bd7c2_component_c" type="component" creation-date="09/03/2024 20:50:02" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="7ae948e4fd57411d84599287c1e43449" cid="CPT023" type="component" name="task-list.component.ts" owner="e4c63f10b98241aea50714a9ced0b57d" creator="" creation-date="09/03/2024 21:37:19" visibility="undefined">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="4e0700d1de22415bbb71fe0fe852fa39" type="file" creation-date="09/03/2024 21:37:45" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="c12c1adb99bf409d930bffdd84e75f39" cid="CPT038" type="component" name="main" owner="cb87558f58564a83b9407080be6cdef8" creation-date="09/17/2024 20:15:57">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="c12c1adb99bf409d930bffdd84e75f39_component_c" type="component" creation-date="09/17/2024 20:15:57" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="11c77df06836426ab646cbec4e1dfeee" cid="CPT034" type="component" name="home.component.ts" owner="7e758046c61f495da5e740d376fe852b" creator="" creation-date="09/03/2024 22:36:51" visibility="undefined">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="6b7ad18a29254c76a9efe139f94d420f" type="file" creation-date="09/17/2024 20:15:44" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="e66a63b21f6744c4aa24ea82eb12ad5d" cid="CPT054" type="component" name="event-delete.service.ts" owner="e47eaf737f9f497b9f877284e0032494" creation-date="09/17/2024 20:21:52">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="d0678ba1a7344d35959bf4a0a3e266c2" type="file" creation-date="09/17/2024 20:22:00" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="7bcf88ae3a974ae28727db99c8e1ee42" cid="CPT008" type="component" name="event-list" owner="675bc67ae5f142898b43f781e4e9da34" creator="" creation-date="09/03/2024 21:20:00" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="7bcf88ae3a974ae28727db99c8e1ee42_component_c" type="component" creation-date="09/03/2024 21:20:00" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="a96a177ae297436494a2eb886002d3dc" cid="CPT048" type="component" name="scheduling" owner="f67a821988b14c3c9e37437052fb0f5f" creation-date="09/17/2024 20:20:27">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="a96a177ae297436494a2eb886002d3dc_component_c" type="component" creation-date="09/17/2024 20:20:27" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="7fbbc8d95ca547d1b9f2178ee492f4a4" cid="CPT044" type="component" name="not-found" owner="4ed6f67cbfed41a1937b2a70d40bd7c2" creation-date="09/17/2024 20:18:50">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="7fbbc8d95ca547d1b9f2178ee492f4a4_component_c" type="component" creation-date="09/17/2024 20:18:50" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <operations>
+              <operation id="of4b2597fbbfb4f80952c36ed00387575811" cid="OP001" name="NewOperation1" creation-date="09/17/2024 20:19:13" type="" type-id="" visibility="public" />
+            </operations>
+            <component />
+          </item>
+          <item id="e4c63f10b98241aea50714a9ced0b57d" cid="CPT018" type="component" name="task-list" owner="f2043c8aa6bb49dfa954936b58c056e1" creator="" creation-date="09/03/2024 21:34:33" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="e4c63f10b98241aea50714a9ced0b57d_component_c" type="component" creation-date="09/03/2024 21:34:33" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="97ddf065814b43bb8cb4b700b1b725f6" cid="CPT052" type="component" name="authentication.service.ts" owner="f67a821988b14c3c9e37437052fb0f5f" creation-date="09/17/2024 20:21:02">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="9653386bf3ab46588d15b2827e4a2678" type="file" creation-date="09/17/2024 20:21:09" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="70fdddc45d9b4e5faefaddab0d176a19" cid="CPT055" type="component" name="event-read.service.ts" owner="f67a821988b14c3c9e37437052fb0f5f" creation-date="09/17/2024 20:22:16">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="fcf7b07d6dce458a8331e0e81c8d6c3b" type="file" creation-date="09/17/2024 20:22:28" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="c5a92ee4001f4a859114497ba6d77bf0" cid="CPT039" type="component" name="account" owner="4ed6f67cbfed41a1937b2a70d40bd7c2" creation-date="09/17/2024 20:16:36">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="c5a92ee4001f4a859114497ba6d77bf0_component_c" type="component" creation-date="09/17/2024 20:16:36" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="71f62ed44bac4b6a8957f6a0a8478e4e" cid="CPT033" type="component" name="user-edit.component.ts" owner="6f52cf5cf313415dacfe2bc616d149c1" creator="" creation-date="09/03/2024 22:33:57" visibility="undefined">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="2a5e559d121d4b6e9acb2d017a19d81a" type="file" creation-date="09/03/2024 22:34:49" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="c9562a95227a4a30b73948a96d7f3c5c" cid="CPT004" type="component" name="event-edit" owner="675bc67ae5f142898b43f781e4e9da34" creator="" creation-date="09/03/2024 20:52:27" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="c9562a95227a4a30b73948a96d7f3c5c_component_c" type="component" creation-date="09/03/2024 20:52:27" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="ee86bc59d74b4f41a55ddaf8f143bee9" cid="CPT031" type="component" name="user-create.component.ts" owner="950ac5b575bd49d5969de512ea980341" creator="" creation-date="09/03/2024 22:32:37" visibility="undefined">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="2f460e70f2684114a5cf6f30bc770a25" type="file" creation-date="09/03/2024 22:33:53" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="31058dc9272642d685c9264796a872ba" cid="CPT051" type="component" name="user" owner="f67a821988b14c3c9e37437052fb0f5f" creation-date="09/17/2024 20:20:51">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="31058dc9272642d685c9264796a872ba_component_c" type="component" creation-date="09/17/2024 20:20:51" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="2547f08438c6409892801652265f78e8" cid="CPT040" type="component" name="my-profile" owner="c5a92ee4001f4a859114497ba6d77bf0" creation-date="09/17/2024 20:16:50">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="2547f08438c6409892801652265f78e8_component_c" type="component" creation-date="09/17/2024 20:16:50" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="52a741ec5f5f42ebb1300601d5029ff9" cid="CPT028" type="component" name="user" owner="cb87558f58564a83b9407080be6cdef8" creator="" creation-date="09/03/2024 21:40:14" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="52a741ec5f5f42ebb1300601d5029ff9_component_c" type="component" creation-date="09/03/2024 21:40:14" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="573424d385374413a1a9191fafa700d4" cid="CPT005" type="component" name="event-create.component.ts" owner="c9562a95227a4a30b73948a96d7f3c5c" creator="" creation-date="09/03/2024 20:52:50" visibility="undefined">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="f91196ce3883468d9ac6776f8a561668" type="file" creation-date="09/03/2024 20:54:12" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="6487b0ac20714e54aade15676c5b5aa0" cid="CPT056" type="component" name="event-update.service.ts" owner="f67a821988b14c3c9e37437052fb0f5f" creation-date="09/17/2024 20:22:36">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="fc1ce02cd7a04390a01cb60bde0da7bb" type="file" creation-date="09/17/2024 20:22:51" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="f67a821988b14c3c9e37437052fb0f5f" cid="CPT046" type="component" name="services" creation-date="09/17/2024 20:20:03">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="f67a821988b14c3c9e37437052fb0f5f_component_c" type="component" creation-date="09/17/2024 20:20:03" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="f037ed90e2d945718aebf9ee180424ac" cid="CPT045" type="component" name="not-found.component.ts" owner="7fbbc8d95ca547d1b9f2178ee492f4a4" creation-date="09/17/2024 20:19:02">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="35093d35fffd42f382fbbf47487f92a1" type="file" creation-date="09/17/2024 20:19:41" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="bda100a593c94c478e0cb9d3e464e2df" cid="CPT011" type="component" name="scheduling-list.component.ts" owner="9def175a0a7f4e94880616c7711a96d9" creator="" creation-date="09/03/2024 21:23:19" visibility="undefined">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="66a095e57abb4791a04b11241197ea94" type="file" creation-date="09/03/2024 21:29:20" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="318875a5722848ab969bee4e6117baaa" cid="CPT006" type="component" name="event-detail" owner="675bc67ae5f142898b43f781e4e9da34" creator="" creation-date="09/03/2024 20:56:38" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="318875a5722848ab969bee4e6117baaa_component_c" type="component" creation-date="09/03/2024 20:56:38" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="f4b218a01fb74642b33a0d28a6278f3d" cid="CPT032" type="component" name="user-detail.component.ts" owner="05c58d321acc4fc8b00df51f628734a0" creator="" creation-date="09/03/2024 22:33:20" visibility="undefined">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="e426c9d226cf48599ceaf7b7a3273f43" type="file" creation-date="09/03/2024 22:33:49" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="7e758046c61f495da5e740d376fe852b" cid="CPT037" type="component" name="home" owner="cb87558f58564a83b9407080be6cdef8" creation-date="09/17/2024 20:15:27">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="7e758046c61f495da5e740d376fe852b_component_c" type="component" creation-date="09/17/2024 20:15:27" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="9def175a0a7f4e94880616c7711a96d9" cid="CPT015" type="component" name="scheduling-list" owner="146a3c4ccd3a469485e8ff8f0ff5e10c" creator="" creation-date="09/03/2024 21:24:50" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="9def175a0a7f4e94880616c7711a96d9_component_c" type="component" creation-date="09/03/2024 21:24:50" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="4d51b86160d04eb0b5a619554d71b90c" cid="CPT049" type="component" name="security" owner="f67a821988b14c3c9e37437052fb0f5f" creation-date="09/17/2024 20:20:38">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="4d51b86160d04eb0b5a619554d71b90c_component_c" type="component" creation-date="09/17/2024 20:20:38" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="644b5dc4e4d44355b4d31858a8a0d0df" cid="CPT027" type="component" name="task-edit.component.ts" owner="cf294d9b5c0545358bea2ff44d66fc60" creator="" creation-date="09/03/2024 21:38:56" visibility="undefined">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="d20ae4ffdef349788cadfd8de4a1d607" type="file" creation-date="09/03/2024 21:39:33" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="4a7866f537ea41efb37054e871807c58" cid="CPT012" type="component" name="scheduling-list.component.ts" owner="146a3c4ccd3a469485e8ff8f0ff5e10c" creator="" creation-date="09/03/2024 21:23:37" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="4a7866f537ea41efb37054e871807c58_component_c" type="component" creation-date="09/03/2024 21:23:37" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="395590eec8e6404eb066df211ab97035" cid="CPT017" type="component" name="task-create" owner="f2043c8aa6bb49dfa954936b58c056e1" creator="" creation-date="09/03/2024 21:34:24" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="395590eec8e6404eb066df211ab97035_component_c" type="component" creation-date="09/03/2024 21:34:24" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="20c066f7d12643a39e92ecad67ada506" cid="CPT030" type="component" name="user-list.component.ts" owner="c7ed919ca02246dd9472cb71db0c5235" creator="" creation-date="09/03/2024 22:31:59" visibility="undefined">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="a1297270755d4874a8148e2a65fcc724" type="file" creation-date="09/03/2024 22:32:33" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="2ce594d97c41474c9565643e02827a02" cid="CPT007" type="component" name="event-detail.component.ts" owner="318875a5722848ab969bee4e6117baaa" creator="" creation-date="09/03/2024 20:57:38" visibility="undefined">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="afbc7d8f95014a309b39de620bb3069b" type="file" creation-date="09/03/2024 20:58:14" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="99daae037554405dae115fab52e97363" cid="CPT041" type="component" name="sign-in" owner="c5a92ee4001f4a859114497ba6d77bf0" creation-date="09/17/2024 20:17:01">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="99daae037554405dae115fab52e97363_component_c" type="component" creation-date="09/17/2024 20:17:01" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="3e3b158b6546447683ea13d1d724df88" cid="CPT014" type="component" name="scheduling-detail.component.ts" owner="146a3c4ccd3a469485e8ff8f0ff5e10c" creator="" creation-date="09/03/2024 21:24:20" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="3e3b158b6546447683ea13d1d724df88_component_c" type="component" creation-date="09/03/2024 21:24:20" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="cf294d9b5c0545358bea2ff44d66fc60" cid="CPT020" type="component" name="task-edit" owner="f2043c8aa6bb49dfa954936b58c056e1" creator="" creation-date="09/03/2024 21:35:06" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="cf294d9b5c0545358bea2ff44d66fc60_component_c" type="component" creation-date="09/03/2024 21:35:06" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="c41dc3bcb882413882daced09eb0f346" cid="CPT022" type="component" name="task-create.component.ts" owner="395590eec8e6404eb066df211ab97035" creator="" creation-date="09/03/2024 21:36:28" visibility="undefined">
             <stereotypes>
               <stereotype name="file" />
             </stereotypes>
@@ -555,34 +810,139 @@
             </stereotype-instances>
             <component />
           </item>
+          <item id="d8ec4111aac043b293fb63990bd9030a" cid="CPT053" type="component" name="event-create.service.ts" owner="e47eaf737f9f497b9f877284e0032494" creation-date="09/17/2024 20:21:34">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="029503ceb99b45478f6037a531bc0bc4" type="file" creation-date="09/17/2024 20:21:48" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="0e61f2311bb1448dbaef46eca6ba7d06" cid="CPT024" type="component" name="task-detail.component.ts" owner="af28fa198804493bb3d50d691fc243fb" creator="" creation-date="09/03/2024 21:38:09" visibility="undefined">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="ca8b4aea4b4b446293202a3d52c3b268" type="file" creation-date="09/03/2024 21:39:37" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="df53dda9e7954da69081b35cb95ae2ee" cid="CPT042" type="component" name="my-profile.component.ts" owner="2547f08438c6409892801652265f78e8" creation-date="09/17/2024 20:17:21">
+            <stereotypes>
+              <stereotype name="file" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="de6fc5a181f74490a2006d47a7415615" type="file" creation-date="09/17/2024 20:18:04" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="c6c5b9e3a23b43a08d7c316440292ddb" cid="CPT021" type="component" name="task-list.component.ts" owner="f2043c8aa6bb49dfa954936b58c056e1" creator="" creation-date="09/03/2024 21:35:21" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="c6c5b9e3a23b43a08d7c316440292ddb_component_c" type="component" creation-date="09/03/2024 21:35:21" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="af28fa198804493bb3d50d691fc243fb" cid="CPT019" type="component" name="task-detail" owner="f2043c8aa6bb49dfa954936b58c056e1" creator="" creation-date="09/03/2024 21:34:42" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="af28fa198804493bb3d50d691fc243fb_component_c" type="component" creation-date="09/03/2024 21:34:42" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="c3a43ce0b8564ab98b738b0bb9fa524f" cid="CPT013" type="component" name="event-list.component.ts" owner="146a3c4ccd3a469485e8ff8f0ff5e10c" creator="" creation-date="09/03/2024 21:23:55" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="c3a43ce0b8564ab98b738b0bb9fa524f_component_c" type="component" creation-date="09/03/2024 21:23:55" ref="" />
+            </stereotype-instances>
+            <component />
+          </item>
+          <item id="cb87558f58564a83b9407080be6cdef8" cid="CPT002" type="component" name="app" owner="4ed6f67cbfed41a1937b2a70d40bd7c2" creator="" creation-date="09/03/2024 20:50:38" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="cb87558f58564a83b9407080be6cdef8_component_c" type="component" creation-date="09/03/2024 20:50:38" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
+          <item id="950ac5b575bd49d5969de512ea980341" cid="CPT029" type="component" name="user-create" owner="52a741ec5f5f42ebb1300601d5029ff9" creator="" creation-date="09/03/2024 21:40:31" visibility="undefined">
+            <stereotypes>
+              <stereotype name="component" />
+            </stereotypes>
+            <stereotype-instances>
+              <stereotype id="950ac5b575bd49d5969de512ea980341_component_c" type="component" creation-date="09/03/2024 21:40:31" ref="" />
+            </stereotype-instances>
+            <owned-items />
+            <component />
+          </item>
         </abstract-items>
         <layer id="b0f1d1d9ede94b12ab4bdf1ac1ee4d43" name="Default" visible="true" enabled="true" locked="false">
           <item id="4ed6f67cbfed41a1937b2a70d40bd7c2" iid="302739c3e1cc4658ba764a857c3b6455" show-fields="false" creation-date="09/03/2024 20:50:02" order-index="0" type="entity">
-            <layout ax="-446" ay="-193" awidth="1749" aheight="1762" x="183" y="54" width="1749" height="1762" expanded="-446,-193,1749,1762" collapsed="0,0,0,0" />
+            <layout ax="-446" ay="-193" awidth="2439" aheight="1230" x="183" y="54" width="2439" height="1230" expanded="-446,-193,2439,1230" collapsed="0,0,0,0" />
+          </item>
+          <item id="c5a92ee4001f4a859114497ba6d77bf0" iid="2ed7c2d875d74dd3a124d33a5b2dc55d" container="4ed6f67cbfed41a1937b2a70d40bd7c2" container-iid="302739c3e1cc4658ba764a857c3b6455" show-fields="false" creation-date="09/17/2024 20:16:36" order-index="34" type="entity">
+            <layout ax="1506" ay="-76" awidth="449" aheight="304" x="1506" y="-76" width="449" height="304" expanded="1506,-76,449,304" collapsed="0,0,0,0" />
+          </item>
+          <item id="7fbbc8d95ca547d1b9f2178ee492f4a4" iid="a4c3c544fdb94f6892fae4b7d4aa4e10" container="4ed6f67cbfed41a1937b2a70d40bd7c2" container-iid="302739c3e1cc4658ba764a857c3b6455" show-fields="false" creation-date="09/17/2024 20:18:50" order-index="39" type="entity">
+            <layout ax="1506" ay="248" awidth="260" aheight="157" x="1506" y="248" width="260" height="157" expanded="1506,248,260,157" collapsed="0,0,0,0" />
           </item>
           <item id="cb87558f58564a83b9407080be6cdef8" iid="e5dd1f2b11014ae0bd6c0c3f989b9079" container="4ed6f67cbfed41a1937b2a70d40bd7c2" container-iid="302739c3e1cc4658ba764a857c3b6455" show-fields="false" creation-date="09/03/2024 20:50:38" order-index="1" type="entity">
-            <layout ax="-394" ay="-76" awidth="1654" aheight="1580" x="235" y="171" width="1654" height="1580" expanded="-394,-76,1654,1580" collapsed="0,0,0,0" />
+            <layout ax="-394" ay="-76" awidth="1879" aheight="1060" x="235" y="171" width="1879" height="1060" expanded="-394,-76,1879,1060" collapsed="0,0,0,0" />
+          </item>
+          <item id="f037ed90e2d945718aebf9ee180424ac" iid="bc2b2f0460ca45c4aa146655a1d55b05" container="7fbbc8d95ca547d1b9f2178ee492f4a4" container-iid="a4c3c544fdb94f6892fae4b7d4aa4e10" show-fields="false" creation-date="09/17/2024 20:19:02" order-index="40" type="entity">
+            <layout ax="1531" ay="312.5" awidth="210" aheight="67" x="1668" y="312.5" width="210" height="67" expanded="1531,312.5,210,67" collapsed="0,0,0,0" />
+          </item>
+          <item id="99daae037554405dae115fab52e97363" iid="53d781b47f0b4af48975c0209b987007" container="c5a92ee4001f4a859114497ba6d77bf0" container-iid="2ed7c2d875d74dd3a124d33a5b2dc55d" show-fields="false" creation-date="09/17/2024 20:17:01" order-index="36" type="entity">
+            <layout ax="1744.5" ay="34.625" awidth="186" aheight="148.625" x="1744.5" y="34.625" width="186" height="148.625" expanded="1744.5,34.625,186,148.625" collapsed="0,0,0,0" />
+          </item>
+          <item id="2547f08438c6409892801652265f78e8" iid="90d6786dcd4348dba083c175a459c35f" container="c5a92ee4001f4a859114497ba6d77bf0" container-iid="2ed7c2d875d74dd3a124d33a5b2dc55d" show-fields="false" creation-date="09/17/2024 20:16:50" order-index="35" type="entity">
+            <layout ax="1520" ay="33.375" awidth="210.5" aheight="149.875" x="1520" y="33.375" width="210.5" height="149.875" expanded="1520,33.375,210.5,149.875" collapsed="0,0,0,0" />
+          </item>
+          <item id="f9ed05d510014141b1d79c920f30d335" iid="22438a35840e4c66abf3e98a12639fe1" container="99daae037554405dae115fab52e97363" container-iid="53d781b47f0b4af48975c0209b987007" show-fields="false" creation-date="09/17/2024 20:18:20" order-index="38" type="entity">
+            <layout ax="1757.5" ay="101" awidth="163" aheight="64" x="1757.5" y="101" width="163" height="64" expanded="1757.5,101,163,64" collapsed="0,0,0,0" />
           </item>
           <item id="f2043c8aa6bb49dfa954936b58c056e1" iid="4031167202094415a02df21aebd4b9f9" container="cb87558f58564a83b9407080be6cdef8" container-iid="e5dd1f2b11014ae0bd6c0c3f989b9079" show-fields="false" creation-date="09/03/2024 21:33:53" order-index="14" type="entity">
             <layout ax="502" ay="45" awidth="479" aheight="429" x="502" y="45" width="479" height="429" expanded="502,45,479,429" collapsed="0,0,0,0" />
           </item>
+          <item id="df53dda9e7954da69081b35cb95ae2ee" iid="f338f8a6dae64565a2ba3d89688a1cec" container="2547f08438c6409892801652265f78e8" container-iid="90d6786dcd4348dba083c175a459c35f" show-fields="false" creation-date="09/17/2024 20:17:21" order-index="37" type="entity">
+            <layout ax="1530" ay="96.875" awidth="186" aheight="64" x="1530" y="75.5" width="186" height="64" expanded="1530,96.875,186,64" collapsed="0,0,0,0" />
+          </item>
           <item id="52a741ec5f5f42ebb1300601d5029ff9" iid="24b77d3a6ee64b98b106293a06e2166b" container="cb87558f58564a83b9407080be6cdef8" container-iid="e5dd1f2b11014ae0bd6c0c3f989b9079" show-fields="false" creation-date="09/03/2024 21:40:14" order-index="23" type="entity">
             <layout ax="502" ay="506" awidth="479" aheight="429" x="502" y="506" width="479" height="429" expanded="502,506,479,429" collapsed="0,0,0,0" />
           </item>
-          <item id="11c77df06836426ab646cbec4e1dfeee" iid="e2f632d4bf9c4776aeb232931d9ca691" container="cb87558f58564a83b9407080be6cdef8" container-iid="e5dd1f2b11014ae0bd6c0c3f989b9079" show-fields="false" creation-date="09/03/2024 22:36:51" order-index="29" type="entity">
-            <layout ax="-317" ay="989" awidth="237" aheight="90" x="-317" y="989" width="227" height="80" expanded="-317,989,237,90" collapsed="0,0,0,0" />
+          <item id="eb698499ef07427e87f9a4fab3e7c10f" iid="5a89589261b247ae8b955cd07ec507d3" container="cb87558f58564a83b9407080be6cdef8" container-iid="e5dd1f2b11014ae0bd6c0c3f989b9079" show-fields="false" creation-date="09/17/2024 20:13:24" order-index="30" type="entity">
+            <layout ax="1021" ay="45" awidth="211" aheight="160" x="1021" y="45" width="211" height="160" expanded="1021,45,211,160" collapsed="0,0,0,0" />
           </item>
-          <item id="80308dc9b59244b999e3835ab76509fa" iid="adda574c2a5741938ac4ee32ad331ec1" show-fields="false" creation-date="09/03/2024 22:36:51" order-index="0" type="entity">
-            <layout ax="-39" ay="994" awidth="227" aheight="80" x="-39" y="994" width="227" height="80" expanded="-39,994,227,80" collapsed="0,0,0,0" />
+          <item id="09bbe900660d47cba975bccfafc954c7" iid="40cd79a469454cb6aa5dfa8d74ef6900" container="eb698499ef07427e87f9a4fab3e7c10f" container-iid="5a89589261b247ae8b955cd07ec507d3" show-fields="false" creation-date="09/03/2024 22:36:51" order-index="0" type="entity">
+            <layout ax="1040" ay="120" awidth="173" aheight="64" x="1040" y="120" width="173" height="64" expanded="1040,120,173,64" collapsed="0,0,0,0" />
           </item>
-          <item id="ad132645f05c4f268a884abf0fab66a1" iid="474e9e7db4884044833c30f921579117" container="cb87558f58564a83b9407080be6cdef8" container-iid="e5dd1f2b11014ae0bd6c0c3f989b9079" show-fields="false" creation-date="09/03/2024 22:36:51" order-index="0" type="entity">
-            <layout ax="229" ay="994" awidth="237" aheight="90" x="229" y="994" width="227" height="80" expanded="229,994,237,90" collapsed="0,0,0,0" />
+          <item id="b26aeed7d47a4419b59f9367a086e14f" iid="7a8ba54fd9714545a51ad64e9353d0ec" container="cb87558f58564a83b9407080be6cdef8" container-iid="e5dd1f2b11014ae0bd6c0c3f989b9079" show-fields="false" creation-date="09/17/2024 20:14:51" order-index="31" type="entity">
+            <layout ax="1250" ay="45" awidth="201" aheight="160" x="1250" y="45" width="201" height="160" expanded="1250,45,201,160" collapsed="0,0,0,0" />
           </item>
-          <item id="09bbe900660d47cba975bccfafc954c7" iid="40cd79a469454cb6aa5dfa8d74ef6900" show-fields="false" creation-date="09/03/2024 22:36:51" order-index="0" type="entity">
-            <layout ax="501.5" ay="994" awidth="227" aheight="90" x="501.5" y="994" width="227" height="90" expanded="501.5,994,227,90" collapsed="0,0,0,0" />
+          <item id="ad132645f05c4f268a884abf0fab66a1" iid="474e9e7db4884044833c30f921579117" container="b26aeed7d47a4419b59f9367a086e14f" container-iid="7a8ba54fd9714545a51ad64e9353d0ec" show-fields="false" creation-date="09/03/2024 22:36:51" order-index="0" type="entity">
+            <layout ax="1264" ay="120" awidth="173" aheight="64" x="1264" y="120" width="173" height="64" expanded="1264,120,173,64" collapsed="0,0,0,0" />
           </item>
-          <item id="c30e625d20f24fdb93a4a8e2070a9d6c" iid="41600ddc01c54a4da6399e91c16c580a" container="cb87558f58564a83b9407080be6cdef8" container-iid="e5dd1f2b11014ae0bd6c0c3f989b9079" show-fields="false" creation-date="09/03/2024 22:36:51" order-index="0" type="entity">
-            <layout ax="783.5" ay="996.5" awidth="227" aheight="85" x="783.5" y="996.5" width="227" height="85" expanded="783.5,996.5,227,85" collapsed="0,0,0,0" />
+          <item id="7e758046c61f495da5e740d376fe852b" iid="d962c6f1467743c9b7b7fead2bf84b4a" container="cb87558f58564a83b9407080be6cdef8" container-iid="e5dd1f2b11014ae0bd6c0c3f989b9079" show-fields="false" creation-date="09/17/2024 20:15:27" order-index="32" type="entity">
+            <layout ax="1021" ay="246" awidth="211" aheight="161" x="1021" y="246" width="211" height="160" expanded="1021,246,211,161" collapsed="0,0,0,0" />
+          </item>
+          <item id="11c77df06836426ab646cbec4e1dfeee" iid="e2f632d4bf9c4776aeb232931d9ca691" container="7e758046c61f495da5e740d376fe852b" container-iid="d962c6f1467743c9b7b7fead2bf84b4a" show-fields="false" creation-date="09/03/2024 22:36:51" order-index="29" type="entity">
+            <layout ax="1040" ay="311" awidth="173" aheight="70" x="1040" y="311" width="173" height="70" expanded="1040,311,173,70" collapsed="0,0,0,0" />
+          </item>
+          <item id="c12c1adb99bf409d930bffdd84e75f39" iid="4be487801be947afaf5f6bdc5c90eb31" container="cb87558f58564a83b9407080be6cdef8" container-iid="e5dd1f2b11014ae0bd6c0c3f989b9079" show-fields="false" creation-date="09/17/2024 20:15:57" order-index="33" type="entity">
+            <layout ax="1250" ay="246" awidth="201" aheight="161" x="1250" y="246" width="201" height="160" expanded="1250,246,201,161" collapsed="0,0,0,0" />
+          </item>
+          <item id="c30e625d20f24fdb93a4a8e2070a9d6c" iid="41600ddc01c54a4da6399e91c16c580a" container="c12c1adb99bf409d930bffdd84e75f39" container-iid="4be487801be947afaf5f6bdc5c90eb31" show-fields="false" creation-date="09/03/2024 22:36:51" order-index="0" type="entity">
+            <layout ax="1277.75" ay="314" awidth="145.5" aheight="64" x="1277.75" y="314" width="145.5" height="64" expanded="1277.75,314,145.5,64" collapsed="0,0,0,0" />
           </item>
           <item id="675bc67ae5f142898b43f781e4e9da34" iid="790005b7177a45ec9d1e237c3d86dc13" container="cb87558f58564a83b9407080be6cdef8" container-iid="e5dd1f2b11014ae0bd6c0c3f989b9079" show-fields="false" creation-date="09/03/2024 20:51:53" order-index="2" type="entity">
             <layout ax="-317" ay="45" awidth="709" aheight="890" x="-317" y="45" width="709" height="890" expanded="-317,45,709,890" collapsed="0,0,0,0" />
@@ -603,7 +963,7 @@
             <layout ax="527" ay="836" awidth="201.5" aheight="45" x="527" y="836" width="201.5" height="45" expanded="527,836,201.5,45" collapsed="0,0,0,0" />
           </item>
           <item id="c7ed919ca02246dd9472cb71db0c5235" iid="1d711c218c744ef4b7342da8533c093b" container="52a741ec5f5f42ebb1300601d5029ff9" container-iid="24b77d3a6ee64b98b106293a06e2166b" show-fields="false" creation-date="09/03/2024 21:40:31" order-index="0" type="entity">
-            <layout ax="757" ay="572" awidth="208" aheight="149" x="757" y="572" width="198" height="149" expanded="767,572,208,149" collapsed="0,0,0,0" />
+            <layout ax="757" ay="572" awidth="208" aheight="149" x="757" y="572" width="198" height="149" expanded="757,572,208,149" collapsed="0,0,0,0" />
           </item>
           <item id="ee86bc59d74b4f41a55ddaf8f143bee9" iid="e12f5ec4302b40c9a19d44445bed0f09" container="950ac5b575bd49d5969de512ea980341" container-iid="b992bb29dd3945858ef7938945f6109a" show-fields="false" creation-date="09/03/2024 22:32:37" order-index="26" type="entity">
             <layout ax="527" ay="643" awidth="201.5" aheight="64" x="527" y="643" width="201.5" height="64" expanded="527,643,201.5,64" collapsed="0,0,0,0" />
@@ -618,7 +978,7 @@
             <layout ax="514" ay="301" awidth="227.5" aheight="160" x="514" y="301" width="227.5" height="160" expanded="514,301,227.5,160" collapsed="0,0,0,0" />
           </item>
           <item id="0e61f2311bb1448dbaef46eca6ba7d06" iid="db4d5804c2b24a2097f37babbb82e3d9" container="af28fa198804493bb3d50d691fc243fb" container-iid="a1527fada5424078af41fe8e405b4164" show-fields="false" creation-date="09/03/2024 21:38:09" order-index="21" type="entity">
-            <layout ax="527" ay="371" awidth="201.5" aheight="67" x="527" y="371" width="201.5" height="67" expanded="527,381,201.5,67" collapsed="0,0,0,0" />
+            <layout ax="527" ay="371" awidth="201.5" aheight="67" x="527" y="371" width="201.5" height="67" expanded="527,371,201.5,67" collapsed="0,0,0,0" />
           </item>
           <item id="7ae948e4fd57411d84599287c1e43449" iid="577795b843e449f68a7166f619d543cb" container="e4c63f10b98241aea50714a9ced0b57d" container-iid="aa09c45810334e26b50d047f3cc285db" show-fields="false" creation-date="09/03/2024 21:37:19" order-index="20" type="entity">
             <layout ax="783.5" ay="183.25" awidth="175" aheight="62.5" x="783.5" y="183.25" width="175" height="62.5" expanded="783.5,183.25,175,62.5" collapsed="0,0,0,0" />
@@ -648,10 +1008,10 @@
             <layout ax="-255.5" ay="184" awidth="245.25" aheight="61" x="-255.5" y="184" width="245.25" height="61" expanded="-255.5,184,245.25,61" collapsed="0,0,0,0" />
           </item>
           <item id="2ce594d97c41474c9565643e02827a02" iid="e1d06d01e2354c53965dab7e6f68be56" container="318875a5722848ab969bee4e6117baaa" container-iid="8356c73017854dd7a5193333f4f27349" show-fields="false" creation-date="09/03/2024 20:57:38" order-index="5" type="entity">
-            <layout ax="110.8125" ay="355" awidth="224" aheight="52" x="-169.5" y="373" width="224" height="52" expanded="100.8125,355,224,52" collapsed="0,0,0,0" />
+            <layout ax="110.8125" ay="355" awidth="224" aheight="52" x="-169.5" y="373" width="224" height="52" expanded="110.8125,355,224,52" collapsed="0,0,0,0" />
           </item>
           <item id="a1bbfb6b5e384a408c567194a3298617" iid="cc2c0efa819c4cac942544f72de69527" container="c9562a95227a4a30b73948a96d7f3c5c" container-iid="775bccbd5629421394d1407e6cc66032" show-fields="false" creation-date="09/03/2024 20:52:50" order-index="0" type="entity">
-            <layout ax="-252.25" ay="349" awidth="242" aheight="64" x="-252.25" y="349" width="242" height="64.5" expanded="-252.25,359,242,64" collapsed="0,0,0,0" />
+            <layout ax="-252.25" ay="349" awidth="242" aheight="64" x="-252.25" y="349" width="242" height="64.5" expanded="-252.25,349,242,64" collapsed="0,0,0,0" />
           </item>
           <item id="146a3c4ccd3a469485e8ff8f0ff5e10c" iid="7ac721e960f9499db3ad0b8b2815f980" container="675bc67ae5f142898b43f781e4e9da34" container-iid="790005b7177a45ec9d1e237c3d86dc13" show-fields="false" creation-date="09/03/2024 21:22:59" order-index="8" type="entity">
             <layout ax="-278" ay="474" awidth="638.5" aheight="429" x="-200" y="528" width="638.25" height="429" expanded="-278,474,638.5,429" collapsed="0,0,0,0" />
@@ -663,7 +1023,7 @@
             <layout ax="-256.25" ay="539" awidth="294.75" aheight="160" x="-255.5" y="539" width="294.75" height="160" expanded="-256.25,539,294.75,160" collapsed="0,0,0,0" />
           </item>
           <item id="d37ea09f0921492a9a24a88f03a1e04e" iid="b5fe1daafca3490989f070d2bbbeafb8" container="2257adbc0421413abdbf0c189a9da6cf" container-iid="ccb3b32425de4c91a3498cd0d16af3ad" show-fields="false" creation-date="09/03/2024 20:52:50" order-index="1" type="entity">
-            <layout ax="110.75" ay="184" awidth="224" aheight="61" x="122.75" y="184" width="214" height="61" expanded="100.75,184,224,61" collapsed="0,0,0,0" />
+            <layout ax="110.75" ay="184" awidth="224" aheight="61" x="122.75" y="184" width="214" height="61" expanded="110.75,184,224,61" collapsed="0,0,0,0" />
           </item>
           <item id="bda100a593c94c478e0cb9d3e464e2df" iid="1d8469e4b42f41e5baeafc6ec567b0c1" container="9def175a0a7f4e94880616c7711a96d9" container-iid="a71cbb8ebb7449329372d4b6977155da" show-fields="false" creation-date="09/03/2024 21:23:19" order-index="9" type="entity">
             <layout ax="-235.75" ay="603" awidth="259.5" aheight="64" x="-235" y="603" width="259.5" height="64" expanded="-235.75,603,259.5,64" collapsed="0,0,0,0" />
@@ -685,6 +1045,78 @@
           </item>
           <item id="3cdcb9bfd29240a0afdf3118d6f24486" iid="558cfe6edd8e4bfda5d67307f40fc288" container="a4f6d114dec04e5ba786de0464dd07df" container-iid="00317e36a32341fba8efc2a1b999c6ca" show-fields="false" creation-date="09/03/2024 21:23:19" order-index="1" type="entity">
             <layout ax="-236.125" ay="795" awidth="260" aheight="64" x="-235.125" y="815" width="259.5" height="64" expanded="-236.125,795,260,64" collapsed="0,0,0,0" />
+          </item>
+          <item id="f67a821988b14c3c9e37437052fb0f5f" iid="fa6a0af03f3149a4a5e9b11f5ea520b4" show-fields="false" creation-date="09/17/2024 20:20:03" order-index="41" type="entity">
+            <layout ax="2018" ay="-186" awidth="797" aheight="748" x="2018" y="-186" width="797" height="748" expanded="2018,-186,797,748" collapsed="0,0,0,0" />
+          </item>
+          <item id="e47eaf737f9f497b9f877284e0032494" iid="8f7359829ede40359add8d58e4c0ea8d" container="f67a821988b14c3c9e37437052fb0f5f" container-iid="fa6a0af03f3149a4a5e9b11f5ea520b4" show-fields="false" creation-date="09/17/2024 20:20:22" order-index="42" type="entity">
+            <layout ax="2034" ay="-115" awidth="248" aheight="320" x="2034" y="-115" width="248" height="320" expanded="2034,-115,248,320" collapsed="0,0,0,0" />
+          </item>
+          <item id="4d51b86160d04eb0b5a619554d71b90c" iid="fea3e6ba5aa74c20b193cdbec849a0f4" container="f67a821988b14c3c9e37437052fb0f5f" container-iid="fa6a0af03f3149a4a5e9b11f5ea520b4" show-fields="false" creation-date="09/17/2024 20:20:38" order-index="44" type="entity">
+            <layout ax="2578" ay="-37.75" awidth="221" aheight="138.75" x="2578" y="-37.75" width="221" height="138.75" expanded="2578,-37.75,221,138.75" collapsed="0,0,0,0" />
+          </item>
+          <item id="e66a63b21f6744c4aa24ea82eb12ad5d" iid="1d221d7643074ede88376a4fc973b281" container="e47eaf737f9f497b9f877284e0032494" container-iid="8f7359829ede40359add8d58e4c0ea8d" show-fields="false" creation-date="09/17/2024 20:21:52" order-index="49" type="entity">
+            <layout ax="2052" ay="28.3125" awidth="220" aheight="45" x="2052" y="28.3125" width="220" height="45" expanded="2052,28.3125,220,45" collapsed="0,0,0,0" />
+          </item>
+          <item id="ada9af9a7a43456c9705d44d2d99b1bf" iid="628960d0aa0840a48e94797a971c80d2" container="4d51b86160d04eb0b5a619554d71b90c" container-iid="fea3e6ba5aa74c20b193cdbec849a0f4" show-fields="false" creation-date="09/17/2024 20:21:02" order-index="0" type="entity">
+            <layout ax="2593" ay="34.625" awidth="186" aheight="45" x="2593" y="34.625" width="186" height="45" expanded="2593,34.625,186,45" collapsed="0,0,0,0" />
+          </item>
+          <item id="d8ec4111aac043b293fb63990bd9030a" iid="2118532ce2804bf1bd0160f2c1953400" container="e47eaf737f9f497b9f877284e0032494" container-iid="8f7359829ede40359add8d58e4c0ea8d" show-fields="false" creation-date="09/17/2024 20:21:34" order-index="48" type="entity">
+            <layout ax="2052" ay="-38" awidth="214" aheight="53" x="2052" y="-38" width="214" height="41" expanded="2052,-38,214,53" collapsed="0,0,0,0" />
+          </item>
+          <item id="89fa9119b63b4cbbb964eb6ae7b04258" iid="ea06660fa77245e29383d6ffb90e56a9" container="f67a821988b14c3c9e37437052fb0f5f" container-iid="fa6a0af03f3149a4a5e9b11f5ea520b4" show-fields="false" creation-date="09/17/2024 20:20:45" order-index="45" type="entity">
+            <layout ax="2298" ay="232" awidth="264" aheight="300.75" x="2298" y="232" width="264" height="300.75" expanded="2298,232,264,300.75" collapsed="0,0,0,0" />
+          </item>
+          <item id="31058dc9272642d685c9264796a872ba" iid="f6c7641abeb34ba286770ccbb8f890f6" container="f67a821988b14c3c9e37437052fb0f5f" container-iid="fa6a0af03f3149a4a5e9b11f5ea520b4" show-fields="false" creation-date="09/17/2024 20:20:51" order-index="46" type="entity">
+            <layout ax="2034" ay="228.75" awidth="248" aheight="304" x="2034" y="228.75" width="248" height="304" expanded="2034,228.75,248,304" collapsed="0,0,0,0" />
+          </item>
+          <item id="97ddf065814b43bb8cb4b700b1b725f6" iid="ad98ff6b0c7e4564978a3f8d9de2c073" container="f67a821988b14c3c9e37437052fb0f5f" container-iid="fa6a0af03f3149a4a5e9b11f5ea520b4" show-fields="false" creation-date="09/17/2024 20:21:02" order-index="47" type="entity">
+            <layout ax="2578" ay="-115" awidth="221" aheight="55" x="2578" y="-115" width="211" height="45" expanded="2578,-115,221,55" collapsed="0,0,0,0" />
+          </item>
+          <item id="70fdddc45d9b4e5faefaddab0d176a19" iid="f33a17247fb84939b079f01198d8e9a9" container="f67a821988b14c3c9e37437052fb0f5f" container-iid="fa6a0af03f3149a4a5e9b11f5ea520b4" show-fields="false" creation-date="09/17/2024 20:22:16" order-index="50" type="entity">
+            <layout ax="2052" ay="86.625" awidth="214" aheight="45" x="2052" y="86.625" width="214" height="45" expanded="2052,86.625,214,45" collapsed="0,0,0,0" />
+          </item>
+          <item id="6487b0ac20714e54aade15676c5b5aa0" iid="9aae0c3023e04b858dfc49d4f1012885" container="f67a821988b14c3c9e37437052fb0f5f" container-iid="fa6a0af03f3149a4a5e9b11f5ea520b4" show-fields="false" creation-date="09/17/2024 20:22:36" order-index="51" type="entity">
+            <layout ax="2052" ay="144.9375" awidth="214" aheight="39.0625" x="2052" y="144.9375" width="201" height="39.0625" expanded="2052,144.9375,214,39.0625" collapsed="0,0,0,0" />
+          </item>
+          <item id="a96a177ae297436494a2eb886002d3dc" iid="76d010e13680421da7b5a662ebdaf6b8" container="f67a821988b14c3c9e37437052fb0f5f" container-iid="fa6a0af03f3149a4a5e9b11f5ea520b4" show-fields="false" creation-date="09/17/2024 20:20:27" order-index="43" type="entity">
+            <layout ax="2298" ay="-115" awidth="264" aheight="320" x="2298" y="-115" width="264" height="320" expanded="2298,-115,264,320" collapsed="0,0,0,0" />
+          </item>
+          <item id="1ca1304b61bd45dbb9bfb9992a7a7121" iid="4942ae25b1084579bf162f7dc3583796" container="31058dc9272642d685c9264796a872ba" container-iid="f6c7641abeb34ba286770ccbb8f890f6" show-fields="false" creation-date="09/17/2024 20:22:36" order-index="3" type="entity">
+            <layout ax="2052" ay="471.5" awidth="207" aheight="53" x="2052" y="471.5" width="207" height="39.0625" expanded="2052,471.5,207,53" collapsed="0,0,0,0" />
+          </item>
+          <item id="830cc3ed233b408bbcc11f1ffd4ed50e" iid="8a66c8136e06454f8dd99e1dfd0ac3dd" container="31058dc9272642d685c9264796a872ba" container-iid="f6c7641abeb34ba286770ccbb8f890f6" show-fields="false" creation-date="09/17/2024 20:22:16" order-index="2" type="entity">
+            <layout ax="2052" ay="413.5" awidth="207" aheight="45" x="2052" y="413.5" width="207" height="45" expanded="2815,79.5,207,45" collapsed="0,0,0,0" />
+          </item>
+          <item id="24cecd7c079c4cae8bb2faa2ab2e6b1a" iid="cf4dcee5663546a9a75a8e1aefb08570" container="31058dc9272642d685c9264796a872ba" container-iid="f6c7641abeb34ba286770ccbb8f890f6" show-fields="false" creation-date="09/17/2024 20:21:34" order-index="1" type="entity">
+            <layout ax="2052" ay="288.5" awidth="207" aheight="53" x="2052" y="288.5" width="194" height="41" expanded="2815,-45.5,207,53" collapsed="0,0,0,0" />
+          </item>
+          <item id="fa2d80b6519d4ab6b0f08b5dbeecd03d" iid="81c9ff36a7104aff97fe7a4f0f0f9354" container="89fa9119b63b4cbbb964eb6ae7b04258" container-iid="ea06660fa77245e29383d6ffb90e56a9" show-fields="false" creation-date="09/17/2024 20:22:36" order-index="3" type="entity">
+            <layout ax="2323" ay="470.125" awidth="207" aheight="53" x="2323" y="471.5" width="207" height="53" expanded="2323,470.125,207,53" collapsed="0,0,0,0" />
+          </item>
+          <item id="eb6b1cea09904da1855ae6be0b6839b0" iid="24d10e7ea16641db92a575e5fdcd6185" container="89fa9119b63b4cbbb964eb6ae7b04258" container-iid="ea06660fa77245e29383d6ffb90e56a9" show-fields="false" creation-date="09/17/2024 20:22:16" order-index="2" type="entity">
+            <layout ax="2323" ay="411.125" awidth="207" aheight="45" x="2323" y="412.5" width="207" height="45" expanded="2323,412.5,207,45" collapsed="0,0,0,0" />
+          </item>
+          <item id="961d6a8577644e4aa70d6df15a765d8b" iid="4c39acefa916459697db9e5e2afa27e5" container="89fa9119b63b4cbbb964eb6ae7b04258" container-iid="ea06660fa77245e29383d6ffb90e56a9" show-fields="false" creation-date="09/17/2024 20:21:34" order-index="1" type="entity">
+            <layout ax="2323" ay="301.125" awidth="207" aheight="39" x="2323" y="302.5" width="194" height="39" expanded="2323,302.5,207,39" collapsed="0,0,0,0" />
+          </item>
+          <item id="f22387c78f564ba997c484b87e23a871" iid="2f10505beca54d8d9dcec79734951e52" container="89fa9119b63b4cbbb964eb6ae7b04258" container-iid="ea06660fa77245e29383d6ffb90e56a9" show-fields="false" creation-date="09/17/2024 20:21:52" order-index="0" type="entity">
+            <layout ax="2323" ay="353.125" awidth="207" aheight="45" x="2323" y="354.5" width="207" height="45" expanded="2323,354.5,207,45" collapsed="0,0,0,0" />
+          </item>
+          <item id="f689e85762ee40328258d3c91cbf3559" iid="caea6d6c1b3a48bd971eb776707d882f" container="31058dc9272642d685c9264796a872ba" container-iid="f6c7641abeb34ba286770ccbb8f890f6" show-fields="false" creation-date="09/17/2024 20:21:52" order-index="0" type="entity">
+            <layout ax="2052" ay="354.5" awidth="207" aheight="45" x="2052" y="354.5" width="207" height="45" expanded="2815,20.5,207,45" collapsed="0,0,0,0" />
+          </item>
+          <item id="87a7e2cb0e44461bb643b38f294a7b6b" iid="c5b47e95b07d4c2f809530060595e78e" container="a96a177ae297436494a2eb886002d3dc" container-iid="76d010e13680421da7b5a662ebdaf6b8" show-fields="false" creation-date="09/17/2024 20:22:36" order-index="3" type="entity">
+            <layout ax="2320" ay="145.25" awidth="220" aheight="44.5" x="2540" y="145.25" width="220" height="44.5" expanded="2320,145.25,220,44.5" collapsed="0,0,0,0" />
+          </item>
+          <item id="728ec1c0573a49cfb42a39523a0400ff" iid="2034dd2631db47cfb966b41eec00652d" container="a96a177ae297436494a2eb886002d3dc" container-iid="76d010e13680421da7b5a662ebdaf6b8" show-fields="false" creation-date="09/17/2024 20:22:16" order-index="2" type="entity">
+            <layout ax="2320" ay="87.25" awidth="220" aheight="45" x="2540" y="87.25" width="220" height="45" expanded="2320,87.25,220,45" collapsed="0,0,0,0" />
+          </item>
+          <item id="ffbb0ee9769b42ca8245cf45d458b61c" iid="7cb0d3b4166b4652bf76c010bccea552" container="a96a177ae297436494a2eb886002d3dc" container-iid="76d010e13680421da7b5a662ebdaf6b8" show-fields="false" creation-date="09/17/2024 20:21:34" order-index="1" type="entity">
+            <layout ax="2320" ay="-37.75" awidth="220" aheight="53" x="2540" y="-37.75" width="220" height="41" expanded="2320,-37.75,220,53" collapsed="0,0,0,0" />
+          </item>
+          <item id="ac6ea005a34c4721bde59fc6c56d252e" iid="6fe9b69c6940443d81697edd21a71070" container="a96a177ae297436494a2eb886002d3dc" container-iid="76d010e13680421da7b5a662ebdaf6b8" show-fields="false" creation-date="09/17/2024 20:21:52" order-index="0" type="entity">
+            <layout ax="2320" ay="28.25" awidth="220" aheight="45" x="2540" y="28.25" width="220" height="45" expanded="2320,28.25,220,45" collapsed="0,0,0,0" />
           </item>
         </layer>
       </diagram>

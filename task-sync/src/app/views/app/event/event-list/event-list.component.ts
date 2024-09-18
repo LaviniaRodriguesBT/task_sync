@@ -11,7 +11,7 @@ import { jsPDF } from 'jspdf';
 import { MatCardModule } from "@angular/material/card";
 import { CommonModule } from "@angular/common";
 import { MatIconModule } from "@angular/material/icon";
-import {PageEvent, MatPaginatorModule} from '@angular/material/paginator';
+import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
 
 @Component({
   selector: 'task-sync-event-list',
@@ -30,17 +30,17 @@ export class EventListComponent implements OnInit {
   fa = fontawesome;
   faAdd = faPlus;
   events: Event[] = [];
-  eventsCopy: Event[] =[];
+  eventsCopy: Event[] = [];
   accessType?: string | null;
 
-  constructor(private eventReadService: EventReadService, 
-    private eventDeleteService: EventDeleteService, 
+  constructor(private eventReadService: EventReadService,
+    private eventDeleteService: EventDeleteService,
     private toastrService: ToastrService,
   ) {
     this.accessType = localStorage.getItem('accessType')
   }
 
-  
+
 
   ngOnInit(): void {
     this.loadEvents();
@@ -87,8 +87,8 @@ export class EventListComponent implements OnInit {
     this.searchText = name;
     let events = this.eventsCopy.filter(
       (predicate) => predicate.name?.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
-    predicate.description?.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
-    predicate.business?.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
+        predicate.description?.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
+        predicate.business?.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
 
     if (events == undefined) {
       this.events = [];

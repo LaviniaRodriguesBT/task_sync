@@ -53,7 +53,7 @@ export class TaskListComponent implements OnInit {
     this.tasksCopy = this.tasks;
 
     if (this.userId! != null) {
-      this.tasks = this.tasks.filter(e => e.userId == this.userId);
+      this.tasks = this.tasks.filter(e => e.id == this.userId);
     }
   }
 
