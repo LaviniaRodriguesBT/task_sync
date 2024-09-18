@@ -9,21 +9,22 @@
 <h1 class="lista">Lista de Cronogramas</h1>
 
 <div class="d-flex justify-content-between align-items-center">
+    <a class="btn btn-back arrow-back" href="/event/list">
+        <span class="material-icons">arrow_back</span>
+    </a>
+    
     <a class="btn btn-create" routerLink="/event/{{eventId}}/scheduling/create" *ngIf="accessType == 'adm'">
         <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
         Cadastrar cronograma
     </a>
 
-    <div class="search-box">
+    <div class="search-box" >
         <mat-icon class="search-icon">search</mat-icon>
-        <input type="text" id="search" placeholder="Pesquisar" (keyup)="search()">
+        <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
     </div>
 
-    <a class="btn btn-pdf" (click)="gerarPdf()"></a>
-    
-    <a class="btn btn-primary btn-pdf" (click)="gerarPdf()">
+    <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
-        Imprimir
     </a>
 </div>
 
@@ -93,10 +94,6 @@
 </div>
 
 <div class="pagination">
-
-    <a class="btn btn-back material-icons arrow-back" href="/event/list">
-        <span class="material-icons">arrow_back</span> Voltar
-    </a>
 
     <select class="btn-back">
         <option value="5">5 por página</option>
