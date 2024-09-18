@@ -142,7 +142,7 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
     public List<SchedulingModel> readAll() {
 
         final List<SchedulingModel> schedulings = new ArrayList<>();
-        final String sql = "SELECT * FROM scheduling_model;";
+        final String sql = "SELECT * FROM scheduling;";
 
 
         try {

@@ -1,4 +1,4 @@
-package br.com.schedulingsync.backend.main.controller;
+package br.com.tasksync.backend.main.controller;
 
 //@RestController indica que os metodos irao responder a requisições HTTPs
 //@RequestMapping define o caminho para qual todas as requições para o o endereço "api/event" deveão executar alguns dos metodos da classe
@@ -24,20 +24,20 @@ public class SchedulingRestController {
     }
 
     @GetMapping()
-    public ResponseEntity<List<SchedulingModel>> getEntities(){
+    public ResponseEntity<List<SchedulingModel>> getEntities() {
         List<SchedulingModel> schedulings = schedulingService.findAll();
         return ResponseEntity.ok().body(schedulings);
     }
 
 
     @GetMapping("/{id}")
-    public ResponseEntity<SchedulingModel> getEntityById(@PathVariable final int id){
+    public ResponseEntity<SchedulingModel> getEntityById(@PathVariable final int id) {
         SchedulingModel scheduling = schedulingService.findById(id);
         return ResponseEntity.ok().body(scheduling);
     }
 
     @PostMapping()
-    public ResponseEntity<SchedulingModel> createEntity(@RequestBody final SchedulingModel data){
+    public ResponseEntity<SchedulingModel> createEntity(@RequestBody final SchedulingModel data) {
         int id = schedulingService.create(data);
         final URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequestUri().path("{id}").buildAndExpand(id).toUri();
@@ -45,13 +45,13 @@ public class SchedulingRestController {
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateEntity(@PathVariable final int id, @RequestBody final SchedulingModel data){
+    public ResponseEntity<Void> updateEntity(@PathVariable final int id, @RequestBody final SchedulingModel data) {
         schedulingService.update(id, data);
         return ResponseEntity.ok().build();
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<SchedulingModel> deleteEntity(@PathVariable final int id){
+    public ResponseEntity<SchedulingModel> deleteEntity(@PathVariable final int id) {
         schedulingService.delete(id);
         return ResponseEntity.noContent().build();
     }

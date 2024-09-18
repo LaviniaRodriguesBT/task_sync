@@ -23,7 +23,7 @@ public class SchedulingH2DaoImplem implements SchedulingDao {
 
     @Override
     public int add(SchedulingModel entity) {
-        final SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate).withTableName("scheduling_model").usingGeneratedKeyColumns("id");
+        final SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate).withTableName("scheduling").usingGeneratedKeyColumns("id");
         final Map<String, Object> parameters = new HashMap<>();
         parameters.put("event_id: ", entity.getEvent_id());
         parameters.put("user_id: ", entity.getUser_id());
@@ -42,14 +42,14 @@ public class SchedulingH2DaoImplem implements SchedulingDao {
 
     @Override
     public void remove(int id) {
-        final String sql = "DELETE FROM scheduling_model WHERE id = " + id;
+        final String sql = "DELETE FROM scheduling WHERE id = " + id;
         jdbcTemplate.execute(sql);
 
     }
 
     @Override
     public SchedulingModel readyById(int id) {
-        final SchedulingModel entity = jdbcTemplate.queryForObject("SELECT * FROM scheduling_model WHERE id = ", new Object[]{id}, (rs, rowNum) ->
+        final SchedulingModel entity = jdbcTemplate.queryForObject("SELECT * FROM scheduling WHERE id = ", new Object[]{id}, (rs, rowNum) ->
                 new SchedulingModel(
                         rs.getInt("id"),
                         rs.getInt("event_id"),
@@ -70,7 +70,7 @@ public class SchedulingH2DaoImplem implements SchedulingDao {
 
     @Override
     public List<SchedulingModel> readAll() {
-        final List<SchedulingModel> entities = jdbcTemplate.query("SELECT * FROM scheduling_model", new Object[]{}, (rs, rowNum) ->
+        final List<SchedulingModel> entities = jdbcTemplate.query("SELECT * FROM scheduling", new Object[]{}, (rs, rowNum) ->
                 new SchedulingModel(
                         rs.getInt("id"),
                         rs.getInt("event_id"),

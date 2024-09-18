@@ -139,7 +139,7 @@ public class TaskPostgresDaoImplem implements TaskDao {
     public List<TaskModel> readAll() {
 
         final List<TaskModel> tasks = new ArrayList<>();
-        final String sql = "SELECT * FROM task_model;";
+        final String sql = "SELECT * FROM task;";
 
 
         try {
