@@ -58,8 +58,8 @@ public class UserPostgresDaoImplem implements UserDao {
             preparedStatement.close();
 
 
-            sql = "INSERT INTO user(login, password, access_type, person_id) ";
-            sql += " VALUES(?, ?, ?);";
+            sql = "INSERT INTO \"user\"(login, password, access_type, person_id) ";
+            sql += " VALUES(?, ?, ?, ?);";
 
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
@@ -102,7 +102,22 @@ public class UserPostgresDaoImplem implements UserDao {
     @Override
     public void remove(int id) {
         logger.log(Level.INFO, "Preparadando para remover a entidade com id " + id);
-        final String sql = "DELETE FROM user WHERE id = ?;";
+
+        String sql = "DELETE FROM person WHERE id = ?;";
+
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            preparedStatement.execute();
+            preparedStatement.close();
+            logger.log(Level.INFO, "Entidade removida com sucesso");
+
+
+        } catch (Exception e) {
+            throw new RuntimeException();
+        }
+
+        sql = "DELETE FROM \"user\" WHERE id = ?;";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -120,7 +135,7 @@ public class UserPostgresDaoImplem implements UserDao {
 
     @Override
     public UserModel readyById(int id) {
-        final String sql = "SELECT * FROM user WHERE id = ?;";
+        final String sql = "SELECT * FROM \"user\" WHERE id = ?;";
 
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -132,12 +147,12 @@ public class UserPostgresDaoImplem implements UserDao {
             if (resultSet.next()) {
                 final UserModel user = new UserModel();
                 user.setId(resultSet.getInt("id"));
-                user.setName(resultSet.getString("name"));
-                user.setEmail(resultSet.getString("email"));
+                //user.setName(resultSet.getString("name"));
+                //user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("password"));
-                user.setCpf(resultSet.getString("cpf"));
-                user.setPhone(resultSet.getString("phone"));
-                user.setAddress(resultSet.getString("address"));
+               // user.setCpf(resultSet.getString("cpf"));
+               // user.setPhone(resultSet.getString("phone"));
+               // user.setAddress(resultSet.getString("address"));
                 user.setAccess_type(resultSet.getString("access_type"));
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
 
@@ -164,7 +179,7 @@ public class UserPostgresDaoImplem implements UserDao {
     public List<UserModel> readAll() {
 
         final List<UserModel> users = new ArrayList<>();
-        final String sql = "SELECT * FROM user_model;";
+        final String sql = "SELECT * FROM \"user\";";
 
 
         try {
@@ -174,19 +189,14 @@ public class UserPostgresDaoImplem implements UserDao {
                 final UserModel user = new UserModel();
 
                 user.setId(resultSet.getInt("id"));
-                user.setName(resultSet.getString("name"));
-                user.setEmail(resultSet.getString("email"));
                 user.setPassword(resultSet.getString("password"));
-                user.setCpf(resultSet.getString("cpf"));
-                user.setPhone(resultSet.getString("phone"));
-                user.setAddress(resultSet.getString("address"));
                 user.setAccess_type(resultSet.getString("access_type"));
                 users.add(user);
 
             }
             resultSet.close();
             preparedStatement.close();
-            return null;
+            return users;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
@@ -194,7 +204,7 @@ public class UserPostgresDaoImplem implements UserDao {
 
     @Override
     public void updateInformation(int id, UserModel entity) {
-        String sql = "UPDATE user SET fullName = ? WHERE id = ?;";
+        String sql = "UPDATE person SET name = ? WHERE id = ?;";
 
         try {
             PreparedStatement preparedStatement;
