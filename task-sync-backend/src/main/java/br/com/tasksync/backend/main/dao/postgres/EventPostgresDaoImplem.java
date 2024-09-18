@@ -166,7 +166,7 @@ public class EventPostgresDaoImplem implements EventDao {
             }
             resultSet.close();
             preparedStatement.close();
-            return null;
+            return events;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
