@@ -186,8 +186,5 @@ public class EventPostgresDaoImplem implements EventDao {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
-
-
 }

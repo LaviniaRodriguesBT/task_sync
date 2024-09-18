@@ -1,14 +1,14 @@
-insert into person (id, cpf, name, address)
-values (default, '123', 'Michele F', 'rua: 1'),
-       (default, '321', 'Lavinia B', 'rua: 2'),
-       (default, '456', 'Lucas S', 'rua: 3'),
-       (default, '654', 'Alan S', 'rua: 4'),
-       (default, '789', 'Leandro L', 'rua: 5'),
-       (default, '987', 'Bruno G', 'rua: 6'),
-       (default, '147', 'Bruna V', 'rua: 7'),
-       (default, '258', 'Daniele B', 'rua: 8'),
-       (default, '369', 'Josue S', 'rua: 9'),
-       (default, '741', 'Patricia R', 'rua: 10');
+insert into person (id, cpf, name, address, phone)
+values (default, '123', 'Michele F', 'rua: 1', '987'),
+       (default, '321', 'Lavinia B', 'rua: 2', '654'),
+       (default, '456', 'Lucas S', 'rua: 3', '321'),
+       (default, '654', 'Alan S', 'rua: 4', '963'),
+       (default, '789', 'Leandro L', 'rua: 5', '258'),
+       (default, '987', 'Bruno G', 'rua: 6', '147'),
+       (default, '147', 'Bruna V', 'rua: 7', '753'),
+       (default, '258', 'Daniele B', 'rua: 8', '159'),
+       (default, '369', 'Josue S', 'rua: 9', '456'),
+       (default, '741', 'Patricia R', 'rua: 10', '888');
 
 
 insert into "user" (id, login, password, access_type, person_id)
