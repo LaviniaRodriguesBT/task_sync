@@ -42,44 +42,47 @@ public class UserH2DaoImplem implements UserDao {
 
     @Override
     public void remove(int id) {
-        final String sql = "DELETE FROM user_model WHERE id = " + id;
+        final String sql = "DELETE FROM user WHERE id = " + id;
         jdbcTemplate.execute(sql);
 
     }
 
     @Override
     public UserModel readyById(int id) {
-        final UserModel entity = jdbcTemplate.queryForObject("SELECT * FROM user_model WHERE id = ", new Object[]{id}, (rs, rowNum) ->
-                new UserModel(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("email"),
-                        rs.getString("password"),
-                        rs.getString("cpf"),
-                        rs.getString("phone"),
-                        rs.getString("address"),
-                        rs.getString("access_type")
+//        final UserModel entity = jdbcTemplate.queryForObject("SELECT * FROM user WHERE id = ", new Object[]{id}, (rs, rowNum) ->
+//                new UserModel(
+//                        rs.getInt("id"),
+//                        rs.getString("name"),
+//                        rs.getString("email"),
+//                        rs.getString("password"),
+//                        rs.getString("cpf"),
+//                        rs.getString("phone"),
+//                        rs.getString("address"),
+//                        rs.getString("access_type")
+//
+//                ));
+//        return entity;
+        return null;
 
-                ));
-        return entity;
     }
+
 
     @Override
     public List<UserModel> readAll() {
-        final List<UserModel> entities = jdbcTemplate.query("SELECT * FROM user_model", new Object[]{}, (rs, rowNum) ->
-                new UserModel(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("email"),
-                        rs.getString("password"),
-                        rs.getString("cpf"),
-                        rs.getString("phone"),
-                        rs.getString("address"),
-                        rs.getString("access_type")
-
-                ));
-
-        return entities;
+//        final List<UserModel> entities = jdbcTemplate.query("SELECT * FROM user_model", new Object[]{}, (rs, rowNum) ->
+//                new UserModel(
+//                        rs.getInt("id"),
+//                        rs.getString("name"),
+//                        rs.getString("email"),
+//                        rs.getString("password"),
+//                        rs.getString("cpf"),
+//                        rs.getString("phone"),
+//                        rs.getString("address"),
+//                        rs.getString("access_type")
+//
+//                ));
+////
+        return null;
     }
 
     @Override

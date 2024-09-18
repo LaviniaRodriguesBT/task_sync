@@ -23,7 +23,7 @@ public class EventH2DaoImplem implements EventDao {
 
     @Override
     public int add(EventModel entity) {
-        final SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate).withTableName("event_model").usingGeneratedKeyColumns("id");
+        final SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate).withTableName("event").usingGeneratedKeyColumns("id");
         final Map<String, Object> parameters = new HashMap<>();
         parameters.put("code: ", entity.getCode());
         parameters.put("name: ", entity.getName());
@@ -37,14 +37,14 @@ public class EventH2DaoImplem implements EventDao {
 
     @Override
     public void remove(int id) {
-        final String sql = "DELETE FROM event_model WHERE id = "+ id;
+        final String sql = "DELETE FROM event WHERE id = " + id;
         jdbcTemplate.execute(sql);
 
     }
 
     @Override
     public EventModel readyById(int id) {
-        final EventModel entity = jdbcTemplate.queryForObject("SELECT * FROM event_model WHERE id = ", new Object[]{id},(rs,rowNum) ->
+        final EventModel entity = jdbcTemplate.queryForObject("SELECT * FROM event WHERE id = ", new Object[]{id}, (rs, rowNum) ->
                 new EventModel(
                         rs.getInt("id"),
                         rs.getString("code"),
@@ -61,7 +61,7 @@ public class EventH2DaoImplem implements EventDao {
 
     @Override
     public List<EventModel> readAll() {
-        final List<EventModel> entities = jdbcTemplate.query("SELECT * FROM event_model", new Object[]{},(rs,rowNum) ->
+        final List<EventModel> entities = jdbcTemplate.query("SELECT * FROM event", new Object[]{}, (rs, rowNum) ->
                 new EventModel(
                         rs.getInt("id"),
                         rs.getString("code"),

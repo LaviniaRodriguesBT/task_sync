@@ -1,7 +1,7 @@
 package br.com.tasksync.backend.main.dao.postgres;
 
-import br.com.tasksync.backend.main.domain.EventModel;
-import br.com.tasksync.backend.main.port.dao.event.EventDao;
+import br.com.tasksync.backend.main.domain.SchedulingModel;
+import br.com.tasksync.backend.main.port.dao.scheduling.SchedulingDao;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,23 +9,23 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class EventPostgresDaoImplem implements EventDao {
+public class SchedulingPostgresDaoImplem implements SchedulingDao {
 
 
-    private static final Logger logger = Logger.getLogger(EventPostgresDaoImplem.class.getName());
+    private static final Logger logger = Logger.getLogger(SchedulingPostgresDaoImplem.class.getName());
 
     private final Connection connection;
 
-    public EventPostgresDaoImplem(Connection connection) {
+    public SchedulingPostgresDaoImplem(Connection connection) {
         this.connection = connection;
     }
 
 
     @Override
-    public int add(EventModel entity) {
+    public int add(SchedulingModel entity) {
 
-        String sql = "INSERT INTO event(code, name, description, business, date, start_time, end_time) ";
-        sql += " VALUES(?, ?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO scheduling(start_time, end_time, date, status) ";
+        sql += " VALUES(?, ?, ?);";
 
         PreparedStatement preparedStatement;
         ResultSet resultSet;
@@ -35,13 +35,11 @@ public class EventPostgresDaoImplem implements EventDao {
 
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
-            preparedStatement.setString(1, entity.getCode());
-            preparedStatement.setString(2, entity.getName());
-            preparedStatement.setString(3, entity.getDescription());
-            preparedStatement.setString(4, entity.getBusiness());
-            preparedStatement.setDate(5, Date.valueOf(entity.getDate()));
-            preparedStatement.setDate(6, Date.valueOf(entity.getStart_time()));
-            preparedStatement.setDate(7, Date.valueOf(entity.getEnd_time()));
+
+            preparedStatement.setDate(1, Date.valueOf(entity.getStart_time()));
+            preparedStatement.setDate(2, Date.valueOf(entity.getEnd_time()));
+            preparedStatement.setDate(3, Date.valueOf(entity.getDate()));
+            preparedStatement.setString(4, entity.getStatus());
 
             preparedStatement.execute();
 
@@ -83,7 +81,7 @@ public class EventPostgresDaoImplem implements EventDao {
     @Override
     public void remove(int id) {
         logger.log(Level.INFO, "Preparadando para remover a entidade com id " + id);
-        final String sql = "DELETE FROM event WHERE id = ?;";
+        final String sql = "DELETE FROM scheduling WHERE id = ?;";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -100,8 +98,8 @@ public class EventPostgresDaoImplem implements EventDao {
     }
 
     @Override
-    public EventModel readyById(int id) {
-        final String sql = "SELECT * FROM event WHERE id = ?;";
+    public SchedulingModel readyById(int id) {
+        final String sql = "SELECT * FROM scheduling WHERE id = ?;";
 
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -111,18 +109,17 @@ public class EventPostgresDaoImplem implements EventDao {
             preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                final EventModel event = new EventModel();
-                event.setId(resultSet.getInt("id"));
-                event.setCode(resultSet.getString("code"));
-                event.setName(resultSet.getString("name"));
-                event.setDescription(resultSet.getString("description"));
-                event.setDate(resultSet.getDate("date").toLocalDate());
-                event.setDate(resultSet.getDate("start_time").toLocalDate());
-                event.setDate(resultSet.getDate("end_time").toLocalDate());
+                final SchedulingModel scheduling = new SchedulingModel();
+                scheduling.setId(resultSet.getInt("id"));
+
+                scheduling.setDate(resultSet.getDate("start_time").toLocalDate());
+                scheduling.setDate(resultSet.getDate("end_time").toLocalDate());
+                scheduling.setDate(resultSet.getDate("date").toLocalDate());
+                scheduling.setStatus(resultSet.getString("status"));
 
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
 
-                return event;
+                return scheduling;
 
             }
 
@@ -142,26 +139,23 @@ public class EventPostgresDaoImplem implements EventDao {
     }
 
     @Override
-    public List<EventModel> readAll() {
+    public List<SchedulingModel> readAll() {
 
-        final List<EventModel> events = new ArrayList<>();
-        final String sql = "SELECT * FROM event;";
+        final List<SchedulingModel> schedulings = new ArrayList<>();
+        final String sql = "SELECT * FROM scheduling_model;";
 
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                final EventModel event = new EventModel();
+                final SchedulingModel scheduling = new SchedulingModel();
 
-                event.setId(resultSet.getInt("id"));
-                event.setCode(resultSet.getString("code"));
-                event.setName(resultSet.getString("name"));
-                event.setDescription(resultSet.getString("description"));
-                event.setDate(resultSet.getDate("date").toLocalDate());
-                event.setDate(resultSet.getDate("start_time").toLocalDate());
-                event.setDate(resultSet.getDate("end_time").toLocalDate());
-                events.add(event);
+                scheduling.setId(resultSet.getInt("id"));
+                scheduling.setDate(resultSet.getDate("date").toLocalDate());
+                scheduling.setDate(resultSet.getDate("start_time").toLocalDate());
+                scheduling.setDate(resultSet.getDate("end_time").toLocalDate());
+                schedulings.add(scheduling);
 
             }
             resultSet.close();
@@ -173,14 +167,14 @@ public class EventPostgresDaoImplem implements EventDao {
     }
 
     @Override
-    public void updateInformation(int id, EventModel entity) {
-        String sql = "UPDATE event SET name = ? WHERE id = ?;";
+    public void updateInformation(int id, SchedulingModel entity) {
+        String sql = "UPDATE scheduling SET name = ? WHERE id = ?;";
 
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, entity.getName());
-            preparedStatement.setInt(2, entity.getId());
+
+            preparedStatement.setInt(1, entity.getId());
             preparedStatement.execute();
             preparedStatement.close();
         } catch (Exception e) {

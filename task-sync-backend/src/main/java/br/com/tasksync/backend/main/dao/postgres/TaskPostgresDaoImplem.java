@@ -1,31 +1,34 @@
 package br.com.tasksync.backend.main.dao.postgres;
 
-import br.com.tasksync.backend.main.domain.EventModel;
-import br.com.tasksync.backend.main.port.dao.event.EventDao;
+import br.com.tasksync.backend.main.domain.TaskModel;
+import br.com.tasksync.backend.main.port.dao.task.TaskDao;
 
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class EventPostgresDaoImplem implements EventDao {
+public class TaskPostgresDaoImplem implements TaskDao {
 
 
-    private static final Logger logger = Logger.getLogger(EventPostgresDaoImplem.class.getName());
+    private static final Logger logger = Logger.getLogger(TaskPostgresDaoImplem.class.getName());
 
     private final Connection connection;
 
-    public EventPostgresDaoImplem(Connection connection) {
+    public TaskPostgresDaoImplem(Connection connection) {
         this.connection = connection;
     }
 
 
     @Override
-    public int add(EventModel entity) {
+    public int add(TaskModel entity) {
 
-        String sql = "INSERT INTO event(code, name, description, business, date, start_time, end_time) ";
-        sql += " VALUES(?, ?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO task(name) ";
+        sql += " VALUES(?);";
 
         PreparedStatement preparedStatement;
         ResultSet resultSet;
@@ -35,13 +38,8 @@ public class EventPostgresDaoImplem implements EventDao {
 
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
-            preparedStatement.setString(1, entity.getCode());
-            preparedStatement.setString(2, entity.getName());
-            preparedStatement.setString(3, entity.getDescription());
-            preparedStatement.setString(4, entity.getBusiness());
-            preparedStatement.setDate(5, Date.valueOf(entity.getDate()));
-            preparedStatement.setDate(6, Date.valueOf(entity.getStart_time()));
-            preparedStatement.setDate(7, Date.valueOf(entity.getEnd_time()));
+            preparedStatement.setString(1, entity.getName());
+
 
             preparedStatement.execute();
 
@@ -83,7 +81,7 @@ public class EventPostgresDaoImplem implements EventDao {
     @Override
     public void remove(int id) {
         logger.log(Level.INFO, "Preparadando para remover a entidade com id " + id);
-        final String sql = "DELETE FROM event WHERE id = ?;";
+        final String sql = "DELETE FROM task WHERE id = ?;";
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
@@ -100,8 +98,8 @@ public class EventPostgresDaoImplem implements EventDao {
     }
 
     @Override
-    public EventModel readyById(int id) {
-        final String sql = "SELECT * FROM event WHERE id = ?;";
+    public TaskModel readyById(int id) {
+        final String sql = "SELECT * FROM task WHERE id = ?;";
 
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -111,18 +109,14 @@ public class EventPostgresDaoImplem implements EventDao {
             preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                final EventModel event = new EventModel();
-                event.setId(resultSet.getInt("id"));
-                event.setCode(resultSet.getString("code"));
-                event.setName(resultSet.getString("name"));
-                event.setDescription(resultSet.getString("description"));
-                event.setDate(resultSet.getDate("date").toLocalDate());
-                event.setDate(resultSet.getDate("start_time").toLocalDate());
-                event.setDate(resultSet.getDate("end_time").toLocalDate());
+                final TaskModel task = new TaskModel();
+                task.setId(resultSet.getInt("id"));
+                task.setName(resultSet.getString("name"));
+
 
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
 
-                return event;
+                return task;
 
             }
 
@@ -142,26 +136,22 @@ public class EventPostgresDaoImplem implements EventDao {
     }
 
     @Override
-    public List<EventModel> readAll() {
+    public List<TaskModel> readAll() {
 
-        final List<EventModel> events = new ArrayList<>();
-        final String sql = "SELECT * FROM event;";
+        final List<TaskModel> tasks = new ArrayList<>();
+        final String sql = "SELECT * FROM task_model;";
 
 
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                final EventModel event = new EventModel();
+                final TaskModel task = new TaskModel();
 
-                event.setId(resultSet.getInt("id"));
-                event.setCode(resultSet.getString("code"));
-                event.setName(resultSet.getString("name"));
-                event.setDescription(resultSet.getString("description"));
-                event.setDate(resultSet.getDate("date").toLocalDate());
-                event.setDate(resultSet.getDate("start_time").toLocalDate());
-                event.setDate(resultSet.getDate("end_time").toLocalDate());
-                events.add(event);
+                task.setId(resultSet.getInt("id"));
+                task.setName(resultSet.getString("name"));
+
+                tasks.add(task);
 
             }
             resultSet.close();
@@ -173,8 +163,8 @@ public class EventPostgresDaoImplem implements EventDao {
     }
 
     @Override
-    public void updateInformation(int id, EventModel entity) {
-        String sql = "UPDATE event SET name = ? WHERE id = ?;";
+    public void updateInformation(int id, TaskModel entity) {
+        String sql = "UPDATE task SET name = ? WHERE id = ?;";
 
         try {
             PreparedStatement preparedStatement;

@@ -2,7 +2,9 @@ package br.com.tasksync.backend.main.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@NoArgsConstructor
 @Data
 @AllArgsConstructor
 public class SchedulingModel {

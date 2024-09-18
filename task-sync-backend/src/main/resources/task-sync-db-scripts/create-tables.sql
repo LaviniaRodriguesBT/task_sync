@@ -1,3 +1,11 @@
+DROP TABLE IF EXISTS scheduling;
+DROP TABLE IF EXISTS contract;
+DROP TABLE IF EXISTS activity;
+DROP TABLE IF EXISTS task;
+DROP TABLE IF EXISTS event;
+DROP TABLE IF EXISTS "user";
+DROP TABLE IF EXISTS person;
+
 
 
 
@@ -9,7 +17,7 @@ create table person (
 );
 
 
-create table user (
+create table "user" (
     id serial primary key,
     login character varying(200) not null unique,
     password character varying(500) not null,

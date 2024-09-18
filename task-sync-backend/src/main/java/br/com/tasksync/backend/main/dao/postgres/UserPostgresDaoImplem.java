@@ -223,7 +223,7 @@ public class UserPostgresDaoImplem implements UserDao {
             if (resultSet.next()) {
                 final UserModel user = new UserModel();
                 user.setId(resultSet.getInt("id"));
-                user.setName(resultSet.getString("fullName"));
+                user.setName(resultSet.getString("name"));
                 user.setPassword(resultSet.getString("password"));
                 logger.log(Level.INFO, "Entidade com email " + email + " encontrada com sucesso");
 

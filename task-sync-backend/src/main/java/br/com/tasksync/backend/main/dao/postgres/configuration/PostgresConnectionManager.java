@@ -94,22 +94,26 @@ public class PostgresConnectionManager {
 
     private void createDatabaseIfNotExists(Connection connection) throws SQLException {
 
-        final Statement statement = connection.createStatement();
-        String sql = "SELECT COUNT(*) AS dbs ";
-        sql += " FROM pg_catalog.pg_database ";
-        sql += " WHERE lower(datname) = '" + databaseName + "';";
-        ResultSet resultSet = statement.executeQuery(sql);
+        try {
+            final Statement statement = connection.createStatement();
+            String sql = "SELECT COUNT(*) AS dbs ";
+            sql += " FROM pg_catalog.pg_database ";
+            sql += " WHERE lower(datname) = '" + databaseName + "';";
+            ResultSet resultSet = statement.executeQuery(sql);
 
-        boolean dbExists = resultSet.next();
-        if (!dbExists || resultSet.getInt("dbs") == 0) {
-            String createDatabaseSql = "CREATE DATABASE " + databaseName + " WITH ";
-            createDatabaseSql += " OWNER = postgres ENCODING = 'UTF8' ";
-            createDatabaseSql += " CONNECTION LIMIT = -1; ";
+            boolean dbExists = resultSet.next();
+            if (!dbExists || resultSet.getInt("dbs") == 0) {
+                String createDatabaseSql = "CREATE DATABASE " + databaseName + " WITH ";
+                createDatabaseSql += " OWNER = postgres ENCODING = 'UTF8' ";
+                createDatabaseSql += " CONNECTION LIMIT = -1; ";
 
-            PreparedStatement preparedStatement = connection.prepareStatement(createDatabaseSql);
-            preparedStatement.executeUpdate();
-            preparedStatement.close();
+                PreparedStatement preparedStatement = connection.prepareStatement(createDatabaseSql);
+                preparedStatement.executeUpdate();
+                preparedStatement.close();
 
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
 
 
