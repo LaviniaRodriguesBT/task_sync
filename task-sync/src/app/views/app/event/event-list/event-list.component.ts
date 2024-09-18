@@ -40,16 +40,12 @@ export class EventListComponent implements OnInit {
     this.accessType = localStorage.getItem('accessType')
   }
 
-
-
   ngOnInit(): void {
     this.loadEvents();
   }
   async loadEvents() {
     this.events = await this.eventReadService.findAll();
     this.eventsCopy = this.events;
-    // this.length = this.eventsCopy.length;
-    // this.events = this.eventsCopy.slice(this.pageIndex, this.pageSize);
   }
   async deleteEvent(eventId: string) {
     try {
