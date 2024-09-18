@@ -1,8 +1,6 @@
 package br.com.tasksync.backend.main.service.task;
 
-import br.com.tasksync.backend.main.domain.SchedulingModel;
 import br.com.tasksync.backend.main.domain.TaskModel;
-import br.com.tasksync.backend.main.port.dao.scheduling.SchedulingDao;
 import br.com.tasksync.backend.main.port.dao.task.TaskDao;
 import br.com.tasksync.backend.main.port.service.task.TaskService;
 import org.springframework.stereotype.Service;
@@ -21,12 +19,11 @@ public class TaskServiceImplem implements TaskService {
 
     @Override
     public int create(TaskModel entity) {
-        if(entity == null){
+        if (entity == null) {
             return 0;
         }
-        if(entity.getId() <= 0 ||
-                entity.getUserId().isEmpty()||
-                entity.getName().isEmpty()){
+        if (entity.getId() <= 0 ||
+                entity.getName().isEmpty()) {
             return 0;
         }
 
@@ -37,7 +34,7 @@ public class TaskServiceImplem implements TaskService {
 
     @Override
     public void delete(int id) {
-        if(id < 0){
+        if (id < 0) {
             return;
         }
         System.out.println("Chamou o remover atividade por id");
@@ -47,7 +44,7 @@ public class TaskServiceImplem implements TaskService {
 
     @Override
     public TaskModel findById(int id) {
-        if(id < 0){
+        if (id < 0) {
             return null;
         }
         TaskModel task = taskDao.readyById(id);
@@ -65,7 +62,7 @@ public class TaskServiceImplem implements TaskService {
     @Override
     public void update(int id, TaskModel entity) {
         TaskModel taskModel = findById(id);
-        if(taskModel == null){
+        if (taskModel == null) {
             return;
         }
         taskDao.updateInformation(id, entity);

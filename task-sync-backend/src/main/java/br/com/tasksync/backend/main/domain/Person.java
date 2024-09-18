@@ -7,16 +7,9 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class UserModel {
+public class Person {
     private int id;
-    private int userId;
     private String name;
-    private String email;
-    private String password;
     private String cpf;
-    private String phone;
     private String address;
-    private String access_type;
-//    private Person person;
-
 }

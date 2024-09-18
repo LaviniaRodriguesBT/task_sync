@@ -1,3 +1,11 @@
+DROP TABLE IF EXISTS scheduling;
+DROP TABLE IF EXISTS contract;
+DROP TABLE IF EXISTS activity;
+DROP TABLE IF EXISTS task;
+DROP TABLE IF EXISTS event;
+DROP TABLE IF EXISTS "user";
+DROP TABLE IF EXISTS person;
+
 
 
 
@@ -14,7 +22,7 @@ create table "user" (
     login character varying(200) not null unique,
     password character varying(500) not null,
     access_type character varying(50) not null check (access_type in('Administrador','Colaborador')) default 'Colaborador',
-    person_id integer not null unique references person(id) on update cascade
+    person_id integer not null unique references person(id) on update cascade on delete cascade
 );
 
 create table event (
@@ -46,8 +54,8 @@ create table contract (
     id serial primary key,
     number integer unique not null,
     signature_date timestamp without time zone not null,
-    user_id integer not null references "user"(id) on update cascade,
-    event_id integer not null references event(id) on update cascade,
+    user_id integer not null references "user"(id) on update cascade on delete cascade,
+    event_id integer not null references event(id) on update cascade on delete cascade,
     unique (user_id, event_id)
 );
 
@@ -58,6 +66,6 @@ create table scheduling (
     date timestamp without time zone not null,
     status character varying(50) not null check (status in ('Em aberto', 'Em andamento', 'Finalizada')) default 'Em aberto',
     activity_id integer not null references activity(id) on update cascade,
-    contract_id integer not null references contract(id) on update cascade,
+    contract_id integer not null references contract(id) on update cascade on delete cascade,
     unique (date, contract_id, activity_id)
 );
