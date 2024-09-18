@@ -34,7 +34,7 @@
         </nav>
 
         <span class="toolbar-item-spacer"></span>
-        <button mat-icon-button matTooltip="Home" routerLink="/">
+        <button mat-icon-button matTooltip="Home" routerLink="/" *ngIf= "accessType == 'adm'">
             <mat-icon>home</mat-icon>
         </button>
         <button mat-icon-button matTooltip="Meu perfil" [matMenuTriggerFor]="myProfile">
