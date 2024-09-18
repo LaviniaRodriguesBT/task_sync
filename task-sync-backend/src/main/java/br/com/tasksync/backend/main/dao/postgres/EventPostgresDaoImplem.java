@@ -11,30 +11,23 @@ import java.util.logging.Logger;
 
 public class EventPostgresDaoImplem implements EventDao {
 
-
     private static final Logger logger = Logger.getLogger(EventPostgresDaoImplem.class.getName());
-
     private final Connection connection;
 
     public EventPostgresDaoImplem(Connection connection) {
         this.connection = connection;
     }
 
-
     @Override
     public int add(EventModel entity) {
 
         String sql = "INSERT INTO event(code, name, description, business, date, start_time, end_time) ";
         sql += " VALUES(?, ?, ?, ?, ?, ?, ?);";
-
         PreparedStatement preparedStatement;
         ResultSet resultSet;
-
         try {
             connection.setAutoCommit(false);
-
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-
             preparedStatement.setString(1, entity.getCode());
             preparedStatement.setString(2, entity.getName());
             preparedStatement.setString(3, entity.getDescription());
@@ -42,41 +35,27 @@ public class EventPostgresDaoImplem implements EventDao {
             preparedStatement.setDate(5, Date.valueOf(entity.getDate()));
             preparedStatement.setDate(6, Date.valueOf(entity.getStart_time()));
             preparedStatement.setDate(7, Date.valueOf(entity.getEnd_time()));
-
             preparedStatement.execute();
-
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
                 final int id = resultSet.getInt(1);
                 entity.setId(id);
-
             } else {
                 throw new RuntimeException();
-
             }
-
             resultSet.close();
             preparedStatement.close();
-
-
             connection.commit();
-
             resultSet.close();
             preparedStatement.close();
-
         } catch (SQLException e) {
-
             try {
                 connection.rollback();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
-
-
             throw new RuntimeException(e);
         }
-
-
         return entity.getId();
     }
 
@@ -84,28 +63,22 @@ public class EventPostgresDaoImplem implements EventDao {
     public void remove(int id) {
         logger.log(Level.INFO, "Preparadando para remover a entidade com id " + id);
         final String sql = "DELETE FROM event WHERE id = ?;";
-
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             preparedStatement.execute();
             preparedStatement.close();
             logger.log(Level.INFO, "Entidade removida com sucesso");
-
-
         } catch (Exception e) {
             throw new RuntimeException();
         }
-
     }
 
     @Override
     public EventModel readyById(int id) {
         final String sql = "SELECT * FROM event WHERE id = ?;";
-
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
@@ -119,14 +92,9 @@ public class EventPostgresDaoImplem implements EventDao {
                 event.setDate(resultSet.getDate("date").toLocalDate());
                 event.setDate(resultSet.getDate("start_time").toLocalDate());
                 event.setDate(resultSet.getDate("end_time").toLocalDate());
-
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
-
                 return event;
-
             }
-
-
             return null;
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -137,32 +105,27 @@ public class EventPostgresDaoImplem implements EventDao {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
         }
     }
 
     @Override
     public List<EventModel> readAll() {
-
         final List<EventModel> events = new ArrayList<>();
         final String sql = "SELECT * FROM event;";
-
-
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 final EventModel event = new EventModel();
-
                 event.setId(resultSet.getInt("id"));
                 event.setCode(resultSet.getString("code"));
                 event.setName(resultSet.getString("name"));
+                event.setBusiness(resultSet.getString("business"));
                 event.setDescription(resultSet.getString("description"));
                 event.setDate(resultSet.getDate("date").toLocalDate());
-                event.setDate(resultSet.getDate("start_time").toLocalDate());
-                event.setDate(resultSet.getDate("end_time").toLocalDate());
+                event.setStart_time(resultSet.getDate("start_time").toLocalDate());
+                event.setEnd_time(resultSet.getDate("end_time").toLocalDate());
                 events.add(event);
-
             }
             resultSet.close();
             preparedStatement.close();
@@ -175,7 +138,6 @@ public class EventPostgresDaoImplem implements EventDao {
     @Override
     public void updateInformation(int id, EventModel entity) {
         String sql = "UPDATE event SET name = ? WHERE id = ?;";
-
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
@@ -186,8 +148,5 @@ public class EventPostgresDaoImplem implements EventDao {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
-
-
 }
