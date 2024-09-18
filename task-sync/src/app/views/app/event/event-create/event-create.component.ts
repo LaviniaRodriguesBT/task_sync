@@ -47,10 +47,10 @@ export class EventCreateComponent implements OnInit {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-      code: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
-      name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      description: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
-      business: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
+      code: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      description: ['', [Validators.required]],
+      business: ['', [Validators.required]],
       date: ['', [Validators.required]],
       start_time: ['', [Validators.required]],
       end_time: ['', [Validators.required]]
@@ -58,6 +58,7 @@ export class EventCreateComponent implements OnInit {
   }
 
   async create() {
+    console.log(this.form.errors)
     if (this.form.invalid) {
       this.toastr.error('Preencha todos os campos obrigatórios antes de cadastrar o evento.');
       return;

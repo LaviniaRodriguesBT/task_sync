@@ -22,7 +22,7 @@
       "cpf": "17854236",
       "name": "Lavinia",
       "phone": "35998993566",
-      "address": "Rua Manoel Patta,216"
+      "address": "Rua Manoel Patta,2"
     },
     {
       "id": "2",
@@ -203,7 +203,9 @@
       "name": "Congresso de Engenharia",
       "description": "Congresso anual de engenharia com palestras e workshops",
       "business": "Engineering",
-      "date": "20/04/2024"
+      "date": "2024-04-20",
+      "start_time": "14:00",
+      "end_time": "18:00"
     },
     {
       "id": "5",
@@ -211,7 +213,9 @@
       "name": "Seminário de Sustentabilidade",
       "description": "Discussões sobre práticas sustentáveis no ambiente corporativo",
       "business": "Environment",
-      "date": "12/06/2024"
+      "date": "2024-04-20",
+      "start_time": "14:00",
+      "end_time": "18:00"
     },
     {
       "id": "6",
@@ -219,7 +223,9 @@
       "name": "Hackathon Universitário",
       "description": "Competição de programação para universitários",
       "business": "Technology",
-      "date": "18/07/2024"
+      "date": "2024-04-20",
+      "start_time": "14:00",
+      "end_time": "18:00"
     },
     {
       "id": "7",
@@ -227,7 +233,9 @@
       "name": "Simpósio de Saúde",
       "description": "Simpósio sobre inovações na área da saúde",
       "business": "Health",
-      "date": "22/08/2024"
+      "date": "2024-04-20",
+      "start_time": "14:00",
+      "end_time": "18:00"
     },
     {
       "id": "8",
@@ -235,7 +243,9 @@
       "name": "Encontro de Empreendedores",
       "description": "Encontro para troca de experiências entre empreendedores",
       "business": "Business",
-      "date": "10/09/2024"
+      "date": "2024-04-20",
+      "start_time": "14:00",
+      "end_time": "18:00"
     },
     {
       "id": "9",
@@ -243,7 +253,9 @@
       "name": "Festival de Inovação",
       "description": "Festival com exposições de startups inovadoras",
       "business": "Technology",
-      "date": "25/10/2024"
+      "date": "2024-04-20",
+      "start_time": "14:00",
+      "end_time": "18:00"
     },
     {
       "id": "10",
@@ -251,7 +263,9 @@
       "name": "Feira do Livro",
       "description": "Feira anual com lançamentos de livros e palestras",
       "business": "Literature",
-      "date": "05/11/2024"
+      "date": "2024-04-20",
+      "start_time": "14:00",
+      "end_time": "18:00"
     },
     {
       "id": "11",
@@ -259,7 +273,9 @@
       "name": "Conferência de Marketing Digital",
       "description": "Discussões sobre as tendências do marketing digital",
       "business": "Marketing",
-      "date": "15/11/2024"
+      "date": "2024-04-20",
+      "start_time": "14:00",
+      "end_time": "18:00"
     },
     {
       "id": "12",
@@ -267,7 +283,9 @@
       "name": "Seminário de Direitos Humanos",
       "description": "Debates sobre questões de direitos humanos no mundo atual",
       "business": "Law",
-      "date": "20/12/2024"
+      "date": "2024-04-20",
+      "start_time": "14:00",
+      "end_time": "18:00"
     },
     {
       "id": "13",
@@ -275,7 +293,9 @@
       "name": "Workshop de Desenvolvimento Pessoal",
       "description": "Técnicas e práticas para o desenvolvimento pessoal e profissional",
       "business": "Self-Help",
-      "date": "10/01/2025"
+      "date": "2024-04-20",
+      "start_time": "14:00",
+      "end_time": "18:00"
     },
     {
       "id": "14",
@@ -283,7 +303,9 @@
       "name": "Encontro de Programadores",
       "description": "Encontro para troca de conhecimentos entre programadores",
       "business": "Technology",
-      "date": "25/01/2025"
+      "date": "2024-04-20",
+      "start_time": "14:00",
+      "end_time": "18:00"
     },
     {
       "id": "15",
@@ -291,7 +313,9 @@
       "name": "Congresso de Psicologia",
       "description": "Congresso sobre as últimas pesquisas em psicologia",
       "business": "Health",
-      "date": "05/02/2025"
+      "date": "2024-04-20",
+      "start_time": "14:00",
+      "end_time": "18:00"
     }
   ],
   "administrator": [
@@ -486,6 +510,18 @@
       "start_time": "17:25",
       "end_time": "18:26",
       "date": "2024-09-17",
+      "status": "Em aberto"
+    },
+    {
+      "id": "b3b1",
+      "event_id": "3",
+      "event": "Congresso de Engenharia",
+      "user_id": "lalala",
+      "task_id": "lalalal",
+      "value": "4444",
+      "start_time": "18:53",
+      "end_time": "20:53",
+      "date": "2024-09-19",
       "status": "Em aberto"
     }
   ],
