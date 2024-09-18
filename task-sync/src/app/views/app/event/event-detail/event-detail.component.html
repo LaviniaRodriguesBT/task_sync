@@ -47,8 +47,8 @@
                 value="{{eventInformation?.end_time}}">
         </div>
         <div class="col-12 text-end mt-2">
-            <button class="btn btn-secondary col-2 me-4 btn-back" routerLink="/event/list">Voltar</button>
-            <button class="btn btn-primary col-2 btn-edit" routerLink="/event/edit/{{eventInformation?.id}}" *ngIf= "accessType == 'adm'" >Editar</button>
+            <button class="btn col-2 me-4 btn-back" routerLink="/event/list">Voltar</button>
+            <button class="btn col-2 btn-edit" routerLink="/event/edit/{{eventInformation?.id}}" *ngIf= "accessType == 'adm'" >Editar</button>
         </div>
     </div>
 </form>
