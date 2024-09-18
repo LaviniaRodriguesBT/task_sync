@@ -23,7 +23,6 @@ public class TaskServiceImplem implements TaskService {
             return 0;
         }
         if (entity.getId() <= 0 ||
-
                 entity.getName().isEmpty()) {
             return 0;
         }
