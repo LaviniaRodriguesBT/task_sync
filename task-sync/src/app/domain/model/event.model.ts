@@ -4,7 +4,7 @@ export interface Event {
     name: string,
     description: string,
     business: string,
-    date: string,
-    start_time: string,
-    end_time: string,
+    date: Date,
+    start_time: Date,
+    end_time: Date,
 }
