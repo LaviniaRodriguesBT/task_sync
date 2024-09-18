@@ -39,6 +39,7 @@ export class TaskCreateComponent implements OnInit {
   initializeForm() {
     this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
+      userId: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
     });
   }
 
