@@ -156,7 +156,7 @@ public class TaskPostgresDaoImplem implements TaskDao {
             }
             resultSet.close();
             preparedStatement.close();
-            return null;
+            return tasks;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
