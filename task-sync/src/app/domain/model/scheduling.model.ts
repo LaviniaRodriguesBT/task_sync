@@ -6,8 +6,8 @@ export interface Scheduling{
     task_id: string,
     event: string,
     value: string,
-    start_time: Date,
-    end_time: Date,
-    date: Date,
+    start_time: string,
+    end_time: string,
+    date: string,
     status: string
 }
