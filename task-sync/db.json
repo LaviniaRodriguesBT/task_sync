@@ -284,14 +284,6 @@
       "description": "Encontro para troca de conhecimentos entre programadores",
       "business": "Technology",
       "date": "25/01/2025"
-    },
-    {
-      "id": "15",
-      "code": "015",
-      "name": "Congresso de Psicologia",
-      "description": "Congresso sobre as últimas pesquisas em psicologia",
-      "business": "Health",
-      "date": "05/02/2025"
     }
   ],
   "administrator": [
