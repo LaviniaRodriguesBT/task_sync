@@ -25,7 +25,7 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
     public int add(SchedulingModel entity) {
 
         String sql = "INSERT INTO scheduling(start_time, end_time, date, status) ";
-        sql += " VALUES(?, ?, ?);";
+        sql += " VALUES(?, ?, ?, ?);";
 
         PreparedStatement preparedStatement;
         ResultSet resultSet;
@@ -160,7 +160,7 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
             }
             resultSet.close();
             preparedStatement.close();
-            return null;
+            return schedulings;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
