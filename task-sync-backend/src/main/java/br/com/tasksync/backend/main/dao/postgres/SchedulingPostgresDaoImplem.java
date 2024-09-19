@@ -113,10 +113,19 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
     public List<SchedulingModel> readAll() {
 
         final List<SchedulingModel> schedulings = new ArrayList<>();
-        final String sql = "SELECT s.*, e.name, e.id as event_id, c.user_id " +
-                "FROM scheduling s " +
-                "INNER JOIN contract c ON c.id = s.contract_id " +
-                "INNER JOIN \"event\" e ON e.id = c.event_id;";
+        final String sql = "SELECT e.name as nome_evento, \n" +
+                "\tp.name as nome_pessoa, \n" +
+                "\tt.name as nome_atividade,\n" +
+                "\ts.start_time as horario_inicio,\n" +
+                "\ts.end_time as horario_final,\n" +
+                "\ts.date as \"data\",\n" +
+                "\ts.status\n" +
+                "     FROM scheduling s \n" +
+                "     INNER JOIN contract c ON c.id = s.contract_id \n" +
+                "\t   INNER JOIN person p ON c.user_id = p.id\n" +
+                "\t   inner join activity a on a.id = s.activity_id\n" +
+                "\t   inner join task t on t.id = a.task_id\n" +
+                "     INNER JOIN event e ON e.id = c.event_id;";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
