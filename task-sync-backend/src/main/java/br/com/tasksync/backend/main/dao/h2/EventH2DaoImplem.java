@@ -52,8 +52,8 @@ public class EventH2DaoImplem implements EventDao {
                         rs.getString("description"),
                         rs.getString("business"),
                         rs.getDate("date").toLocalDate(),
-                        rs.getDate("start_time").toLocalDate(),
-                        rs.getDate("end_time").toLocalDate()
+                        rs.getTime("start_time"),
+                        rs.getTime("end_time")
 
                 ));
         return entity;
@@ -69,8 +69,8 @@ public class EventH2DaoImplem implements EventDao {
                         rs.getString("description"),
                         rs.getString("business"),
                         rs.getDate("date").toLocalDate(),
-                        rs.getDate("start_time").toLocalDate(),
-                        rs.getDate("end_time").toLocalDate()
+                        rs.getTime("start_time"),
+                        rs.getTime("end_time")
 
                 ));
 
