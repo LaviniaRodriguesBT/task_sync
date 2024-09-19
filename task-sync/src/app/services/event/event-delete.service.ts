@@ -10,6 +10,6 @@ export class EventDeleteService {
   constructor(private http: HttpClient) { }
 
   delete(id: string){
-    return firstValueFrom(this.http.delete(`http://localhost:3000/event/${id}`));
+    return firstValueFrom(this.http.delete(`http://localhost:8080/api/event/${id}`));
   }
 }

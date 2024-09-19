@@ -13,6 +13,6 @@ export class EventUpdateService {
   async update(event: Event) {
     console.log(`atualizando o evento...`);
     console.log(event);
-    return await firstValueFrom(this.http.put(`http://localhost:3000/event/${event.id}`, event));
+    return await firstValueFrom(this.http.put(`http://localhost:8080/api/event/${event.id}`, event));
   }
 }
