@@ -8,6 +8,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 // Classe responsavel por realizar a conexao entre o banco de dados
 // Responsavel por salvar, editar, excluir, ler informações que estão salvas no banco
 public class TaskH2DaoImplem implements TaskDao {
@@ -22,7 +23,7 @@ public class TaskH2DaoImplem implements TaskDao {
 
     @Override
     public int add(TaskModel entity) {
-        final SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate).withTableName("task_model").usingGeneratedKeyColumns("id");
+        final SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate).withTableName("task").usingGeneratedKeyColumns("id");
         final Map<String, Object> parameters = new HashMap<>();
         parameters.put("name: ", entity.getName());
 
@@ -33,14 +34,14 @@ public class TaskH2DaoImplem implements TaskDao {
 
     @Override
     public void remove(int id) {
-        final String sql = "DELETE FROM task_model WHERE id = "+ id;
+        final String sql = "DELETE FROM task WHERE id = " + id;
         jdbcTemplate.execute(sql);
 
     }
 
     @Override
     public TaskModel readyById(int id) {
-        final TaskModel entity = jdbcTemplate.queryForObject("SELECT * FROM task_model WHERE id = ", new Object[]{id},(rs,rowNum) ->
+        final TaskModel entity = jdbcTemplate.queryForObject("SELECT * FROM task WHERE id = ", new Object[]{id}, (rs, rowNum) ->
                 new TaskModel(
                         rs.getInt("id"),
                         rs.getString("name")
@@ -51,7 +52,7 @@ public class TaskH2DaoImplem implements TaskDao {
 
     @Override
     public List<TaskModel> readAll() {
-        final List<TaskModel> entities = jdbcTemplate.query("SELECT * FROM task_model", new Object[]{},(rs,rowNum) ->
+        final List<TaskModel> entities = jdbcTemplate.query("SELECT * FROM task", new Object[]{}, (rs, rowNum) ->
                 new TaskModel(
                         rs.getInt("id"),
                         rs.getString("name")

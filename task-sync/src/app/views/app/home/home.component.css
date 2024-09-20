@@ -1,105 +1,132 @@
-.dashboard {
-    padding: 20px;
-    
+.card-container {
+  max-width: 1200px;
+  margin: auto;
+  position: relative;
 }
 
-.status-cards {
-    display: flex;
-    gap: 20px;
-    margin-bottom: 5%;
+.p-carousel {
+  display: flex;
+  flex-direction: column;
 }
 
 .card {
-    border: 1px solid #dee2e6;
-    border-radius: 5px;
-    padding: 20px;
-    text-align: center;
-    flex: 1;
-    color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+  margin: 10px;
 }
 
-.card h3 {
-    margin-bottom: 10px;
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-.card p {
-    font-size: 24px;
-    font-weight: bold;
+.card-header {
+  background-color: rgba(10, 6, 87, 0.975);
+  color: white;
+  text-align: center;
+  padding: 25px;
+  padding-bottom: 3px;
+  width: 100%;
 }
 
-.chart-container {
-    width: 100%;
-    height: 400px;
+.card-body {
+  display: flex;
+  font-size: 14px;
+  padding: 10px;
 }
 
-.card-doughnut{
-    width: 45%;
+.card-footer {
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 1px 1px;
 }
 
-.imagem-container {
-    width: 100%;
-    height: auto;
-    text-align: center;
-}
-
-.imagem-container img {
-    max-width: 100%;
-    height: auto;
-}
-
-.card-body{
-    color: black;
-    
-}
-
-.col-12{
-    text-align: center;
-    padding-top: 5%;
-    padding-bottom: 0%;
+.user-image img {
+  width: 30%;
+  border-radius: 8px;
 }
 
 
 .btn-access {
-    border: none;
-    cursor: pointer;
-    width: 150px;
-    display: inline-block;
-    border-radius: 10rem;
-    color: black; 
-    text-transform: uppercase;
-    font-size: 1rem;
-    letter-spacing: .15rem;
-    transition: all .3s;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    &:after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border-radius: 10rem;
-      z-index: -2;
-    }
-    &:before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0%;
-      height: 100%;
-      background-color: rgba(9, 9, 163, 0.811);
-      transition: all .3s;
-      border-radius: 10rem;
-      z-index: -1;
-    }
-    &:hover {
-      color: #ffffff; 
-      &:before {
-        width: 100%;
-      }
-    }      
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 10rem;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  background-color: white;
+  border: 2px solid rgb(9, 9, 163);
 
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+    z-index: -2;
   }
+
+  &:before {
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: rgb(9, 9, 163);
+    transition: all .3s;
+    border-radius: 10rem;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: white;
+    background-color: rgb(9, 9, 163);
+
+    &:before {
+      width: 100%;
+    }
+  }
+
+  align-items: center;
+  gap: 5px;
+}
+
+
+.dashboard {
+  padding: 20px;
+}
+
+.status-cards {
+  display: flex;
+  gap: 50px;
+}
+
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  padding: 20px;
+  text-align: center;
+  flex: 1;
+  color: white;
+}
+
+.card h3 {
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 24px;
+  font-weight: bold;
+}

@@ -6,5 +6,5 @@ export interface User {
     name: string,
     phone: string,
     address: string,
-    access_type?: string
+    type_access?: string
 }

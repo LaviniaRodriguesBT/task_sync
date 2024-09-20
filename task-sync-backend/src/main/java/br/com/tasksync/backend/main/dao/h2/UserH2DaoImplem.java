@@ -9,6 +9,7 @@ import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+
 // Classe responsavel por realizar a conexao entre o banco de dados
 // Responsavel por salvar, editar, excluir, ler informações que estão salvas no banco
 public class UserH2DaoImplem implements UserDao {
@@ -35,57 +36,67 @@ public class UserH2DaoImplem implements UserDao {
         parameters.put("access_type: ", entity.getAccess_type());
 
 
-
-
         final Number id = simpleJdbcInsert.executeAndReturnKey(parameters);
         return id.intValue();
     }
 
     @Override
     public void remove(int id) {
-        final String sql = "DELETE FROM user_model WHERE id = "+ id;
+        final String sql = "DELETE FROM user WHERE id = " + id;
         jdbcTemplate.execute(sql);
 
     }
 
     @Override
     public UserModel readyById(int id) {
-        final UserModel entity = jdbcTemplate.queryForObject("SELECT * FROM user_model WHERE id = ", new Object[]{id},(rs,rowNum) ->
-                new UserModel(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("email"),
-                        rs.getString("password"),
-                        rs.getString("cpf"),
-                        rs.getString("phone"),
-                        rs.getString("address"),
-                        rs.getString("access_type")
+//        final UserModel entity = jdbcTemplate.queryForObject("SELECT * FROM user WHERE id = ", new Object[]{id}, (rs, rowNum) ->
+//                new UserModel(
+//                        rs.getInt("id"),
+//                        rs.getString("name"),
+//                        rs.getString("email"),
+//                        rs.getString("password"),
+//                        rs.getString("cpf"),
+//                        rs.getString("phone"),
+//                        rs.getString("address"),
+//                        rs.getString("access_type")
+//
+//                ));
+//        return entity;
+        return null;
 
-                ));
-        return entity;
     }
+
 
     @Override
     public List<UserModel> readAll() {
-        final List<UserModel> entities = jdbcTemplate.query("SELECT * FROM user_model", new Object[]{},(rs,rowNum) ->
-                new UserModel(
-                        rs.getInt("id"),
-                        rs.getString("name"),
-                        rs.getString("email"),
-                        rs.getString("password"),
-                        rs.getString("cpf"),
-                        rs.getString("phone"),
-                        rs.getString("address"),
-                        rs.getString("access_type")
-
-
-                ));
-
-        return entities;
+//        final List<UserModel> entities = jdbcTemplate.query("SELECT * FROM user_model", new Object[]{}, (rs, rowNum) ->
+//                new UserModel(
+//                        rs.getInt("id"),
+//                        rs.getString("name"),
+//                        rs.getString("email"),
+//                        rs.getString("password"),
+//                        rs.getString("cpf"),
+//                        rs.getString("phone"),
+//                        rs.getString("address"),
+//                        rs.getString("access_type")
+//
+//                ));
+////
+        return null;
     }
 
     @Override
     public void updateInformation(int id, UserModel entity) {
 
+    }
+
+    @Override
+    public UserModel readByEmail(String email) {
+        return null;
+    }
+
+    @Override
+    public boolean updatePassword(int id, String newPassword) {
+        return false;
     }
 }

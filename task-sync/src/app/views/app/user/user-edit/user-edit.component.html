@@ -43,16 +43,16 @@
             <input type="text" class="field-name" id="address" placeholder="Endereço" formControlName="address">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="cpf" class="text-name">Tipo de acesso</label>
-            <input id="ant" type="radio" name="base" class="type-user">
-            <label for="type-admin" class="type-user">Administrador</label>
-            <input id="new" type="radio" name="base" class="type-user">
-            <label for="type-admin" class="type-user">Colaborador</label>
+            <label for="type_access" class="text-name">Tipo de acesso</label>
+            <input id="adm" type="radio" name="user-type" class="type-user">
+            <label for="adm" class="type-user">Administrador</label>
+            <input id="colab" type="radio" name="user-type" class="type-user">
+            <label for="colab" class="type-user">Colaborador</label>
         </div>
         <div class="col-12 text-end mt-2">
             <div class="col-12 text-end mt-2">
-                <a class="btn btn-secondary col-2 me-4 btn-back" href="/user/list">Voltar</a>
-                <button class="btn btn-success col-2 btn-create">Salvar</button>
+                <a class="btn col-2 me-4 btn-back" href="/user/list">Voltar</a>
+                <button class="btn col-2 btn-create">Salvar</button>
             </div>
         </div>
     </div>

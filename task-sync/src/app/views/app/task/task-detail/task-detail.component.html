@@ -17,8 +17,8 @@
                 value="{{taskInformation?.name}}">
         </div>
         <div class="col-12 text-end mt-2">
-            <button class="btn btn-secondary col-2 me-4 btn-back" routerLink="/task/list">Voltar</button>
-            <button class="btn btn-primary col-2 btn-edit" routerLink="/task/edit/{{taskInformation?.id}}" *ngIf= "accessType == 'adm'">Editar</button>
+            <button class="btn col-2 me-4 btn-back" routerLink="/task/list">Voltar</button>
+            <button class="btn col-2 btn-create" routerLink="/task/edit/{{taskInformation?.id}}">Editar</button>
         </div>
     </div>
 </form>

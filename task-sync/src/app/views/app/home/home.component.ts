@@ -6,6 +6,9 @@ import { ChartModule } from 'primeng/chart';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { EventReadService } from '../../../services/event/event-read.service';
+import { Event } from '../../../domain/model/event.model';
+import { CarouselModule } from 'primeng/carousel'; 
 
 @Component({
   selector: 'task-sync-home',
@@ -14,7 +17,8 @@ import { CommonModule } from '@angular/common';
     ChartModule,
     FontAwesomeModule,
     RouterModule,
-    CommonModule
+    CommonModule, 
+    CarouselModule 
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
@@ -32,7 +36,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private schedulingService: SchedulingReadService,
-    private renderer: Renderer2
+    private renderer: Renderer2,
+    private eventReadService: EventReadService
   ) { }
 
   ngOnInit(): void {
@@ -43,7 +48,12 @@ export class HomeComponent implements OnInit {
       this.emAberto = data.filter((item: Scheduling) => item.status.toLowerCase() === 'em aberto').length;
 
       this.applyDynamicStyles();
+      this.loadEvents();
     });
+  }
+
+  async loadEvents() {
+    this.events = await this.eventReadService.findAll();
   }
 
   applyDynamicStyles(): void {

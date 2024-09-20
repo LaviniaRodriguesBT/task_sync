@@ -1,18 +1,16 @@
---Inserts tabela Person
-insert into person (id, cpf, name, address)
-values (default, '123', 'Michele F', 'rua: 1'),
-       (default, '321', 'Lavinia B', 'rua: 2'),
-       (default, '456', 'Lucas S', 'rua: 3'),
-       (default, '654', 'Alan S', 'rua: 4'),
-       (default, '789', 'Leandro L', 'rua: 5'),
-       (default, '987', 'Bruno G', 'rua: 6'),
-       (default, '147', 'Bruna V', 'rua: 7'),
-       (default, '258', 'Daniele B', 'rua: 8'),
-       (default, '369', 'Josue S', 'rua: 9'),
-       (default, '741', 'Patricia R', 'rua: 10');
+insert into person (id, cpf, name, address, phone)
+values (default, '123', 'Michele F', 'rua: 1', '987'),
+       (default, '321', 'Lavinia B', 'rua: 2', '654'),
+       (default, '456', 'Lucas S', 'rua: 3', '321'),
+       (default, '654', 'Alan S', 'rua: 4', '963'),
+       (default, '789', 'Leandro L', 'rua: 5', '258'),
+       (default, '987', 'Bruno G', 'rua: 6', '147'),
+       (default, '147', 'Bruna V', 'rua: 7', '753'),
+       (default, '258', 'Daniele B', 'rua: 8', '159'),
+       (default, '369', 'Josue S', 'rua: 9', '456'),
+       (default, '741', 'Patricia R', 'rua: 10', '888');
 
 
---Inserts tabela User
 insert into "user" (id, login, password, access_type, person_id)
 values (default, 'michelef', '123', 'Administrador', 1),
        (default, 'laviniab', '321', 'Colaborador', 2),
@@ -25,7 +23,7 @@ values (default, 'michelef', '123', 'Administrador', 1),
        (default, 'josues', '369', 'Administrador', 9),
        (default, 'patriciar', '741', 'Colaborador', 10);
 
---Inserts tabela Event
+
 
 insert into event (id, code, name, description, business, date, start_time, end_time)
 values (default, '001', 'Reunião de Equipe', 'Discussão sobre o novo projeto', 'Desenvolvimento', '2024-05-20',
@@ -50,7 +48,7 @@ values (default, '001', 'Reunião de Equipe', 'Discussão sobre o novo projeto',
         '12:00:00');
 
 
---Inserts tabela Task
+
 insert into task (id, name)
 values (default, 'limpeza'),
        (default, 'transporte'),
@@ -63,7 +61,7 @@ values (default, 'limpeza'),
        (default, 'DJs'),
        (default, 'cantor');
 
---Inserts tabela Activity
+
 insert into activity (id, value, event_id, task_id)
 values (default, 300.00, 10, 5),
        (default, 500.50, 9, 4),
@@ -77,9 +75,7 @@ values (default, 300.00, 10, 5),
        (default, 900.00, 1, 8);
 
 
-DELETE
-FROM contract;
---Inserts tabela Contract
+
 insert into contract (id, number, signature_date, user_id, event_id)
 values (default, 100, now(), 2, 9),
        (default, 200, now(), 1, 7),
@@ -92,7 +88,7 @@ values (default, 100, now(), 2, 9),
        (default, 900, now(), 10, 2),
        (default, 1000, now(), 9, 10);
 
---Inserts tabela Scheduling
+
 insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id)
 values (default, '2024-09-07', '2024-09-07', '2024-08-20', 'Em aberto', 2, 1),
        (default, '2024-04-07', '2024-04-09', '2024-01-20', 'Finalizada', 1, 2),

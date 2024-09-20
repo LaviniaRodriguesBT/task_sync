@@ -108,19 +108,10 @@ hr {
     width: 100%;
 }
 
-.btn-back,
-.btn-edit {
-    border-radius: 4px;
-    color: white;
-    padding: 10px 30px;
+.btn-back{
     border: none;
     cursor: pointer;
-    font-size: 16px;
     width: 150px;
-    text-align: center;
-}
-
-.btn-back {
     display: inline-block;
     padding: .75rem 1.25rem;
     border-radius: 10rem;
@@ -132,48 +123,48 @@ hr {
     position: relative;
     overflow: hidden;
     z-index: 1;
-
+    background-color: white;
+    border: 2px solid #6f42c1;
     &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: gray;
-        border-radius: 10rem;
-        z-index: -2;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10rem;
+      z-index: -2;
     }
-
     &:before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0%;
-        height: 100%;
-        background-color: rgb(110, 110, 110);
-        transition: all .3s;
-        border-radius: 10rem;
-        z-index: -1;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: #6f42c1;
+      transition: all .3s;
+      border-radius: 10rem;
+      z-index: -1;
     }
-
     &:hover {
-        color: #ffffff;
-
-        &:before {
-            width: 100%;
-        }
+      color: white;
+      background-color: #6f42c1; 
+      &:before {
+        width: 100%;
+      }
     }
-
-    margin: 1%;
-}
-
-.btn-edit {
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .btn-create {
+    border: none;
+    cursor: pointer;
+    width: 150px;
     display: inline-block;
     padding: .75rem 1.25rem;
     border-radius: 10rem;
-    color: rgb(0, 0, 0);
+    color: rgb(0, 0, 0); 
     text-transform: uppercase;
     font-size: 1rem;
     letter-spacing: .15rem;
@@ -181,41 +172,39 @@ hr {
     position: relative;
     overflow: hidden;
     z-index: 1;
-
+    background-color: white;
+    border: 2px solid green;
     &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 10rem;
-        z-index: -2;
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      border-radius: 10rem;
+      z-index: -2;
     }
-
     &:before {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0%;
-        height: 100%;
-        background-color: blue;
-        transition: all .3s;
-        border-radius: 10rem;
-        z-index: -1;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 0%;
+      height: 100%;
+      background-color: green;
+      transition: all .3s;
+      border-radius: 10rem;
+      z-index: -1;
     }
-
     &:hover {
-        color: #ffffff;
-
-        &:before {
-            width: 100%;
-        }
+      color: white;
+      background-color: green;
+      &:before {
+        width: 100%;
+      }
     }
-
-    margin: 1%;
-}
+    align-items: center;
+    gap: 5px;
+  }
 
 .input-group-text {
     font-size: 18px;
