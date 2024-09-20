@@ -29,13 +29,14 @@ public class UserRestController {
         return ResponseEntity.ok().body(users);
     }
 
-
+    @CrossOrigin
     @GetMapping("/{id}")
     public ResponseEntity<UserModel> getEntityById(@PathVariable final int id){
         UserModel user = userService.findById(id);
         return ResponseEntity.ok().body(user);
     }
 
+    @CrossOrigin
     @PostMapping()
     public ResponseEntity<UserModel> createEntity(@RequestBody final UserModel data){
         int id = userService.create(data);
@@ -44,12 +45,14 @@ public class UserRestController {
         return ResponseEntity.created(uri).build();
     }
 
+    @CrossOrigin
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateEntity(@PathVariable final int id, @RequestBody final UserModel data){
         userService.update(id, data);
         return ResponseEntity.ok().build();
     }
 
+    @CrossOrigin
     @DeleteMapping("/{id}")
     public ResponseEntity<UserModel> deleteEntity(@PathVariable final int id){
         userService.delete(id);

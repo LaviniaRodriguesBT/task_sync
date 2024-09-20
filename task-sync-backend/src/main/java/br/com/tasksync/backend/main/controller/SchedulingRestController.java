@@ -23,19 +23,21 @@ public class SchedulingRestController {
         this.schedulingService = schedulingService;
     }
 
+    @CrossOrigin
     @GetMapping()
     public ResponseEntity<List<SchedulingModel>> getEntities() {
         List<SchedulingModel> schedulings = schedulingService.findAll();
         return ResponseEntity.ok().body(schedulings);
     }
 
-
+    @CrossOrigin
     @GetMapping("/{id}")
     public ResponseEntity<SchedulingModel> getEntityById(@PathVariable final int id) {
         SchedulingModel scheduling = schedulingService.findById(id);
         return ResponseEntity.ok().body(scheduling);
     }
 
+    @CrossOrigin
     @PostMapping()
     public ResponseEntity<SchedulingModel> createEntity(@RequestBody final SchedulingModel data) {
         int id = schedulingService.create(data);
@@ -44,12 +46,14 @@ public class SchedulingRestController {
         return ResponseEntity.created(uri).build();
     }
 
+    @CrossOrigin
     @PutMapping("/{id}")
     public ResponseEntity<Void> updateEntity(@PathVariable final int id, @RequestBody final SchedulingModel data) {
         schedulingService.update(id, data);
         return ResponseEntity.ok().build();
     }
 
+    @CrossOrigin
     @DeleteMapping("/{id}")
     public ResponseEntity<SchedulingModel> deleteEntity(@PathVariable final int id) {
         schedulingService.delete(id);
