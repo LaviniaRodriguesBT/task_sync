@@ -22,6 +22,7 @@ public class UserRestController {
         this.userService = userService;
     }
 
+    @CrossOrigin
     @GetMapping()
     public ResponseEntity<List<UserModel>> getEntities(){
         List<UserModel> users = userService.findAll();
