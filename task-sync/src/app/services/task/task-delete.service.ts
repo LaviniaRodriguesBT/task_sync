@@ -9,6 +9,6 @@ export class TaskDeleteService {
   constructor(private http: HttpClient) { }
 
   delete(id: string){
-    return firstValueFrom(this.http.delete(`http://localhost:3000/task/${id}`));
+    return firstValueFrom(this.http.delete(`http://localhost:8080/api/task/${id}`));
   }
 }
