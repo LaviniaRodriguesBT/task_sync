@@ -288,16 +288,6 @@
       "end_time": "18:00"
     },
     {
-      "id": "13",
-      "code": "013",
-      "name": "Workshop de Desenvolvimento Pessoal",
-      "description": "Técnicas e práticas para o desenvolvimento pessoal e profissional",
-      "business": "Self-Help",
-      "date": "2024-04-20",
-      "start_time": "14:00",
-      "end_time": "18:00"
-    },
-    {
       "id": "14",
       "code": "014",
       "name": "Encontro de Programadores",

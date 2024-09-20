@@ -135,7 +135,7 @@ public class UserPostgresDaoImplem implements UserDao {
 
     @Override
     public UserModel readyById(int id) {
-        final String sql = "SELECT * FROM \"user\" WHERE id = ?;";
+        final String sql = "SELECT * FROM \"user\" u INNER JOIN person p ON p.id = u.person_id WHERE u.id = ?;";
 
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
@@ -148,7 +148,7 @@ public class UserPostgresDaoImplem implements UserDao {
                 final UserModel user = new UserModel();
                 user.setId(resultSet.getInt("id"));
                 user.setName(resultSet.getString("name"));
-                user.setEmail(resultSet.getString("email"));
+                user.setEmail(resultSet.getString("login"));
                 user.setPassword(resultSet.getString("password"));
                 user.setCpf(resultSet.getString("cpf"));
                 user.setPhone(resultSet.getString("phone"));
@@ -188,6 +188,7 @@ public class UserPostgresDaoImplem implements UserDao {
                 final UserModel user = new UserModel();
 
                 user.setId(resultSet.getInt("id"));
+                user.setCpf(resultSet.getString("cpf"));
                 user.setName(resultSet.getString("name"));
                 user.setEmail(resultSet.getString("login"));
                 user.setPassword(resultSet.getString("password"));
