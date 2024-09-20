@@ -12,18 +12,18 @@ export class SchedulingReadService {
   constructor(private http: HttpClient) { }
 
   findById(id: string): Promise<Scheduling>{
-    return firstValueFrom(this.http.get<Scheduling>(`http://localhost:3000/scheduling/${id}`));
+    return firstValueFrom(this.http.get<Scheduling>(`http://localhost:8080/api/event/scheduling/${id}`));
   }
 
   findByEventId(id: string): Promise<SchedulingUser[]>{
-    return firstValueFrom(this.http.get<SchedulingUser[]>(`http://localhost:3000/scheduling?event_id=${id}`));
+    return firstValueFrom(this.http.get<SchedulingUser[]>(`http://localhost:8080/api/event/scheduling?event_id=${id}`));
   }
 
   findByName(name: string): Promise<Scheduling[]> {
-    return firstValueFrom(this.http.get<Scheduling[]>(`http://localhost:3000/scheduling?name=${name}`));
+    return firstValueFrom(this.http.get<Scheduling[]>(`http://localhost:8080/api/event/scheduling?name=${name}`));
   }
 
   findAll(): Promise<Scheduling[]>{
-    return firstValueFrom(this.http.get<Scheduling[]>('http://localhost:3000/scheduling'));
+    return firstValueFrom(this.http.get<Scheduling[]>('http://localhost:8080/api/event/scheduling'));
   }
 }

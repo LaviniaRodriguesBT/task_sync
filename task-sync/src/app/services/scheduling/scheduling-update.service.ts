@@ -13,6 +13,6 @@ export class SchedulingUpdateService {
   async update(scheduling: Scheduling) {
     console.log(`atualizando o cronograma...`);
     console.log(scheduling);
-    return await firstValueFrom(this.http.put(`http://localhost:3000/scheduling/${scheduling.id}`, scheduling));
+    return await firstValueFrom(this.http.put(`http://localhost:8080/api/event/scheduling/${scheduling.id}`, scheduling));
   }
 }

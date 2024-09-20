@@ -11,14 +11,14 @@ export class EventReadService {
   constructor(private http: HttpClient) { }
 
   findById(id: string): Promise<Event>{
-    return firstValueFrom(this.http.get<Event>(`http://localhost:3000/event/${id}`));
+    return firstValueFrom(this.http.get<Event>(`http://localhost:8080/api/event/${id}`));
   }
 
   findByName(name: string): Promise<Event[]> {
-    return firstValueFrom(this.http.get<Event[]>(`http://localhost:3000/event?name=${name}`));
+    return firstValueFrom(this.http.get<Event[]>(`http://localhost:8080/api/event?name=${name}`));
   }
 
   findAll(): Promise<Event[]>{
-    return firstValueFrom(this.http.get<Event[]>('http://localhost:3000/event'));
+    return firstValueFrom(this.http.get<Event[]>('http://localhost:8080/api/event'));
   }
 }

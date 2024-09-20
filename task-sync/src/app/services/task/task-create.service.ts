@@ -10,6 +10,6 @@ export class TaskCreateService {
   constructor(private http: HttpClient) { }
 
   async create(task: Task){
-    return firstValueFrom(this.http.post('http://localhost:3000/task', task))
+    return firstValueFrom(this.http.post('http://localhost:8080/api/task', task))
   }
 }

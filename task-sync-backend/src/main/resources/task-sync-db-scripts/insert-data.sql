@@ -11,7 +11,7 @@ values (default, '123', 'Michele F', 'rua: 1', '987'),
        (default, '741', 'Patricia R', 'rua: 10', '888');
 
 
-insert into "user" (id, login, password, access_type, person_id)
+insert into "user" (id, email, password, access_type, person_id)
 values (default, 'michelef', '123', 'Administrador', 1),
        (default, 'laviniab', '321', 'Colaborador', 2),
        (default, 'lucass', '456', 'Colaborador', 3),

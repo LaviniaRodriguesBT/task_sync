@@ -13,6 +13,6 @@ export class TaskUpdateService {
   async update(task: Task) {
     console.log(`atualizando a atividade...`);
     console.log(task);
-    return await firstValueFrom(this.http.put(`http://localhost:3000/task/${task.id}`, task));
+    return await firstValueFrom(this.http.put(`http://localhost:8080/api/task/${task.id}`, task));
   }
 }
