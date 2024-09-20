@@ -11,6 +11,6 @@ export class UserCreateService {
   constructor(private http: HttpClient) { }
 
   async createUser(user: User){
-    return firstValueFrom(this.http.post('http://localhost:3000/user', user))
+    return firstValueFrom(this.http.post('http://localhost:8080/api/user', user))
   }
 }
