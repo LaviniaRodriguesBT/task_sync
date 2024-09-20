@@ -13,6 +13,6 @@ export class UserUpdateService {
   async update(user: User) {
     console.log(`atualizando o user...`);
     console.log(user);
-    return await firstValueFrom(this.http.put(`http://localhost:3000/user/${user.id}`, user));
+    return await firstValueFrom(this.http.put(`http://localhost:8080/api/user/${user.id}`, user));
   }
 }

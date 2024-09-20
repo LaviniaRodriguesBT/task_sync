@@ -10,7 +10,7 @@ export class UserDeleteService {
   constructor(private http: HttpClient) { }
 
   delete(id: string){
-    return firstValueFrom(this.http.delete(`http://localhost:3000/user/${id}`));
+    return firstValueFrom(this.http.delete(`http://localhost:8080/api/user/${id}`));
   }
 
 }  

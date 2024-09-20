@@ -11,14 +11,14 @@ export class TaskReadService {
   constructor(private http: HttpClient) { }
 
   findById(id: string): Promise<Task>{
-    return firstValueFrom(this.http.get<Task>(`http://localhost:3000/task/${id}`));
+    return firstValueFrom(this.http.get<Task>(`http://localhost:8080/api/task/${id}`));
   }
 
   findByName(name: string): Promise<Task[]> {
-    return firstValueFrom(this.http.get<Task[]>(`http://localhost:3000/task?name=${name}`));
+    return firstValueFrom(this.http.get<Task[]>(`http://localhost:8080/api/task?name=${name}`));
   }
 
   findAll(): Promise<Task[]>{
-    return firstValueFrom(this.http.get<Task[]>('http://localhost:3000/task'));
+    return firstValueFrom(this.http.get<Task[]>('http://localhost:8080/api/task'));
   }
 };
