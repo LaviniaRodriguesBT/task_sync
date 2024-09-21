@@ -22,7 +22,7 @@ export class EventCreateComponent implements OnInit {
 
   form!: FormGroup;
   nameMinLength: number = 3;
-  nameMaxLength: number = 10;
+  nameMaxLength: number = 100;
   descriptionMinValue: number = 1;
   descriptionMaxValue: number = 500;
   selectedImage: File | null = null;
