@@ -9,6 +9,10 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { EventReadService } from '../../../../../services/event/event-read.service';
 import { Event } from '../../../../../domain/model/event.model';
+import { User } from '../../../../../domain/model/user.model';
+import { Task } from '../../../../../domain/model/task.model';
+import { UserReadService } from '../../../../../services/user/user-read.service';
+import { TaskReadService } from '../../../../../services/task/task-read.service';
 
 @Component({
   selector: 'task-sync-scheduling-create',
@@ -29,6 +33,8 @@ export class SchedulingCreateComponent implements OnInit {
   eventId: string = '';
   event!: Event;
   form!: FormGroup;
+  userList!: User[];
+  taskList!: Task[];
 
   nameMinLength: number = 3;
   nameMaxLength: number = 10;
@@ -41,7 +47,9 @@ export class SchedulingCreateComponent implements OnInit {
     private toastr: ToastrService,
     private router: Router,
     private schedulingCreateService: SchedulingCreateService,
-    private eventReadService: EventReadService
+    private eventReadService: EventReadService,
+    private userReadService: UserReadService,
+    private taskReadService: TaskReadService
   ) {
     this.initializeForm();
   }
@@ -49,6 +57,8 @@ export class SchedulingCreateComponent implements OnInit {
   async ngOnInit() {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.event = await this.eventReadService.findById(this.eventId);
+    this.userList = await this.userReadService.findAll();
+    this.taskList = await this.taskReadService.findAll();
   }
 
   initializeForm() {
