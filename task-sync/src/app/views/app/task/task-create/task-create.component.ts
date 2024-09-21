@@ -21,7 +21,7 @@ export class TaskCreateComponent implements OnInit {
   form!: FormGroup;
 
   nameMinLength: number = 3;
-  nameMaxLength: number = 10;
+  nameMaxLength: number = 20;
 
 
   constructor(
@@ -46,7 +46,7 @@ export class TaskCreateComponent implements OnInit {
   async create() {
     let formValid = this.validateFields()
     if(!formValid){
-      this.toastr.error("Preencha todos os campos obrigatórios antes de cadastrar o atividade.");
+      this.toastr.error("Numero de caracteres exedido.");
       return 
     }
 
@@ -55,7 +55,7 @@ export class TaskCreateComponent implements OnInit {
       userId: this.form.controls['userId'].value,
     }
 
-    console.log('preparando para criar o produto...');
+    console.log('preparando para criar a tarefa...');
     console.log(task);
 
     try {
@@ -68,7 +68,7 @@ export class TaskCreateComponent implements OnInit {
   }
 
   validateFields() {
-    return this.form.controls['name'].valid;
+   return this.form.controls['name'].valid;
   }
 
 }
