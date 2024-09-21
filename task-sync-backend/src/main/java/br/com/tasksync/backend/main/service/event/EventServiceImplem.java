@@ -21,16 +21,16 @@ public class EventServiceImplem implements EventService {
 
     @Override
     public int create(EventModel entity) {
-        if(entity == null){
+        if (entity == null) {
             return 0;
         }
-        if(entity.getId() <= 0 ||
+        if (
                 entity.getName().isEmpty() ||
-                entity.getCode().isEmpty() ||
-                entity.getDescription().isEmpty() ||
-                entity.getBusiness().isEmpty()
+                        entity.getCode().isEmpty() ||
+                        entity.getDescription().isEmpty() ||
+                        entity.getBusiness().isEmpty()
 //                entity.getDate().isEmpty()
-        ){
+        ) {
             return 0;
         }
 
@@ -41,7 +41,7 @@ public class EventServiceImplem implements EventService {
 
     @Override
     public void delete(int id) {
-        if(id < 0){
+        if (id < 0) {
             return;
         }
         System.out.println("Chamou o remover um evento por id");
@@ -51,7 +51,7 @@ public class EventServiceImplem implements EventService {
 
     @Override
     public EventModel findById(int id) {
-        if(id < 0){
+        if (id < 0) {
             return null;
         }
         EventModel event = eventDao.readyById(id);
@@ -70,7 +70,7 @@ public class EventServiceImplem implements EventService {
     @Override
     public void update(int id, EventModel entity) {
         EventModel eventModel = findById(id);
-        if(eventModel == null){
+        if (eventModel == null) {
             return;
         }
         eventDao.updateInformation(id, entity);
