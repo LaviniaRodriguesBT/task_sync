@@ -12,16 +12,16 @@ values (default, '123', 'Michele F', 'rua: 1', '987'),
 
 
 insert into "user" (id, email, password, access_type, person_id)
-values (default, 'michelef', '123', 'Administrador', 1),
-       (default, 'laviniab', '321', 'Colaborador', 2),
-       (default, 'lucass', '456', 'Colaborador', 3),
-       (default, 'alans', '654', 'Colaborador', 4),
-       (default, 'leandrol', '789', 'Administrador', 5),
-       (default, 'brunog', '987', 'Administrador', 6),
-       (default, 'brunav', '147', 'Colaborador', 7),
-       (default, 'danieleb', '258', 'Colaborador', 8),
-       (default, 'josues', '369', 'Administrador', 9),
-       (default, 'patriciar', '741', 'Colaborador', 10);
+values (default, 'michelef@.com', '123', 'Administrador', 1),
+       (default, 'laviniabf@.com', '321', 'Colaborador', 2),
+       (default, 'lucassf@.com', '456', 'Colaborador', 3),
+       (default, 'alansf@.com', '654', 'Colaborador', 4),
+       (default, 'leandrof@.com', '789', 'Administrador', 5),
+       (default, 'brunogf@.com', '987', 'Administrador', 6),
+       (default, 'brunavf@.com', '147', 'Colaborador', 7),
+       (default, 'danielebf@.com', '258', 'Colaborador', 8),
+       (default, 'josuesf@.com', '369', 'Administrador', 9),
+       (default, 'patriciarf@.com', '741', 'Colaborador', 10);
 
 
 
