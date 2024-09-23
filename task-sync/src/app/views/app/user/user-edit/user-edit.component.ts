@@ -69,7 +69,7 @@ export class UserEditComponent {
     this.form.controls['cpf'].setValue(user.cpf);
     this.form.controls['phone'].setValue(user.phone);
     this.form.controls['address'].setValue(user.address);
-    this.form.controls['type_access'].setValue(user.type_access);
+    this.form.controls['type_access'].setValue(user.access_type);
   }
 
   async update() {
@@ -82,7 +82,7 @@ export class UserEditComponent {
         name: this.form.controls['name'].value,
         phone: this.form.controls['phone'].value,
         address: this.form.controls['address'].value,
-        type_access: this.form.controls['type_access'].value,
+        access_type: this.form.controls['type_access'].value,
       }
 
       console.log(user);

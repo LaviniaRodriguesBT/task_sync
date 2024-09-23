@@ -73,7 +73,7 @@ export class UserCreateComponent implements OnInit {
       name: this.form.controls['name'].value,
       address: this.form.controls['address'].value,
       phone: this.form.controls['phone'].value,
-      type_access: this.form.controls['type_access'].value,
+      access_type: this.form.controls['type_access'].value,
     }
 
     console.log('preparando para criar a pessoa...');
@@ -96,7 +96,7 @@ export class UserCreateComponent implements OnInit {
       cpf: this.form.controls['cpf'].value,
       phone: this.form.controls['phone'].value,
       address: this.form.controls['address'].value,
-      type_access: this.form.controls['type_access'].value,
+      access_type: this.form.controls['type_access'].value,
     }
 
     console.log('preparando para criar o produto...');
