@@ -4,7 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.sql.Time;
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 
 @Data
 @AllArgsConstructor
@@ -15,7 +17,7 @@ public class EventModel {
     private String name;
     private String description;
     private String business;
-    private java.time.LocalDate date;
-    private Time start_time;
-    private Time end_time;
+    private LocalDate date;
+    private LocalTime start_time;
+    private LocalTime end_time;
 }

@@ -27,8 +27,8 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
         try {
             connection.setAutoCommit(false);
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            preparedStatement.setDate(1, Date.valueOf(entity.getStart_time()));
-            preparedStatement.setDate(2, Date.valueOf(entity.getEnd_time()));
+            preparedStatement.setTime(1, Time.valueOf(entity.getStart_time()));
+            preparedStatement.setTime(2, Time.valueOf(entity.getEnd_time()));
             preparedStatement.setDate(3, Date.valueOf(entity.getDate()));
             preparedStatement.setString(4, entity.getStatus());
             preparedStatement.execute();
@@ -85,8 +85,8 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
             if (resultSet.next()) {
                 final SchedulingModel scheduling = new SchedulingModel();
                 scheduling.setId(resultSet.getInt("id"));
-                scheduling.setStart_time(resultSet.getDate("start_time").toLocalDate());
-                scheduling.setEnd_time(resultSet.getDate("end_time").toLocalDate());
+                scheduling.setStart_time(resultSet.getTime("start_time").toLocalTime());
+                scheduling.setEnd_time(resultSet.getTime("end_time").toLocalTime());
                 scheduling.setDate(resultSet.getDate("date").toLocalDate());
                 scheduling.setStatus(resultSet.getString("status"));
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
@@ -133,8 +133,8 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
                 final SchedulingModel scheduling = new SchedulingModel();
                 scheduling.setId(resultSet.getInt("id"));
                 scheduling.setDate(resultSet.getDate("date").toLocalDate());
-                scheduling.setStart_time(resultSet.getDate("start_time").toLocalDate());
-                scheduling.setEnd_time(resultSet.getDate("end_time").toLocalDate());
+                scheduling.setStart_time(resultSet.getTime("start_time").toLocalTime());
+                scheduling.setEnd_time(resultSet.getTime("end_time").toLocalTime());
                 scheduling.setEvent_id(resultSet.getInt("event_id"));
                 scheduling.setEvent(resultSet.getString("name"));
                 schedulings.add(scheduling);

@@ -190,7 +190,8 @@ public class UserPostgresDaoImplem implements UserDao {
                 user.setId(resultSet.getInt("id"));
                 user.setCpf(resultSet.getString("cpf"));
                 user.setName(resultSet.getString("name"));
-                user.setEmail(resultSet.getString("login"));
+                user.setEmail(resultSet.getString("email"));
+                user.setCpf(resultSet.getString("cpf"));
                 user.setPassword(resultSet.getString("password"));
                 user.setPhone(resultSet.getString("phone"));
                 user.setAddress(resultSet.getString("address"));

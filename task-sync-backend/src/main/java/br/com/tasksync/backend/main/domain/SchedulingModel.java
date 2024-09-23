@@ -4,6 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
+
 @NoArgsConstructor
 @Data
 @AllArgsConstructor
@@ -14,8 +17,8 @@ public class SchedulingModel {
     private int task_id;
     private String event;
     private double value;
-    private java.time.LocalDate start_time;
-    private java.time.LocalDate end_time;
-    private java.time.LocalDate date;
+    private LocalTime start_time;
+    private LocalTime end_time;
+    private LocalDate date;
     private String status;
 }

@@ -33,8 +33,8 @@ public class EventPostgresDaoImplem implements EventDao {
             preparedStatement.setString(3, entity.getDescription());
             preparedStatement.setString(4, entity.getBusiness());
             preparedStatement.setDate(5, Date.valueOf(entity.getDate()));
-            preparedStatement.setTime(6, entity.getStart_time());
-            preparedStatement.setTime(7, entity.getEnd_time());
+            preparedStatement.setTime(6, Time.valueOf(entity.getStart_time()));
+            preparedStatement.setTime(7, Time.valueOf(entity.getEnd_time()));
             preparedStatement.execute();
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
@@ -43,8 +43,7 @@ public class EventPostgresDaoImplem implements EventDao {
             } else {
                 throw new RuntimeException();
             }
-            resultSet.close();
-            preparedStatement.close();
+
             connection.commit();
             resultSet.close();
             preparedStatement.close();
@@ -91,8 +90,8 @@ public class EventPostgresDaoImplem implements EventDao {
                 event.setDescription(resultSet.getString("description"));
                 event.setBusiness(resultSet.getString("business"));
                 event.setDate(resultSet.getDate("date").toLocalDate());
-                event.setStart_time(resultSet.getTime("start_time"));
-                event.setEnd_time(resultSet.getTime("end_time"));
+                event.setStart_time(resultSet.getTime("start_time").toLocalTime());
+                event.setEnd_time(resultSet.getTime("end_time").toLocalTime());
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
                 return event;
             }
@@ -124,8 +123,8 @@ public class EventPostgresDaoImplem implements EventDao {
                 event.setBusiness(resultSet.getString("business"));
                 event.setDescription(resultSet.getString("description"));
                 event.setDate(resultSet.getDate("date").toLocalDate());
-                event.setStart_time(resultSet.getTime("start_time"));
-                event.setEnd_time(resultSet.getTime("end_time"));
+                event.setStart_time(resultSet.getTime("start_time").toLocalTime());
+                event.setEnd_time(resultSet.getTime("end_time").toLocalTime());
                 events.add(event);
             }
             resultSet.close();

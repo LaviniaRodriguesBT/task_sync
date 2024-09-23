@@ -57,8 +57,8 @@ public class SchedulingH2DaoImplem implements SchedulingDao {
                         rs.getInt("task_id"),
                         rs.getString("event"),
                         rs.getDouble("value"),
-                        rs.getDate("start_time").toLocalDate(),
-                        rs.getDate("end_time").toLocalDate(),
+                        rs.getTime("start_time").toLocalTime(),
+                        rs.getTime("end_time").toLocalTime(),
                         rs.getDate("date").toLocalDate(),
                         rs.getString("status")
 
@@ -78,8 +78,8 @@ public class SchedulingH2DaoImplem implements SchedulingDao {
                         rs.getInt("task_id"),
                         rs.getString("event"),
                         rs.getDouble("value"),
-                        rs.getDate("start_time").toLocalDate(),
-                        rs.getDate("end_time").toLocalDate(),
+                        rs.getTime("start_time").toLocalTime(),
+                        rs.getTime("end_time").toLocalTime(),
                         rs.getDate("date").toLocalDate(),
                         rs.getString("status")
 
