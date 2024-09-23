@@ -13,22 +13,21 @@
     <div class="form-row">
         <div class="form-group col-12 mt-2">
             <mat-form-field class="text-name">
-                <mat-label>Nome</mat-label>
+                <mat-label>Nome da pessoa responsável</mat-label>
                 <mat-select formControlName="user_id" class="field-name">
                     @for(user of userList; track $index){
                         <mat-option value="{{ user.id }}">{{ user.name }}</mat-option>
                     }
-                                        
+
                 </mat-select>
             </mat-form-field></div>
         <div class="form-group col-12 mt-2">
             <mat-form-field class="text-name">
-                <mat-label>Nome atividade</mat-label>
-           
+                <mat-label>Nome da atividade</mat-label>
                 <mat-select formControlName="task_id" class="field-name">
                     @for(task of taskList; track $index){
                         <mat-option value="{{ task.id }}">{{ task.name }}</mat-option>
-                    }        
+                    }
                 </mat-select>
             </mat-form-field>
         </div>
@@ -58,7 +57,7 @@
                 <mat-option value="Concluído">Concluído</mat-option>
             </mat-select>
         </mat-form-field>
-        
+
         <div class="col-12 text-end mt-2 btns gap-scheduling">
             <a class="btn btn-back col-2 me-2 gap-scheduling" routerLink="/event/{{eventId}}/scheduling/list">Voltar</a>
             <button class="btn btn-create col-2 me-2 gap-scheduling">Criar</button>
