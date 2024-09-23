@@ -41,6 +41,7 @@ public class UserPostgresDaoImplem implements UserDao {
             preparedStatement.setString(1, entity.getCpf());
             preparedStatement.setString(2, entity.getName());
             preparedStatement.setString(3, entity.getAddress());
+            preparedStatement.setString(4, entity.getPhone());
 
             preparedStatement.execute();
 
@@ -58,7 +59,7 @@ public class UserPostgresDaoImplem implements UserDao {
             preparedStatement.close();
 
 
-            sql = "INSERT INTO \"user\"(login, password, access_type, person_id) ";
+            sql = "INSERT INTO \"user\"(email, password, access_type, person_id) ";
             sql += " VALUES(?, ?, ?, ?);";
 
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
