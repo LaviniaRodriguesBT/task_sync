@@ -15,6 +15,7 @@ import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { faCopyright } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
+import { User } from '../../../domain/model/user.model';
 
 
 @Component({
@@ -42,6 +43,8 @@ import { CommonModule } from '@angular/common';
 export class MainComponent {
   faCoffee = fontawesome.faHeartBroken;
   faCopyright = faCopyright;
+
+  userInformation?: User;
 
   userId: string | null;
   accessType: string | null;

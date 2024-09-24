@@ -7,9 +7,13 @@
     </ol>
 </nav>
 
-<a class="btn btn-back arrow-back" href="/">
-    <span class="material-icons" >arrow_back</span>
-</a> 
+<a class="btn btn-back arrow-back" href="/" *ngIf="accessType === 'adm'">
+    <span class="material-icons">arrow_back</span>
+</a>
+
+<a class="btn btn-back arrow-back" href="/event/list" *ngIf="accessType === 'colab'">
+    <span class="material-icons">arrow_back</span>
+</a>
 
 <div class="article">
     <h1>Ajuda</h1>

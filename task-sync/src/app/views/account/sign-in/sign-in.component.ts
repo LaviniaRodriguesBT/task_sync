@@ -65,12 +65,17 @@ export class SignInComponent implements OnInit {
       this.authenticationService
         .addCredentialsToLocalStorage(credential);
 
-      if (this.accessType.value != "adm") {
-        await this.router.navigate(['/event/list']);
+      if (this.accessType.value == "adm") {
+        await this.router.navigate(['/']);
         return;
+      }if (this.accessType.value == "colab") {
+          await this.router.navigate(['/event/list']);
+          return;
       }
-
       await this.router.navigate(['/']);
+
+      this.authenticationService.addCredentialsToLocalStorage(credential);
+      localStorage.setItem('accessType', this.accessType.value);
 
     } catch (e: any) {
       console.error(`erro: ${e}`);

@@ -8,7 +8,7 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <button mat-button [matMenuTriggerFor]="menuEventos" class="btn-list">Eventos</button>
+                        <button mat-button [matMenuTriggerFor]="menuEventos" class="btn-list" *ngIf= "accessType == 'adm'">Eventos</button>
                         <mat-menu #menuEventos="matMenu">
                             <a mat-list-item routerLink="/event/list" *ngIf= "accessType == 'adm'">Lista de eventos </a>
                             <a mat-list-item routerLink="/event/create" *ngIf= "accessType == 'adm'">Cadastrar evento </a>
