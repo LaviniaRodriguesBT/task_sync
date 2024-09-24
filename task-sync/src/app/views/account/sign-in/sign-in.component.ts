@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
     Validators.minLength(1), Validators.maxLength(10)
   ]);
 
-  accessType = new FormControl(null, Validators.required);
+  accessType = new FormControl('colab');
 
   isLoginIncorrect = false;
 
@@ -84,10 +84,7 @@ export class SignInComponent implements OnInit {
       this.password.setValue(null);
     }
   }
-
-
   isFormInvalid() {
-    return !this.email.valid || !this.password.valid || !this.accessType.valid || !this.accessType.value;
+    return !this.email.valid || !this.password.valid || !this.accessType.value;
   }
-
 }
