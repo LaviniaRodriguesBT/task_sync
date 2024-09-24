@@ -7,6 +7,7 @@ import { UserCredential } from '../../../domain/dto/user-credential';
 import { AuthenticationService } from '../../../services/authentication.service';
 import { ToastrService } from "ngx-toastr";
 import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -18,7 +19,7 @@ import { MatIconModule } from '@angular/material/icon';
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-
+    CommonModule
   ],
   templateUrl: './sign-in.component.html',
   styleUrl: './sign-in.component.css'
@@ -30,7 +31,7 @@ export class SignInComponent implements OnInit {
     Validators.minLength(1), Validators.maxLength(10)
   ]);
 
-  accessType = new FormControl();
+  accessType = new FormControl(null, Validators.required);
 
   isLoginIncorrect = false;
 
@@ -50,11 +51,16 @@ export class SignInComponent implements OnInit {
   }
 
   async login() {
+    if (this.isFormInvalid()) {
+      this.toastrService.error('Preencha todos os campos corretamente');
+      return;
+    }
+
     let credential: UserCredential = {
       id: "",
       email: this.email.value!,
       password: this.password.value!,
-      accessType: this.accessType.value
+      accessType: this.accessType.value || ''
     };
 
     try {
@@ -62,20 +68,15 @@ export class SignInComponent implements OnInit {
 
       credential.id = id;
 
-      this.authenticationService
-        .addCredentialsToLocalStorage(credential);
-
-      if (this.accessType.value == "adm") {
-        await this.router.navigate(['/']);
-        return;
-      }if (this.accessType.value == "colab") {
-          await this.router.navigate(['/event/list']);
-          return;
-      }
-      await this.router.navigate(['/']);
-
       this.authenticationService.addCredentialsToLocalStorage(credential);
-      localStorage.setItem('accessType', this.accessType.value);
+
+      if (credential.accessType === "adm") {
+        await this.router.navigate(['/']);
+      } else if (credential.accessType === "colab") {
+        await this.router.navigate(['/event/list']);
+      }
+
+      localStorage.setItem('accessType', credential.accessType || '');
 
     } catch (e: any) {
       console.error(`erro: ${e}`);
@@ -84,10 +85,9 @@ export class SignInComponent implements OnInit {
     }
   }
 
-  isFormInvalid() {
 
-    let isValid = this.email.valid && this.password.valid;
-    return isValid ? false : true;
+  isFormInvalid() {
+    return !this.email.valid || !this.password.valid || !this.accessType.valid || !this.accessType.value;
   }
 
 }
