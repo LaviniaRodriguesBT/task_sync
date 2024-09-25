@@ -25,7 +25,7 @@ public class UserServiceImplem implements UserService {
         if(entity == null){
             return 0;
         }
-        if(entity.getId() <= 0 ||
+        if(
                 entity.getName().isEmpty() ||
                 entity.getEmail().isEmpty() ||
                 entity.getPassword().isEmpty() ||
