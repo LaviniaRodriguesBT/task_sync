@@ -12,17 +12,11 @@ import java.time.LocalTime;
 @AllArgsConstructor
 public class SchedulingModel {
     private int id;
-    private int event_id;
-    private int user_id;
-    private int task_id;
     private int contract_id;
     private int activity_id;
-    private String event;
-    private double value;
-    private LocalTime start_time;
+     private LocalTime start_time;
     private LocalTime end_time;
     private LocalDate date;
     private String status;
-    private ContractModel contract;
-    private ActivityModel activity;
+
 }
