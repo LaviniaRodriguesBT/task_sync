@@ -20,8 +20,8 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
 
     @Override
     public int add(SchedulingModel entity) {
-        String sql = "INSERT INTO scheduling(start_time, end_time, date, status) ";
-        sql += " VALUES(?, ?, ?, ?);";
+        String sql = "INSERT INTO scheduling(start_time, end_time, date, status, activity_id, contract_id)";
+        sql += " VALUES(?, ?, ?, ?,?,?);";
         PreparedStatement preparedStatement;
         ResultSet resultSet;
         try {
@@ -31,6 +31,8 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
             preparedStatement.setTime(2, Time.valueOf(entity.getEnd_time()));
             preparedStatement.setDate(3, Date.valueOf(entity.getDate()));
             preparedStatement.setString(4, entity.getStatus());
+            preparedStatement.setInt(5, entity.getActivity_id());
+            preparedStatement.setInt(6, entity.getContract_id());
             preparedStatement.execute();
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
@@ -89,6 +91,9 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
                 scheduling.setEnd_time(resultSet.getTime("end_time").toLocalTime());
                 scheduling.setDate(resultSet.getDate("date").toLocalDate());
                 scheduling.setStatus(resultSet.getString("status"));
+                scheduling.setActivity_id(resultSet.getInt("activity_id"));
+                scheduling.setContract_id(resultSet.getInt("contract_id"));
+
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
                 return scheduling;
 
@@ -119,6 +124,7 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
                 "\ts.start_time as horario_inicio,\n" +
                 "\ts.end_time as horario_final,\n" +
                 "\ts.date as \"data\",\n" +
+                "\ts.id, " +
                 "\ts.status\n" +
                 "     FROM scheduling s \n" +
                 "     INNER JOIN contract c ON c.id = s.contract_id \n" +
@@ -132,11 +138,13 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
             while (resultSet.next()) {
                 final SchedulingModel scheduling = new SchedulingModel();
                 scheduling.setId(resultSet.getInt("id"));
-                scheduling.setDate(resultSet.getDate("date").toLocalDate());
-                scheduling.setStart_time(resultSet.getTime("start_time").toLocalTime());
-                scheduling.setEnd_time(resultSet.getTime("end_time").toLocalTime());
-                scheduling.setEvent_id(resultSet.getInt("event_id"));
-                scheduling.setEvent(resultSet.getString("name"));
+                scheduling.setDate(resultSet.getDate("data").toLocalDate());
+                scheduling.setStart_time(resultSet.getTime("horario_inicio").toLocalTime());
+                scheduling.setEnd_time(resultSet.getTime("horario_final").toLocalTime());
+                scheduling.setActivity_id(resultSet.getInt("activity_id"));
+                scheduling.setContract_id(resultSet.getInt("contract_id"));
+
+
                 schedulings.add(scheduling);
             }
             resultSet.close();

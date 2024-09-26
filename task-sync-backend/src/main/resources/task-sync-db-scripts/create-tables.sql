@@ -62,8 +62,8 @@ create table contract (
 
 create table scheduling (
     id serial primary key,
-    start_time timestamp without time zone not null,
-    end_time timestamp without time zone not null,
+    start_time time not null,
+    end_time time not null,
     date timestamp without time zone not null,
     status character varying(50) not null check (status in ('Em aberto', 'Em andamento', 'Finalizada')) default 'Em aberto',
     activity_id integer not null references activity(id) on update cascade,

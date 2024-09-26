@@ -52,15 +52,15 @@ public class SchedulingH2DaoImplem implements SchedulingDao {
         final SchedulingModel entity = jdbcTemplate.queryForObject("SELECT * FROM scheduling WHERE id = ", new Object[]{id}, (rs, rowNum) ->
                 new SchedulingModel(
                         rs.getInt("id"),
-                        rs.getInt("event_id"),
-                        rs.getInt("user_id"),
-                        rs.getInt("task_id"),
-                        rs.getString("event"),
-                        rs.getDouble("value"),
+                        rs.getInt("contract_id"),
+                        rs.getInt("activity_id"),
                         rs.getTime("start_time").toLocalTime(),
                         rs.getTime("end_time").toLocalTime(),
                         rs.getDate("date").toLocalDate(),
-                        rs.getString("status")
+                        rs.getString("status"),
+                        rs.getDouble("value"),
+                        rs.getInt("event_id"),
+                        rs.getInt("contract_id"),
 
 
                 ));

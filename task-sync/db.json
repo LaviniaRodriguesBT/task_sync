@@ -474,19 +474,6 @@
       "status": "Concluído"
     },
     {
-      "id": "fa30",
-      "event_id": "6",
-      "event": "Hackathon Universitário",
-      "user_id": "Lucas",
-      "userId": "18",
-      "task_id": "Lavinia",
-      "value": "55",
-      "start_time": "21:45",
-      "end_time": "23:46",
-      "date": "2024-08-29",
-      "status": "Em andamento"
-    },
-    {
       "id": "1b38",
       "event_id": "5",
       "event": "Seminário de Sustentabilidade",
