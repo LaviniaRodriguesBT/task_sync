@@ -60,7 +60,7 @@ export class MainComponent {
 
   logout() {
     this.authenticationService.logout();
-    this.router.navigate(['account/sign-in']);
+    this.router.navigate(['account/user-type-selection']);
   }
  
 

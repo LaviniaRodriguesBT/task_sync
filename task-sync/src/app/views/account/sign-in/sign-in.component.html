@@ -5,11 +5,13 @@
                 <img src="/assets/img/tela_login.png" alt="slogan task sync" class="slogan">
                 <form class="form">
                     <div>
-                        <img src="/assets/img/contact_icon.png" alt="Ícone de contato" class="contact-icon">
-
-                        <div class="image-logo logo-css">
+                        <!-- <div class="image-logo logo-css">
                             <img src="/assets/img/logo-inicio.png">
+                        </div> -->
+                        <div class="welcome">
+                            <h1>LOGIN</h1>
                         </div>
+                        
 
                         <input matInput type="email" placeholder="Digite seu email" required [formControl]="email"
                             class="fa fa-envelope enter-field">
@@ -18,7 +20,7 @@
                         <input matInput type="password" placeholder="Digite sua senha" maxlength="10" required
                             [formControl]="password" class="fa fa-lock Password enter-field">
 
-                        <div class="form-group col-12 mt-2 radio">
+                        <!-- <div class="form-group col-12 mt-2 radio">
                             <label for="type-access" class="text-name">Tipo de acesso</label>
                             <input id="adm" type="radio" name="user-type" [formControl]="accessType" value="adm"
                                 class="type-user">
@@ -30,7 +32,7 @@
 
                         <div *ngIf="accessType.hasError('required') && accessType.touched" class="text-danger">
                             Por favor, selecione o tipo de acesso.
-                        </div>
+                        </div> -->
 
                         <button class="btn-sign-in" (click)="login()" [disabled]="isFormInvalid()">Login</button>
                     </div>

@@ -24,8 +24,14 @@ import { SchedulingEditComponent } from './views/app/event/scheduling/scheduling
 import { SchedulingListComponent } from './views/app/event/scheduling/scheduling-list/scheduling-list.component';
 import { MyTaskListComponent } from './views/app/task/my-task-list/my-task-list.component';
 import { AboutUsComponent } from './views/app/about-us/about-us.component';
+import { UserTypeSelectionComponent } from './views/account/user-type-selection/user-type-selection.component';
 
 export const routes: Routes = [
+  {
+    path: 'account/user-type-selection',
+    component: UserTypeSelectionComponent,
+    title: 'Task Sync - Usuário',
+  },
   {
     path: 'account/sign-in',
     component: SignInComponent,
