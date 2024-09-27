@@ -31,7 +31,7 @@ export class SignInComponent implements OnInit {
     Validators.minLength(1), Validators.maxLength(10)
   ]);
 
-  accessType = new FormControl(null); // Não preenchemos aqui, será definido via query param
+  accessType = new FormControl(null);
 
   isLoginIncorrect = false;
 
@@ -43,14 +43,13 @@ export class SignInComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // Capturar o parâmetro 'accessType' da URL
     this.route.queryParams.subscribe(params => {
       const accessType = params['accessType'];
       if (accessType) {
-        this.accessType.setValue(accessType); // Preenche o tipo de acesso com o valor recebido
+        this.accessType.setValue(accessType);
       }
     });
-    
+
     this.loginIfCredentialsIsValid();
   }
 
@@ -70,7 +69,7 @@ export class SignInComponent implements OnInit {
       id: "",
       email: this.email.value!,
       password: this.password.value!,
-      accessType: this.accessType.value! 
+      accessType: this.accessType.value!
     };
 
     try {

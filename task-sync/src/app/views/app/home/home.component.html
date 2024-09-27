@@ -9,76 +9,79 @@
 </head>
 
 <body>
-  <nav aria-label="breadcrumb">
-    <ol class="breadcrumb">
-      <li class="breadcrumb-item"><a href="/">Home</a></li>
-    </ol>
-  </nav>
-
-  <h2>Próximos eventos</h2>
-
-  <div class="card-container">
-    <p-carousel [value]="events" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="5000">
-      <ng-template pTemplate="item" let-event>
-        <div class="card">
-          <div class="card-header">
-            <h3>{{ event.name | slice: 0: 25 }}...</h3>
-          </div>
-          <div class="user-image">
-            <img src="/assets/img/event.png" alt="Image for {{ event.name }}">
-          </div>
-          <div class="card-body">
-            <table class="table body-text-card">
-              <tbody>
-                <tr>
-                  <th scope="row">Código</th>
-                  <td>{{ event.code }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Descrição</th>
-                  <td>{{ event.description | slice: 0: 19 }}...</td>
-                </tr>
-                <tr>
-                  <th scope="row">Negócio</th>
-                  <td>{{ event.business }}</td>
-                </tr>
-                <tr>
-                  <th scope="row">Data Inicio</th>
-                  <td>{{ event.date }}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer">
-            <a class="btn btn-access" routerLink="/event/{{ event.id }}/scheduling/list">Acessar</a>
-          </div>
-        </div>
-      </ng-template>
-    </p-carousel>
-  </div>
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+      </ol>
+    </nav>
   
-
-  <div class="dashboard">
-    <h2>Dashboard</h2>
-    <div class="status-cards">
-      <div class="card" #statusCard>
-        <h3>Total de Pessoas</h3>
-        <p>{{ totalPessoas }}</p>
-      </div>
-      <div class="card" #statusCard>
-        <h3>Em Andamento</h3>
-        <p>{{ emAndamento }}</p>
-      </div>
-      <div class="card" #statusCard>
-        <h3>Concluído</h3>
-        <p>{{ concluido }}</p>
-      </div>
-      <div class="card" #statusCard>
-        <h3>Em Aberto</h3>
-        <p>{{ emAberto }}</p>
+    <h2>Próximos eventos</h2>
+  
+    <div class="card-container">
+      <p-carousel [value]="events" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="5000">
+        <ng-template pTemplate="item" let-event>
+          <div class="card">
+            <div class="card-header">
+              <h3>{{ event.name | slice: 0: 25 }}...</h3>
+            </div>
+            <div class="user-image">
+              <img src="/assets/img/event.png" alt="Image for {{ event.name }}">
+            </div>
+            <div class="card-body">
+              <table class="table body-text-card">
+                <tbody>
+                  <tr>
+                    <th scope="row">Código</th>
+                    <td>{{ event.code }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Descrição</th>
+                    <td>{{ event.description | slice: 0: 19 }}...</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Negócio</th>
+                    <td>{{ event.business }}</td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Data Inicio</th>
+                    <td>{{ event.date }}</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-footer">
+              <a class="btn btn-access" routerLink="/event/{{ event.id }}/scheduling/list">Acessar</a>
+            </div>
+          </div>
+        </ng-template>
+      </p-carousel>
+    </div>
+    
+  
+    <div class="dashboard">
+      <h2>Dashboard</h2>
+      <div class="status-cards">
+        <div class="card" #statusCard>
+          <h3>Total de Pessoas</h3>
+          <p>{{ totalPessoas }}</p>
+        </div>
+        <div class="card" #statusCard>
+          <h3>Em Andamento</h3>
+          <p>{{ emAndamento }}</p>
+        </div>
+        <div class="card" #statusCard>
+          <h3>Concluído</h3>
+          <p>{{ concluido }}</p>
+        </div>
+        <div class="card" #statusCard>
+          <h3>Em Aberto</h3>
+          <p>{{ emAberto }}</p>
+        </div>
       </div>
     </div>
   </div>
+
 </body>
 
 </html>

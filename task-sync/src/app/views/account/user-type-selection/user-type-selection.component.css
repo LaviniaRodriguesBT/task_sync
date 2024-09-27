@@ -1,7 +1,7 @@
 .base-form {
     display: flex;
     align-items: center;
-    height: 100vh; 
+    height: 100vh;
     justify-content: center;
     background: url('/assets/img/fundo.png') no-repeat center center;
     background-size: cover;
@@ -23,9 +23,9 @@
 
 .welcome h1 {
     font-size: 60px;
-    font-family: 'Poppins', sans-serif; /* Escolha uma fonte moderna e clean */
+    font-family: 'Poppins', sans-serif;
     font-weight: 700;
-    color: #000000; /* Cor suave e amigável, como um azul */
+    color: #000000;
     margin-bottom: 20px;
     animation: fadeIn 1.5s ease-in-out;
 }
@@ -35,6 +35,7 @@
         opacity: 0;
         transform: translateY(-20px);
     }
+
     100% {
         opacity: 1;
         transform: translateY(0);
