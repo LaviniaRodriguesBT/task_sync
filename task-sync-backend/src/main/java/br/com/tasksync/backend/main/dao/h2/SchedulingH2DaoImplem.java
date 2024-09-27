@@ -25,11 +25,8 @@ public class SchedulingH2DaoImplem implements SchedulingDao {
     public int add(SchedulingModel entity) {
         final SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate).withTableName("scheduling").usingGeneratedKeyColumns("id");
         final Map<String, Object> parameters = new HashMap<>();
-        parameters.put("event_id: ", entity.getEvent_id());
-        parameters.put("user_id: ", entity.getUser_id());
-        parameters.put("task_id: ", entity.getTask_id());
-        parameters.put("event: ", entity.getEvent());
-        parameters.put("value: ", entity.getValue());
+        parameters.put("contract_id", entity.getContract_id());
+        parameters.put("activity_id", entity.getActivity_id());
         parameters.put("start_time: ", entity.getStart_time());
         parameters.put("end_time: ", entity.getEnd_time());
         parameters.put("date: ", entity.getDate());
@@ -57,10 +54,8 @@ public class SchedulingH2DaoImplem implements SchedulingDao {
                         rs.getTime("start_time").toLocalTime(),
                         rs.getTime("end_time").toLocalTime(),
                         rs.getDate("date").toLocalDate(),
-                        rs.getString("status"),
-                        rs.getDouble("value"),
-                        rs.getInt("event_id"),
-                        rs.getInt("contract_id"),
+                        rs.getString("status")
+
 
 
                 ));
@@ -73,11 +68,8 @@ public class SchedulingH2DaoImplem implements SchedulingDao {
         final List<SchedulingModel> entities = jdbcTemplate.query("SELECT * FROM scheduling", new Object[]{}, (rs, rowNum) ->
                 new SchedulingModel(
                         rs.getInt("id"),
-                        rs.getInt("event_id"),
-                        rs.getInt("user_id"),
-                        rs.getInt("task_id"),
-                        rs.getString("event"),
-                        rs.getDouble("value"),
+                        rs.getInt("contract_id"),
+                        rs.getInt("activity_id"),
                         rs.getTime("start_time").toLocalTime(),
                         rs.getTime("end_time").toLocalTime(),
                         rs.getDate("date").toLocalDate(),

@@ -47,8 +47,8 @@ create table activity (
     id serial primary key,
     value numeric(1000, 2) not null,
     event_id integer not null references event(id) on update cascade,
-    task_id integer not null references task(id) on update cascade,
-    unique (event_id, task_id)
+    task_id integer not null references task(id) on update cascade
+
 );
 
 create table contract (
