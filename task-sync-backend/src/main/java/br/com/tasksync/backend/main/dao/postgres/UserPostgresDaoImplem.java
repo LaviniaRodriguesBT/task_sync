@@ -135,7 +135,9 @@ public class UserPostgresDaoImplem implements UserDao {
 
     @Override
     public UserModel readyById(int id) {
-        final String sql = "SELECT * FROM \"user\" WHERE id = ?;";
+        final String sql = "SELECT * FROM \"user\" u" +
+                " INNER JOIN person p on u.person_id = p.id" +
+                " WHERE p.id = ?;";
 
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
