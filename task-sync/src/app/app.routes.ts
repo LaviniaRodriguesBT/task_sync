@@ -25,8 +25,14 @@ import { SchedulingListComponent } from './views/app/event/scheduling/scheduling
 import { MyTaskListComponent } from './views/app/task/my-task-list/my-task-list.component';
 import { AboutUsComponent } from './views/app/about-us/about-us.component';
 import { UserTypeSelectionComponent } from './views/account/user-type-selection/user-type-selection.component';
+import { SiteInformativoComponent } from './views/site-informativo/site-informativo.component';
 
 export const routes: Routes = [
+  {
+    path: 'views/site-informativo',
+    component: SiteInformativoComponent,
+    title: 'Task Sync',
+  },
   {
     path: 'account/user-type-selection',
     component: UserTypeSelectionComponent,

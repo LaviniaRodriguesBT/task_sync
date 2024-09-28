@@ -15,6 +15,6 @@ CanActivateFn = (route, state) => {
     return true;
   }
 
-  router.navigate(['account/user-type-selection']);
+  router.navigate(['views/site-informativo']);
   return false;
 };

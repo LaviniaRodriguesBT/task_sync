@@ -1,0 +1,161 @@
+/* GERAL */
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body{
+    height: 100vh;
+}
+
+.interface{
+    max-width: 1280px;
+    margin: auto;
+}
+
+.flex{
+    display: flex;
+}
+
+.btn-contato button{
+    padding: 10px 40px;
+    font-size: 18px;
+    font-weight: 500;
+    background-color: #5301c9;
+    color: #fff;
+    border: 0;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-contato button:hover{
+    box-shadow: 0px 0px 8px #5401c9e5;
+    transform: scale(1.08);
+}
+
+h2.titulo{
+    color: #000;
+    font-size: 38px;
+    text-align: center;
+}
+
+h2.titulo span{
+    color: #5301c9;
+}
+
+/* cabeçalho */
+
+header{
+    background-color: #000;
+}
+
+head{
+    padding: 40px 4%;
+}
+
+header > .interface{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header a{
+    color: #7d7d7d;
+    text-decoration: none;
+    display: inline-block;
+    transition: .2s;
+}
+
+header a:hover{
+    color: #fff;
+    transform: scale(1.08);
+}
+
+header nav ul{
+    list-style: none;
+}
+
+header nav ul li{
+    display: inline-block;
+    padding: 0 40px;
+}
+
+/* TOPO DO SITE */
+
+section.topo-do-site{
+    padding: 40px 4%;
+    margin-top: 8%;
+}
+
+section.topo-do-site .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+}
+
+.topo-do-site .txt-topo-site h1{
+    color: #000;
+    font-size: 35px;
+    line-height: 40px;
+}
+
+.topo-do-site .txt-topo-site h1 span{
+    color: #5301c9;
+    font-size: 50px;
+}
+
+.topo-do-site .txt-topo-site p{
+    color: #000;
+    margin: 40px 0;
+}
+
+.topo-do-site .img-topo-site img{
+    position: relative;
+    animation: flutuar 4s ease-in-out infinite alternate;
+}
+
+@keyframes flutuar{
+    0%{
+        top: -50px;
+    }
+    100%{
+        top: 30px;
+    }
+}
+
+/* FUNCIONALIDADES */
+
+section.funcionalidades{
+    padding: 40px 4%;
+}
+
+section.funcionalidades .flex{
+    gap: 60px;
+}
+
+.funcionalidades .funcionalidades-box{
+    color: #000;
+    padding: 40px;
+    border-radius: 20px;
+    margin-top: 45px;
+    transition: .2s;
+}
+
+.funcionalidades .funcionalidades-box:hover{
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #5401c95e;
+}
+
+.funcionalidades .funcionalidades-box span{
+    font-size: 65px;
+    color: #5301c9;
+}
+
+.funcionalidades .funcionalidades-box h3{
+    font-size: 26px;
+    margin: 15px 0;
+}
