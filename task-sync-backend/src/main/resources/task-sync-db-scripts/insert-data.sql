@@ -76,18 +76,16 @@ values (default, 300.00, 10, 5),
 
 
 
-insert into contract (id, number, signature_date, user_id, event_id)
-values (default, 100, '2024-08-20', 2, 9),
-       (default, 200, '2024-08-20', 1, 7),
-       (default, 300, '2024-08-20', 4, 5),
-       (default, 400, '2024-08-20', 3, 3),
-       (default, 500, '2024-08-20', 6, 1),
-       (default, 600, '2024-08-20', 5, 8),
-       (default, 700, '2024-08-20', 8, 6),
-       (default, 800, '2024-08-20', 7, 4),
-       (default, 900, '2024-08-20', 10, 2),
-       (default, 1000, '2024-08-20', 9, 10);
-
+insert into contract (id, signature_date, user_id, event_id)
+values (default, '2024-08-20', 2, 9),
+       (default, '2024-08-20', 1, 7),
+       (default, '2024-08-20', 4, 5),
+       (default, '2024-08-20', 3, 3),
+       (default, '2024-08-20', 5, 8),
+       (default, '2024-08-20', 8, 6),
+       (default, '2024-08-20', 7, 4),
+       (default, '2024-08-20', 10, 2),
+       (default, '2024-08-20', 9, 10);
 
 insert into scheduling (id, start_time, end_time, date, status, activity_id, contract_id)
 values (default, '10:00:00', '09:00:00', '2024-08-20', 'Em aberto', 2, 1),
@@ -98,5 +96,4 @@ values (default, '10:00:00', '09:00:00', '2024-08-20', 'Em aberto', 2, 1),
        (default, '10:00:00', '09:00:00', '2023-09-20', 'Finalizada', 6, 5),
        (default, '10:00:00', '09:00:00', '2022-01-01', 'Finalizada', 7, 8),
        (default, '10:00:00', '09:00:00', '2024-08-20', 'Em aberto', 8, 7),
-       (default, '10:00:00', '09:00:00', '2024-08-20', 'Em aberto', 9, 10),
        (default, '10:00:00', '09:00:00', '2024-08-20', 'Em aberto', 10, 9);
