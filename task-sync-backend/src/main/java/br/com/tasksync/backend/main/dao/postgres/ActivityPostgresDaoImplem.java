@@ -90,6 +90,8 @@ public class ActivityPostgresDaoImplem implements ActivityDao {
                 final ActivityModel activity = new ActivityModel();
                 activity.setId(resultSet.getInt("id"));
                 activity.setValue(resultSet.getDouble("value"));
+                activity.setEvent_id(resultSet.getInt("event_id"));
+                activity.setTask_id(resultSet.getInt("task_id"));
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
                 return activity;
 
