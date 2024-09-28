@@ -9,6 +9,7 @@ import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { ResponseScheduling } from '../../../../../domain/dto/response-scheduling';
 
 @Component({
   selector: 'task-sync-scheduling-list',
@@ -29,8 +30,8 @@ export class SchedulingListComponent implements OnInit {
   userId?: string | null;
   accessType?: string | null;
   
-  schedulings: Scheduling[] = [];
-  schedulingCopy: Scheduling[] = [];
+  schedulings: ResponseScheduling[] = [];
+  schedulingCopy: ResponseScheduling[] = [];
 
   constructor(private schedulingReadService: SchedulingReadService, 
     private schedulingDeleteService: SchedulingDeleteService, 
@@ -89,8 +90,10 @@ export class SchedulingListComponent implements OnInit {
     }
 
     this.searchText = event;
-    let schedulings = this.schedulingCopy.filter((predicate) => predicate.event?.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
-    predicate.user_id.toLocaleUpperCase().includes(event.toLocaleUpperCase()));
+    let schedulings = this.schedulingCopy.filter((predicate) => 
+      predicate.event.name?.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
+      predicate.task.name?.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
+      predicate.user.name?.toLocaleUpperCase().includes(event.toLocaleUpperCase()));
 
     if (schedulings == undefined) {
       this.schedulings = [];
