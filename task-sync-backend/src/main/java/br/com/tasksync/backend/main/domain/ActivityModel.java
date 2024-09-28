@@ -14,8 +14,7 @@ public class ActivityModel {
     private double value;
     private int task_id;
     private int event_id;
-    private EventModel event;
-    private TaskModel task;
+
 
     public ActivityModel(double value, int task_id, int event_id) {
         this.value = value;

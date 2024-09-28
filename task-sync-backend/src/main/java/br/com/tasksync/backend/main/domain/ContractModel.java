@@ -12,12 +12,11 @@ import java.util.Date;
 @NoArgsConstructor
 public class ContractModel {
     private int id;
-    private int number;
+    //private int number;
     private LocalDate signature_date;
     private int user_id;
     private int event_id;
-    private EventModel event;
-    private Person person;
+
 
     public ContractModel(LocalDate signature_date, int user_id, int event_id) {
         this.signature_date = signature_date;
