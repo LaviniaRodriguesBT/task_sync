@@ -41,15 +41,15 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.schedulingService.findAll().then(data => {
-      this.totalPessoas = data.length;
-      this.emAndamento = data.filter((item: Scheduling) => item.status.toLowerCase() === 'em andamento').length;
-      this.concluido = data.filter((item: Scheduling) => item.status.toLowerCase() === 'concluído').length;
-      this.emAberto = data.filter((item: Scheduling) => item.status.toLowerCase() === 'em aberto').length;
+    // this.schedulingService.findAll().then(data => {
+    //   this.totalPessoas = data.length;
+    //   this.emAndamento = data.filter((item: Scheduling) => item.status.toLowerCase() === 'em andamento').length;
+    //   this.concluido = data.filter((item: Scheduling) => item.status.toLowerCase() === 'concluído').length;
+    //   this.emAberto = data.filter((item: Scheduling) => item.status.toLowerCase() === 'em aberto').length;
 
-      this.applyDynamicStyles();
-      this.loadEvents();
-    });
+    //   this.applyDynamicStyles();
+    //   this.loadEvents();
+    // });
   }
 
   async loadEvents() {
