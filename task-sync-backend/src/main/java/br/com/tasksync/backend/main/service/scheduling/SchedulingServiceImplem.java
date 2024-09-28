@@ -28,15 +28,15 @@ public class SchedulingServiceImplem implements SchedulingService {
     private final ActivityDao activityDao;
     private final EventDao eventDao;
     private final UserDao userDao;
-    private final TaskDao getTaskDao;
+    private final TaskDao taskDao;
 
-    public SchedulingServiceImplem(SchedulingDao schedulingDao, ContractDao contractDao, ActivityDao activityDao, EventDao eventDao, UserDao userDao, TaskDao getTaskDao) {
+    public SchedulingServiceImplem(SchedulingDao schedulingDao, ContractDao contractDao, ActivityDao activityDao, EventDao eventDao, UserDao userDao, TaskDao taskDao) {
         this.schedulingDao = schedulingDao;
         this.contractDao = contractDao;
         this.activityDao = activityDao;
         this.eventDao = eventDao;
         this.userDao = userDao;
-        this.getTaskDao = getTaskDao;
+        this.taskDao = taskDao;
     }
 
     @Override
@@ -137,10 +137,11 @@ public class SchedulingServiceImplem implements SchedulingService {
         for (SchedulingModel item : scheduling){
             ContractModel contractModel = contractDao.readyById(item.getContract_id());
             ActivityModel activityModel = activityDao.readyById(item.getActivity_id());
-            boolean add = responseSchedulingDtos.add(new ResponseSchedulingDto(
+
+            responseSchedulingDtos.add(new ResponseSchedulingDto(
                     eventDao.readyById(contractModel.getEvent_id()),
                     userDao.readyById(contractModel.getUser_id()),
-                    activityDao.readyById(activityModel.getTask_id()).getTask(),
+                    taskDao.readyById(activityModel.getTask_id()),
                     activityModel.getValue(),
                     item.getStart_time(),
                     item.getEnd_time(),
