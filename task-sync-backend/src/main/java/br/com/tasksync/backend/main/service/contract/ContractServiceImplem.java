@@ -30,7 +30,7 @@ public class ContractServiceImplem implements ContractService {
         if (
                 entity.getEvent_id() < 0
                         || entity.getUser_id() < 0
-                        || entity.getNumber() < 0
+
                         || entity.getSignature_date().isBefore(LocalDate.now())
 
         ) {

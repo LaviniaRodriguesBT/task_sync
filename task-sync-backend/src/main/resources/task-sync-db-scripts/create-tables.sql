@@ -53,11 +53,12 @@ create table activity (
 
 create table contract (
     id serial primary key,
-    number integer unique not null,
+
     signature_date timestamp without time zone not null,
     user_id integer not null references "user"(id) on update cascade on delete cascade,
     event_id integer not null references event(id) on update cascade on delete cascade,
     unique (user_id, event_id)
+
 );
 
 create table scheduling (
