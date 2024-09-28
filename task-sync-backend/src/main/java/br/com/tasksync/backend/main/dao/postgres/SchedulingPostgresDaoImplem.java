@@ -118,29 +118,18 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
     public List<SchedulingModel> readAll() {
 
         final List<SchedulingModel> schedulings = new ArrayList<>();
-        final String sql = "SELECT e.name as nome_evento, \n" +
-                "\tp.name as nome_pessoa, \n" +
-                "\tt.name as nome_atividade,\n" +
-                "\ts.start_time as horario_inicio,\n" +
-                "\ts.end_time as horario_final,\n" +
-                "\ts.date as \"data\",\n" +
-                "\ts.id, " +
-                "\ts.status\n" +
-                "     FROM scheduling s \n" +
-                "     INNER JOIN contract c ON c.id = s.contract_id \n" +
-                "\t   INNER JOIN person p ON c.user_id = p.id\n" +
-                "\t   inner join activity a on a.id = s.activity_id\n" +
-                "\t   inner join task t on t.id = a.task_id\n" +
-                "     INNER JOIN event e ON e.id = c.event_id;";
+        final String sql = "SELECT * FROM scheduling;";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
+                // tem que ser conforme o banco de dados
                 final SchedulingModel scheduling = new SchedulingModel();
                 scheduling.setId(resultSet.getInt("id"));
-                scheduling.setDate(resultSet.getDate("data").toLocalDate());
-                scheduling.setStart_time(resultSet.getTime("horario_inicio").toLocalTime());
-                scheduling.setEnd_time(resultSet.getTime("horario_final").toLocalTime());
+                scheduling.setDate(resultSet.getDate("date").toLocalDate());
+                scheduling.setStart_time(resultSet.getTime("start_time").toLocalTime());
+                scheduling.setEnd_time(resultSet.getTime("end_time").toLocalTime());
+                scheduling.setStatus(resultSet.getString("status"));
                 scheduling.setActivity_id(resultSet.getInt("activity_id"));
                 scheduling.setContract_id(resultSet.getInt("contract_id"));
 
