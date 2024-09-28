@@ -24,18 +24,18 @@ public class ContractPostgresDaoImplem implements ContractDao {
     @Override
     public int add(ContractModel entity) {
 
-        String sql = "INSERT INTO contract(number, signature_date, user_id, event_id) ";
-        sql += " VALUES(?,?,?,?);";
+        String sql = "INSERT INTO contract( signature_date, user_id, event_id) ";
+        sql += " VALUES(?,?,?);";
         PreparedStatement preparedStatement;
         ResultSet resultSet;
 
         try {
             connection.setAutoCommit(false);
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            preparedStatement.setInt(1, entity.getNumber());
-            preparedStatement.setDate(2, Date.valueOf(entity.getSignature_date()));
-            preparedStatement.setInt(3, entity.getUser_id());
-            preparedStatement.setInt(4, entity.getEvent_id());
+            //preparedStatement.setInt(1, entity.getNumber());
+            preparedStatement.setDate(1, Date.valueOf(entity.getSignature_date()));
+            preparedStatement.setInt(2, entity.getUser_id());
+            preparedStatement.setInt(3, entity.getEvent_id());
             preparedStatement.execute();
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
@@ -89,7 +89,9 @@ public class ContractPostgresDaoImplem implements ContractDao {
             if (resultSet.next()) {
                 final ContractModel contract = new ContractModel();
                 contract.setId(resultSet.getInt("id"));
-                contract.setNumber(resultSet.getInt("number"));
+                contract.setUser_id(resultSet.getInt("user_id"));
+                contract.setEvent_id(resultSet.getInt("event_id"));
+
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
                 return contract;
 
@@ -122,7 +124,9 @@ public class ContractPostgresDaoImplem implements ContractDao {
                 final ContractModel contract = new ContractModel();
 
                 contract.setId(resultSet.getInt("id"));
-                contract.setNumber(resultSet.getInt("number"));
+                contract.setUser_id(resultSet.getInt("user_id"));
+                contract.setEvent_id(resultSet.getInt("event_id"));
+
 
                 contracts.add(contract);
 
@@ -137,13 +141,13 @@ public class ContractPostgresDaoImplem implements ContractDao {
 
     @Override
     public void updateInformation(int id, ContractModel entity) {
-        String sql = "UPDATE contract SET name = ? WHERE id = ?;";
+        String sql = "UPDATE contract SET user_id = ? WHERE id = ?;";
 
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setInt(1, entity.getNumber());
-            preparedStatement.setInt(2, entity.getId());
+
+            preparedStatement.setInt(1, entity.getId());
             preparedStatement.execute();
             preparedStatement.close();
         } catch (Exception e) {
