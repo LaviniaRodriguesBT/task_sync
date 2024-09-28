@@ -47,23 +47,24 @@ create table activity (
     id serial primary key,
     value numeric(1000, 2) not null,
     event_id integer not null references event(id) on update cascade,
-    task_id integer not null references task(id) on update cascade,
-    unique (event_id, task_id)
+    task_id integer not null references task(id) on update cascade
+
 );
 
 create table contract (
     id serial primary key,
-    number integer unique not null,
+
     signature_date timestamp without time zone not null,
     user_id integer not null references "user"(id) on update cascade on delete cascade,
     event_id integer not null references event(id) on update cascade on delete cascade,
     unique (user_id, event_id)
+
 );
 
 create table scheduling (
     id serial primary key,
-    start_time timestamp without time zone not null,
-    end_time timestamp without time zone not null,
+    start_time time not null,
+    end_time time not null,
     date timestamp without time zone not null,
     status character varying(50) not null check (status in ('Em aberto', 'Em andamento', 'Finalizada')) default 'Em aberto',
     activity_id integer not null references activity(id) on update cascade,

@@ -37,7 +37,7 @@ export class SchedulingCreateComponent implements OnInit {
   taskList!: Task[];
 
   nameMinLength: number = 3;
-  nameMaxLength: number = 10;
+  nameMaxLength: number = 100;
   descriptionMinValue: number = 1;
   descriptionMaxValue: number = 500;
 
@@ -63,15 +63,15 @@ export class SchedulingCreateComponent implements OnInit {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-      event_id: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      event: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      user_id: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
-      task_id: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
-      value: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
-      start_time: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
-      end_time: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
-      date: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
-      status: ['', [Validators.required, Validators.min(this.descriptionMinValue), Validators.max(this.descriptionMaxValue)]],
+      event_id: [''],
+      event: [''],
+      user_id: [''],
+      task_id: [''],
+      value: [''],
+      start_time: [''],
+      end_time: [''],
+      date: [''],
+      status: [''],
     });
   }
 

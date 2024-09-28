@@ -1,38 +1,41 @@
 package br.com.tasksync.backend.main.dao.postgres;
 
-import br.com.tasksync.backend.main.domain.SchedulingModel;
-import br.com.tasksync.backend.main.port.dao.scheduling.SchedulingDao;
 
-import java.sql.*;
+import br.com.tasksync.backend.main.domain.ActivityModel;
+import br.com.tasksync.backend.main.port.dao.activity.ActivityDao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class SchedulingPostgresDaoImplem implements SchedulingDao {
+public class ActivityPostgresDaoImplem implements ActivityDao {
 
-    private static final Logger logger = Logger.getLogger(SchedulingPostgresDaoImplem.class.getName());
+    private static final Logger logger = Logger.getLogger(ActivityPostgresDaoImplem.class.getName());
     private final Connection connection;
 
-    public SchedulingPostgresDaoImplem(Connection connection) {
+    public ActivityPostgresDaoImplem(Connection connection) {
         this.connection = connection;
     }
 
     @Override
-    public int add(SchedulingModel entity) {
-        String sql = "INSERT INTO scheduling(start_time, end_time, date, status, activity_id, contract_id)";
-        sql += " VALUES(?, ?, ?, ?,?,?);";
+    public int add(ActivityModel entity) {
+
+        String sql = "INSERT INTO activity(value, event_id, task_id) ";
+        sql += " VALUES(?,?,?);";
         PreparedStatement preparedStatement;
         ResultSet resultSet;
+
         try {
             connection.setAutoCommit(false);
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-            preparedStatement.setTime(1, Time.valueOf(entity.getStart_time()));
-            preparedStatement.setTime(2, Time.valueOf(entity.getEnd_time()));
-            preparedStatement.setDate(3, Date.valueOf(entity.getDate()));
-            preparedStatement.setString(4, entity.getStatus());
-            preparedStatement.setInt(5, entity.getActivity_id());
-            preparedStatement.setInt(6, entity.getContract_id());
+            preparedStatement.setDouble(1, entity.getValue());
+            preparedStatement.setInt(2, entity.getEvent_id());
+            preparedStatement.setInt(3, entity.getTask_id());
             preparedStatement.execute();
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
@@ -41,7 +44,6 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
             } else {
                 throw new RuntimeException();
             }
-
             resultSet.close();
             preparedStatement.close();
             connection.commit();
@@ -62,7 +64,7 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
     @Override
     public void remove(int id) {
         logger.log(Level.INFO, "Preparadando para remover a entidade com id " + id);
-        final String sql = "DELETE FROM scheduling WHERE id = ?;";
+        final String sql = "DELETE FROM activity WHERE id = ?;";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
@@ -76,8 +78,8 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
     }
 
     @Override
-    public SchedulingModel readyById(int id) {
-        final String sql = "SELECT * FROM scheduling WHERE id = ?;";
+    public ActivityModel readyById(int id) {
+        final String sql = "SELECT * FROM activity WHERE id = ?;";
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
@@ -85,21 +87,15 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
             preparedStatement.setInt(1, id);
             resultSet = preparedStatement.executeQuery();
             if (resultSet.next()) {
-                final SchedulingModel scheduling = new SchedulingModel();
-                scheduling.setId(resultSet.getInt("id"));
-                scheduling.setStart_time(resultSet.getTime("start_time").toLocalTime());
-                scheduling.setEnd_time(resultSet.getTime("end_time").toLocalTime());
-                scheduling.setDate(resultSet.getDate("date").toLocalDate());
-                scheduling.setStatus(resultSet.getString("status"));
-                scheduling.setActivity_id(resultSet.getInt("activity_id"));
-                scheduling.setContract_id(resultSet.getInt("contract_id"));
-
+                final ActivityModel activity = new ActivityModel();
+                activity.setId(resultSet.getInt("id"));
+                activity.setValue(resultSet.getDouble("value"));
+                activity.setEvent_id(resultSet.getInt("event_id"));
+                activity.setTask_id(resultSet.getInt("task_id"));
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
-                return scheduling;
+                return activity;
 
             }
-
-
             return null;
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -115,47 +111,48 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
     }
 
     @Override
-    public List<SchedulingModel> readAll() {
+    public List<ActivityModel> readAll() {
 
-        final List<SchedulingModel> schedulings = new ArrayList<>();
-        final String sql = "SELECT * FROM scheduling;";
+        final List<ActivityModel> activitys = new ArrayList<>();
+        final String sql = "SELECT * FROM activity;";
+
+
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                // tem que ser conforme o banco de dados
-                final SchedulingModel scheduling = new SchedulingModel();
-                scheduling.setId(resultSet.getInt("id"));
-                scheduling.setDate(resultSet.getDate("date").toLocalDate());
-                scheduling.setStart_time(resultSet.getTime("start_time").toLocalTime());
-                scheduling.setEnd_time(resultSet.getTime("end_time").toLocalTime());
-                scheduling.setStatus(resultSet.getString("status"));
-                scheduling.setActivity_id(resultSet.getInt("activity_id"));
-                scheduling.setContract_id(resultSet.getInt("contract_id"));
+                final ActivityModel activity = new ActivityModel();
 
+                activity.setId(resultSet.getInt("id"));
+                activity.setValue(resultSet.getDouble("value"));
 
-                schedulings.add(scheduling);
+                activitys.add(activity);
+
             }
             resultSet.close();
             preparedStatement.close();
-            return schedulings;
+            return activitys;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
 
     @Override
-    public void updateInformation(int id, SchedulingModel entity) {
-        String sql = "UPDATE scheduling SET name = ? WHERE id = ?;";
+    public void updateInformation(int id, ActivityModel entity) {
+        String sql = "UPDATE activity SET value = ? WHERE id = ?;";
+
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
-
-            preparedStatement.setInt(1, entity.getId());
+            preparedStatement.setDouble(1, entity.getValue());
+            preparedStatement.setInt(2, entity.getId());
             preparedStatement.execute();
             preparedStatement.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
+
     }
+
+
 }

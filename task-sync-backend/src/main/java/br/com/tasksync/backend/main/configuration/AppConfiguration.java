@@ -1,10 +1,9 @@
 package br.com.tasksync.backend.main.configuration;
 
 import br.com.tasksync.backend.main.dao.h2.UserH2DaoImplem;
-import br.com.tasksync.backend.main.dao.postgres.EventPostgresDaoImplem;
-import br.com.tasksync.backend.main.dao.postgres.SchedulingPostgresDaoImplem;
-import br.com.tasksync.backend.main.dao.postgres.TaskPostgresDaoImplem;
-import br.com.tasksync.backend.main.dao.postgres.UserPostgresDaoImplem;
+import br.com.tasksync.backend.main.dao.postgres.*;
+import br.com.tasksync.backend.main.port.dao.activity.ActivityDao;
+import br.com.tasksync.backend.main.port.dao.contract.ContractDao;
 import br.com.tasksync.backend.main.port.dao.event.EventDao;
 import br.com.tasksync.backend.main.port.dao.scheduling.SchedulingDao;
 import br.com.tasksync.backend.main.port.dao.task.TaskDao;
@@ -49,5 +48,17 @@ public class AppConfiguration {
     @Profile("prod")
     public SchedulingDao getSchedulingDao(final Connection connection) {
         return new SchedulingPostgresDaoImplem(connection);
+    }
+
+    @Bean
+    @Profile("prod")
+    public ContractDao getContractDao(final Connection connection) {
+        return new ContractPostgresDaoImplem(connection);
+    }
+
+    @Bean
+    @Profile("prod")
+    public ActivityDao getActivityDao(final Connection connection) {
+        return new ActivityPostgresDaoImplem(connection);
     }
 }

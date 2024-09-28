@@ -4,6 +4,8 @@ package br.com.tasksync.backend.main.controller;
 //@RequestMapping define o caminho para qual todas as requições para o o endereço "api/event" deveão executar alguns dos metodos da classe
 
 import br.com.tasksync.backend.main.domain.SchedulingModel;
+import br.com.tasksync.backend.main.dto.CreateSchedulingDto;
+import br.com.tasksync.backend.main.dto.ResponseSchedulingDto;
 import br.com.tasksync.backend.main.port.service.scheduling.SchedulingService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -25,8 +27,8 @@ public class SchedulingRestController {
 
     @CrossOrigin
     @GetMapping()
-    public ResponseEntity<List<SchedulingModel>> getEntities() {
-        List<SchedulingModel> schedulings = schedulingService.findAll();
+    public ResponseEntity<List<ResponseSchedulingDto>> getEntities() {
+        List<ResponseSchedulingDto> schedulings = schedulingService.findAllScheduling();
         return ResponseEntity.ok().body(schedulings);
     }
 
@@ -39,7 +41,7 @@ public class SchedulingRestController {
 
     @CrossOrigin
     @PostMapping()
-    public ResponseEntity<SchedulingModel> createEntity(@RequestBody final SchedulingModel data) {
+    public ResponseEntity<SchedulingModel> createEntity(@RequestBody final CreateSchedulingDto data) {
         int id = schedulingService.create(data);
         final URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequestUri().path("{id}").buildAndExpand(id).toUri();
