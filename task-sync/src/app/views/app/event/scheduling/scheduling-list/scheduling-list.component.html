@@ -50,9 +50,9 @@
         <tbody>
             @for(scheduling of schedulings; track $index){
             <tr>
-                <td class="text-center">{{scheduling.event}}</td>
-                <td class="text-center">{{scheduling.user_id}}</td>
-                <td class="text-center">{{scheduling.task_id}}</td>
+                <td class="text-center">{{scheduling.event.name}}</td>
+                <td class="text-center">{{scheduling.user.name}}</td>
+                <td class="text-center">{{scheduling.task.name}}</td>
                 <td class="text-center">{{ scheduling.value | currency:'BRL':'symbol':'1.2-2' }}</td>
                 <td class="text-center">{{scheduling.start_time}}</td>
                 <td class="text-center">{{scheduling.end_time}}</td>
