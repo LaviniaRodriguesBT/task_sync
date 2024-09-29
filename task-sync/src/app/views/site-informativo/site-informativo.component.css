@@ -1,4 +1,7 @@
 /* GERAL */
+html {
+    scroll-behavior: smooth; 
+}
 
 *{
     margin: 0;
@@ -38,6 +41,7 @@ body{
 }
 
 h2.titulo{
+    margin-top: 5%;
     color: #000;
     font-size: 38px;
     text-align: center;
@@ -49,8 +53,15 @@ h2.titulo span{
 
 /* cabeçalho */
 
+.logo {
+    width: 180px;
+    height: auto;
+}
+
+
 header{
     background-color: #000;
+    padding: 20px 4%;
 }
 
 head{
@@ -61,6 +72,7 @@ header > .interface{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    height: auto;
 }
 
 header a{
@@ -76,6 +88,9 @@ header a:hover{
 }
 
 header nav ul{
+    margin: 0;
+    padding: 0;
+    display: flex; 
     list-style: none;
 }
 
@@ -130,7 +145,7 @@ section.topo-do-site .flex{
 /* FUNCIONALIDADES */
 
 section.funcionalidades{
-    padding: 40px 4%;
+    padding: 200px 4%;
 }
 
 section.funcionalidades .flex{
@@ -158,4 +173,81 @@ section.funcionalidades .flex{
 .funcionalidades .funcionalidades-box h3{
     font-size: 26px;
     margin: 15px 0;
+}
+
+/* SOBRE */
+
+section.sobre{
+    padding: 80px 4%;
+    margin-bottom: 150px;
+}
+
+section.sobre .flex{
+    align-items: center;
+    justify-content: center;
+    gap: 200px;
+}
+
+.sobre .txt-sobre p {
+    text-align: center;
+    color: #000;
+    margin: 40px 0;
+}
+
+.sobre .objetivo-missao {
+    display: flex;
+    justify-content: space-around; 
+    margin: 40px 0;
+}
+
+.sobre .objetivo, .sobre .missao {
+    flex: 1; 
+    margin: 0 20px; 
+    text-align: left;
+}
+
+.sobre .objetivo h3, .sobre .missao h3 {
+    text-align: center;
+    color: #000;
+}
+
+h2.titulo-sobre{
+    color: #000;
+    font-size: 40px;
+    text-align: center;
+}
+
+h2.titulo-sobre span{
+    color: #5301c9;
+}
+
+.sobre .txt-sobre h3{
+    text-decoration: solid;
+    text-align: center;
+    font-size: 26px;
+    margin: 15px 0;
+}
+
+
+
+
+/* FOOTER */
+
+footer{
+    background-color: #000;
+    padding: 30px 4%;
+    box-shadow: 0 0 15px #5401c992;
+}
+
+footer .flex{
+    justify-content: space-between;
+}
+
+footer .flex h2{
+    color: #fff;
+}
+
+.footer-logo {
+    width: 60px;
+    height: auto;
 }

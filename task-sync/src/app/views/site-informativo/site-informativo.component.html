@@ -1,3 +1,5 @@
+<!DOCTYPE html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -5,6 +7,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
+
     <link rel="stylesheet" href="site-informativo.component.css">
     <title>Task Sync</title>
 </head>
@@ -12,30 +16,30 @@
     <header>
         <div class="interface">
             <div class="logo">
-                <a href="#">
-                    <img src="assets/img/logo_task.png" alt="Task Sync">
-                </a> <!-- logo -->
-            </div><!-- interface -->
+                <a href="#inicio">
+                    <img src="assets/img/logo_task_site.png" alt="Task Sync" class="logo">
+                </a>
+            </div>
             
             <nav class="menu-desktop">
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Sobre</a></li>
-                    <li><a href="#">Funcionalidades</a></li>
-                    <li><a href="#">Equipe</a></li>
+                    <li><a href="#inicio">Início</a></li>
+                    <li><a href="#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
                 </ul>
-            </nav> <!-- menu-desktop -->
-
+            </nav>
+    
             <div class="btn-contato">
                 <a href="account/user-type-selection">
                     <button>Login</button>
                 </a>
-            </div><!-- btn-contato -->
+            </div>
         </div>
     </header>
+    
 
     <main>
-        <section class="topo-do-site">
+        <section class="topo-do-site" id="inicio">
             <div class="interface">
                 <div class="flex">
                     <div class="txt-topo-site">
@@ -44,7 +48,7 @@
                             Nosso sistema facilita a distribuição de responsabilidades, 
                             garantindo eficiência e transparência em cada etapa do processo.</p>
                         <div class="btn-contato">
-                            <a href="#">
+                            <a href="https://drive.google.com/drive/folders/1D-GDV5fvLRapcsLVWqMPBb_jQy3eNizc?usp=sharing">
                                 <button>Saiba mais</button>
                             </a>
                         </div>
@@ -56,9 +60,9 @@
             </div><!-- interface -->
         </section><!-- site-top -->
 
-        <section class="funcionalidades">
+        <section class="funcionalidades" id="funcionalidades">
             <div class="interface">
-                <h2 class="titulo">NOSSAS <span>FUNCIONALIDADES.</span></h2>
+                <h2 class="titulo">FUNCIONALIDADES DO<span> TASK SYNC.</span></h2>
                 <div class="flex">
                     <div class="funcionalidades-box">
                         <span class="material-symbols-outlined">bar_chart_4_bars</span>
@@ -78,5 +82,67 @@
                 </div><!--flex -->
             </div><!--interface -->
         </section> <!--especialidades -->
+
+        <section class="sobre" id="sobre">
+            <div class="interface">
+                <div class="titulo">
+                    <h2 class="titulo-sobre">SOBRE O <span>TASK SYNC.</span></h2>
+                </div>
+                <div class="flex">
+  
+                    <div class="txt-sobre">
+                        <p>O Task Sync é uma solução no setor de gerenciamento de eventos e atividades, 
+                            desenvolvida para atender às demandas do mercado com eficiência e organização. Criado com foco em promover 
+                            a colaboração entre equipes e otimizar processos internos.</p>
+                    
+                        <div class="objetivo-missao">
+                            <div class="objetivo">
+                                <h3>OBJETIVO</h3>
+                                <p>Facilitar a gestão de eventos e atividades, oferecendo uma plataforma intuitiva que melhora a organização 
+                                e a responsabilidade dentro das equipes.</p>
+                            </div>
+                    
+                            <div class="missao">
+                                <h3>MISSÃO</h3>
+                                <p>Oferecer uma solução prática para o gerenciamento de eventos, por meio de uma plataforma 
+                                que atenda às necessidades dos clientes.</p>
+                            </div>
+                        </div>
+                    </div><!-- txt-sobre -->
+                </div><!-- flex -->
+
+
+            </div><!-- interface -->
+        </section>     
+        
+        <section class="equipe" id="equipe">
+            <div class="interface">
+                <div class="flex">
+                    <div class="img-equipe"></div>
+                    <div class="img-equipe"></div>
+                    <div class="img-equipe"></div>
+
+                </div>
+            </div>
+        </section>
     </main>
+    <footer>
+        <div class="interface">
+                <div class="line-footer">
+                    <div class="flex">
+                        <img src="assets/img/FAI-LOGO-2019.png" alt="Task Sync" class="footer-logo">
+                        <h2>Projeto Destinado a FAITEC 2024</h2>
+                        <div class="img-git">
+                            <a href="https://github.com/LaviniaRodriguesBT/task_sync" target="_blank">
+                                <button style="border:none; background:none; cursor:pointer; color:white;">
+                                    <i class="bi bi-github" style="font-size: 2rem;"></i>
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </footer>
 </body>
+
+</html>
