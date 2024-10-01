@@ -158,4 +158,38 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public List<SchedulingModel> readByEventId(int id) {
+
+        final List<SchedulingModel> schedulings = new ArrayList<>();
+        final String sql = "SELECT * FROM scheduling s " +
+                " Inner join contract c on c.id = s.contract_id " +
+                " where c.event_id = ?;";
+        try {
+
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                // tem que ser conforme o banco de dados
+                final SchedulingModel scheduling = new SchedulingModel();
+                scheduling.setId(resultSet.getInt("id"));
+                scheduling.setDate(resultSet.getDate("date").toLocalDate());
+                scheduling.setStart_time(resultSet.getTime("start_time").toLocalTime());
+                scheduling.setEnd_time(resultSet.getTime("end_time").toLocalTime());
+                scheduling.setStatus(resultSet.getString("status"));
+                scheduling.setActivity_id(resultSet.getInt("activity_id"));
+                scheduling.setContract_id(resultSet.getInt("contract_id"));
+
+
+                schedulings.add(scheduling);
+            }
+            resultSet.close();
+            preparedStatement.close();
+            return schedulings;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

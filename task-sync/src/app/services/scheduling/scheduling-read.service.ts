@@ -17,7 +17,7 @@ export class SchedulingReadService {
   }
 
   findByEventId(id: string): Promise<ResponseScheduling[]>{
-    return firstValueFrom(this.http.get<ResponseScheduling[]>(`http://localhost:8080/api/event/scheduling?event_id=${id}`));
+    return firstValueFrom(this.http.get<ResponseScheduling[]>(`http://localhost:8080/api/event/scheduling/list-scheduling-by-event?event_id=${id}`));
   }
 
   findByName(name: string): Promise<Scheduling[]> {
@@ -27,4 +27,6 @@ export class SchedulingReadService {
   findAll(): Promise<ResponseScheduling[]>{
     return firstValueFrom(this.http.get<ResponseScheduling[]>('http://localhost:8080/api/event/scheduling'));
   }
+
+
 }
