@@ -16,8 +16,8 @@
     flex-direction: column;
 }
 
-.tooblar {
-    background: url('/assets/img/fundo-menu3.png');
+.toolbar {
+    background-color: #000;
     color: white;
     display: flex;
     align-items: center;
@@ -46,169 +46,17 @@
     list-style: none; 
 }
 
-.mat-toolbar .btn-list {
-    color: white;
-    width: 100%;
-    background: linear-gradient(90deg, rgb(64, 15, 83) 67%, rgb(28, 10, 34) 95%);
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 10px 10px;
-}
 
-
-.open-button {
-    background-color: #2b69f5;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    opacity: 0.8;
-    position: fixed;
-    bottom: 23px;
-    right: 28px;
-    width: 80px;
-}
-
-.open-button {
-    background-color: #007bff; 
-    color: white;
-    border: none;
-    padding: 15px;
-    border-radius: 30%;
-    position: fixed;
-    bottom: 60px; 
-    right: 20px;
-    font-size: 24px;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    transition: background-color 0.3s ease;
-}
-
-.open-button:hover {
-    background-color: #0056b3;
-}
-
-.chat-popup {
-    display: none;
-    position: fixed;
-    bottom: 130px; 
-    right: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-    z-index: 9;
-    width: 300px;
-    background-color: #ffffff;
-    padding: 10px;
-    box-sizing: border-box;
-    overflow: hidden;
-}
-
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 24px;
-    color: #333;
-    cursor: pointer;
-    transition: color 0.3s ease;
-}
-
-.close-btn:hover {
-    color: #dc3545; 
-}
-
-.form-container {
-    padding-top: 40px; 
-    display: flex;
-    flex-direction: column;
-}
-
-.form-container h1 {
-    margin: 0;
-    padding-bottom: 10px;
-    font-size: 18px;
-    color: #333;
-}
-
-.form-container input[type="text"],
-.form-container textarea {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+.mat-toolbar .btn-list{
+    color: #7d7d7d;
+    display: inline-block;
+    transition: .10s;
     font-size: 16px;
 }
 
-.form-actions {
-    display: flex;
-    justify-content: flex-end;
-}
-
-.btn-send {
-    padding: 10px 15px;
-    border: none;
-    border-radius: 4px;
-    font-size: 16px;
-    cursor: pointer;
-    background-color: #28a745; 
-    color: white;
-}
-
-.btn-send:hover {
-    background-color: #218838; 
-}
-
-
-.form-container {
-    max-width: 300px;
-    padding: 10px;
-    background-color: white;
-}
-
-.form-container textarea {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-    resize: none;
-    min-height: 200px;
-}
-
-.form-container textarea:focus {
-    background-color: #ddd;
-    outline: none;
-}
-
-.form-container .btn-send {
-    background-color: #258812;
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
-    opacity: 0.8;
-}
-
-.btn-cancel {
-    background-color: rgb(180, 0, 0);
-    color: white;
-    padding: 16px 20px;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    margin-bottom: 10px;
-    opacity: 0.8;
-}
-
-.form-container .btn:hover,
-.open-button:hover {
-    opacity: 1;
+.mat-toolbar .btn-list:hover{
+    color: #fff;
+    transform: scale(1.08);
 }
 
 .wrapper {
@@ -217,9 +65,6 @@
     flex-direction: column;
 }
 
-.content {
-    flex: 1;
-}
 
 .footer {
     display: block;

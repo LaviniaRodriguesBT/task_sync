@@ -9,6 +9,7 @@ import { CommonModule } from '@angular/common';
 import { EventReadService } from '../../../services/event/event-read.service';
 import { Event } from '../../../domain/model/event.model';
 import { CarouselModule } from 'primeng/carousel'; 
+import { ResponseScheduling } from '../../../domain/dto/response-scheduling';
 
 @Component({
   selector: 'task-sync-home',
@@ -31,6 +32,7 @@ export class HomeComponent implements OnInit {
   data: any;
   options: any;
   events: Event[] = [];
+  responsiveOptions: any[] | undefined;
 
   @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
 
@@ -41,15 +43,15 @@ export class HomeComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    // this.schedulingService.findAll().then(data => {
-    //   this.totalPessoas = data.length;
-    //   this.emAndamento = data.filter((item: Scheduling) => item.status.toLowerCase() === 'em andamento').length;
-    //   this.concluido = data.filter((item: Scheduling) => item.status.toLowerCase() === 'concluído').length;
-    //   this.emAberto = data.filter((item: Scheduling) => item.status.toLowerCase() === 'em aberto').length;
+    this.schedulingService.findAll().then(data => {
+      this.totalPessoas = data.length;
+      this.emAndamento = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
+      this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'concluído').length;
+      this.emAberto = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
 
-    //   this.applyDynamicStyles();
-    //   this.loadEvents();
-    // });
+      this.applyDynamicStyles();
+      this.loadEvents();
+    });
   }
 
   async loadEvents() {
@@ -71,7 +73,7 @@ export class HomeComponent implements OnInit {
         case 3:
           this.renderer.setStyle(card.nativeElement, 'background-color', '#dc3545');
           break;
-        default:
+        default:;
           break;
       }
     });

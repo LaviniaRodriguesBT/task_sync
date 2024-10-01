@@ -1,12 +1,11 @@
 .card-container {
   max-width: 1200px;
   margin: auto;
-  position: relative;
+  /* position: relative; */
 }
 
 .p-carousel {
   display: flex;
-  flex-direction: column;
 }
 
 .card {
@@ -15,6 +14,8 @@
   transition: transform 0.2s, box-shadow 0.2s;
   overflow: hidden;
   margin: 10px;
+  flex: 1;
+  height: 100%;
 }
 
 .card:hover {
@@ -27,14 +28,16 @@
   color: white;
   text-align: center;
   padding: 25px;
-  padding-bottom: 3px;
   width: 100%;
 }
 
 .card-body {
   display: flex;
+  flex-direction: column;
+  justify-content: center; 
   font-size: 14px;
   padding: 10px;
+  flex-grow: 1;
 }
 
 .card-footer {
@@ -47,9 +50,9 @@
 
 .user-image img {
   width: 30%;
+  height: auto;
   border-radius: 8px;
 }
-
 
 .btn-access {
   border: none;
@@ -61,7 +64,7 @@
   font-size: 1rem;
   letter-spacing: .15rem;
   transition: all .3s;
-  position: relative;
+  position: relative; 
   overflow: hidden;
   z-index: 1;
   background-color: white;
