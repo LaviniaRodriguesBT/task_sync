@@ -152,4 +152,27 @@ public class SchedulingServiceImplem implements SchedulingService {
         return responseSchedulingDtos;
 
     }
+
+    @Override
+    public List<ResponseSchedulingDto> findAllSchedulingByEventId(int id) {
+        List<ResponseSchedulingDto> responseSchedulingDtos = new ArrayList<>();
+
+        List<SchedulingModel> scheduling = schedulingDao.readByEventId(id);
+        for (SchedulingModel item : scheduling){
+            ContractModel contractModel = contractDao.readyById(item.getContract_id());
+            ActivityModel activityModel = activityDao.readyById(item.getActivity_id());
+
+            responseSchedulingDtos.add(new ResponseSchedulingDto(
+                    eventDao.readyById(contractModel.getEvent_id()),
+                    userDao.readyById(contractModel.getUser_id()),
+                    taskDao.readyById(activityModel.getTask_id()),
+                    activityModel.getValue(),
+                    item.getStart_time(),
+                    item.getEnd_time(),
+                    item.getDate(),
+                    item.getStatus()));
+        }
+        System.out.println("Chamando todos os cronogramas na tela");
+        return responseSchedulingDtos;
+    }
 }

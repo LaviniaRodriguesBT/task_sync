@@ -84,4 +84,9 @@ public class SchedulingH2DaoImplem implements SchedulingDao {
     public void updateInformation(int id, SchedulingModel entity) {
 
     }
+
+    @Override
+    public List<SchedulingModel> readByEventId(int id) {
+        return List.of();
+    }
 }

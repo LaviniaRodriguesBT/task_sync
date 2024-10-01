@@ -62,4 +62,12 @@ public class SchedulingRestController {
         return ResponseEntity.noContent().build();
     }
 
+
+    @CrossOrigin
+    @GetMapping("/list-scheduling-by-event")
+    public ResponseEntity<List<ResponseSchedulingDto>> getEntityByEventId(@RequestParam("event_id") final int id) {
+        List<ResponseSchedulingDto> schedulings = schedulingService.findAllSchedulingByEventId(id);
+        return ResponseEntity.ok().body(schedulings);
+    }
+
 }
