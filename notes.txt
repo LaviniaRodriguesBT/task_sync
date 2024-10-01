@@ -1,0 +1,17 @@
+Diagramas de Classes
+* não existe nenhuma relação da classe usuário com a classe tasks?
+
+Diagrama de componentes:
+
+* ok
+
+Digrama de implantação 
+*Denominar cliente como "Device do Cliente"
+
+Diagrama de Pacotes:
+* OK
+
+Diagrama de Sequencia
+* Precisa nomear os métodos de acordo com os do sistema (ex. método())
+
+* Sugestão nomear os diagramas de acordo com que eles estão representando (ex. Caso de uso representado no diagrama de Sequência)
