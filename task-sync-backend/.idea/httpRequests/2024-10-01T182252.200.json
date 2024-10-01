@@ -1,0 +1,290 @@
+[
+  {
+    "event": {
+      "id": 9,
+      "code": "009",
+      "name": "Palestra Motivacional",
+      "description": "Inspiração para a equipe",
+      "business": "Desenvolvimento",
+      "date": "2024-09-01",
+      "start_time": "15:00:00",
+      "end_time": "16:00:00"
+    },
+    "user": {
+      "id": 2,
+      "userId": 0,
+      "name": "Lavinia B",
+      "email": "laviniabf@.com",
+      "password": "321",
+      "cpf": "321",
+      "phone": "654",
+      "address": "rua: 2",
+      "access_type": "Colaborador"
+    },
+    "task": {
+      "id": 4,
+      "name": "seguranca"
+    },
+    "value": 500.5,
+    "start_time": "10:00:00",
+    "end_time": "09:00:00",
+    "date": "2024-08-20",
+    "status": "Em aberto"
+  },
+  {
+    "event": {
+      "id": 7,
+      "code": "007",
+      "name": "Almoço de Equipe",
+      "description": "Integração da nova equipe",
+      "business": "Recursos Humanos",
+      "date": "2024-08-02",
+      "start_time": "12:00:00",
+      "end_time": "14:00:00"
+    },
+    "user": {
+      "id": 1,
+      "userId": 0,
+      "name": "Michele F",
+      "email": "michelef@.com",
+      "password": "123",
+      "cpf": "123",
+      "phone": "987",
+      "address": "rua: 1",
+      "access_type": "Administrador"
+    },
+    "task": {
+      "id": 5,
+      "name": "venda"
+    },
+    "value": 300.0,
+    "start_time": "10:00:00",
+    "end_time": "09:00:00",
+    "date": "2024-01-20",
+    "status": "Finalizada"
+  },
+  {
+    "event": {
+      "id": 3,
+      "code": "003",
+      "name": "Lançamento de Produto",
+      "description": "Apresentação do novo produto X",
+      "business": "Vendas",
+      "date": "2024-06-10",
+      "start_time": "10:00:00",
+      "end_time": "12:00:00"
+    },
+    "user": {
+      "id": 3,
+      "userId": 0,
+      "name": "Lucas S",
+      "email": "lucassf@.com",
+      "password": "456",
+      "cpf": "456",
+      "phone": "321",
+      "address": "rua: 3",
+      "access_type": "Colaborador"
+    },
+    "task": {
+      "id": 1,
+      "name": "limpeza"
+    },
+    "value": 600.0,
+    "start_time": "10:00:00",
+    "end_time": "09:00:00",
+    "date": "2024-09-01",
+    "status": "Em aberto"
+  },
+  {
+    "event": {
+      "id": 5,
+      "code": "005",
+      "name": "Conferência Anual",
+      "description": "Discussão sobre tendências de mercado",
+      "business": "Estratégia",
+      "date": "2024-07-05",
+      "start_time": "08:00:00",
+      "end_time": "18:00:00"
+    },
+    "user": {
+      "id": 4,
+      "userId": 0,
+      "name": "Alan S",
+      "email": "alansf@.com",
+      "password": "654",
+      "cpf": "654",
+      "phone": "963",
+      "address": "rua: 4",
+      "access_type": "Colaborador"
+    },
+    "task": {
+      "id": 3,
+      "name": "caixa"
+    },
+    "value": 200.0,
+    "start_time": "10:00:00",
+    "end_time": "09:00:00",
+    "date": "2024-07-29",
+    "status": "Em andamento"
+  },
+  {
+    "event": {
+      "id": 6,
+      "code": "006",
+      "name": "Feira de Emprego",
+      "description": "Conectar talentos com empresas",
+      "business": "Recursos Humanos",
+      "date": "2024-07-20",
+      "start_time": "10:00:00",
+      "end_time": "16:00:00"
+    },
+    "user": {
+      "id": 8,
+      "userId": 0,
+      "name": "Daniele B",
+      "email": "danielebf@.com",
+      "password": "258",
+      "cpf": "258",
+      "phone": "159",
+      "address": "rua: 8",
+      "access_type": "Colaborador"
+    },
+    "task": {
+      "id": 3,
+      "name": "caixa"
+    },
+    "value": 900.0,
+    "start_time": "10:00:00",
+    "end_time": "09:00:00",
+    "date": "2024-08-20",
+    "status": "Em andamento"
+  },
+  {
+    "event": {
+      "id": 8,
+      "code": "008",
+      "name": "Hackathon",
+      "description": "Desenvolvimento de soluções inovadoras",
+      "business": "Inovação",
+      "date": "2024-08-15",
+      "start_time": "18:00:00",
+      "end_time": "02:00:00"
+    },
+    "user": {
+      "id": 5,
+      "userId": 0,
+      "name": "Leandro L",
+      "email": "leandrof@.com",
+      "password": "789",
+      "cpf": "789",
+      "phone": "258",
+      "address": "rua: 5",
+      "access_type": "Administrador"
+    },
+    "task": {
+      "id": 9,
+      "name": "DJs"
+    },
+    "value": 1000.0,
+    "start_time": "10:00:00",
+    "end_time": "09:00:00",
+    "date": "2023-09-20",
+    "status": "Finalizada"
+  },
+  {
+    "event": {
+      "id": 2,
+      "code": "002",
+      "name": "Workshop de Marketing",
+      "description": "Estratégias para aumentar as vendas",
+      "business": "Marketing",
+      "date": "2024-05-25",
+      "start_time": "14:00:00",
+      "end_time": "17:00:00"
+    },
+    "user": {
+      "id": 10,
+      "userId": 0,
+      "name": "Patricia R",
+      "email": "patriciarf@.com",
+      "password": "741",
+      "cpf": "741",
+      "phone": "888",
+      "address": "rua: 10",
+      "access_type": "Colaborador"
+    },
+    "task": {
+      "id": 3,
+      "name": "caixa"
+    },
+    "value": 500.0,
+    "start_time": "10:00:00",
+    "end_time": "09:00:00",
+    "date": "2022-01-01",
+    "status": "Finalizada"
+  },
+  {
+    "event": {
+      "id": 4,
+      "code": "004",
+      "name": "Treinamento Técnico",
+      "description": "Atualização sobre novas tecnologias",
+      "business": "TI",
+      "date": "2024-06-15",
+      "start_time": "09:00:00",
+      "end_time": "16:00:00"
+    },
+    "user": {
+      "id": 7,
+      "userId": 0,
+      "name": "Bruna V",
+      "email": "brunavf@.com",
+      "password": "147",
+      "cpf": "147",
+      "phone": "753",
+      "address": "rua: 7",
+      "access_type": "Colaborador"
+    },
+    "task": {
+      "id": 1,
+      "name": "limpeza"
+    },
+    "value": 600.0,
+    "start_time": "10:00:00",
+    "end_time": "09:00:00",
+    "date": "2024-08-20",
+    "status": "Em aberto"
+  },
+  {
+    "event": {
+      "id": 10,
+      "code": "010",
+      "name": "Reunião de Diretoria",
+      "description": "Discussão sobre metas anuais",
+      "business": "Diretoria",
+      "date": "2024-09-15",
+      "start_time": "10:00:00",
+      "end_time": "12:00:00"
+    },
+    "user": {
+      "id": 9,
+      "userId": 0,
+      "name": "Josue S",
+      "email": "josuesf@.com",
+      "password": "369",
+      "cpf": "369",
+      "phone": "456",
+      "address": "rua: 9",
+      "access_type": "Administrador"
+    },
+    "task": {
+      "id": 8,
+      "name": "coordenador"
+    },
+    "value": 900.0,
+    "start_time": "10:00:00",
+    "end_time": "09:00:00",
+    "date": "2024-08-20",
+    "status": "Em aberto"
+  }
+]
