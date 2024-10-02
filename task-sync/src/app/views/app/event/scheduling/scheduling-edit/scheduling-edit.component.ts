@@ -59,11 +59,13 @@ export class SchedulingEditComponent implements OnInit {
   }
 
   async ngOnInit() {
+    console.log("cai aqui")
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.event = await this.eventReadService.findById(this.eventId);
     let schedulingId = this.activatedRoute.snapshot.paramMap.get('id');
     this.schedulingId = schedulingId!;
     this.loadSchedulingById(schedulingId!);
+
   }
 
   async loadSchedulingById(schedulingId: string) {

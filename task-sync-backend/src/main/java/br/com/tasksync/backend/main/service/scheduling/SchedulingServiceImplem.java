@@ -139,6 +139,7 @@ public class SchedulingServiceImplem implements SchedulingService {
             ActivityModel activityModel = activityDao.readyById(item.getActivity_id());
 
             responseSchedulingDtos.add(new ResponseSchedulingDto(
+                    item.getId(),
                     eventDao.readyById(contractModel.getEvent_id()),
                     userDao.readyById(contractModel.getUser_id()),
                     taskDao.readyById(activityModel.getTask_id()),
@@ -163,6 +164,7 @@ public class SchedulingServiceImplem implements SchedulingService {
             ActivityModel activityModel = activityDao.readyById(item.getActivity_id());
 
             responseSchedulingDtos.add(new ResponseSchedulingDto(
+                    item.getId(),
                     eventDao.readyById(contractModel.getEvent_id()),
                     userDao.readyById(contractModel.getUser_id()),
                     taskDao.readyById(activityModel.getTask_id()),

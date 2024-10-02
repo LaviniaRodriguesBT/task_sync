@@ -13,6 +13,7 @@ import java.time.LocalTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ResponseSchedulingDto {
+    private int id;
     private EventModel event;
     private UserModel user;
     private TaskModel task;
@@ -23,6 +24,5 @@ public class ResponseSchedulingDto {
     private String status;
 
 
-    public ResponseSchedulingDto(EventModel eventModel, UserModel userModel, ActivityModel activityModel, LocalTime startTime, LocalTime endTime, LocalDate date, String status) {
-    }
+
 }
