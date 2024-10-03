@@ -3,6 +3,7 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Scheduling } from '../../../../../domain/model/scheduling.model';
 import { SchedulingReadService } from '../../../../../services/scheduling/scheduling-read.service';
 import { MatSelectModule } from '@angular/material/select';
+import { ResponseScheduling } from '../../../../../domain/dto/response-scheduling';
 
 @Component({
   selector: 'task-sync-scheduling-detail',
@@ -16,7 +17,7 @@ import { MatSelectModule } from '@angular/material/select';
 })
 export class SchedulingDetailComponent implements OnInit {
 
-  schedulingInformation?: Scheduling;
+  schedulingInformation?: ResponseScheduling;
   eventId: string = '';
 
   constructor(private activatedRoute: ActivatedRoute,
