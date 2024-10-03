@@ -34,8 +34,8 @@ public class SchedulingRestController {
 
     @CrossOrigin
     @GetMapping("/{id}")
-    public ResponseEntity<SchedulingModel> getEntityById(@PathVariable final int id) {
-        SchedulingModel scheduling = schedulingService.findById(id);
+    public ResponseEntity<ResponseSchedulingDto> getEntityById(@PathVariable final int id) {
+        ResponseSchedulingDto scheduling = schedulingService.findByIdSchedulingUser(id);
         return ResponseEntity.ok().body(scheduling);
     }
 
