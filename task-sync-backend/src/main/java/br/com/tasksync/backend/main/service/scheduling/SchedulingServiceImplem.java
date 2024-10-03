@@ -69,6 +69,7 @@ public class SchedulingServiceImplem implements SchedulingService {
             return null;
         }
         SchedulingModel scheduling = schedulingDao.readyById(id);
+
         System.out.println("Chamando o cronograma por id");
         return scheduling;
     }
@@ -139,6 +140,7 @@ public class SchedulingServiceImplem implements SchedulingService {
             ActivityModel activityModel = activityDao.readyById(item.getActivity_id());
 
             responseSchedulingDtos.add(new ResponseSchedulingDto(
+                    item.getId(),
                     eventDao.readyById(contractModel.getEvent_id()),
                     userDao.readyById(contractModel.getUser_id()),
                     taskDao.readyById(activityModel.getTask_id()),
@@ -163,6 +165,7 @@ public class SchedulingServiceImplem implements SchedulingService {
             ActivityModel activityModel = activityDao.readyById(item.getActivity_id());
 
             responseSchedulingDtos.add(new ResponseSchedulingDto(
+                    item.getId(),
                     eventDao.readyById(contractModel.getEvent_id()),
                     userDao.readyById(contractModel.getUser_id()),
                     taskDao.readyById(activityModel.getTask_id()),
@@ -175,4 +178,28 @@ public class SchedulingServiceImplem implements SchedulingService {
         System.out.println("Chamando todos os cronogramas na tela");
         return responseSchedulingDtos;
     }
+
+    @Override
+    public ResponseSchedulingDto findByIdSchedulingUser(int id) {
+
+        SchedulingModel scheduling = schedulingDao.readyById(id);
+
+            ContractModel contractModel = contractDao.readyById(scheduling.getContract_id());
+            ActivityModel activityModel = activityDao.readyById(scheduling.getActivity_id());
+            return new ResponseSchedulingDto(
+                    scheduling.getId(),
+                    eventDao.readyById(contractModel.getEvent_id()),
+                    userDao.readyById(contractModel.getUser_id()),
+                    taskDao.readyById(activityModel.getTask_id()),
+                    activityModel.getValue(),
+                    scheduling.getStart_time(),
+                    scheduling.getEnd_time(),
+                    scheduling.getDate(),
+                    scheduling.getStatus());
+
+
+    }
+
+
+
 }

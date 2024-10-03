@@ -8,6 +8,10 @@ import { SchedulingUpdateService } from '../../../../../services/scheduling/sche
 import { EventReadService } from '../../../../../services/event/event-read.service';
 import { Event } from '../../../../../domain/model/event.model';
 import { MatSelectModule } from '@angular/material/select';
+import { User } from '../../../../../domain/model/user.model';
+import { Task } from '../../../../../domain/model/task.model';
+import { UserReadService } from '../../../../../services/user/user-read.service';
+import { TaskReadService } from '../../../../../services/task/task-read.service';
 
 @Component({
   selector: 'task-sync-scheduling-edit',
@@ -32,6 +36,8 @@ export class SchedulingEditComponent implements OnInit {
   nameMaxLength: number = 10;
   priceMinValue: number = 1;
   priceMaxValue: number = 500;
+  userList: User [] = [];
+  taskList: Task [] = [];
 
   constructor(private activatedRoute: ActivatedRoute,
     private schedulingReadService: SchedulingReadService,
@@ -39,6 +45,8 @@ export class SchedulingEditComponent implements OnInit {
     private toastrService: ToastrService,
     private router: Router,
     private eventReadService: EventReadService,
+    private userReadService: UserReadService,
+    private taskReadService: TaskReadService,
     private formBuilder: FormBuilder) {
     this.initializeForm();
     this.eventId = this.form.controls['event_id'].value;
@@ -59,20 +67,24 @@ export class SchedulingEditComponent implements OnInit {
   }
 
   async ngOnInit() {
+    console.log("cai a")
+    this.userList = await this.userReadService.findAll();
+    this.taskList = await this.taskReadService.findAll();
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.event = await this.eventReadService.findById(this.eventId);
     let schedulingId = this.activatedRoute.snapshot.paramMap.get('id');
     this.schedulingId = schedulingId!;
     this.loadSchedulingById(schedulingId!);
+
   }
 
   async loadSchedulingById(schedulingId: string) {
+    
     let scheduling = await this.schedulingReadService.findById(schedulingId);
     console.log(scheduling);
-    this.form.controls['event_id'].setValue(scheduling.event_id);
-    this.form.controls['event'].setValue(scheduling.event_id);
-    this.form.controls['user_id'].setValue(scheduling.user_id);
-    this.form.controls['task_id'].setValue(scheduling.task_id);
+    
+    this.form.controls['user_id'].setValue(scheduling.user.id);
+    this.form.controls['task_id'].setValue(scheduling.task.id);
     this.form.controls['value'].setValue(scheduling.value);
     this.form.controls['start_time'].setValue(scheduling.start_time);
     this.form.controls['end_time'].setValue(scheduling.end_time);
