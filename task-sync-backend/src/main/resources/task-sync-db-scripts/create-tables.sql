@@ -40,14 +40,14 @@ create table event (
 
 create table task (
     id serial primary key,
-    name character varying(200) not null unique
+    taskname character varying(200) not null unique
 );
 
 create table activity (
     id serial primary key,
     value numeric(1000, 2) not null,
-    event_id integer not null references event(id) on update cascade,
-    task_id integer not null references task(id) on update cascade
+    event_id integer not null references event(id) on update cascade on delete cascade,
+    task_id integer not null references task(id) on update cascade on delete cascade
 
 );
 

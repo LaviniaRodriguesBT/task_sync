@@ -24,16 +24,21 @@ public class TaskPostgresDaoImplem implements TaskDao {
     @Override
     public int add(TaskModel entity) {
 
-        String sql = "INSERT INTO task(name) ";
+        String sql = "INSERT INTO task (taskname) ";
         sql += " VALUES(?);";
+
         PreparedStatement preparedStatement;
         ResultSet resultSet;
 
         try {
             connection.setAutoCommit(false);
+
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+
             preparedStatement.setString(1, entity.getName());
+
             preparedStatement.execute();
+
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
                 final int id = resultSet.getInt(1);
@@ -41,11 +46,12 @@ public class TaskPostgresDaoImplem implements TaskDao {
             } else {
                 throw new RuntimeException();
             }
-            resultSet.close();
-            preparedStatement.close();
+
             connection.commit();
+
             resultSet.close();
             preparedStatement.close();
+
 
         } catch (SQLException e) {
             try {
@@ -86,7 +92,7 @@ public class TaskPostgresDaoImplem implements TaskDao {
             if (resultSet.next()) {
                 final TaskModel task = new TaskModel();
                 task.setId(resultSet.getInt("id"));
-                task.setName(resultSet.getString("name"));
+                task.setName(resultSet.getString("taskname"));
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
                 return task;
 
@@ -119,7 +125,7 @@ public class TaskPostgresDaoImplem implements TaskDao {
                 final TaskModel task = new TaskModel();
 
                 task.setId(resultSet.getInt("id"));
-                task.setName(resultSet.getString("name"));
+                task.setName(resultSet.getString("taskname"));
 
                 tasks.add(task);
 
@@ -134,7 +140,7 @@ public class TaskPostgresDaoImplem implements TaskDao {
 
     @Override
     public void updateInformation(int id, TaskModel entity) {
-        String sql = "UPDATE task SET name = ? WHERE id = ?;";
+        String sql = "UPDATE task SET taskname = ? WHERE id = ?;";
 
         try {
             PreparedStatement preparedStatement;

@@ -49,7 +49,7 @@ values (default, '001', 'Reunião de Equipe', 'Discussão sobre o novo projeto',
 
 
 
-insert into task (id, name)
+insert into task (id, taskname)
 values (default, 'limpeza'),
        (default, 'transporte'),
        (default, 'caixa'),

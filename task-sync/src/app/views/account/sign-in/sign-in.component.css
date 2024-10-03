@@ -66,14 +66,18 @@
     height: 200px;
 }
 
-.image-container img:not(.contact-icon) {
-    transition: transform 6s ease-in-out, opacity 0.5s ease-in-out;
-    width: 250px;
+.slogan{
+    position: relative;
+    animation: flutuar 6s ease-in-out infinite alternate;
 }
 
-.image-container img:not(.contact-icon):hover {
-    transform: perspective(300px) rotateX(720deg) rotateY(360deg) scale(1.1);
-    opacity: 0.8;
+@keyframes flutuar{
+    0%{
+        top: -50px;
+    }
+    100%{
+        top: 30px;
+    }
 }
 
 .enter-field {
@@ -140,7 +144,7 @@
 .image-logo {
     width: 100px;
     height: auto;
-    margin-left: 37%;
+    margin-left: 40%;
     animation: fadeIn 1.5s ease-in-out;
 }
 
@@ -188,7 +192,7 @@
 footer {
     position: absolute;
     bottom: 0;
-    background: linear-gradient(90deg, rgb(64, 15, 83) 67%, rgb(28, 10, 34) 95%);
+    background: #122c69;
     color: white;
     width: 100%;
     height: 5%;
