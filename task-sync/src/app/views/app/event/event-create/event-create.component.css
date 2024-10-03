@@ -132,6 +132,7 @@ hr {
 .form-group.d-flex.btns {
   justify-content: center;
   gap: 40px;
+
 }
 
 .btn-back,
@@ -255,6 +256,7 @@ hr {
   position: relative;
   overflow: hidden;
   z-index: 1;
+  width: 1px;
   background-color: white;
   border: 2px solid rgb(167, 9, 9);
   &:after {
