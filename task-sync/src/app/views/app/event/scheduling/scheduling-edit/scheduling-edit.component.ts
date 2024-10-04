@@ -82,7 +82,7 @@ export class SchedulingEditComponent implements OnInit {
     
     let scheduling = await this.schedulingReadService.findById(schedulingId);
     console.log(scheduling);
-    
+    this.form.controls['event_id'].setValue(scheduling.event.id);
     this.form.controls['user_id'].setValue(scheduling.user.id);
     this.form.controls['task_id'].setValue(scheduling.task.id);
     this.form.controls['value'].setValue(scheduling.value);
