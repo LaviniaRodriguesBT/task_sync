@@ -2,7 +2,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Eventos</title>
- 
+
 </head>
 
 <body>
@@ -12,11 +12,12 @@
         <li class="breadcrumb-item"><a href="/">Home</a></li>
       </ol>
     </nav>
-  
-    <h2>Próximos eventos</h2>    
-  
+
+    <h2>Próximos eventos</h2>
+
     <div class="card-container">
-      <p-carousel class="teste" [value]="events" [numVisible]="3" [numScroll]="1" [circular]="true" [autoplayInterval]="5000">
+      <p-carousel class="teste" [value]="events" [numVisible]="3" [numScroll]="1" [circular]="true"
+        [autoplayInterval]="5000">
         <ng-template pTemplate="item" let-event>
           <div class="card">
             <div class="card-header">
@@ -27,24 +28,22 @@
             </div>
             <div class="card-body">
               <table class="table body-text-card">
-                <tbody class="table body-text-card">
-                  <tr>
-                    <th scope="row">Data Inicio</th>
-                    <td>{{ event.date | date: 'dd/MM/yyyy' }}</td>
-                  </tr>
-                </tbody>
+
+               <th scope="row">Data Inicio</th>
+                <td>{{ event.date | date: 'dd/MM/yyyy' }}</td>
+
+
               </table>
-            </div>
-        
               <a class="btn btn-access" routerLink="/event/{{ event.id }}/scheduling/list">Acessar</a>
-  
+            </div>
+
           </div>
         </ng-template>
       </p-carousel>
     </div>
-    
-    
-  
+
+
+
     <div class="dashboard">
       <h2>Dashboard</h2>
       <div class="status-cards">
