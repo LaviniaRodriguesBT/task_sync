@@ -37,12 +37,8 @@ export class TaskListComponent implements OnInit {
     private activatedRoute: ActivatedRoute,
     private taskReadService: TaskReadService,
     private taskDeleteService: TaskDeleteService,
-<<<<<<< HEAD
     private toastrService: ToastrService,
    
-=======
-    private toastrService: ToastrService
->>>>>>> main
   ) {
     this.accessType = localStorage.getItem('accessType')
   }
@@ -78,12 +74,9 @@ export class TaskListComponent implements OnInit {
   gerarPdf() {
     window.print()
   }
-<<<<<<< HEAD
 
 
 
-=======
->>>>>>> main
   previousPage() {
 
   }

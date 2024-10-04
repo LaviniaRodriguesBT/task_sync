@@ -36,11 +36,8 @@ export class EventListComponent implements OnInit {
   constructor(private eventReadService: EventReadService,
     private eventDeleteService: EventDeleteService,
     private toastrService: ToastrService,
-<<<<<<< HEAD
    
     
-=======
->>>>>>> main
   ) {
     this.accessType = localStorage.getItem('accessType')
   }
