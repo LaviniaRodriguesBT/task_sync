@@ -14,6 +14,7 @@ public interface SchedulingService extends CrudService<SchedulingModel> {
     List<ResponseSchedulingDto> findAllScheduling();
     List<ResponseSchedulingDto> findAllSchedulingByEventId(final int id);
     ResponseSchedulingDto findByIdSchedulingUser(final int id);
+    void updateScheduling(final int id, final CreateSchedulingDto entity);
 
 
 }

@@ -146,7 +146,7 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
 
     @Override
     public void updateInformation(int id, SchedulingModel entity) {
-        String sql = "UPDATE scheduling SET start_time = ?, end_time = ?, date = ?, status = ?, activity_id = ?, contract_id = ? WHERE id = ?;";
+        String sql = "UPDATE scheduling SET start_time = ?, end_time = ?, date = ?, status = ? WHERE id = ?;";
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
@@ -155,11 +155,9 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
             preparedStatement.setTime(1, Time.valueOf(entity.getStart_time()));
             preparedStatement.setTime(2, Time.valueOf(entity.getEnd_time()));
             preparedStatement.setDate(3, Date.valueOf(entity.getDate()));
-
             preparedStatement.setString(4, entity.getStatus());
-            preparedStatement.setInt(5, entity.getActivity_id());
-            preparedStatement.setInt(6, entity.getContract_id());
-            preparedStatement.setInt(7, entity.getId());
+            preparedStatement.setInt(5, entity.getId());
+
             preparedStatement.execute();
             preparedStatement.close();
         } catch (Exception e) {

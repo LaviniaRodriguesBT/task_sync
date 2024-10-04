@@ -62,10 +62,7 @@ export class UserListComponent {
     }
     
   }
-  public exportExcelEventList() {
-    this.excelExporter.exportData(this.users, new IgxExcelExporterOptions('ExportedDataFile'));
-  
-  }
+
   gerarPdf() {
     window.print()
   }

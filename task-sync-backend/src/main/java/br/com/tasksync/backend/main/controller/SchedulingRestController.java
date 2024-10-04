@@ -50,8 +50,8 @@ public class SchedulingRestController {
 
     @CrossOrigin
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateEntity(@PathVariable final int id, @RequestBody final SchedulingModel data) {
-        schedulingService.update(id, data);
+    public ResponseEntity<Void> updateEntity(@PathVariable final int id, @RequestBody final CreateSchedulingDto data) {
+        schedulingService.updateScheduling(id, data);
         return ResponseEntity.ok().build();
     }
 

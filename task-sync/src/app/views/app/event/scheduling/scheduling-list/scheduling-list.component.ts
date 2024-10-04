@@ -10,7 +10,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { ResponseScheduling } from '../../../../../domain/dto/response-scheduling';
-import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
+
 @Component({
   selector: 'task-sync-scheduling-list',
   standalone: true,
@@ -37,7 +37,7 @@ export class SchedulingListComponent implements OnInit {
     private schedulingDeleteService: SchedulingDeleteService, 
     private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute,
-    private excelExporter: IgxExcelExporterService,
+
   ) {
     this.userId = localStorage.getItem('id');
     this.accessType = localStorage.getItem('accessType')
@@ -70,10 +70,6 @@ export class SchedulingListComponent implements OnInit {
     window.print()
   }
 
-  public exportExcelEventList() {
-    this.excelExporter.exportData(this.schedulings, new IgxExcelExporterOptions('ExportedDataFile'));
-  
-  }
   previousPage() {
   }
   nextPage() {

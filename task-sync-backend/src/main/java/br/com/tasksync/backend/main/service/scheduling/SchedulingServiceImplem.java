@@ -88,6 +88,7 @@ public class SchedulingServiceImplem implements SchedulingService {
         if (schedulingModel == null) {
             return;
         }
+
         schedulingDao.updateInformation(id, entity);
 
     }
@@ -198,6 +199,34 @@ public class SchedulingServiceImplem implements SchedulingService {
                     scheduling.getStatus());
 
 
+    }
+
+    @Override
+    public void updateScheduling(int id, CreateSchedulingDto entity) {
+
+        SchedulingModel schedulingModel = findById(id);
+        if (schedulingModel == null) {
+            return;
+        }
+
+        ActivityModel activityModel = activityDao.readyById(schedulingModel.getActivity_id());
+        activityModel.setValue(entity.getValue());
+        activityModel.setTask_id(entity.getTask_id());
+        activityModel.setEvent_id(entity.getEvent_id());
+        activityDao.updateInformation(schedulingModel.getActivity_id(), activityModel);
+
+        ContractModel contractModel = contractDao.readyById(schedulingModel.getContract_id());
+        contractModel.setUser_id(entity.getUser_id());
+        contractModel.setEvent_id(entity.getEvent_id());
+        contractDao.updateInformation(schedulingModel.getContract_id(), contractModel);
+
+        schedulingModel.setStatus(entity.getStatus());
+        schedulingModel.setStart_time(entity.getStart_time());
+
+        schedulingModel.setEnd_time(entity.getEnd_time());
+        schedulingModel.setDate(entity.getDate());
+
+        schedulingDao.updateInformation(id, schedulingModel);
     }
 
 

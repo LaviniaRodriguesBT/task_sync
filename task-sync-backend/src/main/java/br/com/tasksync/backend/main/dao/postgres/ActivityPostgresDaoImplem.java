@@ -139,13 +139,15 @@ public class ActivityPostgresDaoImplem implements ActivityDao {
 
     @Override
     public void updateInformation(int id, ActivityModel entity) {
-        String sql = "UPDATE activity SET value = ? WHERE id = ?;";
+        String sql = "UPDATE activity SET value = ?, task_id = ?, event_id = ? WHERE id = ?;";
 
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setDouble(1, entity.getValue());
-            preparedStatement.setInt(2, entity.getId());
+            preparedStatement.setInt(2, entity.getTask_id());
+            preparedStatement.setInt(3, entity.getEvent_id());
+            preparedStatement.setInt(4, id);
             preparedStatement.execute();
             preparedStatement.close();
         } catch (Exception e) {
