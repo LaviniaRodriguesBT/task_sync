@@ -30,7 +30,7 @@
                 <tbody class="table body-text-card">
                   <tr>
                     <th scope="row">Data Inicio</th>
-                    <td>{{ event.date }}</td>
+                    <td>{{ event.date | date: 'dd/MM/yyyy' }}</td>
                   </tr>
                 </tbody>
               </table>
