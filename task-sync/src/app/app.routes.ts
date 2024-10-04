@@ -22,7 +22,6 @@ import { SchedulingCreateComponent } from './views/app/event/scheduling/scheduli
 import { SchedulingDetailComponent } from './views/app/event/scheduling/scheduling-detail/scheduling-detail.component';
 import { SchedulingEditComponent } from './views/app/event/scheduling/scheduling-edit/scheduling-edit.component';
 import { SchedulingListComponent } from './views/app/event/scheduling/scheduling-list/scheduling-list.component';
-import { MyTaskListComponent } from './views/app/task/my-task-list/my-task-list.component';
 import { AboutUsComponent } from './views/app/about-us/about-us.component';
 import { UserTypeSelectionComponent } from './views/account/user-type-selection/user-type-selection.component';
 import { SiteInformativoComponent } from './views/site-informativo/site-informativo.component';
@@ -133,11 +132,6 @@ export const routes: Routes = [
             path: 'list',
             component: TaskListComponent,
             title: 'Task Sync - Listar atividades',
-          },
-          {
-            path: 'my-task-list/:id',
-            component: MyTaskListComponent,
-            title: 'Task Sync - Minhas atividades',
           },
           {
             path: 'edit/:id',

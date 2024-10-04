@@ -69,7 +69,10 @@ export class SchedulingListComponent implements OnInit {
   gerarPdf() {
     window.print()
   }
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
   previousPage() {
   }
   nextPage() {

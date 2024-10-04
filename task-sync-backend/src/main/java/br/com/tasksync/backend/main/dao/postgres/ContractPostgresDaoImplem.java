@@ -30,7 +30,7 @@ public class ContractPostgresDaoImplem implements ContractDao {
         ResultSet resultSet;
 
         try {
-            connection.setAutoCommit(false);
+            //connection.setAutoCommit(false); deixado automatico, pois estava dando prolema apos a criacao
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             //preparedStatement.setInt(1, entity.getNumber());
             preparedStatement.setDate(1, Date.valueOf(entity.getSignature_date()));
@@ -46,7 +46,7 @@ public class ContractPostgresDaoImplem implements ContractDao {
             }
             resultSet.close();
             preparedStatement.close();
-            connection.commit();
+            //connection.commit(); deixado automatico, pois estava dando prolema apos a criacao
             resultSet.close();
             preparedStatement.close();
 

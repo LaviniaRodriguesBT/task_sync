@@ -1,3 +1,10 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -55,10 +62,10 @@
             <input type="time" class="field-name" id="end_time" placeholder="Horário de Término" formControlName="end_time">
         </div>
 
-        <div class="form-group d-flex mt-2 btns">
-            <a class="btn btn-back col-2 me-2" href="/event/list">Voltar</a>
-            <button class="btn btn-create col-2 me-2">Criar</button>
-            <button class="btn clean-form col-6" type="reset" value="Limpar">Limpar</button>
-        </div>
+        <div class="form-group d-flex justify-content-around mt-2 btns">
+            <a class="btn btn-back" href="/event/list">Voltar</a>
+            <button class="btn clean-form" type="reset" value="Limpar">Limpar</button>
+            <button class="btn btn-create" type="submit">Criar</button>
+        </div> 
     </div>
 </form>

@@ -1,3 +1,9 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -44,9 +50,9 @@
         </div>
         <div class="form-group col-12 mt-2">
             <label for="access_type" class="text-name">Tipo de acesso</label>
-            <input id="adm" type="radio" name="user-type" class="type-user">
+            <input id="adm" type="radio" name="user-type"  formControlName="access_type" class="type-user" [checked]=" form.controls['access_type'].value == 'Administrador'">
             <label for="adm" class="type-user">Administrador</label>
-            <input id="colab" type="radio" name="user-type" class="type-user">
+            <input id="colab" type="radio" name="user-type"  formControlName="access_type" class="type-user" [checked]=" form.controls['access_type'].value == 'Colaborador'">
             <label for="colab" class="type-user">Colaborador</label>
         </div>
         <div class="col-12 text-end mt-2">

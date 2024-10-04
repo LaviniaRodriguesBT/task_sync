@@ -25,7 +25,7 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
         PreparedStatement preparedStatement;
         ResultSet resultSet;
         try {
-            connection.setAutoCommit(false);
+            //connection.setAutoCommit(false); deixado automatico, pois estava dando prolema apos a criacao
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setTime(1, Time.valueOf(entity.getStart_time()));
             preparedStatement.setTime(2, Time.valueOf(entity.getEnd_time()));
@@ -44,7 +44,7 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
 
             resultSet.close();
             preparedStatement.close();
-            connection.commit();
+            //connection.commit(); deixado automatico, pois estava dando prolema apos a criacao
             resultSet.close();
             preparedStatement.close();
 

@@ -22,7 +22,6 @@ import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
     CommonModule,
     MatIconModule,
     MatPaginatorModule
-    
   ],
   templateUrl: './event-list.component.html',
   styleUrl: './event-list.component.css'
@@ -37,8 +36,11 @@ export class EventListComponent implements OnInit {
   constructor(private eventReadService: EventReadService,
     private eventDeleteService: EventDeleteService,
     private toastrService: ToastrService,
+<<<<<<< HEAD
    
     
+=======
+>>>>>>> main
   ) {
     this.accessType = localStorage.getItem('accessType')
   }
