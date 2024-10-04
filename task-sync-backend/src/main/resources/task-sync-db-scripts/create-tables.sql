@@ -67,7 +67,7 @@ create table scheduling (
     end_time time not null,
     date timestamp without time zone not null,
     status character varying(50) not null check (status in ('Em aberto', 'Em andamento', 'Finalizada')) default 'Em aberto',
-    activity_id integer not null references activity(id) on update cascade,
+    activity_id integer not null references activity(id) on update cascade on delete cascade,
     contract_id integer not null references contract(id) on update cascade on delete cascade,
     unique (date, contract_id, activity_id)
 );
