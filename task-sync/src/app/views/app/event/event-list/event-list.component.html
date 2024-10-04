@@ -67,6 +67,9 @@
                     </tbody>
                 </table>
                 <div class="action-buttons">
+                    <a *ngIf= "accessType == 'adm'">
+                        <span class="material-icons color-people" title="Pessoa">person</span>
+                    </a>
                     <a routerLink="/event/detail/{{event.id}}" *ngIf= "accessType == 'adm'">
                         <span class="material-icons color-detail" title="Informações">info</span>
                     </a>

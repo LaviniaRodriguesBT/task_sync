@@ -144,6 +144,11 @@
   font-size: 20px;
 }
 
+.color-people {
+  color: #000;
+  cursor: pointer;
+}
+
 .color-detail {
   color: green;
   cursor: pointer;
