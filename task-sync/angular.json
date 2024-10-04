@@ -30,24 +30,17 @@
               }
             ],
             "styles": [
-              "node_modules/minireset.css/minireset.css",
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "./node_modules/bootstrap/dist/css/bootstrap.css",
               "node_modules/ngx-toastr/toastr.css",
               "node_modules/@fortawesome/fontawesome-free/css/all.min.css",
-              "src/styles.css",
-              "node_modules/igniteui-angular/styles/igniteui-angular.css"
+              "src/styles.css"
             ],
             "scripts": [
               "./node_modules/bootstrap/dist/js/bootstrap.js",
               "./node_modules/jspdf/dist/jspdf.es.min.js"
               
-            ],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "node_modules"
-              ]
-            }
+            ]
           },
           "configurations": {
             "production": {
@@ -103,15 +96,9 @@
               }
             ],
             "styles": [
-              "src/styles.css",
-              "node_modules/igniteui-angular/styles/igniteui-angular.css"
+              "src/styles.css"
             ],
-            "scripts": [],
-            "stylePreprocessorOptions": {
-              "includePaths": [
-                "node_modules"
-              ]
-            }
+            "scripts": []
           }
         }
       }

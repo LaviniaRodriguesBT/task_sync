@@ -29,9 +29,6 @@
         <mat-icon class="search-icon">search</mat-icon>
         <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
     </div>
-    
-    <button (click)="exportExcelEventList()">Export Data to Excel</button>
-
 
     <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
@@ -40,7 +37,6 @@
 <hr>
 
 <div class="card-container">
-    
     <ng-container *ngFor="let event of events; let i = index">
         <div class="card">
             <div class="card-header">
