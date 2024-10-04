@@ -31,7 +31,7 @@ public class ActivityPostgresDaoImplem implements ActivityDao {
         ResultSet resultSet;
 
         try {
-            connection.setAutoCommit(false);
+            //connection.setAutoCommit(false);deixado automatico, pois estava dando prolema apos a criacao
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setDouble(1, entity.getValue());
             preparedStatement.setInt(2, entity.getEvent_id());
@@ -46,7 +46,7 @@ public class ActivityPostgresDaoImplem implements ActivityDao {
             }
             resultSet.close();
             preparedStatement.close();
-            connection.commit();
+            //connection.commit();deixado automatico, pois estava dando prolema apos a criacao
             resultSet.close();
             preparedStatement.close();
 

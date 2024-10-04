@@ -31,7 +31,7 @@ public class TaskPostgresDaoImplem implements TaskDao {
         ResultSet resultSet;
 
         try {
-            connection.setAutoCommit(false);
+            //connection.setAutoCommit(false);deixado automatico, pois estava dando prolema apos a criacao
 
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
@@ -47,7 +47,7 @@ public class TaskPostgresDaoImplem implements TaskDao {
                 throw new RuntimeException();
             }
 
-            connection.commit();
+            //connection.commit(); deixado automatico, pois estava dando prolema apos a criacao
 
             resultSet.close();
             preparedStatement.close();
