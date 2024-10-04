@@ -48,10 +48,10 @@
             <input type="text" class="field-name" id="address" placeholder="Endereco" formControlName="address">
         </div>
         <div class="form-group col-12 mt-2">
-            <label for="access_type" class="text-name">Tipo de acesso</label>
-            <input id="adm" type="radio" name="user-type" formControlName="access_type" value="Administrador" class="type-user">
+            <label for="access_type" class="text-name">Tipo de acesso</label>   
+            <input id="adm" type="radio" name="user-type" formControlName="access_type" value="Administrador" class="type-user" [checked]="">
             <label for="adm" class="type-user">Administrador</label>
-            <input id="colab" type="radio" name="user-type" formControlName="access_type" value="Colaborador" class="type-user">
+            <input id="colab" type="radio" name="user-type" formControlName="access_type" value="Colaborador" class="type-user" [checked]="">
             <label for="colab" class="type-user">Colaborador</label>
         </div>
         <div class="form-group d-flex mt-2 btns">

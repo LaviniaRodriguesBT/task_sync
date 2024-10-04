@@ -19,6 +19,7 @@ import { TaskUpdateService } from '../../../../services/task/task-update.service
 })
 export class TaskEditComponent {
   taskId?: string;
+  userId: string|null = '';
   form!: FormGroup;
 
   nameMinLength: number = 3;
@@ -46,6 +47,7 @@ export class TaskEditComponent {
     let taskId = this.activatedRoute.snapshot.paramMap.get('id');
     this.taskId = taskId!;
     this.loadTaskById(taskId!);
+    this.userId = localStorage.getItem('id');
   }
 
   async loadTaskById(taskId: string) {
@@ -59,7 +61,7 @@ export class TaskEditComponent {
       const task: Task = {
         id: this.taskId!,
         name: this.form.controls['name'].value,
-        userId: this.form.controls['userId'].value,
+        userId: this.userId!
       }
 
       console.log(task);
