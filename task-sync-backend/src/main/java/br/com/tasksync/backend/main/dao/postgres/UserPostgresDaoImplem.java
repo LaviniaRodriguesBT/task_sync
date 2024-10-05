@@ -1,6 +1,7 @@
 package br.com.tasksync.backend.main.dao.postgres;
 
 import br.com.tasksync.backend.main.domain.UserModel;
+import br.com.tasksync.backend.main.dto.AuthenticationDto;
 import br.com.tasksync.backend.main.port.dao.user.UserDao;
 
 import java.sql.Connection;
@@ -279,6 +280,44 @@ public class UserPostgresDaoImplem implements UserDao {
             return true;
         } catch (Exception e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public UserModel authenticate(AuthenticationDto authenticationDto) {
+        final String sql = "SELECT * FROM \"user\" WHERE email = ? AND password = ?;";
+
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, authenticationDto.getEmail());
+            preparedStatement.setString(2, authenticationDto.getPassword());
+            resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                final UserModel user = new UserModel();
+                user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("email"));
+                user.setPassword(resultSet.getString("password"));
+                user.setAccess_type(resultSet.getString("access_type"));
+                logger.log(Level.INFO, "Entidade com email " + authenticationDto.getEmail() + " encontrada com sucesso");
+
+                return user;
+
+            }
+
+            return null;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        } finally {
+            try {
+                resultSet.close();
+                preparedStatement.close();
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
         }
     }
 
