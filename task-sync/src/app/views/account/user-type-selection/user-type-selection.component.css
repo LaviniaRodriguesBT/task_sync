@@ -72,7 +72,7 @@ button {
 footer {
     position: absolute;
     bottom: 0;
-    background: linear-gradient(90deg, rgb(64, 15, 83) 67%, rgb(28, 10, 34) 95%);
+    background: #122c69;
     color: white;
     width: 100%;
     height: 5%;

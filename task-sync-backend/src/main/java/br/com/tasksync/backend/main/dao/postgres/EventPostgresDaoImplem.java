@@ -26,7 +26,7 @@ public class EventPostgresDaoImplem implements EventDao {
         PreparedStatement preparedStatement;
         ResultSet resultSet;
         try {
-            connection.setAutoCommit(false);
+            //connection.setAutoCommit(false);deixado automatico, pois estava dando prolema apos a criacao
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, entity.getCode());
             preparedStatement.setString(2, entity.getName());
@@ -44,7 +44,7 @@ public class EventPostgresDaoImplem implements EventDao {
                 throw new RuntimeException();
             }
 
-            connection.commit();
+            //connection.commit();deixado automatico, pois estava dando prolema apos a criacao
             resultSet.close();
             preparedStatement.close();
         } catch (SQLException e) {

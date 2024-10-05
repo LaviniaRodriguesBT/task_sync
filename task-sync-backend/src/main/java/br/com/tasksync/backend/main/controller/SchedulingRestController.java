@@ -34,8 +34,8 @@ public class SchedulingRestController {
 
     @CrossOrigin
     @GetMapping("/{id}")
-    public ResponseEntity<SchedulingModel> getEntityById(@PathVariable final int id) {
-        SchedulingModel scheduling = schedulingService.findById(id);
+    public ResponseEntity<ResponseSchedulingDto> getEntityById(@PathVariable final int id) {
+        ResponseSchedulingDto scheduling = schedulingService.findByIdSchedulingUser(id);
         return ResponseEntity.ok().body(scheduling);
     }
 
@@ -50,8 +50,8 @@ public class SchedulingRestController {
 
     @CrossOrigin
     @PutMapping("/{id}")
-    public ResponseEntity<Void> updateEntity(@PathVariable final int id, @RequestBody final SchedulingModel data) {
-        schedulingService.update(id, data);
+    public ResponseEntity<Void> updateEntity(@PathVariable final int id, @RequestBody final CreateSchedulingDto data) {
+        schedulingService.updateScheduling(id, data);
         return ResponseEntity.ok().build();
     }
 

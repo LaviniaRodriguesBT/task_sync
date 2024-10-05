@@ -92,6 +92,11 @@
     font-size: 20px;
 }
 
+.color-event {
+  color: #000;
+  cursor: pointer;
+}
+
 .color-detail {
     color: green;
     cursor: pointer;

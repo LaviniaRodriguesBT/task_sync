@@ -9,6 +9,8 @@ import { UserReadService } from '../../../../services/user/user-read.service';
 import { faAddressCard, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
+
 
 @Component({
   selector: 'task-sync-user-list',
@@ -32,7 +34,8 @@ export class UserListComponent {
 
   constructor(private userReadService: UserReadService, 
     private userDeleteService: UserDeleteService, 
-    private toastrService: ToastrService
+    private toastrService: ToastrService,
+    private excelExporter: IgxExcelExporterService,
   ) {
 
   }
@@ -62,6 +65,11 @@ export class UserListComponent {
   }
   gerarPdf() {
     window.print()
+  }
+
+  public exportExcelEventList() {
+    this.excelExporter.exportData(this.users, new IgxExcelExporterOptions('ExportedDataFile'));
+  
   }
   previousPage() {
   }

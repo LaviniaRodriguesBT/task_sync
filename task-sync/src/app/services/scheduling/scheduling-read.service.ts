@@ -12,8 +12,8 @@ export class SchedulingReadService {
 
   constructor(private http: HttpClient) { }
 
-  findById(id: string): Promise<Scheduling>{
-    return firstValueFrom(this.http.get<Scheduling>(`http://localhost:8080/api/event/scheduling/${id}`));
+  findById(id: string): Promise<ResponseScheduling>{
+    return firstValueFrom(this.http.get<ResponseScheduling>(`http://localhost:8080/api/event/scheduling/${id}`));
   }
 
   findByEventId(id: string): Promise<ResponseScheduling[]>{

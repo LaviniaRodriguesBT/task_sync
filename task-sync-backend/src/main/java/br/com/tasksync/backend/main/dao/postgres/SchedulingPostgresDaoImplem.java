@@ -25,7 +25,7 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
         PreparedStatement preparedStatement;
         ResultSet resultSet;
         try {
-            connection.setAutoCommit(false);
+            //connection.setAutoCommit(false); deixado automatico, pois estava dando prolema apos a criacao
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setTime(1, Time.valueOf(entity.getStart_time()));
             preparedStatement.setTime(2, Time.valueOf(entity.getEnd_time()));
@@ -44,7 +44,7 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
 
             resultSet.close();
             preparedStatement.close();
-            connection.commit();
+            //connection.commit(); deixado automatico, pois estava dando prolema apos a criacao
             resultSet.close();
             preparedStatement.close();
 
@@ -146,12 +146,18 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
 
     @Override
     public void updateInformation(int id, SchedulingModel entity) {
-        String sql = "UPDATE scheduling SET name = ? WHERE id = ?;";
+        String sql = "UPDATE scheduling SET start_time = ?, end_time = ?, date = ?, status = ? WHERE id = ?;";
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setInt(1, entity.getId());
+
+            preparedStatement.setTime(1, Time.valueOf(entity.getStart_time()));
+            preparedStatement.setTime(2, Time.valueOf(entity.getEnd_time()));
+            preparedStatement.setDate(3, Date.valueOf(entity.getDate()));
+            preparedStatement.setString(4, entity.getStatus());
+            preparedStatement.setInt(5, entity.getId());
+
             preparedStatement.execute();
             preparedStatement.close();
         } catch (Exception e) {

@@ -1,12 +1,10 @@
 .card-container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: auto;
   /* position: relative; */
 }
 
-.p-carousel {
-  display: flex;
-}
+
 
 .card {
   border-radius: 10px;
@@ -16,6 +14,7 @@
   margin: 10px;
   flex: 1;
   height: 100%;
+  
 }
 
 .card:hover {
@@ -24,19 +23,28 @@
 }
 
 .card-header {
-  background-color: rgba(10, 6, 87, 0.975);
-  color: white;
-  text-align: center;
-  padding: 25px;
-  width: 100%;
+    background-color: rgba(10, 6, 87, 0.975);
+    color: white;
+    text-align: center;
+    padding: 25px;
+    width: 100%;
+    height: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+.teste{
+  background-color: red;
+}
+
 
 .card-body {
   display: flex;
   flex-direction: column;
   justify-content: center; 
   font-size: 14px;
-  padding: 10px;
+  padding: 1px;
   flex-grow: 1;
 }
 
@@ -55,6 +63,8 @@
 }
 
 .btn-access {
+  margin-left: 20%;
+  width: 150px;
   border: none;
   cursor: pointer;
   display: inline-block;
@@ -71,21 +81,23 @@
   border: 2px solid rgb(9, 9, 163);
 
   &:after {
+    text-decoration: none;
     content: '';
     position: absolute;
     bottom: 0;
     left: 0;
-    width: 100%;
+    width: 150px;
     height: 100%;
     border-radius: 10rem;
     z-index: -2;
   }
 
   &:before {
+    text-decoration: none;
     content: '';
     bottom: 0;
     left: 0;
-    width: 0%;
+    width: 150px;
     height: 100%;
     background-color: rgb(9, 9, 163);
     transition: all .3s;
@@ -94,11 +106,13 @@
   }
 
   &:hover {
+    text-decoration: none;
     color: white;
     background-color: rgb(9, 9, 163);
+    width: 150px;
 
     &:before {
-      width: 100%;
+      width: 50%;
     }
   }
 

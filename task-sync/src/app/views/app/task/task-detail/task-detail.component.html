@@ -1,3 +1,9 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -16,9 +22,9 @@
             <input type="text" class="field-name" id="name" placeholder="Nome" readonly
                 value="{{taskInformation?.name}}">
         </div>
-        <div class="col-12 text-end mt-2">
-            <button class="btn col-2 me-4 btn-back" routerLink="/task/list">Voltar</button>
-            <button class="btn col-2 btn-create" routerLink="/task/edit/{{taskInformation?.id}}">Editar</button>
+        <div class="form-group d-flex justify-content-around mt-2 btns">
+            <button class="btn btn-back" routerLink="/task/list">Voltar</button>
+            <button class="btn btn-create" routerLink="/task/edit/{{taskInformation?.id}}">Editar</button>
         </div>
     </div>
 </form>

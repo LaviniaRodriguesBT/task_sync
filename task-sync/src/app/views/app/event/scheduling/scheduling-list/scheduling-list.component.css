@@ -1,3 +1,10 @@
+.navbar {
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  width: 50%; 
+}
+
 .search-box {
   display: flex;
   align-items: center;

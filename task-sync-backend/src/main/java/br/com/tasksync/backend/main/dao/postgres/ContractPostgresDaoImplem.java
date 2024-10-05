@@ -30,7 +30,7 @@ public class ContractPostgresDaoImplem implements ContractDao {
         ResultSet resultSet;
 
         try {
-            connection.setAutoCommit(false);
+            //connection.setAutoCommit(false); deixado automatico, pois estava dando prolema apos a criacao
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             //preparedStatement.setInt(1, entity.getNumber());
             preparedStatement.setDate(1, Date.valueOf(entity.getSignature_date()));
@@ -46,7 +46,7 @@ public class ContractPostgresDaoImplem implements ContractDao {
             }
             resultSet.close();
             preparedStatement.close();
-            connection.commit();
+            //connection.commit(); deixado automatico, pois estava dando prolema apos a criacao
             resultSet.close();
             preparedStatement.close();
 
@@ -141,13 +141,15 @@ public class ContractPostgresDaoImplem implements ContractDao {
 
     @Override
     public void updateInformation(int id, ContractModel entity) {
-        String sql = "UPDATE contract SET user_id = ? WHERE id = ?;";
+        String sql = "UPDATE contract SET user_id = ?, event_id = ? WHERE id = ?;";
 
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
 
-            preparedStatement.setInt(1, entity.getId());
+            preparedStatement.setInt(1, entity.getUser_id());
+            preparedStatement.setInt(2, entity.getEvent_id());
+            preparedStatement.setInt(3, id);
             preparedStatement.execute();
             preparedStatement.close();
         } catch (Exception e) {

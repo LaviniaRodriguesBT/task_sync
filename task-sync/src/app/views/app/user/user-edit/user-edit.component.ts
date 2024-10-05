@@ -69,7 +69,7 @@ export class UserEditComponent {
     this.form.controls['cpf'].setValue(user.cpf);
     this.form.controls['phone'].setValue(user.phone);
     this.form.controls['address'].setValue(user.address);
-    this.form.controls['access_type'].setValue(user.access_type);
+    this.form.controls['access_type'].setValue(user.access_type);  
   }
 
   async update() {
