@@ -68,10 +68,10 @@ export class EventListComponent implements OnInit {
   nextPage() {
   }
   
-  public exportExcelEventList() {
-    this.excelExporter.exportData(this.events, new IgxExcelExporterOptions('ExportedDataFile'));
+   public exportExcelEventList() {
+     this.excelExporter.exportData(this.events, new IgxExcelExporterOptions('ExportedDataFile'));
   
-  }
+   }
 
   searchText: string = "";
   search(): void {

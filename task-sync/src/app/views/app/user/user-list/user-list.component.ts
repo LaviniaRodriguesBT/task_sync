@@ -35,7 +35,7 @@ export class UserListComponent {
   constructor(private userReadService: UserReadService, 
     private userDeleteService: UserDeleteService, 
     private toastrService: ToastrService,
-    private excelExporter: IgxExcelExporterService,
+    private excelExporter: IgxExcelExporterService
   ) {
 
   }
@@ -67,10 +67,10 @@ export class UserListComponent {
     window.print()
   }
 
-  public exportExcelEventList() {
-    this.excelExporter.exportData(this.users, new IgxExcelExporterOptions('ExportedDataFile'));
+   public exportExcelEventList() {
+     this.excelExporter.exportData(this.users, new IgxExcelExporterOptions('ExportedDataFile'));
   
-  }
+   }
   previousPage() {
   }
   nextPage() {
@@ -94,7 +94,7 @@ export class UserListComponent {
 
     this.searchText = name;
     let users = this.usersCopy.filter((predicate) => predicate.name?.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
-    predicate.id?.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
+    predicate.id?.toString().toLocaleLowerCase().includes(name.toLocaleLowerCase()));
 
     if (users == undefined) {
       this.users = [];

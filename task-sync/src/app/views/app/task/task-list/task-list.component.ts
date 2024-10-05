@@ -77,10 +77,10 @@ export class TaskListComponent implements OnInit {
     window.print()
   }
 
-  public exportExcelEventList() {
-    this.excelExporter.exportData(this.tasks, new IgxExcelExporterOptions('ExportedDataFile'));
+   public exportExcelEventList() {
+     this.excelExporter.exportData(this.tasks, new IgxExcelExporterOptions('ExportedDataFile'));
   
-  }
+   }
 
 
   previousPage() {

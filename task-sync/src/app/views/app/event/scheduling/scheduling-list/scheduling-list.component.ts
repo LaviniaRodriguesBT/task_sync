@@ -77,10 +77,10 @@ export class SchedulingListComponent implements OnInit {
   nextPage() {
   }
 
-  public exportExcelEventList() {
-    this.excelExporter.exportData(this.schedulings, new IgxExcelExporterOptions('ExportedDataFile'));
+   public exportExcelEventList() {
+     this.excelExporter.exportData(this.schedulings, new IgxExcelExporterOptions('ExportedDataFile'));
   
-  }
+   }
 
   searchText: string = "";
 
