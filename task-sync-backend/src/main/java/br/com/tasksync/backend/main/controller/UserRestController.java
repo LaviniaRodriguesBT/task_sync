@@ -1,6 +1,7 @@
 package br.com.tasksync.backend.main.controller;
 
 import br.com.tasksync.backend.main.domain.UserModel;
+import br.com.tasksync.backend.main.dto.AuthenticationDto;
 import br.com.tasksync.backend.main.port.service.user.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -43,6 +44,15 @@ public class UserRestController {
         final URI uri = ServletUriComponentsBuilder
                 .fromCurrentRequestUri().path("{id}").buildAndExpand(id).toUri();
         return ResponseEntity.created(uri).build();
+    }
+
+    @CrossOrigin
+    @PostMapping("/authenticate")
+    public ResponseEntity<UserModel> authenticate(@RequestBody final AuthenticationDto data) {
+        UserModel user = userService.authenticate(data);
+        final URI uri = ServletUriComponentsBuilder
+                .fromCurrentRequestUri().path("{id}").buildAndExpand(user).toUri();
+        return ResponseEntity.accepted().body(user);
     }
 
     @CrossOrigin

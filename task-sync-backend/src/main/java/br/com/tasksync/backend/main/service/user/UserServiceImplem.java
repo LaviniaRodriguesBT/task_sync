@@ -2,6 +2,7 @@ package br.com.tasksync.backend.main.service.user;
 
 import br.com.tasksync.backend.main.domain.TaskModel;
 import br.com.tasksync.backend.main.domain.UserModel;
+import br.com.tasksync.backend.main.dto.AuthenticationDto;
 import br.com.tasksync.backend.main.port.dao.task.TaskDao;
 import br.com.tasksync.backend.main.port.dao.user.UserDao;
 import br.com.tasksync.backend.main.port.service.user.UserService;
@@ -77,5 +78,17 @@ public class UserServiceImplem implements UserService {
         }
         userDao.updateInformation(id, entity);
 
+    }
+
+    @Override
+    public UserModel authenticate(AuthenticationDto authenticationDto) {
+        if(authenticationDto.getPassword() == null){
+
+            return null;
+        }
+        if (authenticationDto.getPassword().isEmpty()){
+            return null;
+        }
+        return userDao.authenticate((authenticationDto));
     }
 }
