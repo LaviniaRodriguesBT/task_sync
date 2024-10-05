@@ -2,6 +2,7 @@ package br.com.tasksync.backend.main.dao.h2;
 
 
 import br.com.tasksync.backend.main.domain.UserModel;
+import br.com.tasksync.backend.main.dto.AuthenticationDto;
 import br.com.tasksync.backend.main.port.dao.user.UserDao;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
@@ -98,5 +99,10 @@ public class UserH2DaoImplem implements UserDao {
     @Override
     public boolean updatePassword(int id, String newPassword) {
         return false;
+    }
+
+    @Override
+    public UserModel authenticate(AuthenticationDto authenticationDto) {
+        return null;
     }
 }
