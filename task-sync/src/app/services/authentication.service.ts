@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { UserCredential } from '../domain/dto/user-credential';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom, Observable } from 'rxjs';
+import { User } from '../domain/model/user.model';
 
 @Injectable({
   providedIn: 'root'
@@ -11,16 +12,16 @@ export class AuthenticationService {
   constructor(private http: HttpClient) {
   }
 
-  async authenticate(credential: UserCredential) : Promise<string>{
+  async authenticate(credential: UserCredential) : Promise<User>{
     console.log('trying to authenticate...');
     console.log(credential);
-    let apiResponse = await firstValueFrom(this.http.get<UserCredential[]>(`http://localhost:8080/api/user?email=${credential.email}&password=${credential.password}`));
+    let apiResponse = await firstValueFrom(this.http.post<User>(`http://localhost:8080/api/user/authenticate`, credential));
     console.log(apiResponse);
     //Tive que comentar pois nao estava deixando passar da autenticação
     // if (apiResponse == null || apiResponse.length != 1) {
     //   throw new Error('dados invalidos');
     // }
-    return apiResponse[0].id;
+    return apiResponse;
   }
 
   logout() {
