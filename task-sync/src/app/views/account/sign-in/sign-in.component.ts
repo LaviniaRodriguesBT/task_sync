@@ -8,6 +8,8 @@ import { AuthenticationService } from '../../../services/authentication.service'
 import { ToastrService } from "ngx-toastr";
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { User } from '../../../domain/model/user.model';
+import SystemConstants from '../../../domain/constants/systemconstants';
 
 
 @Component({
@@ -73,14 +75,31 @@ export class SignInComponent implements OnInit {
     };
 
     try {
-      let id = await this.authenticationService.authenticate(credential);
-      credential.id = id;
+      let user: User = await this.authenticationService.authenticate(credential);
+      
+      if(user == null){
+        this.toastrService.error("Usuario não encontrado");
+        return;
+      }
+      if(user.access_type != credential.accessType){
+        this.toastrService.error("O tipo do usuario incorreto");
+        return;
+      }
+
+
 
       this.authenticationService.addCredentialsToLocalStorage(credential);
 
-      if (credential.accessType === "adm") {
+      console.log(credential.accessType)
+      console.log(user.access_type)
+
+
+      if (credential.accessType === SystemConstants.USER_TYPES.ADM) {
+        console.log(credential.accessType)
+      console.log(user.access_type)
+
         await this.router.navigate(['/']);
-      } else if (credential.accessType === "colab") {
+      } else if (credential.accessType === SystemConstants.USER_TYPES.COLAB) {
         await this.router.navigate(['/event/list']);
       }
 
