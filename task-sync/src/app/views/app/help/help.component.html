@@ -13,11 +13,11 @@
     </ol>
 </nav>
 
-<a class="btn btn-back arrow-back" href="/" *ngIf="accessType === 'adm'">
+<a class="btn btn-back arrow-back" href="/" *ngIf="accessType === 'Administrador'">
     <span class="material-icons">arrow_back</span>
 </a>
 
-<a class="btn btn-back arrow-back" href="/event/list" *ngIf="accessType === 'colab'">
+<a class="btn btn-back arrow-back" href="/event/list" *ngIf="accessType === 'Colaborador'">
     <span class="material-icons">arrow_back</span>
 </a>
 
@@ -35,7 +35,7 @@
     
             <h4>1.1. Gerenciar Eventos</h4>
             <ul>
-                <li><strong>Criar Eventos:</strong> Permite ao administrador criar novos eventos, definindo nome, área de atuação, e outros detalhes importantes.</li>
+                <li><strong>Criar Eventos:</strong> Permite ao 'Administrador' criar novos eventos, definindo nome, área de atuação, e outros detalhes importantes.</li>
                 <li><strong>Editar Eventos:</strong> Atualize informações de eventos, como datas e localizações.</li>
                 <li><strong>Excluir Eventos:</strong> Remova eventos duplicados ou criados erroneamente.</li>
                 <li><strong>Emitir Relatórios:</strong> Gere relatórios em PDF sobre usuários e atividades.</li>
@@ -58,7 +58,7 @@
     
             <h4>1.4. Comunicação Interna</h4>
             <ul>
-                <li><strong>Chat:</strong> Permite a comunicação entre administradores e colaboradores diretamente no sistema, com notificações para novas mensagens.</li>
+                <li><strong>Chat:</strong> Permite a comunicação entre 'Administrador'es e colaboradores diretamente no sistema, com notificações para novas mensagens.</li>
             </ul>
     
             <h4>1.5. Acompanhar Andamento</h4>
@@ -92,7 +92,7 @@
                 <li><strong>Problemas de Login:</strong> Verifique se suas credenciais estão corretas e se a conta está ativa.</li>
                 <li><strong>Erro ao Criar/Editar Eventos:</strong> Certifique-se de que todos os campos obrigatórios estão preenchidos corretamente.</li>
                 <li><strong>Não é possível excluir atividade/pessoa:</strong> Verifique se a atividade ou pessoa está vinculada a um evento. Desvincule antes de tentar excluir.</li>
-                <li><strong>Relatórios não são gerados:</strong> Confirme se você tem permissões de administrador.</li>
+                <li><strong>Relatórios não são gerados:</strong> Confirme se você tem permissões de 'Administrador'.</li>
             </ul>
         </section>
     
