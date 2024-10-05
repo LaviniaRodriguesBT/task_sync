@@ -98,7 +98,7 @@ export class UserEditComponent {
     return this.form.controls['name'].valid;
   }
 
-  
+
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
     const passwordField = document.getElementById('password') as HTMLInputElement;
