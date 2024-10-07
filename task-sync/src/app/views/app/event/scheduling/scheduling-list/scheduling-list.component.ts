@@ -19,7 +19,7 @@ import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angul
   imports: [
     FontAwesomeModule,
     RouterModule,
-    MatIconModule, 
+    MatIconModule,
     CommonModule
   ],
   templateUrl: './scheduling-list.component.html',
@@ -31,12 +31,12 @@ export class SchedulingListComponent implements OnInit {
   eventId: string = '';
   userId?: string | null;
   accessType?: string | null;
-  
+
   schedulings: ResponseScheduling[] = [];
   schedulingCopy: ResponseScheduling[] = [];
 
-  constructor(private schedulingReadService: SchedulingReadService, 
-    private schedulingDeleteService: SchedulingDeleteService, 
+  constructor(private schedulingReadService: SchedulingReadService,
+    private schedulingDeleteService: SchedulingDeleteService,
     private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute,
     private excelExporter: IgxExcelExporterService,
@@ -99,7 +99,7 @@ export class SchedulingListComponent implements OnInit {
     }
 
     this.searchText = event;
-    let schedulings = this.schedulingCopy.filter((predicate) => 
+    let schedulings = this.schedulingCopy.filter((predicate) =>
       predicate.event.name?.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
       predicate.task.name?.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
       predicate.user.name?.toLocaleUpperCase().includes(event.toLocaleUpperCase()));

@@ -61,20 +61,21 @@ export class UserListComponent {
       this.toastrService.error('Não foi possível remover a pessoa');
 
     }
-    
+
   }
   gerarPdf() {
     window.print()
   }
-
-   public exportExcelEventList() {
-     this.excelExporter.exportData(this.users, new IgxExcelExporterOptions('ExportedDataFile'));
-  
-   }
   previousPage() {
   }
   nextPage() {
   }
+
+  public exportExcelEventList() {
+    this.excelExporter.exportData(this.users, new IgxExcelExporterOptions('ExportedDataFile'));
+
+  }
+
 
   searchText: string = "";
 

@@ -24,13 +24,17 @@
         Cadastrar cronograma
     </a>
 
-    <div class="search-box" >
+    <div class="search-box">
         <mat-icon class="search-icon">search</mat-icon>
         <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
     </div>
 
     <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print" (click)="exportExcelEventList()">upload_file</span>
+    </a>
+
+    <a class="btn btn-pdf" (click)="exportExcelEventList()">
+        <span class="material-icons color-print">upload_file</span>
     </a>
 </div>
 
