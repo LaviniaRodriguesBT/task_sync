@@ -10,6 +10,8 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { ResponseScheduling } from '../../../../../domain/dto/response-scheduling';
+import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
+
 
 @Component({
   selector: 'task-sync-scheduling-list',
@@ -17,7 +19,7 @@ import { ResponseScheduling } from '../../../../../domain/dto/response-schedulin
   imports: [
     FontAwesomeModule,
     RouterModule,
-    MatIconModule, 
+    MatIconModule,
     CommonModule
   ],
   templateUrl: './scheduling-list.component.html',
@@ -29,14 +31,15 @@ export class SchedulingListComponent implements OnInit {
   eventId: string = '';
   userId?: string | null;
   accessType?: string | null;
-  
+
   schedulings: ResponseScheduling[] = [];
   schedulingCopy: ResponseScheduling[] = [];
 
-  constructor(private schedulingReadService: SchedulingReadService, 
-    private schedulingDeleteService: SchedulingDeleteService, 
+  constructor(private schedulingReadService: SchedulingReadService,
+    private schedulingDeleteService: SchedulingDeleteService,
     private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute,
+    private excelExporter: IgxExcelExporterService,
 
   ) {
     this.userId = localStorage.getItem('id');
@@ -74,6 +77,11 @@ export class SchedulingListComponent implements OnInit {
   nextPage() {
   }
 
+  public exportExcelEventList() {
+    this.excelExporter.exportData(this.schedulings, new IgxExcelExporterOptions('ExportedDataFile'));
+
+  }
+
   searchText: string = "";
 
   search(): void {
@@ -91,7 +99,7 @@ export class SchedulingListComponent implements OnInit {
     }
 
     this.searchText = event;
-    let schedulings = this.schedulingCopy.filter((predicate) => 
+    let schedulings = this.schedulingCopy.filter((predicate) =>
       predicate.event.name?.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
       predicate.task.name?.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
       predicate.user.name?.toLocaleUpperCase().includes(event.toLocaleUpperCase()));

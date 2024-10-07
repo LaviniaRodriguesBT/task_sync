@@ -9,6 +9,8 @@ import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
+
 
 @Component({
   selector: 'task-sync-task-list',
@@ -38,7 +40,9 @@ export class TaskListComponent implements OnInit {
     private taskReadService: TaskReadService,
     private taskDeleteService: TaskDeleteService,
     private toastrService: ToastrService,
-   
+    private excelExporter: IgxExcelExporterService,
+
+
   ) {
     this.accessType = localStorage.getItem('accessType')
   }
@@ -81,7 +85,12 @@ export class TaskListComponent implements OnInit {
 
   }
   nextPage() {
-    
+
+  }
+
+  public exportExcelEventList() {
+    this.excelExporter.exportData(this.tasks, new IgxExcelExporterOptions('ExportedDataFile'));
+
   }
 
   searchText: string = "";

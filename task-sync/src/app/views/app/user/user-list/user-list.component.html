@@ -33,6 +33,10 @@
     <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
     </a>
+
+    <a class="btn btn-pdf" (click)="exportExcelEventList()">
+        <span class="material-icons color-print">upload_file</span>
+    </a>
 </div>
 <hr>
 
@@ -85,7 +89,7 @@
     </ng-container>
 </div>
 
-<div class="pagination">    
+<div class="pagination">
     <select class="btn-back">
         <option value="5">5 por página</option>
         <option value="10">10 por página</option>

@@ -12,6 +12,7 @@ import { MatCardModule } from "@angular/material/card";
 import { CommonModule } from "@angular/common";
 import { MatIconModule } from "@angular/material/icon";
 import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
+import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
 
 @Component({
   selector: 'task-sync-event-list',
@@ -36,8 +37,8 @@ export class EventListComponent implements OnInit {
   constructor(private eventReadService: EventReadService,
     private eventDeleteService: EventDeleteService,
     private toastrService: ToastrService,
-   
-    
+    private excelExporter: IgxExcelExporterService,
+
   ) {
     this.accessType = localStorage.getItem('accessType')
   }
@@ -66,9 +67,11 @@ export class EventListComponent implements OnInit {
   }
   nextPage() {
   }
-  
 
+  public exportExcelEventList() {
+    this.excelExporter.exportData(this.events, new IgxExcelExporterOptions('ExportedDataFile'));
 
+  }
 
   searchText: string = "";
   search(): void {

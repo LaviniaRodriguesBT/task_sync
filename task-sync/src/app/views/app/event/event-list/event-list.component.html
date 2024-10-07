@@ -15,17 +15,17 @@
 
 <h1>Lista de eventos</h1>
 
-<div class="d-flex justify-content-between" >
-    <a class="btn btn-back arrow-back" href="/" *ngIf= "accessType == 'adm'">
-        <span class="material-icons" >arrow_back</span>
-    </a> 
+<div class="d-flex justify-content-between">
+    <a class="btn btn-back arrow-back" href="/" *ngIf="accessType == 'adm'">
+        <span class="material-icons">arrow_back</span>
+    </a>
 
-    <a class="btn btn-create" routerLink="/event/create" *ngIf= "accessType == 'adm'">
+    <a class="btn btn-create" routerLink="/event/create" *ngIf="accessType == 'adm'">
         <fa-icon [icon]="faAdd" title="Adicionar novo evento"></fa-icon>
         Cadastrar evento
     </a>
 
-    <div class="search-box" >
+    <div class="search-box">
         <mat-icon class="search-icon">search</mat-icon>
         <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
     </div>
@@ -33,6 +33,11 @@
     <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
     </a>
+
+    <a class="btn btn-pdf" (click)="exportExcelEventList()">
+        <span class="material-icons color-print">upload_file</span>
+    </a>
+
 </div>
 <hr>
 
@@ -52,7 +57,7 @@
                             <th scope="row">Código</th>
                             <td>{{ event.code }}</td>
                         </tr>
-                               <tr>
+                        <tr>
                             <th scope="row">Descrição</th>
                             <td>{{ event.description | slice:0:19}}...</td>
                         </tr>
@@ -67,16 +72,16 @@
                     </tbody>
                 </table>
                 <div class="action-buttons">
-                    <a *ngIf= "accessType == 'adm'">
+                    <a *ngIf="accessType == 'adm'">
                         <span class="material-icons color-people" title="Pessoa">person</span>
                     </a>
-                    <a routerLink="/event/detail/{{event.id}}" *ngIf= "accessType == 'adm'">
+                    <a routerLink="/event/detail/{{event.id}}" *ngIf="accessType == 'adm'">
                         <span class="material-icons color-detail" title="Informações">info</span>
                     </a>
-                    <a routerLink="/event/edit/{{event.id}}" *ngIf= "accessType == 'adm'">
-                        <span class="material-icons color-edit" title="Editar evento" >edit</span>
+                    <a routerLink="/event/edit/{{event.id}}" *ngIf="accessType == 'adm'">
+                        <span class="material-icons color-edit" title="Editar evento">edit</span>
                     </a>
-                        <a (click)= "deleteEvent(event.id!)" *ngIf= "accessType == 'adm'">
+                    <a (click)="deleteEvent(event.id!)" *ngIf="accessType == 'adm'">
                         <span class="material-icons color-delete" title="Deletar evento">delete_forever</span>
                     </a>
                 </div>
