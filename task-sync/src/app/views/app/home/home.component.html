@@ -19,12 +19,12 @@
       <p-carousel class="teste" [value]="events" [numVisible]="3" [numScroll]="1" [circular]="true"
         [autoplayInterval]="5000">
         <ng-template pTemplate="item" let-event>
-          <div class="card">
+          <div class="card-caurosel">
             <div class="card-header">
               <h3>{{ event.name | slice: 0: 25 }}...</h3>
             </div>
             <div class="user-image">
-              <img src="/assets/img/event.png" alt="Image for {{ event.name }}">
+              <img src="/assets/img/event.png" alt="Image for {{ event.name }}" class="img">
             </div>
             <div class="card-body">
               <table class="table body-text-card">
