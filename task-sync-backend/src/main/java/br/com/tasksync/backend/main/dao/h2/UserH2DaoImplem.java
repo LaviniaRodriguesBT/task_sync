@@ -5,11 +5,8 @@ import br.com.tasksync.backend.main.domain.UserModel;
 import br.com.tasksync.backend.main.dto.AuthenticationDto;
 import br.com.tasksync.backend.main.port.dao.user.UserDao;
 import org.springframework.jdbc.core.JdbcTemplate;
-import org.springframework.jdbc.core.simple.SimpleJdbcInsert;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 // Classe responsavel por realizar a conexao entre o banco de dados
 // Responsavel por salvar, editar, excluir, ler informações que estão salvas no banco
@@ -25,20 +22,7 @@ public class UserH2DaoImplem implements UserDao {
 
     @Override
     public int add(UserModel entity) {
-        final SimpleJdbcInsert simpleJdbcInsert = new SimpleJdbcInsert(jdbcTemplate).withTableName("user_model").usingGeneratedKeyColumns("id");
-        final Map<String, Object> parameters = new HashMap<>();
-        parameters.put("userId: ", entity.getId());
-        parameters.put("name: ", entity.getName());
-        parameters.put("email: ", entity.getEmail());
-        parameters.put("password: ", entity.getPassword());
-        parameters.put("cpf: ", entity.getCpf());
-        parameters.put("phone: ", entity.getPhone());
-        parameters.put("address: ", entity.getAddress());
-        parameters.put("access_type: ", entity.getAccess_type());
-
-
-        final Number id = simpleJdbcInsert.executeAndReturnKey(parameters);
-        return id.intValue();
+return 0;
     }
 
     @Override
