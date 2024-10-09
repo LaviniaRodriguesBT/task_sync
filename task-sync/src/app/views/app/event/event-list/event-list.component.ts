@@ -7,7 +7,7 @@ import { ToastrService } from "ngx-toastr";
 import { EventReadService } from "../../../../services/event/event-read.service";
 import { Event } from "../../../../domain/model/event.model";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-import { jsPDF } from 'jspdf';
+
 import { MatCardModule } from "@angular/material/card";
 import { CommonModule } from "@angular/common";
 import { MatIconModule } from "@angular/material/icon";
