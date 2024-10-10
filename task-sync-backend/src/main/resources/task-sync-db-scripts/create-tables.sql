@@ -24,7 +24,7 @@ create table "user" (
     password character varying(500) not null,
     access_type character varying(50) not null check (access_type in('Administrador','Colaborador')) default 'Colaborador',
     person_id integer not null unique references person(id) on update cascade on delete cascade,
-    plan_id integer not null unique references plan(id) on update cascade on delete cascade
+    --plan_id integer not null unique references plan(id) on update cascade on delete cascade
 );
 
 create table event (
@@ -73,12 +73,12 @@ create table scheduling (
     unique (date, contract_id, activity_id)
 );
 
-create table plan(
-    id serial primary key,
-    name_plan character varying(20) not null unique,
-    price double not null,
-    start_time_plan time not null,
-    end_time_plan time not null,
-    num_adm integer not null,
-    num_colab integer not null
-);
+--create table plan(
+--    id serial primary key,
+--    name_plan character varying(20) not null unique (name_plan in ('Basic', 'Plus', 'Executive')) default 'Basic',
+--    price double not null,
+--    start_time_plan time not null,
+--    end_time_plan time not null,
+--    num_adm integer not null,
+--    num_colab integer not null
+--);
