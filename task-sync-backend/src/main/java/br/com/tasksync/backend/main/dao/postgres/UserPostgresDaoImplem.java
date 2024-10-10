@@ -35,7 +35,6 @@ public class UserPostgresDaoImplem implements UserDao {
         ResultSet resultSet;
 
         try {
-            //connection.setAutoCommit(false); deixado automatico, pois estava dando prolema apos a criacao
 
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
 
@@ -80,7 +79,6 @@ public class UserPostgresDaoImplem implements UserDao {
                 throw new RuntimeException();
 
             }
-            //connection.commit(); deixado automatico, pois estava dando prolema apos a criacao
 
             resultSet.close();
             preparedStatement.close();
