@@ -10,7 +10,7 @@ values (default, '123', 'Michele F', 'rua: 1', '987'),
        (default, '369', 'Josue S', 'rua: 9', '456'),
        (default, '741', 'Patricia R', 'rua: 10', '888');
 
---adicionar na ultima coluna o plano
+
 insert into "user" (id, email, password, access_type, person_id)
 values (default, 'michelef@.com', '123', 'Administrador', 1),
        (default, 'laviniabf@.com', '321', 'Colaborador', 2),

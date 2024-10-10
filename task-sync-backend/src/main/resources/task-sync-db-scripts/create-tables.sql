@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS task;
 DROP TABLE IF EXISTS event;
 DROP TABLE IF EXISTS "user";
 DROP TABLE IF EXISTS person;
-
+DROP TABLE IF EXISTS plan;
 
 
 
@@ -17,6 +17,15 @@ create table person (
     phone character varying(14) not null
 );
 
+create table plan(
+    id serial primary key,
+    name_plan character varying(20) not null check (name_plan in ('Basic', 'Plus', 'Executive')) default 'Basic',
+    price double precision not null,
+    start_time_plan timestamp without time zone not null,
+    end_time_plan timestamp without time zone not null,
+    num_adm integer not null,
+    num_colab integer not null
+);
 
 create table "user" (
     id serial primary key,
@@ -24,7 +33,7 @@ create table "user" (
     password character varying(500) not null,
     access_type character varying(50) not null check (access_type in('Administrador','Colaborador')) default 'Colaborador',
     person_id integer not null unique references person(id) on update cascade on delete cascade,
-    --plan_id integer not null unique references plan(id) on update cascade on delete cascade
+    plan_id integer unique references plan(id) on update cascade on delete cascade
 );
 
 create table event (
@@ -72,13 +81,3 @@ create table scheduling (
     contract_id integer not null references contract(id) on update cascade on delete cascade,
     unique (date, contract_id, activity_id)
 );
-
---create table plan(
---    id serial primary key,
---    name_plan character varying(20) not null unique (name_plan in ('Basic', 'Plus', 'Executive')) default 'Basic',
---    price double not null,
---    start_time_plan time not null,
---    end_time_plan time not null,
---    num_adm integer not null,
---    num_colab integer not null
---);
