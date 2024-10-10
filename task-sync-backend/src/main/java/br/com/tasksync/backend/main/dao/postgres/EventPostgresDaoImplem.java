@@ -149,4 +149,32 @@ public class EventPostgresDaoImplem implements EventDao {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public List<EventModel> getEntitiesByUserId(int id) {
+        final List<EventModel> events = new ArrayList<>();
+        final String sql = "SELECT * FROM event e inner join contract c on c.event_id = e.id where c.user_id = ?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                final EventModel event = new EventModel();
+                event.setId(resultSet.getInt("id"));
+                event.setCode(resultSet.getString("code"));
+                event.setName(resultSet.getString("name"));
+                event.setBusiness(resultSet.getString("business"));
+                event.setDescription(resultSet.getString("description"));
+                event.setDate(resultSet.getDate("date").toLocalDate());
+                event.setStart_time(resultSet.getTime("start_time").toLocalTime());
+                event.setEnd_time(resultSet.getTime("end_time").toLocalTime());
+                events.add(event);
+            }
+            resultSet.close();
+            preparedStatement.close();
+            return events;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

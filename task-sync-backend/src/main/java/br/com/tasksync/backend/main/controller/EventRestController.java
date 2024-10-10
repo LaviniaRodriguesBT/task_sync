@@ -43,8 +43,7 @@ public class EventRestController {
     @PostMapping()
     public ResponseEntity<EventModel> createEntity(@RequestBody final EventModel data) {
         int id = eventService.create(data);
-        final URI uri = ServletUriComponentsBuilder
-                .fromCurrentRequestUri().path("{id}").buildAndExpand(id).toUri();
+        final URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("{id}").buildAndExpand(id).toUri();
         return ResponseEntity.created(uri).build();
     }
 
@@ -61,5 +60,14 @@ public class EventRestController {
         eventService.delete(id);
         return ResponseEntity.noContent().build();
     }
+
+
+    @CrossOrigin
+    @GetMapping("/user/{id}")
+    public ResponseEntity<List<EventModel>> getEntitiesByUserId(@PathVariable final int id) {
+        List<EventModel> event = eventService.getEntitiesByUserId(id);
+        return ResponseEntity.ok().body(event);
+    }
+
 
 }

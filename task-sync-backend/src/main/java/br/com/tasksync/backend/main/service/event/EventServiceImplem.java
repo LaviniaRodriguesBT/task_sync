@@ -1,7 +1,9 @@
 package br.com.tasksync.backend.main.service.event;
 
 import br.com.tasksync.backend.main.domain.EventModel;
+import br.com.tasksync.backend.main.domain.UserModel;
 import br.com.tasksync.backend.main.port.dao.event.EventDao;
+import br.com.tasksync.backend.main.port.dao.user.UserDao;
 import br.com.tasksync.backend.main.port.service.event.EventService;
 import org.springframework.stereotype.Service;
 
@@ -13,9 +15,11 @@ public class EventServiceImplem implements EventService {
 
 
     private final EventDao eventDao;
+    private final UserDao userDao;
 
-    public EventServiceImplem(EventDao eventDao) {
+    public EventServiceImplem(EventDao eventDao, UserDao userDao) {
         this.eventDao = eventDao;
+        this.userDao = userDao;
     }
 
 
@@ -74,6 +78,20 @@ public class EventServiceImplem implements EventService {
             return;
         }
         eventDao.updateInformation(id, entity);
+
+    }
+
+    @Override
+    public List<EventModel> getEntitiesByUserId(int id) {
+        UserModel userModel = userDao.readyById(id);
+        if (userModel == null) {
+            return findAll();
+        }
+        if (userModel.getAccess_type().equals("Administrador")) {
+            return findAll();
+        }
+
+        return getEntitiesByUserId(userModel.getId());
 
     }
 }
