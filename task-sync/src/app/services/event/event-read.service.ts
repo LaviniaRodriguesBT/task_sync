@@ -21,4 +21,8 @@ export class EventReadService {
   findAll(): Promise<Event[]>{
     return firstValueFrom(this.http.get<Event[]>('http://localhost:8080/api/event'));
   }
+
+  findUserById(id: string): Promise<Event[]>{
+    return firstValueFrom(this.http.get<Event[]>(`http://localhost:8080/api/event/user/${id}`));
+  }
 }

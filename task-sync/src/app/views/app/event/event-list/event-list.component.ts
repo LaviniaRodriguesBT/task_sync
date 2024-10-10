@@ -47,7 +47,8 @@ export class EventListComponent implements OnInit {
     this.loadEvents();
   }
   async loadEvents() {
-    this.events = await this.eventReadService.findAll();
+    const userId = localStorage.getItem("id");
+    this.events = await this.eventReadService.findUserById(userId!);
     this.eventsCopy = this.events;
   }
   async deleteEvent(eventId: string) {

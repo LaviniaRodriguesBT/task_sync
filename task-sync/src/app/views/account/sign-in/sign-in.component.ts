@@ -76,7 +76,7 @@ export class SignInComponent implements OnInit {
 
     try {
       let user: User = await this.authenticationService.authenticate(credential);
-      
+      credential.id = user.id!;
       if(user == null){
         this.toastrService.error("Usuario não encontrado");
         return;
