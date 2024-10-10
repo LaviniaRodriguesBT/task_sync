@@ -91,7 +91,7 @@ public class EventServiceImplem implements EventService {
             return findAll();
         }
 
-        return getEntitiesByUserId(userModel.getId());
+        return eventDao.getEntitiesByUserId(userModel.getId());
 
     }
 }

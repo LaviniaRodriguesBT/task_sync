@@ -7,5 +7,5 @@ import java.util.List;
 
 //Classe de serviço responsavel por chamar todos os CRUDs
 public interface EventService extends CrudService<EventModel> {
-    public List<EventModel> getEntitiesByUserId(final  int id);
+    List<EventModel> getEntitiesByUserId(final  int id);
 }
