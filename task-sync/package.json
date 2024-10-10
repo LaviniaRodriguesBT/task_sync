@@ -29,6 +29,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.5.2",
     "@igniteui/material-icons-extended": "^3.0.0",
     "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3",
     "chart.js": "^4.4.4",
     "devexpress-dashboard": "^24.1.4",
     "devexpress-dashboard-angular": "^24.1.4",
