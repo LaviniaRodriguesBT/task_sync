@@ -11,6 +11,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { ResponseScheduling } from '../../../../../domain/dto/response-scheduling';
 import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
+import { SchedulingUpdateService } from '../../../../../services/scheduling/scheduling-update.service';
+import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @Component({
@@ -20,7 +22,9 @@ import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angul
     FontAwesomeModule,
     RouterModule,
     MatIconModule,
-    CommonModule
+    CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
   ],
   templateUrl: './scheduling-list.component.html',
   styleUrl: './scheduling-list.component.css'
@@ -31,15 +35,20 @@ export class SchedulingListComponent implements OnInit {
   eventId: string = '';
   userId?: string | null;
   accessType?: string | null;
+  form!: FormGroup;
+
 
   schedulings: ResponseScheduling[] = [];
   schedulingCopy: ResponseScheduling[] = [];
 
-  constructor(private schedulingReadService: SchedulingReadService,
+  constructor(
+    private schedulingReadService: SchedulingReadService,
     private schedulingDeleteService: SchedulingDeleteService,
     private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute,
     private excelExporter: IgxExcelExporterService,
+    private updateStatus: SchedulingUpdateService,
+    private formBuilder: FormBuilder,
 
   ) {
     this.userId = localStorage.getItem('id');
@@ -48,6 +57,7 @@ export class SchedulingListComponent implements OnInit {
   ngOnInit(): void {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.loadSchedulings();
+    this.initializeForm();
   }
 
   async loadSchedulings() {
@@ -68,6 +78,38 @@ export class SchedulingListComponent implements OnInit {
       this.toastrService.error('Não foi possível remover o cronograma');
     }
   }
+  initializeForm() {
+    this.form = this.formBuilder.group({
+      status: [''],
+    });
+  }
+
+  async update(scheduling: ResponseScheduling) {
+    try {
+
+
+      const schedulingUpdate: Scheduling = {
+        id: scheduling.id,
+        event_id: scheduling.event.id!,
+        user_id: scheduling.user.id!,
+        userId: scheduling.user.id!,
+        task_id: scheduling.task.id!,
+        event: scheduling.event.name,
+        value: scheduling.value,
+        start_time: scheduling.start_time,
+        end_time: scheduling.end_time,
+        date: scheduling.date,
+        status: this.form.controls["status"].value,
+
+      }
+      console.log(schedulingUpdate);
+      await this.updateStatus.update(schedulingUpdate);
+      this.toastrService.success('Cronograma atualizado com sucesso!');
+
+    } catch (error) {
+      this.toastrService.error('Erro. Cronograma não foi atualizado.');
+    }
+  }
 
   gerarPdf() {
     window.print()
@@ -77,10 +119,11 @@ export class SchedulingListComponent implements OnInit {
   nextPage() {
   }
 
-   public exportExcelEventList() {
-     this.excelExporter.exportData(this.schedulings, new IgxExcelExporterOptions('ExportedDataFile'));
-  
-   }
+  public exportExcelEventList() {
+    this.excelExporter.exportData(this.schedulings, new IgxExcelExporterOptions('ExportedDataFile'));
+
+  }
+
 
   searchText: string = "";
 

@@ -74,7 +74,6 @@
     max-width: 100%;
   }
 
-
   .user-image img {
     width: 50%;
     margin-left: 25%;
@@ -108,8 +107,7 @@
   }
 }
 
-
-.date-next-event{
+.date-next-event {
   text-align: center;
   margin: 0 0 0 0;
   width: 50%;
@@ -117,10 +115,9 @@
 
 }
 
-.name-next-event{
+.name-next-event {
   font-size: small;
 }
-
 
 .img-next-event {
   display: flex;
