@@ -12,33 +12,33 @@
         <li class="breadcrumb-item"><a href="/">Home</a></li>
       </ol>
     </nav>
-
     <h2>Próximos eventos</h2>
-
     <div class="card-container">
-      <p-carousel class="teste" [value]="events" [numVisible]="3" [numScroll]="1" [circular]="true"
+      
+      <p-carousel class="teste" 
+      [value]="events" 
+      [numVisible]="4" 
+      [numScroll]="-1" 
+      [circular]="true"
         [autoplayInterval]="5000">
         <ng-template pTemplate="item" let-event>
-          <div class="card-caurosel">
-            <div class="card-header">
-              <h3>{{ event.name | slice: 0: 25 }}...</h3>
-            </div>
-            <div class="user-image">
-              <img src="/assets/img/event.png" alt="Image for {{ event.name }}" class="img">
+          <a routerLink="/event/{{ event.id }}/scheduling/list">  
+          <div class="card-caurosel">      
+            <div class="img-next-event">
+              <img src="/assets/img/img_faitec.png" alt="Image for {{ event.name }}" class="img">
             </div>
             <div class="card-body">
-              <table class="table body-text-card">
-
-               <th scope="row">Data Inicio</th>
-                <td>{{ event.date | date: 'dd/MM/yyyy' }}</td>
-
-
+              <table class="table body-text-card">        
+                <td class="date-next-event">
+                  {{ event.name | slice: 0: 25 }}...
+                  {{ event.date | date: 'dd/MM/yyyy' }}
+                </td>
               </table>
-              <a class="btn btn-access" routerLink="/event/{{ event.id }}/scheduling/list">Acessar</a>
-            </div>
-
+</div>
           </div>
+        </a>
         </ng-template>
+        
       </p-carousel>
     </div>
 
