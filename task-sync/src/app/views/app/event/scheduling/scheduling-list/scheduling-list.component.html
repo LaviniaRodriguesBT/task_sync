@@ -68,7 +68,7 @@
                 <td class="text-center">{{ scheduling.date | date: 'dd/MM/yyyy' }}</td>
                 <td>
                     <form class="form-div" method="post" [formGroup]="form">
-                        <select formControlName="status" (change)="update(scheduling)">
+                        <select formControlName="status" (change)="update(scheduling)" [(ngModel)]="scheduling.status">
                             <option value="Em aberto">Em aberto</option>
                             <option value="Em andamento">Em andamento</option>
                             <option value="Finalizada">Finalizada</option>
