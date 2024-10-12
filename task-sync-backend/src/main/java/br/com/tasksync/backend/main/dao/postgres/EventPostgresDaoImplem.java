@@ -21,8 +21,8 @@ public class EventPostgresDaoImplem implements EventDao {
     @Override
     public int add(EventModel entity) {
 
-        String sql = "INSERT INTO event(code, name, description, business, date, start_time, end_time) ";
-        sql += " VALUES(?, ?, ?, ?, ?, ?, ?);";
+        String sql = "INSERT INTO event(code, name, description, business, date, start_time, end_time, image) ";
+        sql += " VALUES(?, ?, ?, ?, ?, ?, ? , ?);";
         PreparedStatement preparedStatement;
         ResultSet resultSet;
         try {
@@ -35,6 +35,7 @@ public class EventPostgresDaoImplem implements EventDao {
             preparedStatement.setDate(5, Date.valueOf(entity.getDate()));
             preparedStatement.setTime(6, Time.valueOf(entity.getStart_time()));
             preparedStatement.setTime(7, Time.valueOf(entity.getEnd_time()));
+            preparedStatement.setString(8, entity.getImage());
             preparedStatement.execute();
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
@@ -92,6 +93,7 @@ public class EventPostgresDaoImplem implements EventDao {
                 event.setDate(resultSet.getDate("date").toLocalDate());
                 event.setStart_time(resultSet.getTime("start_time").toLocalTime());
                 event.setEnd_time(resultSet.getTime("end_time").toLocalTime());
+                event.setImage(resultSet.getString("image"));
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
                 return event;
             }
@@ -125,6 +127,7 @@ public class EventPostgresDaoImplem implements EventDao {
                 event.setDate(resultSet.getDate("date").toLocalDate());
                 event.setStart_time(resultSet.getTime("start_time").toLocalTime());
                 event.setEnd_time(resultSet.getTime("end_time").toLocalTime());
+                event.setImage(resultSet.getString("image"));
                 events.add(event);
             }
             resultSet.close();
@@ -137,12 +140,20 @@ public class EventPostgresDaoImplem implements EventDao {
 
     @Override
     public void updateInformation(int id, EventModel entity) {
-        String sql = "UPDATE event SET name = ? WHERE id = ?;";
+        String sql = "UPDATE event SET name = ?, code = ?, description = ?,business = ?, date = ?, start_time = ?, end_time = ?, image = ?" +
+                "   WHERE id = ?;";
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, entity.getName());
-            preparedStatement.setInt(2, entity.getId());
+            preparedStatement.setString(2, entity.getCode());
+            preparedStatement.setString(3, entity.getDescription());
+            preparedStatement.setString(4, entity.getBusiness());
+            preparedStatement.setDate(5, Date.valueOf(entity.getDate()));
+            preparedStatement.setTime(6, Time.valueOf(entity.getStart_time()));
+            preparedStatement.setTime(7, Time.valueOf(entity.getEnd_time()));
+            preparedStatement.setString(8, entity.getImage());
+            preparedStatement.setInt(9, entity.getId());
             preparedStatement.execute();
             preparedStatement.close();
         } catch (Exception e) {
@@ -168,6 +179,7 @@ public class EventPostgresDaoImplem implements EventDao {
                 event.setDate(resultSet.getDate("date").toLocalDate());
                 event.setStart_time(resultSet.getTime("start_time").toLocalTime());
                 event.setEnd_time(resultSet.getTime("end_time").toLocalTime());
+                event.setImage(resultSet.getString("image"));
                 events.add(event);
             }
             resultSet.close();

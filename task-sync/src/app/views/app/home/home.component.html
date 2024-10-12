@@ -18,7 +18,7 @@
           <a routerLink="/event/{{ event.id }}/scheduling/list">
             <div class="card-caurosel">
               <div class="img-next-event">
-                <img src="/assets/img/img_faitec.png" alt="Image for {{ event.name }}" class="img">
+                <img src="{{event.image ? event.image : '/assets/img/event.png'}}" alt="User Image">
               </div>
               <div class="card-body">
                 <table class="table body-text-card">
@@ -45,7 +45,7 @@
           <p>{{ emAndamento }}</p>
         </div>
         <div class="card" #statusCard>
-          <h3>Concluído</h3>
+          <h3>Finalizado</h3>
           <p>{{ concluido }}</p>
         </div>
         <div class="card" #statusCard>
