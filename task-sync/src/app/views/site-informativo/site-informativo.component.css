@@ -1,4 +1,4 @@
-/* GERAL */
+
 html {
     scroll-behavior: smooth;
 }
@@ -51,7 +51,7 @@ h2.titulo span {
     color: #5301c9;
 }
 
-/* cabeçalho */
+
 
 .logo {
     width: 180px;
@@ -106,7 +106,7 @@ header nav ul li {
     padding: 0 40px;
 }
 
-/* TOPO DO SITE */
+
 
 section.topo-do-site {
     padding: 40px 4%;
@@ -178,7 +178,6 @@ mat-accordion {
 }
 
 
-/* FUNCIONALIDADES */
 
 section.funcionalidades {
     padding: 200px 4%;
@@ -211,7 +210,6 @@ section.funcionalidades .flex {
     margin: 15px 0;
 }
 
-/* SOBRE */
 
 section.sobre {
     padding: 40px 4%;
@@ -266,7 +264,6 @@ h2.titulo-sobre span {
 }
 
 
-/* CONTATO */
 
 .contato {
     text-align: center;
@@ -307,7 +304,7 @@ h2.titulo-sobre span {
 }
 
 
-/* FOOTER */
+
 
 footer {
     background-color: #000;

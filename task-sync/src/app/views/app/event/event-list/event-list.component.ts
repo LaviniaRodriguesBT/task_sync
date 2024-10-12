@@ -94,7 +94,6 @@ export class EventListComponent implements OnInit    {
     window.print();
   }
 
-  // No implementation provided, placeholder for future functionality
   public exportExcelEventList() {
     this.excelExporter.exportData(this.events, new IgxExcelExporterOptions('ExportedDataFile'));
   }

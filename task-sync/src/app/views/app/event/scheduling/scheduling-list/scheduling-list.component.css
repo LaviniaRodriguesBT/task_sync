@@ -354,7 +354,7 @@
 }
 
 .new-status.no-border {
-  outline: none; /* Remove o contorno padrão */
+  outline: none; 
   box-shadow: none;
 }
 
