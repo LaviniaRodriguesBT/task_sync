@@ -151,30 +151,30 @@ section.topo-do-site .flex {
 }
 
 mat-accordion {
-    margin-bottom: 20px; 
-    display: block; 
+    margin-bottom: 20px;
+    display: block;
 }
 
 
 .btn-options button {
     border-radius: 50px;
     color: black;
-    padding: 10px 20px; 
+    padding: 10px 20px;
     border: none;
     cursor: pointer;
     font-size: 16px;
     text-align: center;
-    margin: 10px; 
+    margin: 10px;
     background-color: white;
-    border: 2px solid #5301c9; 
+    border: 2px solid #5301c9;
     transition: background-color 0.3s, color 0.3s;
     text-transform: uppercase;
     letter-spacing: .10rem;
 }
 
 .btn-options button:hover {
-    background-color: #5301c9; 
-    color: white; 
+    background-color: #5301c9;
+    color: white;
 }
 
 
@@ -387,14 +387,46 @@ footer .line-footer p a {
 
 .arrow {
     display: inline-block;
-    margin-left: 10px; /* espaçamento entre o texto e a seta */
-    transition: transform 0.3s ease; /* animação suave */
+    margin-left: 10px;
+    transition: transform 0.3s ease;
 }
 
 .arrow-up {
-    transform: rotate(90deg); /* seta para cima */
+    transform: rotate(90deg);
 }
 
 .arrow-down {
-    transform: rotate(270deg); /* seta para baixo */
+    transform: rotate(270deg);
+}
+
+@media screen and (max-width:1020px) {
+
+    .flex {
+        flex-direction: column;
+    }
+
+    .menu-desktop,
+    .btn-contato {
+        display: none;
+    }
+
+    .topo-do-site .txt-topo-site h1 {
+        font-size: 30px;
+    }
+
+    section.topo-do-site .flex {
+        gap: 100px;
+    }
+
+    section.topo-do-site {
+        padding: 20px 8%;
+    }
+
+    .topo-do-site .img-topo-site img {
+        width: 100%;
+    }
+
+    section.funcionalidades {
+        padding: 200px 4%;
+    }
 }

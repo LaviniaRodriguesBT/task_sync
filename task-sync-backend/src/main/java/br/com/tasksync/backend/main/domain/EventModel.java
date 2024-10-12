@@ -20,4 +20,5 @@ public class EventModel {
     private LocalDate date;
     private LocalTime start_time;
     private LocalTime end_time;
+    private String image;
 }

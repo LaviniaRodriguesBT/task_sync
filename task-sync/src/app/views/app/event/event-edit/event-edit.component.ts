@@ -28,6 +28,12 @@ export class EventEditComponent implements OnInit {
   nameMaxLength: number = 10;
   priceMinValue: number = 1;
   priceMaxValue: number = 500;
+  selectedImage: File | null = null;
+  fileName: string = 'Nenhum arquivo escolhido';
+  showImagePreview: boolean = false;
+  image!: string;
+
+
 
   constructor(private activatedRoute: ActivatedRoute,
     private eventReadService: EventReadService,
@@ -66,6 +72,35 @@ export class EventEditComponent implements OnInit {
     this.form.controls['start_time'].setValue(event.start_time);
     this.form.controls['end_time'].setValue(event.end_time);
     this.form.controls['date'].setValue(event.date);
+    const img = document.getElementById('image-preview') as HTMLImageElement;
+        if (img && event.image)  {
+          this.image = event.image;
+          img.src = event.image;
+          img.style.display = 'block';
+        }
+  }
+
+  onImageSelected(event: any) {
+    const file = event.target.files[0];
+    if (file) {
+      this.selectedImage = file;
+      this.fileName = file.name;
+      this.showImagePreview = true;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.image = reader.result as string;
+        const img = document.getElementById('image-preview') as HTMLImageElement;
+        if (img) {
+          img.src = e.target?.result as string;
+          img.style.display = 'block';
+        }
+      };
+      reader.readAsDataURL(file);
+    } else {
+      this.fileName = 'Nenhum arquivo escolhido';
+      this.showImagePreview = false;
+    }
   }
 
   async update() {
@@ -79,6 +114,7 @@ export class EventEditComponent implements OnInit {
         date: this.form.controls['date'].value,
         start_time: this.form.controls['start_time'].value,
         end_time: this.form.controls['end_time'].value,
+        image: this.image,
       }
 
       console.log(event);

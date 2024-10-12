@@ -34,7 +34,8 @@ create table event (
     business character varying(200) not null,
     date timestamp not null,
     start_time time not null,
-    end_time time not null
+    end_time time not null,
+    image text
 );
 
 

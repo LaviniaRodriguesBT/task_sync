@@ -28,6 +28,7 @@ export class EventCreateComponent implements OnInit {
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
   showImagePreview: boolean = false;
+  image!: string;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -72,6 +73,7 @@ export class EventCreateComponent implements OnInit {
       date: this.form.get('date')?.value,
       start_time: this.form.get('start_time')?.value,
       end_time: this.form.get('end_time')?.value,
+      image: this.image,
     };
 
     console.log('Preparando para criar o evento...');
@@ -95,6 +97,7 @@ export class EventCreateComponent implements OnInit {
 
       const reader = new FileReader();
       reader.onload = (e) => {
+        this.image = reader.result as string;
         const img = document.getElementById('image-preview') as HTMLImageElement;
         if (img) {
           img.src = e.target?.result as string;
