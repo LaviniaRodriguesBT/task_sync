@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrService } from 'ngx-toastr';
@@ -36,10 +36,16 @@ export class SchedulingListComponent implements OnInit {
   userId?: string | null;
   accessType?: string | null;
   form!: FormGroup;
+  totalPessoas: number = 0;
+  emAndamento: number = 0;
+  concluido: number = 0;
+  emAberto: number = 0;
 
 
   schedulings: ResponseScheduling[] = [];
   schedulingCopy: ResponseScheduling[] = [];
+  
+  @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
 
   constructor(
     private schedulingReadService: SchedulingReadService,
@@ -49,7 +55,7 @@ export class SchedulingListComponent implements OnInit {
     private excelExporter: IgxExcelExporterService,
     private updateStatus: SchedulingUpdateService,
     private formBuilder: FormBuilder,
-
+    private renderer: Renderer2,
   ) {
     this.userId = localStorage.getItem('id');
     this.accessType = localStorage.getItem('accessType')
@@ -57,14 +63,45 @@ export class SchedulingListComponent implements OnInit {
   ngOnInit(): void {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.loadSchedulings();
-    this.initializeForm();
   }
 
-  async loadSchedulings() {
-    this.schedulings = await this.schedulingReadService.findByEventId(this.eventId);
-    console.log(this.schedulings);
-    this.schedulingCopy = this.schedulings;
-    // this.schedulings = this.schedulingCopy.filter(predicate => predicate.userId == this.userId); 
+  loadSchedulings() {
+    this.schedulingReadService.findByEventId(this.eventId).then(data => {
+      this.totalPessoas = data.length;
+      this.emAndamento = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
+      this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
+      this.emAberto = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
+      this.schedulingCopy = data;
+      this.schedulings = data;
+      console.log(data)
+      this.applyDynamicStyles();
+      const formData: { [key: string]: string[] } = {}
+      this.schedulings.forEach(e => {
+        formData[`status${e.id}`] = ['']
+      })
+    this.form = this.formBuilder.group(formData);
+    });
+  }
+
+  applyDynamicStyles(): void {
+    this.statusCards.forEach((card: ElementRef, index: number) => {
+      switch (index) {
+        case 0:
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#007bff'); 
+          break;
+        case 1:
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#ffc107'); 
+          break;
+        case 2:
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#28a745'); 
+          break;
+        case 3:
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#dc3545');
+          break;
+        default:;
+          break;
+      }
+    });
   }
 
   async deleteScheduling(schedulingId: string) {
@@ -78,15 +115,9 @@ export class SchedulingListComponent implements OnInit {
       this.toastrService.error('Não foi possível remover o cronograma');
     }
   }
-  initializeForm() {
-    this.form = this.formBuilder.group({
-      status: [''],
-    });
-  }
 
   async update(scheduling: ResponseScheduling) {
     try {
-
 
       const schedulingUpdate: Scheduling = {
         id: scheduling.id,
@@ -99,12 +130,16 @@ export class SchedulingListComponent implements OnInit {
         start_time: scheduling.start_time,
         end_time: scheduling.end_time,
         date: scheduling.date,
-        status: this.form.controls["status"].value,
+        status: this.form.controls[`status${scheduling.id}`].value,
 
       }
       console.log(schedulingUpdate);
       await this.updateStatus.update(schedulingUpdate);
       this.toastrService.success('Cronograma atualizado com sucesso!');
+      this.emAndamento = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
+      this.concluido = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
+      this.emAberto = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
+
 
     } catch (error) {
       this.toastrService.error('Erro. Cronograma não foi atualizado.');
@@ -123,7 +158,6 @@ export class SchedulingListComponent implements OnInit {
     this.excelExporter.exportData(this.schedulings, new IgxExcelExporterOptions('ExportedDataFile'));
 
   }
-
 
   searchText: string = "";
 

@@ -12,6 +12,29 @@
         <li class="breadcrumb-item active" aria-current="page">Evento</li>
     </ol>
 </nav>
+
+<div class="dashboard">
+    <h2>Dashboard</h2>
+    <div class="status-cards">
+      <div class="card" #statusCard>
+        <h3>Total de Pessoas</h3>
+        <p>{{ totalPessoas }}</p>
+      </div>
+      <div class="card" #statusCard>
+        <h3>Em Andamento</h3>
+        <p>{{ emAndamento }}</p>
+      </div>
+      <div class="card" #statusCard>
+        <h3>Finalizado</h3>
+        <p>{{ concluido }}</p>
+      </div>
+      <div class="card" #statusCard>
+        <h3>Em Aberto</h3>
+        <p>{{ emAberto }}</p>
+      </div>
+    </div>
+  </div>
+
 <h1 class="lista">Lista de Cronogramas</h1>
 
 <div class="d-flex justify-content-between align-items-center">
@@ -68,7 +91,7 @@
                 <td class="text-center">{{ scheduling.date | date: 'dd/MM/yyyy' }}</td>
                 <td>
                     <form class="form-div" method="post" [formGroup]="form">
-                        <select  class="new-status" formControlName="status" (change)="update(scheduling)" [(ngModel)]="scheduling.status">
+                        <select  class="new-status" formControlName="status{{scheduling.id}}" (change)="update(scheduling)" [(ngModel)]="scheduling.status">
                             <option value="Em aberto">Em aberto</option>
                             <option value="Em andamento">Em andamento</option>
                             <option value="Finalizada">Finalizada</option>

@@ -8,7 +8,7 @@ import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { EventReadService } from '../../../services/event/event-read.service';
 import { Event } from '../../../domain/model/event.model';
-import { CarouselModule } from 'primeng/carousel'; 
+import { CarouselModule } from 'primeng/carousel';
 import { ResponseScheduling } from '../../../domain/dto/response-scheduling';
 
 @Component({
@@ -18,8 +18,8 @@ import { ResponseScheduling } from '../../../domain/dto/response-scheduling';
     ChartModule,
     FontAwesomeModule,
     RouterModule,
-    CommonModule, 
-    CarouselModule 
+    CommonModule,
+    CarouselModule
   ],
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
@@ -46,7 +46,7 @@ export class HomeComponent implements OnInit {
     this.schedulingService.findAll().then(data => {
       this.totalPessoas = data.length;
       this.emAndamento = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
-      this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'concluído').length;
+      this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
       this.emAberto = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
 
       this.applyDynamicStyles();
@@ -62,49 +62,20 @@ export class HomeComponent implements OnInit {
     this.statusCards.forEach((card: ElementRef, index: number) => {
       switch (index) {
         case 0:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#007bff'); 
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#007bff');
           break;
         case 1:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#ffc107'); 
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#ffc107');
           break;
         case 2:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#28a745'); 
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#28a745');
           break;
         case 3:
           this.renderer.setStyle(card.nativeElement, 'background-color', '#dc3545');
           break;
-        default:;
+        default: ;
           break;
       }
     });
-
-    this.data = {
-      labels: ['Em aberto', 'Em andamento', 'Concluído'],
-      datasets: [
-          {
-              data: [this.emAberto,
-                this.emAndamento,
-                this.concluido
-              ],
-              backgroundColor: [
-                '#dc3545',
-                '#ffc107',
-                '#28a745'
-              ],
-              hoverBackgroundColor: [
-                '#dc3545',
-                '#ffc107',
-                '#28a745'
-              ]
-          }
-      ]
-  };
-  
-  
-  this.options = {
-      cutout: '60%',
-  };
   }
-
-
 }
