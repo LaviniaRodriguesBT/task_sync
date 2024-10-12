@@ -20,6 +20,16 @@
             <label for="name" class="text-name">Nome</label>
             <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name">
         </div>
+
+        <div class="form-group col-12 mt-2">
+            <label for="img-user" class="text-name image-label">Imagem da Pessoa</label>
+            <div class="image-upload-container">
+                <input type="file" id="img-user" class="sr-only lenght-image" accept="image/*" (change)="onImageSelected($event)">
+                <img id="image-preview" src="/assets/img/upload-photo.png" alt="Pré-visualização da imagem" class="lenght-image" title="Faça o upload da sua imagem">
+                <h5 class="text-recomend-img">A dimensão recomendada é de <strong>1600 x 838</strong>. Formato <strong>JPEG ou PNG de no máximo 2MB</strong>. Imagens com dimensões diferentes serão redimensionadas.</h5>
+            </div>
+        </div> 
+
         <div class="form-group col-12 mt-2">
             <label for="email" class="text-name">Email</label>
             <input type="email" class="field-name" id="email" placeholder="Email" formControlName="email">
@@ -47,13 +57,27 @@
             <label for="address" class="text-name">Endereco</label>
             <input type="text" class="field-name" id="address" placeholder="Endereco" formControlName="address">
         </div>
-        <div class="form-group col-12 mt-2">
+
+        <mat-form-field class="text-name">
+            <mat-label>Status</mat-label>
+            <mat-select formControlName="access_type" class="field-name" >
+                <mat-option value="Administrador">Administrador</mat-option>
+                <mat-option value="Colaborador">Colaborador</mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <!-- <div class="form-group col-12 mt-2">
             <label for="access_type" class="text-name">Tipo de acesso</label>   
-            <input id="adm" type="radio" name="user-type" formControlName="access_type" value="'Administrador'" class="type-user" [checked]="">
-            <label for="adm" class="type-user">'Administrador'</label>
-            <input id="colab" type="radio" name="user-type" formControlName="access_type" value="Colaborador" class="type-user" [checked]="">
-            <label for="colab" class="type-user">'Colaborador'</label>
-        </div>
+            <input id="adm" type="radio" name="user-type" formControlName="access_type" value="administrador" 
+            class="type-user" [checked]="">
+
+            <label for="adm" class="type-user">Administrador</label>
+            <input id="colab" type="radio" name="user-type" formControlName="access_type" value="colaborador" 
+            class="type-user" [checked]="">
+
+            <label for="colab" class="type-user">Colaborador</label>
+        </div> -->
+
         <div class="form-group d-flex justify-content-around mt-2 btns">
             <a class="btn btn-back" href="/user/list">Voltar</a>
             <button class="btn clean-form" type="reset" value="Limpar">Limpar</button>

@@ -28,8 +28,8 @@ public class UserPostgresDaoImplem implements UserDao {
     @Override
     public int add(UserModel entity) {
 
-        String sql = "INSERT INTO person(cpf, name, address, phone) ";
-        sql += " VALUES(?, ?, ?, ?);";
+        String sql = "INSERT INTO person(cpf, name, address, phone, image) ";
+        sql += " VALUES(?, ?, ?, ?, ?);";
 
         PreparedStatement preparedStatement;
         ResultSet resultSet;
@@ -43,6 +43,7 @@ public class UserPostgresDaoImplem implements UserDao {
             preparedStatement.setString(2, entity.getName());
             preparedStatement.setString(3, entity.getAddress());
             preparedStatement.setString(4, entity.getPhone());
+            preparedStatement.setString(5, entity.getImage());
 
             preparedStatement.execute();
 
@@ -69,6 +70,8 @@ public class UserPostgresDaoImplem implements UserDao {
             preparedStatement.setString(2, entity.getPassword());
             preparedStatement.setString(3, entity.getAccess_type());
             preparedStatement.setInt(4, entity.getId());
+            preparedStatement.setString(3, entity.getAccess_type());
+
 
             preparedStatement.execute();
             resultSet = preparedStatement.getGeneratedKeys();
@@ -157,6 +160,7 @@ public class UserPostgresDaoImplem implements UserDao {
                 user.setPhone(resultSet.getString("phone"));
                 user.setAddress(resultSet.getString("address"));
                 user.setAccess_type(resultSet.getString("access_type"));
+                user.setImage(resultSet.getString("image"));
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
 
                 return user;
@@ -198,6 +202,7 @@ public class UserPostgresDaoImplem implements UserDao {
                 user.setPhone(resultSet.getString("phone"));
                 user.setAddress(resultSet.getString("address"));
                 user.setAccess_type(resultSet.getString("access_type"));
+                user.setImage(resultSet.getString("image"));
 
                 users.add(user);
 
@@ -212,13 +217,33 @@ public class UserPostgresDaoImplem implements UserDao {
 
     @Override
     public void updateInformation(int id, UserModel entity) {
-        String sql = "UPDATE person SET name = ? WHERE id = ?;";
+        String sql = "UPDATE user SET email = ?, password = ?, access_type = ?, image = ?  WHERE id = ?;";
 
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
-            preparedStatement.setString(1, entity.getName());
-            preparedStatement.setInt(2, entity.getId());
+            preparedStatement.setString(1, entity.getEmail());
+            preparedStatement.setString(2, entity.getPassword());
+            preparedStatement.setString(3, entity.getAccess_type());
+            preparedStatement.setString(4, entity.getImage());
+            preparedStatement.setInt(5, entity.getId());
+            preparedStatement.execute();
+            preparedStatement.close();
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+
+        String sql2 = "UPDATE person p SET cpf = ?, name = ?, address = ?, phone = ?, image = ?  INNER JOIN person p ON p.id = u.person_id;";
+
+        try {
+            PreparedStatement preparedStatement;
+            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setString(1, entity.getCpf());
+            preparedStatement.setString(2, entity.getName());
+            preparedStatement.setString(3, entity.getAddress());
+            preparedStatement.setString(4, entity.getPhone());
+            preparedStatement.setString(5, entity.getImage());
+            preparedStatement.setInt(6, entity.getId());
             preparedStatement.execute();
             preparedStatement.close();
         } catch (Exception e) {

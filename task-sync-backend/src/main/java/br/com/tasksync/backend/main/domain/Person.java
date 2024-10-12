@@ -12,4 +12,5 @@ public class Person {
     private String name;
     private String cpf;
     private String address;
+    private String image;
 }

@@ -14,7 +14,8 @@ create table person (
     cpf character varying(14) not null unique,
     name character varying(200) not null,
     address character varying(400) not null,
-    phone character varying(14) not null
+    phone character varying(14) not null,
+    image text
 );
 
 
