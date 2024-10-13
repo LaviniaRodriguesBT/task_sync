@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2, ViewChild, ElementRef } from '@angular/core';
 import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -19,6 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./event-create.component.css']
 })
 export class EventCreateComponent implements OnInit {
+  @ViewChild('imagePreview') imagePreview!: ElementRef<HTMLImageElement>;
+  @ViewChild('imgEvent') imgEvent!: ElementRef<HTMLInputElement>;
+  @ViewChild('dateInput') dateInput!: ElementRef<HTMLInputElement>;
 
   form!: FormGroup;
   nameMinLength: number = 3;
@@ -34,16 +37,14 @@ export class EventCreateComponent implements OnInit {
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
     private router: Router,
-    private eventCreateService: EventCreateService
+    private eventCreateService: EventCreateService,
+    private renderer: Renderer2
   ) {
     this.initializeForm();
   }
 
   ngOnInit(): void {
-    let dateInput = document.getElementById("date") as HTMLInputElement;
-    if (dateInput) {
-      dateInput.min = new Date().toISOString().split('T')[0];
-    }
+    this.dateInput.nativeElement.min = new Date().toISOString().split('T')[0];
   }
 
   initializeForm() {
@@ -59,7 +60,6 @@ export class EventCreateComponent implements OnInit {
   }
 
   async create() {
-    console.log(this.form.errors)
     if (this.form.invalid) {
       this.toastr.error('Preencha todos os campos obrigatórios antes de cadastrar o evento.');
       return;
@@ -75,9 +75,6 @@ export class EventCreateComponent implements OnInit {
       end_time: this.form.get('end_time')?.value,
       image: this.image,
     };
-
-    console.log('Preparando para criar o evento...');
-    console.log(event);
 
     try {
       await this.eventCreateService.create(event);
@@ -96,12 +93,11 @@ export class EventCreateComponent implements OnInit {
       this.showImagePreview = true;
 
       const reader = new FileReader();
-      reader.onload = (e) => {
+      reader.onload = () => {
         this.image = reader.result as string;
-        const img = document.getElementById('image-preview') as HTMLImageElement;
-        if (img) {
-          img.src = e.target?.result as string;
-          img.style.display = 'block';
+        if (this.imagePreview) {
+          this.imagePreview.nativeElement.src = this.image;
+          this.imagePreview.nativeElement.style.display = 'block';
         }
       };
       reader.readAsDataURL(file);
@@ -112,9 +108,8 @@ export class EventCreateComponent implements OnInit {
   }
 
   openImagePicker() {
-    const imageInput = document.getElementById('img-event') as HTMLInputElement;
-    if (imageInput) {
-      imageInput.click();
+    if (this.imgEvent) {
+      this.imgEvent.nativeElement.click();
     } else {
       console.error('Elemento com ID "img-event" não encontrado.');
     }
