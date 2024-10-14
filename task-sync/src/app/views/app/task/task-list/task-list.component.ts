@@ -10,6 +10,7 @@ import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
+import { MatPaginatorModule, MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
 
 @Component({
   selector: 'task-sync-task-list',
@@ -18,7 +19,8 @@ import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angul
     FontAwesomeModule,
     RouterModule,
     CommonModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule
   ],
   templateUrl: './task-list.component.html',
   styleUrl: './task-list.component.css'
@@ -33,6 +35,11 @@ export class TaskListComponent implements OnInit {
   faAdd = faPlus;
   tasks: Task[] = [];
   tasksCopy: Task[] = [];
+  length = 0;
+  pageSize = 10;
+  pageIndex = 0;
+  pageSizeOptions = [3,5, 10, 15];
+  searchText: string = "";
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -40,6 +47,7 @@ export class TaskListComponent implements OnInit {
     private taskDeleteService: TaskDeleteService,
     private toastrService: ToastrService,
     private excelExporter: IgxExcelExporterService,
+    public _MatPaginatorIntl: MatPaginatorIntl
    
   ) {
     this.accessType = localStorage.getItem('accessType')
@@ -49,15 +57,28 @@ export class TaskListComponent implements OnInit {
     let userId = this.activatedRoute.snapshot.paramMap.get('id');
     this.userId = userId!;
     this.loadTasks();
+    this.length = this.tasksCopy.length;
   }
 
   async loadTasks() {
     this.tasks = await this.taskReadService.findAll();
     this.tasksCopy = this.tasks;
+    this.length = this.tasks.length;
+    this._MatPaginatorIntl.itemsPerPageLabel = "Itens por página";
+    this._MatPaginatorIntl.previousPageLabel = "Voltar a página anterior";
+    this._MatPaginatorIntl.nextPageLabel = "Próxima pagina";
+
 
     if (this.userId! != null) {
       this.tasks = this.tasks.filter(e => e.id == this.userId);
     }
+    this._MatPaginatorIntl.getRangeLabel = (page, pageSize, length) => {
+      if (length == 0) {
+          return `Nenhum resultado encontrado.`;
+      }
+      const from = page * pageSize + 1;
+      const to = Math.min(from + pageSize - 1, length);
+      return `${from} - ${to} de ${length}`;};
   }
 
   async deleteTask(taskId: string) {
@@ -77,19 +98,16 @@ export class TaskListComponent implements OnInit {
     window.print()
   }
 
-  previousPage() {
-
-  }
-  nextPage() {
-
+  handlePageEvent(e: PageEvent) {
+    this.pageIndex = e.pageIndex;
+    this.pageSize = e.pageSize;
+    this.tasks = this.tasks.slice(this.pageIndex * this.pageSize, (this.pageIndex + 1) * this.pageSize);
   }
 
   public exportExcelEventList() {
     this.excelExporter.exportData(this.tasks, new IgxExcelExporterOptions('ExportedDataFile'));
 
   }
-
-  searchText: string = "";
 
   search(): void {
     let input = document.getElementById('search') as HTMLInputElement;
