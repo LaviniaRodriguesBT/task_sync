@@ -39,6 +39,7 @@ export class SchedulingListComponent implements OnInit {
   accessType?: string | null;
   form!: FormGroup;
   totalPessoas: number = 0;
+  totalScheduling: number = 0;
   emAndamento: number = 0;
   concluido: number = 0;
   emAberto: number = 0;
@@ -49,7 +50,7 @@ export class SchedulingListComponent implements OnInit {
   searchText: string = "";
   schedulings: ResponseScheduling[] = [];
   schedulingCopy: ResponseScheduling[] = [];
-  
+
   @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
 
   constructor(
@@ -69,6 +70,7 @@ export class SchedulingListComponent implements OnInit {
   ngOnInit(): void {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.loadSchedulings();
+    console.log("total de scheduling " + this.schedulingCopy.length);
     this._MatPaginatorIntl.itemsPerPageLabel = "Itens por página";
     this._MatPaginatorIntl.previousPageLabel = "Voltar a página anterior";
     this._MatPaginatorIntl.nextPageLabel = "Próxima pagina";
@@ -85,11 +87,13 @@ export class SchedulingListComponent implements OnInit {
   loadSchedulings() {
     this.schedulingReadService.findByEventId(this.eventId).then(data => {
       this.totalPessoas = data.length;
+      this.totalScheduling = data.length;
       this.emAndamento = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
       this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
       this.emAberto = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
       this.schedulingCopy = data;
       this.schedulings = data;
+      this.length = data.length;
       console.log(data)
       this.applyDynamicStyles();
       const formData: { [key: string]: string[] } = {}
@@ -167,8 +171,7 @@ export class SchedulingListComponent implements OnInit {
   handlePageEvent(e: PageEvent) {
     this.pageIndex = e.pageIndex;
     this.pageSize = e.pageSize;
-    this.schedulings = this.schedulingCopy.slice(
-      this.pageIndex * this.pageSize, 
+    this.schedulings = this.schedulingCopy.slice(this.pageIndex * this.pageSize, 
       (this.pageIndex + 1) * this.pageSize);
   }
 
