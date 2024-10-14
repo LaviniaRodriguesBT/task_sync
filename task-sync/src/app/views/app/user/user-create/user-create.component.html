@@ -34,6 +34,7 @@
             <label for="email" class="text-name">Email</label>
             <input type="email" class="field-name" id="email" placeholder="Email" formControlName="email">
         </div>
+        
         <div class="form-group col-12 mt-2">
             <label for="password" class="text-name">Senha</label>
             <div class="input-group">
@@ -45,38 +46,29 @@
                 </div>
             </div>
         </div>
+
         <div class="form-group col-12 mt-2">
             <label for="cpf" class="text-name">CPF</label>
             <input type="text" class="field-name" id="cpf" placeholder="CPF" formControlName="cpf">
         </div>
+
         <div class="form-group col-12 mt-2">
             <label for="phone" class="text-name">Telefone</label>
             <input type="text" class="field-name" id="phone" placeholder="Telefone" formControlName="phone">
         </div>
+
         <div class="form-group col-12 mt-2">
             <label for="address" class="text-name">Endereco</label>
             <input type="text" class="field-name" id="address" placeholder="Endereco" formControlName="address">
         </div>
 
         <mat-form-field class="text-name">
-            <mat-label>Status</mat-label>
+            <mat-label>Tipo de Acesso</mat-label>
             <mat-select formControlName="access_type" class="field-name" >
                 <mat-option value="Administrador">Administrador</mat-option>
                 <mat-option value="Colaborador">Colaborador</mat-option>
             </mat-select>
         </mat-form-field>
-
-        <!-- <div class="form-group col-12 mt-2">
-            <label for="access_type" class="text-name">Tipo de acesso</label>   
-            <input id="adm" type="radio" name="user-type" formControlName="access_type" value="administrador" 
-            class="type-user" [checked]="">
-
-            <label for="adm" class="type-user">Administrador</label>
-            <input id="colab" type="radio" name="user-type" formControlName="access_type" value="colaborador" 
-            class="type-user" [checked]="">
-
-            <label for="colab" class="type-user">Colaborador</label>
-        </div> -->
 
         <div class="form-group d-flex justify-content-around mt-2 btns">
             <a class="btn btn-back" href="/user/list">Voltar</a>
