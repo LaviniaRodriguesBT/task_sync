@@ -106,8 +106,6 @@ header nav ul li {
     padding: 0 40px;
 }
 
-
-
 section.topo-do-site {
     padding: 40px 4%;
     margin-top: 8%;
@@ -265,6 +263,8 @@ h2.titulo-sobre span {
 
 
 
+
+
 .contato {
     text-align: center;
     padding: 40px 4%;
@@ -319,17 +319,6 @@ footer .flex {
 
 .borda {
     border-top: 2px solid #4214a8;
-}
-
-footer .line-footer p i {
-    color: #fff;
-    font-size: 16px;
-}
-
-footer .line-footer p a {
-    color: #fff;
-    font-size: 16px;
-    text-decoration: none;
 }
 
 .footer-logo {
@@ -407,6 +396,23 @@ footer .line-footer p a {
         display: none;
     }
 
+    h2.titulo{
+        font-size: 28px;
+        line-height: 35px;
+        text-align: center;
+    }
+
+    section.sobre {
+        padding: 40px 8%;
+    }
+
+    h2.titulo-sobre {
+        font-size: 28px;
+        line-height: 35px;
+        text-align: center;
+    }
+    
+
     .topo-do-site .txt-topo-site h1 {
         font-size: 30px;
     }
@@ -426,4 +432,18 @@ footer .line-footer p a {
     section.funcionalidades {
         padding: 200px 4%;
     }
+
+    footer .flex {
+        flex-direction: column;
+    }
+    .btn-menu {
+        display: block; 
+        font-size: 2rem;
+        color: white;
+        cursor: pointer;
+      }
+    
+      .menu-desktop {
+        display: none; 
+      }
 }

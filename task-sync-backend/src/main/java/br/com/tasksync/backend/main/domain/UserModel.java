@@ -17,5 +17,5 @@ public class UserModel {
     private String phone;
     private String address;
     private String access_type;
-
+    private String image;
 }

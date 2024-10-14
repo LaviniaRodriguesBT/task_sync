@@ -13,7 +13,7 @@
     </ol>
 </nav>
 
-<div class="dashboard">
+<div class="dashboard" *ngIf= "accessType == 'Administrador'">
     <h2>Dashboard</h2>
     <div class="status-cards">
       <div class="card" #statusCard>

@@ -18,11 +18,19 @@
 <form class="form-div">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
-            <div class="form-group col-12 mt-2">
-                <label for="name" class="text-name">Nome</label>
-                <input type="text"  class="field-name" id="name" placeholder="Nome" readonly
-                    value="{{eventInformation?.name}}">
+            <label for="name" class="text-name">Nome</label>
+            <input type="text" class="field-name" id="name" placeholder="Nome" readonly
+                value="{{eventInformation?.name}}">
+        </div>
+
+        <div class="form-group col-12 mt-2">
+            <label for="img-event" class="text-name image-label">Imagem do Evento</label>
+            <div class="image-preview-container">
+                <img #imagePreview id="image-preview" src="{{eventInformation?.image || '/assets/img/upload-photo.png'}}" alt="Pré-visualização da imagem" class="upload-image" title="Imagem do evento">
             </div>
+        </div>
+
+        <div class="form-group col-12 mt-2">
             <label for="code" class="text-name">Código</label>
             <input type="text" class="field-name" id="code" placeholder="Código" readonly
                 value="{{eventInformation?.code}}">
@@ -34,28 +42,26 @@
         </div>
         <div class="form-group col-12 mt-2">
             <label for="business" class="text-name">Área de negocio</label>
-            <input type="text"  class="field-name" id="business" placeholder="Business" readonly
+            <input type="text" class="field-name" id="business" placeholder="Business" readonly
                 value="{{eventInformation?.business}}">
         </div>
         <div class="form-group col-12 mt-2">
             <label for="date" class="text-name">Data</label>
-            <input type="date"  class="field-name" id="date" placeholder="Descrição" readonly
+            <input type="date" class="field-name" id="date" placeholder="Descrição" readonly
                 value="{{eventInformation?.date}}">
         </div>
         <div class="form-group col-12 mt-2">
             <label for="start_time" class="text-name">Horario de Inicio</label>
-            <input type="time"  class="field-name" id="start_time" readonly
-                value="{{eventInformation?.start_time}}">
+            <input type="time" class="field-name" id="start_time" readonly value="{{eventInformation?.start_time}}">
         </div>
         <div class="form-group col-12 mt-2">
             <label for="end_time" class="text-name">Horario de Termino</label>
-            <input type="time"  class="field-name" id="end_time"readonly
-                value="{{eventInformation?.end_time}}">
+            <input type="time" class="field-name" id="end_time" readonly value="{{eventInformation?.end_time}}">
         </div>
         <div class="col-12 text-end mt-2">
             <button class="btn col-2 me-4 btn-back" routerLink="/event/list">Voltar</button>
             <button class="btn col-2 btn-create" routerLink="/event/edit/{{eventInformation?.id}}">Editar</button>
         </div>
-        
+
     </div>
 </form>
