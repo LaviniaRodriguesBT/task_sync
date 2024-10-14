@@ -16,11 +16,11 @@
 
 
 <div class="d-flex justify-content-between">
-    <a class="btn btn-back arrow-back" href="/">
+    <a class="btn btn-back arrow-back" href="/" *ngIf= "accessType == 'Administrador'">
         <span class="material-icons">arrow_back</span>
     </a>
 
-    <a class="btn btn-create" routerLink="/user/create">
+    <a class="btn btn-create" routerLink="/user/create" *ngIf= "accessType == 'Administrador'">
         <fa-icon [icon]="faAdd" title="Adicionar nova pessoa"></fa-icon>
         Cadastrar pessoa
     </a>
@@ -46,7 +46,7 @@
                 <h3>{{ user.name }}</h3>
             </div>
             <div class="user-image">
-                <img src="/assets/img/face.png" alt="User Image">
+                <img src="{{user.image ? user.image : '/assets/img/face.png'}}" alt="Imagem da pessoa">
             </div>
             <div class="card-body">
                 <table class="table body-text-card">
@@ -65,7 +65,7 @@
                         </tr>
                         <tr>
                             <th scope="row">Endereço</th>
-                            <td>{{ user.address | slice:0:19}}...</td>
+                            <td>{{ user.address | slice:0:25}}...</td>
                         </tr>
                     </tbody>
                 </table>

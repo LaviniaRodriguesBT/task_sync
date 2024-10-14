@@ -26,18 +26,20 @@ import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angul
 })
 export class UserListComponent {
 
+  accessType?: string | null;
+
   fa = fontawesome;
   faAdd = faPlus;
   faAddressCard = faAddressCard;
   users: User[] = [];
   usersCopy: User[] = [];
 
-  constructor(private userReadService: UserReadService, 
-    private userDeleteService: UserDeleteService, 
+  constructor(private userReadService: UserReadService,
+    private userDeleteService: UserDeleteService,
     private toastrService: ToastrService,
     private excelExporter: IgxExcelExporterService
   ) {
-
+    this.accessType = localStorage.getItem('accessType')
   }
 
   ngOnInit(): void {
@@ -95,7 +97,7 @@ export class UserListComponent {
 
     this.searchText = name;
     let users = this.usersCopy.filter((predicate) => predicate.name?.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
-    predicate.id?.toString().toLocaleLowerCase().includes(name.toLocaleLowerCase()));
+      predicate.id?.toString().toLocaleLowerCase().includes(name.toLocaleLowerCase()));
 
     if (users == undefined) {
       this.users = [];
