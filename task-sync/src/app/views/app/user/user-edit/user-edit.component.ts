@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -28,17 +28,18 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrl: './user-edit.component.css'
 })
 export class UserEditComponent {
+  @ViewChild('imagePreview') imagePreview!: ElementRef<HTMLImageElement>;
+  @ViewChild('imgUser') imgUser!: ElementRef<HTMLInputElement>;
+  @ViewChild('dateInput') dateInput!: ElementRef<HTMLInputElement>;
 
   userId?: string;
   form!: FormGroup;
-
 
   nameMinLength: number = 3;
   nameMaxLength: number = 10;
   priceMinValue: number = 1;
   priceMaxValue: number = 500;
   showPassword: boolean = false
-
 
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
@@ -115,9 +116,8 @@ export class UserEditComponent {
   }
 
   openImagePicker() {
-    const imageInput = document.getElementById('img-user') as HTMLInputElement;
-    if (imageInput) {
-      imageInput.click();
+    if (this.imgUser) {
+      this.imgUser.nativeElement.click();
     } else {
       console.error('Elemento com ID "img-user" não encontrado.');
     }
