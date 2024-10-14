@@ -31,12 +31,11 @@ export class EventEditComponent implements OnInit {
   nameMaxLength: number = 10;
   priceMinValue: number = 1;
   priceMaxValue: number = 500;
+
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
   showImagePreview: boolean = false;
   image!: string;
-
-
 
   constructor(private activatedRoute: ActivatedRoute,
     private eventReadService: EventReadService,

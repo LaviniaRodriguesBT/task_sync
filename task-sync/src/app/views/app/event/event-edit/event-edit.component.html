@@ -25,16 +25,12 @@
         <div class="form-group col-12 mt-2">
             <label for="img-event" class="text-name image-label">Imagem do Evento</label>
             <div class="image-upload-container">
-                <input type="file" #imgEvent id="img-event" class="sr-only lenght-image" accept="image/*" (change)="onImageSelected($event)">
-                
-                <div class="image-preview-container">
-                    <img #imagePreview id="image-preview" src="/assets/img/upload-photo.png" alt="Pré-visualização da imagem" class="upload-image" title="Faça o upload da sua imagem" (click)="openImagePicker()">
-                </div>
-                
+                <input type="file" id="img-event" class="sr-only lenght-image" accept="image/*" (change)="onImageSelected($event)">
+                <img id="image-preview" src="/assets/img/upload-photo.png" alt="Pré-visualização da imagem" class="lenght-image" title="Faça o upload da sua imagem">
                 <h5 class="text-recomend-img">A dimensão recomendada é de <strong>1600 x 838</strong>. Formato <strong>JPEG ou PNG de no máximo 2MB</strong>. Imagens com dimensões diferentes serão redimensionadas.</h5>
             </div>
-        </div>
-        
+        </div>   
+
         <div class="form-group col-12 mt-2">
             <label for="code" class="text-name">Código</label>
             <input type="text" class="field-name" id="code" placeholder="Code" formControlName="code">
