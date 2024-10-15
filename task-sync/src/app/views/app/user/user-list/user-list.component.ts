@@ -11,6 +11,7 @@ import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
 import { MatPaginatorIntl, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { NgbModalRef, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -40,12 +41,14 @@ export class UserListComponent {
   pageIndex = 0;
   pageSizeOptions = [3,5, 10, 15];
   searchText: string = "";
+  modalRef: NgbModalRef | null = null;
 
   constructor(private userReadService: UserReadService,
     private userDeleteService: UserDeleteService,
     private toastrService: ToastrService,
     private excelExporter: IgxExcelExporterService,
-    public _MatPaginatorIntl: MatPaginatorIntl
+    public _MatPaginatorIntl: MatPaginatorIntl,
+    private modalService: NgbModal
   ) {
     this.accessType = localStorage.getItem('accessType')
   }
@@ -85,6 +88,25 @@ export class UserListComponent {
 
     }
 
+  }
+
+  openMyModal(content: any) {
+    const options: NgbModalOptions = {
+      backdropClass: 'app-session-modal-backdrop',
+      windowClass: 'app-session-modal-window',
+     
+    };
+  
+    this.modalRef = this.modalService.open(content, {
+      windowClass: 'custom-modal-class'
+    });
+    
+  }
+  
+
+  closeMyModal() {
+    if (this.modalRef) {this.modalRef.close();
+    }
   }
   gerarPdf() {
     window.print()
