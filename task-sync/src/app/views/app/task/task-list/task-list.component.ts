@@ -11,6 +11,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
 import { MatPaginatorModule, MatPaginatorIntl, PageEvent } from '@angular/material/paginator';
+import { NgbModalRef, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'task-sync-task-list',
@@ -40,6 +41,7 @@ export class TaskListComponent implements OnInit {
   pageIndex = 0;
   pageSizeOptions = [3,5, 10, 15];
   searchText: string = "";
+  modalRef: NgbModalRef | null = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -47,7 +49,8 @@ export class TaskListComponent implements OnInit {
     private taskDeleteService: TaskDeleteService,
     private toastrService: ToastrService,
     private excelExporter: IgxExcelExporterService,
-    public _MatPaginatorIntl: MatPaginatorIntl
+    public _MatPaginatorIntl: MatPaginatorIntl,
+    private modalService: NgbModal
    
   ) {
     this.accessType = localStorage.getItem('accessType')
@@ -93,6 +96,25 @@ export class TaskListComponent implements OnInit {
 
     }
 
+  }
+
+  openMyModal(content: any) {
+    const options: NgbModalOptions = {
+      backdropClass: 'app-session-modal-backdrop',
+      windowClass: 'app-session-modal-window',
+     
+    };
+  
+    this.modalRef = this.modalService.open(content, {
+      windowClass: 'custom-modal-class'
+    });
+    
+  }
+  
+
+  closeMyModal() {
+    if (this.modalRef) {this.modalRef.close();
+    }
   }
   gerarPdf() {
     window.print()

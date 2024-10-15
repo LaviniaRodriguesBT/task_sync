@@ -119,7 +119,7 @@
   transition: all .3s;
   position: relative;
   overflow: hidden;
-  z-index: 1;
+
   background-color: white;
   border: 2px solid #6f42c1;
 
@@ -131,7 +131,7 @@
     width: 100%;
     height: 100%;
     border-radius: 10rem;
-    z-index: -2;
+
   }
 
   &:before {
@@ -143,7 +143,7 @@
     background-color: #6f42c1;
     transition: all .3s;
     border-radius: 10rem;
-    z-index: -1;
+ 
   }
 
   &:hover {
@@ -171,7 +171,7 @@
   transition: all .3s;
   position: relative;
   overflow: hidden;
-  z-index: 1;
+
   background-color: white;
   border: 2px solid green;
 
@@ -183,7 +183,7 @@
     width: 100%;
     height: 100%;
     border-radius: 10rem;
-    z-index: -2;
+
   }
 
   &:before {
@@ -195,7 +195,7 @@
     background-color: green;
     transition: all .3s;
     border-radius: 10rem;
-    z-index: -1;
+    
   }
 
   &:hover {
@@ -223,7 +223,7 @@
   transition: all .3s;
   position: relative;
   overflow: hidden;
-  z-index: 1;
+
   background-color: white;
   border: 2px solid blue;
 
@@ -235,7 +235,7 @@
     width: 100%;
     height: 100%;
     border-radius: 10rem;
-    z-index: -2;
+
   }
 
   &:before {
@@ -247,7 +247,7 @@
     background-color: blue;
     transition: all .3s;
     border-radius: 10rem;
-    z-index: -1;
+ 
   }
 
   &:hover {
@@ -280,4 +280,33 @@
   cursor: pointer;
   font-size: 14px;
   text-align: center;
+}
+
+
+
+.modal-backdrop {
+  z-index: 0 !important;
+}
+
+
+::ng-deep .modal-backdrop {
+  z-index: 0 !important;
+}
+
+.custom-modal-class .modal-backdrop {
+  z-index: 0 !important;
+}
+
+.action-buttons a {
+  color: inherit;
+  text-decoration: none;
+  font-size: 20px;
+  padding: 5px; 
+  margin: 0; 
+  width: 40px; 
+  height: 40px; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  cursor: pointer;
 }

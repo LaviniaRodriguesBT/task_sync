@@ -61,9 +61,28 @@
                     <a routerLink="/task/edit/{{ task.id }}" *ngIf= "accessType == 'Administrador'">
                         <span class="material-icons color-edit" title="Editar atividade">edit</span>
                     </a>
-                    <a (click)="deleteTask(task.id!)" *ngIf= "accessType == 'Administrador'">
-                        <span class="material-icons color-delete" title="Apagar atividade">delete_forever</span>
+                    <a class="btn btn-error me-2" (click)="openMyModal(content)" *ngIf="accessType == 'Administrador'">
+                        <span class="material-icons color-delete" title="Deletar evento">delete_forever</span>
                     </a>
+                    <ng-template #content let-modal="modal" class="modal">
+                        <div class="modal-header">
+                            <h4 class="modal-title" id="modal-basic-title">Confirmação de exclusão do evento {{
+                                task.name}}</h4>
+                            <button type="button" class="close" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>Confirmar a exclusão do evento?</p>
+                            <button class="btn btn-danger" (click)="deleteTask(task.id!)"
+                                *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">CONFIRMAR EXCLUSÃO
+                            </button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-outline-dark" (click)="closeMyModal()">Fechar</button>
+                        </div>
+                    </ng-template>
+    
                 </div>
             </div>
         </div>

@@ -83,7 +83,7 @@
                     <a routerLink="/event/edit/{{event.id}}" *ngIf="accessType == 'Administrador'">
                         <span class="material-icons color-edit" title="Editar evento">edit</span>
                     </a>
-                    <a class="btn btn-error me-2" (click)="openMyModal(content)">
+                    <a class="btn btn-error me-2" (click)="openMyModal(content)" *ngIf="accessType == 'Administrador'">
                         <span class="material-icons color-delete" title="Deletar evento">delete_forever</span>
                     </a>
                     <ng-template #content let-modal="modal" class="modal">
