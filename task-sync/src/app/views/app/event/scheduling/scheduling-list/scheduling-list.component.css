@@ -4,6 +4,13 @@
   align-items: center; 
   width: 50%; 
 }
+#modal {
+  width: 400px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 20px;
+}
 
 .search-box {
   display: flex;
@@ -354,7 +361,7 @@
 }
 
 .new-status.no-border {
-  outline: none; /* Remove o contorno padrão */
+  outline: none; 
   box-shadow: none;
 }
 

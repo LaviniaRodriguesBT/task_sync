@@ -13,6 +13,7 @@ import { ResponseScheduling } from '../../../../../domain/dto/response-schedulin
 import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
 import { SchedulingUpdateService } from '../../../../../services/scheduling/scheduling-update.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatPaginatorIntl, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 
 
 @Component({
@@ -25,6 +26,7 @@ import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angul
     CommonModule,
     FormsModule,
     ReactiveFormsModule,
+    MatPaginatorModule
   ],
   templateUrl: './scheduling-list.component.html',
   styleUrl: './scheduling-list.component.css'
@@ -37,14 +39,18 @@ export class SchedulingListComponent implements OnInit {
   accessType?: string | null;
   form!: FormGroup;
   totalPessoas: number = 0;
+  totalScheduling: number = 0;
   emAndamento: number = 0;
   concluido: number = 0;
   emAberto: number = 0;
-
-
+  length = 0;
+  pageSize = 10;
+  pageIndex = 0;
+  pageSizeOptions = [3,5, 10, 15];
+  searchText: string = "";
   schedulings: ResponseScheduling[] = [];
   schedulingCopy: ResponseScheduling[] = [];
-  
+
   @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
 
   constructor(
@@ -56,6 +62,7 @@ export class SchedulingListComponent implements OnInit {
     private updateStatus: SchedulingUpdateService,
     private formBuilder: FormBuilder,
     private renderer: Renderer2,
+    public _MatPaginatorIntl: MatPaginatorIntl
   ) {
     this.userId = localStorage.getItem('id');
     this.accessType = localStorage.getItem('accessType')
@@ -63,16 +70,30 @@ export class SchedulingListComponent implements OnInit {
   ngOnInit(): void {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.loadSchedulings();
+    console.log("total de scheduling " + this.schedulingCopy.length);
+    this._MatPaginatorIntl.itemsPerPageLabel = "Itens por página";
+    this._MatPaginatorIntl.previousPageLabel = "Voltar a página anterior";
+    this._MatPaginatorIntl.nextPageLabel = "Próxima pagina";
+    this._MatPaginatorIntl.getRangeLabel = (page, pageSize, length) => {
+      if (length == 0) {
+          return `Nenhum resultado encontrado.`;
+      }
+      const from = page * pageSize + 1;
+      const to = Math.min(from + pageSize - 1, length);
+      return `${from} - ${to} de ${length}`;
+  };
   }
 
   loadSchedulings() {
     this.schedulingReadService.findByEventId(this.eventId).then(data => {
       this.totalPessoas = data.length;
+      this.totalScheduling = data.length;
       this.emAndamento = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
       this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
       this.emAberto = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
       this.schedulingCopy = data;
       this.schedulings = data;
+      this.length = data.length;
       console.log(data)
       this.applyDynamicStyles();
       const formData: { [key: string]: string[] } = {}
@@ -82,6 +103,7 @@ export class SchedulingListComponent implements OnInit {
     this.form = this.formBuilder.group(formData);
     });
   }
+
 
   applyDynamicStyles(): void {
     this.statusCards.forEach((card: ElementRef, index: number) => {
@@ -146,20 +168,21 @@ export class SchedulingListComponent implements OnInit {
     }
   }
 
+  handlePageEvent(e: PageEvent) {
+    this.pageIndex = e.pageIndex;
+    this.pageSize = e.pageSize;
+    this.schedulings = this.schedulingCopy.slice(this.pageIndex * this.pageSize, 
+      (this.pageIndex + 1) * this.pageSize);
+  }
+
   gerarPdf() {
     window.print()
-  }
-  previousPage() {
-  }
-  nextPage() {
   }
 
   public exportExcelEventList() {
     this.excelExporter.exportData(this.schedulings, new IgxExcelExporterOptions('ExportedDataFile'));
 
   }
-
-  searchText: string = "";
 
   search(): void {
     let input = document.getElementById('search') as HTMLInputElement;

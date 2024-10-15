@@ -10,6 +10,7 @@ import { faAddressCard, faPlus } from '@fortawesome/free-solid-svg-icons';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
 import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
+import { MatPaginatorIntl, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 
 
 @Component({
@@ -19,7 +20,8 @@ import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angul
     FontAwesomeModule,
     RouterModule,
     CommonModule,
-    MatIconModule
+    MatIconModule,
+    MatPaginatorModule
   ],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
@@ -33,23 +35,42 @@ export class UserListComponent {
   faAddressCard = faAddressCard;
   users: User[] = [];
   usersCopy: User[] = [];
+  length = 0;
+  pageSize = 10;
+  pageIndex = 0;
+  pageSizeOptions = [3,5, 10, 15];
+  searchText: string = "";
 
   constructor(private userReadService: UserReadService,
     private userDeleteService: UserDeleteService,
     private toastrService: ToastrService,
-    private excelExporter: IgxExcelExporterService
+    private excelExporter: IgxExcelExporterService,
+    public _MatPaginatorIntl: MatPaginatorIntl
   ) {
     this.accessType = localStorage.getItem('accessType')
   }
 
   ngOnInit(): void {
     this.loadUsers();
+    this.length = this.usersCopy.length;
 
   }
 
   async loadUsers() {
     this.users = await this.userReadService.findAll();
     this.usersCopy = this.users;
+    this.length = this.users.length;
+    this._MatPaginatorIntl.itemsPerPageLabel = "Itens por página";
+    this._MatPaginatorIntl.previousPageLabel = "Voltar a página anterior";
+    this._MatPaginatorIntl.nextPageLabel = "Próxima pagina";
+    this._MatPaginatorIntl.getRangeLabel = (page, pageSize, length) => {
+      if (length == 0) {
+          return `Nenhum resultado encontrado.`;
+      }
+      const from = page * pageSize + 1;
+      const to = Math.min(from + pageSize - 1, length);
+      return `${from} - ${to} de ${length}`;};
+    
   }
 
   async deleteUser(userId: string) {
@@ -68,9 +89,11 @@ export class UserListComponent {
   gerarPdf() {
     window.print()
   }
-  previousPage() {
-  }
-  nextPage() {
+
+  handlePageEvent(e: PageEvent) {
+    this.pageIndex = e.pageIndex;
+    this.pageSize = e.pageSize;
+    this.users = this.usersCopy.slice(this.pageIndex * this.pageSize, (this.pageIndex + 1) * this.pageSize);
   }
 
   public exportExcelEventList() {
@@ -79,7 +102,6 @@ export class UserListComponent {
   }
 
 
-  searchText: string = "";
 
   search(): void {
     let input = document.getElementById('search') as HTMLInputElement;

@@ -7,50 +7,72 @@ import { ToastrService } from "ngx-toastr";
 import { EventReadService } from "../../../../services/event/event-read.service";
 import { Event } from "../../../../domain/model/event.model";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
-
 import { MatCardModule } from "@angular/material/card";
 import { CommonModule } from "@angular/common";
 import { MatIconModule } from "@angular/material/icon";
-import { PageEvent, MatPaginatorModule } from '@angular/material/paginator';
+import { PageEvent, MatPaginatorModule, MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
+import { MatSelectModule } from "@angular/material/select";
 
 @Component({
   selector: 'task-sync-event-list',
   standalone: true,
-  imports: [MatCardModule,
-    FontAwesomeModule,
-    RouterModule,
-    CommonModule,
-    MatIconModule,
-    MatPaginatorModule
+  imports: [
+    MatCardModule, 
+    FontAwesomeModule, 
+    RouterModule, 
+    CommonModule, 
+    MatIconModule, 
+    MatPaginatorModule,
+    MatSelectModule
   ],
   templateUrl: './event-list.component.html',
-  styleUrl: './event-list.component.css'
+  styleUrls: ['./event-list.component.css']
 })
-export class EventListComponent implements OnInit {
-  fa = fontawesome;
+export class EventListComponent implements OnInit    {
   faAdd = faPlus;
   events: Event[] = [];
   eventsCopy: Event[] = [];
   accessType?: string | null;
+  length = 0;
+  pageSize = 10;
+  pageIndex = 0;
+  pageSizeOptions = [3,5, 10, 15];
+  searchText: string = "";
 
-  constructor(private eventReadService: EventReadService,
+  constructor(
+    private eventReadService: EventReadService,
     private eventDeleteService: EventDeleteService,
     private toastrService: ToastrService,
     private excelExporter: IgxExcelExporterService,
-    
+    public _MatPaginatorIntl: MatPaginatorIntl
   ) {
-    this.accessType = localStorage.getItem('accessType')
+    this.accessType = localStorage.getItem('accessType');
   }
 
   ngOnInit(): void {
     this.loadEvents();
+    this._MatPaginatorIntl.itemsPerPageLabel = "Itens por página";
+    this._MatPaginatorIntl.previousPageLabel = "Voltar a página anterior";
+    this._MatPaginatorIntl.nextPageLabel = "Próxima pagina";
+    this._MatPaginatorIntl.getRangeLabel = (page, pageSize, length) => {
+      if (length == 0) {
+          return `Nenhum resultado encontrado.`;
+      }
+      const from = page * pageSize + 1;
+      const to = Math.min(from + pageSize - 1, length);
+      return `${from} - ${to} de ${length}`;
+  };
+  
   }
+
   async loadEvents() {
     const userId = localStorage.getItem("id");
     this.events = await this.eventReadService.findUserById(userId!);
     this.eventsCopy = this.events;
+    this.length = this.eventsCopy.length;
   }
+
   async deleteEvent(eventId: string) {
     try {
       console.log('iniciando a remocao do evento' + eventId);
@@ -61,45 +83,40 @@ export class EventListComponent implements OnInit {
       this.toastrService.error('Não foi possível remover o evento');
     }
   }
-  gerarPdf() {
-    window.print()
-  }
-  previousPage() {
-  }
-  nextPage() {
-  }
-  
-   public exportExcelEventList() {
-     this.excelExporter.exportData(this.events, new IgxExcelExporterOptions('ExportedDataFile'));
-  
-   }
 
-  searchText: string = "";
+  handlePageEvent(e: PageEvent) {
+    this.pageIndex = e.pageIndex;
+    this.pageSize = e.pageSize;
+    this.events = this.eventsCopy.slice(this.pageIndex * this.pageSize, (this.pageIndex + 1) * this.pageSize);
+  }
+
+  gerarPdf() {
+    window.print();
+  }
+
+  public exportExcelEventList() {
+    this.excelExporter.exportData(this.events, new IgxExcelExporterOptions('ExportedDataFile'));
+  }
+
   search(): void {
     let input = document.getElementById('search') as HTMLInputElement;
-
     let name = input.value;
 
-    if (this.eventsCopy.length <= 0 || this.eventsCopy == null)
-      return;
+    if (this.eventsCopy.length <= 0 || this.eventsCopy == null) return;
 
-    if (name == null || name == undefined || name.length <= 0) {
+    if (!name || name.length <= 0) {
       this.events = this.eventsCopy;
       this.searchText = "";
       return;
     }
 
     this.searchText = name;
-    let events = this.eventsCopy.filter(
-      (predicate) => predicate.name?.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
+    this.events = this.eventsCopy.filter(
+      (predicate) =>
+        predicate.name?.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
         predicate.description?.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
-        predicate.business?.toLocaleLowerCase().includes(name.toLocaleLowerCase()));
-
-    if (events == undefined) {
-      this.events = [];
-      return;
-    }
-    this.events = events;
+        predicate.business?.toLocaleLowerCase().includes(name.toLocaleLowerCase())
+    );
   }
 
 }

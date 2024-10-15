@@ -135,13 +135,10 @@
 </div>
 
 <div class="pagination">
-
-    <select class="btn-back">
-        <option value="5">5 por página</option>
-        <option value="10">10 por página</option>
-        <option value="15">15 por página</option>
-        <option value="50">50 por página</option>
-    </select>
-    <button class="btn-back" onclick="previousPage()">Anterior</button>
-    <button class="btn-back" onclick="nextPage()">Próximo</button>
+    <mat-paginator 
+        [length]="length" 
+        [pageSize]="pageSize" 
+        [pageSizeOptions]="pageSizeOptions" 
+        (page)="handlePageEvent($event)">       
+    </mat-paginator>
 </div>
