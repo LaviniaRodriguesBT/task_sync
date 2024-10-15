@@ -217,7 +217,7 @@ public class UserPostgresDaoImplem implements UserDao {
 
     @Override
     public void updateInformation(int id, UserModel entity) {
-        String sql = "UPDATE user SET email = ?, password = ?, access_type = ?, image = ?  WHERE id = ?;";
+        String sql = "UPDATE \"user\" SET email = ?, password = ?, access_type = ?, image = ?  WHERE id = ?;";
 
         try {
             PreparedStatement preparedStatement;
@@ -233,11 +233,12 @@ public class UserPostgresDaoImplem implements UserDao {
             throw new RuntimeException(e);
         }
 
-        String sql2 = "UPDATE person p SET cpf = ?, name = ?, address = ?, phone = ?, image = ?  INNER JOIN person p ON p.id = u.person_id;";
+        String sql2 = "UPDATE person p SET cpf = ?, name = ?, address = ?, phone = ?, image = ?  ";
+        sql2 += " WHERE p.id = ?;";
 
         try {
             PreparedStatement preparedStatement;
-            preparedStatement = connection.prepareStatement(sql);
+            preparedStatement = connection.prepareStatement(sql2);
             preparedStatement.setString(1, entity.getCpf());
             preparedStatement.setString(2, entity.getName());
             preparedStatement.setString(3, entity.getAddress());
