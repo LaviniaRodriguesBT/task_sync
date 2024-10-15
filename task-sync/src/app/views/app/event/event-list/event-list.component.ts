@@ -13,6 +13,7 @@ import { MatIconModule } from "@angular/material/icon";
 import { PageEvent, MatPaginatorModule, MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
 import { MatSelectModule } from "@angular/material/select";
+import { NgbModal, NgbModalOptions, NgbModalRef, NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'task-sync-event-list',
@@ -24,7 +25,9 @@ import { MatSelectModule } from "@angular/material/select";
     CommonModule, 
     MatIconModule, 
     MatPaginatorModule,
-    MatSelectModule
+    MatSelectModule,
+    
+
   ],
   templateUrl: './event-list.component.html',
   styleUrls: ['./event-list.component.css']
@@ -39,13 +42,17 @@ export class EventListComponent implements OnInit    {
   pageIndex = 0;
   pageSizeOptions = [3,5, 10, 15];
   searchText: string = "";
+  modalRef: NgbModalRef | null = null;
+  
+
 
   constructor(
     private eventReadService: EventReadService,
     private eventDeleteService: EventDeleteService,
     private toastrService: ToastrService,
     private excelExporter: IgxExcelExporterService,
-    public _MatPaginatorIntl: MatPaginatorIntl
+    public _MatPaginatorIntl: MatPaginatorIntl,
+    private modalService: NgbModal,
   ) {
     this.accessType = localStorage.getItem('accessType');
   }
@@ -64,6 +71,26 @@ export class EventListComponent implements OnInit    {
       return `${from} - ${to} de ${length}`;
   };
   
+  }
+
+
+  openMyModal(content: any) {
+    const options: NgbModalOptions = {
+      backdropClass: 'app-session-modal-backdrop',
+      windowClass: 'app-session-modal-window',
+     
+    };
+  
+    this.modalRef = this.modalService.open(content, {
+      windowClass: 'custom-modal-class'
+    });
+    
+  }
+  
+
+  closeMyModal() {
+    if (this.modalRef) {this.modalRef.close();
+    }
   }
 
   async loadEvents() {
