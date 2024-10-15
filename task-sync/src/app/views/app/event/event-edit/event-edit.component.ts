@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -20,6 +20,9 @@ import { MatSelectModule } from '@angular/material/select';
   styleUrl: './event-edit.component.css'
 })
 export class EventEditComponent implements OnInit {
+  @ViewChild('imagePreview') imagePreview!: ElementRef<HTMLImageElement>;
+  @ViewChild('imgEvent') imgEvent!: ElementRef<HTMLInputElement>;
+  @ViewChild('dateInput') dateInput!: ElementRef<HTMLInputElement>;
 
   eventId?: string;
   form!: FormGroup;
@@ -28,12 +31,11 @@ export class EventEditComponent implements OnInit {
   nameMaxLength: number = 10;
   priceMinValue: number = 1;
   priceMaxValue: number = 500;
+
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
   showImagePreview: boolean = false;
   image!: string;
-
-
 
   constructor(private activatedRoute: ActivatedRoute,
     private eventReadService: EventReadService,
@@ -100,6 +102,14 @@ export class EventEditComponent implements OnInit {
     } else {
       this.fileName = 'Nenhum arquivo escolhido';
       this.showImagePreview = false;
+    }
+  }
+
+  openImagePicker() {
+    if (this.imgEvent) {
+      this.imgEvent.nativeElement.click();
+    } else {
+      console.error('Elemento com ID "img-event" não encontrado.');
     }
   }
 

@@ -96,15 +96,34 @@
     }
 
     .navbar.show {
-        display: flex; 
-        flex-direction: column; 
-        position: absolute; 
-        top: 70px; 
-        left: 0;
-        right: 0;
-        background-color: white; 
-        z-index: 1000; 
-        padding: 10px; 
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 10px;
+        right: 10px; 
+        background-color: rgba(255, 255, 255, 0.9);
+        z-index: 1000;
+        padding: 10px 20px;
+        border-radius: 8px;
+        width: auto; 
+        max-width: 30%; 
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    }
+
+    .btn-list {
+        color: #000000cb;
+        transition: 0.3s;
+        font-size: 14px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        padding: 5px 10px; 
+        border-radius: 5px;
+    }
+    
+    .btn-list:hover {
+        background-color: #000; 
     }
 }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
@@ -7,6 +7,9 @@ import { UserReadService } from '../../../../services/user/user-read.service';
 import { UserUpdateService } from '../../../../services/user/user-update.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'user-sync-user-edit',
@@ -16,22 +19,32 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     RouterModule,
     CommonModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   templateUrl: './user-edit.component.html',
   styleUrl: './user-edit.component.css'
 })
 export class UserEditComponent {
+  @ViewChild('imagePreview') imagePreview!: ElementRef<HTMLImageElement>;
+  @ViewChild('imgUser') imgUser!: ElementRef<HTMLInputElement>;
+  @ViewChild('dateInput') dateInput!: ElementRef<HTMLInputElement>;
 
   userId?: string;
   form!: FormGroup;
-
 
   nameMinLength: number = 3;
   nameMaxLength: number = 10;
   priceMinValue: number = 1;
   priceMaxValue: number = 500;
   showPassword: boolean = false
+
+  selectedImage: File | null = null;
+  fileName: string = 'Nenhum arquivo escolhido';
+  showImagePreview: boolean = false;
+  image!: string;
 
   constructor(private activatedRoute: ActivatedRoute,
     private userReadService: UserReadService,
@@ -44,12 +57,12 @@ export class UserEditComponent {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      password: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      cpf: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      phone: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      address: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+      cpf: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
+      address: ['', [Validators.required]],
       access_type: ['', [Validators.required ]],
     });
   }
@@ -70,7 +83,46 @@ export class UserEditComponent {
     this.form.controls['phone'].setValue(user.phone);
     this.form.controls['address'].setValue(user.address);
     this.form.controls['access_type'].setValue(user.access_type);  
+    const img = document.getElementById('image-preview') as HTMLImageElement;
+    if (img && user.image)  {
+      this.image = user.image;
+      img.src = user.image;
+      img.style.display = 'block';
+    }
   }
+
+  
+  onImageSelected(user: any) {
+    const file = user.target.files[0];
+    if (file) {
+      this.selectedImage = file;
+      this.fileName = file.name;
+      this.showImagePreview = true;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.image = reader.result as string;
+        const img = document.getElementById('image-preview') as HTMLImageElement;
+        if (img) {
+          img.src = e.target?.result as string;
+          img.style.display = 'block';
+        }
+      };
+      reader.readAsDataURL(file);
+    } else {
+      this.fileName = 'Nenhum arquivo escolhido';
+      this.showImagePreview = false;
+    }
+  }
+
+  openImagePicker() {
+    if (this.imgUser) {
+      this.imgUser.nativeElement.click();
+    } else {
+      console.error('Elemento com ID "img-user" não encontrado.');
+    }
+  }
+
 
   async update() {
     try {
@@ -83,6 +135,7 @@ export class UserEditComponent {
         phone: this.form.controls['phone'].value,
         address: this.form.controls['address'].value,
         access_type: this.form.controls['access_type'].value,
+        image: this.image,
       }
 
       console.log(user);

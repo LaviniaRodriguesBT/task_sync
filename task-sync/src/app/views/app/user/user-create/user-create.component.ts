@@ -6,6 +6,9 @@ import { ToastrService } from 'ngx-toastr';
 import { UserCreateService } from '../../../../services/user/user-create.service';
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatSelectModule } from '@angular/material/select';
 
 @Component({
   selector: 'task-sync-user-create',
@@ -15,7 +18,10 @@ import { MatIconModule } from '@angular/material/icon';
     ReactiveFormsModule,
     RouterModule,
     CommonModule,
-    MatIconModule
+    MatIconModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatSelectModule
   ],
   templateUrl: './user-create.component.html',
   styleUrl: './user-create.component.css'
@@ -25,15 +31,21 @@ export class UserCreateComponent implements OnInit {
 
   form!: FormGroup;
 
-  nameMinLength: number = 3;
-  nameMaxLength: number = 10;
+  // nameMinLength: number = 3;
+  // nameMaxLength: number = 10;
+
+  selectedImage: File | null = null;
+  fileName: string = 'Nenhum arquivo escolhido';
+  showImagePreview: boolean = false;
+  image!: string;
 
 
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
     private router: Router,
-    private userCreateService: UserCreateService) {
+    private userCreateService: UserCreateService,
+  ) {
 
     this.initializeForm();
   }
@@ -43,12 +55,12 @@ export class UserCreateComponent implements OnInit {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      password: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      cpf: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      address: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      phone: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
+      email: ['', [Validators.required]],
+      password: ['', [Validators.required]],
+      cpf: ['', [Validators.required]],
+      name: ['', [Validators.required]],
+      address: ['', [Validators.required]],
+      phone: ['', [Validators.required]],
       access_type: ['', [Validators.required]],
     });
   }
@@ -74,6 +86,7 @@ export class UserCreateComponent implements OnInit {
       address: this.form.controls['address'].value,
       phone: this.form.controls['phone'].value,
       access_type: this.form.controls['access_type'].value,
+      image: this.image,
     }
 
     console.log('preparando para criar a pessoa...');
@@ -88,26 +101,35 @@ export class UserCreateComponent implements OnInit {
     }
   }
 
-  async createUser() {
-    const user: User = {
-      email: this.form.controls['email'].value,
-      name: this.form.controls['name'].value,
-      password: this.form.controls['password'].value,
-      cpf: this.form.controls['cpf'].value,
-      phone: this.form.controls['phone'].value,
-      address: this.form.controls['address'].value,
-      access_type: this.form.controls['access_type'].value,
+  onImageSelected(user: any) {
+    const file = user.target.files[0];
+    if (file) {
+      this.selectedImage = file;
+      this.fileName = file.name;
+      this.showImagePreview = true;
+
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        this.image = reader.result as string;
+        const img = document.getElementById('image-preview') as HTMLImageElement;
+        if (img) {
+          img.src = e.target?.result as string;
+          img.style.display = 'block';
+        }
+      };
+      reader.readAsDataURL(file);
+    } else {
+      this.fileName = 'Nenhum arquivo escolhido';
+      this.showImagePreview = false;
     }
+  }
 
-    console.log('preparando para criar o produto...');
-    console.log(user);
-
-    try {
-      await this.userCreateService.createUser(user);
-      this.toastr.success('Dados salvos com sucesso!');
-      this.router.navigate(['scheduling/list']);
-    } catch (error: any) {
-      this.toastr.error(error.message);
+  openImagePicker() {
+    const imageInput = document.getElementById('img-user') as HTMLInputElement;
+    if (imageInput) {
+      imageInput.click();
+    } else {
+      console.error('Elemento com ID "img-user" não encontrado.');
     }
   }
 

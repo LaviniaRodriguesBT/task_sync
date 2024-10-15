@@ -1,3 +1,33 @@
+.upload-image {
+  cursor: pointer; 
+}
+
+.upload-image:hover {
+  opacity: 0.8; 
+  transition: opacity 0.3s; 
+}
+
+.image-upload-container {
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+  margin-top: 10px;
+  flex-wrap: wrap; 
+}
+
+#image-preview {
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.text-recomend-img {
+  font-size: 12px;
+  color: #555;
+  text-align: left;
+  margin: 0;
+  flex-basis: 200px; 
+}
+
 .form-div {
     display: flex;
     flex-direction: column;

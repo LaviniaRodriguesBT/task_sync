@@ -9,11 +9,11 @@
         <li class="breadcrumb-item">
             <a href="/event/list">Cronograma</a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">Evento</li>
+        <li *ngIf="schedulings.length > 0" class="breadcrumb-item active" aria-current="page">{{ schedulings[0].event.name }}</li>
     </ol>
 </nav>
 
-<div class="dashboard">
+<div class="dashboard" >
     <h2>Dashboard</h2>
     <div class="status-cards">
       <div class="card" #statusCard>
@@ -37,7 +37,7 @@
 
 <h1 class="lista">Lista de Cronogramas</h1>
 
-<div class="d-flex justify-content-between align-items-center">
+<div class="d-flex justify-content-between align-items-center flex-wrap">
     <a class="btn btn-back arrow-back" href="/event/list">
         <span class="material-icons">arrow_back</span>
     </a>
@@ -62,11 +62,11 @@
 
 <hr>
 
-<div class="mat-elevation-z8">
-    <table class="table table ">
+<div class="mat-elevation-z8 table-responsive">
+    <table class="table">
         <thead class="thead-style">
             <tr>
-                <th scope="col" class="thead-style">Evento</th>
+                <!-- <th scope="col" class="thead-style">Evento</th> -->
                 <th scope="col" class="thead-style description-col">Colaborador</th>
                 <th scope="col" class="thead-style description-col">Atividade</th>
                 <th scope="col" class="thead-style">Valor</th>
@@ -82,7 +82,7 @@
         <tbody>
             @for(scheduling of schedulings; track $index){
             <tr>
-                <td class="text-center">{{scheduling.event.name}}</td>
+                <!-- <td class="text-center">{{scheduling.event.name}}</td> -->
                 <td class="text-center">{{scheduling.user.name}}</td>
                 <td class="text-center">{{scheduling.task.name}}</td>
                 <td class="text-center">{{ scheduling.value | currency:'BRL':'symbol':'1.2-2' }}</td>
