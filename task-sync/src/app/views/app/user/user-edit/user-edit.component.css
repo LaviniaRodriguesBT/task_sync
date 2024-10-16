@@ -1,18 +1,18 @@
 .upload-image {
-  cursor: pointer; 
+  cursor: pointer;
 }
 
 .upload-image:hover {
-  opacity: 0.8; 
-  transition: opacity 0.3s; 
+  opacity: 0.8;
+  transition: opacity 0.3s;
 }
 
 .image-upload-container {
   display: flex;
   align-items: center;
-  gap: 15px; 
+  gap: 15px;
   margin-top: 10px;
-  flex-wrap: wrap; 
+  flex-wrap: wrap;
 }
 
 #image-preview {
@@ -25,67 +25,67 @@
   color: #555;
   text-align: left;
   margin: 0;
-  flex-basis: 200px; 
+  flex-basis: 200px;
 }
 
 .form-div {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 3%;
-    max-width: 90%;
-    border-radius: 2%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3%;
+  max-width: 90%;
+  border-radius: 2%;
 }
 
 h1 {
-    font-size: 24px;
-    margin-bottom: 20px;
-    color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #333;
 }
 
 hr {
-    width: 100%;
-    border-top: 1px solid #e0e0e0;
-    margin-bottom: 20px;
+  width: 100%;
+  border-top: 1px solid #e0e0e0;
+  margin-bottom: 20px;
 }
 
 .text-name {
-    font-size: 16px;
-    color: #555;
+  font-size: 16px;
+  color: #555;
 }
 
 .field-name {
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .input-group {
-    position: relative;
-    display: flex;
-    align-items: center;
+  position: relative;
+  display: flex;
+  align-items: center;
 }
 
 .input-group-append {
-    position: absolute;
-    top: 0;
-    right: 0;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    background-color: #e9ecef;
-    border: 1px solid #ced4da;
-    border-left: none;
-    border-radius: 0 4px 4px 0;
-    padding: 0 10px;
-    cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #e9ecef;
+  border: 1px solid #ced4da;
+  border-left: none;
+  border-radius: 0 4px 4px 0;
+  padding: 0 10px;
+  cursor: pointer;
 }
 
 .input-group-text {
-    font-size: 18px;
-    color: #495057;
+  font-size: 18px;
+  color: #495057;
 }
 
 .text-name {
@@ -118,15 +118,15 @@ hr {
 }
 
 .text-name {
-    font-size: 20px;
-    padding: 10px;
-    width: 100%;
- }
+  font-size: 20px;
+  padding: 10px;
+  width: 100%;
+}
 
 .text-form {
-    font-size: 20px;
-    padding: 10px;
-    width: 100%;
+  font-size: 20px;
+  padding: 10px;
+  width: 100%;
 }
 
 .field-name {
@@ -137,7 +137,7 @@ hr {
   width: 100%;
 }
 
-.btn-back{
+.btn-back {
   border: none;
   cursor: pointer;
   width: 150px;
@@ -154,6 +154,7 @@ hr {
   z-index: 1;
   background-color: white;
   border: 2px solid #6f42c1;
+
   &:after {
     content: '';
     position: absolute;
@@ -164,6 +165,7 @@ hr {
     border-radius: 10rem;
     z-index: -2;
   }
+
   &:before {
     content: '';
     bottom: 0;
@@ -175,13 +177,16 @@ hr {
     border-radius: 10rem;
     z-index: -1;
   }
+
   &:hover {
     color: white;
-    background-color: #6f42c1; 
+    background-color: #6f42c1;
+
     &:before {
       width: 100%;
     }
   }
+
   align-items: center;
   gap: 5px;
 }
@@ -193,7 +198,7 @@ hr {
   display: inline-block;
   padding: .75rem 1.25rem;
   border-radius: 10rem;
-  color: rgb(0, 0, 0); 
+  color: rgb(0, 0, 0);
   text-transform: uppercase;
   font-size: 1rem;
   letter-spacing: .15rem;
@@ -203,6 +208,7 @@ hr {
   z-index: 1;
   background-color: white;
   border: 2px solid green;
+
   &:after {
     content: '';
     position: absolute;
@@ -213,6 +219,7 @@ hr {
     border-radius: 10rem;
     z-index: -2;
   }
+
   &:before {
     content: '';
     bottom: 0;
@@ -224,21 +231,24 @@ hr {
     border-radius: 10rem;
     z-index: -1;
   }
+
   &:hover {
     color: white;
     background-color: green;
+
     &:before {
       width: 100%;
     }
   }
+
   align-items: center;
   gap: 5px;
 }
 
 
 .input-group-text {
-    font-size: 18px;
-    border: none;
-    background-color: transparent;
-    outline: none;
+  font-size: 18px;
+  border: none;
+  background-color: transparent;
+  outline: none;
 }

@@ -12,6 +12,8 @@ import { User } from '../../../../../domain/model/user.model';
 import { Task } from '../../../../../domain/model/task.model';
 import { UserReadService } from '../../../../../services/user/user-read.service';
 import { TaskReadService } from '../../../../../services/task/task-read.service';
+import { CommonModule } from '@angular/common';
+import { monetaryValidator } from '../monetary-validator';
 
 @Component({
   selector: 'task-sync-scheduling-edit',
@@ -20,7 +22,8 @@ import { TaskReadService } from '../../../../../services/task/task-read.service'
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    MatSelectModule
+    MatSelectModule,
+    CommonModule
   ],
   templateUrl: './scheduling-edit.component.html',
   styleUrl: './scheduling-edit.component.css'
@@ -33,9 +36,10 @@ export class SchedulingEditComponent implements OnInit {
   event!: Event;
 
   nameMinLength: number = 3;
-  nameMaxLength: number = 10;
-  priceMinValue: number = 1;
-  priceMaxValue: number = 500;
+  nameMaxLength: number = 100;
+  descriptionMinValue: number = 1;
+  descriptionMaxValue: number = 500;
+
   userList: User [] = [];
   taskList: Task [] = [];
 
@@ -54,20 +58,35 @@ export class SchedulingEditComponent implements OnInit {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-      event_id: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      event: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      user_id: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-      task_id: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-      value: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-      start_time: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-      end_time: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-      date: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-      status: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
+      event_id: [''],
+      event: [''],
+      user_id: ['', Validators.required],
+      task_id: ['', Validators.required],
+      value: ['', [Validators.required, monetaryValidator()]],
+      start_time: ['', Validators.required],
+      end_time: ['', Validators.required],
+      date: ['', Validators.required],
+      status: ['Em aberto', Validators.required],
     });
   }
 
+  formatCurrency(event: any) {
+    const input = event.target;
+    let value = input.value;
+    value = value.replace(/[^0-9,]/g, '');
+
+    const parts = value.split(',');
+    if (parts.length > 2) {
+      value = parts[0] + ',' + parts.slice(1).join('').replace(/,/g, '');
+    }
+    if (parts.length > 1) {
+      value = parts[0] + ',' + parts[1].substring(0, 2);
+    }
+
+    input.value = value;
+  }
+
   async ngOnInit() {
-    console.log("cai a")
     this.userList = await this.userReadService.findAll();
     this.taskList = await this.taskReadService.findAll();
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
@@ -117,15 +136,7 @@ export class SchedulingEditComponent implements OnInit {
   }
 
   validateFields() {
-    return this.form.controls['event_id'].valid
-      && this.form.controls['event'].valid
-      && this.form.controls['user_id'].valid
-      && this.form.controls['task_id'].valid
-      && this.form.controls['value'].valid
-      && this.form.controls['start_time'].valid
-      && this.form.controls['end_time'].valid
-      && this.form.controls['date'].valid
-      && this.form.controls['status'].valid;
+    return this.form.valid;
   }
 
 }

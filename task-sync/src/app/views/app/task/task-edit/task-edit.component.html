@@ -22,6 +22,11 @@
         <div class="form-group col-12 mt-2">
             <label for="name" class="text-name">Nome</label>
             <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name">
+            <div *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)" class="text-danger">
+                <small *ngIf="form.get('name')?.errors?.['required']">O nome é obrigatório.</small>
+                <small *ngIf="form.get('name')?.errors?.['minlength']">O nome deve ter no mínimo {{ nameMinLength }} caracteres.</small>
+                <small *ngIf="form.get('name')?.errors?.['maxlength']">O nome deve ter no máximo 200 caracteres.</small>
+            </div>
         </div>
 
         <div class="form-group d-flex justify-content-around mt-2 btns">

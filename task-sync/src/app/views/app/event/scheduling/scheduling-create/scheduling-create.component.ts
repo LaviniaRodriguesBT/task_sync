@@ -13,6 +13,8 @@ import { User } from '../../../../../domain/model/user.model';
 import { Task } from '../../../../../domain/model/task.model';
 import { UserReadService } from '../../../../../services/user/user-read.service';
 import { TaskReadService } from '../../../../../services/task/task-read.service';
+import { CommonModule } from '@angular/common';
+import { monetaryValidator } from '../monetary-validator';
 
 @Component({
   selector: 'task-sync-scheduling-create',
@@ -23,7 +25,8 @@ import { TaskReadService } from '../../../../../services/task/task-read.service'
     RouterModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
+    CommonModule
   ],
   templateUrl: './scheduling-create.component.html',
   styleUrl: './scheduling-create.component.css'
@@ -52,6 +55,7 @@ export class SchedulingCreateComponent implements OnInit {
     private taskReadService: TaskReadService
   ) {
     this.initializeForm();
+    
   }
 
   async ngOnInit() {
@@ -65,15 +69,32 @@ export class SchedulingCreateComponent implements OnInit {
     this.form = this.formBuilder.group({
       event_id: [''],
       event: [''],
-      user_id: [''],
-      task_id: [''],
-      value: [''],
-      start_time: [''],
-      end_time: [''],
-      date: [''],
-      status: [''],
+      user_id: ['', Validators.required],
+      task_id: ['', Validators.required],
+      value: ['', [Validators.required, monetaryValidator()]], 
+      start_time: ['', Validators.required],
+      end_time: ['', Validators.required],
+      date: ['', Validators.required],
+      status: ['Em aberto', Validators.required],
     });
   }
+
+  formatCurrency(event: any) {
+    const input = event.target;
+    let value = input.value;
+    value = value.replace(/[^0-9,]/g, '');
+
+    const parts = value.split(',');
+    if (parts.length > 2) {
+      value = parts[0] + ',' + parts.slice(1).join('').replace(/,/g, '');
+    }
+    if (parts.length > 1) {
+      value = parts[0] + ',' + parts[1].substring(0, 2);
+    }
+
+    input.value = value;
+  }
+
 
   async create() {
     const scheduling: Scheduling = {
@@ -108,14 +129,6 @@ export class SchedulingCreateComponent implements OnInit {
   }
 
   validateFields() {
-    return this.form.controls['event_id'].valid
-      && this.form.controls['event'].valid
-      && this.form.controls['user_id'].valid
-      && this.form.controls['task_id'].valid
-      && this.form.controls['value'].valid
-      && this.form.controls['start_time'].valid
-      && this.form.controls['end_time'].valid
-      && this.form.controls['date'].valid
-      && this.form.controls['status'].valid;
+    return this.form.valid;
   }
 }

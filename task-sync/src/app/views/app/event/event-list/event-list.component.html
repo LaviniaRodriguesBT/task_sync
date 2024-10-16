@@ -75,8 +75,14 @@
 
                 <div class="action-buttons">
                     <a *ngIf="accessType == 'Administrador'">
-                        <span class="material-icons color-people" title="Pessoa">person</span>
-                    </a>
+                        <mat-icon matBadge="{{ totalPessoas[event.id] }}" matBadgeColor="primary" title="Pessoas cadastradas">
+                          person
+                        </mat-icon>
+                        <span class="cdk-visually-hidden">
+                          Exibe a quantidade de pessoas cadastradas no cronograma
+                        </span>
+                    </a>  
+                    
                     <a routerLink="/event/detail/{{event.id}}" *ngIf="accessType == 'Administrador'">
                         <span class="material-icons color-detail" title="Informações">info</span>
                     </a>
@@ -90,14 +96,14 @@
                         <div class="modal-header">
                             <h4 class="modal-title" id="modal-basic-title">Confirmação de exclusão do evento {{
                                 event.name}}</h4>
-                            <button type="button" class="close" aria-label="Close">
+                             <button type="button" class="close" aria-label="Close" (click)="closeMyModal()">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Confirmar a exclusão do evento?</p>
+                            <p>Deseja onfirmar a exclusão do evento?</p>
                             <button class="btn btn-danger" (click)="deleteEvent(event.id!)"
-                                *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">CONFIRMAR EXCLUSÃO
+                                *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">EXCLUIR
                             </button>
                         </div>
                         <div class="modal-footer">

@@ -1,5 +1,5 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule, AbstractControl } from '@angular/forms';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { User } from '../../../../domain/model/user.model';
@@ -36,9 +36,15 @@ export class UserEditComponent {
   form!: FormGroup;
 
   nameMinLength: number = 3;
-  nameMaxLength: number = 10;
-  priceMinValue: number = 1;
-  priceMaxValue: number = 500;
+
+  emailMinLength: number = 15;
+
+  addressMinLength: number = 10;
+
+  passwordMinLength: number = 6;
+
+  descriptionMinValue: number = 3;
+
   showPassword: boolean = false
 
   selectedImage: File | null = null;
@@ -57,13 +63,13 @@ export class UserEditComponent {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-      email: ['', [Validators.required]],
-      password: ['', [Validators.required]],
-      cpf: ['', [Validators.required]],
-      name: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      access_type: ['', [Validators.required ]],
+      email: ['', [Validators.required, Validators.minLength(this.emailMinLength), Validators.maxLength(200)]],
+      password: ['', [Validators.required, Validators.minLength(this.passwordMinLength), Validators.maxLength(20)]],
+      cpf: ['', [Validators.required, this.cpfValidator]],
+      name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(200)]],
+      address: ['', [Validators.required, Validators.minLength(this.addressMinLength), Validators.maxLength(200)]],
+      phone: ['', [Validators.required, this.phoneValidator]],
+      access_type: ['', [Validators.required]],
     });
   }
 
@@ -82,16 +88,44 @@ export class UserEditComponent {
     this.form.controls['cpf'].setValue(user.cpf);
     this.form.controls['phone'].setValue(user.phone);
     this.form.controls['address'].setValue(user.address);
-    this.form.controls['access_type'].setValue(user.access_type);  
+    this.form.controls['access_type'].setValue(user.access_type);
     const img = document.getElementById('image-preview') as HTMLImageElement;
-    if (img && user.image)  {
+    if (img && user.image) {
       this.image = user.image;
       img.src = user.image;
       img.style.display = 'block';
     }
   }
 
-  
+  validateNumber(event: KeyboardEvent) {
+    const charCode = event.keyCode ? event.keyCode : event.which;
+    if (charCode < 48 || charCode > 57) {
+      event.preventDefault();
+    }
+  }
+
+
+  cpfValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    const value = control.value || '';
+    const cpfPattern = /^[0-9]{11}$/;
+
+    if (!cpfPattern.test(value)) {
+      return { invalidCPF: true };
+    }
+    return null;
+  }
+
+  phoneValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    const value = control.value || '';
+    const phonePattern = /^[0-9]{10,11}$/;
+
+    if (!phonePattern.test(value)) {
+      return { invalidPhone: true };
+    }
+    return null;
+  }
+
+
   onImageSelected(user: any) {
     const file = user.target.files[0];
     if (file) {
@@ -148,9 +182,8 @@ export class UserEditComponent {
   }
 
   validateFields() {
-    return this.form.controls['name'].valid;
+    return this.form.valid;
   }
-
 
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
@@ -161,7 +194,4 @@ export class UserEditComponent {
       passwordField.type = 'password';
     }
   }
-
 }
-
-

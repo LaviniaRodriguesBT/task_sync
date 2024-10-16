@@ -20,7 +20,13 @@
     <div class="form-row">
         <div class="form-group col-12 mt-2">
             <label for="name" class="text-name">Nome</label>
-            <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name">
+            <input type="text" class="field-name" id="name" placeholder="Nome" 
+            formControlName="name" maxlength="200" required>
+            <div *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)" class="text-danger">
+                <small *ngIf="form.get('name')?.errors?.['required']">O nome é obrigatório.</small>
+                <small *ngIf="form.get('name')?.errors?.['minlength']">O nome deve ter no mínimo {{ nameMinLength }} caracteres.</small>
+                <small *ngIf="form.get('name')?.errors?.['maxlength']">O nome deve ter no máximo 200 caracteres.</small>
+            </div>
         </div>
         
         <div class="form-group col-12 mt-2">
@@ -39,32 +45,56 @@
 
         <div class="form-group col-12 mt-2">
             <label for="code" class="text-name">Código</label>
-            <input type="text" class="field-name" id="code" placeholder="Código" formControlName="code">
+            <input type="text" class="field-name" id="code" placeholder="Código" formControlName="code" (keypress)="validateNumber($event)">
+            <div *ngIf="form.get('code')?.invalid && (form.get('code')?.dirty || form.get('code')?.touched)" class="text-danger">
+                <small *ngIf="form.get('code')?.errors?.['required']">O código é obrigatório.</small>
+                <small *ngIf="form.get('code')?.errors?.['maxlength']">O código deve ter no máximo 20 caracteres.</small>
+            </div>
         </div>
         
         <div class="form-group col-12 mt-2">
             <label for="description" class="text-name">Descrição</label>
-            <textarea class="field-name" id="description" formControlName="description" placeholder="Descreva sobre seu evento"></textarea>
+            <textarea class="field-name" id="description" formControlName="description" placeholder="Descreva sobre seu evento"
+            maxlength="200" required></textarea>
+            <div *ngIf="form.get('description')?.invalid && (form.get('description')?.dirty || form.get('description')?.touched)" class="text-danger">
+                <small *ngIf="form.get('description')?.errors?.['required']">A descrição é obrigatória.</small>
+                <small *ngIf="form.get('description')?.errors?.['minlength']">A descrição deve ter no mínimo {{ descriptionMinValue }} caracteres.</small>
+                <small *ngIf="form.get('description')?.errors?.['maxlength']">A descrição deve ter no máximo 200 caracteres.</small>
+            </div>
         </div>
         
         <div class="form-group col-12 mt-2">
             <label for="business" class="text-name">Área de negócio</label>
-            <input type="text" class="field-name" id="business" placeholder="Área de negócio" formControlName="business">
+            <input type="text" class="field-name" id="business" placeholder="Área de negócio" 
+            formControlName="business" maxlength="200" required>
+            <div *ngIf="form.get('business')?.invalid && (form.get('business')?.dirty || form.get('business')?.touched)" class="text-danger">
+                <small *ngIf="form.get('business')?.errors?.['required']">A área de negócio é obrigatória.</small>
+                <small *ngIf="form.get('business')?.errors?.['maxlength']">A área de negócio deve ter no máximo 200 caracteres.</small>
+            </div>
         </div>
         
         <div class="form-group col-12 mt-2">
             <label for="date" class="text-name">Data</label>
-            <input type="date" class="field-name" id="date" placeholder="Data" formControlName="date">
+            <input type="date" class="field-name" id="date" placeholder="Data" formControlName="date" required>
+            <div *ngIf="form.get('date')?.invalid && (form.get('date')?.dirty || form.get('date')?.touched)" class="text-danger">
+                <small *ngIf="form.get('date')?.errors?.['required']">A data é obrigatória.</small>
+            </div>
         </div>
         
         <div class="form-group col-12 mt-2">
             <label for="start_time" class="text-name">Horário de Início</label>
-            <input type="time" class="field-name" id="start_time" placeholder="Horário de Início" formControlName="start_time">
+            <input type="time" class="field-name" id="start_time" placeholder="Horário de Início" formControlName="start_time" required>
+            <div *ngIf="form.get('start_time')?.invalid && (form.get('start_time')?.dirty || form.get('start_time')?.touched)" class="text-danger">
+                <small *ngIf="form.get('start_time')?.errors?.['required']">O horário de início é obrigatório.</small>
+            </div>
         </div>
         
         <div class="form-group col-12 mt-2">
             <label for="end_time" class="text-name">Horário de Término</label>
-            <input type="time" class="field-name" id="end_time" placeholder="Horário de Término" formControlName="end_time">
+            <input type="time" class="field-name" id="end_time" placeholder="Horário de Término" formControlName="end_time" required>
+            <div *ngIf="form.get('end_time')?.invalid && (form.get('end_time')?.dirty || form.get('end_time')?.touched)" class="text-danger">
+                <small *ngIf="form.get('end_time')?.errors?.['required']">O horário de término é obrigatório.</small>
+            </div>
         </div>
 
         <div class="form-group d-flex justify-content-around mt-2 btns">

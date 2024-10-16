@@ -16,11 +16,8 @@ export class AuthenticationService {
     console.log('trying to authenticate...');
     console.log(credential);
     let apiResponse = await firstValueFrom(this.http.post<User>(`http://localhost:8080/api/user/authenticate`, credential));
-    console.log(apiResponse);
-    //Tive que comentar pois nao estava deixando passar da autenticação
-    // if (apiResponse == null || apiResponse.length != 1) {
-    //   throw new Error('dados invalidos');
-    // }
+    localStorage.setItem('email', apiResponse.email);
+
     return apiResponse;
   }
 

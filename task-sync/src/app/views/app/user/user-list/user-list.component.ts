@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrService } from 'ngx-toastr';
 import { User } from '../../../../domain/model/user.model';
@@ -12,6 +12,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
 import { MatPaginatorIntl, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { NgbModalRef, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
+import { MatBadgeModule } from '@angular/material/badge';
+import { EventReadService } from '../../../../services/event/event-read.service';
 
 
 @Component({
@@ -22,7 +24,8 @@ import { NgbModalRef, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstr
     RouterModule,
     CommonModule,
     MatIconModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatBadgeModule
   ],
   templateUrl: './user-list.component.html',
   styleUrl: './user-list.component.css'
@@ -43,12 +46,17 @@ export class UserListComponent {
   searchText: string = "";
   modalRef: NgbModalRef | null = null;
 
+  totalEventos: Record<string, number> = {};
+  eventId: string = '';
+
   constructor(private userReadService: UserReadService,
     private userDeleteService: UserDeleteService,
     private toastrService: ToastrService,
     private excelExporter: IgxExcelExporterService,
     public _MatPaginatorIntl: MatPaginatorIntl,
-    private modalService: NgbModal
+    private modalService: NgbModal,
+    private eventReadService: EventReadService,
+    private route: ActivatedRoute,
   ) {
     this.accessType = localStorage.getItem('accessType')
   }
@@ -74,6 +82,16 @@ export class UserListComponent {
       const to = Math.min(from + pageSize - 1, length);
       return `${from} - ${to} de ${length}`;};
     
+      this.totalEventos = {}; 
+
+      for (const user of this.users) {
+        if (user.id) {
+            const events = await this.eventReadService.findUserById(user.id); 
+            user.eventCount = events.length; 
+        } else {
+            console.warn('Usuário sem ID encontrado:', user);
+        }
+    }
   }
 
   async deleteUser(userId: string) {

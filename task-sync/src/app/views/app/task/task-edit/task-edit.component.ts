@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { Task } from '../../../../domain/model/task.model';
 import { TaskReadService } from '../../../../services/task/task-read.service';
 import { TaskUpdateService } from '../../../../services/task/task-update.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'task-sync-task-edit',
@@ -13,6 +14,7 @@ import { TaskUpdateService } from '../../../../services/task/task-update.service
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    CommonModule
   ],
   templateUrl: './task-edit.component.html',
   styleUrl: './task-edit.component.css'
@@ -23,9 +25,7 @@ export class TaskEditComponent {
   form!: FormGroup;
 
   nameMinLength: number = 3;
-  nameMaxLength: number = 10;
-  priceMinValue: number = 1;
-  priceMaxValue: number = 500;
+  nameMaxLength: number = 200;
 
   constructor(private activatedRoute: ActivatedRoute,
     private taskReadService: TaskReadService,
@@ -38,8 +38,7 @@ export class TaskEditComponent {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-
+      name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(200)]],
     });
   }
 
@@ -74,7 +73,7 @@ export class TaskEditComponent {
   }
 
   validateFields() {
-    return this.form.controls['name'].valid;
+    return this.form.valid;
   }
 
 }

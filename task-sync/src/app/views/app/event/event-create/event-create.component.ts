@@ -5,6 +5,7 @@ import { ToastrService } from 'ngx-toastr';
 import { EventCreateService } from '../../../../services/event/event-create.service';
 import { Event } from "../../../../domain/model/event.model";
 import { HttpClientModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'task-sync-event-create',
@@ -14,6 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
     ReactiveFormsModule,
     RouterModule,
     HttpClientModule,
+    CommonModule
   ],
   templateUrl: './event-create.component.html',
   styleUrls: ['./event-create.component.css']
@@ -25,9 +27,9 @@ export class EventCreateComponent implements OnInit {
 
   form!: FormGroup;
   nameMinLength: number = 3;
-  nameMaxLength: number = 100;
-  descriptionMinValue: number = 1;
-  descriptionMaxValue: number = 500;
+
+  descriptionMinValue: number = 10;
+
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
   showImagePreview: boolean = false;
@@ -49,23 +51,31 @@ export class EventCreateComponent implements OnInit {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-      code: ['', [Validators.required]],
-      name: ['', [Validators.required]],
-      description: ['', [Validators.required]],
-      business: ['', [Validators.required]],
+      code: ['', [Validators.required, Validators.maxLength(20)]],
+      name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(200)]],
+      description: ['', [Validators.required, Validators.minLength(this.descriptionMinValue), Validators.maxLength(200)]],
+      business: ['', [Validators.required, Validators.maxLength(200)]],
       date: ['', [Validators.required]],
       start_time: ['', [Validators.required]],
       end_time: ['', [Validators.required]]
     });
   }
+  
+  validateNumber(event: KeyboardEvent) {
+    const charCode = event.keyCode ? event.keyCode : event.which;
+    if (charCode < 48 || charCode > 57) {
+      event.preventDefault(); 
+    }
+  }
 
   async create() {
     if (this.form.invalid) {
-      this.toastr.error('Preencha todos os campos obrigatórios antes de cadastrar o evento.');
+      this.toastr.error('Preencha todos os campos obrigatórios corretamente antes de cadastrar o evento.');
       return;
     }
 
     const event: Event = {
+      id: this.form.get('id')?.value,
       code: this.form.get('code')?.value,
       name: this.form.get('name')?.value,
       description: this.form.get('description')?.value,
@@ -81,7 +91,7 @@ export class EventCreateComponent implements OnInit {
       this.toastr.success('Dados salvos com sucesso!');
       this.router.navigate(['event/list']);
     } catch (error: any) {
-      this.toastr.error(error.message);
+      this.toastr.error('Erro ao salvar os dados: ' + error.message);
     }
   }
 

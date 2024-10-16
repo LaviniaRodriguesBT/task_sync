@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { RouterModule } from "@angular/router";
+import { ActivatedRoute, RouterModule } from "@angular/router";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
 import { EventDeleteService } from "../../../../services/event/event-delete.service";
@@ -9,30 +9,32 @@ import { Event } from "../../../../domain/model/event.model";
 import { faPlus } from "@fortawesome/free-solid-svg-icons";
 import { MatCardModule } from "@angular/material/card";
 import { CommonModule } from "@angular/common";
-import { MatIconModule } from "@angular/material/icon";
 import { PageEvent, MatPaginatorModule, MatPaginator, MatPaginatorIntl } from '@angular/material/paginator';
 import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angular';
 import { MatSelectModule } from "@angular/material/select";
 import { NgbModal, NgbModalOptions, NgbModalRef, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SchedulingReadService } from "../../../../services/scheduling/scheduling-read.service";
+
+import { MatIconModule } from '@angular/material/icon'; // Importar MatIconModule
+import { MatBadgeModule } from '@angular/material/badge'; // Importar MatBadgeModule
 
 @Component({
   selector: 'task-sync-event-list',
   standalone: true,
   imports: [
-    MatCardModule, 
-    FontAwesomeModule, 
-    RouterModule, 
-    CommonModule, 
-    MatIconModule, 
+    MatCardModule,
+    FontAwesomeModule,
+    RouterModule,
+    CommonModule,
+    MatIconModule,
     MatPaginatorModule,
     MatSelectModule,
-    
-
+    MatBadgeModule
   ],
   templateUrl: './event-list.component.html',
   styleUrls: ['./event-list.component.css']
 })
-export class EventListComponent implements OnInit    {
+export class EventListComponent implements OnInit {
   faAdd = faPlus;
   events: Event[] = [];
   eventsCopy: Event[] = [];
@@ -40,11 +42,12 @@ export class EventListComponent implements OnInit    {
   length = 0;
   pageSize = 10;
   pageIndex = 0;
-  pageSizeOptions = [3,5, 10, 15];
+  pageSizeOptions = [3, 5, 10, 15];
   searchText: string = "";
   modalRef: NgbModalRef | null = null;
-  
 
+  totalPessoas: Record<string, number> = {};
+  eventId: string = '';
 
   constructor(
     private eventReadService: EventReadService,
@@ -53,24 +56,27 @@ export class EventListComponent implements OnInit    {
     private excelExporter: IgxExcelExporterService,
     public _MatPaginatorIntl: MatPaginatorIntl,
     private modalService: NgbModal,
+    private schedulingReadService: SchedulingReadService,
+    private route: ActivatedRoute,
   ) {
     this.accessType = localStorage.getItem('accessType');
   }
 
   ngOnInit(): void {
+    this.eventId = this.route.snapshot.paramMap.get('eventId')!;
     this.loadEvents();
     this._MatPaginatorIntl.itemsPerPageLabel = "Itens por página";
     this._MatPaginatorIntl.previousPageLabel = "Voltar a página anterior";
     this._MatPaginatorIntl.nextPageLabel = "Próxima pagina";
     this._MatPaginatorIntl.getRangeLabel = (page, pageSize, length) => {
       if (length == 0) {
-          return `Nenhum resultado encontrado.`;
+        return `Nenhum resultado encontrado.`;
       }
       const from = page * pageSize + 1;
       const to = Math.min(from + pageSize - 1, length);
       return `${from} - ${to} de ${length}`;
-  };
-  
+    };
+
   }
 
 
@@ -78,18 +84,19 @@ export class EventListComponent implements OnInit    {
     const options: NgbModalOptions = {
       backdropClass: 'app-session-modal-backdrop',
       windowClass: 'app-session-modal-window',
-     
+
     };
-  
+
     this.modalRef = this.modalService.open(content, {
       windowClass: 'custom-modal-class'
     });
-    
+
   }
-  
+
 
   closeMyModal() {
-    if (this.modalRef) {this.modalRef.close();
+    if (this.modalRef) {
+      this.modalRef.close();
     }
   }
 
@@ -97,6 +104,18 @@ export class EventListComponent implements OnInit    {
     const userId = localStorage.getItem("id");
     this.events = await this.eventReadService.findUserById(userId!);
     this.eventsCopy = this.events;
+
+    this.totalPessoas = {}; 
+
+    for (const event of this.events) {
+      if (event.id) {
+        const schedulings = await this.schedulingReadService.findByEventId(event.id);
+        this.totalPessoas[event.id] = schedulings.length; 
+      } else {
+        console.warn('Evento sem ID encontrado:', event);
+      }
+    }
+
     this.length = this.eventsCopy.length;
   }
 
