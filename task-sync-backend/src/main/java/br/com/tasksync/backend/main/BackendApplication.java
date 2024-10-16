@@ -5,7 +5,6 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 
-//Classe responsavel pela estrutura básica e inicio de todo o processo de execução da aplicação
 public class BackendApplication {
 
     public static void main(String[] args) {

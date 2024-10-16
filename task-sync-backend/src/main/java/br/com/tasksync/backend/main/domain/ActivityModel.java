@@ -4,8 +4,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDate;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,7 +12,6 @@ public class ActivityModel {
     private double value;
     private int task_id;
     private int event_id;
-
 
     public ActivityModel(double value, int task_id, int event_id) {
         this.value = value;

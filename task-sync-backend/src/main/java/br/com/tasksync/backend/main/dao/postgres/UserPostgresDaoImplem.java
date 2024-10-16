@@ -15,10 +15,7 @@ import java.util.logging.Logger;
 
 public class UserPostgresDaoImplem implements UserDao {
 
-    // Adicionar a linha 14 em todas as classes, substitui o SOUT
     private static final Logger logger = Logger.getLogger(UserPostgresDaoImplem.class.getName());
-
-    // Quem faz a connection é o spring
     private final Connection connection;
 
     public UserPostgresDaoImplem(Connection connection) {
@@ -27,52 +24,36 @@ public class UserPostgresDaoImplem implements UserDao {
 
     @Override
     public int add(UserModel entity) {
-
         String sql = "INSERT INTO person(cpf, name, address, phone, image) ";
         sql += " VALUES(?, ?, ?, ?, ?);";
-
         PreparedStatement preparedStatement;
         ResultSet resultSet;
-
         try {
-            //connection.setAutoCommit(false); deixado automatico, pois estava dando prolema apos a criacao
-
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-
             preparedStatement.setString(1, entity.getCpf());
             preparedStatement.setString(2, entity.getName());
             preparedStatement.setString(3, entity.getAddress());
             preparedStatement.setString(4, entity.getPhone());
             preparedStatement.setString(5, entity.getImage());
-
             preparedStatement.execute();
-
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
                 final int id = resultSet.getInt(1);
                 entity.setId(id);
-
             } else {
                 throw new RuntimeException();
-
             }
-
             resultSet.close();
             preparedStatement.close();
 
-
             sql = "INSERT INTO \"user\"(email, password, access_type, person_id) ";
             sql += " VALUES(?, ?, ?, ?);";
-
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-
             preparedStatement.setString(1, entity.getEmail());
             preparedStatement.setString(2, entity.getPassword());
             preparedStatement.setString(3, entity.getAccess_type());
             preparedStatement.setInt(4, entity.getId());
             preparedStatement.setString(3, entity.getAccess_type());
-
-
             preparedStatement.execute();
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
@@ -81,60 +62,44 @@ public class UserPostgresDaoImplem implements UserDao {
 
             } else {
                 throw new RuntimeException();
-
             }
-            //connection.commit(); deixado automatico, pois estava dando prolema apos a criacao
-
             resultSet.close();
             preparedStatement.close();
-
         } catch (SQLException e) {
-
             try {
                 connection.rollback();
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
-
             throw new RuntimeException(e);
         }
-
-
         return entity.getId();
     }
 
     @Override
     public void remove(int id) {
         logger.log(Level.INFO, "Preparadando para remover a entidade com id " + id);
-
         String sql = "DELETE FROM person WHERE id = ?;";
-
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             preparedStatement.execute();
             preparedStatement.close();
             logger.log(Level.INFO, "Entidade removida com sucesso");
-
-
         } catch (Exception e) {
             throw new RuntimeException();
         }
 
         sql = "DELETE FROM \"user\" WHERE id = ?;";
-
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             preparedStatement.execute();
             preparedStatement.close();
             logger.log(Level.INFO, "Entidade removida com sucesso");
-
-
         } catch (Exception e) {
             throw new RuntimeException();
         }
-
     }
 
     @Override
@@ -142,10 +107,8 @@ public class UserPostgresDaoImplem implements UserDao {
         final String sql = "SELECT * FROM \"user\" u" +
                 " INNER JOIN person p on u.person_id = p.id" +
                 " WHERE p.id = ?;";
-
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
@@ -162,11 +125,8 @@ public class UserPostgresDaoImplem implements UserDao {
                 user.setAccess_type(resultSet.getString("access_type"));
                 user.setImage(resultSet.getString("image"));
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
-
                 return user;
-
             }
-
             return null;
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -177,7 +137,6 @@ public class UserPostgresDaoImplem implements UserDao {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
         }
     }
 
@@ -186,14 +145,11 @@ public class UserPostgresDaoImplem implements UserDao {
 
         final List<UserModel> users = new ArrayList<>();
         final String sql = "SELECT * FROM \"user\" u INNER JOIN person p ON p.id = u.person_id ;";
-
-
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 final UserModel user = new UserModel();
-
                 user.setId(resultSet.getInt("id"));
                 user.setName(resultSet.getString("name"));
                 user.setEmail(resultSet.getString("email"));
@@ -203,9 +159,7 @@ public class UserPostgresDaoImplem implements UserDao {
                 user.setAddress(resultSet.getString("address"));
                 user.setAccess_type(resultSet.getString("access_type"));
                 user.setImage(resultSet.getString("image"));
-
                 users.add(user);
-
             }
             resultSet.close();
             preparedStatement.close();
@@ -218,7 +172,6 @@ public class UserPostgresDaoImplem implements UserDao {
     @Override
     public void updateInformation(int id, UserModel entity) {
         String sql = "UPDATE \"user\" SET email = ?, password = ?, access_type = ?, image = ?  WHERE id = ?;";
-
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
@@ -235,7 +188,6 @@ public class UserPostgresDaoImplem implements UserDao {
 
         String sql2 = "UPDATE person p SET cpf = ?, name = ?, address = ?, phone = ?, image = ?  ";
         sql2 += " WHERE p.id = ?;";
-
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql2);
@@ -250,16 +202,13 @@ public class UserPostgresDaoImplem implements UserDao {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
 
     @Override
     public UserModel readByEmail(String email) {
         final String sql = "SELECT * FROM user_model WHERE email = ?;";
-
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, email);
@@ -270,11 +219,8 @@ public class UserPostgresDaoImplem implements UserDao {
                 user.setName(resultSet.getString("name"));
                 user.setPassword(resultSet.getString("password"));
                 logger.log(Level.INFO, "Entidade com email " + email + " encontrada com sucesso");
-
                 return user;
-
             }
-
             return null;
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -285,7 +231,6 @@ public class UserPostgresDaoImplem implements UserDao {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
         }
     }
 
@@ -293,12 +238,9 @@ public class UserPostgresDaoImplem implements UserDao {
     @Override
     public boolean updatePassword(int id, String newPassword) {
         String sql = "UPDATE user_model SET password = ? WHERE id = ?;";
-
-
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
-
             preparedStatement.setString(1, newPassword);
             preparedStatement.setInt(2, id);
             preparedStatement.execute();
@@ -312,10 +254,8 @@ public class UserPostgresDaoImplem implements UserDao {
     @Override
     public UserModel authenticate(AuthenticationDto authenticationDto) {
         final String sql = "SELECT * FROM \"user\" WHERE email = ? AND password = ?;";
-
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
-
         try {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, authenticationDto.getEmail());
@@ -328,11 +268,8 @@ public class UserPostgresDaoImplem implements UserDao {
                 user.setPassword(resultSet.getString("password"));
                 user.setAccess_type(resultSet.getString("access_type"));
                 logger.log(Level.INFO, "Entidade com email " + authenticationDto.getEmail() + " encontrada com sucesso");
-
                 return user;
-
             }
-
             return null;
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -343,8 +280,6 @@ public class UserPostgresDaoImplem implements UserDao {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
         }
     }
-
 }

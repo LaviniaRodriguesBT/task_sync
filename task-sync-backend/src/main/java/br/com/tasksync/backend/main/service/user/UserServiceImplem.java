@@ -1,9 +1,7 @@
 package br.com.tasksync.backend.main.service.user;
 
-import br.com.tasksync.backend.main.domain.TaskModel;
 import br.com.tasksync.backend.main.domain.UserModel;
 import br.com.tasksync.backend.main.dto.AuthenticationDto;
-import br.com.tasksync.backend.main.port.dao.task.TaskDao;
 import br.com.tasksync.backend.main.port.dao.user.UserDao;
 import br.com.tasksync.backend.main.port.service.user.UserService;
 import org.springframework.stereotype.Service;
@@ -19,24 +17,21 @@ public class UserServiceImplem implements UserService {
         this.userDao = userDao;
     }
 
-
-
     @Override
     public int create(UserModel entity) {
-        if(entity == null){
+        if (entity == null) {
             return 0;
         }
-        if(
+        if (
                 entity.getName().isEmpty() ||
-                entity.getEmail().isEmpty() ||
-                entity.getPassword().isEmpty() ||
-                entity.getCpf().isEmpty() ||
-                entity.getPhone().isEmpty() ||
-                entity.getAddress().isEmpty()
-        ){
+                        entity.getEmail().isEmpty() ||
+                        entity.getPassword().isEmpty() ||
+                        entity.getCpf().isEmpty() ||
+                        entity.getPhone().isEmpty() ||
+                        entity.getAddress().isEmpty()
+        ) {
             return 0;
         }
-
         int id = userDao.add(entity);
         System.out.println("Criacao de uma nova pessoa feita com sucesso");
         return id;
@@ -44,23 +39,21 @@ public class UserServiceImplem implements UserService {
 
     @Override
     public void delete(int id) {
-        if(id < 0){
+        if (id < 0) {
             return;
         }
         System.out.println("Chamou o remover uma pessoa por id");
         userDao.remove(id);
-
     }
 
     @Override
     public UserModel findById(int id) {
-        if(id < 0){
+        if (id < 0) {
             return null;
         }
         UserModel user = userDao.readyById(id);
         System.out.println("Chamando a pessoa por id");
         return user;
-
     }
 
     @Override
@@ -73,20 +66,18 @@ public class UserServiceImplem implements UserService {
     @Override
     public void update(int id, UserModel entity) {
         UserModel userModel = findById(id);
-        if(userModel == null){
+        if (userModel == null) {
             return;
         }
         userDao.updateInformation(id, entity);
-
     }
 
     @Override
     public UserModel authenticate(AuthenticationDto authenticationDto) {
-        if(authenticationDto.getPassword() == null){
-
+        if (authenticationDto.getPassword() == null) {
             return null;
         }
-        if (authenticationDto.getPassword().isEmpty()){
+        if (authenticationDto.getPassword().isEmpty()) {
             return null;
         }
         return userDao.authenticate((authenticationDto));

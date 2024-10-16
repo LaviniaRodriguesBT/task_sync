@@ -4,11 +4,7 @@ import br.com.tasksync.backend.main.domain.UserModel;
 import br.com.tasksync.backend.main.dto.AuthenticationDto;
 import br.com.tasksync.backend.main.port.dao.crud.CrudDao;
 
-import java.net.Authenticator;
-
 public interface UserDao extends CrudDao<UserModel> {
-
-
     UserModel readByEmail(String email);
 
     boolean updatePassword(int id, String newPassword);

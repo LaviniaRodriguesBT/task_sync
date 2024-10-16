@@ -1,6 +1,5 @@
 package br.com.tasksync.backend.main.controller;
 
-
 import br.com.tasksync.backend.main.domain.EventModel;
 import br.com.tasksync.backend.main.port.service.event.EventService;
 import org.springframework.http.ResponseEntity;
@@ -10,13 +9,9 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
-//@RestController indica que os metodos irao responder a requisições HTTPs
-//@RequestMapping define o caminho para qual todas as requições para o o endereço "api/event" deveão executar alguns dos metodos da classe
 @RestController
 @RequestMapping("/api/event")
 
-//Classe responsavel por traduz as requições HTTP de seus metodos (GET,POST,PUT,DELETE)
-// E atraves dessa traducao, retornar as respostas adequadas
 public class EventRestController {
 
     private final EventService eventService;
@@ -61,13 +56,10 @@ public class EventRestController {
         return ResponseEntity.noContent().build();
     }
 
-
     @CrossOrigin
     @GetMapping("/user/{id}")
     public ResponseEntity<List<EventModel>> getEntitiesByUserId(@PathVariable final int id) {
         List<EventModel> event = eventService.getEntitiesByUserId(id);
         return ResponseEntity.ok().body(event);
     }
-
-
 }

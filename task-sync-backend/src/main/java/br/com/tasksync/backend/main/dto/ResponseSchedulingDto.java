@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 @Data
@@ -22,7 +21,6 @@ public class ResponseSchedulingDto {
     private LocalTime end_time;
     private LocalDate date;
     private String status;
-
 
 
 }

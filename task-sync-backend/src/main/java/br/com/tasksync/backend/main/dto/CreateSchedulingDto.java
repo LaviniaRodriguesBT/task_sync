@@ -19,5 +19,4 @@ public class CreateSchedulingDto {
     private LocalDate date;
     private String status;
     private double value;
-
 }

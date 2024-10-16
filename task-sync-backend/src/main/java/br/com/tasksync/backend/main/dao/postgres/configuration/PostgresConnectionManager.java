@@ -1,6 +1,5 @@
 package br.com.tasksync.backend.main.dao.postgres.configuration;
 
-
 import br.com.tasksync.backend.main.port.service.util.ResourceFileService;
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
@@ -20,14 +19,11 @@ import java.sql.*;
 @Profile("prod")
 public class PostgresConnectionManager {
 
-
     @Value("${spring.datasource.base.url}")
     private String databaseBaseUrl;
 
-
     @Value("${spring.datasource.url}")
     private String databaseUrl;
-
 
     @Value("${spring.datasource.username}")
     private String databaseUserName;
@@ -48,10 +44,8 @@ public class PostgresConnectionManager {
 
         final Connection connection = build.getConnection();
         createDatabaseIfNotExists(connection);
-
         return build;
     }
-
 
     @Bean
     @DependsOn("dataSource")
@@ -61,7 +55,6 @@ public class PostgresConnectionManager {
         hikariConfig.setUsername(databaseUserName);
         hikariConfig.setPassword(databasePassword);
         return new HikariDataSource(hikariConfig).getConnection();
-
     }
 
     @Autowired
@@ -71,29 +64,20 @@ public class PostgresConnectionManager {
     @DependsOn("getConnection")
     public boolean createTableAndInsertData() throws SQLException, IOException {
         Connection getConnection = getConnection();
-
         final String basePath = "task-sync-db-scripts";
         final String createTable = resourceFileService.
                 read(basePath + "/create-tables.sql");
         PreparedStatement createStatement = getConnection.prepareStatement(createTable);
         createStatement.executeUpdate();
         createStatement.close();
-
-
         final String insertData = resourceFileService.read(basePath + "/insert-data.sql");
-
         PreparedStatement insertStatement = getConnection.prepareStatement(insertData);
         insertStatement.execute();
         insertStatement.close();
-
-
         return true;
-
-
     }
 
     private void createDatabaseIfNotExists(Connection connection) throws SQLException {
-
         try {
             final Statement statement = connection.createStatement();
             String sql = "SELECT COUNT(*) AS dbs ";
@@ -110,12 +94,9 @@ public class PostgresConnectionManager {
                 PreparedStatement preparedStatement = connection.prepareStatement(createDatabaseSql);
                 preparedStatement.executeUpdate();
                 preparedStatement.close();
-
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-
-
     }
 }

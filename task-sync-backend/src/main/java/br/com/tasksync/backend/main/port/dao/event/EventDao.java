@@ -6,6 +6,6 @@ import br.com.tasksync.backend.main.port.dao.crud.CrudDao;
 import java.util.List;
 
 public interface EventDao extends CrudDao<EventModel> {
-    public List<EventModel> getEntitiesByUserId(final  int id);
+    public List<EventModel> getEntitiesByUserId(final int id);
 
 }

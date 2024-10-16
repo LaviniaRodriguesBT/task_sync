@@ -16,7 +16,6 @@ public class TaskServiceImplem implements TaskService {
         this.taskDao = taskDao;
     }
 
-
     @Override
     public int create(TaskModel entity) {
         if (entity == null) {
@@ -25,7 +24,6 @@ public class TaskServiceImplem implements TaskService {
         if (entity.getName().isEmpty()) {
             return 0;
         }
-
         int id = taskDao.add(entity);
         System.out.println("Criacao de uma nova atividade feita com sucesso");
         return id;
@@ -38,7 +36,6 @@ public class TaskServiceImplem implements TaskService {
         }
         System.out.println("Chamou o remover atividade por id");
         taskDao.remove(id);
-
     }
 
     @Override
@@ -65,6 +62,5 @@ public class TaskServiceImplem implements TaskService {
             return;
         }
         taskDao.updateInformation(id, entity);
-
     }
 }

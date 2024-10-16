@@ -27,7 +27,6 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
         PreparedStatement preparedStatement;
         ResultSet resultSet;
         try {
-            //connection.setAutoCommit(false); deixado automatico, pois estava dando prolema apos a criacao
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setTime(1, Time.valueOf(entity.getStart_time()));
             preparedStatement.setTime(2, Time.valueOf(entity.getEnd_time()));
@@ -43,13 +42,10 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
             } else {
                 throw new RuntimeException();
             }
-
             resultSet.close();
             preparedStatement.close();
-            //connection.commit(); deixado automatico, pois estava dando prolema apos a criacao
             resultSet.close();
             preparedStatement.close();
-
         } catch (SQLException e) {
             try {
                 connection.rollback();
@@ -74,7 +70,6 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
         } catch (Exception e) {
             throw new RuntimeException();
         }
-
     }
 
 
@@ -96,13 +91,9 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
                 scheduling.setStatus(resultSet.getString("status"));
                 scheduling.setActivity_id(resultSet.getInt("activity_id"));
                 scheduling.setContract_id(resultSet.getInt("contract_id"));
-
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
                 return scheduling;
-
             }
-
-
             return null;
         } catch (Exception e) {
             throw new RuntimeException(e);
@@ -113,20 +104,17 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
         }
     }
 
     @Override
     public List<SchedulingModel> readAll() {
-
         final List<SchedulingModel> schedulings = new ArrayList<>();
         final String sql = "SELECT * FROM scheduling;";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                // tem que ser conforme o banco de dados
                 final SchedulingModel scheduling = new SchedulingModel();
                 scheduling.setId(resultSet.getInt("id"));
                 scheduling.setDate(resultSet.getDate("date").toLocalDate());
@@ -135,8 +123,6 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
                 scheduling.setStatus(resultSet.getString("status"));
                 scheduling.setActivity_id(resultSet.getInt("activity_id"));
                 scheduling.setContract_id(resultSet.getInt("contract_id"));
-
-
                 schedulings.add(scheduling);
             }
             resultSet.close();
@@ -153,14 +139,11 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
-
-
             preparedStatement.setTime(1, Time.valueOf(entity.getStart_time()));
             preparedStatement.setTime(2, Time.valueOf(entity.getEnd_time()));
             preparedStatement.setDate(3, Date.valueOf(entity.getDate()));
             preparedStatement.setString(4, entity.getStatus());
             preparedStatement.setInt(5, entity.getId());
-
             preparedStatement.execute();
             preparedStatement.close();
         } catch (Exception e) {
@@ -176,12 +159,10 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
                 " Inner join contract c on c.id = s.contract_id " +
                 " where c.event_id = ?;";
         try {
-
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                // tem que ser conforme o banco de dados
                 final SchedulingModel scheduling = new SchedulingModel();
                 scheduling.setId(resultSet.getInt("id"));
                 scheduling.setDate(resultSet.getDate("date").toLocalDate());
@@ -190,8 +171,6 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
                 scheduling.setStatus(resultSet.getString("status"));
                 scheduling.setActivity_id(resultSet.getInt("activity_id"));
                 scheduling.setContract_id(resultSet.getInt("contract_id"));
-
-
                 schedulings.add(scheduling);
             }
             resultSet.close();
@@ -228,13 +207,11 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
                 " and s.start_time = ?" +
                 " and s.end_time = ?" +
                 " and s.date = ?;";
-
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setInt(1, userId);
             preparedStatement.setObject(2, startTime, Types.TIME);
             preparedStatement.setObject(3, endTime, Types.TIME);
             preparedStatement.setDate(4, Date.valueOf(date));
-
             return preparedStatement.executeQuery().next();
         } catch (SQLException e) {
             throw new RuntimeException(e);

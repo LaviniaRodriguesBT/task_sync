@@ -15,10 +15,8 @@ import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.sql.Connection;
 
-// Usar os perfis (dev/prod/fake) de acordo com a omplementacao correta
 @Configuration
 public class AppConfiguration {
-
 
     @Bean
     @Profile("dev")

@@ -9,13 +9,8 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
-//@RestController indica que os metodos irao responder a requisições HTTPs
-//@RequestMapping define o caminho para qual todas as requições para o o endereço "api/event" deverão executar alguns dos metodos da classe
-
 @RestController
 @RequestMapping("/api/task")
-//Classe responsavel por traduz as requições HTTP de seus metodos (GET,POST,PUT,DELETE)
-// E atraves dessa traducao, retornar as respostas adequadas
 public class TaskRestController {
     private final TaskService taskService;
 

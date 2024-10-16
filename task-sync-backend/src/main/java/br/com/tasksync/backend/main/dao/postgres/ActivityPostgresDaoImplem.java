@@ -1,6 +1,5 @@
 package br.com.tasksync.backend.main.dao.postgres;
 
-
 import br.com.tasksync.backend.main.domain.ActivityModel;
 import br.com.tasksync.backend.main.port.dao.activity.ActivityDao;
 
@@ -31,7 +30,6 @@ public class ActivityPostgresDaoImplem implements ActivityDao {
         ResultSet resultSet;
 
         try {
-            //connection.setAutoCommit(false);deixado automatico, pois estava dando prolema apos a criacao
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setDouble(1, entity.getValue());
             preparedStatement.setInt(2, entity.getEvent_id());
@@ -46,7 +44,6 @@ public class ActivityPostgresDaoImplem implements ActivityDao {
             }
             resultSet.close();
             preparedStatement.close();
-            //connection.commit();deixado automatico, pois estava dando prolema apos a criacao
             resultSet.close();
             preparedStatement.close();
 
@@ -74,7 +71,6 @@ public class ActivityPostgresDaoImplem implements ActivityDao {
         } catch (Exception e) {
             throw new RuntimeException();
         }
-
     }
 
     @Override
@@ -106,7 +102,6 @@ public class ActivityPostgresDaoImplem implements ActivityDao {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
         }
     }
 
@@ -115,19 +110,14 @@ public class ActivityPostgresDaoImplem implements ActivityDao {
 
         final List<ActivityModel> activitys = new ArrayList<>();
         final String sql = "SELECT * FROM activity;";
-
-
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 final ActivityModel activity = new ActivityModel();
-
                 activity.setId(resultSet.getInt("id"));
                 activity.setValue(resultSet.getDouble("value"));
-
                 activitys.add(activity);
-
             }
             resultSet.close();
             preparedStatement.close();
@@ -140,7 +130,6 @@ public class ActivityPostgresDaoImplem implements ActivityDao {
     @Override
     public void updateInformation(int id, ActivityModel entity) {
         String sql = "UPDATE activity SET value = ?, task_id = ?, event_id = ? WHERE id = ?;";
-
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
@@ -153,8 +142,5 @@ public class ActivityPostgresDaoImplem implements ActivityDao {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
-
-
 }

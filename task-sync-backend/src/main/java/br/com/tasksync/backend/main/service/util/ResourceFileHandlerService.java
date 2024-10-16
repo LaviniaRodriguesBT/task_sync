@@ -15,19 +15,16 @@ public class ResourceFileHandlerService implements ResourceFileService {
     public String read(String resourcePath) throws IOException {
         final ClassLoader classLoader = ResourceFileService.class.getClassLoader();
         InputStream inputStream = classLoader.getResourceAsStream(resourcePath);
-
-        if(inputStream == null){
+        if (inputStream == null) {
             throw new RuntimeException("Arquivo nao encontrado");
         }
-
         final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
         String content = "";
         String line;
-        while((line = bufferedReader.readLine()) != null){
+        while ((line = bufferedReader.readLine()) != null) {
             System.out.println(line);
             content += line;
         }
-
         return content;
     }
 }

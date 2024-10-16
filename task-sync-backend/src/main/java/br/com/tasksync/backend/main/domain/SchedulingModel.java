@@ -18,5 +18,4 @@ public class SchedulingModel {
     private LocalTime end_time;
     private LocalDate date;
     private String status;
-
 }

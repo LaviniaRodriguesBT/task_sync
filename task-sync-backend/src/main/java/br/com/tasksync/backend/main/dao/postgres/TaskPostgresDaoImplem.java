@@ -26,19 +26,12 @@ public class TaskPostgresDaoImplem implements TaskDao {
 
         String sql = "INSERT INTO task (taskname) ";
         sql += " VALUES(?);";
-
         PreparedStatement preparedStatement;
         ResultSet resultSet;
-
         try {
-            //connection.setAutoCommit(false);deixado automatico, pois estava dando prolema apos a criacao
-
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
-
             preparedStatement.setString(1, entity.getName());
-
             preparedStatement.execute();
-
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
                 final int id = resultSet.getInt(1);
@@ -46,13 +39,8 @@ public class TaskPostgresDaoImplem implements TaskDao {
             } else {
                 throw new RuntimeException();
             }
-
-            //connection.commit(); deixado automatico, pois estava dando prolema apos a criacao
-
             resultSet.close();
             preparedStatement.close();
-
-
         } catch (SQLException e) {
             try {
                 connection.rollback();
@@ -77,7 +65,6 @@ public class TaskPostgresDaoImplem implements TaskDao {
         } catch (Exception e) {
             throw new RuntimeException();
         }
-
     }
 
     @Override
@@ -95,7 +82,6 @@ public class TaskPostgresDaoImplem implements TaskDao {
                 task.setName(resultSet.getString("taskname"));
                 logger.log(Level.INFO, "Entidade com id " + id + "encontrada com sucesso");
                 return task;
-
             }
             return null;
         } catch (Exception e) {
@@ -107,28 +93,21 @@ public class TaskPostgresDaoImplem implements TaskDao {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
-
         }
     }
 
     @Override
     public List<TaskModel> readAll() {
-
         final List<TaskModel> tasks = new ArrayList<>();
         final String sql = "SELECT * FROM task;";
-
-
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 final TaskModel task = new TaskModel();
-
                 task.setId(resultSet.getInt("id"));
                 task.setName(resultSet.getString("taskname"));
-
                 tasks.add(task);
-
             }
             resultSet.close();
             preparedStatement.close();
@@ -141,7 +120,6 @@ public class TaskPostgresDaoImplem implements TaskDao {
     @Override
     public void updateInformation(int id, TaskModel entity) {
         String sql = "UPDATE task SET taskname = ? WHERE id = ?;";
-
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
@@ -152,8 +130,5 @@ public class TaskPostgresDaoImplem implements TaskDao {
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-
     }
-
-
 }

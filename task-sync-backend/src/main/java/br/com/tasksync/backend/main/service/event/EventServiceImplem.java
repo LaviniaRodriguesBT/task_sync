@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 public class EventServiceImplem implements EventService {
 
@@ -22,22 +21,15 @@ public class EventServiceImplem implements EventService {
         this.userDao = userDao;
     }
 
-
     @Override
     public int create(EventModel entity) {
         if (entity == null) {
             return 0;
         }
-        if (
-                entity.getName().isEmpty() ||
-                        entity.getCode().isEmpty() ||
-                        entity.getDescription().isEmpty() ||
-                        entity.getBusiness().isEmpty()
-//                entity.getDate().isEmpty()
+        if (entity.getName().isEmpty() || entity.getCode().isEmpty() || entity.getDescription().isEmpty() || entity.getBusiness().isEmpty()
         ) {
             return 0;
         }
-
         int id = eventDao.add(entity);
         System.out.println("Criacao de um novo evento feito com sucesso");
         return id;
@@ -50,7 +42,6 @@ public class EventServiceImplem implements EventService {
         }
         System.out.println("Chamou o remover um evento por id");
         eventDao.remove(id);
-
     }
 
     @Override
@@ -61,7 +52,6 @@ public class EventServiceImplem implements EventService {
         EventModel event = eventDao.readyById(id);
         System.out.println("Chamando o evento por id");
         return event;
-
     }
 
     @Override
@@ -78,7 +68,6 @@ public class EventServiceImplem implements EventService {
             return;
         }
         eventDao.updateInformation(id, entity);
-
     }
 
     @Override
@@ -90,7 +79,6 @@ public class EventServiceImplem implements EventService {
         if (userModel.getAccess_type().equals("Administrador")) {
             return findAll();
         }
-
         return eventDao.getEntitiesByUserId(userModel.getId());
 
     }
