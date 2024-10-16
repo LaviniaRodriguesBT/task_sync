@@ -53,6 +53,19 @@ public class SchedulingServiceImplem implements SchedulingService {
         return 0;
     }
 
+
+    @Override
+    public boolean ifExistScheduling(CreateSchedulingDto data) {
+        // Usando o repositório para verificar se já existe um agendamento com os mesmos valores
+        return schedulingDao.existsByEventIdAndUserIdAndTaskIdAndStartTimeAndEndTime(
+                data.getUser_id(),
+                data.getStart_time(),
+                data.getEnd_time(),
+                data.getDate()
+        );
+    }
+
+
     @Override
     public void delete(int id) {
         if (id < 0) {
@@ -103,14 +116,22 @@ public class SchedulingServiceImplem implements SchedulingService {
                 entity.getUser_id() <= 0 ||
                 entity.getTask_id() <= 0 ||
 
-               entity.getValue() <= 0 ||
+                entity.getValue() <= 0 ||
                 entity.getStatus().isEmpty()) {
+            return 0;
+        }
+
+        boolean responseExist = ifExistScheduling(entity);
+
+
+        if (responseExist) {
+            System.out.println("nao consegui criar o cronograma");
             return 0;
         }
 
         int activityId = activityDao.add(new ActivityModel(entity.getValue(), entity.getTask_id(), entity.getEvent_id()));
 
-        int cotractId = contractDao.add(new ContractModel(LocalDate.now() , entity.getUser_id(), entity.getEvent_id()));
+        int cotractId = contractDao.add(new ContractModel(entity.getUser_id(), entity.getEvent_id()));
 
         SchedulingModel schedulingModel = new SchedulingModel();
 
@@ -119,7 +140,6 @@ public class SchedulingServiceImplem implements SchedulingService {
 
         schedulingModel.setDate(entity.getDate());
         schedulingModel.setStatus(entity.getStatus());
-
 
 
         schedulingModel.setContract_id(cotractId);
@@ -136,7 +156,7 @@ public class SchedulingServiceImplem implements SchedulingService {
 
 
         List<SchedulingModel> scheduling = schedulingDao.readAll();
-        for (SchedulingModel item : scheduling){
+        for (SchedulingModel item : scheduling) {
             ContractModel contractModel = contractDao.readyById(item.getContract_id());
             ActivityModel activityModel = activityDao.readyById(item.getActivity_id());
 
@@ -161,7 +181,7 @@ public class SchedulingServiceImplem implements SchedulingService {
         List<ResponseSchedulingDto> responseSchedulingDtos = new ArrayList<>();
 
         List<SchedulingModel> scheduling = schedulingDao.readByEventId(id);
-        for (SchedulingModel item : scheduling){
+        for (SchedulingModel item : scheduling) {
             ContractModel contractModel = contractDao.readyById(item.getContract_id());
             ActivityModel activityModel = activityDao.readyById(item.getActivity_id());
 
@@ -185,18 +205,18 @@ public class SchedulingServiceImplem implements SchedulingService {
 
         SchedulingModel scheduling = schedulingDao.readyById(id);
 
-            ContractModel contractModel = contractDao.readyById(scheduling.getContract_id());
-            ActivityModel activityModel = activityDao.readyById(scheduling.getActivity_id());
-            return new ResponseSchedulingDto(
-                    scheduling.getId(),
-                    eventDao.readyById(contractModel.getEvent_id()),
-                    userDao.readyById(contractModel.getUser_id()),
-                    taskDao.readyById(activityModel.getTask_id()),
-                    activityModel.getValue(),
-                    scheduling.getStart_time(),
-                    scheduling.getEnd_time(),
-                    scheduling.getDate(),
-                    scheduling.getStatus());
+        ContractModel contractModel = contractDao.readyById(scheduling.getContract_id());
+        ActivityModel activityModel = activityDao.readyById(scheduling.getActivity_id());
+        return new ResponseSchedulingDto(
+                scheduling.getId(),
+                eventDao.readyById(contractModel.getEvent_id()),
+                userDao.readyById(contractModel.getUser_id()),
+                taskDao.readyById(activityModel.getTask_id()),
+                activityModel.getValue(),
+                scheduling.getStart_time(),
+                scheduling.getEnd_time(),
+                scheduling.getDate(),
+                scheduling.getStatus());
 
 
     }
@@ -228,7 +248,6 @@ public class SchedulingServiceImplem implements SchedulingService {
 
         schedulingDao.updateInformation(id, schedulingModel);
     }
-
 
 
 }

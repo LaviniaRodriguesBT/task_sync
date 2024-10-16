@@ -16,5 +16,5 @@ public interface SchedulingService extends CrudService<SchedulingModel> {
     ResponseSchedulingDto findByIdSchedulingUser(final int id);
     void updateScheduling(final int id, final CreateSchedulingDto entity);
 
-
+    boolean ifExistScheduling(CreateSchedulingDto data);
 }

@@ -4,6 +4,8 @@ import br.com.tasksync.backend.main.domain.SchedulingModel;
 import br.com.tasksync.backend.main.port.dao.scheduling.SchedulingDao;
 import org.springframework.jdbc.core.JdbcTemplate;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.List;
 
 // Classe responsavel por realizar a conexao entre o banco de dados
@@ -50,4 +52,11 @@ public class SchedulingH2DaoImplem implements SchedulingDao {
     public List<SchedulingModel> readByEventId(int id) {
         return List.of();
     }
+
+    @Override
+    public boolean existsByEventIdAndUserIdAndTaskIdAndStartTimeAndEndTime(int userId, LocalTime startTime, LocalTime endTime, LocalDate date) {
+        return false;
+    }
+
+
 }
