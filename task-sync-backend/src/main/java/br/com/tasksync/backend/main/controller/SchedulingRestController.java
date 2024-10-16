@@ -7,6 +7,7 @@ import br.com.tasksync.backend.main.domain.SchedulingModel;
 import br.com.tasksync.backend.main.dto.CreateSchedulingDto;
 import br.com.tasksync.backend.main.dto.ResponseSchedulingDto;
 import br.com.tasksync.backend.main.port.service.scheduling.SchedulingService;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -41,12 +42,27 @@ public class SchedulingRestController {
 
     @CrossOrigin
     @PostMapping()
-    public ResponseEntity<SchedulingModel> createEntity(@RequestBody final CreateSchedulingDto data) {
+    public ResponseEntity<Integer> createEntity(@RequestBody final CreateSchedulingDto data) {
         int id = schedulingService.create(data);
-        final URI uri = ServletUriComponentsBuilder
-                .fromCurrentRequestUri().path("{id}").buildAndExpand(id).toUri();
-        return ResponseEntity.created(uri).build();
+        return ResponseEntity.ok(id);
     }
+
+
+//    @CrossOrigin
+//    @PostMapping()
+//    public ResponseEntity<SchedulingModel> createEntity(@RequestBody final CreateSchedulingDto data) {
+//        boolean exists = schedulingService.ifExistScheduling(data);
+//        if (exists) {
+//            System.out.println("nao consegui criar o cronograma");
+//            return null;
+//        } else {
+//            int id = schedulingService.create(data);
+//            System.out.println("cheguei aqui");
+//            final URI uri = ServletUriComponentsBuilder.fromCurrentRequestUri().path("/{id}").buildAndExpand(id).toUri();
+//            return ResponseEntity.created(uri).build();
+//        }
+//    }
+
 
     @CrossOrigin
     @PutMapping("/{id}")
