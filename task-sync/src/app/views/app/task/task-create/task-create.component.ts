@@ -4,6 +4,7 @@ import { RouterModule, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { TaskCreateService } from '../../../../services/task/task-create.service';
 import { Task } from "../../../../domain/model/task.model";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'task-sync-task-create',
@@ -12,6 +13,7 @@ import { Task } from "../../../../domain/model/task.model";
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
+    CommonModule
   ],
   templateUrl: './task-create.component.html',
   styleUrl: './task-create.component.css'
@@ -21,7 +23,7 @@ export class TaskCreateComponent implements OnInit {
   form!: FormGroup;
 
   nameMinLength: number = 3;
-  nameMaxLength: number = 20;
+  nameMaxLength: number = 200;
 
 
   constructor(
