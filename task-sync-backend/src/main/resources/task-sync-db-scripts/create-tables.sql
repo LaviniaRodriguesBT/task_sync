@@ -57,10 +57,8 @@ create table activity (
 create table contract (
     id serial primary key,
 
-    signature_date timestamp without time zone not null,
     user_id integer not null references "user"(id) on update cascade on delete cascade,
-    event_id integer not null references event(id) on update cascade on delete cascade,
-    unique (user_id, event_id)
+    event_id integer not null references event(id) on update cascade on delete cascade
 
 );
 
@@ -72,5 +70,5 @@ create table scheduling (
     status character varying(50) not null check (status in ('Em aberto', 'Em andamento', 'Finalizada')) default 'Em aberto',
     activity_id integer not null references activity(id) on update cascade on delete cascade,
     contract_id integer not null references contract(id) on update cascade on delete cascade,
-    unique (date, contract_id, activity_id)
+    unique (date, contract_id, activity_id, start_time, end_time)
 );
