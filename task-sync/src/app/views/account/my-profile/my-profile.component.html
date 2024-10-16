@@ -24,18 +24,13 @@
 
 <div class="article">
     <h1>Meu perfil</h1>
-    <h2>Dados cadastrais</h2>
     <hr>
 
     <form class="form">
         <div class="form-row">
             <div class="form-group col-12 mt-2">
                 <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" placeholder="Email" readonly>
-            </div>
-            <div class="form-group col-12 mt-2">
-                <label for="fullName">Nome completo</label>
-                <input type="text" class="form-control mb-2" id="fullName" placeholder="Nome completo" required="">
+                <input type="text" class="form-control" id="email" [value]="email" readonly>
             </div>
         </div>
     </form>

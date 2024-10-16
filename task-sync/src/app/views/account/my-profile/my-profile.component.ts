@@ -10,8 +10,10 @@ import { Component } from '@angular/core';
 })
 export class MyProfileComponent {
   accessType: string | null = null;
+  access_type: string | null = '';
+  email: string | null = '';
 
   ngOnInit() {
-    this.accessType = localStorage.getItem('accessType');
+    this.email = localStorage.getItem('email');
   }
 }
