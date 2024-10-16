@@ -6,6 +6,7 @@ import { EventUpdateService } from '../../../../services/event/event-update.serv
 import { EventReadService } from '../../../../services/event/event-read.service';
 import { Event } from "../../../../domain/model/event.model";
 import { MatSelectModule } from '@angular/material/select';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'task-sync-event-edit',
@@ -14,7 +15,8 @@ import { MatSelectModule } from '@angular/material/select';
     FormsModule,
     ReactiveFormsModule,
     RouterModule,
-    MatSelectModule
+    MatSelectModule,
+    CommonModule
   ],
   templateUrl: './event-edit.component.html',
   styleUrl: './event-edit.component.css'
@@ -28,9 +30,9 @@ export class EventEditComponent implements OnInit {
   form!: FormGroup;
 
   nameMinLength: number = 3;
-  nameMaxLength: number = 10;
-  priceMinValue: number = 1;
-  priceMaxValue: number = 500;
+  nameMaxLength: number = 200;
+  descriptionMinValue: number = 3;
+  descriptionMaxValue: number = 200;
 
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
@@ -48,14 +50,13 @@ export class EventEditComponent implements OnInit {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-      code: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(this.nameMaxLength)]],
-      name: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-      description: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-      business: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-      start_time: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-      end_time: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-      date: ['', [Validators.required, Validators.min(this.priceMinValue), Validators.max(this.priceMaxValue)]],
-    });
+      code: ['', [Validators.required, Validators.maxLength(20)]],
+      name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(200)]],
+      description: ['', [Validators.required, Validators.minLength(this.descriptionMinValue), Validators.maxLength(200)]],
+      business: ['', [Validators.required, Validators.maxLength(200)]],
+      date: ['', [Validators.required]],
+      start_time: ['', [Validators.required]],
+      end_time: ['', [Validators.required]]    });
   }
 
   ngOnInit(): void {
@@ -137,9 +138,7 @@ export class EventEditComponent implements OnInit {
   }
 
   validateFields() {
-    return this.form.controls['name'].valid
-      && this.form.controls['description']
-      .valid && this.form.controls['date'].valid;
+    return this.form.valid;
   }
 
 }
