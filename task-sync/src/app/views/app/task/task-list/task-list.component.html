@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -12,24 +11,19 @@
         <li class="breadcrumb-item active" aria-current="page">Lista</li>
     </ol>
 </nav>
-
 <h1>Lista de Atividades</h1>
-
 <div class="d-flex justify-content-between">
     <a class="btn btn-back arrow-back" href="/" *ngIf= "accessType == 'Administrador'">
         <span class="material-icons" >arrow_back</span>
     </a> 
-
     <a class="btn btn-create" routerLink="/task/create" *ngIf= "accessType == 'Administrador'">
         <fa-icon [icon]="faAdd" title="Adicionar nova atividade"></fa-icon>
         Cadastrar atividade
     </a>
-
     <div class="search-box">
         <mat-icon class="search-icon">search</mat-icon>
         <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
     </div>
-    
     <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
     </a>
@@ -38,13 +32,11 @@
     </a>
 </div>
 <hr>
-
 <div class="card-container">
     <ng-container *ngFor="let task of tasks; let i = index">
         <div class="card">
             <div class="card-header">
             </div>
-
             <div class="card-body">
                 <table class="table body-text-card">
                     <tbody>
@@ -68,7 +60,6 @@
                         <div class="modal-header">
                             <h4 class="modal-title" id="modal-basic-title">Confirmação de exclusão da atividade {{
                                 task.name}}</h4>
-
                             <button type="button" class="close" aria-label="Close" (click)="closeMyModal()">
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -83,13 +74,11 @@
                             <button type="button" class="btn btn-outline-dark" (click)="closeMyModal()">Fechar</button>
                         </div>
                     </ng-template>
-    
                 </div>
             </div>
         </div>
     </ng-container>
 </div>
-
 <div class="pagination">
     <mat-paginator 
         [length]="length" 

@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -13,23 +12,18 @@
     </ol>
 </nav>
 <h1>Lista de Pessoas</h1>
-
-
 <div class="d-flex justify-content-between">
-    <a class="btn btn-back arrow-back" href="/" *ngIf= "accessType == 'Administrador'">
+    <a class="btn btn-back arrow-back" href="/" *ngIf="accessType == 'Administrador'">
         <span class="material-icons">arrow_back</span>
     </a>
-
-    <a class="btn btn-create" routerLink="/user/create" *ngIf= "accessType == 'Administrador'">
+    <a class="btn btn-create" routerLink="/user/create" *ngIf="accessType == 'Administrador'">
         <fa-icon [icon]="faAdd" title="Adicionar nova pessoa"></fa-icon>
         Cadastrar pessoa
     </a>
-
     <div class="search-box">
         <mat-icon class="search-icon">search</mat-icon>
         <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
     </div>
-
     <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
     </a>
@@ -38,13 +32,10 @@
     </a>
 </div>
 <hr>
-
 <div class="card-container">
     <ng-container *ngFor="let user of users; let i = index">
         <div class="card">
-            <div class="card-header">
-                <h3>{{ user.name }}</h3>
-            </div>
+            <div class="card-header"></div>
             <div class="user-image">
                 <img src="{{user.image ? user.image : '/assets/img/face.png'}}" alt="Imagem da pessoa">
             </div>
@@ -52,37 +43,23 @@
                 <table class="table body-text-card">
                     <tbody>
                         <tr>
-                            <th scope="row">Email</th>
-                            <td>{{ user.email | slice:0:15}}...</td>
+                            <td><strong>Nome: </strong>{{ user.name | slice:0:10}}...</td>
                         </tr>
                         <tr>
-                            <th scope="row">CPF</th>
-                            <td>{{ user.cpf }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Telefone</th>
-                            <td>{{ user.phone }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Endereço</th>
-                            <td>{{ user.address | slice:0:15}}...</td>
+                            <td><strong>Tel: </strong>{{ user.phone }}</td>
                         </tr>
                     </tbody>
                 </table>
                 <div class="action-buttons">
-                    <!-- <a>
-                        <span class="material-icons color-people" title="Evento">event</span>
-                    </a> -->
-
                     <a *ngIf="accessType === 'Administrador'">
-                        <mat-icon matBadge="{{ user.eventCount || 0 }}" matBadgeColor="primary" title="Eventos cadastrados">
+                        <mat-icon matBadge="{{ user.eventCount || 0 }}" matBadgeColor="primary"
+                            title="Eventos cadastrados">
                             event
                         </mat-icon>
                         <span class="cdk-visually-hidden">
                             Exibe a quantidade de eventos cadastrados para este usuário
                         </span>
                     </a>
-
                     <a routerLink="/user/detail/{{ user.id }}">
                         <span class="material-icons color-detail" title="Informações">info</span>
                     </a>
@@ -94,9 +71,10 @@
                     </a>
                     <ng-template #content let-modal="modal" class="modal">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="modal-basic-title">Confirmação de exclusão do(a) {{user.access_type}} {{
+                            <h4 class="modal-title" id="modal-basic-title">Confirmação de exclusão do(a)
+                                {{user.access_type}} {{
                                 user.name}}</h4>
-                             <button type="button" class="close" aria-label="Close" (click)="closeMyModal()">
+                            <button type="button" class="close" aria-label="Close" (click)="closeMyModal()">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
@@ -115,12 +93,8 @@
         </div>
     </ng-container>
 </div>
-
 <div class="pagination">
-    <mat-paginator 
-        [length]="length" 
-        [pageSize]="pageSize" 
-        [pageSizeOptions]="pageSizeOptions" 
-        (page)="handlePageEvent($event)">       
+    <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+        (page)="handlePageEvent($event)">
     </mat-paginator>
 </div>

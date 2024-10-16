@@ -7,12 +7,10 @@
   flex: 1;
   height: 75%;
 }
-
 .card-caurosel:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
-
 .btn-access {
   margin-left: 20%;
   width: 150px;
@@ -31,23 +29,19 @@
   background-color: white;
   border: 2px solid rgb(52, 52, 202);
 }
-
 .btn-access:hover {
   color: white;
   background-color: rgb(202, 52, 89);
 }
-
 .dashboard {
   padding: 20px;
 }
-
 .status-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-evenly;
 }
-
 .card {
   border: 1px solid #dee2e6;
   border-radius: 5px;
@@ -59,66 +53,53 @@
   background-color: white;
   color: white;
 }
-
 .card h3 {
   margin-bottom: 10px;
 }
-
 .card p {
   font-size: 24px;
   font-weight: bold;
 }
-
 @media (max-width: 768px) {
   .card-caurosel {
     max-width: 100%;
   }
-
   .user-image img {
     width: 50%;
     margin-left: 25%;
   }
-
   .status-cards {
     flex: none;
     flex-direction: column;
     align-items: center;
   }
 }
-
 @media (max-width: 480px) {
   .card-container {
     max-width: 100%;
   }
-
   .card-header {
     font-size: 1rem;
   }
-
   .user-image img {
     width: 70%;
     margin-left: 15%;
   }
-
   .status-cards .card {
     flex: none;
     width: 100%;
     margin-bottom: 10px;
   }
 }
-
 .date-next-event {
   text-align: center;
   margin: 0 0 0 0;
   width: 50%;
   justify-content: center;
-
 }
-
 .name-next-event {
   font-size: small;
 }
-
 .img-next-event {
   display: flex;
   justify-content: space-around;
@@ -126,7 +107,6 @@
   border: 2px solid #ccc;
   border-radius: 5px;
 }
-
 .img-next-event img {
   max-width: 80%;
   height: auto;

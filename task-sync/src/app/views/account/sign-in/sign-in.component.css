@@ -7,18 +7,15 @@
     background-size: cover;
     background-position: center;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'poppins', sans-serif;
 }
-
 .welcome {
     text-align: center;
 }
-
 .welcome h1 {
     font-size: 40px;
     font-family: 'Poppins', sans-serif;
@@ -28,26 +25,22 @@
     margin-left: 25%;
     animation: fadeIn 1.5s ease-in-out;
 }
-
 @keyframes fadeIn {
     0% {
         opacity: 0;
         transform: translateY(-20px);
     }
-
     100% {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
 .container-div {
     background-color: rgb(255, 255, 255);
     padding: 150px;
     border-radius: 35px;
     box-shadow: 0 0 30px 0 rgb(76, 104, 204);
 }
-
 .form-container {
     margin-bottom: 10px;
     position: relative;
@@ -58,19 +51,16 @@
     border-radius: 40px;
     padding: 8px 0 8px 35px;
 }
-
 .image-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 200px;
 }
-
 .slogan{
     position: relative;
     animation: flutuar 6s ease-in-out infinite alternate;
 }
-
 @keyframes flutuar{
     0%{
         top: -50px;
@@ -79,7 +69,6 @@
         top: 30px;
     }
 }
-
 .enter-field {
     background-color: white;
     width: 350px;
@@ -90,14 +79,12 @@
     transition: all 0.3s ease-in-out;
     color: rgb(0, 0, 0);
 }
-
 .contact-icon {
     width: 80px;
     height: 80px;
     margin-bottom: 0%;
     margin-left: 55%;
 }
-
 .text-name {
     font-size: 16px;
     color: #555;
@@ -106,7 +93,6 @@
     padding: 5%;
     font-weight: bold;
 }
-
 .type-user {
     color: #555;
     font-size: 16px;
@@ -114,13 +100,11 @@
     padding: 2%;
     text-align: left;
 }
-
 .input-group {
     position: relative;
     display: flex;
     align-items: center;
 }
-
 .input-group-append {
     position: absolute;
     top: 0;
@@ -135,19 +119,16 @@
     padding: 0 10px;
     cursor: pointer;
 }
-
 .input-group-text {
     font-size: 18px;
     color: #495057;
 }
-
 .image-logo {
     width: 100px;
     height: auto;
     margin-left: 40%;
     animation: fadeIn 1.5s ease-in-out;
 }
-
 .btn-sign-in {
     margin-top: 10%;
     position: relative;
@@ -161,16 +142,13 @@
     pointer-events: none;
     cursor: pointer;
 }
-
 .btn-sign-in:enabled {
     opacity: 1;
     pointer-events: auto;
 }
-
 .btn-sign-in:enabled:hover {
     transform: scale(1.05);
 }
-
 .btn-back {
     display: inline-block;
     text-align: center;
@@ -187,8 +165,6 @@
     text-decoration: none;
     cursor: pointer;
 }
-
-
 footer {
     position: absolute;
     bottom: 0;
@@ -199,12 +175,10 @@ footer {
     text-align: center;
     line-height: 50px;
 }
-
 footer a {
     color: #f0f0f0;
     text-decoration: none;
 }
-
 footer a:hover {
     text-decoration: underline;
 }

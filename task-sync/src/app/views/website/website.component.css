@@ -2,27 +2,22 @@
 html {
     scroll-behavior: smooth;
 }
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
-
 body {
     height: 100vh;
 }
-
 .interface {
     max-width: 1280px;
     margin: auto;
 }
-
 .flex {
     display: flex;
 }
-
 .btn-contato button {
     padding: 10px 40px;
     font-size: 18px;
@@ -34,35 +29,27 @@ body {
     cursor: pointer;
     transition: .2s;
 }
-
 .btn-contato button:hover {
     box-shadow: 0px 0px 8px #5401c9e5;
     transform: scale(1.08);
 }
-
 h2.titulo {
     margin-top: 5%;
     color: #000;
     font-size: 38px;
     text-align: center;
 }
-
 h2.titulo span {
     color: #5301c9;
 }
-
 /* cabeçalho */
-
 .logo {
     width: 180px;
     height: auto;
 }
-
 main {
     padding-top: 100px;
 }
-
-
 header {
     position: fixed;
     width: 100%;
@@ -70,45 +57,36 @@ header {
     background-color: #000;
     padding: 20px 4%;
 }
-
 head {
     padding: 40px 4%;
 }
-
 header>.interface {
     display: flex;
     align-items: center;
     justify-content: space-between;
     height: auto;
 }
-
 header a {
     color: #7d7d7d;
     text-decoration: none;
     display: inline-block;
     transition: .2s;
 }
-
 header a:hover {
     color: #fff;
     transform: scale(1.08);
 }
-
 header nav ul {
     margin: 0;
     padding: 0;
     display: flex;
     list-style: none;
 }
-
 header nav ul li {
     display: inline-block;
     padding: 0 40px;
 }
-
-
 /* MENU MOBILE */
-
 .menu-mobile nav {
     display: none;  
     position: fixed;
@@ -122,25 +100,20 @@ header nav ul li {
     align-items: center;
     overflow: hidden;
   }
-  
   .menu-mobile.active nav {
     display: flex;
     flex-direction: column;
     justify-content: center;
   }
-  
   .btn-close {
     display: none;
   }
-  
   .menu-mobile.active .btn-close {
     display: block;
   }
-  
   .menu-mobile.active .btn-menu {
     display: none;
   }
-
   .overlay-menu{
     background-color: #000000af;
     width: 100%;
@@ -152,55 +125,44 @@ header nav ul li {
     display: none;
 }
 /* TOPO DO SITE */
-
 section.topo-do-site {
     padding: 40px 4%;
     margin-top: 8%;
 }
-
 section.topo-do-site .flex {
     align-items: center;
     justify-content: center;
     gap: 200px;
 }
-
 .topo-do-site .txt-topo-site h1 {
     color: #000;
     font-size: 35px;
     line-height: 40px;
 }
-
 .topo-do-site .txt-topo-site h1 span {
     color: #5301c9;
     font-size: 50px;
 }
-
 .topo-do-site .txt-topo-site p {
     color: #000;
     margin: 40px 0;
 }
-
 .topo-do-site .img-topo-site img {
     position: relative;
     animation: flutuar 4s ease-in-out infinite alternate;
 }
-
 @keyframes flutuar {
     0% {
         top: -50px;
     }
-
     100% {
         top: 30px;
     }
 }
-
 mat-accordion {
     margin-bottom: 20px;
     display: block;
 }
-
-
 .btn-options button {
     border-radius: 50px;
     color: black;
@@ -216,23 +178,17 @@ mat-accordion {
     text-transform: uppercase;
     letter-spacing: .10rem;
 }
-
 .btn-options button:hover {
     background-color: #5301c9;
     color: white;
 }
-
-
 /* FUNCIONALIDADES */
-
 section.funcionalidades {
     padding: 200px 4%;
 }
-
 section.funcionalidades .flex {
     gap: 60px;
 }
-
 .funcionalidades .funcionalidades-box {
     color: #000;
     padding: 40px;
@@ -240,122 +196,95 @@ section.funcionalidades .flex {
     margin-top: 45px;
     transition: .2s;
 }
-
 .funcionalidades .funcionalidades-box:hover {
     transform: scale(1.05);
     box-shadow: 0 0 15px #5401c95e;
 }
-
 .funcionalidades .funcionalidades-box span {
     font-size: 65px;
     color: #5301c9;
 }
-
 .funcionalidades .funcionalidades-box h3 {
     font-size: 26px;
     margin: 15px 0;
 }
-
 /* SOBRE */
-
 section.sobre {
     padding: 40px 4%;
 }
-
 section.sobre .flex {
     align-items: center;
     justify-content: center;
     gap: 200px;
 }
-
 .sobre .txt-sobre p {
     text-align: center;
     color: #000;
     margin: 40px 0;
 }
-
 .sobre .objetivo-missao {
     display: flex;
     justify-content: space-around;
     margin: 40px 0;
 }
-
 .sobre .objetivo,
 .sobre .missao {
     flex: 1;
     margin: 0 20px;
     text-align: left;
 }
-
 .sobre .objetivo h3,
 .sobre .missao h3 {
     text-align: center;
     color: #000;
 }
-
 h2.titulo-sobre {
     color: #000;
     font-size: 40px;
     text-align: center;
 }
-
 h2.titulo-sobre span {
     color: #5301c9;
 }
-
 .sobre .txt-sobre h3 {
     text-decoration: solid;
     text-align: center;
     font-size: 26px;
     margin: 15px 0;
 }
-
-
-
-
 /* CONTATO */
-
 .contato {
     text-align: center;
     padding: 40px 4%;
     margin-top: 10%;
     margin-bottom: 150px;
 }
-
 .contato .titulo {
     font-size: 2rem;
     margin-bottom: 1rem;
     margin-bottom: 4%;
 }
-
 .contato .descricao {
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
-
 .contato p {
     font-size: 1rem;
     margin-bottom: 2%;
 }
-
 .contato .email {
     margin-top: 5%;
     font-size: 1.2rem;
     color: #5301c9;
 }
-
 .contato .email a {
     color: #5301c9;
     text-decoration: none;
 }
-
 .contato .email a:hover {
     text-decoration: underline;
 }
-
-
 /* FOOTER */
-
 .footer-github {
     background-color: #000; 
     padding: 60px 4%;
@@ -365,7 +294,6 @@ h2.titulo-sobre span {
     align-items: center;
     position: relative;
 }
-
 .footer-container {
     display: flex;
     justify-content: center;
@@ -373,7 +301,6 @@ h2.titulo-sobre span {
     width: 100%;
     position: relative;
 }
-
 .footer-links {
     list-style: none;
     display: flex;
@@ -381,52 +308,42 @@ h2.titulo-sobre span {
     margin: 0;
     padding: 0;
 }
-
 .footer-links li a {
     color: #fff;
     text-decoration: none;
     font-size: 1rem;
 }
-
 .footer-links li a:hover {
     text-decoration: underline;
 }
-
 .footer-logo-left, .footer-logo-right {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
 }
-
 .footer-logo-left {
     left: 20px;
 }
-
 .footer-logo-right {
     right: 20px;
 }
-
 .footer-logo {
     width: 100px; 
     height: auto;
 }
-
 .git-img {
     background: none;
     border: none;
     color: #fff;
     cursor: pointer;
 }
-
 .git-img i {
     color: #fff;
     transition: transform 0.3s;
 }
-
 .git-img:hover i {
     transform: scale(1.1);
 } 
-
 .modal {
     display: flex;
     position: fixed;
@@ -440,7 +357,6 @@ h2.titulo-sobre span {
     justify-content: center;
     align-items: center;
 }
-
 .modal-content {
     position: relative;
     background-color: #fff;
@@ -450,12 +366,10 @@ h2.titulo-sobre span {
     max-height: 90%;
     overflow: hidden;
 }
-
 .modal-image {
     max-width: 100%;
     max-height: 80vh;
 }
-
 .close {
     position: absolute;
     top: 10px;
@@ -463,69 +377,53 @@ h2.titulo-sobre span {
     font-size: 24px;
     cursor: pointer;
 }
-
 .arrow {
     display: inline-block;
     margin-left: 10px;
     transition: transform 0.3s ease;
 }
-
 .arrow-up {
     transform: rotate(90deg);
 }
-
 .arrow-down {
     transform: rotate(270deg);
 }
-
 @media screen and (max-width:1020px) {
-
     .flex {
         flex-direction: column;
     }
-
     .menu-desktop,
     .btn-contato {
         display: none;
     }
-
     h2.titulo{
         font-size: 28px;
         line-height: 35px;
         text-align: center;
     }
-
     section.sobre {
         padding: 40px 8%;
     }
-
     h2.titulo-sobre {
         font-size: 28px;
         line-height: 35px;
         text-align: center;
     }
-    
-
     .topo-do-site .txt-topo-site h1 {
         font-size: 30px;
     }
-
     section.topo-do-site .flex {
         gap: 100px;
     }
-
     section.topo-do-site {
         padding: 20px 8%;
     }
-
     .topo-do-site .img-topo-site img {
         width: 100%;
     }
-
     section.funcionalidades {
         padding: 200px 4%;
     }
-
     footer .flex {
         flex-direction: column;
     }
@@ -535,22 +433,18 @@ h2.titulo-sobre span {
         color: white;
         cursor: pointer;
       }
-    
       .menu-desktop {
         display: none; 
       }
-
       .footer-logo-left,
       .footer-logo-right {
           position: static;
           transform: none;
           margin-bottom: 10px;
       }
-  
       .footer-container {
           flex-direction: column;
       }
-  
       .footer-links {
           justify-content: center;
       }

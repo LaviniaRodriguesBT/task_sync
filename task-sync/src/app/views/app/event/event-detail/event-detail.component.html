@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -14,7 +13,6 @@
 </nav>
 <h1>Detalhes do evento</h1>
 <hr>
-
 <form class="form-div">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
@@ -22,20 +20,16 @@
             <input type="text" class="field-name" id="name" placeholder="Nome" readonly
                 value="{{eventInformation?.name}}">
         </div>
-
         <div class="form-group col-12 mt-2">
             <label for="img-event" class="text-name image-label">Imagem do Evento</label>
             <div class="image-upload-container">
                 <input type="file" #imgEvent id="img-event" class="sr-only lenght-image" accept="image/*" (change)="onImageSelected($event)">
-                
                 <div class="image-preview-container">
                     <img #imagePreview id="image-preview" src="{{eventInformation?.image || '/assets/img/upload-photo.png'}}" alt="Pré-visualização da imagem" class="upload-image" title="Imagem do evento">
                 </div>
-                
                 <h5 class="text-recomend-img">A dimensão recomendada é de <strong>1600 x 838</strong>. Formato <strong>JPEG ou PNG de no máximo 2MB</strong>. Imagens com dimensões diferentes serão redimensionadas.</h5>
             </div>
         </div>
-
         <div class="form-group col-12 mt-2">
             <label for="code" class="text-name">Código</label>
             <input type="text" class="field-name" id="code" placeholder="Código" readonly
@@ -68,6 +62,5 @@
             <button class="btn col-2 me-4 btn-back" routerLink="/event/list">Voltar</button>
             <button class="btn col-2 btn-create" routerLink="/event/edit/{{eventInformation?.id}}">Editar</button>
         </div>
-
     </div>
 </form>

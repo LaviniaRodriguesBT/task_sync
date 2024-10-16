@@ -10,7 +10,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
-
 @Component({
   selector: 'user-sync-user-edit',
   standalone: true,
@@ -31,27 +30,18 @@ export class UserEditComponent {
   @ViewChild('imagePreview') imagePreview!: ElementRef<HTMLImageElement>;
   @ViewChild('imgUser') imgUser!: ElementRef<HTMLInputElement>;
   @ViewChild('dateInput') dateInput!: ElementRef<HTMLInputElement>;
-
   userId?: string;
   form!: FormGroup;
-
   nameMinLength: number = 3;
-
   emailMinLength: number = 15;
-
   addressMinLength: number = 10;
-
   passwordMinLength: number = 6;
-
   descriptionMinValue: number = 3;
-
   showPassword: boolean = false
-
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
   showImagePreview: boolean = false;
   image!: string;
-
   constructor(private activatedRoute: ActivatedRoute,
     private userReadService: UserReadService,
     private userUpdateService: UserUpdateService,
@@ -60,7 +50,6 @@ export class UserEditComponent {
     private formBuilder: FormBuilder) {
     this.initializeForm();
   }
-
   initializeForm() {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.minLength(this.emailMinLength), Validators.maxLength(200)]],
@@ -72,13 +61,11 @@ export class UserEditComponent {
       access_type: ['', [Validators.required]],
     });
   }
-
   ngOnInit(): void {
     let userId = this.activatedRoute.snapshot.paramMap.get('id');
     this.userId = userId!;
     this.loadUserById(userId!);
   }
-
   async loadUserById(userId: string) {
     let user = await this.userReadService.findById(userId);
     console.log(user);
@@ -96,43 +83,34 @@ export class UserEditComponent {
       img.style.display = 'block';
     }
   }
-
   validateNumber(event: KeyboardEvent) {
     const charCode = event.keyCode ? event.keyCode : event.which;
     if (charCode < 48 || charCode > 57) {
       event.preventDefault();
     }
   }
-
-
   cpfValidator(control: AbstractControl): { [key: string]: boolean } | null {
     const value = control.value || '';
     const cpfPattern = /^[0-9]{11}$/;
-
     if (!cpfPattern.test(value)) {
       return { invalidCPF: true };
     }
     return null;
   }
-
   phoneValidator(control: AbstractControl): { [key: string]: boolean } | null {
     const value = control.value || '';
     const phonePattern = /^[0-9]{10,11}$/;
-
     if (!phonePattern.test(value)) {
       return { invalidPhone: true };
     }
     return null;
   }
-
-
   onImageSelected(user: any) {
     const file = user.target.files[0];
     if (file) {
       this.selectedImage = file;
       this.fileName = file.name;
       this.showImagePreview = true;
-
       const reader = new FileReader();
       reader.onload = (e) => {
         this.image = reader.result as string;
@@ -148,7 +126,6 @@ export class UserEditComponent {
       this.showImagePreview = false;
     }
   }
-
   openImagePicker() {
     if (this.imgUser) {
       this.imgUser.nativeElement.click();
@@ -156,8 +133,6 @@ export class UserEditComponent {
       console.error('Elemento com ID "img-user" não encontrado.');
     }
   }
-
-
   async update() {
     try {
       const user: User = {
@@ -171,7 +146,6 @@ export class UserEditComponent {
         access_type: this.form.controls['access_type'].value,
         image: this.image,
       }
-
       console.log(user);
       await this.userUpdateService.update(user);
       this.toastrService.success('Atividade atualizada com sucesso!');
@@ -180,11 +154,9 @@ export class UserEditComponent {
       this.toastrService.error('Erro. Atividade não foi atualizada.');
     }
   }
-
   validateFields() {
     return this.form.valid;
   }
-
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
     const passwordField = document.getElementById('password') as HTMLInputElement;

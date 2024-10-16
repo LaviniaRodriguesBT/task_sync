@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,11 +12,9 @@
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css">
-
-    <link rel="stylesheet" href="site-informativo.component.css">
+    <link rel="stylesheet" href="website.component.css">
     <title>Task Sync</title>
 </head>
-
 <body>
     <header>
         <div class="interface">
@@ -26,16 +23,14 @@
                     <img src="assets/img/logo_task_site.png" alt="Task Sync" class="logo">
                 </a>
             </div>
-
             <nav class="menu-desktop">
                 <ul>
-                    <li><a href="views/site-informativo#inicio">Início</a></li>
-                    <li><a href="views/site-informativo#funcionalidades">Funcionalidades</a></li>
-                    <li><a href="views/site-informativo#sobre">Sobre</a></li>
-                    <li><a href="views/site-informativo#contato">Contato</a></li>
+                    <li><a href="views/website#inicio">Início</a></li>
+                    <li><a href="views/website#funcionalidades">Funcionalidades</a></li>
+                    <li><a href="views/website#sobre">Sobre</a></li>
+                    <li><a href="views/website#contato">Contato</a></li>
                 </ul>
             </nav>
-
             <div class="btn-contato">
                 <a href="account/user-type-selection">
                     <button>Login</button>
@@ -45,11 +40,9 @@
                 <div #menuButton class="btn-menu">
                   <i class="bi bi-list"></i>
                 </div>
-              
                 <div #closeButton class="btn-close">
                   <i class="bi bi-x"></i>
                 </div>
-              
                 <nav #mobileMenu>
                   <ul>
                     <li><a href="#inicio">Início</a></li>
@@ -60,12 +53,8 @@
                   </ul>
                 </nav>
               </div>
-              
-
         </div>
     </header>
-
-
     <main>
         <section class="topo-do-site" id="inicio">
             <div class="interface">
@@ -75,7 +64,6 @@
                         <p>Simplifique a organização de atividades, tarefas e cronogramas com o Task Sync.
                             Nosso sistema facilita a distribuição de responsabilidades, garantindo eficiência e
                             transparência em cada etapa do processo.</p>
-
                         <mat-accordion class="documentacao">
                             <mat-expansion-panel (opened)="onExpandChange({ expanded: true })" (closed)="onExpandChange({ expanded: false })">
                                 <mat-expansion-panel-header>
@@ -83,7 +71,6 @@
                                         <span [class]="isExpanded ? 'arrow-down' : 'arrow-up'" class="arrow"></span>
                                     </mat-panel-title>
                                 </mat-expansion-panel-header>
-
                                 <div class="btn-options">
                                     <button mat-button
                                         (click)="navigateTo('https://1drv.ms/w/c/2c7124fc96a093bf/Ecpxpwy6kMJEvMQw3jG-0jYBdLbhSnwdeZUlxFoskfc8pQ?e=GHIKTH')">Declaração
@@ -103,7 +90,6 @@
                                 </div>
                             </mat-expansion-panel>
                         </mat-accordion>
-
                         <mat-accordion class="diagrama">
                             <mat-expansion-panel (opened)="onExpandChange({ expanded: true })" (closed)="onExpandChange({ expanded: false })">
                                 <mat-expansion-panel-header>
@@ -111,7 +97,6 @@
                                         <span [class]="isExpanded ? 'arrow-down' : 'arrow-up'" class="arrow"></span>
                                     </mat-panel-title>
                                 </mat-expansion-panel-header>
-
                                 <div class="btn-options">
                                     <button mat-button (click)="openModal('/assets/img/diagDeComponentes.png')">Diagrama
                                         de Componentes</button>
@@ -130,23 +115,19 @@
                                 </div>
                             </mat-expansion-panel>
                         </mat-accordion>
-
                         <div *ngIf="isModalOpen" class="modal" (click)="closeModal()">
                             <div class="modal-content" (click)="$event.stopPropagation()">
                                 <span class="close" (click)="closeModal()">&times;</span>
                                 <img [src]="selectedImage" alt="Imagem" class="modal-image" />
                             </div>
                         </div>
-
                     </div>
-
                     <div class="img-topo-site">
                         <img src="assets/img/tela_login.png" alt="Tela de Login">
                     </div>
                 </div>
             </div>
         </section>
-
         <section class="funcionalidades" id="funcionalidades">
             <div class="interface">
                 <h2 class="titulo">FUNCIONALIDADES DO<span> TASK SYNC.</span></h2>
@@ -172,20 +153,17 @@
                 </div>
             </div>
         </section>
-
         <section class="sobre" id="sobre">
             <div class="interface">
                 <div class="titulo">
                     <h2 class="titulo-sobre">SOBRE O <span>TASK SYNC.</span></h2>
                 </div>
                 <div class="flex">
-
                     <div class="txt-sobre">
                         <p>O Task Sync é uma solução no setor de gerenciamento de eventos e atividades,
                             desenvolvida para atender às demandas do mercado com eficiência e organização. Criado com
                             foco em promover
                             a colaboração entre equipes e otimizar processos internos.</p>
-
                         <div class="objetivo-missao">
                             <div class="objetivo">
                                 <h3>OBJETIVO</h3>
@@ -193,7 +171,6 @@
                                     melhora a organização
                                     e a responsabilidade dentro das equipes.</p>
                             </div>
-
                             <div class="missao">
                                 <h3>MISSÃO</h3>
                                 <p>Oferecer uma solução prática para o gerenciamento de eventos, por meio de uma
@@ -203,11 +180,8 @@
                         </div>
                     </div>
                 </div>
-
-
             </div>
         </section>
-
         <section class="contato" id="contato">
             <div class="interface">
                 <div class="titulo">
@@ -220,9 +194,7 @@
                         contato.tasksync&#64;gmail.com</a></p>
             </div>
         </section>
-
     </main>
-
     <footer class="footer-github">
         <div class="footer-container">
             <div class="footer-logo-left">
@@ -240,7 +212,5 @@
             </div>
         </div>
     </footer>
-    
 </body>
-
 </html>

@@ -1,12 +1,10 @@
 .upload-image {
   cursor: pointer; 
 }
-
 .upload-image:hover {
   opacity: 0.8; 
   transition: opacity 0.3s; 
 }
-
 .image-upload-container {
   display: flex;
   align-items: center;
@@ -14,12 +12,10 @@
   margin-top: 10px;
   flex-wrap: wrap; 
 }
-
 #image-preview {
   max-width: 100px;
   max-height: 100px;
 }
-
 .text-recomend-img {
   font-size: 12px;
   color: #555;
@@ -27,7 +23,6 @@
   margin: 0;
   flex-basis: 200px; 
 }
-
 .search-box {
   display: flex;
   align-items: center;
@@ -39,7 +34,6 @@
   flex: 1;
   margin: 0 16px;
 }
-
 .search-box input {
   border: none;
   outline: none;
@@ -48,20 +42,17 @@
   font-size: 16px;
   width: 100%;
 }
-
 .search-box .search-icon {
   color: #333;
   font-size: 24px;
   margin-right: 8px;
 }
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   padding: 10px;
 }
-
 .card {
   margin-bottom: 20px;
   width: calc(25% - 10px);
@@ -72,23 +63,20 @@
   display: flex;
   flex-direction: column;
 }
-
 .card-header {
-  background-color: rgba(10, 6, 87, 0.975);
+  background-color:rgb(28, 14, 63);
   color: white;
   text-align: center;
-  padding: 25px;
+  padding: 10px;
   padding-bottom: 3px;
   width: 100%;
 }
-
 .card-footer {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 3%;
 }
-
 .btn-access {
   border: none;
   cursor: pointer;
@@ -101,10 +89,8 @@
   transition: all .3s;
   position: relative;
   overflow: hidden;
-
   background-color: white;
   border: 2px solid rgb(9, 9, 163);
-
   &:after {
     content: '';
     position: absolute;
@@ -113,9 +99,7 @@
     width: 100%;
     height: 100%;
     border-radius: 10rem;
-
   }
-
   &:before {
     content: '';
     bottom: 0;
@@ -125,74 +109,59 @@
     background-color: rgb(9, 9, 163);
     transition: all .3s;
     border-radius: 10rem;
-
   }
-
   &:hover {
     color: white;
     background-color: rgb(9, 9, 163);
-
     &:before {
       width: 100%;
     }
   }
-
   align-items: center;
   gap: 5px;
 }
-
 .user-image {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 20px 0;
 }
-
 .user-image img {
   max-width: 100px;
   height: auto;
 }
-
 .card-body {
   padding: 10px;
 }
-
 .body-text-card {
   width: 100%;
 }
-
 .action-buttons {
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
 }
-
 .action-buttons a {
   color: inherit;
   text-decoration: none;
   font-size: 20px;
 }
-
 .color-people {
   color: #000;
   cursor: pointer;
 }
-
 .color-detail {
   color: green;
   cursor: pointer;
 }
-
 .color-edit {
   color: blue;
   cursor: pointer;
 }
-
 .color-delete {
   color: red;
   cursor: pointer;
 }
-
 .btn-back {
   border: none;
   cursor: pointer;
@@ -205,10 +174,8 @@
   transition: all .3s;
   position: relative;
   overflow: hidden;
-
   background-color: white;
   border: 2px solid #6f42c1;
-
   &:after {
     content: '';
     position: absolute;
@@ -217,9 +184,7 @@
     width: 100%;
     height: 100%;
     border-radius: 10rem;
-
   }
-
   &:before {
     content: '';
     bottom: 0;
@@ -229,22 +194,17 @@
     background-color: #6f42c1;
     transition: all .3s;
     border-radius: 10rem;
-
   }
-
   &:hover {
     color: white;
     background-color: #6f42c1;
-
     &:before {
       width: 100%;
     }
   }
-
   display: inline-flex;
   align-items: center;
 }
-
 .btn-create {
   border: none;
   cursor: pointer;
@@ -257,10 +217,8 @@
   transition: all .3s;
   position: relative;
   overflow: hidden;
-
   background-color: white;
   border: 2px solid green;
-
   &:after {
     content: '';
     position: absolute;
@@ -269,9 +227,7 @@
     width: 100%;
     height: 100%;
     border-radius: 10rem;
- 
   }
-
   &:before {
     content: '';
     bottom: 0;
@@ -281,22 +237,17 @@
     background-color: green;
     transition: all .3s;
     border-radius: 10rem;
-
   }
-
   &:hover {
     color: white;
     background-color: green;
-
     &:before {
       width: 100%;
     }
   }
-
   align-items: center;
   gap: 5px;
 }
-
 .btn-pdf {
   border: none;
   cursor: pointer;
@@ -309,10 +260,8 @@
   transition: all .3s;
   position: relative;
   overflow: hidden;
-  
   background-color: white;
   border: 2px solid blue;
-
   &:after {
     content: '';
     position: absolute;
@@ -321,9 +270,7 @@
     width: 100%;
     height: 100%;
     border-radius: 10rem;
- 
   }
-
   &:before {
     content: '';
     bottom: 0;
@@ -333,54 +280,42 @@
     background-color: blue;
     transition: all .3s;
     border-radius: 10rem;
- 
   }
-
   &:hover {
     color: white;
     background-color: blue;
-
     &:before {
       width: 100%;
     }
   }
-
   display: inline-flex;
   align-items: center;
 }
-
 .pagination {
   display: flex;
   justify-content: flex-end;
   gap: 15px;
   padding: 10px;
 }
-
 .pagination select {
   border: 1px solid #ccc;
   border-radius: 150px;
   background-color: #94a7ff;
 }
-
 .pagination button {
   cursor: pointer;
   font-size: 14px;
   text-align: center;
 }
-
 .modal-backdrop {
   z-index: 0 !important;
 }
-
-
 ::ng-deep .modal-backdrop {
   z-index: 0 !important;
 }
-
 .custom-modal-class .modal-backdrop {
   z-index: 0 !important;
 }
-
 .action-buttons a {
   color: inherit;
   text-decoration: none;

@@ -1,7 +1,6 @@
 import { Task } from "../model/task.model";
 import { User } from "../model/user.model";
 import { Event } from "../model/event.model";
-
 export interface ResponseScheduling {
     id: string;
     event: Event,

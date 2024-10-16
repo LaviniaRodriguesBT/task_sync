@@ -6,24 +6,20 @@
   max-width: 90%;
   border-radius: 2%;
 }
-
 h1 {
   font-size: 24px;
   margin-bottom: 20px;
   color: #333;
 }
-
 hr {
   width: 100%;
   border-top: 1px solid #e0e0e0;
   margin-bottom: 20px;
 }
-
 .text-name {
   font-size: 16px;
   color: #555;
 }
-
 .field-name {
   border: 1px solid #ced4da;
   border-radius: 4px;
@@ -31,13 +27,11 @@ hr {
   width: 100%;
   box-sizing: border-box;
 }
-
 .input-group {
   position: relative;
   display: flex;
   align-items: center;
 }
-
 .input-group-append {
   position: absolute;
   top: 0;
@@ -52,53 +46,43 @@ hr {
   padding: 0 10px;
   cursor: pointer;
 }
-
 .input-group-text {
   font-size: 18px;
   color: #495057;
 }
-
 .text-name {
   margin-right: 1%;
 }
-
 .type-user {
   margin-right: 3%;
   margin-top: 3%;
 }
-
 .form-row {
   display: flex;
   flex-wrap: wrap;
 }
-
 .form-group {
   margin-bottom: 1%;
   width: 100%;
 }
-
 .form-group.col-12 {
   flex: 0 0 100%;
 }
-
 .form-div {
   justify-content: center;
   align-items: center;
   padding-left: 180px
 }
-
 .text-name {
   font-size: 20px;
   padding: 10px;
   width: 100%;
 }
-
 .text-form {
   font-size: 20px;
   padding: 10px;
   width: 100%;
 }
-
 .field-name {
   border-left: none;
   border-right: none;
@@ -106,13 +90,10 @@ hr {
   padding: 2%;
   width: 100%;
 }
-
 .form-group.d-flex.btns {
   justify-content: center;
   gap: 80px;
-
 }
-
 .btn-back,
 .btn-create,
 .clean-form {
@@ -126,7 +107,6 @@ hr {
   text-align: center;
   margin: 0; 
 }
-
 .btn-back {
   background-color: white;
   color: black;
@@ -136,12 +116,10 @@ hr {
   font-size: 1rem;
   letter-spacing: .15rem;
 }
-
 .btn-back:hover {
   background-color: #6f42c1;
   color: white;
 }
-
 .btn-create {
   background-color: white;
   color: black;
@@ -151,12 +129,10 @@ hr {
   font-size: 1rem;
   letter-spacing: .15rem;
 }
-
 .btn-create:hover {
   background-color: green;
   color: white;
 }
-
 .clean-form {
   background-color: white;
   color: black;
@@ -166,12 +142,10 @@ hr {
   font-size: 1rem;
   letter-spacing: .15rem;
 }
-
 .clean-form:hover {
   background-color: #a70909;
   color: white;
 }
-
 .input-group-text {
   font-size: 18px;
   border: none;

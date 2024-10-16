@@ -3,18 +3,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <div class="main-root">
     <mat-toolbar class="toolbar">
-
         <button mat-icon-button class="menu-icon" (click)="toggleMenu()" *ngIf="smallScreen">
             <mat-icon>menu</mat-icon>
         </button>
-
         <a class="navbar-item">
             <img src="assets/img/logo_task.png" width="220" height="220">
         </a>
-
         <nav class="navbar navbar-expand-lg " [class.show]="menuOpen" [class.hide]="!menuOpen && smallScreen">
             <div class="navbar-collapse">
                 <ul class="navbar-nav ml-auto" >
@@ -43,8 +39,6 @@
                 </ul>
             </div>
         </nav>
-
-
         <span class="toolbar-item-spacer"></span>
         <button mat-icon-button matTooltip="Home" routerLink="/" *ngIf= "accessType == 'Administrador'">
             <mat-icon>home</mat-icon>
@@ -62,54 +56,28 @@
             <button mat-menu-item routerLink="/aboutUs">
                 <mat-icon>groups 2</mat-icon><span>Sobre nós</span>
             </button>
-
             <mat-divider></mat-divider>
-
             <button mat-menu-item (click)="logout()">
                 <mat-icon>exit_to_app</mat-icon>Sair
             </button>
         </mat-menu>
     </mat-toolbar>
-
     <div class="content-container">
         <mat-nav-list>
             <mat-expansion-panel [class.mat-elevation-z0]="true">
             </mat-expansion-panel>
         </mat-nav-list>
     </div>
-
     <div class="page-wrap">
         <main class="container mt-1">
-
             <router-outlet></router-outlet>
-
             <div class="mb-4"></div>
         </main>
     </div>
-
     <div class="wrapper">
-        <!-- <button class="open-button" (click)="toggleForm()">
-            <i class="fa fa-comment"></i>
-        </button> -->
-
-        <!-- <div class="chat-popup" id="myForm" #myForm [style.display]="showForm ? 'block' : 'none'">
-            <span class="close-btn" (click)="closeForm()">&times;</span>
-            <form action="/action_page.php" class="form-container">
-                <h1>Chat</h1>
-                <label for="msg"><b>Destinatário</b></label>
-                <input type="text" id="recipient" placeholder="Nome do destinatário" required>
-
-                <textarea placeholder="Digite sua mensagem ..." name="msg" required></textarea>
-
-                <div class="form-actions">
-                    <button type="submit" class="btn btn-send">Enviar</button>
-                </div>
-            </form>
-        </div> -->
     </div>
     <footer class="footer">
         <p>&copy; 2024 Todos os direitos reservados aos criadores Michele Fernandes, Lavínia Brandani e Lucas Severini.
         </p>
     </footer>
 </div>
-

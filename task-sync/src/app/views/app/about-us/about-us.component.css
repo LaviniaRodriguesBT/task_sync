@@ -1,31 +1,25 @@
 .breadcrumb {
     padding: 10px;
 }
-
 h1 {
     font-size: 28px;
     color: rgba(10, 6, 87, 0.975);
     margin-bottom: 20px;
 }
-
 h2 {
     color: rgba(10, 6, 87, 0.975);
     margin-top: 20px;
 }
-
 h3 {
     color: rgba(10, 6, 87, 0.975);
 }
-
 h4 {
     color: rgba(10, 6, 87, 0.975);
 }
-
 ul {
     list-style-type: disc;
     margin-left: 20px;
 }
-
 .article {
     margin: 20px;
     background: white;
@@ -33,7 +27,6 @@ ul {
     border-radius: 5px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
-
 .btn-back {
     border: none;
     cursor: pointer;
@@ -49,7 +42,6 @@ ul {
     z-index: 1;
     background-color: white;
     border: 2px solid #6f42c1;
-
     &:after {
         content: '';
         position: absolute;
@@ -60,7 +52,6 @@ ul {
         border-radius: 10rem;
         z-index: -2;
     }
-
     &:before {
         content: '';
         bottom: 0;
@@ -72,25 +63,20 @@ ul {
         border-radius: 10rem;
         z-index: -1;
     }
-
     &:hover {
         color: white;
         background-color: #6f42c1;
-
         &:before {
             width: 100%;
         }
     }
-
     display: inline-flex;
     align-items: center;
 }
-
 .map {
     margin: 30px;
     text-align: center;
 }
-
 .map-container {
     overflow: hidden;
     padding-bottom: 56.25%;
@@ -99,7 +85,6 @@ ul {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .map-container iframe {
     left: 0;
     top: 0;

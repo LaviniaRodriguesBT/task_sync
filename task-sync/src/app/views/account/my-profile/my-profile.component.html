@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -12,20 +11,15 @@
         <li class="breadcrumb-item active" aria-current="page">Meu perfil</li>
     </ol>
 </nav>
-
-
 <a class="btn btn-back arrow-back" href="/" *ngIf="accessType === 'Administrador'">
     <span class="material-icons">arrow_back</span>
 </a>
-
 <a class="btn btn-back arrow-back" href="/event/list" *ngIf="accessType === 'Colaborador'">
     <span class="material-icons">arrow_back</span>
 </a>
-
 <div class="article">
     <h1>Meu perfil</h1>
     <hr>
-
     <form class="form">
         <div class="form-row">
             <div class="form-group col-12 mt-2">

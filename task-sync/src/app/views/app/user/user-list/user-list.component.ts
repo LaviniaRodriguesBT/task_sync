@@ -14,8 +14,6 @@ import { MatPaginatorIntl, MatPaginatorModule, PageEvent } from '@angular/materi
 import { NgbModalRef, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstrap';
 import { MatBadgeModule } from '@angular/material/badge';
 import { EventReadService } from '../../../../services/event/event-read.service';
-
-
 @Component({
   selector: 'task-sync-user-list',
   standalone: true,
@@ -31,9 +29,7 @@ import { EventReadService } from '../../../../services/event/event-read.service'
   styleUrl: './user-list.component.css'
 })
 export class UserListComponent {
-
   accessType?: string | null;
-
   fa = fontawesome;
   faAdd = faPlus;
   faAddressCard = faAddressCard;
@@ -45,10 +41,8 @@ export class UserListComponent {
   pageSizeOptions = [3,5, 10, 15];
   searchText: string = "";
   modalRef: NgbModalRef | null = null;
-
   totalEventos: Record<string, number> = {};
   eventId: string = '';
-
   constructor(private userReadService: UserReadService,
     private userDeleteService: UserDeleteService,
     private toastrService: ToastrService,
@@ -60,13 +54,10 @@ export class UserListComponent {
   ) {
     this.accessType = localStorage.getItem('accessType')
   }
-
   ngOnInit(): void {
     this.loadUsers();
     this.length = this.usersCopy.length;
-
   }
-
   async loadUsers() {
     this.users = await this.userReadService.findAll();
     this.usersCopy = this.users;
@@ -81,9 +72,7 @@ export class UserListComponent {
       const from = page * pageSize + 1;
       const to = Math.min(from + pageSize - 1, length);
       return `${from} - ${to} de ${length}`;};
-    
       this.totalEventos = {}; 
-
       for (const user of this.users) {
         if (user.id) {
             const events = await this.eventReadService.findUserById(user.id); 
@@ -93,35 +82,25 @@ export class UserListComponent {
         }
     }
   }
-
   async deleteUser(userId: string) {
     try {
       console.log('Iniciando a remocao da pessoa' + userId);
       await this.userDeleteService.delete(userId);
       this.toastrService.success('Pessoa excluida com sucesso');
-
       await this.loadUsers();
     } catch (error) {
       this.toastrService.error('Não foi possível remover a pessoa');
-
     }
-
   }
-
   openMyModal(content: any) {
     const options: NgbModalOptions = {
       backdropClass: 'app-session-modal-backdrop',
       windowClass: 'app-session-modal-window',
-     
     };
-  
     this.modalRef = this.modalService.open(content, {
       windowClass: 'custom-modal-class'
     });
-    
   }
-  
-
   closeMyModal() {
     if (this.modalRef) {this.modalRef.close();
     }
@@ -129,43 +108,31 @@ export class UserListComponent {
   gerarPdf() {
     window.print()
   }
-
   handlePageEvent(e: PageEvent) {
     this.pageIndex = e.pageIndex;
     this.pageSize = e.pageSize;
     this.users = this.usersCopy.slice(this.pageIndex * this.pageSize, (this.pageIndex + 1) * this.pageSize);
   }
-
   public exportExcelEventList() {
     this.excelExporter.exportData(this.users, new IgxExcelExporterOptions('ExportedDataFile'));
-
   }
-
-
-
   search(): void {
     let input = document.getElementById('search') as HTMLInputElement;
-
     let name = input.value;
-
     if (this.usersCopy.length <= 0 || this.usersCopy == null)
       return;
-
     if (name == null || name == undefined || name.length <= 0) {
       this.users = this.usersCopy;
       this.searchText = "";
       return;
     }
-
     this.searchText = name;
     let users = this.usersCopy.filter((predicate) => predicate.name?.toLocaleLowerCase().includes(name.toLocaleLowerCase()) ||
       predicate.id?.toString().toLocaleLowerCase().includes(name.toLocaleLowerCase()));
-
     if (users == undefined) {
       this.users = [];
       return;
     }
     this.users = users;
   }
-
 }

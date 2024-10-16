@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -12,41 +11,31 @@
         <li class="breadcrumb-item active" aria-current="page">Lista</li>
     </ol>
 </nav>
-
 <h1>Lista de eventos</h1>
-
-
-
 <div class="d-flex justify-content-between">
     <a class="btn btn-back arrow-back" href="/" *ngIf="accessType == 'Administrador'">
         <span class="material-icons">arrow_back</span>
     </a>
-
     <a class="btn btn-create" routerLink="/event/create" *ngIf="accessType == 'Administrador'">
         <fa-icon [icon]="faAdd" title="Adicionar novo evento"></fa-icon>
         Cadastrar evento
     </a>
-
     <div class="search-box">
         <mat-icon class="search-icon">search</mat-icon>
         <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
     </div>
-
     <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
     </a>
     <a class="btn btn-pdf" (click)="exportExcelEventList()">
         <span class="material-icons color-print">upload_file</span>
     </a>
-
 </div>
 <hr>
-
 <div class="card-container">
     <ng-container *ngFor="let event of events; let i = index">
         <div class="card">
             <div class="card-header">
-                <h3>{{ event.name | slice:0:15}}...</h3>
             </div>
             <div class="user-image">
                 <img src="{{event.image ? event.image : '/assets/img/event.png'}}" alt="Imagem do evento">
@@ -55,24 +44,15 @@
                 <table class="table body-text-card">
                     <tbody>
                         <tr>
-                            <th scope="row">Código</th>
-                            <td>{{ event.code }}</td>
+                            <th scope="row">Nome: </th>
+                            <td>{{ event.name| slice:0:19}}...</td>
                         </tr>
                         <tr>
-                            <th scope="row">Descrição</th>
-                            <td>{{ event.description | slice:0:19}}...</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Negócio</th>
-                            <td>{{ event.business }}</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">Data Inicio</th>
+                            <th scope="row">Data: </th>
                             <td>{{ event.date | date: 'dd/MM/yyyy' }}</td>
                         </tr>
                     </tbody>
                 </table>
-
                 <div class="action-buttons">
                     <a *ngIf="accessType == 'Administrador'">
                         <mat-icon matBadge="{{ totalPessoas[event.id] }}" matBadgeColor="primary" title="Pessoas cadastradas">
@@ -82,7 +62,6 @@
                           Exibe a quantidade de pessoas cadastradas no cronograma
                         </span>
                     </a>  
-                    
                     <a routerLink="/event/detail/{{event.id}}" *ngIf="accessType == 'Administrador'">
                         <span class="material-icons color-detail" title="Informações">info</span>
                     </a>
@@ -118,7 +97,6 @@
         </div>
     </ng-container>
 </div>
-
 <div class="pagination">
     <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
         (page)="handlePageEvent($event)">

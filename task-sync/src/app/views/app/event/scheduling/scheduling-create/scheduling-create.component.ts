@@ -15,7 +15,6 @@ import { UserReadService } from '../../../../../services/user/user-read.service'
 import { TaskReadService } from '../../../../../services/task/task-read.service';
 import { CommonModule } from '@angular/common';
 import { monetaryValidator } from '../monetary-validator';
-
 @Component({
   selector: 'task-sync-scheduling-create',
   standalone: true,
@@ -32,18 +31,15 @@ import { monetaryValidator } from '../monetary-validator';
   styleUrl: './scheduling-create.component.css'
 })
 export class SchedulingCreateComponent implements OnInit {
-
   eventId: string = '';
   event!: Event;
   form!: FormGroup;
   userList!: User[];
   taskList!: Task[];
-
   nameMinLength: number = 3;
   nameMaxLength: number = 100;
   descriptionMinValue: number = 1;
   descriptionMaxValue: number = 500;
-
   constructor(
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
@@ -55,16 +51,13 @@ export class SchedulingCreateComponent implements OnInit {
     private taskReadService: TaskReadService
   ) {
     this.initializeForm();
-    
   }
-
   async ngOnInit() {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.event = await this.eventReadService.findById(this.eventId);
     this.userList = await this.userReadService.findAll();
     this.taskList = await this.taskReadService.findAll();
   }
-
   initializeForm() {
     this.form = this.formBuilder.group({
       event_id: [''],
@@ -78,12 +71,10 @@ export class SchedulingCreateComponent implements OnInit {
       status: ['Em aberto', Validators.required],
     });
   }
-
   formatCurrency(event: any) {
     const input = event.target;
     let value = input.value;
     value = value.replace(/[^0-9,]/g, '');
-
     const parts = value.split(',');
     if (parts.length > 2) {
       value = parts[0] + ',' + parts.slice(1).join('').replace(/,/g, '');
@@ -91,11 +82,8 @@ export class SchedulingCreateComponent implements OnInit {
     if (parts.length > 1) {
       value = parts[0] + ',' + parts[1].substring(0, 2);
     }
-
     input.value = value;
   }
-
-
   async create() {
     const scheduling: Scheduling = {
       event_id: this.form.controls['event_id'].value,
@@ -112,8 +100,6 @@ export class SchedulingCreateComponent implements OnInit {
     scheduling.event = this.event.name;
     console.log('preparando para criar o produto...');
     console.log(scheduling);
-
-
     try {
       const schedulingId =  await this.schedulingCreateService.create(scheduling);
       console.log(schedulingId);
@@ -127,7 +113,6 @@ export class SchedulingCreateComponent implements OnInit {
       this.toastr.error(error.message);
     }
   }
-
   validateFields() {
     return this.form.valid;
   }

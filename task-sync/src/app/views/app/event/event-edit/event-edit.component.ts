@@ -7,7 +7,6 @@ import { EventReadService } from '../../../../services/event/event-read.service'
 import { Event } from "../../../../domain/model/event.model";
 import { MatSelectModule } from '@angular/material/select';
 import { CommonModule } from '@angular/common';
-
 @Component({
   selector: 'task-sync-event-edit',
   standalone: true,
@@ -25,20 +24,16 @@ export class EventEditComponent implements OnInit {
   @ViewChild('imagePreview') imagePreview!: ElementRef<HTMLImageElement>;
   @ViewChild('imgEvent') imgEvent!: ElementRef<HTMLInputElement>;
   @ViewChild('dateInput') dateInput!: ElementRef<HTMLInputElement>;
-
   eventId?: string;
   form!: FormGroup;
-
   nameMinLength: number = 3;
   nameMaxLength: number = 200;
   descriptionMinValue: number = 3;
   descriptionMaxValue: number = 200;
-
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
   showImagePreview: boolean = false;
   image!: string;
-
   constructor(private activatedRoute: ActivatedRoute,
     private eventReadService: EventReadService,
     private eventUpdateService: EventUpdateService,
@@ -47,7 +42,6 @@ export class EventEditComponent implements OnInit {
     private formBuilder: FormBuilder) {
     this.initializeForm();
   }
-
   initializeForm() {
     this.form = this.formBuilder.group({
       code: ['', [Validators.required, Validators.maxLength(20)]],
@@ -58,13 +52,11 @@ export class EventEditComponent implements OnInit {
       start_time: ['', [Validators.required]],
       end_time: ['', [Validators.required]]    });
   }
-
   ngOnInit(): void {
     let eventId = this.activatedRoute.snapshot.paramMap.get('id');
     this.eventId = eventId!;
     this.loadEventById(eventId!);
   }
-
   async loadEventById(eventId: string) {
     let event = await this.eventReadService.findById(eventId);
     console.log(event);
@@ -82,14 +74,12 @@ export class EventEditComponent implements OnInit {
           img.style.display = 'block';
         }
   }
-
   onImageSelected(event: any) {
     const file = event.target.files[0];
     if (file) {
       this.selectedImage = file;
       this.fileName = file.name;
       this.showImagePreview = true;
-
       const reader = new FileReader();
       reader.onload = (e) => {
         this.image = reader.result as string;
@@ -105,7 +95,6 @@ export class EventEditComponent implements OnInit {
       this.showImagePreview = false;
     }
   }
-
   openImagePicker() {
     if (this.imgEvent) {
       this.imgEvent.nativeElement.click();
@@ -113,7 +102,6 @@ export class EventEditComponent implements OnInit {
       console.error('Elemento com ID "img-event" não encontrado.');
     }
   }
-
   async update() {
     try {
       const event: Event = {
@@ -127,7 +115,6 @@ export class EventEditComponent implements OnInit {
         end_time: this.form.controls['end_time'].value,
         image: this.image,
       }
-
       console.log(event);
       await this.eventUpdateService.update(event);
       this.toastrService.success('Evento atualizado com sucesso!');
@@ -136,10 +123,7 @@ export class EventEditComponent implements OnInit {
       this.toastrService.error('Erro. Evento não foi atualizado.');
     }
   }
-
   validateFields() {
     return this.form.valid;
   }
-
 }
-

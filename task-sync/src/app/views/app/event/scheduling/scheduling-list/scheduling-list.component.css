@@ -4,7 +4,6 @@
   align-items: center;
   width: 50%;
 }
-
 #modal {
   width: 400px;
   height: 300px;
@@ -12,7 +11,6 @@
   border-radius: 5px;
   padding: 20px;
 }
-
 .search-box {
   display: flex;
   align-items: center;
@@ -24,7 +22,6 @@
   flex: 1;
   margin: 0 16px;
 }
-
 .search-box input {
   border: none;
   outline: none;
@@ -33,13 +30,11 @@
   font-size: 16px;
   width: 100%;
 }
-
 .search-box .search-icon {
   color: #333;
   font-size: 24px;
   margin-right: 8px;
 }
-
 .btn-access {
   border: none;
   cursor: pointer;
@@ -52,10 +47,8 @@
   transition: all .3s;
   position: relative;
   overflow: hidden;
-
   background-color: white;
   border: 2px solid rgb(9, 9, 163);
-
   &:after {
     content: '';
     position: absolute;
@@ -64,9 +57,7 @@
     width: 100%;
     height: 100%;
     border-radius: 10rem;
-
   }
-
   &:before {
     content: '';
     bottom: 0;
@@ -76,49 +67,39 @@
     background-color: rgb(9, 9, 163);
     transition: all .3s;
     border-radius: 10rem;
-
   }
-
   &:hover {
     color: white;
     background-color: rgb(9, 9, 163);
-
     &:before {
       width: 100%;
     }
   }
-
   align-items: center;
   gap: 5px;
 }
-
 .action-buttons {
   display: flex;
   justify-content: space-around;
   padding: 10px 0;
 }
-
 .action-buttons a {
   color: inherit;
   text-decoration: none;
   font-size: 20px;
 }
-
 .color-detail {
   color: green;
   cursor: pointer;
 }
-
 .color-edit {
   color: blue;
   cursor: pointer;
 }
-
 .color-delete {
   color: red;
   cursor: pointer;
 }
-
 .btn-back {
   border: none;
   cursor: pointer;
@@ -131,10 +112,8 @@
   transition: all .3s;
   position: relative;
   overflow: hidden;
-
   background-color: white;
   border: 2px solid #6f42c1;
-
   &:after {
     content: '';
     position: absolute;
@@ -143,9 +122,7 @@
     width: 100%;
     height: 100%;
     border-radius: 10rem;
-
   }
-
   &:before {
     content: '';
     bottom: 0;
@@ -157,20 +134,16 @@
     border-radius: 10rem;
    ;
   }
-
   &:hover {
     color: white;
     background-color: #6f42c1;
-
     &:before {
       width: 100%;
     }
   }
-
   display: inline-flex;
   align-items: center;
 }
-
 .btn-create {
   border: none;
   cursor: pointer;
@@ -183,10 +156,8 @@
   transition: all .3s;
   position: relative;
   overflow: hidden;
-  
   background-color: white;
   border: 2px solid green;
-
   &:after {
     content: '';
     position: absolute;
@@ -195,9 +166,7 @@
     width: 100%;
     height: 100%;
     border-radius: 10rem;
-  
   }
-
   &:before {
     content: '';
     bottom: 0;
@@ -207,22 +176,17 @@
     background-color: green;
     transition: all .3s;
     border-radius: 10rem;
-
   }
-
   &:hover {
     color: white;
     background-color: green;
-
     &:before {
       width: 100%;
     }
   }
-
   align-items: center;
   gap: 5px;
 }
-
 .btn-pdf {
   border: none;
   cursor: pointer;
@@ -235,10 +199,8 @@
   transition: all .3s;
   position: relative;
   overflow: hidden;
-
   background-color: white;
   border: 2px solid blue;
-
   &:after {
     content: '';
     position: absolute;
@@ -247,9 +209,7 @@
     width: 100%;
     height: 100%;
     border-radius: 10rem;
-
   }
-
   &:before {
     content: '';
     bottom: 0;
@@ -259,56 +219,45 @@
     background-color: blue;
     transition: all .3s;
     border-radius: 10rem;
-   
   }
-
   &:hover {
     color: white;
     background-color: blue;
-
     &:before {
       width: 100%;
     }
   }
-
   display: inline-flex;
   align-items: center;
 }
-
 .pagination {
   display: flex;
   justify-content: flex-end;
   gap: 15px;
   padding: 10px;
 }
-
 .pagination select {
   border: 1px solid #ccc;
   border-radius: 150px;
   background-color: #94a7ff;
 }
-
 .pagination button {
   cursor: pointer;
   font-size: 14px;
   text-align: center;
 }
-
 .column {
   display: flex;
   align-items: center;
   justify-content: center;
 }
-
 .table-responsive {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch;
 }
-
 .table {
   min-width: 800px;
 }
-
 .thead-style {
   background-color: #002fa3;
   color: white;
@@ -317,14 +266,12 @@
   vertical-align: middle;
   padding: 8px;
 }
-
 .description-col {
   max-width: 200px;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-
 .new-status {
   border: none;
   width: 100%;
@@ -333,23 +280,19 @@
   font-size: 15px;
   text-align: center;
 }
-
 .new-status.no-border {
   outline: none;
   box-shadow: none;
 }
-
 .dashboard {
   padding: 20px;
 }
-
 .status-cards {
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
   justify-content: space-evenly;
 }
-
 .card {
   border: 1px solid #dee2e6;
   border-radius: 5px;
@@ -361,30 +304,22 @@
   background-color: white;
   color: white;
 }
-
 .card h3 {
   margin-bottom: 10px;
 }
-
 .card p {
   font-size: 24px;
   font-weight: bold;
 }
-
-
 .modal-backdrop {
   z-index: 0 !important;
 }
-
-
 ::ng-deep .modal-backdrop {
   z-index: 0 !important;
 }
-
 .custom-modal-class .modal-backdrop {
   z-index: 0 !important;
 }
-
 .action-buttons a {
   color: inherit;
   text-decoration: none;

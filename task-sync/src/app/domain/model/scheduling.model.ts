@@ -9,6 +9,5 @@ export interface Scheduling{
     start_time: string,
     end_time: string,
     date: string,
-    status: string
-    
+    status: string  
 }

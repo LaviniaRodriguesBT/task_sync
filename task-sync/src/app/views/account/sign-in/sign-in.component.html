@@ -11,18 +11,15 @@
                                 <img src="/assets/img/logo-inicio.png">
                             </div>
                         </div>
-
                         <input matInput type="email" placeholder="Digite seu email" required [formControl]="email"
                             class="fa fa-envelope enter-field">
                     </div>
                     <div>
                         <input matInput type="password" placeholder="Digite sua senha" maxlength="10" required
                             [formControl]="password" class="fa fa-lock Password enter-field">
-
                         <a class="btn-back" href="/">Voltar</a>
                         <button class="btn-sign-in" (click)="login()" [disabled]="isFormInvalid()">Login</button>
                     </div>
-
                     @if(isLoginIncorrect) {
                     <p class="text-danger mt-2">Email e/ou senha incorretos.</p>
                     }
@@ -30,7 +27,6 @@
             </div>
         </div>
     </div>
-
     <footer class="footer">
         <p>&copy; 2024 Todos os direitos reservados aos criadores Lavínia Brandani, Lucas Severini e Michele Fernandes.
             <span>

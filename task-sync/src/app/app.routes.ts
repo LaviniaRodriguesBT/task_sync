@@ -24,12 +24,11 @@ import { SchedulingEditComponent } from './views/app/event/scheduling/scheduling
 import { SchedulingListComponent } from './views/app/event/scheduling/scheduling-list/scheduling-list.component';
 import { AboutUsComponent } from './views/app/about-us/about-us.component';
 import { UserTypeSelectionComponent } from './views/account/user-type-selection/user-type-selection.component';
-import { SiteInformativoComponent } from './views/site-informativo/site-informativo.component';
-
+import { WebSiteComponent } from './views/website/website.component';
 export const routes: Routes = [
   {
-    path: 'views/site-informativo',
-    component: SiteInformativoComponent,
+    path: 'views/website',
+    component: WebSiteComponent,
     title: 'Task Sync',
   },
   {
@@ -126,7 +125,6 @@ export const routes: Routes = [
             path: 'create',
             component: TaskCreateComponent,
             title: 'Task Sync - Cadastrar atividade',
-
           },
           {
             path: 'list',

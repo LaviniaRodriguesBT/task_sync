@@ -1,12 +1,10 @@
 .upload-image {
     cursor: pointer;
 }
-
 .upload-image:hover {
     opacity: 0.8;
     transition: opacity 0.3s;
 }
-
 .image-upload-container {
     display: flex;
     align-items: center;
@@ -14,12 +12,10 @@
     margin-top: 10px;
     flex-wrap: wrap;
 }
-
 #image-preview {
     max-width: 100px;
     max-height: 100px;
 }
-
 .text-recomend-img {
     font-size: 12px;
     color: #555;
@@ -27,7 +23,6 @@
     margin: 0;
     flex-basis: 200px;
 }
-
 .form-div {
     display: flex;
     flex-direction: column;
@@ -36,24 +31,20 @@
     max-width: 90%;
     border-radius: 2%;
 }
-
 h1 {
     font-size: 24px;
     margin-bottom: 20px;
     color: #333;
 }
-
 hr {
     width: 100%;
     border-top: 1px solid #e0e0e0;
     margin-bottom: 20px;
 }
-
 .text-name {
     font-size: 16px;
     color: #555;
 }
-
 .field-name {
     border: 1px solid #ced4da;
     font-size: 16px;
@@ -62,13 +53,11 @@ hr {
     width: 100%;
     box-sizing: border-box;
 }
-
 .input-group {
     position: relative;
     display: flex;
     align-items: center;
 }
-
 .input-group-append {
     position: absolute;
     top: 0;
@@ -83,53 +72,43 @@ hr {
     padding: 0 10px;
     cursor: pointer;
 }
-
 .input-group-text {
     font-size: 18px;
     color: #495057;
 }
-
 .text-name {
     margin-right: 1%;
 }
-
 .type-user {
     margin-right: 3%;
     margin-top: 3%;
 }
-
 .form-row {
     display: flex;
     flex-wrap: wrap;
 }
-
 .form-group {
     margin-bottom: 1%;
     width: 100%;
 }
-
 .form-group.col-12 {
     flex: 0 0 100%;
 }
-
 .form-div {
     justify-content: center;
     align-items: center;
     padding-left: 180px
 }
-
 .text-name {
     font-size: 20px;
     padding: 10px;
     width: 100%;
 }
-
 .text-form {
     font-size: 20px;
     padding: 10px;
     width: 100%;
 }
-
 .field-name {
     border-left: none;
     border-right: none;
@@ -137,7 +116,6 @@ hr {
     padding: 2%;
     width: 100%;
 }
-
 .btn-back {
     border: none;
     cursor: pointer;
@@ -155,7 +133,6 @@ hr {
     z-index: 1;
     background-color: white;
     border: 2px solid #6f42c1;
-
     &:after {
         content: '';
         position: absolute;
@@ -166,7 +143,6 @@ hr {
         border-radius: 10rem;
         z-index: -2;
     }
-
     &:before {
         content: '';
         bottom: 0;
@@ -178,20 +154,16 @@ hr {
         border-radius: 10rem;
         z-index: -1;
     }
-
     &:hover {
         color: white;
         background-color: #6f42c1;
-
         &:before {
             width: 100%;
         }
     }
-
     align-items: center;
     gap: 5px;
 }
-
 .btn-create {
     border: none;
     cursor: pointer;
@@ -209,7 +181,6 @@ hr {
     z-index: 1;
     background-color: white;
     border: 2px solid green;
-
     &:after {
         content: '';
         position: absolute;
@@ -220,7 +191,6 @@ hr {
         border-radius: 10rem;
         z-index: -2;
     }
-
     &:before {
         content: '';
         bottom: 0;
@@ -232,20 +202,16 @@ hr {
         border-radius: 10rem;
         z-index: -1;
     }
-
     &:hover {
         color: white;
         background-color: green;
-
         &:before {
             width: 100%;
         }
     }
-
     align-items: center;
     gap: 5px;
 }
-
 .btn-edit {
     display: inline-block;
     padding: .75rem 1.25rem;
@@ -258,7 +224,6 @@ hr {
     position: relative;
     overflow: hidden;
     z-index: 1;
-
     &:after {
         content: '';
         position: absolute;
@@ -269,7 +234,6 @@ hr {
         border-radius: 10rem;
         z-index: -2;
     }
-
     &:before {
         content: '';
         position: absolute;
@@ -282,18 +246,14 @@ hr {
         border-radius: 10rem;
         z-index: -1;
     }
-
     &:hover {
         color: #ffffff;
-
         &:before {
             width: 100%;
         }
     }
-
     margin: 1%;
 }
-
 .input-group-text {
     font-size: 18px;
     border: none;

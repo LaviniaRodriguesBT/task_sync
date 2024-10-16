@@ -3,7 +3,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
-
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
@@ -14,7 +13,6 @@
 </nav>
 <h1>Criar novo cronograma</h1>
 <hr>
-
 <form class="form-div" [formGroup]="form" (ngSubmit)="create()">
     <div class="form-row">
         <div class="form-group col-12 mt-2">
@@ -24,14 +22,12 @@
                     @for(user of userList; track $index){
                     <mat-option value="{{ user.id }}">{{ user.name }}</mat-option>
                     }
-
                 </mat-select>
             </mat-form-field>
             <div *ngIf="form.get('user_id')?.invalid && (form.get('user_id')?.touched)" class="text-danger">
                 <small *ngIf="form.get('user_id')?.errors?.['required']">Pessoa é obrigatório.</small>
             </div>
         </div>
-
         <div class="form-group col-12 mt-2">
             <mat-form-field class="text-name">
                 <mat-label>Nome da atividade</mat-label>
@@ -45,7 +41,6 @@
                 <small *ngIf="form.get('task_id')?.errors?.['required']">Atividade é obrigatório.</small>
             </div>
         </div>
-
         <div class="form-group col-12 mt-2">
             <label for="value" class="text-name">Valor R$</label>
             <input type="text" class="field-name" id="value" placeholder="Valor R$" formControlName="value"
@@ -58,7 +53,6 @@
                     número positivo com até 2 casas decimais.</span>
             </div>
         </div>
-
         <div class="form-group col-12 mt-2">
             <label for="start_time" class="text-name">Horario de Inicio</label>
             <input type="time" class="field-name" id="start_time" placeholder="Horario de Inicio"
@@ -68,7 +62,6 @@
                 <small *ngIf="form.get('start_time')?.errors?.['required']">O horário de início é obrigatório.</small>
             </div>
         </div>
-
         <div class="form-group col-12 mt-2">
             <label for="end_time" class="text-name">Horario de Termino</label>
             <input type="time" class="field-name" id="end_time" placeholder="Horario de Termino"
@@ -78,7 +71,6 @@
                 <small *ngIf="form.get('end_time')?.errors?.['required']">O horário de término é obrigatório.</small>
             </div>
         </div>
-
         <div class="form-group col-12 mt-2">
             <label for="date" class="text-name">Data</label>
             <input type="date" class="field-name" id="date" placeholder="Data" formControlName="date">
@@ -87,7 +79,6 @@
                 <small *ngIf="form.get('date')?.errors?.['required']">A data é obrigatória.</small>
             </div>
         </div>
-
         <div class="form-group col-12 mt-2">
             <mat-form-field class="text-name">
                 <mat-label>Status</mat-label>
@@ -100,12 +91,10 @@
                 <small *ngIf="form.get('status')?.errors?.['required']">Status é obrigatório.</small>
             </div>
         </div>
-
         <div class="form-group d-flex justify-content-around mt-2 btns">
             <a class="btn btn-back" routerLink="/event/{{eventId}}/scheduling/list">Voltar</a>
             <button class="btn clean-form" type="reset" value="Limpar">Limpar</button>
             <button class="btn btn-create">Criar</button>
         </div>
-
     </div>
 </form>

@@ -14,7 +14,6 @@ import { UserReadService } from '../../../../../services/user/user-read.service'
 import { TaskReadService } from '../../../../../services/task/task-read.service';
 import { CommonModule } from '@angular/common';
 import { monetaryValidator } from '../monetary-validator';
-
 @Component({
   selector: 'task-sync-scheduling-edit',
   standalone: true,
@@ -29,20 +28,16 @@ import { monetaryValidator } from '../monetary-validator';
   styleUrl: './scheduling-edit.component.css'
 })
 export class SchedulingEditComponent implements OnInit {
-
   schedulingId?: string;
   form!: FormGroup;
   eventId: string = '';
   event!: Event;
-
   nameMinLength: number = 3;
   nameMaxLength: number = 100;
   descriptionMinValue: number = 1;
   descriptionMaxValue: number = 500;
-
   userList: User [] = [];
   taskList: Task [] = [];
-
   constructor(private activatedRoute: ActivatedRoute,
     private schedulingReadService: SchedulingReadService,
     private schedulingUpdateService: SchedulingUpdateService,
@@ -55,7 +50,6 @@ export class SchedulingEditComponent implements OnInit {
     this.initializeForm();
     this.eventId = this.form.controls['event_id'].value;
   }
-
   initializeForm() {
     this.form = this.formBuilder.group({
       event_id: [''],
@@ -69,12 +63,10 @@ export class SchedulingEditComponent implements OnInit {
       status: ['Em aberto', Validators.required],
     });
   }
-
   formatCurrency(event: any) {
     const input = event.target;
     let value = input.value;
     value = value.replace(/[^0-9,]/g, '');
-
     const parts = value.split(',');
     if (parts.length > 2) {
       value = parts[0] + ',' + parts.slice(1).join('').replace(/,/g, '');
@@ -82,10 +74,8 @@ export class SchedulingEditComponent implements OnInit {
     if (parts.length > 1) {
       value = parts[0] + ',' + parts[1].substring(0, 2);
     }
-
     input.value = value;
   }
-
   async ngOnInit() {
     this.userList = await this.userReadService.findAll();
     this.taskList = await this.taskReadService.findAll();
@@ -94,11 +84,8 @@ export class SchedulingEditComponent implements OnInit {
     let schedulingId = this.activatedRoute.snapshot.paramMap.get('id');
     this.schedulingId = schedulingId!;
     this.loadSchedulingById(schedulingId!);
-
   }
-
   async loadSchedulingById(schedulingId: string) {
-    
     let scheduling = await this.schedulingReadService.findById(schedulingId);
     console.log(scheduling);
     this.form.controls['event_id'].setValue(scheduling.event.id);
@@ -110,7 +97,6 @@ export class SchedulingEditComponent implements OnInit {
     this.form.controls['date'].setValue(scheduling.date);
     this.form.controls['status'].setValue(scheduling.status);
   }
-
   async update() {
     try {
       const scheduling: Scheduling = {
@@ -134,10 +120,7 @@ export class SchedulingEditComponent implements OnInit {
       this.toastrService.error('Erro. Cronograma não foi atualizado.');
     }
   }
-
   validateFields() {
     return this.form.valid;
   }
-
 }
-

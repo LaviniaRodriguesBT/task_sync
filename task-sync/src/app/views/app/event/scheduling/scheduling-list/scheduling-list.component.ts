@@ -15,8 +15,6 @@ import { SchedulingUpdateService } from '../../../../../services/scheduling/sche
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorIntl, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { NgbModalRef, NgbModalOptions, NgbModal } from '@ng-bootstrap/ng-bootstrap';
-
-
 @Component({
   selector: 'task-sync-scheduling-list',
   standalone: true,
@@ -51,10 +49,8 @@ export class SchedulingListComponent implements OnInit {
   searchText: string = "";
   schedulings: ResponseScheduling[] = [];
   schedulingCopy: ResponseScheduling[] = [];
-
   @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
   modalRef: NgbModalRef | null = null;
-  
   constructor(
     private schedulingReadService: SchedulingReadService,
     private schedulingDeleteService: SchedulingDeleteService,
@@ -86,7 +82,6 @@ export class SchedulingListComponent implements OnInit {
       return `${from} - ${to} de ${length}`;
   };
   }
-
   loadSchedulings() {
     this.schedulingReadService.findByEventId(this.eventId).then(data => {
       this.totalPessoas = data.length;
@@ -106,8 +101,6 @@ export class SchedulingListComponent implements OnInit {
     this.form = this.formBuilder.group(formData);
     });
   }
-
-
   applyDynamicStyles(): void {
     this.statusCards.forEach((card: ElementRef, index: number) => {
       switch (index) {
@@ -128,21 +121,15 @@ export class SchedulingListComponent implements OnInit {
       }
     });
   }
-
   openMyModal(content: any) {
     const options: NgbModalOptions = {
       backdropClass: 'app-session-modal-backdrop',
       windowClass: 'app-session-modal-window',
-     
     };
-  
     this.modalRef = this.modalService.open(content, {
       windowClass: 'custom-modal-class'
     });
-    
   }
-  
-
   closeMyModal() {
     if (this.modalRef) {this.modalRef.close();
     }
@@ -152,16 +139,13 @@ export class SchedulingListComponent implements OnInit {
       console.log('Iniciando a remoção do cronograma' + schedulingId);
       await this.schedulingDeleteService.delete(schedulingId);
       this.toastrService.success('Cronograma excluído com sucesso');
-
       await this.loadSchedulings();
     } catch (error) {
       this.toastrService.error('Não foi possível remover o cronograma');
     }
   }
-
   async update(scheduling: ResponseScheduling) {
     try {
-
       const schedulingUpdate: Scheduling = {
         id: scheduling.id,
         event_id: scheduling.event.id!,
@@ -174,7 +158,6 @@ export class SchedulingListComponent implements OnInit {
         end_time: scheduling.end_time,
         date: scheduling.date,
         status: this.form.controls[`status${scheduling.id}`].value,
-
       }
       console.log(schedulingUpdate);
       await this.updateStatus.update(schedulingUpdate);
@@ -182,49 +165,37 @@ export class SchedulingListComponent implements OnInit {
       this.emAndamento = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
       this.concluido = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
       this.emAberto = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
-
-
     } catch (error) {
       this.toastrService.error('Erro. Cronograma não foi atualizado.');
     }
   }
-
   handlePageEvent(e: PageEvent) {
     this.pageIndex = e.pageIndex;
     this.pageSize = e.pageSize;
     this.schedulings = this.schedulingCopy.slice(this.pageIndex * this.pageSize, 
       (this.pageIndex + 1) * this.pageSize);
   }
-
   gerarPdf() {
     window.print()
   }
-
   public exportExcelEventList() {
     this.excelExporter.exportData(this.schedulings, new IgxExcelExporterOptions('ExportedDataFile'));
-
   }
-
   search(): void {
     let input = document.getElementById('search') as HTMLInputElement;
-
     let event = input.value;
-
     if (this.schedulingCopy.length <= 0 || this.schedulingCopy == null)
       return;
-
     if (event == null || event == undefined || event.length <= 0) {
       this.schedulings = this.schedulingCopy;
       this.searchText = "";
       return;
     }
-
     this.searchText = event;
     let schedulings = this.schedulingCopy.filter((predicate) =>
       predicate.event.name?.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
       predicate.task.name?.toLocaleLowerCase().includes(event.toLocaleLowerCase()) ||
       predicate.user.name?.toLocaleUpperCase().includes(event.toLocaleUpperCase()));
-
     if (schedulings == undefined) {
       this.schedulings = [];
       return;

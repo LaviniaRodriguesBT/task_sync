@@ -6,7 +6,6 @@ import { EventCreateService } from '../../../../services/event/event-create.serv
 import { Event } from "../../../../domain/model/event.model";
 import { HttpClientModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
-
 @Component({
   selector: 'task-sync-event-create',
   standalone: true,
@@ -24,17 +23,13 @@ export class EventCreateComponent implements OnInit {
   @ViewChild('imagePreview') imagePreview!: ElementRef<HTMLImageElement>;
   @ViewChild('imgEvent') imgEvent!: ElementRef<HTMLInputElement>;
   @ViewChild('dateInput') dateInput!: ElementRef<HTMLInputElement>;
-
   form!: FormGroup;
   nameMinLength: number = 3;
-
   descriptionMinValue: number = 10;
-
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
   showImagePreview: boolean = false;
   image!: string;
-
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
@@ -44,11 +39,9 @@ export class EventCreateComponent implements OnInit {
   ) {
     this.initializeForm();
   }
-
   ngOnInit(): void {
     this.dateInput.nativeElement.min = new Date().toISOString().split('T')[0];
   }
-
   initializeForm() {
     this.form = this.formBuilder.group({
       code: ['', [Validators.required, Validators.maxLength(20)]],
@@ -60,20 +53,17 @@ export class EventCreateComponent implements OnInit {
       end_time: ['', [Validators.required]]
     });
   }
-  
   validateNumber(event: KeyboardEvent) {
     const charCode = event.keyCode ? event.keyCode : event.which;
     if (charCode < 48 || charCode > 57) {
       event.preventDefault(); 
     }
   }
-
   async create() {
     if (this.form.invalid) {
       this.toastr.error('Preencha todos os campos obrigatórios corretamente antes de cadastrar o evento.');
       return;
     }
-
     const event: Event = {
       id: this.form.get('id')?.value,
       code: this.form.get('code')?.value,
@@ -85,7 +75,6 @@ export class EventCreateComponent implements OnInit {
       end_time: this.form.get('end_time')?.value,
       image: this.image,
     };
-
     try {
       await this.eventCreateService.create(event);
       this.toastr.success('Dados salvos com sucesso!');
@@ -94,14 +83,12 @@ export class EventCreateComponent implements OnInit {
       this.toastr.error('Erro ao salvar os dados: ' + error.message);
     }
   }
-
   onImageSelected(event: any) {
     const file = event.target.files[0];
     if (file) {
       this.selectedImage = file;
       this.fileName = file.name;
       this.showImagePreview = true;
-
       const reader = new FileReader();
       reader.onload = () => {
         this.image = reader.result as string;
@@ -116,7 +103,6 @@ export class EventCreateComponent implements OnInit {
       this.showImagePreview = false;
     }
   }
-
   openImagePicker() {
     if (this.imgEvent) {
       this.imgEvent.nativeElement.click();
@@ -124,7 +110,6 @@ export class EventCreateComponent implements OnInit {
       console.error('Elemento com ID "img-event" não encontrado.');
     }
   }
-
   validateFields() {
     return this.form.valid;
   }

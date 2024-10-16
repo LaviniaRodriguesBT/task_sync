@@ -10,7 +10,6 @@ import { EventReadService } from '../../../services/event/event-read.service';
 import { Event } from '../../../domain/model/event.model';
 import { CarouselModule } from 'primeng/carousel';
 import { ResponseScheduling } from '../../../domain/dto/response-scheduling';
-
 @Component({
   selector: 'task-sync-home',
   standalone: true,
@@ -33,31 +32,25 @@ export class HomeComponent implements OnInit {
   options: any;
   events: Event[] = [];
   responsiveOptions: any[] | undefined;
-
   @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
-
   constructor(
     private schedulingService: SchedulingReadService,
     private renderer: Renderer2,
     private eventReadService: EventReadService
   ) { }
-
   ngOnInit(): void {
     this.schedulingService.findAll().then(data => {
       this.totalPessoas = data.length;
       this.emAndamento = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
       this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
       this.emAberto = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
-
       this.applyDynamicStyles();
       this.loadEvents();
     });
   }
-
   async loadEvents() {
     this.events = await this.eventReadService.findAll();
   }
-
   applyDynamicStyles(): void {
     this.statusCards.forEach((card: ElementRef, index: number) => {
       switch (index) {

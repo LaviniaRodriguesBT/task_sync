@@ -1,6 +1,5 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-
 @Component({
   selector: 'task-sync-about-us',
   standalone: true,
@@ -10,7 +9,6 @@ import { Component } from '@angular/core';
 })
 export class AboutUsComponent {
   accessType: string | null = null;
-
   ngOnInit() {
     this.accessType = localStorage.getItem('accessType');
   }

@@ -6,7 +6,6 @@ import { Task } from '../../../../domain/model/task.model';
 import { TaskReadService } from '../../../../services/task/task-read.service';
 import { TaskUpdateService } from '../../../../services/task/task-update.service';
 import { CommonModule } from '@angular/common';
-
 @Component({
   selector: 'task-sync-task-edit',
   standalone: true,
@@ -23,10 +22,8 @@ export class TaskEditComponent {
   taskId?: string;
   userId: string|null = '';
   form!: FormGroup;
-
   nameMinLength: number = 3;
   nameMaxLength: number = 200;
-
   constructor(private activatedRoute: ActivatedRoute,
     private taskReadService: TaskReadService,
     private taskUpdateService: TaskUpdateService,
@@ -35,26 +32,22 @@ export class TaskEditComponent {
     private formBuilder: FormBuilder) {
     this.initializeForm();
   }
-
   initializeForm() {
     this.form = this.formBuilder.group({
       name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(200)]],
     });
   }
-
   ngOnInit(): void {
     let taskId = this.activatedRoute.snapshot.paramMap.get('id');
     this.taskId = taskId!;
     this.loadTaskById(taskId!);
     this.userId = localStorage.getItem('id');
   }
-
   async loadTaskById(taskId: string) {
     let task = await this.taskReadService.findById(taskId);
     console.log(task);
     this.form.controls['name'].setValue(task.name);
   }
-
   async update() {
     try {
       const task: Task = {
@@ -62,7 +55,6 @@ export class TaskEditComponent {
         name: this.form.controls['name'].value,
         userId: this.userId!
       }
-
       console.log(task);
       await this.taskUpdateService.update(task);
       this.toastrService.success('Atividade atualizada com sucesso!');
@@ -71,9 +63,7 @@ export class TaskEditComponent {
       this.toastrService.error('Erro. Atividade não foi atualizada.');
     }
   }
-
   validateFields() {
     return this.form.valid;
   }
-
 }
