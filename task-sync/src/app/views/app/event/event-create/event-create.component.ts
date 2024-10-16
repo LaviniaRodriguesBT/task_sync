@@ -28,7 +28,7 @@ export class EventCreateComponent implements OnInit {
   form!: FormGroup;
   nameMinLength: number = 3;
   nameMaxLength: number = 200;
-  descriptionMinValue: number = 3;
+  descriptionMinValue: number = 10;
   descriptionMaxValue: number = 200;
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
@@ -61,6 +61,12 @@ export class EventCreateComponent implements OnInit {
     });
   }
   
+  validateNumber(event: KeyboardEvent) {
+    const charCode = event.keyCode ? event.keyCode : event.which;
+    if (charCode < 48 || charCode > 57) {
+      event.preventDefault(); 
+    }
+  }
 
   async create() {
     if (this.form.invalid) {

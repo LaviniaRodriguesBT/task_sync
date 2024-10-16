@@ -45,8 +45,7 @@
 
         <div class="form-group col-12 mt-2">
             <label for="code" class="text-name">Código</label>
-            <input type="text" class="field-name" id="code" placeholder="Código" formControlName="code"
-            maxlength="20" required>
+            <input type="text" class="field-name" id="code" placeholder="Código" formControlName="code" (keypress)="validateNumber($event)">
             <div *ngIf="form.get('code')?.invalid && (form.get('code')?.dirty || form.get('code')?.touched)" class="text-danger">
                 <small *ngIf="form.get('code')?.errors?.['required']">O código é obrigatório.</small>
                 <small *ngIf="form.get('code')?.errors?.['maxlength']">O código deve ter no máximo 20 caracteres.</small>
