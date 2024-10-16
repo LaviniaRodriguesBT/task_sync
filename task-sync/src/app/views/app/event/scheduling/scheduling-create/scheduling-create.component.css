@@ -183,3 +183,8 @@ hr {
     margin-inline-start: 30px;
     margin-right: 20%;
 }
+
+.error-message {
+    color: red;
+    font-size: 0.875em; 
+}
