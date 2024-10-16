@@ -117,17 +117,26 @@
                         </div>
                     </div>
                 </td>
-                <td *ngIf="accessType == 'Administrador'">
-                    <div class="row column">
-
-                        <div class="col-4">
-                            <a (click)="deleteScheduling(scheduling.id!)">
-                                <span class="material-icons color-delete"
-                                    title="Deletar cronograma">delete_forever</span>
-                            </a>
-                        </div>
+                <a class="btn btn-error me-2" (click)="openMyModal(content)" *ngIf="accessType == 'Administrador'">
+                    <span class="material-icons color-delete" title="Deletar evento">delete_forever</span>
+                </a>
+                <ng-template #content let-modal="modal" class="modal">
+                    <div class="modal-header">
+                        <h4 class="modal-title" id="modal-basic-title">Confirmação de exclusão do cronograma</h4>
+                        <button type="button" class="close" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
                     </div>
-                </td>
+                    <div class="modal-body">
+                        <p>Confirmar a exclusão do evento?</p>
+                        <button class="btn btn-danger" (click)="deleteScheduling(scheduling.id!)"
+                            *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">CONFIRMAR EXCLUSÃO
+                        </button>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-outline-dark" (click)="closeMyModal()">Fechar</button>
+                    </div>
+                </ng-template>
             </tr>
             }
         </tbody>

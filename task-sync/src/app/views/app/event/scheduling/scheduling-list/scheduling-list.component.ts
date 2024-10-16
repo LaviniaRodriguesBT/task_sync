@@ -14,6 +14,7 @@ import { IgxExcelExporterOptions, IgxExcelExporterService } from 'igniteui-angul
 import { SchedulingUpdateService } from '../../../../../services/scheduling/scheduling-update.service';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorIntl, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
+import { NgbModalRef, NgbModalOptions, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 
 
 @Component({
@@ -52,7 +53,8 @@ export class SchedulingListComponent implements OnInit {
   schedulingCopy: ResponseScheduling[] = [];
 
   @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
-
+  modalRef: NgbModalRef | null = null;
+  
   constructor(
     private schedulingReadService: SchedulingReadService,
     private schedulingDeleteService: SchedulingDeleteService,
@@ -62,6 +64,7 @@ export class SchedulingListComponent implements OnInit {
     private updateStatus: SchedulingUpdateService,
     private formBuilder: FormBuilder,
     private renderer: Renderer2,
+    private modalService: NgbModal,
     public _MatPaginatorIntl: MatPaginatorIntl
   ) {
     this.userId = localStorage.getItem('id');
@@ -126,6 +129,24 @@ export class SchedulingListComponent implements OnInit {
     });
   }
 
+  openMyModal(content: any) {
+    const options: NgbModalOptions = {
+      backdropClass: 'app-session-modal-backdrop',
+      windowClass: 'app-session-modal-window',
+     
+    };
+  
+    this.modalRef = this.modalService.open(content, {
+      windowClass: 'custom-modal-class'
+    });
+    
+  }
+  
+
+  closeMyModal() {
+    if (this.modalRef) {this.modalRef.close();
+    }
+  }
   async deleteScheduling(schedulingId: string) {
     try {
       console.log('Iniciando a remoção do cronograma' + schedulingId);
