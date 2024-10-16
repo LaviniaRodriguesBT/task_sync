@@ -75,6 +75,7 @@ export class EventCreateComponent implements OnInit {
     }
 
     const event: Event = {
+      id: this.form.get('id')?.value,
       code: this.form.get('code')?.value,
       name: this.form.get('name')?.value,
       description: this.form.get('description')?.value,

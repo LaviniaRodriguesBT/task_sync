@@ -75,8 +75,16 @@
 
                 <div class="action-buttons">
                     <a *ngIf="accessType == 'Administrador'">
-                        <span class="material-icons color-people" title="Pessoa">person</span>
-                    </a>
+                        <mat-icon matBadge="{{ totalPessoas[event.id] }}" matBadgeColor="primary" title="Pessoas cadastradas">
+                          person
+                        </mat-icon>
+                        <!-- Inclua uma descrição para acessibilidade -->
+                        <span class="cdk-visually-hidden">
+                          Exibe a quantidade de pessoas cadastradas no cronograma
+                        </span>
+                      </a>
+                      
+                    
                     <a routerLink="/event/detail/{{event.id}}" *ngIf="accessType == 'Administrador'">
                         <span class="material-icons color-detail" title="Informações">info</span>
                     </a>
