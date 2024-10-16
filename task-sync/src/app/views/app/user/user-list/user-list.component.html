@@ -53,7 +53,7 @@
                     <tbody>
                         <tr>
                             <th scope="row">Email</th>
-                            <td>{{ user.email }}</td>
+                            <td>{{ user.email | slice:0:15}}...</td>
                         </tr>
                         <tr>
                             <th scope="row">CPF</th>
@@ -65,7 +65,7 @@
                         </tr>
                         <tr>
                             <th scope="row">Endereço</th>
-                            <td>{{ user.address | slice:0:25}}...</td>
+                            <td>{{ user.address | slice:0:15}}...</td>
                         </tr>
                     </tbody>
                 </table>

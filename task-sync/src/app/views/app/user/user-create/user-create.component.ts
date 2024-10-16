@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../../../domain/model/user.model';
-import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { UserCreateService } from '../../../../services/user/user-create.service';
@@ -21,7 +21,7 @@ import { MatSelectModule } from '@angular/material/select';
     MatIconModule,
     MatFormFieldModule,
     MatInputModule,
-    MatSelectModule
+    MatSelectModule,
   ],
   templateUrl: './user-create.component.html',
   styleUrl: './user-create.component.css'
@@ -31,14 +31,21 @@ export class UserCreateComponent implements OnInit {
 
   form!: FormGroup;
 
-  // nameMinLength: number = 3;
-  // nameMaxLength: number = 10;
+  nameMinLength: number = 3;
+
+  emailMinLength: number = 15;
+
+  addressMinLength: number = 10;
+
+  passwordMinLength: number = 6;
+
+  descriptionMinValue: number = 3;
+  descriptionMaxValue: number = 200;
 
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
   showImagePreview: boolean = false;
   image!: string;
-
 
   constructor(
     private formBuilder: FormBuilder,
@@ -55,16 +62,45 @@ export class UserCreateComponent implements OnInit {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-      email: ['', [Validators.required]],
-      password: ['', [Validators.required]],
-      cpf: ['', [Validators.required]],
-      name: ['', [Validators.required]],
-      address: ['', [Validators.required]],
-      phone: ['', [Validators.required]],
-      access_type: ['', [Validators.required]],
+        email: ['', [Validators.required, Validators.minLength(this.emailMinLength), Validators.maxLength(200)]],
+        password: ['', [Validators.required, Validators.minLength(this.passwordMinLength), Validators.maxLength(20)]],
+        cpf: ['', [Validators.required, this.cpfValidator]],
+        name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(200)]],
+        address: ['', [Validators.required, Validators.minLength(this.addressMinLength), Validators.maxLength(200)]],
+        phone: ['', [Validators.required, this.phoneValidator]], 
+        access_type: ['', [Validators.required]],    
     });
+}
+
+  validateNumber(event: KeyboardEvent) {
+    const charCode = event.keyCode ? event.keyCode : event.which;
+    if (charCode < 48 || charCode > 57) {
+      event.preventDefault(); 
+    }
+  }
+  
+
+  cpfValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    const value = control.value || '';
+    const cpfPattern = /^[0-9]{11}$/; 
+  
+    if (!cpfPattern.test(value)) {
+      return { invalidCPF: true }; 
+    }
+    return null; 
   }
 
+  phoneValidator(control: AbstractControl): { [key: string]: boolean } | null {
+    const value = control.value || '';
+    const phonePattern = /^[0-9]{10,11}$/; 
+  
+    if (!phonePattern.test(value)) {
+      return { invalidPhone: true }; 
+    }
+    return null; 
+  }
+  
+  
   showPassword: boolean = false;
 
   togglePasswordVisibility(): void {
