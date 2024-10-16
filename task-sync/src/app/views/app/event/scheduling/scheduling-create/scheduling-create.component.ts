@@ -92,8 +92,14 @@ export class SchedulingCreateComponent implements OnInit {
     console.log('preparando para criar o produto...');
     console.log(scheduling);
 
+
     try {
-      await this.schedulingCreateService.create(scheduling);
+      const schedulingId =  await this.schedulingCreateService.create(scheduling);
+      console.log(schedulingId);
+      if(schedulingId == 0){
+        this.toastr.error("Nao foi possivel salvar")
+        return;
+      }
       this.toastr.success('Dados salvos com sucesso!');
       this.router.navigate([`/event/${this.eventId}/scheduling/list`]);
     } catch (error: any) {
