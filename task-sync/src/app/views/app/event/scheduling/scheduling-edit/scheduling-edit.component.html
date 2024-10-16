@@ -19,14 +19,18 @@
     <div class="form-row">
         <div class="form-group col-12 mt-2">
             <mat-form-field class="text-name">
-                <mat-label>Nome da pessoa responsável</mat-label>
+                <mat-label>Nome da pessoa</mat-label>
                 <mat-select formControlName="user_id" class="field-name">
                     @for(user of userList; track $index){
                         <mat-option [value]="user.id">{{ user.name }}</mat-option>
                     }
 
                 </mat-select>
-            </mat-form-field></div>
+            </mat-form-field>
+            <div *ngIf="form.get('user_id')?.invalid && (form.get('user_id')?.touched)" class="text-danger">
+                <small *ngIf="form.get('user_id')?.errors?.['required']">Pessoa é obrigatório.</small>
+            </div>
+        </div>
         <div class="form-group col-12 mt-2">
             <mat-form-field class="text-name">
                 <mat-label>Nome da atividade</mat-label>
@@ -36,33 +40,65 @@
                     }
                 </mat-select>
             </mat-form-field>
+            <div *ngIf="form.get('task_id')?.invalid && (form.get('task_id')?.touched)" class="text-danger">
+                <small *ngIf="form.get('task_id')?.errors?.['required']">Atividade é obrigatório.</small>
+            </div>
         </div>
+
         <div class="form-group col-12 mt-2">
             <label for="value" class="text-name">Valor R$</label>
-            <input type="text" class="field-name" id="value" placeholder="Valor R$" formControlName="value">
+            <input type="text" class="field-name" id="value" placeholder="Valor R$" formControlName="value"
+                (input)="formatCurrency($event)">
+            <div *ngIf="form.controls['value'].invalid && (form.controls['value'].touched || form.controls['value'].dirty)"
+                class="error-message">
+                <span *ngIf="form.controls['value'].errors?.['required']" class="text-danger">O campo é
+                    obrigatório.</span>
+                <span *ngIf="form.controls['value'].errors?.['invalidMonetary']" class="text-danger">Valor deve ser um
+                    número positivo com até 2 casas decimais.</span>
+            </div>
         </div>
         <div class="form-group col-12 mt-2">
             <label for="start_time" class="text-name">Horario de Inicio</label>
             <input type="time" class="field-name" id="start_time" placeholder="Horario de Inicio"
                 formControlName="start_time">
+            <div *ngIf="form.get('start_time')?.invalid && (form.get('start_time')?.dirty || form.get('start_time')?.touched)"
+                class="text-danger">
+                <small *ngIf="form.get('start_time')?.errors?.['required']">O horário de início é obrigatório.</small>
+            </div>
         </div>
+
         <div class="form-group col-12 mt-2">
             <label for="end_time" class="text-name">Horario de Termino</label>
             <input type="time" class="field-name" id="end_time" placeholder="Horario de Termino"
                 formControlName="end_time">
+            <div *ngIf="form.get('end_time')?.invalid && (form.get('end_time')?.dirty || form.get('end_time')?.touched)"
+                class="text-danger">
+                <small *ngIf="form.get('end_time')?.errors?.['required']">O horário de término é obrigatório.</small>
+            </div>
         </div>
+
         <div class="form-group col-12 mt-2">
             <label for="date" class="text-name">Data</label>
             <input type="date" class="field-name" id="date" placeholder="Data" formControlName="date">
+            <div *ngIf="form.get('date')?.invalid && (form.get('date')?.dirty || form.get('date')?.touched)"
+                class="text-danger">
+                <small *ngIf="form.get('date')?.errors?.['required']">A data é obrigatória.</small>
+            </div>
         </div>
-        <mat-form-field class="text-name">
-            <mat-label>Status</mat-label>
-            <mat-select formControlName="status" class="field-name">
-                <mat-option value="Em aberto">Em aberto</mat-option>
-                <mat-option value="Em andamento">Em andamento</mat-option>
-                <mat-option value="Finalizada">Finalizada</mat-option>
-            </mat-select>
-        </mat-form-field>
+
+        <div class="form-group col-12 mt-2">
+            <mat-form-field class="text-name">
+                <mat-label>Status</mat-label>
+                <mat-select formControlName="status" class="field-name">
+                    <mat-option value="Em aberto">Em aberto</mat-option>
+                    <mat-option value="Em andamento">Em andamento</mat-option>
+                    <mat-option value="Finalizada">Finalizada</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div *ngIf="form.get('status')?.invalid && (form.get('status')?.touched)" class="text-danger">
+                <small *ngIf="form.get('status')?.errors?.['required']">Status é obrigatório.</small>
+            </div>
+        </div>
         
         <div class="col-12 text-end mt-2">
             <div class="col-12 text-end mt-2">
