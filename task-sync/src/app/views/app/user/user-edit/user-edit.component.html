@@ -20,6 +20,11 @@
         <div class="form-group col-12 mt-2">
             <label for="name" class="text-name">Nome</label>
             <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name">
+            <div *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)" class="text-danger">
+                <small *ngIf="form.get('name')?.errors?.['required']">O nome é obrigatório.</small>
+                <small *ngIf="form.get('name')?.errors?.['minlength']">O nome deve ter no mínimo {{ nameMinLength }} caracteres.</small>
+                <small *ngIf="form.get('name')?.errors?.['maxlength']">O nome deve ter no máximo 200 caracteres.</small>
+            </div>
         </div>
 
         <div class="form-group col-12 mt-2">
@@ -37,9 +42,14 @@
 
         <div class="form-group col-12 mt-2">
             <label for="email" class="text-name">Email</label>
-            <input type="text" class="field-name" id="email" placeholder="Email" formControlName="email">
+            <input type="email" class="field-name" id="email" placeholder="Email" formControlName="email">
+            <div *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)" class="text-danger">
+                <small *ngIf="form.get('email')?.errors?.['required']">O email é obrigatório.</small>
+                <small *ngIf="form.get('email')?.errors?.['minlength']">O email deve ter no mínimo {{ emailMinLength }} caracteres.</small>
+                <small *ngIf="form.get('email')?.errors?.['maxlength']">O email deve ter no máximo 200 caracteres.</small>
+            </div>
         </div>
-        
+
         <div class="form-group col-12 mt-2">
             <label for="password" class="text-name">Senha</label>
             <div class="input-group">
@@ -50,28 +60,53 @@
                     </span>
                 </div>
             </div>
+            <div *ngIf="form.get('password')?.invalid && (form.get('password')?.touched)" class="text-danger">
+                <small *ngIf="form.get('password')?.errors?.['required']">Senha é obrigatória.</small>
+                <small *ngIf="form.get('password')?.errors?.['weakPassword']">Senha fraca. Use letras maiúsculas, minúsculas e números.</small>
+            </div>                       
         </div>
 
         <div class="form-group col-12 mt-2">
             <label for="cpf" class="text-name">CPF</label>
-            <input type="text" class="field-name" id="cpf" placeholder="CPF" formControlName="cpf">
-        </div>
-        <div class="form-group col-12 mt-2">
-            <label for="phone" class="text-name">Telefone</label>
-            <input type="text" class="field-name" id="phone" placeholder="Telefone" formControlName="phone">
-        </div>
-        <div class="form-group col-12 mt-2">
-            <label for="address" class="text-name">Endereço</label>
-            <input type="text" class="field-name" id="address" placeholder="Endereço" formControlName="address">
+            <input type="text" class="field-name" id="cpf" placeholder="CPF" formControlName="cpf" (keypress)="validateNumber($event)">
+            <div *ngIf="form.get('cpf')?.invalid && (form.get('cpf')?.touched)" class="text-danger">
+                <small *ngIf="form.get('cpf')?.errors?.['required']">CPF é obrigatório.</small>
+                <small *ngIf="form.get('cpf')?.errors?.['invalidCPF']">CPF inválido. Digite 11 números.</small>
+            </div>
         </div>
 
-        <mat-form-field class="text-name">
-            <mat-label>Tipo de Acesso</mat-label>
-            <mat-select formControlName="access_type" class="field-name" >
-                <mat-option value="Administrador">Administrador</mat-option>
-                <mat-option value="Colaborador">Colaborador</mat-option>
-            </mat-select>
-        </mat-form-field>
+        <div class="form-group col-12 mt-2">
+            <label for="phone" class="text-name">Telefone</label>
+            <input type="text" class="field-name" id="phone" placeholder="Telefone" formControlName="phone" (keypress)="validateNumber($event)">
+            <div *ngIf="form.get('phone')?.invalid && (form.get('phone')?.touched)" class="text-danger">
+                <small *ngIf="form.get('phone')?.errors?.['required']">Telefone é obrigatório.</small>
+                <small *ngIf="form.get('phone')?.errors?.['invalidPhone']">Número de telefone inválido. Use 10 ou 11 dígitos.</small>
+            </div>
+        </div>
+
+        <div class="form-group col-12 mt-2">
+            <label for="address" class="text-name">Endereco</label>
+            <input type="text" class="field-name" id="address" placeholder="Endereco" formControlName="address">
+            <div *ngIf="form.get('address')?.invalid && (form.get('name')?.dirty || form.get('address')?.touched)" class="text-danger">
+                <small *ngIf="form.get('address')?.errors?.['required']">O endereço é obrigatório.</small>
+                <small *ngIf="form.get('address')?.errors?.['minlength']">O endereço deve ter no mínimo {{ nameMinLength }} caracteres.</small>
+                <small *ngIf="form.get('address')?.errors?.['maxlength']">O endereço deve ter no máximo 200 caracteres.</small>
+            </div>
+        </div>
+
+        <div class="form-group col-12 mt-2">
+            <label for="access_type" class="text-name">Tipo de Acesso</label>
+            <mat-form-field class="w-100">
+                <mat-label>Tipo de Acesso</mat-label>
+                <mat-select formControlName="access_type">
+                    <mat-option value="Administrador">Administrador</mat-option>
+                    <mat-option value="Colaborador">Colaborador</mat-option>
+                </mat-select>
+            </mat-form-field>
+            <div *ngIf="form.get('access_type')?.invalid && (form.get('access_type')?.touched)" class="text-danger">
+                <small *ngIf="form.get('access_type')?.errors?.['required']">Tipo de acesso é obrigatório.</small>
+            </div>
+        </div>
         
         <div class="col-12 text-end mt-2">
             <div class="col-12 text-end mt-2">
