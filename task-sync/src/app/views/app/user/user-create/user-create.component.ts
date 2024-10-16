@@ -40,7 +40,6 @@ export class UserCreateComponent implements OnInit {
   passwordMinLength: number = 6;
 
   descriptionMinValue: number = 3;
-  descriptionMaxValue: number = 200;
 
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
@@ -62,45 +61,45 @@ export class UserCreateComponent implements OnInit {
 
   initializeForm() {
     this.form = this.formBuilder.group({
-        email: ['', [Validators.required, Validators.minLength(this.emailMinLength), Validators.maxLength(200)]],
-        password: ['', [Validators.required, Validators.minLength(this.passwordMinLength), Validators.maxLength(20)]],
-        cpf: ['', [Validators.required, this.cpfValidator]],
-        name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(200)]],
-        address: ['', [Validators.required, Validators.minLength(this.addressMinLength), Validators.maxLength(200)]],
-        phone: ['', [Validators.required, this.phoneValidator]], 
-        access_type: ['', [Validators.required]],    
+      email: ['', [Validators.required, Validators.minLength(this.emailMinLength), Validators.maxLength(200)]],
+      password: ['', [Validators.required, Validators.minLength(this.passwordMinLength), Validators.maxLength(500)]],
+      cpf: ['', [Validators.required, this.cpfValidator]],
+      name: ['', [Validators.required, Validators.minLength(this.nameMinLength), Validators.maxLength(200)]],
+      address: ['', [Validators.required, Validators.minLength(this.addressMinLength), Validators.maxLength(400)]],
+      phone: ['', [Validators.required, this.phoneValidator]],
+      access_type: ['', [Validators.required]],
     });
-}
+  }
 
   validateNumber(event: KeyboardEvent) {
     const charCode = event.keyCode ? event.keyCode : event.which;
     if (charCode < 48 || charCode > 57) {
-      event.preventDefault(); 
+      event.preventDefault();
     }
   }
-  
+
 
   cpfValidator(control: AbstractControl): { [key: string]: boolean } | null {
     const value = control.value || '';
-    const cpfPattern = /^[0-9]{11}$/; 
-  
+    const cpfPattern = /^[0-9]{14}$/;
+
     if (!cpfPattern.test(value)) {
-      return { invalidCPF: true }; 
+      return { invalidCPF: true };
     }
-    return null; 
+    return null;
   }
 
   phoneValidator(control: AbstractControl): { [key: string]: boolean } | null {
     const value = control.value || '';
-    const phonePattern = /^[0-9]{10,11}$/; 
-  
+    const phonePattern = /^[0-9]{11,14}$/;
+
     if (!phonePattern.test(value)) {
-      return { invalidPhone: true }; 
+      return { invalidPhone: true };
     }
-    return null; 
+    return null;
   }
-  
-  
+
+
   showPassword: boolean = false;
 
   togglePasswordVisibility(): void {
@@ -170,14 +169,7 @@ export class UserCreateComponent implements OnInit {
   }
 
   validateFields() {
-    return this.form.controls['email'].valid &&
-    this.form.controls['password'].valid &&
-    this.form.controls['cpf'].valid &&
-    this.form.controls['name'].valid &&
-    this.form.controls['address'].valid &&
-    this.form.controls['phone'].valid;
+    return this.form.valid;
   }
 
 }
-
-
