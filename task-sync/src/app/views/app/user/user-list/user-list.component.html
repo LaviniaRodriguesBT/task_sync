@@ -70,9 +70,19 @@
                     </tbody>
                 </table>
                 <div class="action-buttons">
-                    <a>
+                    <!-- <a>
                         <span class="material-icons color-people" title="Evento">event</span>
+                    </a> -->
+
+                    <a *ngIf="accessType === 'Administrador'">
+                        <mat-icon matBadge="{{ user.eventCount || 0 }}" matBadgeColor="primary" title="Eventos cadastrados">
+                            event
+                        </mat-icon>
+                        <span class="cdk-visually-hidden">
+                            Exibe a quantidade de eventos cadastrados para este usuário
+                        </span>
                     </a>
+
                     <a routerLink="/user/detail/{{ user.id }}">
                         <span class="material-icons color-detail" title="Informações">info</span>
                     </a>

@@ -8,4 +8,5 @@ export interface User {
     address: string,
     access_type?: string,
     image?: string,
+    eventCount?: number;
 }

@@ -108,8 +108,6 @@ export class EventListComponent implements OnInit {
     this.totalPessoas = {}; 
 
     for (const event of this.events) {
-      console.log(this.totalPessoas);
-
       if (event.id) {
         const schedulings = await this.schedulingReadService.findByEventId(event.id);
         this.totalPessoas[event.id] = schedulings.length; 
@@ -117,7 +115,6 @@ export class EventListComponent implements OnInit {
         console.warn('Evento sem ID encontrado:', event);
       }
     }
-    console.log(this.totalPessoas);
 
     this.length = this.eventsCopy.length;
   }
