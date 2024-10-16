@@ -1,8 +1,6 @@
 package br.com.tasksync.backend.main.dao.postgres;
 
 
-
-
 import br.com.tasksync.backend.main.domain.ContractModel;
 import br.com.tasksync.backend.main.port.dao.contract.ContractDao;
 
@@ -24,8 +22,8 @@ public class ContractPostgresDaoImplem implements ContractDao {
     @Override
     public int add(ContractModel entity) {
 
-        String sql = "INSERT INTO contract( signature_date, user_id, event_id) ";
-        sql += " VALUES(?,?,?);";
+        String sql = "INSERT INTO contract( user_id, event_id) ";
+        sql += " VALUES(?,?);";
         PreparedStatement preparedStatement;
         ResultSet resultSet;
 
@@ -33,9 +31,9 @@ public class ContractPostgresDaoImplem implements ContractDao {
             //connection.setAutoCommit(false); deixado automatico, pois estava dando prolema apos a criacao
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             //preparedStatement.setInt(1, entity.getNumber());
-            preparedStatement.setDate(1, Date.valueOf(entity.getSignature_date()));
-            preparedStatement.setInt(2, entity.getUser_id());
-            preparedStatement.setInt(3, entity.getEvent_id());
+            //preparedStatement.setDate(1, Date.valueOf(entity.getSignature_date()));
+            preparedStatement.setInt(1, entity.getUser_id());
+            preparedStatement.setInt(2, entity.getEvent_id());
             preparedStatement.execute();
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
