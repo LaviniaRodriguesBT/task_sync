@@ -105,14 +105,14 @@ export class EventListComponent implements OnInit {
     this.events = await this.eventReadService.findUserById(userId!);
     this.eventsCopy = this.events;
 
-    this.totalPessoas = {}; // Inicializa totalPessoas como um objeto
+    this.totalPessoas = {}; 
 
     for (const event of this.events) {
       console.log(this.totalPessoas);
 
       if (event.id) {
         const schedulings = await this.schedulingReadService.findByEventId(event.id);
-        this.totalPessoas[event.id] = schedulings.length; // Armazena a quantidade de pessoas
+        this.totalPessoas[event.id] = schedulings.length; 
       } else {
         console.warn('Evento sem ID encontrado:', event);
       }
