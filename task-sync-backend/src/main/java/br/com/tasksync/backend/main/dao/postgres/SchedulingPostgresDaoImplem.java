@@ -4,6 +4,8 @@ import br.com.tasksync.backend.main.domain.SchedulingModel;
 import br.com.tasksync.backend.main.port.dao.scheduling.SchedulingDao;
 
 import java.sql.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -74,6 +76,7 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
         }
 
     }
+
 
     @Override
     public SchedulingModel readyById(int id) {
@@ -195,6 +198,45 @@ public class SchedulingPostgresDaoImplem implements SchedulingDao {
             preparedStatement.close();
             return schedulings;
         } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public boolean existsByEventIdAndUserIdAndTaskIdAndStartTimeAndEndTime(int userId, LocalTime startTime, LocalTime endTime, LocalDate date) {
+
+        final String sql = "select " +
+                "  s.id as id_scheduling, " +
+                "  p.id as person_id, " +
+                "  p.name as nome, " +
+                "  e.id as event_id, " +
+                "  e.name as nome_evento, " +
+                "  t.taskname as atividade, " +
+                "  a.value as valor, " +
+                "  to_char(s.date, 'YYYY-MM-DD') as data_sched, " +
+                "  to_char(s.start_time,'HH:MM:SS') as hora_inicio, " +
+                "  to_char(s.end_time,'HH:MM:SS') as hora_final, " +
+                "  s.status as status_atividade " +
+                " from scheduling s " +
+                " inner join contract c on c.id = s.contract_id " +
+                " inner join \"event\" e on c.event_id = e.id " +
+                " inner join \"user\" u on u.id = c.user_id " +
+                " inner join person p on p.id = u.person_id " +
+                " inner join activity a on a.id = s.activity_id " +
+                " inner join task t on t.id = a.task_id " +
+                " where p.id = ?" +
+                " and s.start_time = ?" +
+                " and s.end_time = ?" +
+                " and s.date = ?;";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, userId);
+            preparedStatement.setObject(2, startTime, Types.TIME);
+            preparedStatement.setObject(3, endTime, Types.TIME);
+            preparedStatement.setDate(4, Date.valueOf(date));
+
+            return preparedStatement.executeQuery().next();
+        } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
