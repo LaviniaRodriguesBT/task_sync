@@ -84,16 +84,16 @@
                     </a>
                     <ng-template #content let-modal="modal" class="modal">
                         <div class="modal-header">
-                            <h4 class="modal-title" id="modal-basic-title">Confirmação de exclusão do {{user.access_type}} {{
-                                user.name}}?</h4>
-                            <button type="button" class="close" aria-label="Close">
+                            <h4 class="modal-title" id="modal-basic-title">Confirmação de exclusão do(a) {{user.access_type}} {{
+                                user.name}}</h4>
+                             <button type="button" class="close" aria-label="Close" (click)="closeMyModal()">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>Confirmar a exclusão do {{user.access_type}}?</p>
+                            <p>Deseja confirmar a exclusão do(a) {{user.name}}?</p>
                             <button class="btn btn-danger" (click)="deleteUser(user.id!)"
-                                *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">CONFIRMAR EXCLUSÃO
+                                *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">EXCLUIR
                             </button>
                         </div>
                         <div class="modal-footer">
