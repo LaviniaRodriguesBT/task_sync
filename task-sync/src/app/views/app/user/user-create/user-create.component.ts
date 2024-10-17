@@ -151,17 +151,10 @@ export class UserCreateComponent implements OnInit {
       this.showImagePreview = false;
     }
   }
-<<<<<<< HEAD
   
   openImagePicker() {
     if (this.imgEvent) {
       this.imgEvent.nativeElement.click();
-=======
-
-  openImagePicker() {
-    if (this.imgUser) {
-      this.imgUser.nativeElement.click();
->>>>>>> main
     } else {
       console.error('Elemento com ID "img-event" não encontrado.');
     }
