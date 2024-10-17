@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { User } from '../../../../domain/model/user.model';
 import { FormsModule, ReactiveFormsModule, FormGroup, FormBuilder, Validators, AbstractControl } from '@angular/forms';
 import { RouterModule, Router } from '@angular/router';
@@ -36,6 +36,8 @@ export class UserCreateComponent implements OnInit {
   fileName: string = 'Nenhum arquivo escolhido';
   showImagePreview: boolean = false;
   image!: string;
+
+  @ViewChild('imgUser') imgEvent!: ElementRef<HTMLInputElement>;
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
@@ -103,7 +105,13 @@ export class UserCreateComponent implements OnInit {
     console.log('preparando para criar a pessoa...');
     console.log(user);
     try {
-      await this.userCreateService.createUser(user);
+   
+      const userId = await this.userCreateService.createUser(user);
+      console.log(userId);
+      if(userId == 0){
+        this.toastr.error("CPF ja cadastrado na base de dados")
+        return;
+      }
       this.toastr.success('Dados salvos com sucesso!');
       this.router.navigate(['user/list']);
     } catch (error: any) {
@@ -131,12 +139,12 @@ export class UserCreateComponent implements OnInit {
       this.showImagePreview = false;
     }
   }
+  
   openImagePicker() {
-    const imageInput = document.getElementById('img-user') as HTMLInputElement;
-    if (imageInput) {
-      imageInput.click();
+    if (this.imgEvent) {
+      this.imgEvent.nativeElement.click();
     } else {
-      console.error('Elemento com ID "img-user" não encontrado.');
+      console.error('Elemento com ID "img-event" não encontrado.');
     }
   }
   validateFields() {
