@@ -37,7 +37,6 @@ export class UserEditComponent {
   addressMinLength: number = 10;
   passwordMinLength: number = 6;
   descriptionMinValue: number = 3;
-  showPassword: boolean = false
   selectedImage: File | null = null;
   fileName: string = 'Nenhum arquivo escolhido';
   showImagePreview: boolean = false;
@@ -83,6 +82,7 @@ export class UserEditComponent {
       img.style.display = 'block';
     }
   }
+
   validateNumber(event: KeyboardEvent) {
     const charCode = event.keyCode ? event.keyCode : event.which;
     if (charCode < 48 || charCode > 57) {
@@ -154,9 +154,34 @@ export class UserEditComponent {
       this.toastrService.error('Erro. Não foi possível atualizar os dados do usuário.');
     }
   }
-  validateFields() {
-    return this.form.valid;
+
+
+  // SENHA
+  passwordStrength: string = '';
+
+  calculatePasswordStrength(password: string): string {
+    let strength = 0;
+
+    if (password.length >= this.passwordMinLength) strength += 1;
+    if (/[A-Z]/.test(password)) strength += 1;
+    if (/[a-z]/.test(password)) strength += 1;
+    if (/[0-9]/.test(password)) strength += 1;
+    if (/[\W]/.test(password)) strength += 1;
+
+    switch (strength) {
+      case 5: return 'forte';
+      case 4: return 'media';
+      default: return 'fraca';
+    }
   }
+
+  onPasswordInput(): void {
+    const password = this.form.get('password')?.value;
+    this.passwordStrength = this.calculatePasswordStrength(password);
+  }
+
+  showPassword: boolean = false;
+
   togglePasswordVisibility(): void {
     this.showPassword = !this.showPassword;
     const passwordField = document.getElementById('password') as HTMLInputElement;
@@ -165,5 +190,9 @@ export class UserEditComponent {
     } else {
       passwordField.type = 'password';
     }
+  }
+
+  validateFields() {
+    return this.form.valid;
   }
 }
