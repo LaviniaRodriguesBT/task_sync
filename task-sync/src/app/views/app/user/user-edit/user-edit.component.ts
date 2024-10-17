@@ -148,10 +148,10 @@ export class UserEditComponent {
       }
       console.log(user);
       await this.userUpdateService.update(user);
-      this.toastrService.success('Atividade atualizada com sucesso!');
+      this.toastrService.success('Os dados do usuario '+ user.name +' foram atualizados com sucesso!');
       this.router.navigate(['user/list']);
     } catch (error) {
-      this.toastrService.error('Erro. Atividade não foi atualizada.');
+      this.toastrService.error('Erro. Não foi possível atualizar os dados do usuário.');
     }
   }
   validateFields() {
