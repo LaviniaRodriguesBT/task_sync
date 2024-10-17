@@ -29,14 +29,14 @@
   padding: 10px;
 }
 .card {
-  margin-bottom: 20px;
-  width: calc(25% - 10px);
+  width: 24%; 
+  margin-bottom: 20px; 
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
   overflow: hidden;
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
 }
 .card-header {
   background-color: rgba(10, 6, 87, 0.975);
@@ -256,4 +256,16 @@
   justify-content: center; 
   align-items: center; 
   cursor: pointer;
+}
+
+@media (max-width: 994px) {
+  .card-container {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  .card {
+    width: 100%; 
+    margin: 10px 0; 
+  }
 }
