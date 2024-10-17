@@ -171,15 +171,14 @@ public class UserPostgresDaoImplem implements UserDao {
 
     @Override
     public void updateInformation(int id, UserModel entity) {
-        String sql = "UPDATE \"user\" SET email = ?, password = ?, access_type = ?, image = ?  WHERE id = ?;";
+        String sql = "UPDATE \"user\" SET email = ?, password = ?, access_type = ? WHERE id = ?;";
         try {
             PreparedStatement preparedStatement;
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, entity.getEmail());
             preparedStatement.setString(2, entity.getPassword());
             preparedStatement.setString(3, entity.getAccess_type());
-            preparedStatement.setString(4, entity.getImage());
-            preparedStatement.setInt(5, entity.getId());
+            preparedStatement.setInt(4, entity.getId());
             preparedStatement.execute();
             preparedStatement.close();
         } catch (Exception e) {
@@ -280,6 +279,25 @@ public class UserPostgresDaoImplem implements UserDao {
             } catch (SQLException e) {
                 throw new RuntimeException(e);
             }
+        }
+    }
+
+    @Override
+    public boolean existsCpf(String cpf) {
+        final String sql = "SELECT * FROM \"user\" u " +
+                " INNER JOIN person p on u.person_id = p.id " +
+                " WHERE p.cpf = ?;";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, cpf);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                return true;
+            }
+            return false;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }
