@@ -18,69 +18,101 @@
         <div class="form-group col-12 mt-2">
             <label for="name" class="text-name">Nome</label>
             <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name">
-            <div *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)" class="text-danger">
+            <div *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)"
+                class="text-danger">
                 <small *ngIf="form.get('name')?.errors?.['required']">O nome é obrigatório.</small>
-                <small *ngIf="form.get('name')?.errors?.['minlength']">O nome deve ter no mínimo {{ nameMinLength }} caracteres.</small>
+                <small *ngIf="form.get('name')?.errors?.['minlength']">O nome deve ter no mínimo {{ nameMinLength }}
+                    caracteres.</small>
                 <small *ngIf="form.get('name')?.errors?.['maxlength']">O nome deve ter no máximo 200 caracteres.</small>
             </div>
         </div>
+
         <div class="form-group col-12 mt-2">
             <label for="img-user" class="text-name image-label">Imagem da Pessoa</label>
             <div class="image-upload-container">
-                <input type="file" #imgUser id="img-user" class="sr-only lenght-image" accept="image/*" (change)="onImageSelected($event)">
+                <input type="file" #imgUser id="img-user" class="sr-only lenght-image" accept="image/*"
+                    (change)="onImageSelected($event)">
                 <div class="image-preview-container">
-                    <img #imagePreview id="image-preview" src="/assets/img/upload-photo.png" alt="Pré-visualização da imagem" class="upload-image" title="Faça o upload da sua imagem" (click)="openImagePicker()">
+                    <img #imagePreview id="image-preview" src="/assets/img/upload-photo.png"
+                        alt="Pré-visualização da imagem" class="upload-image" title="Faça o upload da sua imagem"
+                        (click)="openImagePicker()">
                 </div>
-                <h5 class="text-recomend-img">A dimensão recomendada é de <strong>1600 x 838</strong>. Formato <strong>JPEG ou PNG de no máximo 2MB</strong>. Imagens com dimensões diferentes serão redimensionadas.</h5>
+                <h5 class="text-recomend-img">A dimensão recomendada é de <strong>1600 x 838</strong>. Formato
+                    <strong>JPEG ou PNG de no máximo 2MB</strong>. Imagens com dimensões diferentes serão
+                    redimensionadas.</h5>
             </div>
         </div>
+
         <div class="form-group col-12 mt-2">
             <label for="email" class="text-name">Email</label>
             <input type="email" class="field-name" id="email" placeholder="Email" formControlName="email">
-            <div *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)" class="text-danger">
+            <div *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)"
+                class="text-danger">
                 <small *ngIf="form.get('email')?.errors?.['required']">O email é obrigatório.</small>
-                <small *ngIf="form.get('email')?.errors?.['minlength']">O email deve ter no mínimo {{ emailMinLength }} caracteres.</small>
-                <small *ngIf="form.get('email')?.errors?.['maxlength']">O email deve ter no máximo 200 caracteres.</small>
+                <small *ngIf="form.get('email')?.errors?.['minlength']">O email deve ter no mínimo {{ emailMinLength }}
+                    caracteres.</small>
+                <small *ngIf="form.get('email')?.errors?.['maxlength']">O email deve ter no máximo 200
+                    caracteres.</small>
             </div>
         </div>
+
         <div class="form-group col-12 mt-2">
             <label for="password" class="text-name">Senha</label>
             <div class="input-group">
-                <input type="password" class="field-name" id="password" placeholder="Senha" formControlName="password">
+                <input type="password" class="field-name" id="password" placeholder="Senha" formControlName="password"
+                    (input)="onPasswordInput()">
                 <div class="input-group-append">
                     <span id="togglePassword" (click)="togglePasswordVisibility()">
-                        <i class="fas input-group-text" [ngClass]="{'fa-eye': showPassword, 'fa-eye-slash': !showPassword}"></i>
+                        <i class="fas input-group-text"
+                            [ngClass]="{'fa-eye': showPassword, 'fa-eye-slash': !showPassword}"></i>
                     </span>
                 </div>
             </div>
             <div *ngIf="form.get('password')?.invalid && (form.get('password')?.touched)" class="text-danger">
                 <small *ngIf="form.get('password')?.errors?.['required']">Senha é obrigatória.</small>
-                <small *ngIf="form.get('password')?.errors?.['weakPassword']">Senha fraca. Use letras maiúsculas, minúsculas e números.</small>
-            </div>                       
+            </div>
+
+            <div class="progress mt-2">
+                <div class="progress-bar" [class.bg-danger]="passwordStrength === 'fraca'"
+                    [class.bg-warning]="passwordStrength === 'media'" [class.bg-success]="passwordStrength === 'forte'"
+                    [style.width]="passwordStrength === 'forte' ? '100%' :
+                                                       passwordStrength === 'media' ? '66%' :
+                                                       '33%'">
+                    {{ passwordStrength }}
+                </div>
+            </div>
         </div>
+
         <div class="form-group col-12 mt-2">
             <label for="cpf" class="text-name">CPF</label>
-            <input type="text" class="field-name" id="cpf" placeholder="CPF" formControlName="cpf" (keypress)="validateNumber($event)">
+            <input type="text" class="field-name" id="cpf" placeholder="CPF" formControlName="cpf"
+                (keypress)="validateNumber($event)">
             <div *ngIf="form.get('cpf')?.invalid && (form.get('cpf')?.touched)" class="text-danger">
                 <small *ngIf="form.get('cpf')?.errors?.['required']">CPF é obrigatório.</small>
                 <small *ngIf="form.get('cpf')?.errors?.['invalidCPF']">CPF inválido. Digite 11 números.</small>
             </div>
         </div>
+
         <div class="form-group col-12 mt-2">
             <label for="phone" class="text-name">Telefone</label>
-            <input type="text" class="field-name" id="phone" placeholder="Telefone" formControlName="phone" (keypress)="validateNumber($event)">
+            <input type="text" class="field-name" id="phone" placeholder="Telefone" formControlName="phone"
+                (keypress)="validateNumber($event)">
             <div *ngIf="form.get('phone')?.invalid && (form.get('phone')?.touched)" class="text-danger">
                 <small *ngIf="form.get('phone')?.errors?.['required']">Telefone é obrigatório.</small>
-                <small *ngIf="form.get('phone')?.errors?.['invalidPhone']">Número de telefone inválido. Use 10 ou 11 dígitos.</small>
+                <small *ngIf="form.get('phone')?.errors?.['invalidPhone']">Número de telefone inválido. Use 10 ou 11
+                    dígitos.</small>
             </div>
         </div>
         <div class="form-group col-12 mt-2">
             <label for="address" class="text-name">Endereco</label>
             <input type="text" class="field-name" id="address" placeholder="Endereco" formControlName="address">
-            <div *ngIf="form.get('address')?.invalid && (form.get('name')?.dirty || form.get('address')?.touched)" class="text-danger">
+            <div *ngIf="form.get('address')?.invalid && (form.get('name')?.dirty || form.get('address')?.touched)"
+                class="text-danger">
                 <small *ngIf="form.get('address')?.errors?.['required']">O endereço é obrigatório.</small>
-                <small *ngIf="form.get('address')?.errors?.['minlength']">O endereço deve ter no mínimo {{ nameMinLength }} caracteres.</small>
-                <small *ngIf="form.get('address')?.errors?.['maxlength']">O endereço deve ter no máximo 200 caracteres.</small>
+                <small *ngIf="form.get('address')?.errors?.['minlength']">O endereço deve ter no mínimo {{ nameMinLength
+                    }} caracteres.</small>
+                <small *ngIf="form.get('address')?.errors?.['maxlength']">O endereço deve ter no máximo 200
+                    caracteres.</small>
             </div>
         </div>
         <div class="form-group col-12 mt-2">
