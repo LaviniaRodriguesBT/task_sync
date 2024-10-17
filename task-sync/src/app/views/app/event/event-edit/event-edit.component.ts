@@ -117,10 +117,10 @@ export class EventEditComponent implements OnInit {
       }
       console.log(event);
       await this.eventUpdateService.update(event);
-      this.toastrService.success('Evento atualizado com sucesso!');
+      this.toastrService.success('Os dados do evento ' + event.name + ' foram atualizados com sucesso!');
       this.router.navigate(['event/list']);
     } catch (error) {
-      this.toastrService.error('Erro. Evento não foi atualizado.');
+      this.toastrService.error('Erro. Não foi possível atualizar os dados do evento.');
     }
   }
   validateFields() {
