@@ -75,8 +75,14 @@ export class UserListComponent {
       this.totalEventos = {}; 
       for (const user of this.users) {
         if (user.id) {
-            const events = await this.eventReadService.findUserById(user.id); 
-            user.eventCount = events.length; 
+          const quantidadePessoas = new Set();
+          const events = await this.eventReadService.findUserById(user.id); 
+          events.forEach(event => {
+            if(user.access_type != 'Administrador'){
+              quantidadePessoas.add(event.id)
+            }       
+          })
+          this.totalEventos[user.id] = quantidadePessoas.size; 
         } else {
             console.warn('Usuário sem ID encontrado:', user);
         }

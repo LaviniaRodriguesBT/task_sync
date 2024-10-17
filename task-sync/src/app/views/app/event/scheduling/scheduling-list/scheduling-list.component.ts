@@ -84,7 +84,11 @@ export class SchedulingListComponent implements OnInit {
   }
   loadSchedulings() {
     this.schedulingReadService.findByEventId(this.eventId).then(data => {
-      this.totalPessoas = data.length;
+      const quantidadePessoas = new Set();
+      data.forEach(scheduling => {
+        quantidadePessoas.add(scheduling.user.id)
+      })
+      this.totalPessoas = quantidadePessoas.size;
       this.totalScheduling = data.length;
       this.emAndamento = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
       this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;

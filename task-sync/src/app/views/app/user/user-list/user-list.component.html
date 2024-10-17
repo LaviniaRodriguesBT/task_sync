@@ -51,15 +51,15 @@
                     </tbody>
                 </table>
                 <div class="action-buttons">
-                    <a *ngIf="accessType === 'Administrador'">
-                        <mat-icon matBadge="{{ user.eventCount || 0 }}" matBadgeColor="primary"
-                            title="Eventos cadastrados">
-                            event
+
+                    <a>
+                        <mat-icon matBadge="{{ totalEventos[user.id!] }}" matBadgeColor="primary" title="Pessoas cadastradas">
+                          person
                         </mat-icon>
                         <span class="cdk-visually-hidden">
-                            Exibe a quantidade de eventos cadastrados para este usuário
+                          Exibe a quantidade de pessoas cadastradas no cronograma
                         </span>
-                    </a>
+                    </a> 
                     <a routerLink="/user/detail/{{ user.id }}">
                         <span class="material-icons color-detail" title="Informações">info</span>
                     </a>
