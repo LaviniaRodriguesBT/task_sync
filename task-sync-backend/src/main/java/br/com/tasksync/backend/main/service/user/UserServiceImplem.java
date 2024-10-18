@@ -35,10 +35,17 @@ public class UserServiceImplem implements UserService {
         }
 
         boolean responseExist = ifExistsCpf(entity);
-        System.out.println("cheguei aqui" + responseExist);
+        System.out.println("cheguei aqui onde valida o cpf: " + responseExist);
         if (responseExist) {
-            System.out.println("nao consegui criar o usuario");
+            System.out.println("nao consegui criar o usuario por conta do cpf");
             return 0;
+        }
+
+        boolean responseExistEmail = ifExistsEmail(entity);
+        System.out.println("cheguei aqui onde valida email: " + responseExistEmail);
+        if (responseExistEmail) {
+            System.out.println("nao consegui criar o usuario por conta do email");
+            return -1;
         }
         int id = userDao.add(entity);
         System.out.println("Criacao de uma nova pessoa feita com sucesso");
@@ -94,5 +101,10 @@ public class UserServiceImplem implements UserService {
     @Override
     public boolean ifExistsCpf(UserModel data) {
         return userDao.existsCpf(data.getCpf());
+    }
+
+    @Override
+    public boolean ifExistsEmail(UserModel data) {
+        return userDao.existsEmail(data.getEmail());
     }
 }

@@ -62,4 +62,9 @@ public class UserH2DaoImplem implements UserDao {
     public boolean existsCpf(String cpf) {
         return false;
     }
+
+    @Override
+    public boolean existsEmail(String email) {
+        return false;
+    }
 }
