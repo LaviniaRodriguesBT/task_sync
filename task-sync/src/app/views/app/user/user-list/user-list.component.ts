@@ -57,9 +57,11 @@ export class UserListComponent {
   ngOnInit(): void {
     this.loadUsers();
     this.length = this.usersCopy.length;
+    
   }
   async loadUsers() {
     this.users = await this.userReadService.findAll();
+    console.log(this.users);
     this.usersCopy = this.users;
     this.length = this.users.length;
     this._MatPaginatorIntl.itemsPerPageLabel = "Itens por página";
@@ -140,5 +142,6 @@ export class UserListComponent {
       return;
     }
     this.users = users;
+  
   }
 }

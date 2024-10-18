@@ -51,6 +51,7 @@ export class UserCreateComponent implements OnInit {
   showImagePreview: boolean = false;
   image!: string;
 
+  @ViewChild('imgUser') imgEvent!: ElementRef<HTMLInputElement>;
   constructor(
     private formBuilder: FormBuilder,
     private toastr: ToastrService,
@@ -115,7 +116,13 @@ export class UserCreateComponent implements OnInit {
     console.log(user);
 
     try {
-      await this.userCreateService.createUser(user);
+   
+      const userId = await this.userCreateService.createUser(user);
+      console.log(userId);
+      if(userId == 0){
+        this.toastr.error("CPF ja cadastrado na base de dados")
+        return;
+      }
       this.toastr.success('Dados salvos com sucesso!');
       this.router.navigate(['user/list']);
     } catch (error: any) {
@@ -144,10 +151,10 @@ export class UserCreateComponent implements OnInit {
       this.showImagePreview = false;
     }
   }
-
+  
   openImagePicker() {
-    if (this.imgUser) {
-      this.imgUser.nativeElement.click();
+    if (this.imgEvent) {
+      this.imgEvent.nativeElement.click();
     } else {
       console.error('Elemento com ID "img-event" não encontrado.');
     }

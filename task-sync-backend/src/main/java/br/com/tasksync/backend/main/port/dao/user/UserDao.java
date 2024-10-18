@@ -10,4 +10,6 @@ public interface UserDao extends CrudDao<UserModel> {
     boolean updatePassword(int id, String newPassword);
 
     UserModel authenticate(AuthenticationDto authenticationDto);
+
+    boolean existsCpf(String cpf);
 }

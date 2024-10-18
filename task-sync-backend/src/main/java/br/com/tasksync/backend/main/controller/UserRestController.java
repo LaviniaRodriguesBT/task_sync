@@ -36,11 +36,9 @@ public class UserRestController {
 
     @CrossOrigin
     @PostMapping()
-    public ResponseEntity<UserModel> createEntity(@RequestBody final UserModel data) {
+    public ResponseEntity<Integer> createEntity(@RequestBody final UserModel data) {
         int id = userService.create(data);
-        final URI uri = ServletUriComponentsBuilder
-                .fromCurrentRequestUri().path("{id}").buildAndExpand(id).toUri();
-        return ResponseEntity.created(uri).build();
+        return ResponseEntity.ok(id);
     }
 
     @CrossOrigin

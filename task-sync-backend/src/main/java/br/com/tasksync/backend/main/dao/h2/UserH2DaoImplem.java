@@ -57,4 +57,9 @@ public class UserH2DaoImplem implements UserDao {
     public UserModel authenticate(AuthenticationDto authenticationDto) {
         return null;
     }
+
+    @Override
+    public boolean existsCpf(String cpf) {
+        return false;
+    }
 }

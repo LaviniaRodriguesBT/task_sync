@@ -2,6 +2,7 @@ package br.com.tasksync.backend.main.service.user;
 
 import br.com.tasksync.backend.main.domain.UserModel;
 import br.com.tasksync.backend.main.dto.AuthenticationDto;
+import br.com.tasksync.backend.main.dto.CreateUserDto;
 import br.com.tasksync.backend.main.port.dao.user.UserDao;
 import br.com.tasksync.backend.main.port.service.user.UserService;
 import org.springframework.stereotype.Service;
@@ -30,6 +31,13 @@ public class UserServiceImplem implements UserService {
                         entity.getPhone().isEmpty() ||
                         entity.getAddress().isEmpty()
         ) {
+            return 0;
+        }
+
+        boolean responseExist = ifExistsCpf(entity);
+        System.out.println("cheguei aqui" + responseExist);
+        if (responseExist) {
+            System.out.println("nao consegui criar o usuario");
             return 0;
         }
         int id = userDao.add(entity);
@@ -81,5 +89,10 @@ public class UserServiceImplem implements UserService {
             return null;
         }
         return userDao.authenticate((authenticationDto));
+    }
+
+    @Override
+    public boolean ifExistsCpf(UserModel data) {
+        return userDao.existsCpf(data.getCpf());
     }
 }
