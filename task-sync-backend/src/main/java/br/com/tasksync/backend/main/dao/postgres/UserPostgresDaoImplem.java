@@ -300,4 +300,24 @@ public class UserPostgresDaoImplem implements UserDao {
             throw new RuntimeException(e);
         }
     }
+
+
+    @Override
+    public boolean existsEmail(String email) {
+        final String sql = "SELECT * FROM \"user\" u " +
+                " INNER JOIN person p on u.person_id = p.id " +
+                " WHERE u.email = ?;";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                return true;
+            }
+            return false;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
