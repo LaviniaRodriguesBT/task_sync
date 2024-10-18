@@ -333,3 +333,17 @@
   align-items: center; 
   cursor: pointer;
 }
+
+
+#myChart{
+  width: 320px;
+  height: 320px;
+}
+
+.card{
+  padding: 0px;
+}
+
+.monitoring{
+  display: flex;
+}

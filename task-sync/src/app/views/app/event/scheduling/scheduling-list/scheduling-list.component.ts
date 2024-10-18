@@ -15,6 +15,12 @@ import { SchedulingUpdateService } from '../../../../../services/scheduling/sche
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorIntl, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { NgbModalRef, NgbModalOptions, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import * as echarts from 'echarts/core';
+import { PieChart, PieSeriesOption } from 'echarts/charts';
+import { TitleComponent, TooltipComponent, LegendComponent } from 'echarts/components';
+import { CanvasRenderer } from 'echarts/renderers';
+echarts.use([PieChart, TitleComponent, TooltipComponent, LegendComponent, CanvasRenderer]);
+
 @Component({
   selector: 'task-sync-scheduling-list',
   standalone: true,
@@ -69,19 +75,81 @@ export class SchedulingListComponent implements OnInit {
   ngOnInit(): void {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.loadSchedulings();
-    console.log("total de scheduling " + this.schedulingCopy.length);
+    console.log("Total de scheduling " + this.schedulingCopy.length);
     this._MatPaginatorIntl.itemsPerPageLabel = "Itens por página";
     this._MatPaginatorIntl.previousPageLabel = "Voltar a página anterior";
-    this._MatPaginatorIntl.nextPageLabel = "Próxima pagina";
+    this._MatPaginatorIntl.nextPageLabel = "Próxima página";
     this._MatPaginatorIntl.getRangeLabel = (page, pageSize, length) => {
       if (length == 0) {
-          return `Nenhum resultado encontrado.`;
+        return `Nenhum resultado encontrado.`;
       }
       const from = page * pageSize + 1;
       const to = Math.min(from + pageSize - 1, length);
       return `${from} - ${to} de ${length}`;
-  };
+    };
+   
+  
+      const chartDom = document.getElementById('myChart') as HTMLDivElement;
+    
+      if (!chartDom) {
+        console.error('Elemento do gráfico não encontrado');
+        return;
+      }
+    
+      const teste = document.getElementById('meuGrafico');
+      const myChart = echarts.init(teste);
+      const option: echarts.ComposeOption<PieSeriesOption> = {
+        title: {
+          text: 'Cronogramas',
+          left: 'center',
+          textStyle: {
+            color: 'red',
+          },
+        },
+        tooltip: {
+          trigger: 'item',
+        },
+        legend: {
+          bottom: '5%',
+          left: 'center',
+        },
+        series: [
+          {
+            name: 'Cronogramas',
+            type: 'pie',
+            radius: ['40%', '70%'],
+            avoidLabelOverlap: false,
+            itemStyle: {
+              borderRadius: 10,
+              borderColor: '#fff',
+              borderWidth: 2,
+            },
+            label: {
+              show: false,
+              position: 'center',
+            },
+            emphasis: {
+              label: {
+                show: true,
+                fontSize: 15,
+                fontWeight: 'bold',
+              },
+            },
+            data: [
+              { value: this.emAndamento, name: 'Em andamento' },
+              { value: this.emAberto, name: 'Em aberto' },
+              { value: this.concluido, name: 'Concluído' },
+            ],
+          },
+        ],
+      };
+
+      myChart.setOption(option);
+      
+
+    
   }
+  
   loadSchedulings() {
     this.schedulingReadService.findByEventId(this.eventId).then(data => {
       this.totalPessoas = data.length;
@@ -92,15 +160,80 @@ export class SchedulingListComponent implements OnInit {
       this.schedulingCopy = data;
       this.schedulings = data;
       this.length = data.length;
-      console.log(data)
+  
       this.applyDynamicStyles();
-      const formData: { [key: string]: string[] } = {}
+      
+    
+        const chartDom = document.getElementById('myChart') as HTMLDivElement;
+      
+        if (!chartDom) {
+          console.error('Elemento do gráfico não encontrado');
+          return;
+        }
+      
+     
+      
+        const myChart = echarts.init(chartDom);
+
+        // // Define the options without the generic type
+        // const option: echarts.EChartsOption = {
+        //   title: {
+        //     text: 'Cronogramas',
+        //     left: 'center',
+        //     textStyle: {
+        //       color: 'red',
+        //     },
+        //   },
+        //   tooltip: {
+        //     trigger: 'item',
+        //   },
+        //   legend: {
+        //     bottom: '5%',
+        //     left: 'center',
+        //   },
+        //   series: [
+        //     {
+        //       name: 'Cronogramas',
+        //       type: 'pie',
+        //       radius: ['40%', '70%'],
+        //       avoidLabelOverlap: false,
+        //       itemStyle: {
+        //         borderRadius: 10,
+        //         borderColor: '#fff',
+        //         borderWidth: 2,
+        //       },
+        //       label: {
+        //         show: false,
+        //         position: 'center',
+        //       },
+        //       emphasis: {
+        //         label: {
+        //           show: true,
+        //           fontSize: 15,
+        //           fontWeight: 'bold',
+        //         },
+        //       },
+        //       data: [
+        //         { value: this.emAndamento, name: 'Em andamento' },
+        //         { value: this.emAberto, name: 'Em aberto' },
+        //         { value: this.concluido, name: 'Concluído' },
+        //       ],
+        //     },
+        //   ],
+        // };
+        
+        // Set the option on the chart
+        //myChart.setOption(option);
+    
+  
+      const formData: { [key: string]: string[] } = {};
       this.schedulings.forEach(e => {
-        formData[`status${e.id}`] = ['']
-      })
-    this.form = this.formBuilder.group(formData);
+        formData[`status${e.id}`] = [''];
+      });
+      this.form = this.formBuilder.group(formData);
     });
   }
+  
   applyDynamicStyles(): void {
     this.statusCards.forEach((card: ElementRef, index: number) => {
       switch (index) {
@@ -162,9 +295,70 @@ export class SchedulingListComponent implements OnInit {
       console.log(schedulingUpdate);
       await this.updateStatus.update(schedulingUpdate);
       this.toastrService.success('Cronograma atualizado com sucesso!');
+    
+
+ 
       this.emAndamento = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
       this.concluido = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
       this.emAberto = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
+
+          
+        const chartDom = document.getElementById('myChart') as HTMLDivElement;
+      
+        if (!chartDom) {
+          console.error('Elemento do gráfico não encontrado');
+          return;
+        }
+      
+        // const myChart = echarts.init(chartDom);
+      
+        // const option: echarts.EChartsOption = {
+        //   title: {
+        //     text: 'Cronogramas',
+        //     left: 'center',
+        //     textStyle: {
+        //       color: 'red'
+        //     }
+        //   },
+        //   tooltip: {
+        //     trigger: 'item',
+        //   },
+        //   legend: {
+        //     bottom: '5%',
+        //     left: 'center',
+        //   },
+        //   series: [
+        //     {
+        //       name: 'Cronogramas',
+        //       type: 'pie',
+        //       radius: ['40%', '70%'],
+        //       avoidLabelOverlap: false,
+        //       itemStyle: {
+        //         borderRadius: 10,
+        //         borderColor: '#fff',
+        //         borderWidth: 2,
+        //       },
+        //       label: {
+        //         show: false,
+        //         position: 'center',
+        //       },
+        //       emphasis: {
+        //         label: {
+        //           show: true,
+        //           fontSize: 15,
+        //           fontWeight: 'bold',
+        //         },
+        //       },
+        //       data: [
+        //         { value: this.emAndamento, name: 'Em andamento' },
+        //         { value: this.emAberto, name: 'Em aberto' },
+        //         { value: this.concluido, name: 'Concluído' },
+        //       ],
+        //     },
+        //   ],
+        // };
+      
+        // myChart.setOption(option);
     } catch (error) {
       this.toastrService.error('Erro. Cronograma não foi atualizado.');
     }
@@ -202,4 +396,8 @@ export class SchedulingListComponent implements OnInit {
     }
     this.schedulings = schedulings;
   }
+
+
+
+
 }
