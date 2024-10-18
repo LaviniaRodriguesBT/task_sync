@@ -20,11 +20,30 @@
 <div class="article">
     <h1>Meu perfil</h1>
     <hr>
-    <form class="form">
+    <form class="form" [formGroup]="form">
+
         <div class="form-row">
             <div class="form-group col-12 mt-2">
-                <label for="email">Email</label>
-                <input type="text" class="form-control" id="email" [value]="email" readonly>
+                <label for="name" class="text-name">Nome</label>
+                <input type="name" class="field-name" id="name" formControlName="name" readonly>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12 mt-2">
+                <label for="email" class="text-name">Email</label>
+                <input type="email" class="field-name" id="email" formControlName="email" readonly>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12 mt-2">
+                <label for="phone" class="text-name">Telefone</label>
+                <input type="text" class="field-name" id="phone" formControlName="phone" readonly>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="form-group col-12 mt-2">
+                <label for="address" class="text-name">Endereço</label>
+                <input type="text" class="field-name" id="address" formControlName="address" readonly>
             </div>
         </div>
     </form>

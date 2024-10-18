@@ -73,3 +73,16 @@ ul {
   display: inline-flex;
   align-items: center;
 }
+
+.text-name {
+  font-size: 16px;
+  color: #555;
+}
+
+.field-name {
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box;
+}
