@@ -123,6 +123,10 @@ export class UserCreateComponent implements OnInit {
         this.toastr.error("CPF ja cadastrado na base de dados")
         return;
       }
+      if(userId == -1){
+        this.toastr.error("Email ja cadastrado na base de dados")
+        return;
+      }
       this.toastr.success('Dados salvos com sucesso!');
       this.router.navigate(['user/list']);
     } catch (error: any) {
