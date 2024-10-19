@@ -24,6 +24,20 @@ values (default, 'michelef@.com', '123', 'Administrador', 1),
        (default, 'patriciarf@.com', '741', 'Colaborador', 10);
 
 
+insert into groups (id, user_id)
+values (default, 9),
+       (default, 5);
+
+insert into usergroup(id, group_id, user_id, adm_id)
+values (default, 1, 2, 9),
+       (default, 1, 3, 9),
+       (default, 1, 6, 9),
+       (default, 1, 4, 9),
+       (default, 2, 7, 5),
+       (default, 2, 8, 5),
+       (default, 2, 10, 5);
+
+
 
 insert into event (id, code, name, description, business, date, start_time, end_time)
 values (default, '001', 'Reunião de Equipe', 'Discussão sobre o novo projeto', 'Desenvolvimento', '2024-05-20',
