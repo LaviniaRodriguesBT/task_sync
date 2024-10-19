@@ -5,6 +5,7 @@ import br.com.tasksync.backend.main.dao.postgres.*;
 import br.com.tasksync.backend.main.port.dao.activity.ActivityDao;
 import br.com.tasksync.backend.main.port.dao.contract.ContractDao;
 import br.com.tasksync.backend.main.port.dao.event.EventDao;
+import br.com.tasksync.backend.main.port.dao.plan.PlanDao;
 import br.com.tasksync.backend.main.port.dao.scheduling.SchedulingDao;
 import br.com.tasksync.backend.main.port.dao.task.TaskDao;
 import br.com.tasksync.backend.main.port.dao.user.UserDao;
@@ -58,5 +59,11 @@ public class AppConfiguration {
     @Profile("prod")
     public ActivityDao getActivityDao(final Connection connection) {
         return new ActivityPostgresDaoImplem(connection);
+    }
+
+    @Bean
+    @Profile("prod")
+    public PlanDao getPlanDao(final Connection connection) {
+        return new PlanPostgresDaoImplem(connection);
     }
 }
