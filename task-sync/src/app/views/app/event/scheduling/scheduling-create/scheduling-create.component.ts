@@ -94,7 +94,7 @@ export class SchedulingCreateComponent implements OnInit {
       start_time: this.form.controls['start_time'].value,
       end_time: this.form.controls['end_time'].value,
       date: this.form.controls['date'].value,
-      status: this.form.controls['status'].value,
+      status: ('Em aberto'),
     }
     scheduling.event_id = this.eventId;
     scheduling.event = this.event.name;
