@@ -15,6 +15,16 @@ import { SchedulingUpdateService } from '../../../../../services/scheduling/sche
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatPaginatorIntl, MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { NgbModalRef, NgbModalOptions, NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import * as echarts from 'echarts/core';
+import { BarChart, BarSeriesOption, PieChart, PieSeriesOption } from 'echarts/charts';
+import { TitleComponent, TooltipComponent, LegendComponent } from 'echarts/components';
+import { CanvasRenderer } from 'echarts/renderers';
+echarts.use([BarChart, PieChart, TitleComponent, TooltipComponent, LegendComponent, CanvasRenderer]);
+import { CanvasJSChart } from '@canvasjs/angular-charts'; import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
+
+import { GridComponent } from 'echarts/components';
+echarts.use([GridComponent]);
+
 @Component({
   selector: 'task-sync-scheduling-list',
   standalone: true,
@@ -31,6 +41,7 @@ import { NgbModalRef, NgbModalOptions, NgbModal } from '@ng-bootstrap/ng-bootstr
   styleUrl: './scheduling-list.component.css'
 })
 export class SchedulingListComponent implements OnInit {
+
   fa = fontawesome;
   faAdd = faPlus;
   eventId: string = '';
@@ -45,12 +56,13 @@ export class SchedulingListComponent implements OnInit {
   length = 0;
   pageSize = 10;
   pageIndex = 0;
-  pageSizeOptions = [3,5, 10, 15];
+  pageSizeOptions = [3, 5, 10, 15];
   searchText: string = "";
   schedulings: ResponseScheduling[] = [];
   schedulingCopy: ResponseScheduling[] = [];
   @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
   modalRef: NgbModalRef | null = null;
+  chartOptions: any;
   constructor(
     private schedulingReadService: SchedulingReadService,
     private schedulingDeleteService: SchedulingDeleteService,
@@ -69,19 +81,27 @@ export class SchedulingListComponent implements OnInit {
   ngOnInit(): void {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.loadSchedulings();
-    console.log("total de scheduling " + this.schedulingCopy.length);
+    console.log("Total de scheduling " + this.schedulingCopy.length);
     this._MatPaginatorIntl.itemsPerPageLabel = "Itens por página";
     this._MatPaginatorIntl.previousPageLabel = "Voltar a página anterior";
-    this._MatPaginatorIntl.nextPageLabel = "Próxima pagina";
+    this._MatPaginatorIntl.nextPageLabel = "Próxima página";
     this._MatPaginatorIntl.getRangeLabel = (page, pageSize, length) => {
       if (length == 0) {
-          return `Nenhum resultado encontrado.`;
+        return `Nenhum resultado encontrado.`;
       }
       const from = page * pageSize + 1;
       const to = Math.min(from + pageSize - 1, length);
       return `${from} - ${to} de ${length}`;
-  };
+    };
+    const chartDom = document.getElementById('myChart') as HTMLDivElement;
+    if (!chartDom) {
+      console.error('Elemento do gráfico não encontrado');
+      return;
+    }
+    this.loadCharts();
+    this.loadCharts2();
   }
+
   loadSchedulings() {
     this.schedulingReadService.findByEventId(this.eventId).then(data => {
       const quantidadePessoas = new Set();
@@ -96,35 +116,41 @@ export class SchedulingListComponent implements OnInit {
       this.schedulingCopy = data;
       this.schedulings = data;
       this.length = data.length;
-      console.log(data)
       this.applyDynamicStyles();
-      const formData: { [key: string]: string[] } = {}
+      this.loadCharts();
+      this.loadCharts2();
+      const formData: { [key: string]: string[] } = {};
       this.schedulings.forEach(e => {
-        formData[`status${e.id}`] = ['']
-      })
-    this.form = this.formBuilder.group(formData);
+        formData[`status${e.id}`] = [e.status];
+      });
+      this.form = this.formBuilder.group(formData);
     });
   }
+
   applyDynamicStyles(): void {
     this.statusCards.forEach((card: ElementRef, index: number) => {
       switch (index) {
         case 0:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#007bff'); 
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#007bff');
           break;
         case 1:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#ffc107'); 
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#0d729e');
           break;
         case 2:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#28a745'); 
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#044865');
           break;
         case 3:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#dc3545');
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#64b4d7');
           break;
-        default:;
+        default: ;
           break;
       }
     });
   }
+
+
+
+
   openMyModal(content: any) {
     const options: NgbModalOptions = {
       backdropClass: 'app-session-modal-backdrop',
@@ -135,7 +161,8 @@ export class SchedulingListComponent implements OnInit {
     });
   }
   closeMyModal() {
-    if (this.modalRef) {this.modalRef.close();
+    if (this.modalRef) {
+      this.modalRef.close();
     }
   }
   async deleteScheduling(schedulingId: string) {
@@ -169,6 +196,8 @@ export class SchedulingListComponent implements OnInit {
       this.emAndamento = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
       this.concluido = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
       this.emAberto = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
+      this.loadCharts();
+      this.loadCharts2();
     } catch (error) {
       this.toastrService.error('Erro. Cronograma não foi atualizado.');
     }
@@ -176,7 +205,7 @@ export class SchedulingListComponent implements OnInit {
   handlePageEvent(e: PageEvent) {
     this.pageIndex = e.pageIndex;
     this.pageSize = e.pageSize;
-    this.schedulings = this.schedulingCopy.slice(this.pageIndex * this.pageSize, 
+    this.schedulings = this.schedulingCopy.slice(this.pageIndex * this.pageSize,
       (this.pageIndex + 1) * this.pageSize);
   }
   gerarPdf() {
@@ -205,5 +234,125 @@ export class SchedulingListComponent implements OnInit {
       return;
     }
     this.schedulings = schedulings;
+  }
+
+
+  loadCharts() {
+    const teste = document.getElementById('meuGrafico');
+    const myChart1 = echarts.init(teste);
+    const colors: { [key in 'Em andamento' | 'Concluído' | 'Em aberto']: string } = {
+      'Em andamento': '#0d729e',
+      'Concluído': '#044865',
+      'Em aberto': '#64b4d7',
+    };
+    const chart1: echarts.ComposeOption<PieSeriesOption> = {
+      title: {
+        text: 'Cronogramas - Pie',
+        left: 'center',
+        textStyle: {
+          color: 'black',
+        },
+      },
+      tooltip: {
+        trigger: 'item',
+      },
+      legend: {
+        bottom: '1%',
+        left: 'center',
+      },
+      series: [
+        {
+          type: 'pie',
+          radius: ['40%', '70%'],
+          avoidLabelOverlap: false,
+          itemStyle: {
+            borderRadius: 10,
+            borderColor: '#fff',
+            borderWidth: 2,
+            color: (params) => {
+              return colors[params.name as 'Em andamento' | 'Concluído' | 'Em aberto'];
+            },
+          },
+          label: {
+            show: false,
+            position: 'center',
+          },
+          emphasis: {
+            label: {
+              show: true,
+              fontSize: 15,
+              fontWeight: 'bold',
+            },
+          },
+          data: [
+            { value: this.emAndamento, name: 'Em andamento' },
+            { value: this.emAberto, name: 'Em aberto' },
+            { value: this.concluido, name: 'Concluído' },
+          ],
+        },
+      ],
+    };
+    myChart1.setOption(chart1);
+
+  }
+
+
+  loadCharts2() {
+    const teste2 = document.getElementById('meuGrafico2');
+    const myChart12 = echarts.init(teste2);
+    const colors2: { [key in 'Em andamento' | 'Concluído' | 'Em aberto']: string } = {
+      'Em andamento': '#0d729e',
+      'Concluído': '#044865',
+      'Em aberto': '#64b4d7',
+    };
+    const chart12: echarts.ComposeOption<BarSeriesOption> = {
+      title: {
+        text: 'Cronogramas - Em colunas',
+        left: 'center',
+        textStyle: {
+          color: 'black',
+        },
+      },
+      tooltip: {
+        trigger: 'axis',
+        axisPointer: {
+          type: 'shadow',
+        },
+      },
+      legend: {
+        data: ['Em andamento', 'Em aberto', 'Concluído'],
+        top: 'bottom',
+      },
+      xAxis: {
+        type: 'category',
+        data: ['Em andamento', 'Em aberto', 'Concluído'],
+      },
+      yAxis: {
+        type: 'value',
+      },
+      series: [
+        {
+          type: 'bar',
+          data: [
+            {
+              value: this.emAndamento,
+              itemStyle: { color: colors2['Em andamento'] },
+              name: 'Em andamento',
+            },
+            {
+              value: this.emAberto,
+              itemStyle: { color: colors2['Em aberto'] },
+              name: 'Em aberto',
+            },
+            {
+              value: this.concluido,
+              itemStyle: { color: colors2['Concluído'] },
+              name: 'Concluído',
+            },
+          ],
+        },
+      ],
+    };
+    myChart12.setOption(chart12);
   }
 }
