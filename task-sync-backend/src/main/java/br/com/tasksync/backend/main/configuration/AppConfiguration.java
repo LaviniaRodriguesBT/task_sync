@@ -1,6 +1,6 @@
 package br.com.tasksync.backend.main.configuration;
 
-import br.com.tasksync.backend.main.dao.h2.UserH2DaoImplem;
+
 import br.com.tasksync.backend.main.dao.postgres.*;
 import br.com.tasksync.backend.main.port.dao.activity.ActivityDao;
 import br.com.tasksync.backend.main.port.dao.contract.ContractDao;
@@ -19,11 +19,6 @@ import java.sql.Connection;
 @Configuration
 public class AppConfiguration {
 
-    @Bean
-    @Profile("dev")
-    public UserDao getH2Dao(final JdbcTemplate jdbcTemplate) {
-        return new UserH2DaoImplem(jdbcTemplate);
-    }
 
     @Bean
     @Profile("prod")
