@@ -15,36 +15,10 @@
     </ol>
 </nav>
 
-<div id="meuGrafico" style="width: 600px; height: 400px;"></div>
 
 
-<div class="monitoring">
-    <div id="myChart">
-        <div>oiiiiii</div>
-    </div>
-    <div class="dashboard">
-        <h2>Dashboard</h2>
-        <div class="status-cards">
-            <div class="card" #statusCard>
-                <h3>Total de Pessoas</h3>
-                <p>{{ totalPessoas }}</p>
-            </div>
-            <div class="card" #statusCard>
-                <h3>Em Andamento</h3>
-                <p>{{ emAndamento }}</p>
-            </div>
-            <div class="card" #statusCard>
-                <h3>Finalizado</h3>
-                <p>{{ concluido }}</p>
-            </div>
-            <div class="card" #statusCard>
-                <h3>Em Aberto</h3>
-                <p>{{ emAberto }}</p>
-            </div>
-        </div>
-    </div>
 
-</div>
+
 <h1 class="lista">Lista de Cronogramas</h1>
 <div class="d-flex justify-content-between align-items-center flex-wrap">
     <a class="btn btn-back arrow-back" href="/event/list">
@@ -144,8 +118,41 @@
         </tbody>
     </table>
 </div>
+
+<div id="meuGrafico2" class="teste8"></div>
+
+<div class="monitoring">
+    <div id="meuGrafico"></div>
+    <div id="meuGrafico2"></div>
+    <div class="dashboard">
+        <h2 class="title-dash">Dashboard</h2>
+        <div class="status-cards">
+            <div class="card" #statusCard>
+                <h3>Total de Pessoas</h3>
+                <p>{{ totalPessoas }}</p>
+            </div>
+            <div class="card" #statusCard>
+                <h3>Em Andamento</h3>
+                <p>{{ emAndamento }}</p>
+            </div>
+            <div class="card" #statusCard>
+                <h3>Finalizado</h3>
+                <p>{{ concluido }}</p>
+            </div>
+            <div class="card" #statusCard>
+                <h3>Em Aberto</h3>
+                <p>{{ emAberto }}</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
 <div class="pagination">
-    <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
+    <mat-paginator 
+        [length]="length" 
+        [pageSize]="pageSize" 
+        [pageSizeOptions]="pageSizeOptions"
         (page)="handlePageEvent($event)">
     </mat-paginator>
 </div>

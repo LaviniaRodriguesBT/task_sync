@@ -284,23 +284,22 @@
   outline: none;
   box-shadow: none;
 }
-.dashboard {
-  padding: 20px;
-}
+
 .status-cards {
-  display: flex;
+
   flex-wrap: wrap;
-  gap: 20px;
+  gap: 30px;
   justify-content: space-evenly;
+  margin-top: 10px;
 }
 .card {
   border: 1px solid #dee2e6;
   border-radius: 5px;
-  padding: 20px;
+
   text-align: center;
   flex-basis: 23%;
   box-sizing: border-box;
-  min-width: 200px;
+  min-width: 150px;
   background-color: white;
   color: white;
 }
@@ -335,9 +334,9 @@
 }
 
 
-#myChart{
-  width: 320px;
-  height: 320px;
+#meuGrafico{
+  width: 350px;
+  height: 350px;
 }
 
 .card{
@@ -345,5 +344,20 @@
 }
 
 .monitoring{
+  margin-top: 60px;
   display: flex;
+}
+
+.title.dash{
+  text-align: center;
+}
+
+.dashboard{
+  align-items: center;
+  text-align: center;
+}
+
+.teste8{
+  width: 350px;
+  height: 350px;
 }
