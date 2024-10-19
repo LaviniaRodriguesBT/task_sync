@@ -8,6 +8,7 @@ import br.com.tasksync.backend.main.port.service.user.UserService;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class UserServiceImplem implements UserService {
@@ -40,6 +41,13 @@ public class UserServiceImplem implements UserService {
             System.out.println("nao consegui criar o usuario");
             return 0;
         }
+
+        int admCreated = userDao.numAdmin(9);
+        if (admCreated > 1) {
+            System.out.println("quantidade de adm maior que o suportado");
+            return 0;
+        }
+
         int id = userDao.add(entity);
         System.out.println("Criacao de uma nova pessoa feita com sucesso");
         return id;
@@ -94,5 +102,51 @@ public class UserServiceImplem implements UserService {
     @Override
     public boolean ifExistsCpf(UserModel data) {
         return userDao.existsCpf(data.getCpf());
+    }
+
+    @Override
+    public int create(CreateUserDto entity) {
+        if (entity == null) {
+            return 0;
+        }
+        if (
+                entity.getName().isEmpty() ||
+                        entity.getEmail().isEmpty() ||
+                        entity.getPassword().isEmpty() ||
+                        entity.getCpf().isEmpty() ||
+                        entity.getPhone().isEmpty() ||
+                        entity.getAddress().isEmpty()
+        ) {
+            return 0;
+        }
+        UserModel userModel = new UserModel();
+        userModel.setCpf(entity.getCpf());
+        userModel.setPassword(entity.getPassword());
+        userModel.setEmail(entity.getEmail());
+        userModel.setPhone(entity.getPhone());
+        userModel.setAddress(entity.getAddress());
+        userModel.setName(entity.getName());
+        userModel.setAccess_type(entity.getAccess_type());
+        userModel.setImage(entity.getImage());
+
+        boolean responseExist = ifExistsCpf(userModel);
+        System.out.println("cheguei aqui" + responseExist);
+        if (responseExist) {
+            System.out.println("nao consegui criar o usuario");
+            return 0;
+        }
+
+      if(entity.getAccess_type().equals("Administrador")){
+          int admCreated = userDao.numAdmin(entity.getUserId());
+          UserModel adm = userDao.readyById(entity.getUserId());
+          if (admCreated > 1 || !Objects.equals(adm.getAccess_type(), "Administrador")) {
+              System.out.println("quantidade de adm maior que o suportado");
+              return 0;
+          }
+      }
+
+        int id = userDao.add(userModel);
+        System.out.println("Criacao de uma nova pessoa feita com sucesso");
+        return id;
     }
 }

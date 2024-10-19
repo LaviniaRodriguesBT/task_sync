@@ -2,6 +2,7 @@ package br.com.tasksync.backend.main.controller;
 
 import br.com.tasksync.backend.main.domain.UserModel;
 import br.com.tasksync.backend.main.dto.AuthenticationDto;
+import br.com.tasksync.backend.main.dto.CreateUserDto;
 import br.com.tasksync.backend.main.port.service.user.UserService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -36,7 +37,7 @@ public class UserRestController {
 
     @CrossOrigin
     @PostMapping()
-    public ResponseEntity<Integer> createEntity(@RequestBody final UserModel data) {
+    public ResponseEntity<Integer> createEntity(@RequestBody final CreateUserDto data) {
         int id = userService.create(data);
         return ResponseEntity.ok(id);
     }
