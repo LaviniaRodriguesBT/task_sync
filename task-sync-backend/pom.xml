@@ -16,9 +16,6 @@
     <name>backend</name>
     <description>Projeto para gestao de eventos e monitoramento de atividades e pessoas</description>
     <url/>
-    <licenses>
-        <license/>4748
-    </licenses>
     <developers>
         <developer/>
     </developers>
@@ -30,6 +27,8 @@
     </scm>
     <properties>
         <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
     </properties>
     <dependencies>
         <dependency>
