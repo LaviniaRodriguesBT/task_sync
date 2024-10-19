@@ -300,4 +300,24 @@ public class UserPostgresDaoImplem implements UserDao {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public int numAdmin(int adminId) {
+        final String sql =  "SELECT count(*) FROM usergroup UG " +
+        "inner join \"user\" U on U.id = UG.user_id " +
+        "WHERE U.access_type like 'Administrador' and UG.adm_id = ?;";
+
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, adminId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                return resultSet.getInt(1);
+            }
+            return 0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
