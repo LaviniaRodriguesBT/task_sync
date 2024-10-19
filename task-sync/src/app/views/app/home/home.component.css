@@ -112,3 +112,13 @@
   height: auto;
   object-fit: cover;
 }
+
+
+::ng-deep .p-carousel .p-carousel-content .p-carousel-prev{
+  background-color: blue;
+}
+
+
+::ng-deep .p-carousel .p-carousel-content .p-carousel-next{
+  background-color: #ff0000;
+}
