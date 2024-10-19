@@ -79,18 +79,7 @@
                 <small *ngIf="form.get('date')?.errors?.['required']">A data é obrigatória.</small>
             </div>
         </div>
-        <div class="form-group col-12 mt-2">
-            <mat-form-field class="text-name">
-                <mat-label>Status</mat-label>
-                <mat-select formControlName="status" class="field-name">
-                    <mat-option value="Em aberto">Em aberto</mat-option>
-                    <mat-option value="Em andamento">Em andamento</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <div *ngIf="form.get('status')?.invalid && (form.get('status')?.touched)" class="text-danger">
-                <small *ngIf="form.get('status')?.errors?.['required']">Status é obrigatório.</small>
-            </div>
-        </div>
+
         <div class="form-group d-flex justify-content-around mt-2 btns">
             <a class="btn btn-back" routerLink="/event/{{eventId}}/scheduling/list">Voltar</a>
             <button class="btn clean-form" type="reset" value="Limpar">Limpar</button>
