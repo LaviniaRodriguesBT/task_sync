@@ -295,11 +295,9 @@
 .card {
   border: 1px solid #dee2e6;
   border-radius: 5px;
-
   text-align: center;
   flex-basis: 23%;
   box-sizing: border-box;
-  min-width: 150px;
   background-color: white;
   color: white;
 }
@@ -339,10 +337,6 @@
   height: 350px;
 }
 
-.card{
-  padding: 0px;
-}
-
 .monitoring{
   margin-top: 60px;
   display: flex;
@@ -361,3 +355,73 @@
   width: 350px;
   height: 350px;
 }
+
+.monitoring {
+  margin-top: 60px;
+  display: flex;
+  gap: 20px; 
+  align-items: flex-start; 
+}
+
+#meuGrafico, #meuGrafico2 {
+  flex: 1; 
+  min-width: 300px; 
+}
+
+.dashboard {
+  align-items: center;
+  text-align: center;
+  flex: 1; 
+}
+
+
+.monitoring {
+  margin-top: 60px;
+  display: flex;
+  gap: 20px; 
+  align-items: flex-start; 
+  flex-wrap: wrap; 
+}
+
+#meuGrafico, #meuGrafico2 {
+  flex: 1;
+  min-width: 300px; 
+}
+
+
+
+.status-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; 
+  justify-content: space-evenly;
+  margin-top: 10px;
+  max-width: 1200px;
+}
+
+.card {
+  border: 1px solid #dee2e6;
+  border-radius: 5px;
+  text-align: center;
+  flex-basis: 33%; 
+  max-width: 800px; 
+  box-sizing: border-box;
+  background-color: white;
+  color: rgb(255, 255, 255);
+}
+
+@media (max-width: 768px) {
+  .monitoring {
+    flex-direction: column; 
+    align-items: center; 
+  }
+
+  #meuGrafico, #meuGrafico2 {
+    width: 90%; 
+  }
+  .card {
+    flex-basis: 45%; 
+    max-width: 100%; 
+  }
+}
+
