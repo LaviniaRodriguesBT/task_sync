@@ -12,4 +12,6 @@ public interface UserDao extends CrudDao<UserModel> {
     UserModel authenticate(AuthenticationDto authenticationDto);
 
     boolean existsCpf(String cpf);
+
+    int numAdmin(int adminId);
 }

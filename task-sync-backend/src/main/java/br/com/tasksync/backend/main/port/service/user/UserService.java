@@ -9,4 +9,6 @@ public interface UserService extends CrudService<UserModel> {
     UserModel authenticate(final AuthenticationDto authenticationDto);
 
     boolean ifExistsCpf(UserModel data);
+
+    int create(CreateUserDto data);
 }
