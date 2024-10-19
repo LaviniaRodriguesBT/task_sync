@@ -3,21 +3,27 @@
         <div class="form-container">
             <div class="image-container">
                 <img src="/assets/img/tela_login.png" alt="slogan task sync" class="slogan">
+            </div>
+            <div class="login-content">
                 <form class="form">
-                    <div>
-                        <div class="welcome">
-                            <h1>LOGIN</h1>
-                            <div class="image-logo">
-                                <img src="/assets/img/logo-inicio.png">
-                            </div>
-                        </div>
-                        <input matInput type="email" placeholder="📧 Digite seu email" required [formControl]="email"
+                    <img src="/assets/img/contact_icon.png" alt="logo task sync" class="logo">
+
+                    <div class="login">
+                        <img src="/assets/img/email.png" alt="logo task sync" class="logo-email">
+                        <input matInput type="email" placeholder="Digite seu email" required [formControl]="email"
                             class="fa fa-envelope enter-field">
                     </div>
-                    <div>
-                        <input matInput type="password" placeholder="🗝️ Digite sua senha" maxlength="10" required
+
+                    <div class="login">
+                        <img src="/assets/img/lock.png" alt="logo task sync" class="logo-email">
+                        <input matInput type="password" placeholder="Digite sua senha" maxlength="10" required
                             [formControl]="password" class="fa fa-lock Password enter-field">
-                        <a class="btn-back" href="/">Voltar</a>
+                    </div>
+
+
+                    <div class="botao">
+                        <button class="btn-back" (click)="goBack()">Voltar</button>
+
                         <button class="btn-sign-in" (click)="login()" [disabled]="isFormInvalid()">Login</button>
                     </div>
                     @if(isLoginIncorrect) {
