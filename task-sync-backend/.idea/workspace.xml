@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
