@@ -90,9 +90,6 @@ export class SignInComponent implements OnInit {
       this.password.setValue(null);
     }
   }
-  goBack() {
-    this.router.navigate(['/account/user-type-selection']);
-  }
   isFormInvalid() {
     return !this.email.valid || !this.password.valid || !this.accessType.value;
   }
