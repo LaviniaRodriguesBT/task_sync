@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,6 +16,7 @@
     <link rel="stylesheet" href="website.component.css">
     <title>Task Sync</title>
 </head>
+
 <body>
     <header>
         <div class="interface">
@@ -37,22 +39,12 @@
                 </a>
             </div>
             <div class="menu-mobile">
-                <div #menuButton class="btn-menu">
-                  <i class="bi bi-list"></i>
+                <div class="btn-contato">
+                    <a href="account/user-type-selection">
+                        <button>Login</button>
+                    </a>
                 </div>
-                <div #closeButton class="btn-close">
-                  <i class="bi bi-x"></i>
-                </div>
-                <nav #mobileMenu>
-                  <ul>
-                    <li><a href="#inicio">Início</a></li>
-                    <li><a href="#funcionalidades">Funcionalidades</a></li>
-                    <li><a href="#sobre">Sobre</a></li>
-                    <li><a href="#contato">Contato</a></li>
-                    <li><a href="account/user-type-selection"><button>Login</button></a></li>
-                  </ul>
-                </nav>
-              </div>
+            </div>
         </div>
     </header>
     <main>
@@ -65,7 +57,8 @@
                             Nosso sistema facilita a distribuição de responsabilidades, garantindo eficiência e
                             transparência em cada etapa do processo.</p>
                         <mat-accordion class="documentacao">
-                            <mat-expansion-panel (opened)="onExpandChange({ expanded: true })" (closed)="onExpandChange({ expanded: false })">
+                            <mat-expansion-panel (opened)="onExpandChange({ expanded: true })"
+                                (closed)="onExpandChange({ expanded: false })">
                                 <mat-expansion-panel-header>
                                     <mat-panel-title>Documentações
                                         <span [class]="isExpanded ? 'arrow-down' : 'arrow-up'" class="arrow"></span>
@@ -91,7 +84,8 @@
                             </mat-expansion-panel>
                         </mat-accordion>
                         <mat-accordion class="diagrama">
-                            <mat-expansion-panel (opened)="onExpandChange({ expanded: true })" (closed)="onExpandChange({ expanded: false })">
+                            <mat-expansion-panel (opened)="onExpandChange({ expanded: true })"
+                                (closed)="onExpandChange({ expanded: false })">
                                 <mat-expansion-panel-header>
                                     <mat-panel-title>Diagramas
                                         <span [class]="isExpanded ? 'arrow-down' : 'arrow-up'" class="arrow"></span>
@@ -188,21 +182,28 @@
                     <h2 class="titulo-sobre">ENTRE EM CONTATO<span> CONOSCO.</span></h2>
                 </div>
                 <p>
-                    Se você tiver alguma dúvida ou quiser saber de mais informações sobre a contratação, contate-nos pelo e-mail abaixo:
+                    Se você tiver alguma dúvida ou quiser saber de mais informações sobre a contratação, contate-nos
+                    pelo e-mail abaixo:
                 </p>
                 <p class="email"><i class="bi bi-envelope-fill"></i> <a href="mailto:contato.tasksync@gmail.com">
                         contato.tasksync&#64;gmail.com</a></p>
             </div>
         </section>
     </main>
+
     <footer class="footer-github">
         <div class="footer-container">
             <div class="footer-logo-left">
                 <img src="assets/img/logo-faitec.png" alt="FAITEC 2024" class="footer-logo">
             </div>
-            <ul class="footer-links">
-                <li><a href="https://1drv.ms/w/c/2c7124fc96a093bf/EazgUORd5g1Gka2LgOiKHvYB63-31LeHLXLjaB2pbleVXA?e=4R678N">Licença de Software</a></li>
-            </ul>
+            <p>&copy; 2024 Todos os direitos reservados aos criadores Lavínia Brandani, Lucas Severini e Michele
+                Fernandes.
+                <span>
+                    <a
+                        href="https://1drv.ms/w/c/2c7124fc96a093bf/EazgUORd5g1Gka2LgOiKHvYBSUc7Qd_SNimM0lTT2Z-lLA?e=ISvqaA">Termos
+                        de Uso</a>
+                </span>
+            </p>
             <div class="footer-logo-right">
                 <a href="https://github.com/LaviniaRodriguesBT/task_sync" target="_blank">
                     <button class="git-img">
@@ -213,4 +214,5 @@
         </div>
     </footer>
 </body>
+
 </html>
