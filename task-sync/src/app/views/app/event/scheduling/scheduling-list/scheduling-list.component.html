@@ -54,10 +54,15 @@
         <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
         Cadastrar cronograma
     </a>
-    <div class="search-box">
+    <div class="search-box col-2" >
         <mat-icon class="search-icon">search</mat-icon>
-        <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
+        <input id="search" placeholder="Pesquisa" (keyup)="search()">
     </div>
+    <tr class="total-row col-3 text-center" class="btn btn-value">
+        <td colspan="2">Total do Evento</td>
+        <td class="text-center">{{ calculateTotalValue() | currency:'BRL':'symbol':'1.2-2' }}</td>
+        <td colspan="6"></td> 
+    </tr>
     <a class="btn btn-pdf" (click)="gerarPdf()">
         <span class="material-icons color-print">print</span>
     </a>
@@ -90,8 +95,8 @@
                 <td class="text-center">{{scheduling.user.name}}</td>
                 <td class="text-center">{{scheduling.task.name}}</td>
                 <td class="text-center">{{ scheduling.value | currency:'BRL':'symbol':'1.2-2' }}</td>
-                <td class="text-center">{{scheduling.start_time}}</td>
-                <td class="text-center">{{scheduling.end_time}}</td>
+                <td class="text-center">{{ scheduling.date + ' ' + scheduling.start_time | date:'shortTime' }}</td>
+                <td class="text-center">{{ scheduling.date + ' ' + scheduling.end_time | date:'shortTime' }}</td>
                 <td class="text-center">{{scheduling.date | date: 'dd/MM/yyyy'}}</td>
                 <td>
                     <form class="form-div" method="post" [formGroup]="form">
@@ -143,11 +148,7 @@
             </tr>
             }
             
-            <tr class="total-row">
-                <td colspan="2">Total do Evento</td>
-                <td class="text-center">{{ calculateTotalValue() | currency:'BRL':'symbol':'1.2-2' }}</td>
-                <td colspan="6"></td> 
-            </tr>
+           
             
         </tbody>
     </table>
