@@ -10,5 +10,5 @@ public interface UserService extends CrudService<UserModel> {
 
     boolean ifExistsCpf(UserModel data);
 
-    boolean ifExistsEmail(UserModel data);
+    int create(CreateUserDto data);
 }

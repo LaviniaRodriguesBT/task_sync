@@ -3,6 +3,8 @@ DROP TABLE IF EXISTS contract;
 DROP TABLE IF EXISTS activity;
 DROP TABLE IF EXISTS task;
 DROP TABLE IF EXISTS event;
+DROP TABLE IF EXISTS usergroup;
+DROP TABLE IF EXISTS groups;
 DROP TABLE IF EXISTS "user";
 DROP TABLE IF EXISTS person;
 
@@ -26,6 +28,19 @@ create table "user" (
     access_type character varying(50) not null check (access_type in('Administrador','Colaborador')) default 'Colaborador',
     person_id integer not null unique references person(id) on update cascade on delete cascade
 
+);
+
+create table groups(
+    id serial primary key,
+    user_id integer not null unique references "user"(id) on update cascade on delete cascade
+);
+
+
+create table usergroup(
+    id serial primary key,
+    group_id integer not null references groups(id) on update cascade on delete cascade,
+    user_id integer not null references "user"(id) on update cascade on delete cascade,
+    adm_id integer not null references "user"(id) on update cascade on delete cascade
 );
 
 create table event (
@@ -56,7 +71,6 @@ create table activity (
 
 create table contract (
     id serial primary key,
-
     user_id integer not null references "user"(id) on update cascade on delete cascade,
     event_id integer not null references event(id) on update cascade on delete cascade
 

@@ -67,6 +67,7 @@ export class SchedulingListComponent implements OnInit {
   schedulingCopy: ResponseScheduling[] = [];
   modalRef: NgbModalRef | null = null;
   chartOptions: any;
+  totalValue: number | undefined;
   constructor(
     private schedulingReadService: SchedulingReadService,
     private eventReadService: EventReadService,
@@ -105,6 +106,16 @@ export class SchedulingListComponent implements OnInit {
     }
     this.loadCharts();
     this.loadCharts2();
+
+    this.totalValue = this.calculateTotalValue();
+  }
+
+  calculateTotalValue(): number {
+    let total = 0;
+    for (const scheduling of this.schedulings) {
+      total += +scheduling.value;
+    }
+    return total;
   }
 
   async loadSchedulings() {
@@ -246,7 +257,6 @@ export class SchedulingListComponent implements OnInit {
     this.schedulings = schedulings;
   }
 
-
   loadCharts() {
     const teste = document.getElementById('meuGrafico');
     const myChart1 = echarts.init(teste);
@@ -365,4 +375,5 @@ export class SchedulingListComponent implements OnInit {
     };
     myChart12.setOption(chart12);
   }
+  
 }

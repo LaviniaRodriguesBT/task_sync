@@ -92,7 +92,7 @@
                 <td class="text-center">{{ scheduling.value | currency:'BRL':'symbol':'1.2-2' }}</td>
                 <td class="text-center">{{scheduling.start_time}}</td>
                 <td class="text-center">{{scheduling.end_time}}</td>
-                <td class="text-center">{{ scheduling.date | date: 'dd/MM/yyyy' }}</td>
+                <td class="text-center">{{scheduling.date | date: 'dd/MM/yyyy'}}</td>
                 <td>
                     <form class="form-div" method="post" [formGroup]="form">
                         <select class="new-status" formControlName="status{{scheduling.id}}"
@@ -142,6 +142,13 @@
                 </ng-template>
             </tr>
             }
+            
+            <tr class="total-row">
+                <td colspan="2">Total do Evento</td>
+                <td class="text-center">{{ calculateTotalValue() | currency:'BRL':'symbol':'1.2-2' }}</td>
+                <td colspan="6"></td> 
+            </tr>
+            
         </tbody>
     </table>
 </div>

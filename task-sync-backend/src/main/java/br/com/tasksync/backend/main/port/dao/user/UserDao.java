@@ -13,5 +13,5 @@ public interface UserDao extends CrudDao<UserModel> {
 
     boolean existsCpf(String cpf);
 
-    boolean existsEmail(String email);
+    int numAdmin(int adminId);
 }

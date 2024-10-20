@@ -301,20 +301,20 @@ public class UserPostgresDaoImplem implements UserDao {
         }
     }
 
-
     @Override
-    public boolean existsEmail(String email) {
-        final String sql = "SELECT * FROM \"user\" u " +
-                " INNER JOIN person p on u.person_id = p.id " +
-                " WHERE u.email = ?;";
+    public int numAdmin(int adminId) {
+        final String sql =  "SELECT count(*) FROM usergroup UG " +
+        "inner join \"user\" U on U.id = UG.user_id " +
+        "WHERE U.access_type like 'Administrador' and UG.adm_id = ?;";
+
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
-            preparedStatement.setString(1, email);
+            preparedStatement.setInt(1, adminId);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                return true;
+                return resultSet.getInt(1);
             }
-            return false;
+            return 0;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
