@@ -95,8 +95,8 @@
                 <td class="text-center">{{scheduling.user.name}}</td>
                 <td class="text-center">{{scheduling.task.name}}</td>
                 <td class="text-center">{{ scheduling.value | currency:'BRL':'symbol':'1.2-2' }}</td>
-                <td class="text-center">{{ scheduling.date + ' ' + scheduling.start_time | date:'shortTime' }}</td>
-                <td class="text-center">{{ scheduling.date + ' ' + scheduling.end_time | date:'shortTime' }}</td>
+                <td class="text-center">{{ scheduling.date + ' ' + scheduling.start_time | date:'HH:mm' }}</td>
+                <td class="text-center">{{ scheduling.date + ' ' + scheduling.end_time | date:'HH:mm' }}</td>
                 <td class="text-center">{{scheduling.date | date: 'dd/MM/yyyy'}}</td>
                 <td>
                     <form class="form-div" method="post" [formGroup]="form">
