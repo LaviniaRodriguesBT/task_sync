@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, ViewChild } from "@angular/core";
 import { ActivatedRoute, RouterModule } from "@angular/router";
 import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
 import * as fontawesome from '@fortawesome/free-solid-svg-icons';
@@ -33,6 +33,8 @@ import { MatBadgeModule } from '@angular/material/badge'; // Importar MatBadgeMo
   styleUrls: ['./event-list.component.css']
 })
 export class EventListComponent implements OnInit {
+  @ViewChild('infoModal') infoModal: any;
+
   faAdd = faPlus;
   events: Event[] = [];
   eventsCopy: Event[] = [];
@@ -77,20 +79,24 @@ export class EventListComponent implements OnInit {
       backdropClass: 'app-session-modal-backdrop',
       windowClass: 'app-session-modal-window',
     };
-    this.modalRef = this.modalService.open(content, {
-      windowClass: 'custom-modal-class'
-    });
+    this.modalRef = this.modalService.open(content, { size: 'lg', centered: true });
   }
   closeMyModal() {
     if (this.modalRef) {
       this.modalRef.close();
     }
   }
+  openInfoModal() {
+    this.modalService.open(this.infoModal, { size: 'lg', centered: true });
+  }
+  closeModal() {
+    this.modalService.dismissAll();
+  }
   async loadEvents() {
     const userId = localStorage.getItem("id");
     this.events = await this.eventReadService.findUserById(userId!);
     this.eventsCopy = this.events;
-    this.totalPessoas = {}; 
+    this.totalPessoas = {};
     for (const event of this.events) {
       if (event.id) {
         const quantidadePessoas = new Set();
@@ -98,7 +104,7 @@ export class EventListComponent implements OnInit {
         schedulings.forEach(scheduling => {
           quantidadePessoas.add(scheduling.user.id)
         })
-        this.totalPessoas[event.id] = quantidadePessoas.size; 
+        this.totalPessoas[event.id] = quantidadePessoas.size;
       } else {
         console.warn('Evento sem ID encontrado:', event);
       }
