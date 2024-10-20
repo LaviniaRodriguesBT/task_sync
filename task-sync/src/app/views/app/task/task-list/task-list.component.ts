@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrService } from 'ngx-toastr';
@@ -26,6 +26,8 @@ import { NgbModalRef, NgbModal, NgbModalOptions } from '@ng-bootstrap/ng-bootstr
   styleUrl: './task-list.component.css'
 })
 export class TaskListComponent implements OnInit {
+  @ViewChild('infoModal') infoModal: any;
+
   userId?: string;
   accessType?: string | null;
   fa = fontawesome;
@@ -88,13 +90,17 @@ export class TaskListComponent implements OnInit {
       backdropClass: 'app-session-modal-backdrop',
       windowClass: 'app-session-modal-window',
     };
-    this.modalRef = this.modalService.open(content, {
-      windowClass: 'custom-modal-class'
-    });
+    this.modalRef = this.modalService.open(content, { size: 'lg', centered: true });
   }
   closeMyModal() {
     if (this.modalRef) {this.modalRef.close();
     }
+  }
+  openInfoModal() {
+    this.modalService.open(this.infoModal, { size: 'lg', centered: true });
+  }
+  closeModal() {
+    this.modalService.dismissAll();
   }
   gerarPdf() {
     window.print()
