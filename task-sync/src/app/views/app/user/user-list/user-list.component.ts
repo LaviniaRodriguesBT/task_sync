@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrService } from 'ngx-toastr';
@@ -29,6 +29,8 @@ import { EventReadService } from '../../../../services/event/event-read.service'
   styleUrl: './user-list.component.css'
 })
 export class UserListComponent {
+  @ViewChild('infoModal') infoModal: any;
+
   accessType?: string | null;
   fa = fontawesome;
   faAdd = faPlus;
@@ -105,13 +107,17 @@ export class UserListComponent {
       backdropClass: 'app-session-modal-backdrop',
       windowClass: 'app-session-modal-window',
     };
-    this.modalRef = this.modalService.open(content, {
-      windowClass: 'custom-modal-class'
-    });
+    this.modalRef = this.modalService.open(content, { size: 'lg', centered: true });
   }
   closeMyModal() {
     if (this.modalRef) {this.modalRef.close();
     }
+  }
+  openInfoModal() {
+    this.modalService.open(this.infoModal, { size: 'lg', centered: true });
+  }
+  closeModal() {
+    this.modalService.dismissAll();
   }
   gerarPdf() {
     window.print()

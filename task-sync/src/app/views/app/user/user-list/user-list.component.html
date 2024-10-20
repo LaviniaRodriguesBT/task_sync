@@ -8,10 +8,42 @@
         <li class="breadcrumb-item">
             <a href="/user/list">Pessoas</a>
         </li>
-        <li class="breadcrumb-item active" aria-current="page">Lista</li>
+        <li class="breadcrumb-item active" aria-current="page">Lista de Pessoas</li>
     </ol>
 </nav>
-<h1>Lista de Pessoas</h1>
+
+<div class="title d-flex align-items-center justify-content-between">
+    <h1 class="lista">Lista de Pessoas</h1>
+
+    <div class="info-icon-container">
+        <span class="material-icons info-icon" (click)="openInfoModal()">help_outline</span>
+    </div>
+</div>
+
+<ng-template #infoModal let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title">Informações do Sistema</h2>
+        <button type="button" class="close" (click)="closeModal()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Aqui você encontra sua lista de pessoas cadastrados no sistema. Como administrador, você pode:</p>
+        <ul>
+            <li>Cadastrar, editar, visualizar ou excluir pessoas</li>
+            <li>Visualizar a quantidade de pessoas a pessoa está cadastrada</li>
+            <li>Gerar relatórios em Excel ou imprimir</li>
+        </ul>
+        <p>
+            Para mais informações sobre funcionalidades, acesse a
+            <a href="/help" target="_blank">ajuda do sistema</a> 
+            ou entre em contato com o 
+            <a href="mailto:contato.tasksync@gmail.com" target="_blank">suporte</a>.
+        </p>
+        
+    </div>
+</ng-template>
+
 <div class="d-flex justify-content-between">
     <a class="btn btn-back arrow-back" href="/" *ngIf="accessType == 'Administrador'">
         <span class="material-icons">arrow_back</span>
@@ -37,7 +69,7 @@
         <div class="card">
             <div class="card-header"></div>
             <div class="user-image">
-                <img src="{{user.image ? user.image : '/assets/img/face.png'}}" alt="Imagem da pessoa">
+                <img src="{{user.image ? user.image : '/assets/img/face.png'}}" alt="Imagem da pessoa" class="img-people">
             </div>
             <div class="card-body">
                 <table class="table body-text-card">
@@ -53,39 +85,41 @@
                 <div class="action-buttons">
 
                     <a>
-                        <mat-icon matBadge="{{ totalEventos[user.id!] }}" matBadgeColor="primary" title="Pessoas cadastradas">
-                          person
+                        <mat-icon *ngIf="user.access_type == 'Colaborador'" matBadge="{{ totalEventos[user.id!] }}" matBadgeColor="primary" title="Eventos cadastrados">
+                          event
                         </mat-icon>
+                        <mat-icon *ngIf="user.access_type == 'Administrador'" title="Pessoas cadastradas" class="icone">
+                            event
+                          </mat-icon>
                         <span class="cdk-visually-hidden">
                           Exibe a quantidade de pessoas cadastradas no cronograma
                         </span>
                     </a> 
                     <a routerLink="/user/detail/{{ user.id }}">
-                        <span class="material-icons color-detail" title="Informações">info</span>
+                        <span class="material-icons color-detail" title="Detalhes pessoa">info</span>
                     </a>
                     <a routerLink="/user/edit/{{ user.id }}">
-                        <span class="material-icons color-edit" title="Editar usuário">edit</span>
+                        <span class="material-icons color-edit" title="Editar pessoa">edit</span>
                     </a>
-                    <a class="btn btn-error me-2" (click)="openMyModal(content)" *ngIf="accessType == 'Administrador'">
-                        <span class="material-icons color-delete" title="Deletar evento">delete_forever</span>
+                    <a class="btn btn-error me-2" (click)="openMyModal(infoModal)" *ngIf="accessType == 'Administrador'">
+                        <span class="material-icons color-delete" title="Excluir pessoa">delete_forever</span>
                     </a>
-                    <ng-template #content let-modal="modal" class="modal">
+                    <ng-template #infoModal let-modal>
                         <div class="modal-header">
-                            <h4 class="modal-title" id="modal-basic-title">Confirmação de exclusão do(a)
-                                {{user.access_type}} {{
-                                user.name}}</h4>
+                            <h2 class="modal-title">Confirmação de exclusão do(a)
+                                {{user.access_type}}(a) {{
+                                user.name}}</h2>
                             <button type="button" class="close" aria-label="Close" (click)="closeMyModal()">
                                 <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
                         <div class="modal-body">
                             <p>Deseja confirmar a exclusão do(a) {{user.name}}?</p>
+                        </div>
+                        <div class="modal-footer">
                             <button class="btn btn-danger" (click)="deleteUser(user.id!)"
                                 *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">EXCLUIR
                             </button>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-dark" (click)="closeMyModal()">Fechar</button>
                         </div>
                     </ng-template>
                 </div>
