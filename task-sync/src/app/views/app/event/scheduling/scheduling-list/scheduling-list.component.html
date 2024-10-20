@@ -2,24 +2,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
-
 </head>
+
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="/event/list">Cronograma</a>
         </li>
-        <li *ngIf="schedulings.length > 0" class="breadcrumb-item active" aria-current="page">{{
-            schedulings[0].event.name }}</li>
+        <li class="breadcrumb-item active" aria-current="page">{{
+            eventName }}</li>
     </ol>
 </nav>
 
+<div class="title d-flex align-items-center justify-content-between">
+    <h1 class="lista">Lista de Cronogramas</h1>
+    <div class="info-icon-container">
+        <span class="material-icons info-icon" (click)="openInfoModal()">help_outline</span>
+    </div>
+</div>
 
+<ng-template #infoModal let-modal>
+    <div class="modal-header">
+        <h2 class="modal-title">Informações do Sistema</h2>
+        <button type="button" class="close" (click)="closeModal()">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body">
+        <p>Aqui você encontra cronogramas do seu evento cadastrado no sistema. Como administrador, você pode:</p>
+        <ul>
+            <li>Associar novas pessoas e atividades para seu evento.</li>
+            <li>Cadastrar, editar, visualizar ou excluir associações</li>
+            <li>Visualizar a quantidade de pessoas cadastradas</li>
+            <li>Visualizar o status da tarefa (Em aberto, em andamento e finalizado)</li>
+            <li>Gerar relatórios em Excel ou imprimir</li>
+        </ul>
+        <p>
+            Para mais informações sobre funcionalidades, acesse a
+            <a href="/help" target="_blank">ajuda do sistema</a>
+            ou entre em contato com o
+            <a href="mailto:contato.tasksync@gmail.com" target="_blank">suporte</a>.
+        </p>
+    </div>
+</ng-template>
 
-
-
-<h1 class="lista">Lista de Cronogramas</h1>
 <div class="d-flex justify-content-between align-items-center flex-wrap">
     <a class="btn btn-back arrow-back" href="/event/list">
         <span class="material-icons">arrow_back</span>
@@ -39,7 +65,9 @@
         <span class="material-icons color-print">upload_file</span>
     </a>
 </div>
+
 <hr>
+
 <div class="mat-elevation-z8 table-responsive">
     <table class="table">
         <thead class="thead-style">
@@ -79,7 +107,7 @@
                     <div class="row column">
                         <div class="col-4">
                             <a routerLink="/event/{{eventId}}/scheduling/detail/{{scheduling.id}}">
-                                <span class="material-icons color-detail" title="Informacoes">info</span>
+                                <span class="material-icons color-detail" title="Detalhes cronograma">info</span>
                             </a>
                         </div>
                     </div>
@@ -93,24 +121,23 @@
                         </div>
                     </div>
                 </td>
-                <a class="btn btn-error me-2" (click)="openMyModal(content)" *ngIf="accessType == 'Administrador'">
-                    <span class="material-icons color-delete" title="Deletar evento">delete_forever</span>
+                <a class="btn btn-error me-2" (click)="openMyModal(infoModal)" *ngIf="accessType == 'Administrador'">
+                    <span class="material-icons color-delete" title="Exluir cronograma">delete_forever</span>
                 </a>
-                <ng-template #content let-modal="modal" class="modal">
+                <ng-template #infoModal let-modal>
                     <div class="modal-header">
-                        <h4 class="modal-title" id="modal-basic-title">Confirmação de exclusão do cronograma</h4>
+                        <h2 class="modal-title" id="modal-basic-title">Confirmação de exclusão do cronograma</h2>
                         <button type="button" class="close" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <p>Confirmar a exclusão do evento?</p>
-                        <button class="btn btn-danger" (click)="deleteScheduling(scheduling.id!)"
-                            *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">CONFIRMAR EXCLUSÃO
-                        </button>
+                        <p>Confirmar a exclusão do cronograma?</p>
                     </div>
                     <div class="modal-footer">
-                        <button type="button" class="btn btn-outline-dark" (click)="closeMyModal()">Fechar</button>
+                        <button class="btn btn-danger" (click)="deleteScheduling(scheduling.id!)"
+                            *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">EXCLUIR
+                        </button>
                     </div>
                 </ng-template>
             </tr>
@@ -118,8 +145,6 @@
         </tbody>
     </table>
 </div>
-
-
 
 <div class="monitoring">
     <div id="meuGrafico"></div>
@@ -149,10 +174,7 @@
 </div>
 
 <div class="pagination">
-    <mat-paginator 
-        [length]="length" 
-        [pageSize]="pageSize" 
-        [pageSizeOptions]="pageSizeOptions"
+    <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
         (page)="handlePageEvent($event)">
     </mat-paginator>
 </div>

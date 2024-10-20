@@ -1,4 +1,4 @@
-import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChildren } from '@angular/core';
+import { Component, ElementRef, OnInit, QueryList, Renderer2, ViewChild, ViewChildren } from '@angular/core';
 import { ActivatedRoute, RouterModule } from '@angular/router';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ToastrService } from 'ngx-toastr';
@@ -20,9 +20,9 @@ import { BarChart, BarSeriesOption, PieChart, PieSeriesOption } from 'echarts/ch
 import { TitleComponent, TooltipComponent, LegendComponent } from 'echarts/components';
 import { CanvasRenderer } from 'echarts/renderers';
 echarts.use([BarChart, PieChart, TitleComponent, TooltipComponent, LegendComponent, CanvasRenderer]);
-import { CanvasJSChart } from '@canvasjs/angular-charts'; import { CanvasJSAngularChartsModule } from '@canvasjs/angular-charts';
-
 import { GridComponent } from 'echarts/components';
+import { EventReadService } from '../../../../../services/event/event-read.service';
+import { User } from '../../../../../domain/model/user.model';
 echarts.use([GridComponent]);
 
 @Component({
@@ -42,12 +42,17 @@ echarts.use([GridComponent]);
 })
 export class SchedulingListComponent implements OnInit {
 
+  @ViewChild('infoModal') infoModal: any;
+  @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
+
   fa = fontawesome;
   faAdd = faPlus;
   eventId: string = '';
+  users: User[] = [];
   userId?: string | null;
   accessType?: string | null;
   form!: FormGroup;
+  eventName: string = '';
   totalPessoas: number = 0;
   totalScheduling: number = 0;
   emAndamento: number = 0;
@@ -60,11 +65,11 @@ export class SchedulingListComponent implements OnInit {
   searchText: string = "";
   schedulings: ResponseScheduling[] = [];
   schedulingCopy: ResponseScheduling[] = [];
-  @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
   modalRef: NgbModalRef | null = null;
   chartOptions: any;
   constructor(
     private schedulingReadService: SchedulingReadService,
+    private eventReadService: EventReadService,
     private schedulingDeleteService: SchedulingDeleteService,
     private toastrService: ToastrService,
     private activatedRoute: ActivatedRoute,
@@ -73,14 +78,14 @@ export class SchedulingListComponent implements OnInit {
     private formBuilder: FormBuilder,
     private renderer: Renderer2,
     private modalService: NgbModal,
-    public _MatPaginatorIntl: MatPaginatorIntl
+    public _MatPaginatorIntl: MatPaginatorIntl,
   ) {
     this.userId = localStorage.getItem('id');
     this.accessType = localStorage.getItem('accessType')
   }
-  ngOnInit(): void {
+  async ngOnInit() {
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
-    this.loadSchedulings();
+    await this.loadSchedulings();
     console.log("Total de scheduling " + this.schedulingCopy.length);
     this._MatPaginatorIntl.itemsPerPageLabel = "Itens por página";
     this._MatPaginatorIntl.previousPageLabel = "Voltar a página anterior";
@@ -102,7 +107,10 @@ export class SchedulingListComponent implements OnInit {
     this.loadCharts2();
   }
 
-  loadSchedulings() {
+  async loadSchedulings() {
+    const event = await this.eventReadService.findById(this.eventId);
+    this.eventName = event.name;
+    console.log(this.eventName);
     this.schedulingReadService.findByEventId(this.eventId).then(data => {
       const quantidadePessoas = new Set();
       data.forEach(scheduling => {
@@ -148,21 +156,23 @@ export class SchedulingListComponent implements OnInit {
     });
   }
 
+  openInfoModal() {
+    this.modalService.open(this.infoModal, { size: 'lg', centered: true });
+  }
 
-
+  closeModal() {
+    this.modalService.dismissAll();
+  }
 
   openMyModal(content: any) {
     const options: NgbModalOptions = {
       backdropClass: 'app-session-modal-backdrop',
       windowClass: 'app-session-modal-window',
     };
-    this.modalRef = this.modalService.open(content, {
-      windowClass: 'custom-modal-class'
-    });
+    this.modalRef = this.modalService.open(content, { size: 'lg', centered: true });
   }
   closeMyModal() {
-    if (this.modalRef) {
-      this.modalRef.close();
+    if (this.modalRef) {this.modalRef.close();
     }
   }
   async deleteScheduling(schedulingId: string) {
