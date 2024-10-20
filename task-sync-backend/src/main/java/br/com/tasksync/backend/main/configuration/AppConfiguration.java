@@ -54,4 +54,10 @@ public class AppConfiguration {
     public ActivityDao getActivityDao(final Connection connection) {
         return new ActivityPostgresDaoImplem(connection);
     }
+
+    @Bean
+    @Profile("prod")
+        public PlanDao getPlanDao(final Connection connection){
+        return new PlanPostgresDaoImplem(connection);
+    }
 }
