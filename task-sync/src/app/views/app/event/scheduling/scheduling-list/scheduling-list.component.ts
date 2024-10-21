@@ -150,22 +150,35 @@ export class SchedulingListComponent implements OnInit {
     this.statusCards.forEach((card: ElementRef, index: number) => {
       switch (index) {
         case 0:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#007bff');
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#06112e');
           break;
         case 1:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#0d729e');
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#06112e');
           break;
         case 2:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#044865');
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#06112e');
           break;
         case 3:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#64b4d7');
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#06112e');
+          break;
+        case 4:
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#06112e');
+          break;
+        case 5:
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#06112e');
           break;
         default: ;
           break;
       }
     });
   }
+
+  isDropdownOpen = false;
+
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
+
 
   openInfoModal() {
     this.modalService.open(this.infoModal, { size: 'lg', centered: true });
