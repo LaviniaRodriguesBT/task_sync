@@ -114,11 +114,15 @@
 }
 
 
-::ng-deep .p-carousel .p-carousel-content .p-carousel-prev{
-  background-color: blue;
+::ng-deep .p-carousel .p-carousel-content .p-carousel-prev {
+  background-color: transparent;
+  border: none;
+  color: gray;
 }
 
 
 ::ng-deep .p-carousel .p-carousel-content .p-carousel-next{
-  background-color: #ff0000;
+  background-color: transparent;
+  border: none;
+  color: gray; 
 }
