@@ -108,6 +108,7 @@ export class SchedulingListComponent implements OnInit {
     this.loadCharts2();
 
     this.totalValue = this.calculateTotalValue();
+    console.log(this.totalValue);
   }
 
   calculateTotalValue(): number {
@@ -366,6 +367,7 @@ export class SchedulingListComponent implements OnInit {
       series: [
         {
           type: 'bar',
+          barWidth:'30',
           data: [
             {
               value: this.emAndamento,
@@ -381,7 +383,7 @@ export class SchedulingListComponent implements OnInit {
               value: this.concluido,
               itemStyle: { color: colors2['Concluído'] },
               name: 'Concluído',
-            },
+            },            
           ],
         },
       ],
