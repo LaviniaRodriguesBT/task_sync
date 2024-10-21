@@ -54,6 +54,7 @@ export class HomeComponent implements OnInit {
   ) { }
   ngOnInit(): void {
     this.schedulingService.findAll().then(data => {
+      this.schedulings = data;
       this.totalPessoas = data.length;
       this.emAndamento = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
       this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
@@ -61,7 +62,6 @@ export class HomeComponent implements OnInit {
       this.applyDynamicStyles();
       this.loadEvents();
     });
-    console.log(this.eventReadService.findAll);
   }
 
   /////////////////////////////////////
@@ -82,25 +82,25 @@ export class HomeComponent implements OnInit {
       for (const scheduling of this.schedulings) {
         const eventName = this.getEventNameForScheduling(scheduling);
         const schedulingValue = +scheduling.value || 0;
-
         // Tem que fazer a logica aqui de cada scheduling de evento//
         if (eventName) {
 
           eventCust.set(eventName, (eventCust.get(eventName) || 0) + schedulingValue);
+          console.log(eventCust.get(eventName))
         }
+        console.log(scheduling)
       }
       const eventDetails = eventNames.map((eventName) => ({
         name: eventName,
         totalCost: eventCust.get(eventName) || 0,
       }));
       this.loadCharts2(eventDetails);
-      console.log(eventDetails);
     } catch (error) {
       console.error("Erro ao carregar eventos e calcular custos:", error);
     }
   }
   getEventNameForScheduling(scheduling: any): string | undefined {
-    return scheduling.eventName;
+    return scheduling.event.name;
   }
   applyDynamicStyles(): void {
     this.statusCards.forEach((card: ElementRef, index: number) => {
@@ -129,10 +129,10 @@ export class HomeComponent implements OnInit {
     const colors2: { [key: string]: string } = {
       'Color': '#0d729e',
     };
-
-    const eventNames = eventDetails.map(event => event.name);
+  
+    const eventNames = eventDetails.map(event => event.name.length > 8 ? event.name.slice(0, 8) + '\n' + event.name.slice(8) : event.name);
     const eventCosts = eventDetails.map(event => event.totalCost);
-
+  
     const chart12: echarts.ComposeOption<BarSeriesOption> = {
       title: {
         text: 'Monitoramento de Gastos por Evento',
@@ -154,27 +154,30 @@ export class HomeComponent implements OnInit {
       xAxis: {
         type: 'category',
         data: eventNames,
+        axisLabel: {
+          rotate: 90, 
+          color: 'black', 
+          fontSize: 12,   
+          formatter: (value: string) => value.length > 10 ? value.slice(0, 10) + '...' : value // Adiciona '...' para textos longos
+        },
       },
       yAxis: {
         type: 'value',
-        data: 1,
       },
       series: [
         {
-          //name: 'Gastos',
           type: 'bar',
-          // Aqui onde renderizo cada barra
           data: eventCosts.map((cost, index) => ({
             value: cost,
             itemStyle: { color: colors2['Color'] },
           })),
-          //Aqui defino o tamanho da largura de cada barra
-          barWidth: '10%',
+          barWidth: '30%',
         },
       ],
     };
-
+  
     myChart12.setOption(chart12);
   }
+  
 
 }
