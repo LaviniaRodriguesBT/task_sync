@@ -23,7 +23,7 @@
 
                     <div class="botao">
                         <a class="btn-back" href="/account/user-type-selection">Voltar</a>
-                        <button class="btn-sign-in" (click)="login()" [disabled]="isFormInvalid()">Login</button>
+                        <button class="btn-sign-in" (click)="login()">Login</button>
                     </div>
                     @if(isLoginIncorrect) {
                     <p class="text-danger mt-2">Email e/ou senha incorretos.</p>

@@ -233,3 +233,7 @@ footer {
        width: 100%;
     }
 }
+
+.breadcrumb{
+    background-color: white;
+}

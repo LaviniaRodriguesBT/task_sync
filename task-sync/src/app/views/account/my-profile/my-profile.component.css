@@ -86,3 +86,6 @@ ul {
   width: 100%;
   box-sizing: border-box;
 }
+.breadcrumb{
+  background-color: white;
+}

@@ -74,6 +74,7 @@
   margin: 0 0 0 0;
   width: 50%;
   justify-content: center;
+  font-weight: bold;
 }
 .name-next-event {
   font-size: small;
@@ -93,12 +94,12 @@
 ::ng-deep .p-carousel .p-carousel-content .p-carousel-prev {
   background-color: transparent;
   border: none;
-  color: gray;
+  color: rgb(43, 42, 42);
 }
 ::ng-deep .p-carousel .p-carousel-content .p-carousel-next{
   background-color: transparent;
   border: none;
-  color: gray; 
+  color: rgb(43, 42, 42); 
 }
 .teste8{
   width: 100%;
@@ -106,5 +107,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+.tag-a{
+  text-decoration: none;
+}
+
+.breadcrumb{
+  background-color: white;
 }
 

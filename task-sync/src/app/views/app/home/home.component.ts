@@ -17,6 +17,8 @@ import { TitleComponent, TooltipComponent, LegendComponent } from 'echarts/compo
 import { CanvasRenderer } from 'echarts/renderers';
 echarts.use([BarChart, PieChart, TitleComponent, TooltipComponent, LegendComponent, CanvasRenderer]);
 import { GridComponent } from 'echarts/components';
+import { TaskReadService } from '../../../services/task/task-read.service';
+import { Task } from '../../../domain/model/task.model';
 echarts.use([GridComponent]);
 /////////////////////////////////////
 @Component({
@@ -34,37 +36,35 @@ echarts.use([GridComponent]);
 })
 export class HomeComponent implements OnInit {
   totalPessoas: number = 0;
+  totalTask: number = 0;
   emAndamento: number = 0;
   concluido: number = 0;
   emAberto: number = 0;
   data: any;
   options: any;
+  tasks: Task[] = [];
   events: Event[] = [];
   responsiveOptions: any[] | undefined;
-  /////////////////////////////////////
   schedulings: ResponseScheduling[] = [];
   chartOptions: any;
   totalValue: number | undefined;
-  /////////////////////////////////////
   @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
   constructor(
     private schedulingService: SchedulingReadService,
     private renderer: Renderer2,
-    private eventReadService: EventReadService
+    private eventReadService: EventReadService,
+    private taskReadService: TaskReadService
   ) { }
   ngOnInit(): void {
     this.schedulingService.findAll().then(data => {
       this.schedulings = data;
       this.totalPessoas = data.length;
-      this.emAndamento = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
-      this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizado').length;
-      this.emAberto = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
       this.applyDynamicStyles();
       this.loadEvents();
+      this.loadTasks();
+      console.log(this.tasks);
     });
   }
-
-  /////////////////////////////////////
   calculateTotalValue(): number {
     let total = 0;
     for (const scheduling of this.schedulings) {
@@ -72,8 +72,7 @@ export class HomeComponent implements OnInit {
     }
     return total;
   }
-  /////////////////////////////////////
-  /////////////////////////////////////
+
   async loadEvents() {
     try {
       this.events = await this.eventReadService.findAll();
@@ -81,10 +80,8 @@ export class HomeComponent implements OnInit {
       const eventCust = new Map<string, number>();
       for (const scheduling of this.schedulings) {
         const eventName = this.getEventNameForScheduling(scheduling);
-        const schedulingValue = +scheduling.value || 0;
-        // Tem que fazer a logica aqui de cada scheduling de evento//
+        const schedulingValue = +scheduling.value || 0;//
         if (eventName) {
-
           eventCust.set(eventName, (eventCust.get(eventName) || 0) + schedulingValue);
           console.log(eventCust.get(eventName))
         }
@@ -98,6 +95,14 @@ export class HomeComponent implements OnInit {
     } catch (error) {
       console.error("Erro ao carregar eventos e calcular custos:", error);
     }
+  }
+
+
+  async loadTasks() {
+    this.tasks = await this.taskReadService.findAll();
+    console.log(this.tasks.length);
+    this.totalTask = this.tasks.length;
+  
   }
   getEventNameForScheduling(scheduling: any): string | undefined {
     return scheduling.event.name;

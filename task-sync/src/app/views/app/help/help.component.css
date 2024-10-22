@@ -73,3 +73,7 @@ ul {
     display: inline-flex;
     align-items: center;
   }
+
+.breadcrumb{
+    background-color: white;
+}  

@@ -119,3 +119,7 @@
         gap: 20px; 
     }
 }
+
+.breadcrumb{
+    background-color: white;
+}

@@ -86,7 +86,7 @@ export class SignInComponent implements OnInit {
       localStorage.setItem('accessType', credential.accessType);
     } catch (e: any) {
       console.error(`erro: ${e}`);
-      this.toastrService.error(e.message);
+      this.toastrService.error('Usuário ou Senha inválido.');
       this.password.setValue(null);
     }
   }
