@@ -7,21 +7,21 @@
 <div class="container-fluid">
     <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-            <li class="breadcrumb-item">
-                <a href="/event/list">Cronograma</a>
+            <li>
+                <a href="/event/list" class="breadcrumb-item">Cronograma / </a>
             </li>
             <li class="breadcrumb-item active" aria-current="page">{{
                 eventName }}</li>
         </ol>
     </nav>
-    
+
     <div class="title d-flex align-items-center justify-content-between">
-        <h1 class="lista">Evento: {{eventName}}</h1>
+        <h1 class="lista" title="Nome do evento">Evento: {{eventName}}</h1>
         <div class="info-icon-container">
-            <span class="material-icons info-icon" (click)="openInfoModal()">help</span>
+            <span class="material-icons color-info" (click)="openInfoModal()">help</span>
         </div>
     </div>
-    
+
     <ng-template #infoModal let-modal>
         <div class="modal-header">
             <h2 class="modal-title">Informações do Sistema</h2>
@@ -46,22 +46,22 @@
             </p>
         </div>
     </ng-template>
-    
+
     <div class="top-table">
         <a class="btn btn-back arrow-back" href="/event/list" title="Voltar a página anterior">
             <span class="material-icons">arrow_back</span>
         </a>
-        <a class="btn btn-create" routerLink="/event/{{eventId}}/scheduling/create" *ngIf="accessType == 'Administrador'"
-        title="Criar novo cronograma">
-        <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
-        Cadastrar
+        <a class="btn btn-create" routerLink="/event/{{eventId}}/scheduling/create"
+            *ngIf="accessType == 'Administrador'" title="Criar novo cronograma">
+            <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
+            Cadastrar
         </a>
         <div class="search-box col-2">
             <mat-icon class="search-icon">search</mat-icon>
             <input id="search" placeholder="Pesquisa" (keyup)="search()" title="Pesquisar">
         </div>
         <div class="navbar">
-            <div class="dropdown"> 
+            <div class="dropdown">
                 <button class="dropbtn" title="Exportar dados">EXPORTAR <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
@@ -71,7 +71,7 @@
             </div>
         </div>
     </div>
-    
+
     <div class="mat-elevation-z8 table-responsive">
         <table class="table">
             <thead class="thead-style">
@@ -108,8 +108,8 @@
                         </form>
                     </td>
                     <td *ngIf="accessType == 'Administrador'">
-                        <div class="row column">
-                            <div class="col-4">
+                        <div class="column">
+                            <div>
                                 <a routerLink="/event/{{eventId}}/scheduling/detail/{{scheduling.id}}">
                                     <span class="material-icons color-detail" title="Detalhes cronograma">info</span>
                                 </a>
@@ -117,8 +117,8 @@
                         </div>
                     </td>
                     <td *ngIf="accessType == 'Administrador'">
-                        <div class="row column">
-                            <div class="col-4">
+                        <div class="column">
+                            <div>
                                 <a routerLink="/event/{{eventId}}/scheduling/edit/{{scheduling.id}}">
                                     <span class="material-icons color-edit" title="Editar cronograma">edit</span>
                                 </a>
@@ -126,7 +126,7 @@
                         </div>
                     </td>
                     <td *ngIf="accessType == 'Administrador'">
-                        <div class="row column">
+                        <div class="column">
                             <div class="col-4">
                                 <a (click)="openMyModal(infoModal)" *ngIf="accessType == 'Administrador'">
                                     <span class="material-icons color-delete"
@@ -153,26 +153,26 @@
                     </ng-template>
                 </tr>
                 }
-    
-    
-    
+
+
+
             </tbody>
         </table>
     </div>
-    
+
     <h1 class="text-monitoring" *ngIf="accessType == 'Administrador'"> Monitoramento</h1>
-    <div class="monitoring" *ngIf="accessType == 'Administrador'">
-    
-        <div id="meuGrafico"></div>
-        <div id="meuGrafico2" class="teste8"></div>
-        <div class="dashboard">
+    <div class="monitoring">
+
+        <div id="meuGrafico" *ngIf="accessType == 'Administrador'"></div>
+        <div id="meuGrafico2" class="teste8" *ngIf="accessType == 'Administrador'"></div>
+        <div class="dashboard" *ngIf="accessType == 'Administrador'">
             <h2 class="title-dash">Cronogramas - Card</h2>
             <div class="status-cards">
                 <div class="card" #statusCard>
                     <h3>Pessoas</h3>
                     <p>{{ totalPessoas }}</p>
                 </div>
-    
+
                 <div class="card" #statusCard>
                     <h3>Em Andamento</h3>
                     <p>{{ emAndamento }}</p>
@@ -188,12 +188,12 @@
                 <div class="card" #statusCard>
                     <h3>Total Gasto</h3>
                     <h1 class="text-value"> {{ calculateTotalValue() | currency:'BRL':'symbol':'1.2-2' }}</h1>
-                </div> 
+                </div>
             </div>
         </div>
-    
+
     </div>
-    
+
     <div class="pagination">
         <mat-paginator [length]="length" [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions"
             (page)="handlePageEvent($event)">

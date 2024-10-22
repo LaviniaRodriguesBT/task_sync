@@ -134,16 +134,25 @@ export class SchedulingListComponent implements OnInit {
       this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
       this.emAberto = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
       this.schedulingCopy = data;
-      this.schedulings = data;
+      this.schedulings = data.filter(item => {
+        if(this.accessType == 'Administrador'){
+          return item;
+        }else if(item.user.id == this.userId){
+          return item;
+        }
+        return null;
+      });
+    
       this.length = data.length;
       this.applyDynamicStyles();
-      this.loadCharts();
-      this.loadCharts2();
+
       const formData: { [key: string]: string[] } = {};
       this.schedulings.forEach(e => {
         formData[`status${e.id}`] = [e.status];
       });
       this.form = this.formBuilder.group(formData);
+      this.loadCharts();
+      this.loadCharts2();
     });
   }
 
@@ -231,8 +240,10 @@ export class SchedulingListComponent implements OnInit {
       this.emAndamento = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
       this.concluido = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
       this.emAberto = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
-      this.loadCharts();
-      this.loadCharts2();
+      if(this.accessType == 'Administrador'){
+        this.loadCharts();
+        this.loadCharts2();
+      }
     } catch (error) {
       this.toastrService.error('Erro. Cronograma não foi atualizado.');
     }

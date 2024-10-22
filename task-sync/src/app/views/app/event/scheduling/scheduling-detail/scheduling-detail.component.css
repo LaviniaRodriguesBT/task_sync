@@ -195,3 +195,6 @@ hr {
     background-color: transparent;
     outline: none;
 }
+.breadcrumb{
+  background-color: white;
+}

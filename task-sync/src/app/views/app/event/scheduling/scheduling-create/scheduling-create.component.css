@@ -160,3 +160,6 @@ hr {
     color: red;
     font-size: 0.875em; 
 }
+.breadcrumb{
+    background-color: white;
+}
