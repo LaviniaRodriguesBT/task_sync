@@ -134,7 +134,7 @@
   font-size: 20px;
 }
 .color-detail {
-  color: green;
+  color: rgb(0, 108, 0);
   cursor: pointer;
 }
 
@@ -160,7 +160,7 @@
   position: relative;
   overflow: hidden;
   background-color: white;
-  border: 2px solid #6f42c1;
+  border: 2px solid #06112e;
   &:after {
     content: '';
     position: absolute;
@@ -176,13 +176,13 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: #6f42c1;
+    background-color: #06112e;
     transition: all .3s;
     border-radius: 10rem;
   }
   &:hover {
     color: white;
-    background-color: #6f42c1;
+    background-color: #06112e;
     &:before {
       width: 100%;
     }
@@ -203,7 +203,7 @@
   position: relative;
   overflow: hidden;
   background-color: white;
-  border: 2px solid green;
+  border: 2px solid #06112e;
   &:after {
     content: '';
     position: absolute;
@@ -219,13 +219,13 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: green;
+    background-color: #06112e;
     transition: all .3s;
     border-radius: 10rem;
   }
   &:hover {
     color: white;
-    background-color: green;
+    background-color: #06112e;
     &:before {
       width: 100%;
     }
@@ -528,35 +528,10 @@
   display: inline-flex;
   align-items: center;
 }
-
 .dropdown {
   position: relative;
   display: inline-block;
 }
-
-/* .dropbtn {
-  background-color: white; 
-  width: 180px;
-  height: 40px;
-  border-radius: 1rem;
-  font-size: larger;
-  color: black;
-  letter-spacing: 2px;
-  transition: background-color 0.3s ease; 
-}
-
-.dropbtn:hover {
-  background-color: #06112e; 
-  color: white;
-  cursor: pointer;
-}
-
-.dropdown:hover .dropbtn,
-.dropdown-content {
-  background-color: #06112e;
-  color: white;
-} */
-
 .dropdown-content {
   display: none; 
   position: absolute; 
@@ -565,7 +540,6 @@
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); 
   z-index: 1; 
 }
-
 .dropdown-content a {
   font-size: medium;
   color: black;
@@ -574,24 +548,22 @@
   display: block;
   cursor: pointer;
 }
-
 .dropdown:hover .dropdown-content {
   display: block; 
 }
-
 .dropdown-content a:hover {
   background-color: #f1f1f1; 
   color: black;
 }
-
-
+.icon-space {
+  margin-left: 8px; 
+}
 .navbar{
   width: min-content;
   padding: 0;
   margin: 0;
   
 }
-
 .top-table {
   display: flex;
   justify-content: space-between;
@@ -614,8 +586,9 @@
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
+
 .text-init {
   margin-top: 5px;
   color: #06112e;
@@ -624,7 +597,33 @@
   text-align: center;
 }
 
-.text-value{
+.text-value {
   color: white;
-  font-size: large;
+  font-size: 24px; 
+  margin: 10px 0;  
+}
+
+.status-cards {
+  display: flex;
+  gap: 20px; 
+  justify-content: center; 
+}
+
+.card {
+  background-color: #06112e;
+  padding: 10px;
+  border-radius: 8px; 
+  color: white; 
+  text-align: center; 
+  flex: 1; 
+  min-width: 150px; 
+}
+#meuGrafico2 {
+  width: 100%; 
+  height: 450px; 
+}
+
+#meuGrafico {
+  width: 100%; 
+  height: 400px; 
 }

@@ -31,7 +31,6 @@ export class MyProfileComponent {
     this.initializeForm();
   }
 
-
   initializeForm() {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.maxLength(200)]],
@@ -44,6 +43,7 @@ export class MyProfileComponent {
     let userId = localStorage.getItem('id');
     this.userId = userId!;
     this.loadUserById(userId!);
+    this.accessType = localStorage.getItem('accessType');
   }
   async loadUserById(userId: string) {
     let user = await this.userReadService.findById(userId);

@@ -43,7 +43,8 @@
 
                 <h5 class="text-recomend-img">A dimensão recomendada é de <strong>1600 x 838</strong>. Formato
                     <strong>JPEG ou PNG de no máximo 2MB</strong>. Imagens com dimensões diferentes serão
-                    redimensionadas.</h5>
+                    redimensionadas.
+                </h5>
             </div>
         </div>
 
@@ -115,7 +116,8 @@
             <div *ngIf="form.get('address')?.invalid && (form.get('name')?.dirty || form.get('address')?.touched)"
                 class="text-danger">
                 <small *ngIf="form.get('address')?.errors?.['required']">O endereço é obrigatório.</small>
-                <small *ngIf="form.get('address')?.errors?.['minlength']">O endereço deve ter no mínimo {{ nameMinLength
+                <small *ngIf="form.get('address')?.errors?.['minlength']">O endereço deve ter no mínimo {{
+                    addressMinLength
                     }} caracteres.</small>
                 <small *ngIf="form.get('address')?.errors?.['maxlength']">O endereço deve ter no máximo 200
                     caracteres.</small>

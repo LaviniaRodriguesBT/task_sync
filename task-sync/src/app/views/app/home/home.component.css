@@ -5,33 +5,11 @@
   overflow: hidden;
   margin: 10px;
   flex: 1;
-  height: 75%;
+  height: 80%;
 }
 .card-caurosel:hover {
   transform: translateY(-5px);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-.btn-access {
-  margin-left: 20%;
-  width: 150px;
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  border-radius: 10rem;
-  color: rgb(0, 0, 0);
-  text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: .15rem;
-  transition: all .3s;
-  position: relative;
-  overflow: hidden;
-  z-index: 1;
-  background-color: white;
-  border: 2px solid rgb(52, 52, 202);
-}
-.btn-access:hover {
-  color: white;
-  background-color: rgb(202, 52, 89);
 }
 .dashboard {
   padding: 20px;
@@ -112,22 +90,16 @@
   height: auto;
   object-fit: cover;
 }
-
-
 ::ng-deep .p-carousel .p-carousel-content .p-carousel-prev {
   background-color: transparent;
   border: none;
   color: gray;
 }
-
-
 ::ng-deep .p-carousel .p-carousel-content .p-carousel-next{
   background-color: transparent;
   border: none;
   color: gray; 
 }
-
-
 .teste8{
   width: 100%;
   height: 350px;

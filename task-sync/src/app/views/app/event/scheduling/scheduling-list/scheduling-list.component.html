@@ -61,7 +61,7 @@
             <input id="search" placeholder="Pesquisa" (keyup)="search()" title="Pesquisar">
         </div>
         <div class="navbar">
-            <div class="dropdown">
+            <div class="dropdown"> 
                 <button class="dropbtn" title="Exportar dados">EXPORTAR <i class="fa fa-caret-down"></i>
                 </button>
                 <div class="dropdown-content">
@@ -103,7 +103,7 @@
                                 (change)="update(scheduling)" [(ngModel)]="scheduling.status">
                                 <option value="Em aberto">Em aberto</option>
                                 <option value="Em andamento">Em andamento</option>
-                                <option value="Finalizada">Finalizada</option>
+                                <option value="Finalizada">Finalizado</option>
                             </select>
                         </form>
                     </td>
@@ -160,22 +160,14 @@
         </table>
     </div>
     
-    <h1 class="text-monitoring"> Monitoramento</h1>
-    <div class="monitoring">
+    <h1 class="text-monitoring" *ngIf="accessType == 'Administrador'"> Monitoramento</h1>
+    <div class="monitoring" *ngIf="accessType == 'Administrador'">
     
         <div id="meuGrafico"></div>
         <div id="meuGrafico2" class="teste8"></div>
         <div class="dashboard">
             <h2 class="title-dash">Cronogramas - Card</h2>
             <div class="status-cards">
-                <div class="card" #statusCard>
-                    <h3>Total Gasto</h3>
-                    <h1 class="text-value"> {{ calculateTotalValue() | currency:'BRL':'symbol':'1.2-2' }}</h1>
-                </div>
-                <div class="card" #statusCard>
-                    <h3>Cronogramas</h3>
-                    <h1>{{ totalScheduling }}</h1>
-                </div>
                 <div class="card" #statusCard>
                     <h3>Pessoas</h3>
                     <p>{{ totalPessoas }}</p>
@@ -193,6 +185,10 @@
                     <h3>Em Aberto</h3>
                     <p>{{ emAberto }}</p>
                 </div>
+                <div class="card" #statusCard>
+                    <h3>Total Gasto</h3>
+                    <h1 class="text-value"> {{ calculateTotalValue() | currency:'BRL':'symbol':'1.2-2' }}</h1>
+                </div> 
             </div>
         </div>
     

@@ -274,9 +274,9 @@ export class SchedulingListComponent implements OnInit {
   loadCharts() {
     const teste = document.getElementById('meuGrafico');
     const myChart1 = echarts.init(teste);
-    const colors: { [key in 'Em andamento' | 'Concluído' | 'Em aberto']: string } = {
+    const colors: { [key in 'Em andamento' | 'Finalizado' | 'Em aberto']: string } = {
       'Em andamento': '#0d729e',
-      'Concluído': '#044865',
+      'Finalizado': '#044865',
       'Em aberto': '#64b4d7',
     };
     const chart1: echarts.ComposeOption<PieSeriesOption> = {
@@ -304,7 +304,7 @@ export class SchedulingListComponent implements OnInit {
             borderColor: '#fff',
             borderWidth: 2,
             color: (params) => {
-              return colors[params.name as 'Em andamento' | 'Concluído' | 'Em aberto'];
+              return colors[params.name as 'Em andamento' | 'Finalizado' | 'Em aberto'];
             },
           },
           label: {
@@ -321,7 +321,7 @@ export class SchedulingListComponent implements OnInit {
           data: [
             { value: this.emAndamento, name: 'Em andamento' },
             { value: this.emAberto, name: 'Em aberto' },
-            { value: this.concluido, name: 'Concluído' },
+            { value: this.concluido, name: 'Finalizado' },
           ],
         },
       ],
@@ -334,9 +334,9 @@ export class SchedulingListComponent implements OnInit {
   loadCharts2() {
     const teste2 = document.getElementById('meuGrafico2');
     const myChart12 = echarts.init(teste2);
-    const colors2: { [key in 'Em andamento' | 'Concluído' | 'Em aberto']: string } = {
+    const colors2: { [key in 'Em andamento' | 'Finalizado' | 'Em aberto']: string } = {
       'Em andamento': '#0d729e',
-      'Concluído': '#044865',
+      'Finalizado': '#044865',
       'Em aberto': '#64b4d7',
     };
     const chart12: echarts.ComposeOption<BarSeriesOption> = {
@@ -354,12 +354,17 @@ export class SchedulingListComponent implements OnInit {
         },
       },
       legend: {
-        data: ['Em andamento', 'Em aberto', 'Concluído'],
+        data: ['Em andamento', 'Em aberto', 'Finalizado'],
         top: 'bottom',
       },
       xAxis: {
         type: 'category',
-        data: ['Em andamento', 'Em aberto', 'Concluído'],
+        data: ['Em andamento', 'Em aberto', 'Finalizado'],
+        axisLabel: {
+          formatter: (value: string) => {
+              return value.split(' ').join('\n'); 
+          },
+      },
       },
       yAxis: {
         type: 'value',
@@ -381,8 +386,8 @@ export class SchedulingListComponent implements OnInit {
             },
             {
               value: this.concluido,
-              itemStyle: { color: colors2['Concluído'] },
-              name: 'Concluído',
+              itemStyle: { color: colors2['Finalizado'] },
+              name: 'Finalizado',
             },            
           ],
         },

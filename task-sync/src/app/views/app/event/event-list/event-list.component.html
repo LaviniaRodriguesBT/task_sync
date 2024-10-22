@@ -45,24 +45,30 @@
         </div>
     </ng-template>
 
-    <div class="d-flex justify-content-between">
+    <div class="top-table">
         <a class="btn btn-back arrow-back" href="/" *ngIf="accessType == 'Administrador'">
             <span class="material-icons">arrow_back</span>
         </a>
         <a class="btn btn-create" routerLink="/event/create" *ngIf="accessType == 'Administrador'">
             <fa-icon [icon]="faAdd" title="Adicionar novo evento"></fa-icon>
-            Cadastrar evento
+            CadastraR
         </a>
-        <div class="search-box">
+        <div class="search-box col-2">
             <mat-icon class="search-icon">search</mat-icon>
             <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
         </div>
-        <a class="btn btn-pdf" (click)="gerarPdf()">
-            <span class="material-icons color-print">print</span>
-        </a>
-        <a class="btn btn-pdf" (click)="exportExcelEventList()">
-            <span class="material-icons color-print">upload_file</span>
-        </a>
+
+        <div class="navbar">
+            <div class="dropdown"> 
+                <button class="dropbtn export-button" title="Exportar dados">
+                    EXPORTAR <i class="fa fa-caret-down icon-space"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a (click)="gerarPdf()" title="Gerar pdf e abrir área de impressão">Gerar PDF</a>
+                    <a (click)="exportExcelEventList()" title="Gerar arquivo excel">Gerar EXCEL</a>
+                </div>
+            </div>
+        </div>
     </div>
 
     <hr>

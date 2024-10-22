@@ -69,21 +69,21 @@
                 <small *ngIf="form.get('date')?.errors?.['required']">A data é obrigatória.</small>
             </div>
         </div>
-        <div class="form-group col-12 mt-2">
+        <div class="form-group col-6 mt-2">
             <label for="start_time" class="text-name">Horário de Início</label>
             <input type="time" class="field-name" id="start_time" placeholder="Horário de Início" formControlName="start_time" required>
             <div *ngIf="form.get('start_time')?.invalid && (form.get('start_time')?.dirty || form.get('start_time')?.touched)" class="text-danger">
                 <small *ngIf="form.get('start_time')?.errors?.['required']">O horário de início é obrigatório.</small>
             </div>
         </div>
-        <div class="form-group col-12 mt-2">
+        <div class="form-group col-6 mt-2">
             <label for="end_time" class="text-name">Horário de Término</label>
             <input type="time" class="field-name" id="end_time" placeholder="Horário de Término" formControlName="end_time" required>
             <div *ngIf="form.get('end_time')?.invalid && (form.get('end_time')?.dirty || form.get('end_time')?.touched)" class="text-danger">
                 <small *ngIf="form.get('end_time')?.errors?.['required']">O horário de término é obrigatório.</small>
             </div>
         </div>
-        <div class="form-group d-flex justify-content-around mt-2 btns">
+        <div class="form-group d-flex justify-content-around mt-4 btns">
             <a class="btn btn-back" href="/event/list">Voltar</a>
             <button class="btn clean-form" type="reset" value="Limpar">Limpar</button>
             <button class="btn btn-create" type="submit">Criar</button>

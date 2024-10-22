@@ -89,7 +89,8 @@
   padding: 3%;
 }
 
-.btn-access {
+.dropbtn {
+  padding: 10px;
   border: none;
   cursor: pointer;
   display: inline-block;
@@ -102,7 +103,7 @@
   position: relative;
   overflow: hidden;
   background-color: white;
-  border: 2px solid rgb(9, 9, 163);
+  border: 2px solid #06112e;
   &:after {
     content: '';
     position: absolute;
@@ -118,13 +119,101 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: rgb(9, 9, 163);
+    background-color: #06112e;
     transition: all .3s;
     border-radius: 10rem;
   }
   &:hover {
     color: white;
-    background-color: rgb(9, 9, 163);
+    background-color: #06112e;
+    &:before {
+      width: 100%;
+    }
+  }
+  display: inline-flex;
+  align-items: center;
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none; 
+  position: absolute; 
+  background-color: #f9f9f9; 
+  min-width: 160px; 
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2); 
+  z-index: 1; 
+}
+.dropdown-content a {
+  font-size: medium;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  cursor: pointer;
+}
+.dropdown:hover .dropdown-content {
+  display: block; 
+}
+.dropdown-content a:hover {
+  background-color: #f1f1f1; 
+  color: black;
+}
+.icon-space {
+  margin-left: 8px; 
+}
+.navbar{
+  width: min-content;
+  padding: 0;
+  margin: 0;
+  
+}
+.top-table {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px;
+  margin-bottom: 20px
+}
+
+.btn-access {
+  border: none;
+  cursor: pointer;
+  display: inline-block;
+  border-radius: 10rem;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+  background-color: white;
+  border: 2px solid #06112e;
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 10rem;
+  }
+  &:before {
+    content: '';
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    background-color: #06112e;
+    transition: all .3s;
+    border-radius: 10rem;
+  }
+  &:hover {
+    color: white;
+    background-color: #06112e;
     &:before {
       width: 100%;
     }
@@ -199,7 +288,7 @@
   position: relative;
   overflow: hidden;
   background-color: white;
-  border: 2px solid #6f42c1;
+  border: 2px solid #06112e;
   &:after {
     content: '';
     position: absolute;
@@ -215,13 +304,13 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: #6f42c1;
+    background-color: #06112e;
     transition: all .3s;
     border-radius: 10rem;
   }
   &:hover {
     color: white;
-    background-color: #6f42c1;
+    background-color: #06112e;
     &:before {
       width: 100%;
     }
@@ -243,7 +332,7 @@
   position: relative;
   overflow: hidden;
   background-color: white;
-  border: 2px solid green;
+  border: 2px solid #06112e;
   &:after {
     content: '';
     position: absolute;
@@ -259,13 +348,13 @@
     left: 0;
     width: 0%;
     height: 100%;
-    background-color: green;
+    background-color: #06112e;
     transition: all .3s;
     border-radius: 10rem;
   }
   &:hover {
     color: white;
-    background-color: green;
+    background-color: #06112e;
     &:before {
       width: 100%;
     }
@@ -273,51 +362,6 @@
   align-items: center;
   gap: 5px;
 }
-
-.btn-pdf {
-  border: none;
-  cursor: pointer;
-  display: inline-block;
-  border-radius: 10rem;
-  color: rgb(0, 0, 0);
-  text-transform: uppercase;
-  font-size: 1rem;
-  letter-spacing: .15rem;
-  transition: all .3s;
-  position: relative;
-  overflow: hidden;
-  background-color: white;
-  border: 2px solid blue;
-  &:after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    border-radius: 10rem;
-  }
-  &:before {
-    content: '';
-    bottom: 0;
-    left: 0;
-    width: 0%;
-    height: 100%;
-    background-color: blue;
-    transition: all .3s;
-    border-radius: 10rem;
-  }
-  &:hover {
-    color: white;
-    background-color: blue;
-    &:before {
-      width: 100%;
-    }
-  }
-  display: inline-flex;
-  align-items: center;
-}
-
 .pagination {
   display: flex;
   justify-content: flex-end;
@@ -328,7 +372,7 @@
 .pagination select {
   border: 1px solid #ccc;
   border-radius: 150px;
-  background-color: #94a7ff;
+  background-color: #06112e;
 }
 
 .pagination button {

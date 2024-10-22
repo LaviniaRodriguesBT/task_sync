@@ -127,7 +127,7 @@ export class EventListComponent implements OnInit {
     this.events = this.eventsCopy.slice(this.pageIndex * this.pageSize, (this.pageIndex + 1) * this.pageSize);
   }
   gerarPdf() {
-    window.print();
+    window.print()
   }
   public exportExcelEventList() {
     this.excelExporter.exportData(this.events, new IgxExcelExporterOptions('ExportedDataFile'));

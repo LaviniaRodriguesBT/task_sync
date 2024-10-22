@@ -57,7 +57,7 @@ export class HomeComponent implements OnInit {
       this.schedulings = data;
       this.totalPessoas = data.length;
       this.emAndamento = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
-      this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
+      this.concluido = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizado').length;
       this.emAberto = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
       this.applyDynamicStyles();
       this.loadEvents();
@@ -106,16 +106,16 @@ export class HomeComponent implements OnInit {
     this.statusCards.forEach((card: ElementRef, index: number) => {
       switch (index) {
         case 0:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#007bff');
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#044865');
           break;
         case 1:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#ffc107');
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#0d729e');
           break;
         case 2:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#28a745');
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#1365bd');
           break;
         case 3:
-          this.renderer.setStyle(card.nativeElement, 'background-color', '#dc3545');
+          this.renderer.setStyle(card.nativeElement, 'background-color', '#64b4d7');
           break;
         default: ;
           break;
@@ -125,10 +125,9 @@ export class HomeComponent implements OnInit {
 
   loadCharts2(eventDetails: { name: string, totalCost: number }[]) {
     const teste2 = document.getElementById('meuGrafico2');
+    if (!teste2) return;
     const myChart12 = echarts.init(teste2);
-    const colors2: { [key: string]: string } = {
-      'Color': '#0d729e',
-    };
+    const colors2 = { 'Color': '#0d729e' };
   
     const eventNames = eventDetails.map(event => event.name.length > 8 ? event.name.slice(0, 8) + '\n' + event.name.slice(8) : event.name);
     const eventCosts = eventDetails.map(event => event.totalCost);
@@ -158,7 +157,7 @@ export class HomeComponent implements OnInit {
           rotate: 90, 
           color: 'black', 
           fontSize: 12,   
-          formatter: (value: string) => value.length > 10 ? value.slice(0, 10) + '...' : value // Adiciona '...' para textos longos
+          formatter: (value: string) => value.length > 10 ? value.slice(0, 10) + '...' : value 
         },
       },
       yAxis: {
@@ -177,7 +176,6 @@ export class HomeComponent implements OnInit {
     };
   
     myChart12.setOption(chart12);
+    window.addEventListener('resize', () => myChart12.resize())
   }
-  
-
 }
