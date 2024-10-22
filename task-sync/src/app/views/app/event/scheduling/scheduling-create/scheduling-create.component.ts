@@ -57,6 +57,7 @@ export class SchedulingCreateComponent implements OnInit {
     this.event = await this.eventReadService.findById(this.eventId);
     this.userList = await this.userReadService.findAll();
     this.taskList = await this.taskReadService.findAll();
+
   }
   initializeForm() {
     this.form = this.formBuilder.group({
