@@ -1,4 +1,3 @@
-/* GERAL */
 html {
     scroll-behavior: smooth;
 }
@@ -51,7 +50,6 @@ h2.titulo span {
     color: #0d729e;
 }
 
-/* cabeçalho */
 .logo {
     width: 180px;
     height: auto;
@@ -104,12 +102,10 @@ header nav ul li {
     padding: 0 40px;
 }
 
-/* MENU MOBILE */
 .menu-mobile {
     display: none;
 }
 
-/* TOPO DO SITE */
 section.topo-do-site {
     padding: 40px 4%;
     margin-top: 8%;
@@ -178,7 +174,6 @@ mat-accordion {
     color: white;
 }
 
-/* FUNCIONALIDADES */
 section.funcionalidades {
     padding: 200px 4%;
 }
@@ -210,7 +205,6 @@ section.funcionalidades .flex {
     margin: 15px 0;
 }
 
-/* SOBRE */
 section.sobre {
     padding: 40px 4%;
 }
@@ -263,7 +257,6 @@ h2.titulo-sobre span {
     margin: 15px 0;
 }
 
-/* CONTATO */
 .contato {
     text-align: center;
     padding: 40px 4%;
@@ -302,7 +295,6 @@ h2.titulo-sobre span {
     text-decoration: underline;
 }
 
-/* FOOTER */
 .footer-github {
     background-color: #000;
     padding: 60px 4%;
