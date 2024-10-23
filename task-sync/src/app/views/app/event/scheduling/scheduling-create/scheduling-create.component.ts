@@ -15,6 +15,9 @@ import { UserReadService } from '../../../../../services/user/user-read.service'
 import { TaskReadService } from '../../../../../services/task/task-read.service';
 import { CommonModule } from '@angular/common';
 import { monetaryValidator } from '../monetary-validator';
+import { Observable } from 'rxjs/internal/Observable';
+import { of } from 'rxjs/internal/observable/of';
+import { map } from 'rxjs/internal/operators/map';
 @Component({
   selector: 'task-sync-scheduling-create',
   standalone: true,
@@ -40,6 +43,7 @@ export class SchedulingCreateComponent implements OnInit {
   nameMaxLength: number = 100;
   descriptionMinValue: number = 1;
   descriptionMaxValue: number = 500;
+  
   constructor(
     private activatedRoute: ActivatedRoute,
     private formBuilder: FormBuilder,
@@ -53,10 +57,22 @@ export class SchedulingCreateComponent implements OnInit {
     this.initializeForm();
   }
   async ngOnInit() {
+
     this.eventId = this.activatedRoute.snapshot.paramMap.get('eventId')!;
     this.event = await this.eventReadService.findById(this.eventId);
     this.userList = await this.userReadService.findAll();
     this.taskList = await this.taskReadService.findAll();
+    console.log(this.userList);
+
+    this.userList.forEach(user => {
+      console.log(`
+      Nome do usuario: ${user.name},
+      Tipo de Acesso: ${user.access_type}`)
+  });
+  const colaboradores = this.userList.filter(user => user.access_type === 'Colaborador');
+  console.log(colaboradores);
+  this.userList = colaboradores;
+
 
   }
   initializeForm() {
