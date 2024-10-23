@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="feat: merge com a main">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="feat: merge com a main" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -49,12 +44,12 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/LaviniaRodriguesBT/task_sync.git",
-    "accountId": "4300a2d4-4e37-4e2c-9f63-7af3197fd33d"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/LaviniaRodriguesBT/task_sync.git&quot;,
+    &quot;accountId&quot;: &quot;4300a2d4-4e37-4e2c-9f63-7af3197fd33d&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
@@ -69,7 +64,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.BackendApplication.executor": "Debug",
+    "Application.BackendApplication.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",

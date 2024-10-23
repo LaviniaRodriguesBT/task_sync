@@ -18,7 +18,7 @@
     <div class="title d-flex align-items-center justify-content-between">
         <h1 class="lista" title="Nome do evento">Evento: {{eventName}}</h1>
         <div class="info-icon-container">
-            <span class="material-icons color-info" (click)="openInfoModal()">help</span>
+            <span class="material-icons info-icon" (click)="openInfoModal()">help</span>
         </div>
     </div>
 
@@ -62,7 +62,7 @@
         </div>
         <div class="navbar">
             <div class="dropdown">
-                <button class="dropbtn" title="Exportar dados">EXPORTAR <i class="fa fa-caret-down"></i>
+                <button class="dropbtn" title="Exportar dados">EXPORTAR <i class="fa fa-caret-down icon-space"></i>
                 </button>
                 <div class="dropdown-content">
                     <a (click)="gerarPdf()" title="Gerar pdf e abrir área de impressão">Gerar PDF</a>
