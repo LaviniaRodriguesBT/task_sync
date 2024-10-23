@@ -25,6 +25,7 @@ import { SchedulingListComponent } from './views/app/event/scheduling/scheduling
 import { AboutUsComponent } from './views/app/about-us/about-us.component';
 import { UserTypeSelectionComponent } from './views/account/user-type-selection/user-type-selection.component';
 import { WebSiteComponent } from './views/website/website.component';
+import { Monitoring } from './views/app/event/scheduling/monitoring/monitoring.component';
 export const routes: Routes = [
   {
     path: 'views/website',
@@ -98,10 +99,16 @@ export const routes: Routes = [
                 component: SchedulingCreateComponent,
                 title: 'Task Sync - Cadastrar cronograma',
               },
+
               {
                 path: 'list',
                 component: SchedulingListComponent,
                 title: 'Task Sync - Listar cronograma',
+              },
+              {
+                path: 'monitoring',
+                component: Monitoring,
+                title: 'Task Sync - Monitoramento'
               },
               {
                 path: 'edit/:id',
