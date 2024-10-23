@@ -60,6 +60,12 @@
             <mat-icon class="search-icon">search</mat-icon>
             <input id="search" placeholder="Pesquisa" (keyup)="search()" title="Pesquisar">
         </div>
+        <div class="navbar" *ngIf="accessType == 'Administrador'">
+            <div class="dropdown">
+                <button class="dropbtn" title="Monitorar dados" routerLink="/event/{{eventId}}/scheduling/monitoring">Dashboard
+                </button>
+            </div>
+        </div>        
         <div class="navbar">
             <div class="dropdown">
                 <button class="dropbtn" title="Exportar dados">EXPORTAR <i class="fa fa-caret-down icon-space"></i>
@@ -71,7 +77,6 @@
             </div>
         </div>
     </div>
-
     <div class="mat-elevation-z8 table-responsive">
         <table class="table">
             <thead class="thead-style">
@@ -158,40 +163,6 @@
 
             </tbody>
         </table>
-    </div>
-
-    <h1 class="text-monitoring" *ngIf="accessType == 'Administrador'"> Monitoramento</h1>
-    <div class="monitoring">
-
-        <div id="meuGrafico" *ngIf="accessType == 'Administrador'"></div>
-        <div id="meuGrafico2" class="teste8" *ngIf="accessType == 'Administrador'"></div>
-        <div class="dashboard" *ngIf="accessType == 'Administrador'">
-            <h2 class="title-dash">Cronogramas - Card</h2>
-            <div class="status-cards">
-                <div class="card" #statusCard>
-                    <h3>Pessoas</h3>
-                    <p>{{ totalPessoas }}</p>
-                </div>
-
-                <div class="card" #statusCard>
-                    <h3>Em Andamento</h3>
-                    <p>{{ emAndamento }}</p>
-                </div>
-                <div class="card" #statusCard>
-                    <h3>Finalizado</h3>
-                    <p>{{ concluido }}</p>
-                </div>
-                <div class="card" #statusCard>
-                    <h3>Em Aberto</h3>
-                    <p>{{ emAberto }}</p>
-                </div>
-                <div class="card" #statusCard>
-                    <h3>Total Gasto</h3>
-                    <h1 class="text-value"> {{ calculateTotalValue() | currency:'BRL':'symbol':'1.2-2' }}</h1>
-                </div>
-            </div>
-        </div>
-
     </div>
 
     <div class="pagination">
