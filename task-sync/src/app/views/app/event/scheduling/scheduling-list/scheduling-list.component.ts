@@ -104,8 +104,7 @@ export class SchedulingListComponent implements OnInit {
       console.error('Elemento do gráfico não encontrado');
       return;
     }
-    this.loadCharts();
-    this.loadCharts2();
+
 
     this.totalValue = this.calculateTotalValue();
     console.log(this.totalValue);
@@ -151,8 +150,7 @@ export class SchedulingListComponent implements OnInit {
         formData[`status${e.id}`] = [e.status];
       });
       this.form = this.formBuilder.group(formData);
-      this.loadCharts();
-      this.loadCharts2();
+
     });
   }
 
@@ -240,10 +238,7 @@ export class SchedulingListComponent implements OnInit {
       this.emAndamento = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
       this.concluido = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
       this.emAberto = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
-      if(this.accessType == 'Administrador'){
-        this.loadCharts();
-        this.loadCharts2();
-      }
+
     } catch (error) {
       this.toastrService.error('Erro. Cronograma não foi atualizado.');
     }
