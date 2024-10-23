@@ -10,7 +10,6 @@ import { EventReadService } from '../../../services/event/event-read.service';
 import { Event } from '../../../domain/model/event.model';
 import { CarouselModule } from 'primeng/carousel';
 import { ResponseScheduling } from '../../../domain/dto/response-scheduling';
-/////////////////////////////////////
 import * as echarts from 'echarts/core';
 import { BarChart, BarSeriesOption, PieChart, PieSeriesOption } from 'echarts/charts';
 import { TitleComponent, TooltipComponent, LegendComponent } from 'echarts/components';
@@ -20,7 +19,6 @@ import { GridComponent } from 'echarts/components';
 import { TaskReadService } from '../../../services/task/task-read.service';
 import { Task } from '../../../domain/model/task.model';
 echarts.use([GridComponent]);
-/////////////////////////////////////
 @Component({
   selector: 'task-sync-home',
   standalone: true,
