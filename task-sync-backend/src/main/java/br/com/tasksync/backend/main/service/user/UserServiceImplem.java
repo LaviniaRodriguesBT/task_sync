@@ -35,6 +35,8 @@ public class UserServiceImplem implements UserService {
             return 0;
         }
 
+        UserModel admin = userDao.readyById(entity.getUserId());
+
         boolean responseExist = ifExistsCpf(entity);
         System.out.println("cheguei aqui" + responseExist);
         if (responseExist) {
@@ -42,11 +44,17 @@ public class UserServiceImplem implements UserService {
             return 0;
         }
 
-        int admCreated = userDao.numAdmin(9);
-        if (admCreated > 1) {
-            System.out.println("quantidade de adm maior que o suportado");
+        if (admin.getAccess_type().equals("Administrador")){
+            int admCreated = userDao.numAdmin(admin.getId());
+            if (admCreated > 1) {
+                System.out.println("quantidade de adm maior que o suportado");
+                return 0;
+            }
+        }else if (admin.getAccess_type().equals("Colaborador")){
+            System.out.println("Ação não é permitida por esse tipo de usuario");
             return 0;
         }
+
 
         int id = userDao.add(entity);
         System.out.println("Criacao de uma nova pessoa feita com sucesso");
