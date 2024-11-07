@@ -2,6 +2,7 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
+    "types": ["node", "@wdio/globals/types", "mocha"],
     "outDir": "./dist/out-tsc",
     "strict": true,
     "noImplicitOverride": true,
