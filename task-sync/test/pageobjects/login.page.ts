@@ -2,8 +2,11 @@ import { $ } from '@wdio/globals'
 import Page from './page';
 
 class LoginPage extends Page {
-    
 
+    public override open () {
+        return super.open('login');
+    }
+    
     public getField(fieldName: string) {
         return $(`.ft-field-${fieldName}`);
     }
@@ -24,8 +27,6 @@ class LoginPage extends Page {
         return $('ft-password');
     }
 
-
-
     public getButton(buttonName: string) {
         return $(`.ft-btn-${buttonName}`);
     }
@@ -35,12 +36,7 @@ class LoginPage extends Page {
         await button.click();
         await browser.pause(500);
     }
-
-
       
-    public override open () {
-        return super.open('login');
-    }
 
     public async login(username: string, password: string, button: string) {
         await this.writeInput('email', username);
