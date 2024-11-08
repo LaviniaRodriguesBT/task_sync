@@ -2,35 +2,51 @@ import { $ } from '@wdio/globals'
 import Page from './page';
 
 class LoginPage extends Page {
+    
 
-    public get inputUserEmail () {
-        return $('#username');
+    public getField(fieldName: string) {
+        return $(`.ft-field-${fieldName}`);
+    }
+
+    public async writeInput(fieldName: string, value: string) {
+    
+        const field = this.getField(fieldName);
+        await field.click();
+        await field.setValue(value);
+        await browser.pause(500);
+    }
+
+    public get inputField() {
+        return $('.ft-user-email');
     }
 
     public get inputPassword () {
-        return $('#password');
+        return $('ft-password');
     }
 
-    public get btnSubmit () {
-        return $('button[type="submit"]');
+
+
+    public getButton(buttonName: string) {
+        return $(`.ft-btn-${buttonName}`);
     }
 
-    public get btnLogin () {
-        return $('#btn-login');
+    public async clickButton(buttonName: string) {
+        const button = this.getButton(buttonName);
+        await button.click();
+        await browser.pause(500);
     }
+
 
       
     public override open () {
         return super.open('login');
     }
 
-    public async clickButton(){
-        await this.btnLogin.click();
-    }
-    public async login (username: string, password: string) {
-        await this.inputUserEmail.setValue(username);
-        await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
+    public async login(username: string, password: string, button: string) {
+        await this.writeInput('email', username);
+        await this.writeInput('password', password);
+        await this.clickButton(button);
+        await browser.pause(500);
     }
 
 
