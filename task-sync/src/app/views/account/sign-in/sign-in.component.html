@@ -11,19 +11,19 @@
                     <div class="login">
                         <img src="/assets/img/email.png" alt="logo task sync" class="logo-email">
                         <input matInput type="email" placeholder="Digite seu email" required [formControl]="email"
-                            class="fa fa-envelope enter-field">
+                            class="fa fa-envelope enter-field ft-field-email">
                     </div>
 
                     <div class="login">
                         <img src="/assets/img/lock.png" alt="logo task sync" class="logo-email">
                         <input matInput type="password" placeholder="Digite sua senha" maxlength="10" required
-                            [formControl]="password" class="fa fa-lock Password enter-field">
+                            [formControl]="password" class="fa fa-lock Password enter-field ft-field-password">
                     </div>
 
 
                     <div class="botao">
                         <a class="btn-back" href="/account/user-type-selection">Voltar</a>
-                        <button class="btn-sign-in" (click)="login()">Login</button>
+                        <button class="btn-sign-in ft-btn-sign" (click)="login()">Login</button>
                     </div>
                     @if(isLoginIncorrect) {
                     <p class="text-danger mt-2">Email e/ou senha incorretos.</p>
