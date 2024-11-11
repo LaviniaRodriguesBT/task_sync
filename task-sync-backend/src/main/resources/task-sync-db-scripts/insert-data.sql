@@ -26,7 +26,9 @@ values (default, 'michelef@.com', '123', 'Administrador', 1),
 
 insert into groups (id, user_id)
 values (default, 9),
-       (default, 5);
+       (default, 5),
+       (default, 1);
+
 
 insert into usergroup(id, group_id, user_id, adm_id)
 values (default, 1, 2, 9),

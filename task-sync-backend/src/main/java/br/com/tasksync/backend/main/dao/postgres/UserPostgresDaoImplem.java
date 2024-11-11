@@ -66,11 +66,6 @@ public class UserPostgresDaoImplem implements UserDao {
             resultSet.close();
             preparedStatement.close();
         } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
             throw new RuntimeException(e);
         }
         return entity.getId();
@@ -320,4 +315,87 @@ public class UserPostgresDaoImplem implements UserDao {
             throw new RuntimeException(e);
         }
     }
+
+    @Override
+    public int createUserGroup(int adminId) {
+        final String sql = "INSERT INTO groups (user_id) " +
+                "VALUES (?);";
+        PreparedStatement preparedStatement;
+        ResultSet resultSet;
+        int groupId = 0;
+        try {
+            preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            preparedStatement.setInt(1, adminId);
+            preparedStatement.execute();
+            resultSet = preparedStatement.getGeneratedKeys();
+            if (resultSet.next()) {
+                groupId = resultSet.getInt(1);
+            } else {
+                throw new RuntimeException();
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+            throw new RuntimeException(e);
+        }
+        return groupId;
+    }
+
+    @Override
+    public int insertUserUserGroup(int userId, int groupId, int adminId) {
+        final String sql = "INSERT INTO usergroup (user_id, group_id, adm_id) " +
+                "VALUES (?, ?, ?);";
+        PreparedStatement preparedStatement;
+        ResultSet resultSet;
+        int usergroupId = 0;
+        try {
+            preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
+            preparedStatement.setInt(1, userId);
+            preparedStatement.setInt(2, groupId);
+            preparedStatement.setInt(3, adminId);
+            preparedStatement.execute();
+            resultSet = preparedStatement.getGeneratedKeys();
+            if (resultSet.next()) {
+                usergroupId = resultSet.getInt(1);
+            } else {
+                throw new RuntimeException();
+            }
+
+            resultSet.close();
+            preparedStatement.close();
+        } catch (SQLException e) {
+            try {
+                connection.rollback();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+            throw new RuntimeException(e);
+        }
+        return usergroupId;
+    }
+
+    @Override
+    public int getAdminUserGroup(int adminId) {
+        final String sql = "Select * FROM groups G WHERE G.user_id = ?;";
+        try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
+            preparedStatement.setInt(1, adminId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                return resultSet.getInt(adminId);
+            }
+            return 0;
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }

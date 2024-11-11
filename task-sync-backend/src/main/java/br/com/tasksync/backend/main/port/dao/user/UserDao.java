@@ -14,4 +14,10 @@ public interface UserDao extends CrudDao<UserModel> {
     boolean existsCpf(String cpf);
 
     int numAdmin(int adminId);
+
+    int createUserGroup(int adminId);
+
+    int insertUserUserGroup(int userId, int groupId, int adminId);
+
+    int getAdminUserGroup(int adminId);
 }

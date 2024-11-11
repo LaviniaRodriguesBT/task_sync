@@ -136,9 +136,11 @@ public class UserServiceImplem implements UserService {
             return 0;
         }
 
+        int groupId = 0;
       if(entity.getAccess_type().equals("Administrador")){
           int admCreated = userDao.numAdmin(entity.getUserId());
           UserModel adm = userDao.readyById(entity.getUserId());
+          groupId = userDao.getAdminUserGroup(adm.getId());
           if (admCreated > 1 || !Objects.equals(adm.getAccess_type(), "Administrador")) {
               System.out.println("quantidade de adm maior que o suportado");
               return 0;
@@ -146,6 +148,10 @@ public class UserServiceImplem implements UserService {
       }
 
         int id = userDao.add(userModel);
+        if(entity.getAccess_type().equals("Master")){
+            groupId = userDao.createUserGroup(entity.getUserId());
+        }
+        userDao.insertUserUserGroup(id, groupId, entity.getUserId());
         System.out.println("Criacao de uma nova pessoa feita com sucesso");
         return id;
     }

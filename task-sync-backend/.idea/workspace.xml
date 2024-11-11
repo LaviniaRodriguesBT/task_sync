@@ -4,22 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="feat: merge com a main">
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/controller/PlanRestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/dao/postgres/PlanPostgresDaoImplem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/domain/PlanModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/dto/PlanDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/port/dao/plan/PlanDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/port/service/plan/PlanService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/service/plan/PlanServiceImplem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-master/user-master.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-master/user-master.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-master/user-master.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-master/user-master.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/dao/h2/EventH2DaoImplem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/dao/h2/SchedulingH2DaoImplem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/dao/h2/TaskH2DaoImplem.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/dao/h2/UserH2DaoImplem.java" beforeDir="false" />
+    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="feat: adicionado arquivos do workspace.xml">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/dao/postgres/UserPostgresDaoImplem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/dao/postgres/UserPostgresDaoImplem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/port/dao/user/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/port/dao/user/UserDao.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/service/user/UserServiceImplem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/service/user/UserServiceImplem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/task-sync-db-scripts/insert-data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task-sync-db-scripts/insert-data.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,8 +34,8 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="lumain" />
-                    <option name="lastUsedInstant" value="1729451833" />
+                    <option name="branchName" value="lucasseverini" />
+                    <option name="lastUsedInstant" value="1729460383" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
@@ -87,7 +77,8 @@
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0"
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
   }
 }]]></component>
   <component name="RunManager">
