@@ -18,7 +18,7 @@
     <div class="form-row">
         <div class="form-group col-12 mt-2">
             <label for="name" class="text-name">Nome</label>
-            <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name" maxlength="200"
+            <input type="text" class="field-name ft-field-name" id="name" placeholder="Nome" formControlName="name" maxlength="200"
                 required>
             <div *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)"
                 class="text-danger">
@@ -37,7 +37,7 @@
 
                 <div class="image-preview-container">
                     <img #imagePreview id="image-preview" src="/assets/img/upload-photo.png"
-                        alt="Pré-visualização da imagem" class="upload-image" title="Faça o upload da sua imagem"
+                        alt="Pré-visualização da imagem" class="upload-image ft-field-image" title="Faça o upload da sua imagem"
                         (click)="openImagePicker()">
                 </div>
 
@@ -50,7 +50,7 @@
 
         <div class="form-group col-12 mt-2">
             <label for="email" class="text-name">Email</label>
-            <input type="email" class="field-name" id="email" placeholder="Email" formControlName="email">
+            <input type="email" class="field-name ft-field-email" id="email" placeholder="Email" formControlName="email">
             <div *ngIf="form.get('email')?.invalid && (form.get('email')?.dirty || form.get('email')?.touched)"
                 class="text-danger">
                 <small *ngIf="form.get('email')?.errors?.['required']">O email é obrigatório.</small>
@@ -64,7 +64,7 @@
         <div class="form-group col-12 mt-2">
             <label for="password" class="text-name">Senha</label>
             <div class="input-group">
-                <input type="password" class="field-name" id="password" placeholder="Senha" formControlName="password"
+                <input type="password" class="field-name ft-field-password" id="password" placeholder="Senha" formControlName="password"
                     (input)="onPasswordInput()">
                 <div class="input-group-append">
                     <span id="togglePassword" (click)="togglePasswordVisibility()">
@@ -90,7 +90,7 @@
 
         <div class="form-group col-12 mt-2">
             <label for="cpf" class="text-name">CPF</label>
-            <input type="text" class="field-name" id="cpf" placeholder="CPF" formControlName="cpf"
+            <input type="text" class="field-name ft-field-cpf" id="cpf" placeholder="CPF" formControlName="cpf"
                 (keypress)="validateNumber($event)">
             <div *ngIf="form.get('cpf')?.invalid && (form.get('cpf')?.touched)" class="text-danger">
                 <small *ngIf="form.get('cpf')?.errors?.['required']">CPF é obrigatório.</small>
@@ -100,7 +100,7 @@
 
         <div class="form-group col-12 mt-2">
             <label for="phone" class="text-name">Telefone</label>
-            <input type="text" class="field-name" id="phone" placeholder="Telefone" formControlName="phone"
+            <input type="text" class="field-name ft-field-phone" id="phone" placeholder="Telefone" formControlName="phone"
                 (keypress)="validateNumber($event)">
             <div *ngIf="form.get('phone')?.invalid && (form.get('phone')?.dirty || form.get('phone')?.touched)"
                 class="text-danger">
@@ -112,7 +112,7 @@
 
         <div class="form-group col-12 mt-2">
             <label for="address" class="text-name">Endereco</label>
-            <input type="text" class="field-name" id="address" placeholder="Endereco" formControlName="address">
+            <input type="text" class="field-name ft-field-address" id="address" placeholder="Endereco" formControlName="address">
             <div *ngIf="form.get('address')?.invalid && (form.get('name')?.dirty || form.get('address')?.touched)"
                 class="text-danger">
                 <small *ngIf="form.get('address')?.errors?.['required']">O endereço é obrigatório.</small>
@@ -129,8 +129,8 @@
             <mat-form-field class="w-100">
                 <mat-label>Tipo de Acesso</mat-label>
                 <mat-select formControlName="access_type">
-                    <mat-option value="Administrador">Administrador</mat-option>
-                    <mat-option value="Colaborador">Colaborador</mat-option>
+                    <mat-option class="ft-field-admin" value="Administrador">Administrador</mat-option>
+                    <mat-option class="ft-field-colab" value="Colaborador">Colaborador</mat-option>
                 </mat-select>
             </mat-form-field>
             <div *ngIf="form.get('access_type')?.invalid && (form.get('access_type')?.touched)" class="text-danger">
@@ -139,9 +139,9 @@
         </div>
 
         <div class="form-group d-flex justify-content-around mt-2 btns">
-            <a class="btn btn-back" href="/user/list">Voltar</a>
-            <button class="btn clean-form" type="reset" value="Limpar">Limpar</button>
-            <button class="btn btn-create">Criar</button>
+            <a class="btn btn-back ft-btn-back" href="/user/list">Voltar</a>
+            <button class="btn clean-form ft-btn-clear" type="reset" value="Limpar">Limpar</button>
+            <button class="btn btn-create ft-btn-create">Criar</button>
         </div>
     </div>
 </form>
