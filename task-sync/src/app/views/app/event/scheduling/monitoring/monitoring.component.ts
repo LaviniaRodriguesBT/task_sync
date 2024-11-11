@@ -26,7 +26,7 @@ import { User } from '../../../../../domain/model/user.model';
 echarts.use([GridComponent]);
 
 @Component({
-  selector: 'task-sync-scheduling-list',
+  selector: 'task-sync-monitoring',
   standalone: true,
   imports: [
     FontAwesomeModule,
@@ -37,10 +37,10 @@ echarts.use([GridComponent]);
     ReactiveFormsModule,
     MatPaginatorModule
   ],
-  templateUrl: './scheduling-list.component.html',
-  styleUrl: './scheduling-list.component.css'
+  templateUrl: './monitoring.component.html',
+  styleUrl: './monitoring.component.css'
 })
-export class SchedulingListComponent implements OnInit {
+export class Monitoring implements OnInit {
 
   @ViewChild('infoModal') infoModal: any;
   @ViewChildren('statusCard') statusCards!: QueryList<ElementRef>;
@@ -104,7 +104,8 @@ export class SchedulingListComponent implements OnInit {
       console.error('Elemento do gráfico não encontrado');
       return;
     }
-
+    this.loadCharts();
+    this.loadCharts2();
 
     this.totalValue = this.calculateTotalValue();
     console.log(this.totalValue);
@@ -150,7 +151,8 @@ export class SchedulingListComponent implements OnInit {
         formData[`status${e.id}`] = [e.status];
       });
       this.form = this.formBuilder.group(formData);
-
+      this.loadCharts();
+      this.loadCharts2();
     });
   }
 
@@ -238,7 +240,10 @@ export class SchedulingListComponent implements OnInit {
       this.emAndamento = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
       this.concluido = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
       this.emAberto = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
-
+      if(this.accessType == 'Administrador'){
+        this.loadCharts();
+        this.loadCharts2();
+      }
     } catch (error) {
       this.toastrService.error('Erro. Cronograma não foi atualizado.');
     }
@@ -287,7 +292,7 @@ export class SchedulingListComponent implements OnInit {
     };
     const chart1: echarts.ComposeOption<PieSeriesOption> = {
       title: {
-        text: 'Cronogramas - Pie',
+  
         left: 'center',
         textStyle: {
           color: 'black',
@@ -347,7 +352,7 @@ export class SchedulingListComponent implements OnInit {
     };
     const chart12: echarts.ComposeOption<BarSeriesOption> = {
       title: {
-        text: 'Cronogramas - Em colunas',
+     
         left: 'center',
         textStyle: {
           color: 'black',

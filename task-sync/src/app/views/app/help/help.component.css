@@ -41,7 +41,7 @@ ul {
     overflow: hidden;
     z-index: 1;
     background-color: white;
-    border: 2px solid #6f42c1;
+    border: 2px solid #06112e;
     &:after {
       content: '';
       position: absolute;
@@ -58,14 +58,14 @@ ul {
       left: 0;
       width: 0%;
       height: 100%;
-      background-color: #6f42c1;
+      background-color: #06112e;
       transition: all .3s;
       border-radius: 10rem;
       z-index: -1;
     }
     &:hover {
       color: white;
-      background-color: #6f42c1;
+      background-color: #06112e;
       &:before {
         width: 100%;
       }
@@ -73,3 +73,7 @@ ul {
     display: inline-flex;
     align-items: center;
   }
+
+.breadcrumb{
+    background-color: white;
+}  

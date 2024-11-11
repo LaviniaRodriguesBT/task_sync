@@ -8,7 +8,7 @@ import { Scheduling } from '../../domain/model/scheduling.model';
 export class SchedulingUpdateService {
   constructor(private http: HttpClient) { }
   async update(scheduling: Scheduling) {
-    console.log(`atualizando o cronograma...`);
+
     console.log(scheduling);
     return await firstValueFrom(this.http.put(`http://localhost:8080/api/event/scheduling/${scheduling.id}`, scheduling));
   }

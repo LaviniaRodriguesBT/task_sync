@@ -177,8 +177,8 @@ export class UserCreateComponent implements OnInit {
     if (/[\W]/.test(password)) strength += 1;
 
     switch (strength) {
-      case 5: return 'forte';
-      case 4: return 'media';
+      case 4: return 'forte';
+      case 2: return 'media';
       default: return 'fraca';
     }
   }

@@ -2,7 +2,7 @@
     <div class="container-div">
         <div class="form-container">
             <div class="image-container">
-                <img src="/assets/img/tela_login.png" alt="slogan task sync" class="slogan">
+                <img src="/assets/img/tela_login1.png" alt="slogan task sync" class="slogan">
             </div>
             <div class="login-content">
                 <form class="form">
@@ -23,7 +23,7 @@
 
                     <div class="botao">
                         <a class="btn-back" href="/account/user-type-selection">Voltar</a>
-                        <button class="btn-sign-in" (click)="login()" [disabled]="isFormInvalid()">Login</button>
+                        <button class="btn-sign-in" (click)="login()">Login</button>
                     </div>
                     @if(isLoginIncorrect) {
                     <p class="text-danger mt-2">Email e/ou senha incorretos.</p>

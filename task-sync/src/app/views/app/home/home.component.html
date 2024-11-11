@@ -7,10 +7,10 @@
   <div class="container">
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li><a href="/"  class="breadcrumb-item" title="Página atual">Home</a></li>
       </ol>
     </nav>
-    <h2>Próximos eventos</h2>
+    <h2 title="Próximos eventos">Próximos eventos</h2>
     <div class="card-container">
       <p-carousel class="teste" 
         [value]="events" 
@@ -19,15 +19,15 @@
         [circular]="true"
         [autoplayInterval]="5000">
         <ng-template pTemplate="item" let-event>
-          <a routerLink="/event/{{ event.id }}/scheduling/list">
+          <a class="tag-a" routerLink="/event/{{ event.id }}/scheduling/list">
             <div class="card-caurosel">
               <div class="img-next-event">
                 <img src="{{event.image ? event.image : '/assets/img/event.png'}}" alt="User Image">
               </div>
               <div class="card-body">
                 <table class="table body-text-card">
-                  <td class="date-next-event">
-                    {{ event.name | slice: 0: 25 }}...
+                  <td class="date-next-event" title="{{event.name}}">
+                    {{ event.name | slice: 0: 10 }}...
                     {{ event.date | date: 'dd/MM/yyyy' }}
                   </td>
                 </table>
@@ -36,25 +36,17 @@
           </a>
         </ng-template>
       </p-carousel>
-    </div>
-    <div class="dashboard">
-      <h2>Dashboard</h2>
-      <div class="status-cards">
-        <div class="card" #statusCard>
-          <h3>Total de Pessoas</h3>
-          <p>{{ totalPessoas }}</p>
-        </div>
-        <div class="card" #statusCard>
-          <h3>Em Andamento</h3>
-          <p>{{ emAndamento }}</p>
-        </div>
-        <div class="card" #statusCard>
-          <h3>Finalizado</h3>
-          <p>{{ concluido }}</p>
-        </div>
-        <div class="card" #statusCard>
-          <h3>Em Aberto</h3>
-          <p>{{ emAberto }}</p>
+      <div id="meuGrafico2" class="teste8" title="Visualização dos gastos dos eventos de forma gráfica"></div>
+      <div class="dashboard"title="Visualização dos gastos dos eventos de forma gráfica">
+        <div class="status-cards">
+          <div class="card" #statusCard title="Total de usuários cadastrados no sistema">
+            <h3>Total de Usuários no Sistema</h3>
+            <p>{{ totalPessoas }}</p>
+          </div>
+          <div class="card" #statusCard title="Total de atividades cadastradas no sistema">
+            <h3>Total de Atividade no Sistema</h3>
+            <p>{{ totalTask }}</p>
+          </div>
         </div>
       </div>
     </div>

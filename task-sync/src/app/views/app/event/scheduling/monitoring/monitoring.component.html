@@ -1,0 +1,90 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<div class="container-fluid">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li>
+                <a href="/event/{{eventId}}/scheduling/list" class="breadcrumb-item">Monitoramento / </a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">{{
+                eventName }}</li>
+        </ol>
+    </nav>
+
+    <ng-template #infoModal let-modal>
+        <div class="modal-header">
+            <h2 class="modal-title">Informações do Sistema</h2>
+            <button type="button" class="close" (click)="closeModal()">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+            <p>Aqui você encontra cronogramas do seu evento cadastrado no sistema. Como administrador, você pode:</p>
+            <ul>
+                <li>Associar novas pessoas e atividades para seu evento.</li>
+                <li>Cadastrar, editar, visualizar ou excluir associações</li>
+                <li>Visualizar a quantidade de pessoas cadastradas</li>
+                <li>Visualizar o status da tarefa (Em aberto, em andamento e finalizado)</li>
+                <li>Gerar relatórios em Excel ou imprimir</li>
+            </ul>
+            <p>
+                Para mais informações sobre funcionalidades, acesse a
+                <a href="/help" target="_blank">ajuda do sistema</a>
+                ou entre em contato com o
+                <a href="mailto:contato.tasksync@gmail.com" target="_blank">suporte</a>.
+            </p>
+        </div>
+    </ng-template>
+
+    <div class="top-table">
+        <a class="btn btn-back arrow-back" href="/event/{{eventId}}/scheduling/list" title="Voltar a página anterior">
+            <span class="material-icons">arrow_back</span>
+        </a>
+
+        <div class="navbar">
+            <div class="dropdown">
+                <button class="dropbtn" title="Exportar dados">EXPORTAR <i class="fa fa-caret-down icon-space"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a (click)="gerarPdf()" title="Gerar pdf e abrir área de impressão">Gerar PDF</a>
+                    <a (click)="exportExcelEventList()" title="Gerar arquivo excel">Gerar excel</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1 class="text-monitoring" *ngIf="accessType == 'Administrador'"> Monitoramento - {{eventName}}</h1>
+    <div class="monitoring">
+        <div id="meuGrafico" *ngIf="accessType == 'Administrador'"></div>
+        <div id="meuGrafico2" class="teste8" *ngIf="accessType == 'Administrador'"></div>
+        <div class="dashboard" *ngIf="accessType == 'Administrador'">
+            <h2 class="title-dash"></h2>
+            <div class="status-cards">
+                <div class="card" #statusCard>
+                    <h3>Pessoas</h3>
+                    <p>{{ totalPessoas }}</p>
+                </div>
+
+                <div class="card" #statusCard>
+                    <h3>Em Andamento</h3>
+                    <p>{{ emAndamento }}</p>
+                </div>
+                <div class="card" #statusCard>
+                    <h3>Finalizado</h3>
+                    <p>{{ concluido }}</p>
+                </div>
+                <div class="card" #statusCard>
+                    <h3>Em Aberto</h3>
+                    <p>{{ emAberto }}</p>
+                </div>
+                <div class="card" #statusCard>
+                    <h3>Total Gasto</h3>
+                    <h1 class="text-value"> {{ calculateTotalValue() | currency:'BRL':'symbol':'1.2-2' }}</h1>
+                </div>
+            </div>
+        </div>
+
+</div>

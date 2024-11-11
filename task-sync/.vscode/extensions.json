@@ -1,4 +1,7 @@
 {
 
-  "recommendations": ["angular.ng-template"]
+  "recommendations": [
+    "angular.ng-template",
+    "mhutchie.git-graph"
+  ]
 }

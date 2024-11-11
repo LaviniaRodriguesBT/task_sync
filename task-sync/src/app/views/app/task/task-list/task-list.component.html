@@ -16,7 +16,7 @@
     <h1 class="lista">Lista de Atividades</h1>
 
     <div class="info-icon-container">
-        <span class="material-icons info-icon" (click)="openInfoModal()">help_outline</span>
+        <span class="material-icons info-icon" (click)="openInfoModal()">help</span>
     </div>
 </div>
 
@@ -48,18 +48,23 @@
     </a> 
     <a class="btn btn-create" routerLink="/task/create" *ngIf= "accessType == 'Administrador'">
         <fa-icon [icon]="faAdd" title="Adicionar nova atividade"></fa-icon>
-        Cadastrar atividade
+        Cadastrar
     </a>
     <div class="search-box">
         <mat-icon class="search-icon">search</mat-icon>
         <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
     </div>
-    <a class="btn btn-pdf" (click)="gerarPdf()">
-        <span class="material-icons color-print">print</span>
-    </a>
-    <a class="btn btn-pdf" (click)="exportExcelEventList()">
-        <span class="material-icons color-print">upload_file</span>
-    </a>
+    <div class="navbar">
+        <div class="dropdown"> 
+            <button class="dropbtn export-button" title="Exportar dados">
+                EXPORTAR <i class="fa fa-caret-down icon-space"></i>
+            </button>
+            <div class="dropdown-content">
+                <a (click)="gerarPdf()" title="Gerar pdf e abrir área de impressão">Gerar PDF</a>
+                <a (click)="exportExcelEventList()" title="Gerar arquivo excel">Gerar EXCEL</a>
+            </div>
+        </div>
+    </div>
 </div>
 <hr>
 <div class="card-container">

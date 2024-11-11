@@ -45,13 +45,11 @@
             <input type="date" class="field-name" id="date" placeholder="Data" readonly
                 value="{{schedulingInformation?.date}}">
         </div>
-        <mat-form-field class="text-name">
-            <mat-label>Status</mat-label>
-            <mat-select formControlName="status" class="field-name" [disabled]="true" value="{{schedulingInformation?.status}}">
-                <mat-option value="Em andamento">Em andamento</mat-option>
-                <mat-option value="Finalizada">Finalizada</mat-option>
-            </mat-select>
-        </mat-form-field>        
+        <div class="form-group col-12 mt-2">
+            <label for="status" class="text-name">Status</label>
+            <input type="text" class="field-name" id="status" placeholder="status" readonly
+                value="{{schedulingInformation?.status}}">
+        </div>       
         <div class="col-12 text-end mt-2">
             <button class="btn col-2 me-4 btn-back" routerLink="/event/{{eventId}}/scheduling/list">Voltar</button>
             <button class="btn col-2 btn-create" routerLink="/event/{{eventId}}/scheduling/edit/{{schedulingInformation?.id}}">Editar</button>
