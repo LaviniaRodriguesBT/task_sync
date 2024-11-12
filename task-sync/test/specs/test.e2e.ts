@@ -2,6 +2,7 @@ import { expect } from '@wdio/globals'
 import LoginPage from '../pageobjects/login.page'
 import MainPage from '../pageobjects/main.page'
 import EventListPage from '../pageobjects/event-list.page'
+import EventCreatePage from '../pageobjects/event-create.page'
 import SecurePage from '../pageobjects/secure.page'
 
 describe('Acessar a aplicação ', () => {
@@ -25,6 +26,13 @@ describe('Acessar a lista de eventos ', () => {
 describe('Acessar a pagina de criar novo evento', () => {
     it('Criar novo evento', async () => {
         await EventListPage.clickButton('create-event');
+        await browser.pause(100);
+    })
+})
+
+describe('Criar novo evento', () => {
+    it('Criando novo evento', async () => {
+        await EventCreatePage.createEvent('Evento 1', '365', 'Evento criado para teste', 'Tecnologia', '21/11/2024', '12:40', '19:40', 'create');
         await browser.pause(3000);
     })
 })
