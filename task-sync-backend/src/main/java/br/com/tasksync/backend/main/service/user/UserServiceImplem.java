@@ -137,10 +137,23 @@ public class UserServiceImplem implements UserService {
         userModel.setAccess_type(entity.getAccess_type());
         userModel.setImage(entity.getImage());
 
+        UserModel admin = userDao.readyById(entity.getUserId());
+
         boolean responseExist = ifExistsCpf(userModel);
         System.out.println("cheguei aqui" + responseExist);
         if (responseExist) {
             System.out.println("nao consegui criar o usuario");
+            return 0;
+        }
+
+        if (admin.getAccess_type().equals("Administrador")){
+            int admCreated = userDao.numAdmin(admin.getId());
+            if (admCreated > 1) {
+                System.out.println("quantidade de adm maior que o suportado");
+                return 0;
+            }
+        }else if (admin.getAccess_type().equals("Colaborador")){
+            System.out.println("Ação não é permitida por esse tipo de usuario");
             return 0;
         }
 

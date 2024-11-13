@@ -25,7 +25,7 @@ create table "user" (
     id serial primary key,
     email character varying(200) not null unique,
     password character varying(500) not null,
-    access_type character varying(50) not null check (access_type in('Administrador','Colaborador')) default 'Colaborador',
+    access_type character varying(50) not null check (access_type in('Administrador','Colaborador','Master')) default 'Colaborador',
     person_id integer not null unique references person(id) on update cascade on delete cascade
 
 );

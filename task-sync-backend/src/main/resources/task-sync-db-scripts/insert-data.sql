@@ -12,7 +12,7 @@ values (default, '123', 'Michele F', 'rua: 1', '987'),
 
 
 insert into "user" (id, email, password, access_type, person_id)
-values (default, 'michelef@.com', '123', 'Administrador', 1),
+values (default, 'michelef@.com', '123', 'Master', 1),
        (default, 'laviniabf@.com', '321', 'Colaborador', 2),
        (default, 'lucassf@.com', '456', 'Colaborador', 3),
        (default, 'alansf@.com', '654', 'Colaborador', 4),
@@ -37,31 +37,33 @@ values (default, 1, 2, 9),
        (default, 1, 4, 9),
        (default, 2, 7, 5),
        (default, 2, 8, 5),
-       (default, 2, 10, 5);
+       (default, 2, 10, 5),
+       (default, 1, 9, 9),
+       (default, 2, 5, 5);
 
 
 
-insert into event (id, code, name, description, business, date, start_time, end_time)
+insert into event (id, code, name, description, business, date, start_time, end_time, adm_id)
 values (default, '001', 'Reunião de Equipe', 'Discussão sobre o novo projeto', 'Desenvolvimento', '2024-05-20',
-        '09:00:00', '11:00:00'),
+        '09:00:00', '11:00:00', 1),
        (default, '002', 'Workshop de Marketing', 'Estratégias para aumentar as vendas', 'Marketing', '2024-05-25',
-        '14:00:00', '17:00:00'),
+        '14:00:00', '17:00:00', 5),
        (default, '003', 'Lançamento de Produto', 'Apresentação do novo produto X', 'Vendas', '2024-06-10', '10:00:00',
-        '12:00:00'),
+        '12:00:00', 9),
        (default, '004', 'Treinamento Técnico', 'Atualização sobre novas tecnologias', 'TI', '2024-06-15', '09:00:00',
-        '16:00:00'),
+        '16:00:00', 5),
        (default, '005', 'Conferência Anual', 'Discussão sobre tendências de mercado', 'Estratégia', '2024-07-05',
-        '08:00:00', '18:00:00'),
+        '08:00:00', '18:00:00', 1),
        (default, '006', 'Feira de Emprego', 'Conectar talentos com empresas', 'Recursos Humanos', '2024-07-20',
-        '10:00:00', '16:00:00'),
+        '10:00:00', '16:00:00', 1),
        (default, '007', 'Almoço de Equipe', 'Integração da nova equipe', 'Recursos Humanos', '2024-08-02', '12:00:00',
-        '14:00:00'),
+        '14:00:00', 5),
        (default, '008', 'Hackathon', 'Desenvolvimento de soluções inovadoras', 'Inovação', '2024-08-15', '18:00:00',
-        '02:00:00'),
+        '02:00:00', 6),
        (default, '009', 'Palestra Motivacional', 'Inspiração para a equipe', 'Desenvolvimento', '2024-09-01',
-        '15:00:00', '16:00:00'),
+        '15:00:00', '16:00:00', 6),
        (default, '010', 'Reunião de Diretoria', 'Discussão sobre metas anuais', 'Diretoria', '2024-09-15', '10:00:00',
-        '12:00:00');
+        '12:00:00', 1);
 
 
 

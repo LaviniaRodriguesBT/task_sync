@@ -7,5 +7,5 @@ import java.util.List;
 
 public interface EventDao extends CrudDao<EventModel> {
     public List<EventModel> getEntitiesByUserId(final int id);
-
+    List<EventModel> getEntitiByuserGroup(final int id);
 }
