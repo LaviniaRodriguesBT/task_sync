@@ -8,7 +8,6 @@ class EventCreatePage extends Page {
     }
 
     public async writeInput(fieldName: string, value: string) {
-    
         const field = this.getField(fieldName);
         await field.click();
         await field.setValue(value);
@@ -32,8 +31,15 @@ class EventCreatePage extends Page {
         const button = this.getButton(buttonName);
         await button.click();
         await browser.pause(500);
+        
     }
-          
+
+    public async getMessageToastr() {
+        const toastrElement = $(`.toast-container`);
+        return toastrElement;
+    }
+    
+
     public async createEvent(
         nameEvent: string, 
         codeEvent: string,
@@ -52,8 +58,6 @@ class EventCreatePage extends Page {
         await this.writeInput('endTime', endTimeEvent);
         await this.clickButton(button)
     }
-
-
 }
 
 export default new EventCreatePage();
