@@ -4,83 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="feat: adicionado arquivos do workspace.xml">
-      <change afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/dao/postgres/GroupPostgresDaoImplem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/domain/GroupModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/port/dao/group/GroupDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/monitoring/monitoring.component.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/monitoring/monitoring.component.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/monitoring/monitoring.component.spec.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/monitoring/monitoring.component.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/assets/img/fundoTela1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/assets/img/logo-inicio1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/assets/img/logo_task1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/assets/img/logo_task_site1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../task-sync/src/assets/img/tela_login1.png" afterDir="false" />
+    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="refact: merge com a branch remota, adicionado o que foi realizado com o rodolfo na fai, filtro de master, adm e colab">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/git_toolbox_prj.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/service/user/UserServiceImplem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/service/user/UserServiceImplem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/.vscode/extensions.json" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/.vscode/extensions.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/app.routes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/services/scheduling/scheduling-update.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/services/scheduling/scheduling-update.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/account/my-profile/my-profile.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/account/my-profile/my-profile.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/account/my-profile/my-profile.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/account/my-profile/my-profile.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/account/my-profile/my-profile.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/account/my-profile/my-profile.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/account/sign-in/sign-in.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/account/sign-in/sign-in.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/account/sign-in/sign-in.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/account/sign-in/sign-in.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/account/sign-in/sign-in.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/account/sign-in/sign-in.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/account/user-type-selection/user-type-selection.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/account/user-type-selection/user-type-selection.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/account/user-type-selection/user-type-selection.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/account/user-type-selection/user-type-selection.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/about-us/about-us.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/about-us/about-us.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/about-us/about-us.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/about-us/about-us.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-create/event-create.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-create/event-create.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-create/event-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-create/event-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-detail/event-detail.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-detail/event-detail.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-edit/event-edit.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-edit/event-edit.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-edit/event-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-edit/event-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-list/event-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-list/event-list.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-list/event-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-list/event-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-list/event-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-list/event-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-create/scheduling-create.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-create/scheduling-create.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-create/scheduling-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-create/scheduling-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-create/scheduling-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-create/scheduling-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-detail/scheduling-detail.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-detail/scheduling-detail.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-detail/scheduling-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-detail/scheduling-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-edit/scheduling-edit.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-edit/scheduling-edit.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-edit/scheduling-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-edit/scheduling-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/scheduling/scheduling-list/scheduling-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/help/help.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/help/help.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/help/help.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/help/help.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/home/home.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/home/home.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/main/main.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/main/main.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/main/main.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/main/main.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/task/task-create/task-create.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/task/task-create/task-create.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/task/task-detail/task-detail.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/task/task-detail/task-detail.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/task/task-edit/task-edit.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/task/task-edit/task-edit.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/task/task-list/task-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/task/task-list/task-list.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/task/task-list/task-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/task/task-list/task-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-create/user-create.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-create/user-create.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-create/user-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-create/user-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-create/user-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-create/user-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-detail/user-detail.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-detail/user-detail.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-edit/user-edit.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-edit/user-edit.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-list/user-list.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-list/user-list.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-list/user-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-list/user-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/not-found/not-found.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/not-found/not-found.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/website/website.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/website/website.component.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/website/website.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/website/website.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/assets/img/event.png" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/assets/img/event.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/assets/img/face.png" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/assets/img/face.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +69,7 @@
   "keyToString": {
     "Application.BackendApplication.executor": "Debug",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "Merging lucasseverini",
+    "git-widget-placeholder": "lucasseverini",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "project.structure.last.edited": "Project",
@@ -221,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729455945685</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refact: merge com a branch remota, adicionado o que foi realizado com o rodolfo na fai, filtro de master, adm e colab">
+      <option name="closed" value="true" />
+      <created>1731466542554</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731466542554</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -230,6 +164,7 @@
     <MESSAGE value="feat: atualizacao do git toolbox" />
     <MESSAGE value="feat: acrescentado plano" />
     <MESSAGE value="feat: atualização do workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: atualização do workspace.xml" />
+    <MESSAGE value="refact: merge com a branch remota, adicionado o que foi realizado com o rodolfo na fai, filtro de master, adm e colab" />
+    <option name="LAST_COMMIT_MESSAGE" value="refact: merge com a branch remota, adicionado o que foi realizado com o rodolfo na fai, filtro de master, adm e colab" />
   </component>
 </project>
