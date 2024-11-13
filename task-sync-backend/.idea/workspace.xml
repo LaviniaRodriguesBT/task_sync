@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="feat: merge com a main">
-      <change afterPath="$PROJECT_DIR$/../task-sync/test/pageobjects/event-create.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-create/event-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-create/event-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/test/pageobjects/page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/test/pageobjects/page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/test/specs/test.e2e.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/test/specs/test.e2e.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-sync/test/pageobjects/event-create.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/test/pageobjects/event-create.page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-sync/test/specs/test.e2e.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
