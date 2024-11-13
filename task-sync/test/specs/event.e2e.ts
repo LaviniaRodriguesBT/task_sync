@@ -61,3 +61,12 @@ describe('Criar novo evento sem preencher as informações', () => {
 })
 
 
+describe('Sair da aplicação', () => {
+    it('Realizar o logout', async () => {
+        await MainPage.clickButton('my-profile');
+        await MainPage.clickButton('logout');
+        await LoginPage.open();
+    })
+
+})
+
