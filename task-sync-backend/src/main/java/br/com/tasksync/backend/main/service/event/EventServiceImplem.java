@@ -73,13 +73,13 @@ public class EventServiceImplem implements EventService {
     @Override
     public List<EventModel> getEntitiesByUserId(int id) {
         UserModel userModel = userDao.readyById(id);
-        if (userModel == null) {
+        if (userModel.getAccess_type().equals("Master")) {
             return findAll();
         }
-        if (userModel.getAccess_type().equals("Administrador")) {
-            return findAll();
+        if (!userModel.getAccess_type().equals("Colaborador")){
+            return eventDao.getEntitiByuserGroup(userModel.getId());
         }
-        return eventDao.getEntitiesByUserId(userModel.getId());
 
+        return eventDao.getEntitiesByUserId(userModel.getId());
     }
 }

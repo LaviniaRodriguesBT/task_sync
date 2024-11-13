@@ -7,5 +7,4 @@ public interface ReadService<T> {
 
     List<T> findAll();
 
-
 }
