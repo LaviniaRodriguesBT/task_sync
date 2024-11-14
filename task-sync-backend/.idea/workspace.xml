@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="refactor: criado GetMapping /read-by-user-id">
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/domain/model/event.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/domain/model/event.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/domain/model/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/domain/model/user.model.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/services/user/user-read.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/services/user/user-read.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-create/event-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-create/event-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-create/user-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-create/user-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-list/user-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-list/user-list.component.ts" afterDir="false" />
-    </list>
+    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="refactor: criado GetMapping /read-by-user-id" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
