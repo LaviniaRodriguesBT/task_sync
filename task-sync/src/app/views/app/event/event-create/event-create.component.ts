@@ -64,6 +64,7 @@ export class EventCreateComponent implements OnInit {
       this.toastr.error('Preencha todos os campos obrigatórios corretamente antes de cadastrar o evento.');
       return;
     }
+    const userId = localStorage.getItem('id')
     const event: Event = {
       id: this.form.get('id')?.value,
       code: this.form.get('code')?.value,
@@ -74,6 +75,7 @@ export class EventCreateComponent implements OnInit {
       start_time: this.form.get('start_time')?.value,
       end_time: this.form.get('end_time')?.value,
       image: this.image,
+      admin_id: userId!
     };
     try {
       await this.eventCreateService.create(event);

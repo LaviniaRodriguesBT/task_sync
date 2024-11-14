@@ -45,6 +45,7 @@ export class UserListComponent {
   modalRef: NgbModalRef | null = null;
   totalEventos: Record<string, number> = {};
   eventId: string = '';
+  userId!: string | null;
   constructor(private userReadService: UserReadService,
     private userDeleteService: UserDeleteService,
     private toastrService: ToastrService,
@@ -54,7 +55,8 @@ export class UserListComponent {
     private eventReadService: EventReadService,
     private route: ActivatedRoute,
   ) {
-    this.accessType = localStorage.getItem('accessType')
+    this.accessType = localStorage.getItem('accessType'),
+    this.userId = localStorage.getItem('id')
   }
   ngOnInit(): void {
     this.loadUsers();
@@ -62,7 +64,7 @@ export class UserListComponent {
     
   }
   async loadUsers() {
-    this.users = await this.userReadService.findAll();
+    this.users = await this.userReadService.findAllByUserId(this.userId!);
     console.log(this.users);
     this.usersCopy = this.users;
     this.length = this.users.length;
