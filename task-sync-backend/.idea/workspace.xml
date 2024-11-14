@@ -94,7 +94,7 @@
       <recent name="C:\Users\ALUNOS\Documents\task_sync\task-sync-backend\src\test\java\br\com\tasksync\backend\main\domain" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.BackendApplication">
     <configuration name="BackendApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.tasksync.backend.main.BackendApplication" />
       <module name="task-sync-backend" />
@@ -104,6 +104,14 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
+      <module name="task-sync-backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.tasksync.backend.main.BackendApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
