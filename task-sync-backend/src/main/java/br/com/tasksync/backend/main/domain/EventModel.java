@@ -20,4 +20,5 @@ public class EventModel {
     private LocalTime start_time;
     private LocalTime end_time;
     private String image;
+    private int admin_id;
 }

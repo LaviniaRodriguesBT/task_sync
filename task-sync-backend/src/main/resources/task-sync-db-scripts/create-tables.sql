@@ -52,7 +52,8 @@ create table event (
     date timestamp not null,
     start_time time not null,
     end_time time not null,
-    image text
+    image text,
+    adm_id integer not null references "user"(id) on update cascade on delete cascade
 );
 
 

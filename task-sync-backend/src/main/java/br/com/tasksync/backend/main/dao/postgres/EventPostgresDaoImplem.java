@@ -20,8 +20,8 @@ public class EventPostgresDaoImplem implements EventDao {
 
     @Override
     public int add(EventModel entity) {
-        String sql = "INSERT INTO event(code, name, description, business, date, start_time, end_time, image) ";
-        sql += " VALUES(?, ?, ?, ?, ?, ?, ? , ?);";
+        String sql = "INSERT INTO event(code, name, description, business, date, start_time, end_time, image, adm_id) ";
+        sql += " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);";
         PreparedStatement preparedStatement;
         ResultSet resultSet;
         try {
@@ -34,6 +34,7 @@ public class EventPostgresDaoImplem implements EventDao {
             preparedStatement.setTime(6, Time.valueOf(entity.getStart_time()));
             preparedStatement.setTime(7, Time.valueOf(entity.getEnd_time()));
             preparedStatement.setString(8, entity.getImage());
+            preparedStatement.setInt(9, entity.getAdmin_id());
             preparedStatement.execute();
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
@@ -45,11 +46,8 @@ public class EventPostgresDaoImplem implements EventDao {
             resultSet.close();
             preparedStatement.close();
         } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
+
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
         return entity.getId();
