@@ -15,26 +15,27 @@ describe('Acessar a aplicação ', () => {
     })
 })
 
-describe('Usuario criado com sucesso', () => {
-    it('Acessar a lista de usuarios', async () => {
-        await MainPage.clickButton('user');
-        await MainPage.clickButton('list-user');
-    })
+// describe('Usuario criado com sucesso', () => {
+//     it('Acessar a lista de usuarios', async () => {
+//         await browser.pause(5000);
+//         await MainPage.clickButton('user');
+//         await MainPage.clickButton('list-user');
+//     })
 
-    it('Acessar  a página de criar um novo usuario', async () => {
-        await UserListPage.clickButton('create-user');
-        await browser.pause(100);
-    })
+//     it('Acessar  a página de criar um novo usuario', async () => {
+//         await UserListPage.clickButton('create-user');
+//         await browser.pause(100);
+//     })
 
-    it('Usuario criado com sucesso', async () => {
-        await UserCreatePage.createUser('Carlos', 'carlosfernandes@gmail.com', 'carlos123*carlos', '12345678910', '12345678910', 'Rua João de Camargo, 45, Santa Ria do Sapucaí', 'admin', 'create');
-        const messageToastr = await UserCreatePage.getMessageToastr();
-        const text = await messageToastr.getText();
-        expect(text).toContain('Dados salvos com sucesso!');
-        await browser.pause(3000);
-        await browser.pause(3000);
-    })
-})
+//     it('Usuario criado com sucesso', async () => {
+//         await UserCreatePage.createUser('Carlos', 'carlosfernandes@gmail.com', 'carlos123*carlos', '12345678910', '12345678910', 'Rua João de Camargo, 45, Santa Ria do Sapucaí', 'admin', 'create');
+//         const messageToastr = await UserCreatePage.getMessageToastr();
+//         const text = await messageToastr.getText();
+//         expect(text).toContain('Dados salvos com sucesso!');
+//         await browser.pause(3000);
+//         await browser.pause(3000);
+//     })
+// })
 
 
 

@@ -12,6 +12,18 @@ class EventListPage extends Page {
         await button.click();
         await browser.pause(500);
     }
+
+
+    public getField(fieldName: string) {
+        return $(`.ft-field-${fieldName}`);
+    }
+
+    public async writeInput(fieldName: string, value: string) {
+        const field = this.getField(fieldName);
+        await field.click();
+        await field.setValue(value);
+        await browser.pause(1000);
+    }
       
 }
 

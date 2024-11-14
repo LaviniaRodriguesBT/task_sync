@@ -27,7 +27,7 @@ describe('Evento criado com sucesso', () => {
     })
 
     it('Evento criado com sucesso', async () => {
-        await EventCreatePage.createEvent('Evento 10', '365', 'Evento criado para teste', 'Tecnologia', '21/11/2024', '12:40', '19:40', 'create');
+        await EventCreatePage.createEvent(' Evento de Teste da aplicação', '365', 'Evento criado para teste', 'Tecnologia', '21/11/2024', '12:40', '19:40', 'create');
         const messageToastr = await EventCreatePage.getMessageToastr();
         const text = await messageToastr.getText();
         expect(text).toContain('Dados salvos com sucesso!');
@@ -36,6 +36,18 @@ describe('Evento criado com sucesso', () => {
     })
 })
 
+describe('Mostrar detalhes do evento criado com sucesso', () => {
+
+    it('Pesquisar pelo evento criado', async () => {
+        await EventListPage.writeInput('search', ' Evento de Teste da aplicação');
+        await browser.pause(100);
+    })
+
+    it('Pesquisar pelo evento criado', async () => {
+        await EventListPage.clickButton('detail-event');
+        await browser.pause(8000);
+    })
+})
 
 
 describe('Criar novo evento sem preencher as informações', () => {
