@@ -4,6 +4,8 @@ import br.com.tasksync.backend.main.domain.UserModel;
 import br.com.tasksync.backend.main.dto.AuthenticationDto;
 import br.com.tasksync.backend.main.port.dao.crud.CrudDao;
 
+import java.util.List;
+
 public interface UserDao extends CrudDao<UserModel> {
     UserModel readByEmail(String email);
 
@@ -20,4 +22,6 @@ public interface UserDao extends CrudDao<UserModel> {
     int insertUserUserGroup(int userId, int groupId, int adminId);
 
     int getAdminUserGroup(int adminId);
+
+    List<UserModel> findAllByUserId(int userId);
 }

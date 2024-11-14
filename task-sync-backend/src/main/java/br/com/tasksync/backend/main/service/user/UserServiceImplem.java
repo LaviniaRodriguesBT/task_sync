@@ -146,23 +146,12 @@ public class UserServiceImplem implements UserService {
             return 0;
         }
 
-        if (admin.getAccess_type().equals("Administrador")){
-            int admCreated = userDao.numAdmin(admin.getId());
-            if (admCreated > 1) {
-                System.out.println("quantidade de adm maior que o suportado");
-                return 0;
-            }
-        }else if (admin.getAccess_type().equals("Colaborador")){
-            System.out.println("Ação não é permitida por esse tipo de usuario");
-            return 0;
-        }
+        int groupId = userDao.getAdminUserGroup(admin.getId());
 
-        int groupId = 0;
+
       if(entity.getAccess_type().equals("Administrador")){
           int admCreated = userDao.numAdmin(entity.getUserId());
-          UserModel adm = userDao.readyById(entity.getUserId());
-          groupId = userDao.getAdminUserGroup(adm.getId());
-          if (admCreated > 1 || !Objects.equals(adm.getAccess_type(), "Administrador")) {
+          if (admCreated > 1 || !Objects.equals(admin.getAccess_type(), "Administrador")) {
               System.out.println("quantidade de adm maior que o suportado");
               return 0;
           }
@@ -175,5 +164,16 @@ public class UserServiceImplem implements UserService {
         userDao.insertUserUserGroup(id, groupId, entity.getUserId());
         System.out.println("Criacao de uma nova pessoa feita com sucesso");
         return id;
+    }
+
+    @Override
+    public List<UserModel> findAllByUserId(int userId) {
+
+        UserModel userModel = userDao.readyById(userId);
+        if (userModel.getAccess_type().equals("Master")) {
+            return findAll();
+        }
+
+        return userDao.findAllByUserId(userId);
     }
 }

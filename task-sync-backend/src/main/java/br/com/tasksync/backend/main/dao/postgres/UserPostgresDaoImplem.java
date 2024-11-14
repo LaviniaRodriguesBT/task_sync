@@ -370,11 +370,8 @@ public class UserPostgresDaoImplem implements UserDao {
             resultSet.close();
             preparedStatement.close();
         } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
+
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
         return usergroupId;
@@ -382,17 +379,49 @@ public class UserPostgresDaoImplem implements UserDao {
 
     @Override
     public int getAdminUserGroup(int adminId) {
-        final String sql = "Select * FROM groups G WHERE G.user_id = ?;";
+        final String sql = "Select * FROM usergroup G WHERE G.user_id = ?;";
         try (PreparedStatement preparedStatement = connection.prepareStatement(sql)) {
             preparedStatement.setInt(1, adminId);
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                return resultSet.getInt(adminId);
+                return resultSet.getInt("group_id");
             }
             return 0;
 
         } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public List<UserModel> findAllByUserId(int userId) {
+
+        final String sql = "SELECT * FROM \"user\" U INNER JOIN person P on P.id = U.person_id \n" +
+                "WHERE U.id in (SELECT UG.user_id from usergroup UG WHERE UG.group_id in (SELECT UG.group_id FROM usergroup UG WHERE UG.user_id = ?));";
+
+        final List<UserModel> users = new ArrayList<>();
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1,userId);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                final UserModel user = new UserModel();
+                user.setId(resultSet.getInt("id"));
+                user.setName(resultSet.getString("name"));
+                user.setEmail(resultSet.getString("email"));
+                user.setCpf(resultSet.getString("cpf"));
+                user.setPassword(resultSet.getString("password"));
+                user.setPhone(resultSet.getString("phone"));
+                user.setAddress(resultSet.getString("address"));
+                user.setAccess_type(resultSet.getString("access_type"));
+                user.setImage(resultSet.getString("image"));
+                users.add(user);
+            }
+            resultSet.close();
+            preparedStatement.close();
+            return users;
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }
