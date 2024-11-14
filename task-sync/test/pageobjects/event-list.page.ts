@@ -27,10 +27,6 @@ class EventListPage extends Page {
     }
 
 
-    public async filter(field: string, value: string, button: string) {
-        await this.writeInput('filter', field);
-        await browser.pause(500);
-    }
       
 }
 

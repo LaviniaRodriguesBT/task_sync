@@ -43,7 +43,7 @@
         <button mat-icon-button matTooltip="Home" routerLink="/" *ngIf= "accessType == 'Administrador'">
             <mat-icon>home</mat-icon>
         </button>
-        <button mat-icon-button matTooltip="Meu perfil" [matMenuTriggerFor]="myProfile">
+        <button mat-icon-button matTooltip="Meu perfil" class="ft-btn-my-profile" [matMenuTriggerFor]="myProfile">
             <mat-icon>account_circle</mat-icon>
         </button>
         <mat-menu #myProfile [overlapTrigger]="false" yPosition="below">
@@ -57,7 +57,7 @@
                 <mat-icon>groups 2</mat-icon><span>Sobre nós</span>
             </button>
             <mat-divider></mat-divider>
-            <button mat-menu-item (click)="logout()">
+            <button mat-menu-item (click)="logout()" class="ft-btn-logout">
                 <mat-icon>exit_to_app</mat-icon>Sair
             </button>
         </mat-menu>

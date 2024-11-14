@@ -80,7 +80,7 @@ export class EventCreateComponent implements OnInit {
       this.toastr.success('Dados salvos com sucesso!');
       this.router.navigate(['event/list']);
     } catch (error: any) {
-      this.toastr.error('Erro ao salvar os dados: ' + error.message);
+      this.toastr.error('Não foi possível cadastrar o evento');
     }
   }
   onImageSelected(event: any) {

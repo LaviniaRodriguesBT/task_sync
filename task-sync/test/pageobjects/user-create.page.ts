@@ -1,7 +1,7 @@
 import { $ } from '@wdio/globals'
 import Page from './page';
 
-class EventCreatePage extends Page {
+class UserCreatePage extends Page {
 
     public getField(fieldName: string) {
         return $(`.ft-field-${fieldName}`);
@@ -40,24 +40,27 @@ class EventCreatePage extends Page {
     }
     
 
-    public async createEvent(
-        nameEvent: string, 
-        codeEvent: string,
-        descriptionEvent: string, 
-        businessEvent: string,
-        dateEvent: string,
-        starTimeEvent: string,
-        endTimeEvent: string, 
+    public async createUser(
+        nameUser: string, 
+        emailUser: string,
+        passwordUser: string, 
+        cpfUser: string,
+        phoneUser: string,
+        addressUser: string, 
+        typeAcess: string,
         button: string) {
-        await this.writeInput('name', nameEvent);
-        await this.writeInput('code', codeEvent);
-        await this.writeInput('description', descriptionEvent);
-        await this.writeInput('business', businessEvent);
-        await this.writeInput('date', dateEvent);
-        await this.writeInput('starTime', starTimeEvent);
-        await this.writeInput('endTime', endTimeEvent);
+        await this.writeInput('name', nameUser);
+        await this.writeInput('email', emailUser);
+        await this.writeInput('password', passwordUser);
+        await this.writeInput('cpf', cpfUser);
+        await this.writeInput('phone', phoneUser);
+        await this.writeInput('address', addressUser);
+        //await this.clickButton('type-access');
+        
+        await this.writeInput('type-access', typeAcess);
+        await this.clickButton(typeAcess);
         await this.clickButton(button)
     }
 }
 
-export default new EventCreatePage();
+export default new UserCreatePage();
