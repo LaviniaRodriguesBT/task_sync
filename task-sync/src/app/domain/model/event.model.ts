@@ -8,4 +8,5 @@ export interface Event {
     start_time: string,
     end_time: string,
     image?: string,
+    admin_id?: string
 }

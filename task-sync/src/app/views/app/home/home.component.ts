@@ -73,7 +73,8 @@ export class HomeComponent implements OnInit {
 
   async loadEvents() {
     try {
-      this.events = await this.eventReadService.findAll();
+      const userId = localStorage.getItem('id')
+      this.events = await this.eventReadService.findUserById(userId!);
       const eventNames = this.events.map((evento: { name: string }) => evento.name);
       const eventCust = new Map<string, number>();
       for (const scheduling of this.schedulings) {

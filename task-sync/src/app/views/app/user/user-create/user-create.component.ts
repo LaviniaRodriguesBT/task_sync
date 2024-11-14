@@ -101,6 +101,7 @@ export class UserCreateComponent implements OnInit {
   }
 
   async create() {
+    const user_id = localStorage.getItem('id')
     const user: User = {
       email: this.form.controls['email'].value,
       password: this.form.controls['password'].value,
@@ -110,6 +111,7 @@ export class UserCreateComponent implements OnInit {
       phone: this.form.controls['phone'].value,
       access_type: this.form.controls['access_type'].value,
       image: this.image,
+      userId: user_id!
     };
 
     console.log('preparando para criar a pessoa...');

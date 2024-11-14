@@ -20,8 +20,8 @@ public class EventPostgresDaoImplem implements EventDao {
 
     @Override
     public int add(EventModel entity) {
-        String sql = "INSERT INTO event(code, name, description, business, date, start_time, end_time, image) ";
-        sql += " VALUES(?, ?, ?, ?, ?, ?, ? , ?);";
+        String sql = "INSERT INTO event(code, name, description, business, date, start_time, end_time, image, adm_id) ";
+        sql += " VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?);";
         PreparedStatement preparedStatement;
         ResultSet resultSet;
         try {
@@ -34,6 +34,7 @@ public class EventPostgresDaoImplem implements EventDao {
             preparedStatement.setTime(6, Time.valueOf(entity.getStart_time()));
             preparedStatement.setTime(7, Time.valueOf(entity.getEnd_time()));
             preparedStatement.setString(8, entity.getImage());
+            preparedStatement.setInt(9, entity.getAdmin_id());
             preparedStatement.execute();
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
@@ -45,11 +46,8 @@ public class EventPostgresDaoImplem implements EventDao {
             resultSet.close();
             preparedStatement.close();
         } catch (SQLException e) {
-            try {
-                connection.rollback();
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
+
+            e.printStackTrace();
             throw new RuntimeException(e);
         }
         return entity.getId();
@@ -161,6 +159,35 @@ public class EventPostgresDaoImplem implements EventDao {
     public List<EventModel> getEntitiesByUserId(int id) {
         final List<EventModel> events = new ArrayList<>();
         final String sql = "SELECT * FROM event e inner join contract c on c.event_id = e.id where c.user_id = ?;";
+        try {
+            PreparedStatement preparedStatement = connection.prepareStatement(sql);
+            preparedStatement.setInt(1, id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                final EventModel event = new EventModel();
+                event.setId(resultSet.getInt("id"));
+                event.setCode(resultSet.getString("code"));
+                event.setName(resultSet.getString("name"));
+                event.setBusiness(resultSet.getString("business"));
+                event.setDescription(resultSet.getString("description"));
+                event.setDate(resultSet.getDate("date").toLocalDate());
+                event.setStart_time(resultSet.getTime("start_time").toLocalTime());
+                event.setEnd_time(resultSet.getTime("end_time").toLocalTime());
+                event.setImage(resultSet.getString("image"));
+                events.add(event);
+            }
+            resultSet.close();
+            preparedStatement.close();
+            return events;
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    @Override
+    public List<EventModel> getEntitiByuserGroup(int id) {
+        final List<EventModel> events = new ArrayList<>();
+        final String sql = "SELECT * FROM event E WHERE E.adm_id in (SELECT ug.user_id FROM usergroup ug WHERE ug.user_id = ?);";
         try {
             PreparedStatement preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setInt(1, id);

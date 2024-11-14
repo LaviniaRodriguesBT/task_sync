@@ -9,6 +9,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
+    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="refactor: criado GetMapping /read-by-user-id" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,8 +33,8 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="lumain" />
-                    <option name="lastUsedInstant" value="1729451833" />
+                    <option name="branchName" value="lucasseverini" />
+                    <option name="lastUsedInstant" value="1729460383" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="main" />
@@ -69,6 +70,19 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BackendApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lucasseverini&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  }
+}</component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.BackendApplication.executor&quot;: &quot;Run&quot;,
@@ -117,8 +131,6 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1729288604255</updated>
-      <workItem from="1729463216903" duration="626000" />
-      <workItem from="1729534282960" duration="558000" />
     </task>
     <task id="LOCAL-00001" summary="feat: merge com a main">
       <option name="closed" value="true" />
@@ -160,7 +172,47 @@
       <option name="project" value="LOCAL" />
       <updated>1729455945685</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refact: merge com a branch remota, adicionado o que foi realizado com o rodolfo na fai, filtro de master, adm e colab">
+      <option name="closed" value="true" />
+      <created>1731466542554</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1731466542554</updated>
+    </task>
+    <task id="LOCAL-00007" summary="feat: adicionado ao gitignore a pasta .idea">
+      <option name="closed" value="true" />
+      <created>1731466695952</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1731466695952</updated>
+    </task>
+    <task id="LOCAL-00008" summary="refactor: adicionado admin_id no banco, para validacao ao criar eventos e usuários">
+      <option name="closed" value="true" />
+      <created>1731550730425</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731550730425</updated>
+    </task>
+    <task id="LOCAL-00009" summary="refactor: criado e implementado findAllByUserId">
+      <option name="closed" value="true" />
+      <created>1731551417991</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731551417991</updated>
+    </task>
+    <task id="LOCAL-00010" summary="refactor: criado GetMapping /read-by-user-id">
+      <option name="closed" value="true" />
+      <created>1731551475919</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731551475919</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -175,6 +227,11 @@
     <MESSAGE value="feat: atualizacao do git toolbox" />
     <MESSAGE value="feat: acrescentado plano" />
     <MESSAGE value="feat: atualização do workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: atualização do workspace.xml" />
+    <MESSAGE value="refact: merge com a branch remota, adicionado o que foi realizado com o rodolfo na fai, filtro de master, adm e colab" />
+    <MESSAGE value="feat: adicionado ao gitignore a pasta .idea" />
+    <MESSAGE value="refactor: adicionado admin_id no banco, para validacao ao criar eventos e usuários" />
+    <MESSAGE value="refactor: criado e implementado findAllByUserId" />
+    <MESSAGE value="refactor: criado GetMapping /read-by-user-id" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: criado GetMapping /read-by-user-id" />
   </component>
 </project>

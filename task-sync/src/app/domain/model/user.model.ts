@@ -9,4 +9,5 @@ export interface User {
     access_type?: string,
     image?: string,
     eventCount?: number;
+    userId?: string;
 }
