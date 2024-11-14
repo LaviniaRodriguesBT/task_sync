@@ -65,4 +65,11 @@ public class UserRestController {
         return ResponseEntity.noContent().build();
     }
 
+    @CrossOrigin
+    @GetMapping("/read-by-user-id")
+    public ResponseEntity<List<UserModel>> getEntitiesByUserId(@RequestParam final int user_id) {
+        List<UserModel> users = userService.findAllByUserId(user_id);
+        return ResponseEntity.ok().body(users);
+    }
+
 }
