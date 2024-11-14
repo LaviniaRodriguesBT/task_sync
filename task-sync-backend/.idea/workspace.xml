@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="refactor: adicionado admin_id no banco, para validacao ao criar eventos e usuários">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/controller/UserRestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/controller/UserRestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/dao/postgres/UserPostgresDaoImplem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/dao/postgres/UserPostgresDaoImplem.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/port/dao/user/UserDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/port/dao/user/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/port/service/user/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/port/service/user/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/service/user/UserServiceImplem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/service/user/UserServiceImplem.java" afterDir="false" />
+    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="refactor: criado GetMapping /read-by-user-id">
+      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/domain/model/event.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/domain/model/event.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/domain/model/user.model.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/domain/model/user.model.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/services/user/user-read.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/services/user/user-read.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-create/event-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-create/event-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-create/user-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-create/user-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-list/user-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-list/user-list.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,7 +176,23 @@
       <option name="project" value="LOCAL" />
       <updated>1731550730425</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="refactor: criado e implementado findAllByUserId">
+      <option name="closed" value="true" />
+      <created>1731551417991</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731551417991</updated>
+    </task>
+    <task id="LOCAL-00010" summary="refactor: criado GetMapping /read-by-user-id">
+      <option name="closed" value="true" />
+      <created>1731551475919</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1731551475919</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -187,6 +204,8 @@
     <MESSAGE value="refact: merge com a branch remota, adicionado o que foi realizado com o rodolfo na fai, filtro de master, adm e colab" />
     <MESSAGE value="feat: adicionado ao gitignore a pasta .idea" />
     <MESSAGE value="refactor: adicionado admin_id no banco, para validacao ao criar eventos e usuários" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: adicionado admin_id no banco, para validacao ao criar eventos e usuários" />
+    <MESSAGE value="refactor: criado e implementado findAllByUserId" />
+    <MESSAGE value="refactor: criado GetMapping /read-by-user-id" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: criado GetMapping /read-by-user-id" />
   </component>
 </project>

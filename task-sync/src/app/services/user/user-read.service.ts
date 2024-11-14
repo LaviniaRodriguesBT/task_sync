@@ -16,4 +16,7 @@ export class UserReadService {
   findAll(): Promise<User[]>{
     return firstValueFrom(this.http.get<User[]>('http://localhost:8080/api/user'));
   }
+  findAllByUserId(id: string): Promise<User[]>{
+    return firstValueFrom(this.http.get<User[]>(`http://localhost:8080/api/user/read-by-user-id?user_id=${id}`));
+  }
 }
