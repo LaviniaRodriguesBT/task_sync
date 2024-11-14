@@ -55,7 +55,7 @@
         </a>
         <div class="search-box col-2">
             <mat-icon class="search-icon">search</mat-icon>
-            <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
+            <input type="text" id="search" class="ft-field-search" placeholder="Pesquisa" (keyup)="search()">
         </div>
 
         <div class="navbar">
@@ -104,7 +104,7 @@
                                 Exibe a quantidade de pessoas cadastradas no cronograma
                             </span>
                         </a>
-                        <a routerLink="/event/detail/{{event.id}}" *ngIf="accessType == 'Administrador'">
+                        <a routerLink="/event/detail/{{event.id}}" class="ft-btn-detail-event" *ngIf="accessType == 'Administrador'">
                             <span class="material-icons color-detail" title="Detalhes evento">info</span>
                         </a>
                         <a routerLink="/event/edit/{{event.id}}" *ngIf="accessType == 'Administrador'">
