@@ -4,9 +4,13 @@ import br.com.tasksync.backend.main.domain.UserModel;
 import br.com.tasksync.backend.main.dto.AuthenticationDto;
 import br.com.tasksync.backend.main.dto.CreateUserDto;
 import br.com.tasksync.backend.main.port.dao.user.UserDao;
+import br.com.tasksync.backend.main.port.service.authentication.AuthenticationService;
+import br.com.tasksync.backend.main.service.authentication.JwtAuthenticationServiceImplem;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
@@ -19,11 +23,15 @@ class UserServiceImplemTest {
 
     private UserDao userDao;
     private UserServiceImplem userService;
+    private AuthenticationService authenticationService;
+    private PasswordEncoder passwordEncoder;
 
     @BeforeEach
     void setUp() {
         userDao = mock(UserDao.class);
         userService = new UserServiceImplem(userDao);
+        passwordEncoder = new BCryptPasswordEncoder();
+        authenticationService = new JwtAuthenticationServiceImplem(userService, passwordEncoder);
     }
 
     // Testando o método create(UserModel)
@@ -157,7 +165,7 @@ class UserServiceImplemTest {
         when(userDao.authenticate(any(AuthenticationDto.class))).thenReturn(userModel);
 
         // Executando o método
-        UserModel result = userService.authenticate(authenticationDto);
+        UserModel result = authenticationService.authenticate(authenticationDto);
 
         // Verificando o resultado
         assertNotNull(result);
@@ -174,7 +182,7 @@ class UserServiceImplemTest {
         when(userDao.authenticate(any(AuthenticationDto.class))).thenReturn(null);
 
         // Executando o método
-        UserModel result = userService.authenticate(authenticationDto);
+        UserModel result = authenticationService.authenticate(authenticationDto);
 
         // Verificando o resultado
         assertNull(result);
