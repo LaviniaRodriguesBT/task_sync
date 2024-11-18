@@ -9,6 +9,8 @@ import br.com.tasksync.backend.main.port.dao.plan.PlanDao;
 import br.com.tasksync.backend.main.port.dao.scheduling.SchedulingDao;
 import br.com.tasksync.backend.main.port.dao.task.TaskDao;
 import br.com.tasksync.backend.main.port.dao.user.UserDao;
+import br.com.tasksync.backend.main.port.service.authentication.AuthenticationService;
+import br.com.tasksync.backend.main.port.service.user.UserService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
@@ -20,7 +22,7 @@ public class AppConfiguration {
 
 
     @Bean
-    @Profile("prod")
+    @Profile("{prod, sec}")
     public UserDao getUserDao(final Connection connection) {
         return new UserPostgresDaoImplem(connection);
     }
@@ -60,4 +62,23 @@ public class AppConfiguration {
         public PlanDao getPlanDao(final Connection connection){
         return new PlanPostgresDaoImplem(connection);
     }
+
+
+    @Bean
+    @Profile("sec")
+    public AuthenticationService JwtAuthenticationService(final UserService userService) {
+        return new BasicAuthenticationServiceImpl(userService, passwordEncoder());
+    }
+
+    @Bean
+    @Profile("sec")
+    public JwtService jwtService() {
+        return new JwtServiceImpl();
+    }
+
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
+
 }
