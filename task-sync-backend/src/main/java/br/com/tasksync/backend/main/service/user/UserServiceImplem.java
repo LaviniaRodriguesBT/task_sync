@@ -166,4 +166,12 @@ public class UserServiceImplem implements UserService {
 
         return userDao.findAllByUserId(userId);
     }
+
+    @Override
+    public UserModel findByEmail(String email) {
+        if (email.isEmpty()) {
+            return null;
+        }
+        return  userDao.readByEmail(email);
+    }
 }
