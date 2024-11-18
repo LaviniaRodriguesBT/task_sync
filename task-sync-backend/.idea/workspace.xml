@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="feat: merge com a main">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="feat: merge com a main em lumainmerge" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -72,7 +68,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "lumainmerge",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
     "node.js.detected.package.eslint": "true",
@@ -218,7 +214,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731551475919</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat: merge com a main em lumainmerge">
+      <option name="closed" value="true" />
+      <created>1731933250462</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1731933250462</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -227,6 +231,17 @@
   <component name="UnknownFeatures">
     <option featureType="com.intellij.fileTypeFactory" implementationName="*.java" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="feat: merge com a adicao do ngx-echarts" />
     <MESSAGE value="feat: merge com a main" />
@@ -234,12 +249,13 @@
     <MESSAGE value="feat: acrescentado plano" />
     <MESSAGE value="feat: atualização do workspace.xml" />
     <MESSAGE value="feat: filtro de eventos por id do grupo" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: filtro de eventos por id do grupo" />
     <MESSAGE value="refact: merge com a branch remota, adicionado o que foi realizado com o rodolfo na fai, filtro de master, adm e colab" />
     <MESSAGE value="feat: adicionado ao gitignore a pasta .idea" />
     <MESSAGE value="refactor: adicionado admin_id no banco, para validacao ao criar eventos e usuários" />
     <MESSAGE value="refactor: criado e implementado findAllByUserId" />
     <MESSAGE value="refactor: criado GetMapping /read-by-user-id" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor: criado GetMapping /read-by-user-id" />
+    <MESSAGE value="feat: merge com a main na branch lumainmerge" />
+    <MESSAGE value="feat: merge com a main em lumainmerge" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: merge com a main em lumainmerge" />
   </component>
 </project>
