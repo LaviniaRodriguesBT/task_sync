@@ -1,3 +1,5 @@
+CREATE EXTENSION IF NOT EXISTS pgcrypto;
+
 insert into person (id, cpf, name, address, phone)
 values (default, '123', 'Michele F', 'rua: 1', '987'),
        (default, '321', 'Lavinia B', 'rua: 2', '654'),
@@ -11,17 +13,17 @@ values (default, '123', 'Michele F', 'rua: 1', '987'),
        (default, '741', 'Patricia R', 'rua: 10', '888');
 
 
-insert into "user" (id, email, password, access_type, person_id)
-values (default, 'michelef@.com', '123', 'Master', 1),
-       (default, 'laviniabf@.com', '321', 'Colaborador', 2),
-       (default, 'lucassf@.com', '456', 'Colaborador', 3),
-       (default, 'alansf@.com', '654', 'Colaborador', 4),
-       (default, 'leandrof@.com', '789', 'Administrador', 5),
-       (default, 'brunogf@.com', '987', 'Administrador', 6),
-       (default, 'brunavf@.com', '147', 'Colaborador', 7),
-       (default, 'danielebf@.com', '258', 'Colaborador', 8),
-       (default, 'josuesf@.com', '369', 'Administrador', 9),
-       (default, 'patriciarf@.com', '741', 'Colaborador', 10);
+insert into "user" (id, email, password, access_type, person_id, role)
+values (default, 'michelef@.com', crypt('123', gen_salt('bf')), 'MASTER', 1, 'MASTER'),
+       (default, 'laviniabf@.com', crypt('321', gen_salt('bf')), 'COLABORADOR', 2, 'COLABORADOR'),
+       (default, 'lucassf@.com', crypt('456', gen_salt('bf')), 'COLABORADOR', 3, 'COLABORADOR'),
+       (default, 'alansf@.com', crypt('654', gen_salt('bf')), 'COLABORADOR', 4, 'COLABORADOR'),
+       (default, 'leandrof@.com', crypt('789', gen_salt('bf')), 'ADMINISTRADOR', 5, 'ADMINISTRADOR'),
+       (default, 'brunogf@.com', crypt('987', gen_salt('bf')), 'ADMINISTRADOR', 6, 'ADMINISTRADOR'),
+       (default, 'brunavf@.com', crypt('147', gen_salt('bf')), 'COLABORADOR', 7, 'COLABORADOR'),
+       (default, 'danielebf@.com', crypt('258', gen_salt('bf')), 'COLABORADOR', 8, 'COLABORADOR'),
+       (default, 'josuesf@.com', crypt('369', gen_salt('bf')), 'ADMINISTRADOR', 9, 'ADMINISTRADOR'),
+       (default, 'patriciarf@.com', crypt('741', gen_salt('bf')), 'COLABORADOR', 10, 'COLABORADOR');
 
 
 insert into groups (id, user_id)
