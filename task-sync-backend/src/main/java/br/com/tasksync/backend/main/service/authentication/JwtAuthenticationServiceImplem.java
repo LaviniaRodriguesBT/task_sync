@@ -6,13 +6,14 @@ import br.com.tasksync.backend.main.port.service.authentication.AuthenticationSe
 import br.com.tasksync.backend.main.port.service.user.UserService;
 import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 public class JwtAuthenticationServiceImplem implements AuthenticationService {
 
     private final UserService userService;
-    private final PasswordEnconder passwordEnconder;
+    private final PasswordEncoder passwordEnconder;
 
-    public JwtAuthenticationServiceImplem(UserService userService, PasswordEnconder passwordEnconder) {
+    public JwtAuthenticationServiceImplem(UserService userService, PasswordEncoder passwordEnconder) {
         this.userService = userService;
         this.passwordEnconder = passwordEnconder;
     }
@@ -25,7 +26,7 @@ public class JwtAuthenticationServiceImplem implements AuthenticationService {
             throw new UsernameNotFoundException("Credenciais invalidas");
         }
 
-        if (!passwordEncoder.matches(userModel.getPassword(), userModel.getPassword())) {
+        if (!passwordEnconder.matches(userModel.getPassword(), userModel.getPassword())) {
             throw new BadCredentialsException("Credenciais invalidas");
         }
 
