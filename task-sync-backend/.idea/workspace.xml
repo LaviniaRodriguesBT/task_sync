@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="feat: merge com a main">
-      <change beforePath="$PROJECT_DIR$/../docs/especificacaoDeRequisitos/~$skSync_especificacaoDeRequisitosNaoFuncionais_vrs1.0.docx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="feat: merge com a main" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -32,12 +28,8 @@
               <option name="branches">
                 <list>
                   <RecentBranch>
-                    <option name="branchName" value="lumain" />
-                    <option name="lastUsedInstant" value="1729451833" />
-                  </RecentBranch>
-                  <RecentBranch>
                     <option name="branchName" value="main" />
-                    <option name="lastUsedInstant" value="1729451832" />
+                    <option name="lastUsedInstant" value="1731931024" />
                   </RecentBranch>
                 </list>
               </option>
@@ -75,6 +67,7 @@
     "JUnit.UserServiceImplemTest.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "dart.analysis.tool.window.visible": "false",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
@@ -196,6 +189,7 @@
     <MESSAGE value="feat: atualizacao do git toolbox" />
     <MESSAGE value="feat: acrescentado plano" />
     <MESSAGE value="feat: atualização do workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: atualização do workspace.xml" />
+    <MESSAGE value="feat: filtro de eventos por id do grupo" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: filtro de eventos por id do grupo" />
   </component>
 </project>
