@@ -18,4 +18,12 @@ public class UserModel {
     private String address;
     private String access_type;
     private String image;
+    private UserRole role;
+
+    public enum UserRole{
+        ADMINISTRADOR,
+        COLABORADOR,
+        MASTER
+    }
+
 }
