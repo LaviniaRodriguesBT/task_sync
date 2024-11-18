@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.sql.*;
 
 @Configuration
-@Profile("prod")
+@Profile({"prod", "sec"})
 public class PostgresConnectionManager {
 
     @Value("${spring.datasource.base.url}")

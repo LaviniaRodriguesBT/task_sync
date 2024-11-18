@@ -4,6 +4,7 @@ import br.com.tasksync.backend.main.domain.UserModel;
 import br.com.tasksync.backend.main.dto.AuthenticationDto;
 import br.com.tasksync.backend.main.dto.CreateUserDto;
 import br.com.tasksync.backend.main.port.service.user.UserService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
@@ -11,10 +12,12 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import java.net.URI;
 import java.util.List;
 
+
+@Profile("sec")
 @RestController
 @RequestMapping("/api/user")
-
 public class UserRestController {
+
     private final UserService userService;
 
     public UserRestController(UserService userService) {
@@ -42,14 +45,6 @@ public class UserRestController {
         return ResponseEntity.ok(id);
     }
 
-    @CrossOrigin
-    @PostMapping("/authenticate")
-    public ResponseEntity<UserModel> authenticate(@RequestBody final AuthenticationDto data) {
-        UserModel user = userService.authenticate(data);
-        final URI uri = ServletUriComponentsBuilder
-                .fromCurrentRequestUri().path("{id}").buildAndExpand(user).toUri();
-        return ResponseEntity.accepted().body(user);
-    }
 
     @CrossOrigin
     @PutMapping("/{id}")
