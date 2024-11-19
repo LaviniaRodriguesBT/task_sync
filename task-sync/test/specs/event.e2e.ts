@@ -67,35 +67,35 @@ describe('Mostrar detalhes do evento criado com sucesso', () => {
 })
 
 
-// describe('Criar novo evento sem preencher as informações', () => {
-//     it('Acessar a lista de eventos', async () => {
-//         await MainPage.clickButton('event');
-//         await MainPage.clickButton('list-events');
-//     })
+describe('Criar novo evento sem preencher as informações', () => {
+    it('Acessar a lista de eventos', async () => {
+        await MainPage.clickButton('event');
+        await MainPage.clickButton('list-events');
+    })
 
-//     it('Acessar  a página de criar um novo evento', async () => {
-//         await EventListPage.clickButton('create-event');
-//         await browser.pause(100);
-//     })
+    it('Acessar  a página de criar um novo evento', async () => {
+        await EventListPage.clickButton('create-event');
+        await browser.pause(100);
+    })
 
-//     it('Erro ao criar novo evento sem preencher as informações', async () => {
-//         await browser.pause(3000);
-//         await EventCreatePage.clickButton('create');
-//         await EventCreatePage.clickButton('create');
-//         const messageToastr = await EventCreatePage.getMessageToastr();
-//         const text = await messageToastr.getText();
-//         expect(text).toContain('Preencha todos os campos obrigatórios corretamente antes de cadastrar o evento.');
-//         await browser.pause(3000);
-//     })
-// })
+    it('Erro ao criar novo evento sem preencher as informações', async () => {
+        await browser.pause(3000);
+        await EventCreatePage.clickButton('create');
+        await EventCreatePage.clickButton('create');
+        const messageToastr = await EventCreatePage.getMessageToastr();
+        const text = await messageToastr.getText();
+        expect(text).toContain('Preencha todos os campos obrigatórios corretamente antes de cadastrar o evento.');
+        await browser.pause(3000);
+    })
+})
 
 
-// describe('Sair da aplicação', () => {
-//     it('Realizar o logout', async () => {
-//         await MainPage.clickButton('my-profile');
-//         await MainPage.clickButton('logout');
-//         await LoginPage.open();
-//     })
+describe('Sair da aplicação', () => {
+    it('Realizar o logout', async () => {
+        await MainPage.clickButton('my-profile');
+        await MainPage.clickButton('logout');
+        await LoginPage.open();
+    })
 
-// })
+})
 
