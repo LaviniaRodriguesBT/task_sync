@@ -2,7 +2,7 @@
 
 ## Descrição
 
-O projeto Task Sync é um sistema de software desenvolvido para o gerenciamento eficiente de eventos, focando na comunicação e responsabilidade entre colaboradores. Este projeto foi desenvolvido pelas alunas do 5° Período de Sistemas de Informação da FAI - Centro de Ensino Superior em Gestão, Tecnologia e Educação no ano de 2024.
+O projeto Task Sync é um sistema de software desenvolvido para o gerenciamento eficiente de eventos, focando na comunicação e responsabilidade entre colaboradores. Este projeto foi desenvolvido pelos alunos do 6° Período de Sistemas de Informação da FAI - Centro de Ensino Superior em Gestão, Tecnologia e Educação no ano de 2024.
 
 ## Funcionalidades Principais
 
