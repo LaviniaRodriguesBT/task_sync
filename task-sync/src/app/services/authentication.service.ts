@@ -3,17 +3,18 @@ import { UserCredential } from '../domain/dto/user-credential';
 import { HttpClient } from '@angular/common/http';
 import { firstValueFrom, Observable } from 'rxjs';
 import { User } from '../domain/model/user.model';
+import { JwtTokenDto } from '../domain/dto/jwttokendto';
 @Injectable({
   providedIn: 'root'
 })
 export class AuthenticationService {
   constructor(private http: HttpClient) {
   }
-  async authenticate(credential: UserCredential) : Promise<User>{
+  async authenticate(credential: UserCredential) : Promise<JwtTokenDto>{
     console.log('trying to authenticate...');
     console.log(credential);
-    let apiResponse = await firstValueFrom(this.http.post<User>(`http://localhost:8080/api/user/authenticate`, credential));
-    localStorage.setItem('email', apiResponse.email);
+    let apiResponse = await firstValueFrom(this.http.post<JwtTokenDto>(`http://localhost:8080/authenticate`, credential));
+    localStorage.setItem('token', apiResponse.token);
     return apiResponse;
   }
   logout() {

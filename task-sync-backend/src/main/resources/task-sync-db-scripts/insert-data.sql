@@ -14,16 +14,16 @@ values (default, '123', 'Michele F', 'rua: 1', '987'),
 
 
 insert into "user" (id, email, password, access_type, person_id, role)
-values (default, 'michelef@.com', crypt('123', gen_salt('bf')), 'MASTER', 1, 'MASTER'),
-       (default, 'laviniabf@.com', crypt('321', gen_salt('bf')), 'COLABORADOR', 2, 'COLABORADOR'),
-       (default, 'lucassf@.com', crypt('456', gen_salt('bf')), 'COLABORADOR', 3, 'COLABORADOR'),
-       (default, 'alansf@.com', crypt('654', gen_salt('bf')), 'COLABORADOR', 4, 'COLABORADOR'),
-       (default, 'leandrof@.com', crypt('789', gen_salt('bf')), 'ADMINISTRADOR', 5, 'ADMINISTRADOR'),
-       (default, 'brunogf@.com', crypt('987', gen_salt('bf')), 'ADMINISTRADOR', 6, 'ADMINISTRADOR'),
-       (default, 'brunavf@.com', crypt('147', gen_salt('bf')), 'COLABORADOR', 7, 'COLABORADOR'),
-       (default, 'danielebf@.com', crypt('258', gen_salt('bf')), 'COLABORADOR', 8, 'COLABORADOR'),
-       (default, 'josuesf@.com', crypt('369', gen_salt('bf')), 'ADMINISTRADOR', 9, 'ADMINISTRADOR'),
-       (default, 'patriciarf@.com', crypt('741', gen_salt('bf')), 'COLABORADOR', 10, 'COLABORADOR');
+values (default, 'michelef@.com', crypt('123', gen_salt('bf')), 'Administrador', 1, 'ADMINISTRADOR'),
+       (default, 'laviniabf@.com', crypt('321', gen_salt('bf')), 'Colaborador', 2, 'COLABORADOR'),
+       (default, 'lucassf@.com', crypt('456', gen_salt('bf')), 'Colaborador', 3, 'COLABORADOR'),
+       (default, 'alansf@.com', crypt('654', gen_salt('bf')), 'Colaborador', 4, 'COLABORADOR'),
+       (default, 'leandrof@.com', crypt('789', gen_salt('bf')), 'Master', 5, 'MASTER'),
+       (default, 'brunogf@.com', crypt('987', gen_salt('bf')), 'Administrador', 6, 'ADMINISTRADOR'),
+       (default, 'brunavf@.com', crypt('147', gen_salt('bf')), 'Colaborador', 7, 'COLABORADOR'),
+       (default, 'danielebf@.com', crypt('258', gen_salt('bf')), 'Colaborador', 8, 'COLABORADOR'),
+       (default, 'josuesf@.com', crypt('369', gen_salt('bf')), 'Administrador', 9, 'ADMINISTRADOR'),
+       (default, 'patriciarf@.com', crypt('741', gen_salt('bf')), 'Colaborador', 10, 'COLABORADOR');
 
 
 insert into groups (id, user_id)
