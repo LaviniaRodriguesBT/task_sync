@@ -56,14 +56,8 @@ public class SecurityConfig {
 
                                 .requestMatchers(
                                         "/api/user/**")
-                                .hasAuthority(UserModel.UserRole.COLABORADOR.name())
-
-                                .requestMatchers("/api/playground/good-morning").
-                                hasAuthority(UserModel.UserRole.ADMINISTRADOR.name())
-
-                                .requestMatchers("/api/playground/good-night")
-                                .hasAnyAuthority(UserModel.UserRole.ADMINISTRADOR.name()
-                                        , UserModel.UserRole.COLABORADOR.name())
+                                .hasAnyAuthority(UserModel.UserRole.COLABORADOR.name()
+                                        ,UserModel.UserRole.ADMINISTRADOR.name())
                 )
                 .sessionManagement(
                         session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)

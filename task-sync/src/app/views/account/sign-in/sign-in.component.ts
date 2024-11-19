@@ -81,7 +81,7 @@ export class SignInComponent implements OnInit {
         this.toastrService.error("O tipo do usuario incorreto");
         return;
       }
-      this.authenticationService.addCredentialsToLocalStorage(credential);
+      this.authenticationService.addCredentialsToLocalStorage(credential, token.token);
       console.log(credential.accessType)
       
       if (tokeninfo.role === SystemConstants.USER_TYPES.ADM) {

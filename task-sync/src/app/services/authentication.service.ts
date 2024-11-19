@@ -27,10 +27,10 @@ export class AuthenticationService {
     }
     return false;
   }
-  addCredentialsToLocalStorage(credential: UserCredential) {
+  addCredentialsToLocalStorage(credential: UserCredential, token: string) {
     localStorage.setItem('email', credential.email);
     localStorage.setItem('id', credential.id);
-    localStorage.setItem('token', new Date().toLocaleTimeString());
+    localStorage.setItem('token', token);
     localStorage.setItem('accessType', credential.accessType);
   }
 }

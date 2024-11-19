@@ -4,13 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="fix: realizado alteracao nas classes de test para se adequarem a authenticacao do JWT">
+    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="refactor: implementacoes para funcionar o acesso de administrador e colaborador">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/security/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/security/SecurityConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-prod.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-prod.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application-sec.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application-sec.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/task-sync-db-scripts/create-tables.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task-sync-db-scripts/create-tables.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/task-sync-db-scripts/insert-data.sql" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/task-sync-db-scripts/insert-data.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../task-sync/src/app/services/authentication.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/services/authentication.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/account/sign-in/sign-in.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/account/sign-in/sign-in.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,30 +76,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.BackendApplication.executor": "Debug",
-    "JUnit.UserServiceImplemTest.executor": "Debug",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "com.codeium.enabled": "true",
-    "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "lucasseverini",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "show.migrate.to.gradle.popup": "false",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.BackendApplication.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.UserServiceImplemTest.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;dart.analysis.tool.window.visible&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;lucasseverini&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;show.migrate.to.gradle.popup&quot;: &quot;false&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ALUNOS\Documents\task_sync\task-sync-backend\src\test\java\br\com\tasksync\backend\main\domain" />
@@ -275,7 +275,23 @@
       <option name="project" value="LOCAL" />
       <updated>1732037468432</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feat: criado jwt decode para pegar o token de acesso e separa-lo para identificar o tipo de acesso">
+      <option name="closed" value="true" />
+      <created>1732052091030</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1732052091030</updated>
+    </task>
+    <task id="LOCAL-00017" summary="refactor: implementacoes para funcionar o acesso de administrador e colaborador">
+      <option name="closed" value="true" />
+      <created>1732052131235</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1732052131235</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -313,17 +329,8 @@
     <MESSAGE value="refactor: retirado authenticate da classe UserServiceImplem" />
     <MESSAGE value="refactor: retirado authenticate da interface UserService adicionado perfil de sec ao AppConfiguration" />
     <MESSAGE value="fix: realizado alteracao nas classes de test para se adequarem a authenticacao do JWT" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: realizado alteracao nas classes de test para se adequarem a authenticacao do JWT" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/br/com/tasksync/backend/main/controller/UserRestController.java</url>
-          <line>29</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="feat: criado jwt decode para pegar o token de acesso e separa-lo para identificar o tipo de acesso" />
+    <MESSAGE value="refactor: implementacoes para funcionar o acesso de administrador e colaborador" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor: implementacoes para funcionar o acesso de administrador e colaborador" />
   </component>
 </project>
