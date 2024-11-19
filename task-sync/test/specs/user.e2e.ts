@@ -15,51 +15,23 @@ describe('Acessar a aplicação ', () => {
     })
 })
 
-// describe('Usuario criado com sucesso', () => {
-//     it('Acessar a lista de usuarios', async () => {
-//         await browser.pause(5000);
-//         await MainPage.clickButton('user');
-//         await MainPage.clickButton('list-user');
-//     })
+describe('Usuario criado com sucesso', () => {
+    it('Acessar a lista de usuarios', async () => {
+        await MainPage.clickButton('user');
+        await MainPage.clickButton('list-user');
+    });
 
-//     it('Acessar  a página de criar um novo usuario', async () => {
-//         await UserListPage.clickButton('create-user');
-//         await browser.pause(100);
-//     })
+    it('Acessar a página de criar um novo usuario', async () => {
+        await UserListPage.clickButton('create-user');
+    });
 
-//     it('Usuario criado com sucesso', async () => {
-//         await UserCreatePage.createUser('Carlos', 'carlosfernandes@gmail.com', 'carlos123*carlos', '12345678910', '12345678910', 'Rua João de Camargo, 45, Santa Ria do Sapucaí', 'admin', 'create');
-//         const messageToastr = await UserCreatePage.getMessageToastr();
-//         const text = await messageToastr.getText();
-//         expect(text).toContain('Dados salvos com sucesso!');
-//         await browser.pause(3000);
-//         await browser.pause(3000);
-//     })
-// })
+    it('Usuario criado com sucesso', async () => {
+        await UserCreatePage.createUser('Carlos', 'carlosfernandes@gmail.com', 'carlos123*carlos', '12345678910', '12345678910', 'Rua João de Camargo, 45, Santa Ria do Sapucaí', 'Colaborador', 'create');
 
-
-
-// describe('Criar novo evento sem preencher as informações', () => {
-//     it('Acessar a lista de eventos', async () => {
-//         await MainPage.clickButton('event');
-//         await MainPage.clickButton('list-events');
-//     })
-
-//     it('Acessar  a página de criar um novo evento', async () => {
-//         await UserListPage.clickButton('create-event');
-//         await browser.pause(100);
-//     })
-
-//     it('Erro ao criar novo evento sem preencher as informações', async () => {
-//         await browser.pause(3000);
-//         await UserCreatePage.clickButton('create');
-//         await UserCreatePage.clickButton('create');
-//         const messageToastr = await UserCreatePage.getMessageToastr();
-//         const text = await messageToastr.getText();
-//         expect(text).toContain('Preencha todos os campos obrigatórios corretamente antes de cadastrar o evento.');
-//         await browser.pause(3000);
-//     })
-//})
+        const messageToastr = await UserCreatePage.getMessageToastr();
+        expect(messageToastr).toContain('Dados salvos com sucesso!');
+    });
+});
 
 
 describe('Sair da aplicação', () => {

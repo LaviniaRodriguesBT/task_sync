@@ -17,7 +17,7 @@
     <div class="form-row">
         <div class="form-group col-12 mt-2">
             <label for="name" class="text-name">Nome</label>
-            <input type="text" class="field-name" id="name" placeholder="Nome" formControlName="name">
+            <input type="text" class="field-name ft-field-name-event" id="name" placeholder="Nome" formControlName="name">
             <div *ngIf="form.get('name')?.invalid && (form.get('name')?.dirty || form.get('name')?.touched)"
             class="text-danger">
             <small *ngIf="form.get('name')?.errors?.['required']">O nome é obrigatório.</small>
@@ -95,7 +95,7 @@
         <div class="col-12 text-end mt-2">
             <div class="col-12 text-end mt-2">
                 <a class="btn col-2 me-4 btn-back" href="/event/list">Voltar</a>
-                <button class="btn col-2 btn-create" href="/event/list">Salvar</button>
+                <button class="btn col-2 btn-create ft-btn-save" href="/event/list">Salvar</button>
             </div>
         </div>
     </div>

@@ -1,7 +1,7 @@
 import { $ } from '@wdio/globals'
 import Page from './page';
 
-class UserCreatePage extends Page {
+class EventEditPage extends Page {
 
     public getField(fieldName: string) {
         return $(`.ft-field-${fieldName}`);
@@ -18,13 +18,8 @@ class UserCreatePage extends Page {
         return $(`.ft-btn-${buttonName}`);
     }
 
-
     public getFieldDate(buttonName: string) {
         return $(`.ft-field-${buttonName}`);
-    }
-
-    public calendarioClick() {
-        return  $(`.calendar-icon`).click()
     }
 
     public async clickButton(buttonName: string) {
@@ -39,26 +34,12 @@ class UserCreatePage extends Page {
         return toastrElement;
     }
     
-
-    public async createUser(
-        nameUser: string, 
-        emailUser: string,
-        passwordUser: string, 
-        cpfUser: string,
-        phoneUser: string,
-        addressUser: string, 
-        typeAcess: string,
+    public async editEvent(
+        nameEvent: string, 
         button: string) {
-        await this.writeInput('name', nameUser);
-        await this.writeInput('email', emailUser);
-        await this.writeInput('password', passwordUser);
-        await this.writeInput('cpf', cpfUser);
-        await this.writeInput('phone', phoneUser);
-        await this.writeInput('address', addressUser);
-        await this.writeInput('type-access', typeAcess);
-        await browser.pause(2000);
+        await this.writeInput('name-event', nameEvent);
         await this.clickButton(button)
     }
 }
 
-export default new UserCreatePage();
+export default new EventEditPage();

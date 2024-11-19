@@ -126,15 +126,15 @@
 
         <div class="form-group col-12 mt-2">
             <label for="access_type" class="text-name">Tipo de Acesso</label>
-            <mat-form-field class="w-100">
-                <mat-label>Tipo de Acesso</mat-label>
-                <mat-select formControlName="access_type" class="ft-field-type-access">
-                    <mat-option class="ft-field-admin" value="Administrador">Administrador</mat-option>
-                    <mat-option class="ft-field-colab" value="Colaborador">Colaborador</mat-option>
-                </mat-select>
-            </mat-form-field>
-            <div *ngIf="form.get('access_type')?.invalid && (form.get('access_type')?.touched)" class="text-danger">
-                <small *ngIf="form.get('access_type')?.errors?.['required']">Tipo de acesso é obrigatório.</small>
+            <input type="text" class="field-name ft-field-type-access"  placeholder="Tipo de Acesso" formControlName="access_type">
+            <div *ngIf="form.get('access_type')?.invalid && (form.get('name')?.dirty || form.get('access_type')?.touched)"
+                class="text-danger">
+                <small *ngIf="form.get('access_type')?.errors?.['required']">O endereço é obrigatório.</small>
+                <small *ngIf="form.get('access_type')?.errors?.['minlength']">O endereço deve ter no mínimo {{
+                    addressMinLength
+                    }} caracteres.</small>
+                <small *ngIf="form.get('access_type')?.errors?.['maxlength']">O endereço deve ter no máximo 200
+                    caracteres.</small>
             </div>
         </div>
 

@@ -110,7 +110,7 @@
                         <a routerLink="/event/edit/{{event.id}}" *ngIf="accessType == 'Administrador'">
                             <span class="material-icons color-edit" title="Editar evento">edit</span>
                         </a>
-                        <a class="btn btn-error me-2" (click)="openMyModal(infoModal)"
+                        <a class="btn btn-error me-2 ft-btn-delete" (click)="openMyModal(infoModal)"
                             *ngIf="accessType == 'Administrador'">
                             <span class="material-icons color-delete" title="Excluir evento">delete_forever</span>
                         </a>
@@ -126,7 +126,7 @@
                                 <p>Deseja confirmar a exclusão do evento?</p>
                             </div>
                             <div class="modal-footer">
-                                <button class="btn btn-danger" (click)="deleteEvent(event.id!)"
+                                <button class="btn btn-danger ft-btn-delete-event" (click)="deleteEvent(event.id!)"
                                     *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">EXCLUIR
                                 </button>
                             </div>

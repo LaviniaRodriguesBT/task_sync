@@ -72,6 +72,7 @@
     "@types/jasmine": "~5.1.0",
     "@types/jest": "^29.5.14",
     "@types/mocha": "^10.0.9",
+    "@wdio/allure-reporter": "^9.2.14",
     "@wdio/local-runner": "^9.2.8",
     "@wdio/mocha-framework": "^9.2.8",
     "@wdio/spec-reporter": "^9.2.8",
