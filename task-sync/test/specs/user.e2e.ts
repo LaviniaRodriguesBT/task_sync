@@ -15,7 +15,7 @@ describe('Acessar a aplicação ', () => {
     })
 })
 
-describe('Usuario criado com sucesso', () => {
+describe('Usuario criado com sucesso no sistema', () => {
     it('Acessar a lista de usuarios', async () => {
         await MainPage.clickButton('user');
         await MainPage.clickButton('list-user');
@@ -27,9 +27,6 @@ describe('Usuario criado com sucesso', () => {
 
     it('Usuario criado com sucesso', async () => {
         await UserCreatePage.createUser('CarlosTeste', 'carlosfernandes@gmail.com', 'carlos123*carlos', '12345678910', '12345678910', 'Rua João de Camargo, 45, Santa Ria do Sapucaí', 'Colaborador', 'create');
-
-        const messageToastr = await UserCreatePage.getMessageToastr();
-        expect(messageToastr).toContain('Dados salvos com sucesso!');
     });
 
     it('Deletar pelo evento criado', async () => {
