@@ -4,20 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="test: adicao do allure results">
+    <list default="true" id="c71d6317-f5e1-4d65-9016-6e0b382a4976" name="Changes" comment="feat: merge com a main">
+      <change beforePath="$PROJECT_DIR$/../docs/especificacaoDeRequisitos/~$skSync_especificacaoDeRequisitosNaoFuncionais_vrs1.0.docx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-detail/event-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-detail/event-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-edit/event-edit.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/event/event-edit/event-edit.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-create/user-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-create/user-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-detail/user-detail.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/src/app/views/app/user/user-detail/user-detail.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/test/pageobjects/user-create.page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/test/pageobjects/user-create.page.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/test/specs/delete-event.e2e.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/test/specs/event.e2e.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/test/specs/event.e2e.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/test/specs/user.e2e.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/test/specs/user.e2e.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../task-sync/wdio.conf.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../task-sync/wdio.conf.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,12 +73,9 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;Application.BackendApplication.executor&quot;: &quot;Run&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-Database detector&quot;: &quot;Database detector&quot;,
-    &quot;Notification.DoNotAsk-Database detector&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;michele__webdriver.io&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
@@ -99,16 +87,15 @@
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.2.3\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ALUNOS\Documents\task_sync\task-sync-backend\src\test\java\br\com\tasksync\backend\main\domain" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.BackendApplication">
+  <component name="RunManager">
     <configuration name="BackendApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="br.com.tasksync.backend.main.BackendApplication" />
       <module name="task-sync-backend" />
@@ -122,27 +109,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="task-sync-backend" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="br.com.tasksync.backend.main.BackendApplication" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.BackendApplication" />
-      </list>
-    </recent_temporary>
-  </component>
-  <component name="SharedIndexes">
-    <attachedChunks>
-      <set>
-        <option value="bundled-jdk-9823dce3aa75-28b599e66164-intellij.indexing.shared.core-IU-242.23339.11" />
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-IU-242.23339.11" />
-      </set>
-    </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
