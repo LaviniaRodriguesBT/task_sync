@@ -32,8 +32,8 @@ describe('Evento criado com sucesso', () => {
         const messageToastr = await EventCreatePage.getMessageToastr();
         const text = await messageToastr.getText();
         expect(text).toContain('Dados salvos com sucesso!');
-        await browser.pause(3000);
-        await browser.pause(3000);
+        await browser.pause(500);
+        await browser.pause(500);
     })
 })
 
@@ -46,16 +46,16 @@ describe('Mostrar detalhes do evento criado com sucesso', () => {
 
     it('Visualizar detalhes do evento', async () => {
         await EventListPage.clickButton('detail-event');
-        await browser.pause(1000);
+        await browser.pause(500);
     })
 
     it('Editar nome do evento', async () => {
         await EventListPage.clickButton('edit-event');
-        await browser.pause(3000);
+        await browser.pause(500);
         await EventEditPage.getField('name-event').clearValue();
         await EventEditPage.writeInput('name-event', 'Alteracao do evento');
         await EventListPage.clickButton('save');
-        await browser.pause(3000);
+        await browser.pause(500);
     })
     
     it('Deletar pelo evento criado', async () => {

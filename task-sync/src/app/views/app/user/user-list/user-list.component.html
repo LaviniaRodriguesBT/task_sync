@@ -54,7 +54,7 @@
     </a>
     <div class="search-box">
         <mat-icon class="search-icon">search</mat-icon>
-        <input type="text" id="search" placeholder="Pesquisa" (keyup)="search()">
+        <input type="text" id="search" class="ft-field-search" placeholder="Pesquisa" (keyup)="search()">
     </div>
     <div class="navbar">
         <div class="dropdown"> 
@@ -106,7 +106,7 @@
                     <a routerLink="/user/edit/{{ user.id }}">
                         <span class="material-icons color-edit" title="Editar pessoa">edit</span>
                     </a>
-                    <a class="btn btn-error me-2" (click)="openMyModal(infoModal)" *ngIf="accessType == 'Administrador'">
+                    <a class="btn btn-error me-2 ft-btn-delete" (click)="openMyModal(infoModal)" *ngIf="accessType == 'Administrador'">
                         <span class="material-icons color-delete" title="Excluir pessoa">delete_forever</span>
                     </a>
                     <ng-template #infoModal let-modal>
@@ -122,7 +122,7 @@
                             <p>Deseja confirmar a exclusão do(a) {{user.name}}?</p>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-danger" (click)="deleteUser(user.id!)"
+                            <button class="btn btn-danger ft-btn-delete-user" (click)="deleteUser(user.id!)"
                                 *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">EXCLUIR
                             </button>
                         </div>

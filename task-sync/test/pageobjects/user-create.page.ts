@@ -56,7 +56,7 @@ class UserCreatePage extends Page {
         await this.writeInput('phone', phoneUser);
         await this.writeInput('address', addressUser);
         await this.writeInput('type-access', typeAcess);
-        await browser.pause(2000);
+        await browser.pause(500);
         await this.clickButton(button)
     }
 }

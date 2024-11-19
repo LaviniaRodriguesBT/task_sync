@@ -26,11 +26,19 @@ describe('Usuario criado com sucesso', () => {
     });
 
     it('Usuario criado com sucesso', async () => {
-        await UserCreatePage.createUser('Carlos', 'carlosfernandes@gmail.com', 'carlos123*carlos', '12345678910', '12345678910', 'Rua João de Camargo, 45, Santa Ria do Sapucaí', 'Colaborador', 'create');
+        await UserCreatePage.createUser('CarlosTeste', 'carlosfernandes@gmail.com', 'carlos123*carlos', '12345678910', '12345678910', 'Rua João de Camargo, 45, Santa Ria do Sapucaí', 'Colaborador', 'create');
 
         const messageToastr = await UserCreatePage.getMessageToastr();
         expect(messageToastr).toContain('Dados salvos com sucesso!');
     });
+
+    it('Deletar pelo evento criado', async () => {
+        await UserListPage.writeInput('search', 'CarlosTeste');
+        await browser.pause(100);
+        await UserListPage.clickButton('delete');
+        await UserListPage.clickButton('delete-user');
+    })
+
 });
 
 
