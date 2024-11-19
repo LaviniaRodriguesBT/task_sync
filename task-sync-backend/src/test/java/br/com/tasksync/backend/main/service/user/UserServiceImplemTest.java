@@ -9,6 +9,7 @@ import br.com.tasksync.backend.main.service.authentication.JwtAuthenticationServ
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -45,11 +46,13 @@ class UserServiceImplemTest {
         userModel.setCpf("12345678900");
         userModel.setPhone("123456789");
         userModel.setAddress("123 Test Street");
+        userModel.setAccess_type("Administrador");
 
         // Simulando o comportamento do DAO
         when(userDao.existsCpf(any(String.class))).thenReturn(false); // CPF não existe
         when(userDao.numAdmin(anyInt())).thenReturn(0); // Não há administradores excedendo
         when(userDao.add(any(UserModel.class))).thenReturn(1); // Sucesso ao adicionar
+        when(userDao.readyById(anyInt())).thenReturn(userModel);
 
         // Executando o método
         int result = userService.create(userModel);
@@ -67,6 +70,7 @@ class UserServiceImplemTest {
         userModel.setPassword("password123");
         userModel.setCpf("12345678900");
         userModel.setPhone("123456789");
+        userModel.setAccess_type("Administrador");
         userModel.setAddress("123 Test Street");
 
         // Executando o método
@@ -161,8 +165,11 @@ class UserServiceImplemTest {
         userModel.setEmail("test@example.com");
         userModel.setPassword("password123");
 
+        userModel.setPassword(passwordEncoder.encode(userModel.getPassword()));
+
+
         // Simulando o comportamento do DAO
-        when(userDao.authenticate(any(AuthenticationDto.class))).thenReturn(userModel);
+        when(userService.findByEmail(userModel.getEmail())).thenReturn(userModel);
 
         // Executando o método
         UserModel result = authenticationService.authenticate(authenticationDto);
@@ -179,12 +186,14 @@ class UserServiceImplemTest {
         authenticationDto.setPassword("wrongpassword");
 
         // Simulando o comportamento do DAO
-        when(userDao.authenticate(any(AuthenticationDto.class))).thenReturn(null);
+
+        when(userService.findByEmail(authenticationDto.getEmail())).thenReturn(null);
 
         // Executando o método
-        UserModel result = authenticationService.authenticate(authenticationDto);
+        UsernameNotFoundException exception = assertThrows(UsernameNotFoundException.class, () ->
+                authenticationService.authenticate(authenticationDto));
 
         // Verificando o resultado
-        assertNull(result);
+        assertEquals("Credenciais invalidas", exception.getMessage());
     }
 }
