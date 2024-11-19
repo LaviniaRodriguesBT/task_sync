@@ -2,15 +2,20 @@ package br.com.tasksync.backend.main.service.authentication;
 
 import br.com.tasksync.backend.main.domain.UserModel;
 import br.com.tasksync.backend.main.port.service.user.UserService;
+import org.springframework.context.annotation.Profile;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+
+@Service
+@Profile("sec")
 public class CustomUserDetailsService implements UserDetailsService {
 
     private final UserService userService;

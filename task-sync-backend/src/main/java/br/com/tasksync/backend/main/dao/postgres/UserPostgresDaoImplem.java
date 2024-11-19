@@ -200,7 +200,7 @@ public class UserPostgresDaoImplem implements UserDao {
 
     @Override
     public UserModel readByEmail(String email) {
-        final String sql = "SELECT * FROM user_model WHERE email = ?;";
+        final String sql = "SELECT * FROM \"user\" WHERE email = ?;";
         PreparedStatement preparedStatement = null;
         ResultSet resultSet = null;
         try {
@@ -210,8 +210,9 @@ public class UserPostgresDaoImplem implements UserDao {
             if (resultSet.next()) {
                 final UserModel user = new UserModel();
                 user.setId(resultSet.getInt("id"));
-                user.setName(resultSet.getString("name"));
                 user.setPassword(resultSet.getString("password"));
+                user.setEmail(resultSet.getString("email"));
+                user.setRole(UserModel.UserRole.valueOf(resultSet.getString("role")));
                 logger.log(Level.INFO, "Entidade com email " + email + " encontrada com sucesso");
                 return user;
             }

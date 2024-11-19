@@ -26,7 +26,7 @@ public class JwtAuthenticationServiceImplem implements AuthenticationService {
             throw new UsernameNotFoundException("Credenciais invalidas");
         }
 
-        if (!passwordEnconder.matches(userModel.getPassword(), userModel.getPassword())) {
+        if (!passwordEnconder.matches(authenticationDto.getPassword(), userModel.getPassword())) {
             throw new BadCredentialsException("Credenciais invalidas");
         }
 
