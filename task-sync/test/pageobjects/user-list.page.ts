@@ -7,6 +7,11 @@ class UserListPage extends Page {
         return $(`.ft-btn-${buttonName}`);
     }
 
+    public async getMessageToastr() {
+        const toastrElement = $(`.toast-container`);
+        return toastrElement;
+    }
+    
     public async clickButton(buttonName: string) {
         const button = this.getButton(buttonName);
         await button.click();

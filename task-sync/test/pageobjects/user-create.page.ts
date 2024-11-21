@@ -14,6 +14,8 @@ class UserCreatePage extends Page {
         await browser.pause(500);
     }
 
+    
+
     public getButton(buttonName: string) {
         return $(`.ft-btn-${buttonName}`);
     }

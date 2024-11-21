@@ -27,17 +27,24 @@ describe('Usuario criado com sucesso no sistema', () => {
 
     it('Usuario criado com sucesso', async () => {
         await UserCreatePage.createUser('CarlosTeste', 'carlosfernandes@gmail.com', 'carlos123*carlos', '12345678910', '12345678910', 'Rua João de Camargo, 45, Santa Ria do Sapucaí', 'Colaborador', 'create');
+        const messageToastr = await UserCreatePage.getMessageToastr();
+        const text = await messageToastr.getText();
+        expect(text).toContain('Dados salvos com sucesso!');
+        await browser.pause(3000);
     });
 
-    it('Deletar pelo evento criado', async () => {
+    it('Deletar usuario criado', async () => {
         await UserListPage.writeInput('search', 'CarlosTeste');
         await browser.pause(100);
         await UserListPage.clickButton('delete');
         await UserListPage.clickButton('delete-user');
+        const messageToastr = await UserListPage.getMessageToastr();
+        const text = await messageToastr.getText();
+        expect(text).toContain('Pessoa excluida com sucesso');
+        await browser.pause(3000);
     })
 
 });
-
 
 describe('Sair da aplicação', () => {
     it('Realizar o logout', async () => {
@@ -45,6 +52,5 @@ describe('Sair da aplicação', () => {
         await MainPage.clickButton('logout');
         await LoginPage.open();
     })
-
 })
 
