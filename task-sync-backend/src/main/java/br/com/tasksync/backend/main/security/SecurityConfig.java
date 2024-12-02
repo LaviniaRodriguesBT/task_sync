@@ -55,9 +55,11 @@ public class SecurityConfig {
                                 ).permitAll()
 
                                 .requestMatchers(
-                                        "/api/user/**")
+                                        "/api/user/**",
+                                        "/api/event/**")
                                 .hasAnyAuthority(UserModel.UserRole.COLABORADOR.name()
                                         ,UserModel.UserRole.ADMINISTRADOR.name())
+                                .anyRequest().authenticated()
                 )
                 .sessionManagement(
                         session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS)
@@ -77,6 +79,8 @@ public class SecurityConfig {
         final CorsConfiguration configuration = new CorsConfiguration();
         configuration.applyPermitDefaultValues();
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "OPTIONS", "HEAD", "DELETE"));
+        configuration.setAllowedHeaders(List.of("*"));
+        configuration.setExposedHeaders(List.of("Authorization")); // Exponha cabeçalhos importantes
 
         final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
