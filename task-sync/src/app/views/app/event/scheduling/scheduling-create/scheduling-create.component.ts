@@ -69,7 +69,7 @@ export class SchedulingCreateComponent implements OnInit {
       Nome do usuario: ${user.name},
       Tipo de Acesso: ${user.access_type}`)
   });
-  const colaboradores = this.userList.filter(user => user.access_type === 'Colaborador');
+  const colaboradores = this.userList.filter(user => user.access_type === 'COLABORADOR');
   console.log(colaboradores);
   this.userList = colaboradores;
 
