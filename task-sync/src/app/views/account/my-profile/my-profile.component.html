@@ -6,13 +6,13 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="/" *ngIf="accessType === 'Administrador'">Home</a>
+            <a href="/" *ngIf="accessType === 'ADMINISTRADOR'">Home</a>
             <a href="/event/list" *ngIf="accessType === 'Colaborador'">Home</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Meu perfil</li>
     </ol>
 </nav>
-<a class="btn btn-back arrow-back" href="/" *ngIf="accessType === 'Administrador'">
+<a class="btn btn-back arrow-back" href="/" *ngIf="accessType === 'ADMINISTRADOR'">
     <span class="material-icons">arrow_back</span>
 </a>
 <a class="btn btn-back arrow-back" href="/event/list" *ngIf="accessType === 'Colaborador'">
