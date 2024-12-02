@@ -134,7 +134,7 @@ export class SchedulingListComponent implements OnInit {
       this.emAberto = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
       this.schedulingCopy = data;
       this.schedulings = data.filter(item => {
-        if(this.accessType == 'Administrador'){
+        if(this.accessType == 'ADMINISTRADOR'){
           return item;
         }else if(item.user.id == this.userId){
           return item;

@@ -45,10 +45,10 @@
 </ng-template>
 
 <div class="d-flex justify-content-between">
-    <a class="btn btn-back arrow-back" href="/" *ngIf="accessType == 'Administrador'">
+    <a class="btn btn-back arrow-back" href="/" *ngIf="accessType == 'ADMINISTRADOR'">
         <span class="material-icons">arrow_back</span>
     </a>
-    <a class="btn btn-create" routerLink="/user/create" *ngIf="accessType == 'Administrador'">
+    <a class="btn btn-create" routerLink="/user/create" *ngIf="accessType == 'ADMINISTRADOR'">
         <fa-icon [icon]="faAdd" title="Adicionar nova pessoa"></fa-icon>
         Cadastrar
     </a>
@@ -93,7 +93,7 @@
                         <mat-icon *ngIf="user.access_type == 'Colaborador'" matBadge="{{ totalEventos[user.id!] }}" matBadgeColor="primary" title="Eventos cadastrados">
                           event
                         </mat-icon>
-                        <mat-icon *ngIf="user.access_type == 'Administrador'" title="Pessoas cadastradas" class="icone">
+                        <mat-icon *ngIf="user.access_type == 'ADMINISTRADOR'" title="Pessoas cadastradas" class="icone">
                             event
                           </mat-icon>
                         <span class="cdk-visually-hidden">
@@ -106,7 +106,7 @@
                     <a routerLink="/user/edit/{{ user.id }}">
                         <span class="material-icons color-edit" title="Editar pessoa">edit</span>
                     </a>
-                    <a class="btn btn-error me-2" (click)="openMyModal(infoModal)" *ngIf="accessType == 'Administrador'">
+                    <a class="btn btn-error me-2" (click)="openMyModal(infoModal)" *ngIf="accessType == 'ADMINISTRADOR'">
                         <span class="material-icons color-delete" title="Excluir pessoa">delete_forever</span>
                     </a>
                     <ng-template #infoModal let-modal>
@@ -123,7 +123,7 @@
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-danger" (click)="deleteUser(user.id!)"
-                                *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">EXCLUIR
+                                *ngIf="accessType == 'ADMINISTRADOR'" (click)="closeMyModal()">EXCLUIR
                             </button>
                         </div>
                     </ng-template>

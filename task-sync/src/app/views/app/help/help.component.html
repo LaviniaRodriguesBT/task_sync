@@ -6,13 +6,13 @@
 <nav aria-label="breadcrumb">
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
-            <a href="/" *ngIf="accessType === 'Administrador'">Home</a>
+            <a href="/" *ngIf="accessType === 'ADMINISTRADOR'">Home</a>
             <a href="/event/list" *ngIf="accessType === 'Colaborador'">Home</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Ajuda</li>
     </ol>
 </nav>
-<a class="btn btn-back arrow-back" href="/" *ngIf="accessType === 'Administrador'">
+<a class="btn btn-back arrow-back" href="/" *ngIf="accessType === 'ADMINISTRADOR'">
     <span class="material-icons">arrow_back</span>
 </a>
 <a class="btn btn-back arrow-back" href="/event/list" *ngIf="accessType === 'Colaborador'">
@@ -29,7 +29,7 @@
             <h3>1. Funcionalidades Principais</h3>
             <h4>1.1. Gerenciar Eventos</h4>
             <ul>
-                <li><strong>Criar Eventos:</strong> Permite ao Administrador criar novos eventos, definindo nome, área de atuação, e outros detalhes importantes.</li>
+                <li><strong>Criar Eventos:</strong> Permite ao ADMINISTRADOR criar novos eventos, definindo nome, área de atuação, e outros detalhes importantes.</li>
                 <li><strong>Editar Eventos:</strong> Atualize informações de eventos, como datas e localizações.</li>
                 <li><strong>Excluir Eventos:</strong> Remova eventos duplicados ou criados erroneamente.</li>
                 <li><strong>Emitir Relatórios:</strong> Gere relatórios em PDF sobre usuários e atividades.</li>

@@ -135,7 +135,7 @@ export class Monitoring implements OnInit {
       this.emAberto = data.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
       this.schedulingCopy = data;
       this.schedulings = data.filter(item => {
-        if(this.accessType == 'Administrador'){
+        if(this.accessType == 'ADMINISTRADOR'){
           return item;
         }else if(item.user.id == this.userId){
           return item;
@@ -240,7 +240,7 @@ export class Monitoring implements OnInit {
       this.emAndamento = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em andamento').length;
       this.concluido = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'finalizada').length;
       this.emAberto = this.schedulings.filter((item: ResponseScheduling) => item.status.toLowerCase() === 'em aberto').length;
-      if(this.accessType == 'Administrador'){
+      if(this.accessType == 'ADMINISTRADOR'){
         this.loadCharts();
         this.loadCharts2();
       }

@@ -84,7 +84,7 @@ export class UserListComponent {
           const quantidadePessoas = new Set();
           const events = await this.eventReadService.findUserById(user.id); 
           events.forEach(event => {
-            if(user.access_type != 'Administrador'){
+            if(user.access_type != 'ADMINISTRADOR'){
               quantidadePessoas.add(event.id)
             }       
           })

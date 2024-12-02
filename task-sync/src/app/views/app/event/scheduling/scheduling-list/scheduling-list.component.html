@@ -52,7 +52,7 @@
             <span class="material-icons">arrow_back</span>
         </a>
         <a class="btn btn-create" routerLink="/event/{{eventId}}/scheduling/create"
-            *ngIf="accessType == 'Administrador'" title="Criar novo cronograma">
+            *ngIf="accessType == 'ADMINISTRADOR'" title="Criar novo cronograma">
             <fa-icon [icon]="faAdd" title="Adicionar novo cronograma"></fa-icon>
             Cadastrar
         </a>
@@ -60,7 +60,7 @@
             <mat-icon class="search-icon">search</mat-icon>
             <input id="search" placeholder="Pesquisa" (keyup)="search()" title="Pesquisar">
         </div>
-        <div class="navbar" *ngIf="accessType == 'Administrador'">
+        <div class="navbar" *ngIf="accessType == 'ADMINISTRADOR'">
             <div class="dropdown">
                 <button class="dropbtn" title="Monitorar dados" routerLink="/event/{{eventId}}/scheduling/monitoring">Dashboard
                 </button>
@@ -88,9 +88,9 @@
                     <th scope="col" class="thead-style">Horario Fim</th>
                     <th scope="col" class="thead-style">Data</th>
                     <th scope="col" class="thead-style">Status</th>
-                    <th scope="col" class="thead-style" *ngIf="accessType == 'Administrador'">Detalhes</th>
-                    <th scope="col" class="thead-style" *ngIf="accessType == 'Administrador'">Editar</th>
-                    <th scope="col" class="thead-style" *ngIf="accessType == 'Administrador'">Excluir</th>
+                    <th scope="col" class="thead-style" *ngIf="accessType == 'ADMINISTRADOR'">Detalhes</th>
+                    <th scope="col" class="thead-style" *ngIf="accessType == 'ADMINISTRADOR'">Editar</th>
+                    <th scope="col" class="thead-style" *ngIf="accessType == 'ADMINISTRADOR'">Excluir</th>
                 </tr>
             </thead>
             <tbody>
@@ -112,7 +112,7 @@
                             </select>
                         </form>
                     </td>
-                    <td *ngIf="accessType == 'Administrador'">
+                    <td *ngIf="accessType == 'ADMINISTRADOR'">
                         <div class="column">
                             <div>
                                 <a routerLink="/event/{{eventId}}/scheduling/detail/{{scheduling.id}}">
@@ -121,7 +121,7 @@
                             </div>
                         </div>
                     </td>
-                    <td *ngIf="accessType == 'Administrador'">
+                    <td *ngIf="accessType == 'ADMINISTRADOR'">
                         <div class="column">
                             <div>
                                 <a routerLink="/event/{{eventId}}/scheduling/edit/{{scheduling.id}}">
@@ -130,10 +130,10 @@
                             </div>
                         </div>
                     </td>
-                    <td *ngIf="accessType == 'Administrador'">
+                    <td *ngIf="accessType == 'ADMINISTRADOR'">
                         <div class="column">
                             <div class="col-4">
-                                <a (click)="openMyModal(infoModal)" *ngIf="accessType == 'Administrador'">
+                                <a (click)="openMyModal(infoModal)" *ngIf="accessType == 'ADMINISTRADOR'">
                                     <span class="material-icons color-delete"
                                         title="Exluir cronograma">delete_forever</span>
                                 </a>
@@ -152,7 +152,7 @@
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-danger" (click)="deleteScheduling(scheduling.id!)"
-                                *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">EXCLUIR
+                                *ngIf="accessType == 'ADMINISTRADOR'" (click)="closeMyModal()">EXCLUIR
                             </button>
                         </div>
                     </ng-template>

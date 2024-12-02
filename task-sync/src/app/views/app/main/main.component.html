@@ -15,32 +15,32 @@
             <div class="navbar-collapse">
                 <ul class="navbar-nav ml-auto" >
                     <li class="nav-item">
-                        <button mat-button [matMenuTriggerFor]="menuEventos" class="btn-list" *ngIf= "accessType == 'Administrador'">Eventos</button>
+                        <button mat-button [matMenuTriggerFor]="menuEventos" class="btn-list" *ngIf= "accessType == 'ADMINISTRADOR'">Eventos</button>
                         <mat-menu #menuEventos="matMenu" class="custom-menu">
-                            <a mat-list-item routerLink="/event/list" *ngIf= "accessType == 'Administrador'">Lista de eventos </a>
-                            <a mat-list-item routerLink="/event/create" *ngIf= "accessType == 'Administrador'">Cadastrar evento </a>
+                            <a mat-list-item routerLink="/event/list" *ngIf= "accessType == 'ADMINISTRADOR'">Lista de eventos </a>
+                            <a mat-list-item routerLink="/event/create" *ngIf= "accessType == 'ADMINISTRADOR'">Cadastrar evento </a>
                         </mat-menu>
                     </li>
-                    <li class="nav-item" *ngIf= "accessType == 'Administrador'" >
+                    <li class="nav-item" *ngIf= "accessType == 'ADMINISTRADOR'" >
                         <button mat-button [matMenuTriggerFor]="menuPessoas" class="btn-list">Pessoas</button>
                         <mat-menu #menuPessoas="matMenu" class="custom-menu">
                             <a mat-list-item routerLink="/user/list">Lista de pessoas </a>
-                            <a mat-list-item routerLink="/user/create" *ngIf= "accessType == 'Administrador'">Cadastrar pessoa</a>
+                            <a mat-list-item routerLink="/user/create" *ngIf= "accessType == 'ADMINISTRADOR'">Cadastrar pessoa</a>
                         </mat-menu>
                     </li>
-                    <li class="nav-item" *ngIf= "accessType == 'Administrador'">
+                    <li class="nav-item" *ngIf= "accessType == 'ADMINISTRADOR'">
                         <button mat-button [matMenuTriggerFor]="menuAtividades"
                             class="dropdown-content btn-list">Atividades</button>
                         <mat-menu #menuAtividades="matMenu" class="custom-menu">
                             <a mat-list-item routerLink="/task/list">Lista de atividades</a>
-                            <a mat-list-item routerLink="/task/create" *ngIf= "accessType == 'Administrador'">Cadastrar atividade</a>
+                            <a mat-list-item routerLink="/task/create" *ngIf= "accessType == 'ADMINISTRADOR'">Cadastrar atividade</a>
                         </mat-menu>
                     </li>
                 </ul>
             </div>
         </nav>
         <span class="toolbar-item-spacer"></span>
-        <button mat-icon-button matTooltip="Home" routerLink="/" *ngIf= "accessType == 'Administrador'">
+        <button mat-icon-button matTooltip="Home" routerLink="/" *ngIf= "accessType == 'ADMINISTRADOR'">
             <mat-icon>home</mat-icon>
         </button>
         <button mat-icon-button matTooltip="Meu perfil" [matMenuTriggerFor]="myProfile">

@@ -43,10 +43,10 @@
 </ng-template>
 
 <div class="d-flex justify-content-between">
-    <a class="btn btn-back arrow-back" href="/" *ngIf= "accessType == 'Administrador'">
+    <a class="btn btn-back arrow-back" href="/" *ngIf= "accessType == 'ADMINISTRADOR'">
         <span class="material-icons" >arrow_back</span>
     </a> 
-    <a class="btn btn-create" routerLink="/task/create" *ngIf= "accessType == 'Administrador'">
+    <a class="btn btn-create" routerLink="/task/create" *ngIf= "accessType == 'ADMINISTRADOR'">
         <fa-icon [icon]="faAdd" title="Adicionar nova atividade"></fa-icon>
         Cadastrar
     </a>
@@ -83,12 +83,12 @@
                 </table>
                 <div class="action-buttons">
                     <a routerLink="/task/detail/{{ task.id }}">
-                        <span class="material-icons color-detail" title="Detalhes atividade" *ngIf= "accessType == 'Administrador'">info</span>
+                        <span class="material-icons color-detail" title="Detalhes atividade" *ngIf= "accessType == 'ADMINISTRADOR'">info</span>
                     </a>
-                    <a routerLink="/task/edit/{{ task.id }}" *ngIf= "accessType == 'Administrador'">
+                    <a routerLink="/task/edit/{{ task.id }}" *ngIf= "accessType == 'ADMINISTRADOR'">
                         <span class="material-icons color-edit" title="Editar atividade">edit</span>
                     </a>
-                    <a class="btn btn-error me-2" (click)="openMyModal(infoModal)" *ngIf="accessType == 'Administrador'">
+                    <a class="btn btn-error me-2" (click)="openMyModal(infoModal)" *ngIf="accessType == 'ADMINISTRADOR'">
                         <span class="material-icons color-delete" title="Exluir tarefa">delete_forever</span>
                     </a>
                     <ng-template #infoModal let-modal>
@@ -104,7 +104,7 @@
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-danger" (click)="deleteTask(task.id!)"
-                                *ngIf="accessType == 'Administrador'" (click)="closeMyModal()">EXCLUIR
+                                *ngIf="accessType == 'ADMINISTRADOR'" (click)="closeMyModal()">EXCLUIR
                             </button>   
                         </div>
                     </ng-template>
