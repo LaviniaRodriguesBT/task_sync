@@ -23,7 +23,8 @@ public interface JwtService {
 
     String generateToken(final UserDetails userDetails,
                          final UserModel.UserRole role,
-                         final String email);
+                         final String email,
+                         final int id);
 
     String createToken(Map<String, Object> claims, String subject);
 

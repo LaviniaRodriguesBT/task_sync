@@ -50,7 +50,8 @@ public class AuthenticationController {
         final String jwtToken = jwtService.generateToken(
                 userDetails,
                 authenticatedUser.getRole(),
-                authenticatedUser.getEmail());
+                authenticatedUser.getEmail(),
+                authenticatedUser.getId());
 
         if (jwtToken == null || jwtToken.isEmpty()) {
             throw new InternalError("Jwt invalido");

@@ -58,10 +58,11 @@ public class JwtServiceImplem implements JwtService {
 
 
     @Override
-    public String generateToken(final UserDetails userDetails, final UserModel.UserRole role, final String email) {
+    public String generateToken(final UserDetails userDetails, final UserModel.UserRole role, final String email, final int id) {
         final Map<String, Object> claims = new HashMap<>();
         claims.put("email", email);
         claims.put("role", role);
+        claims.put("id", id);
         return createToken(claims, userDetails.getUsername());
     }
 
