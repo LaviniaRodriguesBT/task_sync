@@ -46,14 +46,14 @@ public class UserPostgresDaoImplem implements UserDao {
             resultSet.close();
             preparedStatement.close();
 
-            sql = "INSERT INTO \"user\"(email, password, access_type, person_id) ";
-            sql += " VALUES(?, ?, ?, ?);";
+            sql = "INSERT INTO \"user\"(email, password, access_type, person_id, role) ";
+            sql += " VALUES(?, ?, ?, ?, ?);";
             preparedStatement = connection.prepareStatement(sql, PreparedStatement.RETURN_GENERATED_KEYS);
             preparedStatement.setString(1, entity.getEmail());
             preparedStatement.setString(2, entity.getPassword());
             preparedStatement.setString(3, entity.getAccess_type());
             preparedStatement.setInt(4, entity.getId());
-            preparedStatement.setString(3, entity.getAccess_type());
+            preparedStatement.setString(5, entity.getRole().name());
             preparedStatement.execute();
             resultSet = preparedStatement.getGeneratedKeys();
             if (resultSet.next()) {
