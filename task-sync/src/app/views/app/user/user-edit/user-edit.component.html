@@ -121,7 +121,7 @@
                 <mat-label>Tipo de Acesso</mat-label>
                 <mat-select formControlName="access_type">
                     <mat-option value="ADMINISTRADOR">ADMINISTRADOR</mat-option>
-                    <mat-option value="Colaborador">Colaborador</mat-option>
+                    <mat-option value="COLABORADOR">COLABORADOR</mat-option>
                 </mat-select>
             </mat-form-field>
             <div *ngIf="form.get('access_type')?.invalid && (form.get('access_type')?.touched)" class="text-danger">

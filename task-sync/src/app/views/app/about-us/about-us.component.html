@@ -2,7 +2,7 @@
     <ol class="breadcrumb">
         <li class="breadcrumb-item">
             <a href="/" *ngIf="accessType === 'ADMINISTRADOR'">Home</a>
-            <a href="/event/list" *ngIf="accessType === 'Colaborador'">Home</a>
+            <a href="/event/list" *ngIf="accessType === 'COLABORADOR'">Home</a>
         </li>
         <li class="breadcrumb-item active" aria-current="page">Sobre</li>
     </ol>
@@ -10,7 +10,7 @@
 <a class="btn btn-back arrow-back" href="/" *ngIf="accessType === 'ADMINISTRADOR'">
     <span class="material-icons">arrow_back</span>
 </a>
-<a class="btn btn-back arrow-back" href="/event/list" *ngIf="accessType === 'Colaborador'">
+<a class="btn btn-back arrow-back" href="/event/list" *ngIf="accessType === 'COLABORADOR'">
     <span class="material-icons">arrow_back</span>
 </a>
 <div class="article">

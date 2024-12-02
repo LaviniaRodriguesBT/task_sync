@@ -90,7 +90,7 @@
                 <div class="action-buttons">
 
                     <a>
-                        <mat-icon *ngIf="user.access_type == 'Colaborador'" matBadge="{{ totalEventos[user.id!] }}" matBadgeColor="primary" title="Eventos cadastrados">
+                        <mat-icon *ngIf="user.access_type == 'COLABORADOR'" matBadge="{{ totalEventos[user.id!] }}" matBadgeColor="primary" title="Eventos cadastrados">
                           event
                         </mat-icon>
                         <mat-icon *ngIf="user.access_type == 'ADMINISTRADOR'" title="Pessoas cadastradas" class="icone">
